@@ -1,0 +1,12 @@
+# Derivation of simpsons rule for integration
+# read "/home/stroetma/Kurse/Analysis/Script/Maple/simpson.maple";
+restart;
+
+x[i-1] := x[i] - h;
+x[i+1] := x[i] + h;
+p := f[i-1] * (t - x[i])   * (t - x[i+1]) / ( (x[i-1] - x[i]  ) * (x[i-1] - x[i+1]) ) +
+     f[i]   * (t - x[i-1]) * (t - x[i+1]) / ( (x[i]   - x[i-1]) * (x[i]   - x[i+1]) ) +
+     f[i+1] * (t - x[i-1]) * (t - x[i])   / ( (x[i+1] - x[i-1]) * (x[i+1] - x[i]  ) );
+IntSimpson := int( p, t = x[i-1] .. x[i+1] );
+IntSimpson := normal(IntSimpson);
+

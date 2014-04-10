@@ -1,0 +1,13 @@
+// Solve the equation 
+//    x * exp(x) = y 
+// for small values of y by using the fixpoint equation
+//    x := ln(y) - ln(x).
+// for y = 10**6.
+x  := 6;
+y  := 10 ** 6;
+ln := log;
+for (i in [1 .. 16]) {
+    x := ln(y) - ln(x);
+    print("$i$: $x$");
+}
+

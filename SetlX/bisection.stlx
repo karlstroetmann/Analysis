@@ -1,0 +1,42 @@
+// Find the zero of the function f in the intervall [a, b].  The number
+// digits is the number of digits required.
+// This function does only work if either f(a) <= 0 <= f(b) or 
+// f(a) >= 0 >= f(b).  Also, the function f is required to be smooth.
+findZero := procedure(f, a, b, n) {
+    assert(a < b, "a has to be less than b");   
+    [ fa, fb ] := [ f(a), f(b) ]; 
+    assert(fa * fb <= 0, "no sign change in interval [$a$, $b$]");
+    k := 1;
+    while (k <= n) {
+        c := 1/2 * (a + b);
+        fc := f(c); 
+        if ((fa < 0 && fc < 0.0) || (fa >= 0 && fc >= 0)) {
+            a := c; fa := fc; 
+        } else {
+            b := c; fb := fc; 
+        }
+        print("$k$: a = $nDecimalPlaces(a, 41)$, b = $nDecimalPlaces(b, 41)$");
+        print("$k$: a = $a$, b = $b$");
+        k += 1;
+    }
+    return 1/2 * (a + b);
+};
+
+root3 := procedure(x) {
+    return x * x * x - 2;
+};
+
+// r3 := findZero(root3, 1, 2, 40);
+
+// print("2 ** (1/3) = $nDecimalPlaces(r3, 40)$");
+// print("\n\n\n");
+
+cosXEqualsX := procedure(x) {
+    return x - cos(x);
+};
+
+x := findZero(cos, 1, 2, 4);
+pi := mathConst("pi");
+
+print("solution of 0 = cos(x), $nDecimalPlaces(x,15)$");
+print("difference: $x - pi/2$");

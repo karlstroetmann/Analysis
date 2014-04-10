@@ -1,0 +1,36 @@
+// given a matrix a and a vector b this function performs k steps
+// of the jacobi method to solve the linear system of equations
+//    a x = b
+jacobi := procedure(a, b, k) {
+    n := #b;
+    assert(#a    == n, "wrong number of equations");
+    assert(#a[1] == n, "wrong number of variables");
+    x := xNew := [ 0 : i in [ 1 .. n ] ];
+    for (l in [1 .. k]) {
+        for (i in [1 .. n]) {
+            xNew[i] := b[i];
+            for (j in [ 1 .. n ]) {
+                if (i != j) {
+                    xNew[i] -= a[i][j] * x[j];
+                }
+            }
+            xNew[i] /= a[i][i];
+        }
+        x := xNew;
+        print("$l$: $x$");
+    }
+    return x;       
+};
+
+demo := procedure() {
+    a := [ [ 4.0, 1.0, 0.0 ], 
+           [ 1.0, 4.0, 1.0 ],
+           [ 0.0, 1.0, 4.0 ] ];
+    b := [ 5.0, 6.0, 5.0 ];
+    k := 35;  
+    x := jacobi(a, b, k);
+    print("x = $x$");
+};
+
+demo();
+

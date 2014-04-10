@@ -1,0 +1,11 @@
+riemannInt :=
+proc(f, x, a, b, n)
+local h, i;
+description "compute an approximation to int(f, x=a..b) using Riemann sums";
+    h  := (b - a) / n;
+    return sum( subs(x = a+i*h, f) * h, i = 1..n );
+end proc;
+
+r := riemannInt(exp(t), t, 0, x, n);
+limit(r, n = infinity);
+

@@ -1,0 +1,1961 @@
+\chapter{Folgen und Reihen}
+Die Begriffe \emph{Folgen} und \emph{Reihen} sowie der Begriff des \emph{Grenzwerts} bilden die
+Grundlage, auf der die Analysis aufgebaut ist.  Da Reihen nichts anderes sind als
+spezielle Folgen, beginnen wir unsere Diskussion mit den Folgen.
+
+\section{Folgen}
+\begin{Definition}[Folge]
+  Eine Funktion $f: \mathbb{N} \rightarrow \mathbb{R}$ bezeichnen wir als eine  \emph{reellwertige Folge}. 
+  Eine Funktion $f: \mathbb{N} \rightarrow \mathbb{C}$ bezeichnen wir als eine  \emph{komplexwertige Folge}.
+\end{Definition}
+
+\noindent
+Ist die Funktion $f$ ein Folge, so schreiben wir dies kürzer als 
+$\bigl(f(n)\bigr)_{n\in\mathbb{N}}$ oder $\bigl(f_n\bigr)_{n\in\mathbb{N}}$ oder noch kürzer als $\bigl(f_n\bigr)_n$.
+\vspace*{0.3cm}
+
+\noindent
+\textbf{Beispiele}:
+\begin{enumerate}
+\item Die Funktion $a:\mathbb{N} \rightarrow \mathbb{R}$, die durch  
+      $a(n) = \bruch{1}{\;n+1\;}$ definiert ist, schreiben wir als die Folge
+      $\Bigl(\bruch{1}{\;n+1\;}\Bigr)_{n\in\mathbb{N}}$.
+\item Die Funktion $a:\mathbb{N} \rightarrow \mathbb{R}$, die durch  
+      $a(n) = (-1)^n$ definiert ist, schreiben wir als die Folge
+      $\bigl((-1)^n\bigr)_{n\in\mathbb{N}}$.
+\item Die Funktion $a:\mathbb{N} \rightarrow \mathbb{R}$, die durch  
+      $a(n) = n$ definiert ist, schreiben wir als die Folge
+      $\bigl(n\bigr)_{n\in\mathbb{N}}$.
+\end{enumerate}
+Folgen können auch induktiv definiert werden.  Um die Gleichung $x = \cos(x)$ zu lösen,
+können wir eine Folge $\bigl((x_n)_{n\in\mathbb{N}}$ induktiv wie folgt definieren:
+\begin{enumerate}
+\item Induktions-Anfang: $x_0 := 0$.
+\item Induktions-Schritt: $x_{n+1} := \cos(x_n)$.
+\end{enumerate}
+Wir können die ersten $40$ Glieder dieser Folge mit dem in Abbildung
+\ref{fig:solve.stlx} gezeigten Programm berechnen. Wir erhalten dann 
+die in der  Tabelle \ref{tab:x-cos-x} auf Seite \pageref{tab:x-cos-x} 
+gezeigten Ergebnisse.  Bei näherer Betrachtung der Ergebnisse stellen wir fest,
+dass die Folge $\folge{x_n}$ in einem gewissen Sinne gegen einen festen
+\emph{Grenzwert} strebt.   Diese Beobachtung wollen wir in der folgenden Definition
+präzisieren.  Vorab 
+bezeichnen wir  die Menge der positiven reellen Zahlen mit $\mathbb{R}_+$, es gilt also
+\[ \mathbb{R}_+ = \bigl\{ x \in \mathbb{R} \mid x > 0 \bigl\}. \]
+
+
+\begin{figure}[!ht]
+  \centering
+\begin{Verbatim}[ frame         = lines, 
+                  framesep      = 0.3cm, 
+                  labelposition = bottomline,
+                  numbers       = left,
+                  numbersep     = -0.2cm,
+                  xleftmargin   = 1.3cm,
+                  xrightmargin  = 1.3cm,
+                ]
+    solve := procedure(k) {
+        x    := [];  // x[n+1] stores x_{n}
+        x[1] := 0.0;
+        for (n in [1 .. k]) {
+            x[n+1] := cos(x[n]);
+            print("x_{$n$} = $x[n+1]$");
+        }
+    };
+\end{Verbatim}
+\vspace*{-0.3cm}
+  \caption{Berechnung der durch  $x_0 = 0$ und $x_{n+1} = \cos(x_n)$ definierten Folge.}
+  \label{fig:solve.stlx}
+\end{figure} %\$
+
+\begin{table}[!h]
+  \centering
+\framebox{
+  \begin{tabular}{|l|c|l|c|l|c|l|c|}
+\hline
+   $n$ & $x_n$ & $n$ & $x_n$ & $n$ & $x_n$ & $n$ & $x_n$ \\
+\hline
+\hline
+0 & 0.000000 & 10 & 0.731404 & 20 & 0.738938 & 30 & 0.739082 \\
+\hline
+1 & 1.000000 & 11 & 0.744237 & 21 & 0.739184 & 31 & 0.739087 \\
+\hline
+2 & 0.540302 & 12 & 0.735605 & 22 & 0.739018 & 32 & 0.739084 \\
+\hline
+3 & 0.857553 & 13 & 0.741425 & 23 & 0.739130 & 33 & 0.739086 \\
+\hline
+4 & 0.654290 & 14 & 0.737507 & 24 & 0.739055 & 34 & 0.739085 \\
+\hline
+5 & 0.793480 & 15 & 0.740147 & 25 & 0.739106 & 35 & 0.739086 \\
+\hline
+6 & 0.701369 & 16 & 0.738369 & 26 & 0.739071 & 36 & 0.739085 \\
+\hline
+7 & 0.763960 & 17 & 0.739567 & 27 & 0.739094 & 37 & 0.739085 \\
+\hline
+8 & 0.722102 & 18 & 0.738760 & 28 & 0.739079 & 38 & 0.739085 \\
+\hline
+9 & 0.750418 & 19 & 0.739304 & 29 & 0.739089 & 39 & 0.739085 \\
+\hline
+  \end{tabular}}
+  \caption{Die ersten 40 Glieder der durch $x_0 = 0$ und $x_{n+1} = \cos(x_n)$ definierten
+    Folge.}
+  \label{tab:x-cos-x}
+\end{table}
+
+\begin{Definition}[Grenzwert]
+Eine Folge $\folge{a_n}$ \emph{konvergiert} gegen den \emph{Grenzwert} $g$, falls gilt:
+\[ \forall \varepsilon \in\mathbb{R}_+: \exists K \in \mathbb{R} : \forall n \in \mathbb{N} : n > K \rightarrow |a_n - g| < \varepsilon. \]
+In diesem Fall schreiben wir
+\[ \lim\limits_{n\rightarrow\infty} a_n = g. \]
+\end{Definition}
+Anschaulich heißt diese Definition, dass fast alle Glieder $a_n$ der Folge $\folge{a_n}$
+einen beliebig kleinen Abstand zu dem Grenzwert $g$ haben.
+Für die oben induktiv definierte Folge $x_n$ können wir den Nachweis der Konvergenz erst
+in einem späteren Kapitel antreten.  Wir betrachten statt dessen ein einfacheres Beispiel
+und beweisen, dass gilt:
+\[ \lim\limits_{n\rightarrow\infty} \bruch{1}{\;n+1\;} = 0. \]
+
+\noindent
+\textbf{Beweis}:  Für jedes  $\varepsilon > 0$ müssen wir eine Zahl $K$ angeben, so
+dass für alle natürlichen Zahlen $n$, die größer als $K$ sind, die Abschätzung
+\[ \left| \bruch{1}{\;n+1\;} - 0 \right| < \varepsilon \]
+gilt.  Wir definieren $K := \bruch{1}{\varepsilon}$.  Damit ist $K$ wohldefiniert,
+denn da $\varepsilon$ positiv ist, gilt sicher auch $\varepsilon \not= 0$.  Nun benutzen
+wir die Voraussetzung $n > K$ für $K = \bruch{1}{\varepsilon}$:
+\[
+\begin{array}{cll}
+            & n > \bruch{1}{\varepsilon}      \\[0.3cm]
+\Rightarrow & n + 1 > \bruch{1}{\varepsilon} & \mid \cdot \;\varepsilon \\[0.3cm]
+\Rightarrow & (n+1) \cdot \varepsilon > 1       & \mid \cdot \;\bruch{1}{\;n+1\;} \\[0.3cm]
+\Rightarrow & \varepsilon > \bruch{1}{\;n+1\;} & 
+\end{array}
+\]
+Da andererseits  $0 < \bruch{1}{\;n+1\;}$ gilt, haben wir insgesamt für alle $n > K$
+\[
+\begin{array}{cl}
+            & 0 < \bruch{1}{\;n+1\;} < \varepsilon              \\[0.3cm]
+\Rightarrow & \left|\bruch{1}{\;n+1\;}\right| < \varepsilon     \\[0.3cm]
+\Rightarrow & \left|\bruch{1}{\;n+1\;}-0\right| < \varepsilon
+\end{array}
+\]
+gezeigt und damit ist der Beweis abgeschlossen. \hspace*{\fill} $\Box$
+\vspace*{0.3cm}
+
+\exercise
+Beweisen Sie $\lim\limits_{n\rightarrow\infty} \bruch{1}{2^n} = 0$.
+\vspace*{0.3cm}
+
+
+\noindent
+Wir formulieren und beweisen einige unmittelbare Folgerungen aus der obigen Definition des Grenzwerts.
+\begin{Satz}[Eindeutigkeit des Grenzwerts]
+Konvergiert die Folge $\folge{a_n}$ sowohl gegen den Grenzwert $g_1$ als auch gegen den
+Grenzwert $g_2$, so gilt $g_1 = g_2$.
+\end{Satz}
+\textbf{Beweis}:  Wir führen den Beweis indirekt und nehmen an, dass $g_1 \not= g_2$ ist.
+Dann definieren wir $\varepsilon = \bruch{1}{2}\cdot|g_2 - g_1|$ und aus der Annahme $g_1 \not= g_2$ folgt
+$\varepsilon > 0$.  Aus der Voraussetzung, dass $\folge{a_n}$ gegen $g_1$ konvergiert
+folgt, dass es ein $K_1$ gibt, so dass gilt:
+\[ \forall n \in \mathbb{N}: n > K_1 \rightarrow | a_n - g_1 | < \varepsilon \]
+Analog folgt  aus der Voraussetzung, dass $\folge{a_n}$ gegen $g_2$ konvergiert,
+dass es ein $K_2$ gibt, so dass gilt:
+\[ \forall n \in \mathbb{N}: n > K_2 \rightarrow | a_n - g_2 | < \varepsilon \]
+Wir setzen $K := \max(K_1, K_2)$.  Alle $n\in\mathbb{N}$, die größer als $K$ sind,
+sind dann sowohl größer als $K_1$ als auch größer als $K_2$. Unter Benutzung der 
+\emph{Dreiecksungleichung}\footnote{
+Sind $a, b\in \mathbb{R}$, so gilt $|a+b| \leq |a| + |b|$.  Diese Ungleichung trägt den
+Namen \emph{Dreiecksungleichung.}}
+erhalten wir für alle $n > K$ die folgende Kette von Ungleichungen:
+\[
+\begin{array}{lcll}  
+   2 \cdot \varepsilon & = & |g_2 - g_1| \\
+                   & = & |(g_2 - a_n) + (a_n - g_1)| \\
+                   & \leq & |g_2 - a_n| + |a_n - g_1| 
+                          & \mbox{(Dreiecksungleichung)} \\
+                   & < & \varepsilon + \varepsilon \\
+                   & = & 2 \cdot \varepsilon \\
+\end{array}
+\]
+Aus dieser Ungleichungs-Kette würde aber $2\cdot \varepsilon < 2\cdot \varepsilon$ folgen und dass
+ist ein Widerspruch.  Somit ist die Annahme $g_1 \not= g_2$ falsch und es muss $g_1 = g_2$
+gelten.  
+\hspace*{\fill} $\Box$
+\vspace*{0.3cm}
+
+\noindent
+\textbf{Bemerkung}:  Die Schreibweise $\lim\limits_{n\rightarrow\infty} a_n = g$
+wird durch den letzten Satz im Nachhinein gerechtfertigt.
+\vspace*{0.3cm}
+
+\exercise
+Zeigen Sie, dass die Folge $\folge{(-1)^n}$ nicht konvergent ist.
+\vspace*{0.3cm}
+
+\noindent 
+\textbf{Lösung}: Wir führen den Beweis indirekt und nehmen an, dass die Folge
+$\folge{(-1)^n}$ konvergiert.  Bezeichnen wir diesen Grenzwert mit $s$, so gilt also
+\[ \forall \varepsilon \in \mathbb{R}_+: \exists K \in \mathbb{R} : \forall n \in \mathbb{N} : n > K \rightarrow \bigl|(-1)^n - s\bigr| < \varepsilon \]
+Daher gibt es für  $\varepsilon = 1$ eine Zahl $K$, so dass 
+\[ \forall n \in \mathbb{N} : n > K \rightarrow \bigl|(-1)^n - s\bigr| < 1 \]
+gilt.  Da aus $n > K$ sicher auch $2 \cdot n > K$ und $2\cdot n+1 > K$ folgt, hätten wir dann
+für $n > K$ die beiden folgenden Ungleichungen:
+\[
+  \bigl| (-1)^{2\cdot n} - s\bigr| < 1 \quad \mbox{und} \quad
+  \bigl| (-1)^{2\cdot n+1} - s\bigr| < 1 
+\]
+Wegen $(-1)^{2\cdot n} = 1$ und $(-1)^{2\cdot n + 1} = -1$ haben wir also 
+\begin{equation}
+  \label{eq:ineq0}
+  \bigl|  1 - s\bigr| < 1 \quad \mbox{und} \quad
+  \bigl| -1 - s\bigr| < 1.
+\end{equation}
+Wegen $-1 - s = (-1) \cdot (1 + s)$ und $|a \cdot b| = |a|\cdot|b|$ können wir die letzte Ungleichung
+noch vereinfachen zu 
+\begin{equation}
+  \label{eq:ineq0a}
+  \bigl| 1 + s\bigr| < 1.
+\end{equation}
+Aus den beiden Ungleichungen $|1-s|<1$ und $|1+s|<1$  erhalten wir nun einen Widerspruch:
+\[
+\begin{array}{lcll}
+  2 & = & \bigl| 1 + 1 \bigr| \\[0.2cm]
+    & = & \bigl| (1 - s) + (s + 1) \bigr| \\[0.2cm]
+    & \leq & \bigl|1 - s\bigr| + \bigl|1+s \bigr| & \quad \mbox{(Dreiecksungleichung)} \\[0.2cm]
+    & <    & 1 + 1 & \quad \mbox{wegen der Ungleichungen (\ref{eq:ineq0}) und (\ref{eq:ineq0a})} \\[0.2cm]
+    & =    & 2 & 
+\end{array}
+\]
+Fassen wir diese Ungleichungs-Kette zusammen, so haben die (offensichtlich falsche)
+Ungleichung $2<2$ abgeleitet.
+Damit haben wir aus der Annahme, dass die Folge gegen den Grenzwert $s$ konvergiert, einen
+Widerspruch hergeleitet. \hspace*{\fill} $\Box$
+
+\begin{Definition}[beschränkte Folgen]
+Eine Folge $\folge{a_n}$ ist \emph{beschränkt}, falls es eine \emph{Schranke} $S$ gibt, so dass gilt:
+\[ \forall n \in \mathbb{N}: \bigl|a_n\bigr| \leq S. \]
+\end{Definition}
+Die Folge $\folge{(-1)^n}$ ist durch die Schranke $S=1$ beschränkt, denn offenbar gilt
+\[ \bigl|(-1)^n\bigr| = 1 \leq 1, \]
+aber die Folge $\folge{n}$ ist nicht beschränkt, denn sonst gäbe es eine Zahl $S$, so dass
+für alle natürlichen Zahlen $n$ die Ungleichung $n \leq S$ gilt.  Da es beliebig große
+natürliche Zahlen gibt, kann dies nicht sein.
+
+
+\begin{Satz}[Beschränktheit konvergenter Folgen]
+Jede konvergente Folge  ist beschränkt.
+\end{Satz}
+\textbf{Beweis}: Es sei  $\folge{a_n}$ eine konvergente Folge und es gelte
+\[ \lim\limits_{n\rightarrow\infty} a_n = g. \]
+Dann gibt es für beliebige $\varepsilon > 0$ ein $K$, so dass gilt
+\[ \forall n \in \mathbb{N}: n > K \rightarrow \bigl| a_n - g \bigr| < \varepsilon. \]
+Wir können also für $\varepsilon = 1$ ein $K$ finden, so dass
+\[ \forall n \in \mathbb{N}: n > K \rightarrow \bigl| a_n - g \bigr| < 1 \]
+gilt.  Wir können ohne Einschränkung der Allgemeinheit davon ausgehen, dass
+$K$ eine natürliche Zahl ist, denn wenn $K$ keine natürliche Zahl ist, können wir $K$
+einfach durch die erste natürliche Zahl ersetzen, die größer als $K$ ist.
+Dann definieren wir 
+\[ S := \max\bigl\{ |a_0|, |a_1|, \cdots, |a_K|, 1 + |g| \bigr\}.  \]
+Wir behapten, dass $S$ eine Schranke für die Folge $\folge{a_n}$ ist, wir zeigen also,
+dass für alle $n \in \mathbb{N}$ gilt:
+\[ |a_n| \leq S \] 
+Um diese Ungleichung nachzuweisen, führen wir eine Fall-Unterscheidung durch:
+\begin{enumerate}
+\item Fall: $n \leq K$.  Dann gilt offenbar 
+      \\[0.2cm]
+      \hspace*{1.3cm}      
+      $|a_n| \in \bigl\{ |a_0|, |a_1|, \cdots, |a_K|, 1 + |g| \bigr\}$.
+      \\[0.2cm]
+      und daraus folgt sofort
+      \\[0.2cm]
+      \hspace*{1.3cm}      
+      $|a_n| \leq \max\bigl\{ |a_0|, |a_1|, \cdots, |a_K|, 1 + |g| \bigr\} = S$.
+      \\[0.2cm]
+\item Fall: $n > K$.  Dann haben wir
+      \[
+      \begin{array}[b]{lcll}        
+         |a_n| & =    & | a_n - g + g | \\[0.2cm]
+               & \leq & | a_n - g | + |g| 
+                      & \mbox{(Dreiecksungleichung)} \\[0.3cm]
+               & <    & 1 + |g|           & \mbox{wegen $n>K$} \\[0.2cm]
+               & \leq & S \\[0.2cm]
+      \end{array} \hspace*{\fill} \Box
+      \]
+\end{enumerate}
+
+Aus den letzten beiden Sätzen folgt nun sofort, dass die Folge $\folge{n}$ nicht
+konvergiert, denn diese Folge ist noch nicht einmal beschränkt.
+
+
+\begin{Satz}[Summe konvergenter Folgen]
+Sind $\folge{a_n}$ und $\folge{b_n}$ zwei Folgen, so dass
+\[ \lim\limits_{n\rightarrow\infty} a_n = a \quad \wedge \quad \lim\limits_{n\rightarrow\infty} b_n = b \]
+gilt, dann konvergiert die Folge $\folge{a_n + b_n}$ gegen den Grenzwert $a+b$, in
+Zeichen:
+\[ \lim\limits_{n\rightarrow\infty} \bigl(a_n + b_n\bigr) = 
+   \Bigl(\lim\limits_{n\rightarrow\infty} a_n\Bigr) +\Bigl(\lim\limits_{n\rightarrow\infty} b_n\Bigr).
+\]  
+\end{Satz}
+\textbf{Beweis}:  Es sei $\varepsilon > 0$ \underline{fest} vorgegeben.  Wir suchen ein $K$, so dass
+\[ \forall n \in \mathbb{N} : n > K \rightarrow \bigl| \bigl(a_n + b_n\bigr) - (a + b)\bigr| < \varepsilon \]
+gilt.  Nach Voraussetzung gibt es für \underline{beliebi}g\underline{e} $\varepsilon' > 0$ ein $K_1$ und ein $K_2$, so dass
+\[ 
+   \forall n \in \mathbb{N} : n > K_1 \rightarrow \bigl| a_n - a \bigr| < \varepsilon' 
+   \quad \mbox{und} \quad
+   \forall n \in \mathbb{N} : n > K_2 \rightarrow \bigl| b_n - b \bigr| < \varepsilon' 
+\]
+gilt.  Wir setzen nun $\varepsilon' := \bruch{1}{2} \cdot \varepsilon$.  Dann gibt es also $K_1$ und
+$K_2$, so dass
+\[ 
+   \forall n \in \mathbb{N} : n > K_1 \rightarrow \bigl| a_n - a \bigr| < \bruch{1}{2}\cdot\varepsilon 
+   \quad \mbox{und} \quad
+   \forall n \in \mathbb{N} : n > K_2 \rightarrow \bigl| b_n - b \bigr| < \bruch{1}{2}\cdot\varepsilon 
+\]
+gilt.  Wir definieren $K := \max(K_1,K_2)$.  Damit gilt dann für alle $n > K$:
+\[
+\begin{array}{lcll}
+  \bigl| \bigl(a_n + b_n\bigr) - (a + b) \bigr|  
+ & = & \bigl| \bigl(a_n + b_n\bigr) - (a + b) \bigr| \\[0.3cm]
+ & = & \bigl| \bigl(a_n - a\bigr) +  \bigl(b_n - b\bigr) \bigr| \\[0.3cm]
+ & \leq & \bigl| \bigl(a_n - a\bigr) \bigr| +  \bigl|\bigl(b_n - b\bigr) \bigr| 
+        & \mbox{(Dreiecksungleichung)} \\[0.3cm]
+ & < & \bruch{1}{2}\cdot \varepsilon + \bruch{1}{2} \cdot \varepsilon \\[0.3cm]
+ & = &  \varepsilon. 
+\end{array}
+\]
+Damit ist die Behauptung gezeigt. \hspace*{\fill} $\Box$
+\vspace*{0.3cm}
+
+\exercise
+Zeigen Sie:
+Sind $\folge{a_n}$ und $\folge{b_n}$ zwei Folgen, so dass
+\[ \lim\limits_{n\rightarrow\infty} a_n = a \quad \wedge \quad \lim\limits_{n\rightarrow\infty} b_n = b \]
+gilt, dann konvergiert die Folge $\folge{a_n - b_n}$ gegen den Grenzwert $a-b$, in
+Zeichen:
+\[ \lim\limits_{n\rightarrow\infty} \bigl(a_n - b_n\bigr) = 
+   \Bigl(\lim\limits_{n\rightarrow\infty} a_n\Bigr) -\Bigl(\lim\limits_{n\rightarrow\infty} b_n\Bigr).
+\]  
+
+\begin{Satz}[Produkt konvergenter Folgen]
+Sind $\folge{a_n}$ und $\folge{b_n}$ zwei Folgen, so dass
+\[ \lim\limits_{n\rightarrow\infty} a_n = a \quad \wedge \quad \lim\limits_{n\rightarrow\infty} b_n = b \]
+gilt, dann konvergiert die Folge $\folge{a_n \cdot b_n}$ gegen den Grenzwert $a\cdot b$, in
+Zeichen:
+\[ \lim\limits_{n\rightarrow\infty} \bigl(a_n \cdot b_n\bigr) = 
+   \Bigl(\lim\limits_{n\rightarrow\infty} a_n\Bigr) \cdot\Bigl(\lim\limits_{n\rightarrow\infty} b_n\Bigr).
+\]  
+\end{Satz}
+\textbf{Beweis}:  Es sei $\varepsilon > 0$ \underline{fest} vorgegeben.  Wir suchen ein $K$, so dass
+\[ \forall n \in \mathbb{N} : n > K \rightarrow \bigl| \bigl(a_n \cdot b_n\bigr) - (a \cdot b)\bigr| < \varepsilon \]
+gilt.  Da die Folge $\folge{a_n}$ konvergent ist, ist diese Folge auch beschränkt, es gibt
+also eine Zahl $S$, so dass  
+\[ |a_n| \leq S \quad \mbox{für alle $n\in\mathbb{N}$}\]
+gilt.
+Nach Voraussetzung gibt es für beliebige $\varepsilon_1 > 0$ ein
+$K_1$ und für beliebige $\varepsilon_2 >0$ ein $K_2$, so dass
+\[ 
+   \forall n \in \mathbb{N} : n > K_1 \rightarrow \bigl| a_n - a \bigr| < \varepsilon_1
+   \quad \mbox{und} \quad
+   \forall n \in \mathbb{N} : n > K_2 \rightarrow \bigl| b_n - b \bigr| < \varepsilon_2
+\]
+gilt.  Wir setzen nun $\varepsilon_1 := \bruch{\varepsilon}{2\cdot(|b| + 1)}$ und
+$\varepsilon_2 := \bruch{\varepsilon}{2\cdot S}$.  Dann gibt es also $K_1$ und
+$K_2$, so dass
+\[ 
+   \forall n \in \mathbb{N} : n > K_1 \rightarrow \bigl| a_n - a \bigr| < \bruch{\varepsilon}{2\cdot(|b| + 1)}
+   \quad \mbox{und} \quad
+   \forall n \in \mathbb{N} : n > K_2 \rightarrow \bigl| b_n - b \bigr| <
+   \bruch{\varepsilon}{2\cdot  S}
+\]
+gilt.  Wir definieren $K := \max(K_1,K_2)$.  Damit gilt dann für alle $n > K$:
+\[
+\begin{array}{lcll}
+  \bigl| a_n \cdot  b_n - a \cdot  b \bigr|  
+ & =    & \bigl| \bigl(a_n \cdot  b_n - a_n\cdot b \bigr) + \bigl(a_n\cdot b - a\cdot b\bigr) \bigr| \\[0.3cm]
+ & \leq & \bigl| \bigl(a_n \cdot  b_n - a_n\cdot b \bigr) \bigr| + \bigl| \bigl(a_n\cdot b - a\cdot b\bigr) \bigr| 
+        & \mbox{(Dreiecksungleichung)}  \\[0.3cm]
+ & =    & \bigl|a_n\bigr| \cdot  \bigl| b_n - b \bigr| + \bigl| a_n - a \bigr| \cdot  |b| \\[0.3cm]
+ & \leq & S \cdot  \bigl| b_n - b \bigr| + \bigl| a_n - a \bigr| \cdot  (|b| + 1) \\[0.3cm]
+ & <    & S \cdot  \bruch{\varepsilon}{2\cdot S} + \bruch{\varepsilon}{2\cdot (|b| + 1)} \cdot  (|b| + 1)  \\[0.3cm]
+ & \leq & \bruch{\;\varepsilon\;}{2} + \bruch{\;\varepsilon\;}{2}  \\[0.3cm]
+ & =    & \varepsilon. 
+\end{array}
+\]
+Damit ist die Behauptung gezeigt. \hspace*{\fill} $\Box$
+\vspace*{0.3cm}
+
+\exercise
+Zeigen Sie:
+{\em
+Sind $\folge{a_n}$ und $\folge{b_n}$ zwei Folgen, so dass
+\[ \lim\limits_{n\rightarrow\infty} a_n = a \quad \wedge \quad \lim\limits_{n\rightarrow\infty} b_n = b \]
+gilt und gilt $b_n \not= 0$ für alle $n \in \mathbb{N}$, sowie $b \not= 0$,
+so konvergiert die Folge $\folge{a_n/b_n}$ gegen den Grenzwert $a/b$, in
+Zeichen:}
+\[ \lim\limits_{n\rightarrow\infty} \bruch{a_n}{b_n} = 
+   \bruch{\Bigl(\lim\limits_{n\rightarrow\infty}
+     a_n\Bigr)}{\Bigl(\lim\limits_{n\rightarrow\infty} b_n\Bigr)} =
+   \bruch{a}{b}.
+\]  
+\vspace*{0.3cm}
+
+
+\noindent
+\textbf{Lösung}:  Zunächst können wir das Problem vereinfachen, wenn wir die Folge
+$\folge{a_n/b_n}$ als Folge von Produkten schreiben:
+\[ \Folge{\bruch{a_n}{b_n}} = \folge{a_n} \cdot  \Folge{\bruch{1}{b_n}} \]
+Falls wir zeigen können, dass 
+\[ \lim\limits_{n\rightarrow\infty} \bruch{1}{b_n} = \bruch{1}{b} \]
+gilt, dann folgt die Behauptung aus dem Satz über das Produkt konvergenter Folgen.
+Bei unserer Suche nach einem Beweis starten wir damit, dass wir die Behauptung noch einmal
+hinschreiben:
+\begin{equation}
+  \label{eq:ab0}  
+\forall \varepsilon \in \mathbb{R}_+: \exists K \in \mathbb{R}:\forall n \in \mathbb{N}: 
+   n > K \rightarrow \left| \bruch{1}{b_n} - \bruch{1}{b} \right| < \varepsilon
+\end{equation}
+Wir müssen also für alle $\varepsilon>0$ ein $K$ finden, so dass für alle natürlichen
+Zahlen  $n>K$ die Ungleichung
+\begin{equation}
+  \label{eq:ab1}
+  \left| \bruch{1}{b_n} - \bruch{1}{b} \right| < \varepsilon 
+\end{equation}
+gilt.  Irgendwie müssen wir die Voraussetzung, dass die Folge $\folge{b_n}$ gegen
+$b$ konvergiert, ausnutzen.  Diese Voraussetzung lautet ausgeschrieben
+\begin{equation}
+  \label{eq:ab2}
+  \forall \varepsilon' \in \mathbb{R}_+: \exists K' \in \mathbb{R}:\forall n \in \mathbb{N}: 
+   n > K \rightarrow \bigl| b_n - b \bigr| < \varepsilon' 
+\end{equation}
+Wir zeigen zunächst eine Abschätzung für die Beträge $|b_n|$, die wir später brauchen.
+Hier hilft uns die Voraussetzung, dass $b \not= 0$ ist.  Setzen wir in Ungleichung 
+(\ref{eq:ab2}) für $\varepsilon'$ den Wert $\bruch{1}{2} \cdot |b|$ ein, so erhalten wir eine Zahl
+$K_1$, so dass für alle natürlichen Zahlen $n > K_1$
+\[ \bigl| b_n - b \bigr| < \bruch{1}{2}\cdot |b| \]
+gilt.  Damit folgt:
+\[\begin{array}{lrcl}
+                & \bigl| b \bigr| & =    & \bigl| b - b_n + b_n \bigr|                   \\[0.2cm]
+    \Rightarrow & \bigl| b \bigr| & \leq & \bigl| b - b_n \bigr| + \bigl| b_n \bigr|     \\[0.2cm]
+    \Rightarrow & \bigl| b \bigr| & <    & \bruch{1}{2} \cdot \bigl|b\bigr| + \bigl| b_n \bigr| \\[0.2cm]
+    \Rightarrow & \bruch{1}{2} \cdot \bigl|b\bigr| & < & \bigl| b_n \bigr| \\[0.3cm]
+    \Rightarrow & \bruch{2}{\bigl|b\bigr|} & > & \bruch{1}{\bigl| b_n \bigr|}
+  \end{array}
+\]
+Damit wissen wir also, dass für alle $n>K_1$ die Ungleichung
+\[ \bruch{1}{2}\cdot |b| < |b_n| \]
+gilt.  Um nun für ein gegebenes $\varepsilon > 0$ die Ungleichung (\ref{eq:ab1}) zu zeigen,  setzen wir
+in der Voraussetzung (\ref{eq:ab2})   $\varepsilon' = \bruch{1}{2}\cdot |b|^2 \cdot  \varepsilon$ 
+und erhalten ein $K_2$, so dass für alle $n>K_2$ die Ungleichung
+\begin{equation}
+  \label{eq:ab3}
+  \bigl|b - b_n\bigr| < \bruch{1}{2} \cdot  |b|^2 \cdot  \varepsilon
+\end{equation}
+gilt.  Setzen wir $K := \max(K_1,K_2)$, so erhalten wir für alle $n>k$  die folgende
+Ungleichungs-Kette: 
+\[
+\begin{array}{lcll}
+          \left| \bruch{1}{b_n} - \bruch{1}{b} \right| 
+ & =    & \left| \bruch{b-b_n}{b\cdot b_n} \right| \\[0.5cm]
+ & =    & \bruch{1}{|b|\cdot |b_n|} \cdot  \left| b-b_n\right| \\[0.5cm]
+ & \leq & \bruch{2}{|b|\cdot |b|} \cdot  \left| b-b_n\right| 
+        & \mbox{wegen $\bruch{2}{\bigl|b\bigr|} > \bruch{1}{\bigl| b_n \bigr|}$} 
+          \\[0.5cm]
+ & <    & \bruch{2}{|b|\cdot |b|} \cdot  \bruch{1}{2}\cdot |b|^2 \cdot  \varepsilon 
+        & \mbox{wegen (\ref{eq:ab3})} \\[0.5cm]
+ & =    & \varepsilon \\[0.3cm]
+\end{array}
+\]
+Damit haben wir für $n > K$ die Ungleichung
+$\left| \bruch{1}{b_n} - \bruch{1}{b} \right| < \varepsilon$
+hergeleitet und der Beweis ist abgeschlossen. \hspace*{\fill} $\Box$
+\vspace*{0.3cm}
+
+\noindent
+Die bisher bewiesenen Sätzen können wir benutzen um die Grenzwerte 
+von Folgen zu berechnen.  Wir geben ein Beispiel:
+\[
+\begin{array}{lcl}  
+       \lim\limits_{n\rightarrow\infty} \bruch{n}{n+1}                                 
+& = &  \lim\limits_{n\rightarrow\infty} \bruch{1}{1+\bruch{1}{n}}                                 \\[0.8cm]
+& = &  \bruch{\lim\limits_{n\rightarrow\infty} 1}{\lim\limits_{n\rightarrow\infty}1 +\bruch{1}{n}} \\[0.8cm]
+& = &  \bruch{1}{\lim\limits_{n\rightarrow\infty}1 + \lim\limits_{n\rightarrow\infty} \bruch{1}{n}} \\[0.8cm]
+& = &  \bruch{1}{1 + 0}                                                                             \\[0.3cm]
+& = &  1
+\end{array}
+\]
+Hier ist der Ausdruck $\bruch{1}{n}$ für $n=0$ zwar undefiniert, aber bei der Betrachtung
+des Grenzwertes für $n \rightarrow \infty$ spielen die Anfangswerte der Folge
+offenbar keine Rolle.
+
+
+\begin{Satz}
+Sind $\folge{a_n}$  
+und $\folge{b_n}$ zwei konvergente Folgen, so dass
+\[ \forall n \in \mathbb{N}: a_n \leq b_n \]
+gilt, dann gilt auch
+\[ \lim\limits_{n\rightarrow\infty} a_n \leq \lim\limits_{n\rightarrow\infty} b_n. \]
+\end{Satz}
+
+\exercise
+Beweisen Sie den letzten Satz.
+
+
+\begin{Definition}[Dedekindscher Schnitt] \lb
+Ein Paar $\pair(M_1,M_2)$ heißt \emph{Dedekindscher Schnitt} \textrm{(Richard Dedekind, 1831-1916)}
+falls folgendes gilt:
+\begin{enumerate}
+\item $M_1 \subseteq \mathbb{R}$, \quad $M_2 \subseteq \mathbb{R}$.
+\item $M_1 \not= \emptyset$, \quad $M_2 \not= \emptyset$.
+\item $\forall x_1 \in M_1: \forall x_2 \in M_2: x_1 < x_2$.
+\item $M_1 \cup M_2 = \mathbb{R}$.
+\end{enumerate}
+\end{Definition}
+
+\example Definieren wir
+\\[0.2cm]
+\hspace*{1.3cm} 
+$M_1 := \{ x \in \mathbb{R} \mid x \leq 0 \vee x^2 \leq 2 \}$ \quad und \quad
+$M_2 := \{ x \in \mathbb{R} \mid x > 0 \wedge x^2 > 2 \}$,
+\\[0.2cm]
+so enthält $M_1$ alle die Zahlen, die kleiner oder gleich $\sqrt{2}$ sind, während
+$M_2$ alle Zahle enthält, die größer als $\sqrt{2}$ sind. Das Paar $\pair(M_1,M_2)$ ist dann ein
+Dedekindscher Schnitt.
+
+\begin{Axiom}[Vollständigkeit der reellen Zahlen]
+Ist $\pair(M_1,M_2)$ ein Dedekind'scher Schnitt, so gibt es eine \emph{Trennungs-Zahl} $s\in\mathbb{R}$, 
+so dass gilt:
+\[ \forall x_1 \in M_1: x_1 \leq s \quad \mbox{\emph{und}} \quad
+   \forall x_2 \in M_2: s \leq x_2.
+\]
+\end{Axiom}
+Das Axiom der Vollständigkeit kann anschaulich als die Aussage interpretiert werden, dass
+die Menge der reellen Zahlen keine Löcher hat.  Es geht auf Richard Dedekind
+\cite{dedekind:1901} zurück.
+
+\begin{Definition}[monoton]
+Eine Folge $\folge{a_n}$ ist \emph{monoton steigend} falls 
+\[ \forall n \in \mathbb{N}: a_n \leq a_{n+1} \]
+gilt.  Analog heißt eine Folge \emph{monoton fallend} falls
+\[ \forall n \in \mathbb{N}: a_n \geq a_{n+1}. \]
+\end{Definition}
+Ein Beispiel für eine monoton fallende Folge ist die Folge $\Folge{\bruch{1}{n}}$, denn es
+gilt
+\[
+\begin{array}{crcll}
+            &  n+1          & \geq & n             & \mid \cdot  \bruch{1}{n} \\[0.3cm]
+\Rightarrow & \bruch{n+1}{n} & \geq & 1             & \mid \cdot  \bruch{1}{n+1}\\[0.3cm]
+\Rightarrow & \bruch{1}{n}   & \geq & \bruch{1}{n+1} \\[0.3cm]
+\end{array}
+\]
+\begin{Satz} \label{satz:monoton}
+Ist die Folge $\folge{a_n}$ monoton fallend und beschränkt, so ist die Folge auch konvergent.
+\end{Satz}
+\textbf{Beweis}:  Wir definieren einen Dedekind'schen Schnitt $\pair(M_1,M_2)$ wie folgt:
+\begin{enumerate}
+\item $M_1$ definieren wir als die Menge aller unteren Schranken der Folge $\folge{a_n}$
+      \\[0.2cm]
+      \hspace*{1.3cm}      
+      $M_1 := \bigl\{ x \in \mathbb{R} \mid \forall n \in \mathbb{N}: x \leq a_n \bigr\}$.
+      \\[0.2cm]
+      Weil wir vorausgesetzt haben, dass die Folge $\folge{a_n}$ beschränkt ist,
+      ist die Menge $M_1$ sicher nicht leer.
+\item $M_2$ definieren wir als das Komplement der Menge $M_1$ in $\mathbb{R}$:
+      \[ \begin{array}{lcl}
+          M_2 & = & \mathbb{R} \backslash M_1 \\[0.2cm]
+              & = & \mathbb{R} \backslash \bigl\{ x \in \mathbb{R} \mid \forall n \in \mathbb{N}: x \leq a_n \bigr\} \\[0.2cm]
+              & = & \bigl\{ x \in \mathbb{R} \mid \neg \forall n \in \mathbb{N}: x \leq a_n \bigr\} \\[0.2cm]
+              & = & \bigl\{ x \in \mathbb{R} \mid \exists n \in \mathbb{N}: \neg x \leq a_n \bigr\} \\[0.2cm]
+              & = & \bigl\{ x \in \mathbb{R} \mid \exists n \in \mathbb{N}: a_n < x \bigr\}     
+      \end{array}
+      \]
+      Aus dieser Definition folgt unmittelbar, dass $M_1 \cup M_2 = \mathbb{R}$ ist.
+      Wir wissen schon, dass $M_1 \not= \emptyset$, aber es gilt auch $M_2 \not= \emptyset$,
+      denn offenbar liegt die Zahl $a_0 + 1$ in der Menge $M_2$.
+\end{enumerate}
+Um zu zeigen, dass das Paar $\pair(M_1,M_2)$ ein Dedekind'scher Schnitt ist, müssen wir
+ noch 
+\[ \forall x_1 \in M_1: \forall x_2 \in M_2: x_1 < x_2 \]
+zeigen.  Sei also  $x_1\in M_1$ und $x_2\in M_2$.  Nach Definition von $M_2$ gibt es dann
+eine natürliche Zahl $n$, für die $a_n < x_2$ ist.  Nach Definition von $M_1$ gilt für
+alle natürlichen Zahlen $m$ die Ungleichung $x_1 \leq a_m$.  Insbesondere gilt die
+Ungleichung dann auch für die natürliche Zahl $n$, wir haben also
+\[ x_1 \leq a_n < x_2 \quad \mbox{und damit}\quad x_1 < x_2. \]
+Folglich ist $\pair(M_1,M_2)$ ein Dedekind'scher Schnitt und es gibt eine Trennungs-Zahl 
+$s$ mit der Eigenschaft, dass
+\[ \forall x_1 \in M_1: x_1 \leq s \quad \mbox{und} \quad \forall x_2 \in M_2: s \leq x_2 \]
+gilt.  Wir zeigen, dass diese Zahl $s$ der gesuchte Grenzwert der Folge $\folge{a_n}$ ist, wir
+zeigen also, dass
+\[ \lim\limits_{n\rightarrow\infty} a_n = s \]
+gilt.  Dazu beweisen wir zunächst, dass $s \in M_1$ ist.  Wir führen diesen Nachweis
+indirekt und nehmen an, dass $s \in M_2$ ist.  Dann gibt es ein $n\in\mathbb{N}$, so dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$a_n < s$ 
+\\[0.2cm]
+ist.   Der arithmetische Mittelwert von $a_n$ und $s$ liegt zwischen $a_n$
+und $s$, es gilt also
+\[ a_n < \bruch{1}{2} \cdot (a_n + s) < s. \]
+Nach Definition der Trennungs-Zahl $s$ folgt aus $\bruch{1}{2} \cdot (a_n + s) < s$, dass
+\[ \bruch{1}{2} \cdot (a_n + s) \in M_1 \]
+ist.  Nach Definition von $M_1$ gilt dann 
+\[
+\begin{array}{crcl}
+            & \bruch{1}{2} \cdot (a_n + s) & \leq & a_n          \\[0.2cm]
+\Rightarrow & a_n + s                      & \leq & 2 \cdot  a_n \\[0.2cm]
+\Rightarrow &       s                      & \leq & a_n.        
+\end{array}
+\]
+Das steht im Widerspruch zu $a_n < s$ und widerlegt die Annahme $s\in M_2$.
+Folglich gilt $s \in M_1$ und nach Definition von $M_1$ haben wir 
+damit für alle $n \in \mathbb{N}$
+\[ s \leq a_n. \]
+Sei nun ein $\varepsilon > 0$ vorgegeben.  Wir betrachten die Zahl $s + \varepsilon$.
+Wegen $s < s + \varepsilon$ muss diese Zahl  ein Element der Menge $M_2$ sein.
+Nach Definition von $M_2$ gibt es ein $n_0 \in \mathbb{N}$, so dass
+\[ a_{n_0} < s + \varepsilon \]
+gilt.  Aufgrund der Monotonie folgt dann aber für alle $n \geq n_0$
+\[ a_n \leq a_{n_0} < s + \varepsilon. \]
+Insgesamt haben wir
+\[ s \leq a_n \leq a_{n_0} < s + \varepsilon \]
+und daraus folgt
+\[ | a_n - s |  < \varepsilon \]
+für alle $n > n_0$ und damit ist bewiesen, dass $\lim\limits_{n\rightarrow\infty} a_n = s$
+gilt.  \hspace*{\fill} $\Box$
+
+\exercise
+Die Folge $\folge{a_n}$ sei monoton steigend und beschränkt.  Zeigen Sie, dass der Grenzwert
+\\[-0.2cm]
+\hspace*{1.3cm}
+$\lim\limits_{n\rightarrow\infty} a_n$
+\\[0.2cm]
+existiert.
+
+
+\exercise 
+Es seien $a,b \in \mathbb{R}$ und es gelte $a < b$.  Zeigen Sie, dass dann auch
+\\[0.2cm]
+\hspace*{1.3cm} 
+$a < \bruch{1}{2} \cdot (a + b)$ \quad und \quad 
+$\bruch{1}{2} \cdot (a + b) < b$ 
+\\[0.2cm]
+gilt.
+
+\begin{Definition}[Infimum, Supremum]
+Eine Teilmenge $M$ der reellen Zahlen ist nach \emph{oben} (bzw.~\emph{nach unten}) \emph{beschränkt}, falls es eine
+Schranke $o\in\mathbb{R}$ (bzw.~$u\in\mathbb{R}$) gibt, so dass gilt:
+\[ \forall x \in M: x \leq o \quad (\mbox{bzw.}\;\; \forall x \in M : x \geq u). \]
+Eine Zahl $s$ ist das \emph{Supremum} einer Menge $M$, wenn $s$ die kleinste 
+obere Schranke von $M$ ist, es muss also gelten:
+\[ \forall x \in M: x \leq s \quad \mbox{und} \quad
+   \forall t \in \mathbb{R}: \Bigl(\bigl(\forall x \in M: x \leq t\bigr)\rightarrow s \leq t \Bigr)
+\]
+In diesem Fall schreiben wir
+\[ s = \sup( M ). \]
+Analog ist eine Zahl $s$ das \emph{Infimum} einer Menge $M$, wenn $s$ die größte
+untere Schranke von $M$ ist, es muss also gelten:
+\[ \forall x \in M: s \leq x \quad \mbox{und} \quad
+   \forall t \in \mathbb{R}: \Bigl(\bigl(\forall x \in M: t \leq x\bigr)\rightarrow t \leq s \Bigr)
+\]
+In diesem Fall schreiben wir
+\[ s = \inf( M ). \]
+\end{Definition}
+\vspace*{0.3cm}
+
+\exercise
+Zeigen Sie unter Verwendung des Vollständigkeits-Axioms: Jede nichtleere nach unten beschränkte Menge
+$M$ besitzt ein Infimum.
+\vspace*{0.3cm}
+
+\noindent
+\textbf{Lösung}:
+Wir konstruieren das Infimum als Trennungs-Zahl eines Dedekind'schen Schnitts.
+Wir definieren den Dedekind'schen Schnitt $\pair(M_1,M_2)$ wie folgt:
+\begin{enumerate}
+\item $M_1 := \bigl\{ u \in \mathbb{R} \mid \forall x \in M : u \leq x \bigr\}$.
+
+      $M_1$ ist also die Menge der unteren Schranken von $M$.  Da wir vorausgesetzt
+      hatten, dass $M$ nach unten beschränkt ist, ist klar dass $M_1 \not= \emptyset$
+      gilt.
+\item Damit $\pair(M_1,M_2)$ ein Dedekind'scher Schnitt wird, muss $M_2$ das Komplement
+      von $M_1$ in der Menge $\mathbb{R}$ sein:
+      \[
+      \begin{array}{lcl}
+      M_2 & := & \mathbb{R} \backslash M_1 \\[0.2cm]
+          &  = & \mathbb{R} \backslash \bigl\{ u \in \mathbb{R} \mid \forall x \in M : u \leq x \bigr\} \\[0.2cm]
+          &  = & \mathbb{R} \backslash \bigl\{ v \in \mathbb{R} \mid \forall x \in M : v \leq x \bigr\} \\[0.2cm]
+          &  = & \bigl\{ v \in \mathbb{R} \mid \neg\; \bigl(\forall x \in M : v \leq x \bigr)\bigr\} \\[0.2cm]
+          &  = & \bigl\{ v \in \mathbb{R} \mid \exists x \in M : \neg (v \leq x) \bigr\} \\[0.2cm]
+          &  = & \bigl\{ v \in \mathbb{R} \mid \exists x \in M : x < v \bigr\}
+      \end{array}
+      \]
+      $M_2$ ist also die Menge der Zahlen, die keine unteren Schranken von $M$ sind.
+      Da die Menge $M$ nicht leer ist, gibt es ein $x \in M$.  Wegen $x < x+1$ ist $x+1$
+      keine untere Schranke von $M$, also gilt $x+1 \in M_2$ und damit gilt $M_2 \not=\emptyset$.
+\end{enumerate}
+Um nachzuweisen, dass $\pair(M_1,M_2)$ ein Dedekind'scher Schnitt ist, müssen wir nur noch
+zeigen, dass für alle $u\in M_1$ und alle $v\in M_2$ die Ungleichung $u < v$ gilt.
+Seien also $u\in M_1$ und $v\in M_2$ gegeben.  Aus der Definition von $M_2$ folgt dann,
+dass es eine Zahl $x \in M$ gibt, so dass
+\[ x < v \]
+gilt.  Da $M_1$ die Menge der unteren Schranken von $M$ ist, folgt aus $x\in M$ sofort
+\[ u \leq x. \]
+Aus den letzten beiden Ungleichungen folgt nun
+\[ u \leq x < v \quad \mbox{also} \quad u < v. \]
+Also ist $\pair(M_1,M_2)$ ein Dedekind'scher Schnitt und nach dem Vollständigkeits-Axioms 
+gibt es eine Trennungs-Zahl $s$.  
+Wir behaupten, dass $s$ das Infimum der Menge $M$ ist.  Dazu  müssen wir
+zwei Dinge zeigen:
+\begin{enumerate}
+\item $s$ ist eine untere Schranke von $M$.
+
+      Wir nehmen an, dass $s \in M_2$ ist.  Nach Definition von $M_2$ gibt es dann 
+      eine Zahl $z\in M$, so dass \\
+      \hspace*{1.3cm} $z < s$
+      \\[0.2cm]
+      gilt.  Wir betrachten den arithmetischen Mittelwert von $s$ und $z$, der natürlich
+      zwischen diesen beiden Zahlen liegen muss: \\[0.2cm]
+      \hspace*{1.3cm} $z < \bruch{1}{2}\cdot (z + s) < s$.
+      \\[0.2cm]
+      Da $s$ die Trennungs-Zahl des Dedekind'schen Schnitts $\pair(M_1,M_2)$ ist,
+      folgt aus $\bruch{1}{2}\cdot (z + s) < s$ sofort $\bruch{1}{2}\cdot (z + s) \in M_1$.
+      Da $M_1$ aber die Menge der unteren Schranken der Menge $M$ ist, und $z\in M$ ist,
+      folgt
+      \\[0.2cm]
+      \hspace*{1.3cm} $\bruch{1}{2}\cdot (z + s) \leq z$.
+      \\[0.2cm]
+      Das steht im Widerspruch zu der Ungleichung $z < \bruch{1}{2}\cdot (z + s)$
+      und zeigt, dass die Annahme $s \in M_2$ falsch ist.  Also muss $s\in M_1$ sein.
+      Da $M_1$ die Menge der unteren Schranken der Menge $M$ ist, ist auch $s$ eine 
+      untere Schranke der Menge $M$:
+      \\[0.2cm]
+      \hspace*{1.3cm} $\forall x \in M: s \leq x$. 
+\item $s$ ist die größte untere Schranke von $M$.
+
+      Für die Trennungs-Zahl $s$ des Dedekind'schen Schnitts $\pair(M_1,M_2)$ gilt:
+      \\[0.2cm]
+      \hspace*{1.3cm} $\forall u \in M_1: u \leq s$.      
+      \\[0.2cm]
+      Setzen wir hier die Definition von $M_1$ ein, so erhalten wir:
+      \[
+      \begin{array}{cl}
+                  & \forall u \in M_1: u \leq s \\[0.2cm]
+      \Rightarrow & \forall u \in \mathbb{R}: u \in M_1 \rightarrow u \leq s \\[0.2cm]
+      \Rightarrow & \forall u \in \mathbb{R}: u \in \bigl\{ u \in \mathbb{R} \mid \forall
+      x \in M : u \leq x \bigr\} \rightarrow u \leq s \\[0.2cm]
+      \Rightarrow & \forall u \in \mathbb{R}: \bigl(\forall x \in M : u \leq x \bigr) \rightarrow u \leq s \\[0.2cm]
+      \end{array}
+      \]
+      Diese Formel drückt aus, dass alle unteren Schranken der Menge $M$
+      unterhalb von $s$ liegen.  Da wir oben schon gezeigt haben, dass $s$
+      eine untere Schranke von $M$ ist, folgt also, dass $s$ die größte untere Schranke
+      ist.  \hspace*{\fill} $\Box$
+\end{enumerate}
+\vspace*{0.3cm}
+
+\noindent
+Die Begriffe \emph{Supremum} und \emph{Infimum} sind Verallgemeinerungen der Begriffe
+Minimum und Maximum.   Betrachten wie die Menge
+\[ M = \Bigl\{ \bruch{1}{n} \Bigm| n \in \mathbb{N} \wedge n > 0 \Bigr\}. \]
+Diese Menge hat kein Minimum, aber $0$ ist die größte untere Schranke dieser Menge, es
+gilt also
+\[ 0 = \inf \Bigl\{ \bruch{1}{n} \Bigm| n \in \mathbb{N} \wedge n > 0 \Bigr\}. \]
+
+
+\begin{Definition}[Cauchy-Folge] \lb
+Eine Folge $\folge{a_n}$ heißt \emph{Cauchy-Folge} \textrm{(Augustin-Louis Cauchy, 1789-1857)}, falls gilt:
+\[ \forall \varepsilon \in \mathbb{R}_+: \exists K \in \mathbb{R}: \forall m,n \in \mathbb{N}: 
+   m \geq K \wedge n \geq K \rightarrow \bigl| a_m - a_n \bigr| < \varepsilon.
+\]
+\end{Definition}
+
+In einer Cauchy-Folge $\folge{a_n}$ liegen also die einzelnen Folgenglieder $a_n$ mit wachsendem $n$
+immer dichter zusammen.  Wir werden sehen, dass eine Folge genau dann konvergent ist, wenn die Folge
+eine Cauchy-Folge ist.
+
+
+\begin{Satz}
+Jede konvergente Folge $\folge{a_n}$ ist eine Cauchy-Folge.  
+\end{Satz}
+
+
+\noindent
+\textbf{Beweis}:  Es sei $a := \lim\limits_{n\rightarrow\infty} a_n$. 
+Sei $\varepsilon > 0$ gegeben.  Aufgrund der Konvergenz der Folge $\folge{a_n}$ gibt es
+dann ein $K$, so dass 
+\[ \forall n \in \mathbb{N}: n \geq K \rightarrow \bigl|a_n-a\bigr| < \bruch{\varepsilon}{2} \]
+gilt.  Damit gilt für alle $m,n\in\mathbb{N}$ mit $m \geq K$ und $n \geq K$ die folgende Abschätzung:
+\[
+   \begin{array}{lcl}
+     |a_m - a_n| &   =  & \bigl|(a_m - a) + (a - a_n)\bigr| \\[0.2cm]
+                 & \leq & \bigl|a_m - a\bigr| \;+\; \bigr|a - a_n\bigr| \\[0.2cm]
+                 &   <  & \bruch{\varepsilon}{2} + \bruch{\varepsilon}{2} \\
+                 &   =  & \varepsilon     
+   \end{array}
+\]
+Damit ist gezeigt, dass $\folge{a_n}$ eine Cauchy-Folge ist. \hspace*{\fill} $\Box$
+
+\begin{Satz}
+  Jede Cauchy-Folge ist beschränkt.
+\end{Satz}
+
+\noindent
+\textbf{Beweis}:  Wenn $\folge{a_n}$ eine Cauchy-Folge ist, dann finden wir eine Zahl
+$K$, so dass für alle natürlichen Zahlen $m,n$, die größer-gleich $K$ sind, die Ungleichung
+\[ \bigl| a_n - a_m | < 1 \]
+gilt.  Sei nun $h$ eine natürliche Zahl, die größer als $K$ ist.  Wir definieren
+\[ S := \max\bigl\{ |a_0|, |a_1|, |a_2|, \cdots,  |a_h|, 1+ |a_h|\bigr\} \]
+und zeigen, dass $S$ eine  Schranke der Cauchy-Folge $\folge{a_n}$ ist, wir zeigen also
+\[ \forall n \in \mathbb{N} : |a_n| \leq S. \]
+Falls $n \leq h$ ist, ist diese Ungleichung evident.  Für alle $n>h$ haben wir die folgende
+Abschätzung: 
+\[ 
+\begin{array}{lcl}
+  \bigl| a_n \bigr| & =    & \bigl| a_n - a_h + a_h \bigr| \\[0.2cm]
+                    & \leq & \bigl| a_n - a_h \bigr| + \bigl| a_h \bigr| \\[0.2cm]
+                    & <    & 1 + \bigl| a_h \bigr| \\[0.2cm]
+                    & \leq & S. \\[0.2cm]
+\end{array}
+\]
+Damit ist der Beweis abgeschlossen. \hspace*{\fill} $\Box$ 
+
+\begin{Theorem}
+Jede Cauchy-Folge ist konvergent.  
+\end{Theorem}
+\textbf{Beweis}: Der Beweis verläuft ähnlich wie der Nachweis, dass eine monotone und
+beschränkte Folge konvergent ist.  Wir definieren zunächst ein Paar von Mengen
+$\pair(M_1,M_2)$ wie folgt:
+\begin{enumerate}
+\item $M_1 := \bigl\{ x \in \mathbb{R} \mid \exists K \in \mathbb{N}: \forall n \in \mathbb{N}: n \geq K \rightarrow x \leq a_n \bigr\}$.
+  
+      Anschaulich ist $M_1$ die Menge aller unteren Grenzen für die Mehrheit der
+      Folgenglieder:  Ist $x \in M_1$, so müssen von einem bestimmten Index $K$ an
+      alle weiteren Folgenglieder $a_n$ durch $x$ nach unten abgeschätzt werden.
+      
+      Die Beschränktheit der Cauchy-Folge impliziert, dass die Menge $M_1$ nicht leer ist,
+      denn wenn für alle $n \in \mathbb{N}$ die Ungleichung $|a_n| \leq S$ gilt,
+      dann gilt insbesondere $-S \leq a_n$ und daraus folgt $-S \in M_1$.
+\item Da das Paar $\pair(M_1,M_2)$ eine Dedekind'scher Schnitt werden soll, definieren wir
+      $M_2$ als das Komplement von $M_1$ in $\mathbb{R}$:
+      \\[0.2cm]
+      \hspace*{1.3cm}      
+      $ \begin{array}{lcl}
+         M_2 & := & \mathbb{R} \backslash M_1 \\[0.2cm]
+             & =  & \mathbb{R} \backslash \bigl\{ x \in \mathbb{R} \mid \exists K \in \mathbb{N}: \forall n \in \mathbb{N}: n \geq K \rightarrow x \leq a_n \bigr\}\\[0.2cm]
+             & =  & \bigl\{ x \in \mathbb{R} \mid \neg\exists K \in \mathbb{N}: \forall n \in \mathbb{N}: n \geq K \rightarrow x \leq a_n \bigr\}\\[0.2cm]
+             & =  & \bigl\{ x \in \mathbb{R} \mid \forall K \in \mathbb{N}: \exists n \in \mathbb{N}: n \geq K \wedge a_n < x \bigr\}\\[0.2cm]
+         \end{array}
+      $      
+      \\[0.2cm]
+      Die Menge $M_2$ enthält also alle die reellen Zahlen $x$, für die wir 
+      Folgenglieder $a_n$ mit beliebig großem Index $n$ finden können, die kleiner als $x$
+      sind.
+      
+      Auch $M_2$ ist nicht leer.  Dies folgt wieder aus der Beschränktheit von
+      $\folge{a_n}$, denn wenn für alle $n \in \mathbb{N}$ die Ungleichung
+      $|a_n| \leq S$ erfüllt ist, dann gilt offenbar $S+1 \in M_2$.
+\end{enumerate}
+Als nächstes zeigen wir, dass 
+\[ \forall x_1 \in M_1: \forall x_2 \in M_2 : x_1 < x_2 \]
+gilt.  Wegen $x_1\in M_1$ gibt es nach Definition von $M_1$ eine natürliche Zahl $K$,
+so dass alle Folgenglieder $a_n$, deren Index $n\geq K$ ist, die Ungleichung
+\begin{equation}
+  \label{eq:ineq1}
+  x_1 \leq a_n   
+\end{equation}
+erfüllen.  Wegen $x_2\in M_2$ gibt es nach Definition von $M_2$ dann eine natürliche Zahl
+$n_0 \geq K$, so dass
+\begin{equation}
+  \label{eq:ineq2}
+  a_{n_0} < x_2   
+\end{equation}
+gilt.  Für dieses $n_0$ gilt natürlich auch die Ungleichung (\ref{eq:ineq1}), so dass wir
+insgesamt 
+\[ x_1 \leq a_{n_0} < x_2 \]
+und damit 
+\\[0.2cm]
+\hspace*{1.3cm}
+$x_1 < x_2$
+\\[0.2cm]
+haben.  Damit ist das Paar $\pair(M_1,M_2)$ ein
+Dedekind'scher Schnitt.  Aus dem Vollständigkeits-Axioms folgt nun, dass eine
+Trennungs-Zahl $s$ mit der Eigenschaft
+\[ \forall x_1 \in M_1: x_1 \leq s \quad \mbox{und} \quad \forall x_2 \in M_2: s \leq x_2 \]
+existiert.  Wir zeigen, dass
+\[ \lim\limits_{n\rightarrow\infty} a_n = s \]
+gilt.  Sei $\varepsilon > 0$ gegeben.  Wir suchen eine Zahl $K$, so dass für alle 
+natürlichen Zahlen $n \geq K$ die Ungleichung
+\[ \bigl|a_n - s \bigr| < \varepsilon \]
+gilt.  
+Wir betrachten zunächst die Zahl $s-\bruch{\varepsilon}{2}$.  Wegen
+$s-\bruch{\varepsilon}{2} < s$ folgt $s-\bruch{\varepsilon}{2} \in M_1$.  Damit existiert
+dann eine Zahl $K_1$, so dass für alle $n\in\mathbb{N}$ mit $n\geq K_1$ die Ungleichung
+\begin{equation}
+  \label{eq:ineq3}
+  s-\bruch{\varepsilon}{2} \leq a_n
+\end{equation}
+gilt.  
+Da die Folge $\folge{a_n}$ eine Cauchy-Folge ist, gibt es eine Zahl $K_2$, so dass
+für alle $m,n\in\mathbb{N}$ mit $m>K_2$ und $n>K_2$ die Ungleichung
+\begin{equation}
+  \label{eq:ineq4}
+  \bigl| a_n - a_m \bigr| < \bruch{\varepsilon}{2}
+\end{equation}
+gilt.  Wir setzen nun $K = \max(K_1,K_2)$ und betrachten die Zahl
+$s+\bruch{\varepsilon}{2}$, die wegen 
+$s < s+\bruch{\varepsilon}{2}$ sicher in $M_2$ liegt.  Nach Definition von $M_2$ finden wir
+dann eine natürliche Zahl $m$, die größer als $K$ ist, so dass
+\begin{equation}
+  \label{eq:ineq5}
+  a_m < s + \bruch{\varepsilon}{2} 
+\end{equation}
+gilt.  Für diese Zahl $m$ gilt sicher auch die Ungleichung (\ref{eq:ineq3}), so dass wir
+insgesamt
+\[ s - \bruch{\varepsilon}{2} \leq a_m < s + \bruch{\varepsilon}{2} \]
+haben.  Daraus folgt sofort
+\begin{equation}
+  \label{eq:ineq6}
+ \bigl| a_m - s \bigr| \leq \bruch{\varepsilon}{2}.  
+\end{equation}
+Aufgrund der Ungleichung (\ref{eq:ineq4}) haben wir jetzt für alle natürlichen Zahlen
+$n>K$:
+\[
+\begin{array}{lcl}
+  \bigl| a_n - s \bigr| &   =  & \bigl| (a_n - a_m) + (a_m - s) \bigr| \\[0.2cm] 
+                        & \leq & \bigl| (a_n - a_m) \bigr| + \bigl| (a_m - s) \bigr| \\[0.2cm] 
+                        &  <   & \bruch{\varepsilon}{2} + \bruch{\varepsilon}{2}  \\[0.2cm] 
+                        &  =   & \varepsilon  
+\end{array}
+\]
+Damit ist der Beweis abgeschlossen. \hspace*{\fill} $\Box$ 
+\pagebreak
+
+\section{Berechnung der Quadrat-Wurzel}
+Wir präsentieren nun eine Anwendung der bisher entwickelte Theorie und zeigen, wie die
+Quadrat-Wurzel einer reellen Zahl berechnet werden kann.  Es sei eine reelle Zahl $a>0$
+gegeben.  Gesucht ist eine reelle Zahl $b>0$, so dass $b^2 = a$ ist. Unsere Idee ist es,
+die Zahl $b$ iterativ als Lösung einer Fixpunkt-Gleichung zu berechnen.  
+Wir definieren eine Folge $b_n$ induktiv wie folgt:
+\begin{enumerate}
+\item[I.A.:] $n=0$.  
+      \\[0.2cm]
+      \hspace*{1.3cm}      
+      $b_0 := \left\{ \begin{array}{ll}
+                      1 & \mbox{falls}\; a \leq 1, \\
+                      a & \mbox{sonst}.
+               \end{array}\right.
+      $
+\item[I.S.:] $n \mapsto n+1$.
+      \[ b_{n+1} := \bruch{1}{2}\cdot  \left(b_n + \bruch{a}{b_n}\right). \]
+\end{enumerate}
+Um diese Definition zu verstehen, nehmen wir zunächst an, dass der Grenzwert dieser Folge
+existiert und den Wert $b \not= 0$ hat.  Dann gilt
+\[ \begin{array}{lcl}
+   b & = &  \lim\limits_{n\rightarrow\infty} b_n     \\[0.3cm]
+     & = &\lim\limits_{n\rightarrow\infty} b_{n+1}   \\[0.3cm]
+     & = &\lim\limits_{n\rightarrow\infty} \bruch{1}{2}\cdot  \left(b_n + \bruch{a}{b_n}\right) \\[0.3cm]
+     & = & \bruch{1}{2}\cdot  \Bigl(\lim\limits_{n\rightarrow\infty} b_n + \bruch{a}{\lim\limits_{n\rightarrow\infty}b_n}\Bigr) \\[0.3cm]
+     & = & \bruch{1}{2}\cdot  \left(b + \bruch{a}{b}\right) \\[0.3cm]
+\end{array}
+\]
+Damit ist $b$ also eine Lösung der Gleichung 
+$b = \bruch{1}{2}\cdot  \left(b + \bruch{a}{b}\right)$.  
+Wir formen diese Gleichung um:
+\[
+\begin{array}{lcll}
+                & b     = \bruch{1}{2}\cdot  \left(b + \bruch{a}{b}\right) & \mid \cdot  2 \\[0.4cm]
+\Leftrightarrow & 2 \cdot  b = b + \bruch{a}{b}                           & \mid - b  \\[0.3cm]
+\Leftrightarrow & b = \bruch{a}{b}                                   & \mid \cdot  b  \\[0.3cm]
+\Leftrightarrow & b^2 = a                                            & \mid \sqrt{\;\;}  \\[0.2cm]
+\Leftrightarrow & b  = \sqrt{a}                                      & 
+\end{array}
+\]
+Falls die oben definierte Folge $\folge{b_n}$ einen Grenzwert hat, dann ist dieser
+Grenzwert also die Wurzel der Zahl $a$.  Wir werden die Konvergenz der Folge nachweisen
+indem wir zeigen, dass die Folge $\folge{b}$ einerseits monoton fallend und andererseits 
+nach unten beschränkt ist.  Dazu betrachten wir zunächst die Differenz $b_{n+1}^2 - a$:
+\[
+\begin{array}{lcl}
+  b_{n+1}^2 - a & =    & \bruch{1}{4} \cdot  \left(b_n + \bruch{a}{b_n}\right)^2 - a \\[0.4cm]
+                & =    & \bruch{1}{4} \cdot  \left(b_n^2 + 2\cdot a + \bruch{a^2}{b_n^2}\right) - a \\[0.4cm]
+                & =    & \bruch{1}{4} \cdot  \left(b_n^2 - 2\cdot a + \bruch{a^2}{b_n^2}\right) \\[0.4cm]
+                & =    & \bruch{1}{4} \cdot  \left(b_n - \bruch{a}{b_n}\right)^2 \\[0.4cm]
+                & \geq & 0, 
+\end{array}
+\]
+denn das Quadrat einer reellen Zahl ist immer größer-gleich Null.
+Addieren wir auf beiden Seiten der Ungleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$b_{n+1}^2 - a \geq 0$
+\\[0.2cm]
+die Zahl  $a$, so haben wir
+\\[0.2cm]
+\hspace*{1.3cm}
+ $b_{n+1}^2 \geq a$ \quad und damit auch \quad $b_{n+1} \geq \sqrt{a}$ \quad für alle $n \in \mathbb{N}$
+\\[0.2cm]
+gezeigt.  Nach unserer Definition der Folge $\folge{b_n}$ gilt diese Ungleichung auch für
+den ersten Wert $n=0$, so dass wir also insgesamt die Ungleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$b_n^2 \geq a$ \quad und \quad $b_n \geq \sqrt{a}$ \quad für alle $n \in \mathbb{N}$
+\\[0.2cm]
+gezeigt haben.   Daraus folgt, dass $\sqrt{a}$ eine untere Schranke der Folge $\folge{b_n}$
+ist.  Dividieren wir die erste Ungleichung durch $b_{n}$, so folgt
+\[ b_{n} \geq \bruch{a}{b_{n}}.  \]
+Die Zahl $\bruch{1}{2}\cdot \left(b_n + \bruch{a}{b_n}\right)$ ist der arithmetische
+Mittelwert der Zahlen $b_n$ und $\bruch{a}{b_n}$ und muss daher zwischen diesen beiden
+Zahlen liegen:
+\[ b_{n} \geq \bruch{1}{2}\cdot \left(b_n + \bruch{a}{b_n}\right) \geq \bruch{a}{b_n}. \]
+Dieser Mittelwert ist aber gerade $b_{n+1}$, es gilt also
+\[ b_{n} \geq b_{n+1} \geq \bruch{a}{b_n}. \]
+Dies zeigt, dass die Folge $\folge{b_n}$ monoton fallend ist und damit muß die Folge auch konvergieren.
+Wir hatten oben schon gezeigt, dass der Grenzwert dieser Folge dann den Wert $\sqrt{a}$ haben muss, es
+gilt also
+\[ \lim\limits_{n\rightarrow\infty} b_n = \sqrt{a} \]
+Abbildung \ref{fig:sqrt.stlx} auf Seite \pageref{fig:sqrt.stlx}
+zeigt die Definition einer Prozedur \texttt{mySqrt}()
+in \textsc{SetlX}, die die ersten 9 Glieder der Folge  
+berechnet und dann jeweils mit Hilfe der Funktion $\texttt{nDecimalPlaces}()$ die ersten
+100 Stellen der Werte ausgibt.  
+
+Die von diesem Programm berechnete Ausgabe ist in
+Abbildung \ref{fig:sqrt-output} gezeigt.  Sie können sehen, dass die Folge sehr schnell
+konvergiert.   $b_2$ stimmt auf 2 Stellen hinter dem Komma mit dem Ergebnis überein,
+bei $b_3$ sind es bereits 5 Stellen, bei $b_4$ sind es 11 Stellen, bei $b_5$ sind es 23
+Stellen, bei $b_6$ sind es 47 Stellen, bei $b_7$ haben wir 96 Stellen und ab dem Folgeglied $b_8$ 
+ändern sich die ersten 100 Stellen hinter dem Komma nicht mehr.  
+
+In modernen Mikroprozessoren wird übrigens eine verfeinerte Version des in diesem
+Abschnitt beschriebenen Verfahrens eingesetzt.  Die Verfeinerung besteht im wesentlichen
+darin, dass zunächst ein guter Startwert $b_0$ in einer Tabelle nachgeschlagen wird, die
+restlichen Folgeglieder werden dann in der Tat über die Rekursionsformel 
+      $b_{n+1} = \bruch{1}{2}\cdot  \left(b_n + \bruch{a}{b_n}\right)$
+berechnet.
+
+\begin{figure}[!ht]
+  \centering
+\begin{Verbatim}[ frame         = lines, 
+                  framesep      = 0.3cm, 
+                  labelposition = bottomline,
+                  numbers       = left,
+                  numbersep     = -0.2cm,
+                  xleftmargin   = 1.3cm,
+                  xrightmargin  = 1.3cm,
+                ]
+    mySqrt := procedure(a) {
+        if (a <= 1) {
+            b := 1; 
+        } else {
+            b := a; 
+        }     
+        for (n in [1 .. 9]) {
+            b := 1/2 * (b + a/b);
+            print("$n$: $nDecimalPlaces(b, 100)$");
+        }
+        return b;
+    };
+\end{Verbatim}
+\vspace*{-0.3cm}
+  \caption{Ein \textsl{SetlX}-Programm zur iterativen Berechnung der Quadrat-Wurzel.}
+  \label{fig:sqrt.stlx}
+\end{figure} %\$
+
+\begin{figure}[!ht]
+  \centering
+{\footnotesize
+\begin{Verbatim}[ frame         = lines, 
+                  framesep      = 0.3cm, 
+                  labelposition = bottomline,
+                  numbers       = none,
+                  numbersep     = -0.2cm,
+                  xleftmargin   = -0.5cm,
+                  xrightmargin  = 0.5cm,
+                ]
+1: 1.5000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+2: 1.4166666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666
+3: 1.4142156862745098039215686274509803921568627450980392156862745098039215686274509803921568627450980392
+4: 1.4142135623746899106262955788901349101165596221157440445849050192000543718353892683589900431576443402
+5: 1.4142135623730950488016896235025302436149819257761974284982894986231958242289236217849418367358303565
+6: 1.4142135623730950488016887242096980785696718753772340015610131331132652556303399785317871612507104752
+7: 1.4142135623730950488016887242096980785696718753769480731766797379907324784621070388503875343276416016
+8: 1.4142135623730950488016887242096980785696718753769480731766797379907324784621070388503875343276415727
+9: 1.4142135623730950488016887242096980785696718753769480731766797379907324784621070388503875343276415727
+\end{Verbatim}
+}
+\vspace*{-0.3cm}
+  \caption{Berechnung der Quadrat-Wurzel mit Hilfe der Folge $b_{n+1} = \bruch{1}{2}\cdot(b_n + \bruch{a}{b_n})$.}
+  \label{fig:sqrt-output}
+\end{figure}
+
+\pagebreak
+\vspace*{\fill}
+
+\pagebreak
+
+\section{Reihen}
+\begin{Definition}[Reihe]
+Ist $\folge{a_n}$ eine Folge, so definieren wir die Folge der \emph{Partial-Summen} $\folge{s_n}$
+durch die Festsetzung
+\[ s_n := \sum\limits_{i=0}^n a_i. \]
+Diese Folge bezeichnen wir auch als unendliche  \emph{Reihe}.  Die Folge $\folge{a_n}$
+bezeichnen wir als die 
+der Reihe $\folge{\sum_{i=0}^n a_i}$ \emph{zugrunde liegende Folge}.
+Falls die Folge der Partial-Summen konvergiert, so schreiben wir den Grenzwert als
+\[ \sum\limits_{i=0}^\infty a_i := \lim\limits_{n\rightarrow\infty} \sum\limits_{i=0}^n a_i. \]  
+\end{Definition}
+
+\noindent
+Gelegentlich treten in der Praxis Folgen $\folge{a_n}$ auf, für welche die Folgenglieder
+$a_i$ erst ab einem Index $k>0$ definiert sind.  Beispielsweise ist die Folge
+$\Folge{\bruch{1}{n}}$ erst ab $k=1$  definiert.
+Um auch aus solchen Folge bequem Reihen bilden zu können, definieren wir in einem solchen
+Fall die Partial-Summen $s_n$ durch
+\[ s_n = \sum\limits_{i=k}^n a_i, \] 
+wobei wir vereinbaren, dass $\sum_{i=k}^n a_i = 0$ ist, falls $k > n$ ist.
+\vspace*{0.3cm}
+
+\begin{Satz}[Bernoullische Ungleichung]
+Es sei $x \in \mathbb{R}$, $n \in \mathbb{N}$ und es gelte $x \geq -1$.   Dann gilt 
+\\[0.2cm]
+\hspace*{1.3cm}
+$(1 + x)^n \geq 1 + n \cdot x$.
+\\[0.2cm]
+Diese Ungleichung wird als \emph{Bernoullische Ungleichung} (Jakob Bernoulli, 1655-1705)
+bezeichnet.
+\end{Satz}
+
+\proof
+Wir beweisen die Ungleichung durch vollständige Induktion nach $n$.
+\begin{enumerate}
+\item[I.A.:] $n = 0$.  Es gilt
+             \\[0.2cm]
+             \hspace*{1.3cm}
+             $(1 + x)^0 = 1 \geq 1 = 1 + 0 \cdot x$. \quad  $\checkmark$
+\item[I.S.:] $n \mapsto n + 1$.   Nach Induktions-Voraussetzung gilt
+             \begin{equation}
+               \label{eq:Bernoulli}
+             (1 + x)^n \geq 1 + n \cdot x
+             \end{equation}
+             Da $x \geq -1$ ist, folgt $1 + x \geq 0$ positiv, so dass wir die Ungleichung
+             \ref{eq:Bernoulli} mit $1 + x$ multiplizieren können.  Dann erhalten wir die 
+             folgende Ungleichungs-Kette
+             \\[0.2cm]
+             \hspace*{1.3cm}
+             $
+             \begin{array}[t]{lcl}
+             (1 + x)^{n+1} & \geq & (1 + n \cdot x) \cdot (1 + x)     \\[0.2cm]
+                           & =    & 1 + (n + 1) \cdot x + n \cdot x^2 \\[0.2cm]
+                           & \geq & 1 + (n + 1) \cdot x 
+             \end{array}
+             $
+             \\[0.2cm]
+             Also haben wir insgesamt
+             \\[0.2cm]
+             \hspace*{1.3cm}
+             $(1 + x)^{n+1} \geq 1 + (n + 1) \cdot x$ 
+             \\[0.2cm]
+             gezeigt.  \qed
+\end{enumerate}
+
+\begin{Satz}
+Es sei $q \in \mathbb{R}$ mit $|q| < 1$.  Dann gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\lim\limits_{n\rightarrow\infty} q^n = 0$.
+\end{Satz}
+
+\proof
+Wir nehmen zunächst an, dass $q$ positiv ist. Aus $q < 1$ folgt dann 
+\\[0.2cm]
+\hspace*{1.3cm}
+$1 < \bruch{1}{q}$ \quad und damit \quad $0 < \bruch{1}{q} - 1$. 
+\\[0.2cm]
+Wir definieren nun
+\\[0.2cm]
+\hspace*{1.3cm}
+$x := \bruch{1}{q} - 1$. 
+\\[0.2cm]
+Mit Hilfe der Bernoullischen Ungleichung sehen wir nun, dass Folgendes gilt:
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lcl}
+  \bruch{1}{q^n} & =    & \left(1 + \left(\bruch{1}{q} - 1\right)\right)^n  \\[0.4cm]
+                 & \geq & 1 + n \cdot \left(\bruch{1}{q} - 1\right)         \\[0.4cm]
+                 & =    & 1 + n \cdot x.
+\end{array}
+$
+\\[0.2cm]
+Durch Invertierung dieser Ungleichung erhalten wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$q^n \leq \bruch{1}{1 + n \cdot x}$
+\\[0.2cm]
+Ist nun ein $\varepsilon > 0$ gegeben, so definieren wir 
+\\[0.2cm]
+\hspace*{1.3cm}
+$K := \left(\bruch{1}{\varepsilon} - 1\right) \cdot \bruch{1}{x} + 1$.
+\\[0.2cm]
+Dann gilt für alle $n \geq K$:
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lrcl}
+            & \left(\bruch{1}{\varepsilon} - 1\right) \cdot \bruch{1}{x} + 1 & \leq & n             \\[0.4cm]
+\Rightarrow & \left(\bruch{1}{\varepsilon} - 1\right) \cdot \bruch{1}{x} & < & n             \\[0.4cm]
+\Rightarrow & \left(\bruch{1}{\varepsilon} - 1\right)                    & < & n \cdot x     \\[0.4cm]
+\Rightarrow & \bruch{1}{\varepsilon}                                     & < & 1 + n \cdot x \\[0.4cm]
+\Rightarrow & \bruch{1}{1 + n \cdot x} & < & \varepsilon
+\end{array}
+$
+\\[0.2cm]
+Insgesamt haben wir nun für alle $n \geq K$ gezeigt, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$0 < q^n \leq \bruch{1}{1 + n \cdot x} < \varepsilon$
+\\[0.2cm]
+gilt, also haben wir für $n \geq K$
+\\[0.2cm]
+\hspace*{1.3cm}
+$\left| q^n \right| < \varepsilon$.
+\\[0.2cm]
+Für $q = 0$ ist diese Ungleichung offenbar auch gültig und wenn $q$ negativ ist, gilt $-q > 0$, so dass die
+Ungleichung für $-q$ gilt:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\left| (-q)^n \right| < \varepsilon$.
+\\[0.2cm]
+Wegen $\left| (-q)^n \right| = \left| q^n \right|$ folgt daraus also, dass für alle $q$ die Ungleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\left| q^n \right| < \varepsilon$ \quad für $n \geq K$
+\\[0.2cm]
+gültig ist und damit ist die Behauptung bewiesen.  \qed
+
+\noindent
+Wir präsentieren nun einige Beispiele für konvergente Reihen:
+\begin{enumerate}
+\item Wir betrachten die Folge $\folge{\bruch{1}{n\cdot (n+1)}}$, die nur für $n \geq 1$ definiert ist.
+      Für die Partial-Summen zeigen wir durch Induktion über $n$, dass gilt:
+      \begin{equation}
+        \label{eq:seq0}        
+      \sum\limits_{i=1}^n \bruch{1}{i\cdot (i+1)} = 1 - \bruch{1}{n+1}
+      \end{equation}
+      \begin{enumerate}
+      \item (Induktions-Anfang) $n=1$: Einerseits haben wir für $n=1$
+           \\[0.2cm]
+           \hspace*{1.3cm}      
+           $\sum\limits_{i=1}^n \bruch{1}{i\cdot (i+1)} = \sum\limits_{i=1}^1 \bruch{1}{i\cdot (i+1)}
+            = \bruch{1}{1\cdot (1+1)} = \bruch{1}{2}$,
+           \\[0.2cm]
+           andererseits gilt
+           \\[0.2cm]
+           \hspace*{1.3cm}      
+           $1 - \bruch{1}{n+1} = 1 - \bruch{1}{1+1} = 1 - \bruch{1}{2} = \bruch{1}{2}$.
+      \item (Induktions-Schritt) $n \mapsto n+1$:  
+            \\[0.2cm]
+            \hspace*{1.3cm}      
+            $
+            \begin{array}{lcl}
+              \sum\limits_{i=1}^{n+1} \bruch{1}{i\cdot (i+1)} 
+              &               =  & \sum\limits_{i=1}^{n} \bruch{1}{i\cdot (i+1)} + \bruch{1}{(n+1)\cdot (n+2)} \\[0.3cm]
+              & \stackrel{IV}{=} & 1 - \bruch{1}{(n+1)} + \bruch{1}{(n+1)\cdot (n+2)}                     \\[0.3cm]
+              &               =  & 1 - \bruch{n+2 -1}{(n+1)\cdot (n+2)}                                  \\[0.3cm]
+              &               =  & 1 - \bruch{n+1}{(n+1)\cdot (n+2)}                                     \\[0.3cm]
+              &               =  & 1 - \bruch{1}{n+2}                                               
+            \end{array}
+            $
+      \end{enumerate}
+      Aus Gleichung (\ref{eq:seq0}) folgt nun sofort 
+      \\[0.2cm]
+      \hspace*{1.3cm}      
+      $\sum\limits_{i=1}^\infty \bruch{1}{i\cdot (i+1)} = \lim\limits_{n\rightarrow\infty} \sum\limits_{i=1}^n \bruch{1}{i\cdot (i+1)} = 
+       \lim\limits_{n\rightarrow\infty} \Bigl(1 - \bruch{1}{n+1} \Bigr) = 1$.
+\item Wir betrachten die Folge $\folge{q^n}$ für eine Zahl $q \in \mathbb{R}$.
+      Für die Partial-Summen gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}      
+      $s_n = \sum\limits_{i=0}^n q^i$.
+      \\[0.2cm]
+      Wir betrachten den Ausdruck $(1-q) \cdot  s_n$: 
+      \\[0.2cm]
+      \hspace*{1.3cm}      
+      $
+      \begin{array}{lcl}
+       (1-q) \cdot  s_n & = & (1 - q) \cdot  \sum\limits_{i=0}^n q^i \\[0.3cm]
+                   & = & \sum\limits_{i=0}^n q^i \;-\; q \cdot  \sum\limits_{i=0}^n q^i \\[0.3cm]
+                   & = & \sum\limits_{i=0}^n q^i \;-\; \sum\limits_{i=0}^n q^{i+1} \\[0.3cm]
+                   & = & \sum\limits_{i=0}^n q^i \;-\; \sum\limits_{i=1}^{n+1} q^{i} \\[0.3cm]
+                   & = & \left(q^0 + \sum\limits_{i=1}^n q^i\right) \;-\; \left(\sum\limits_{i=1}^{n} q^{i} + q^{n+1}\right) \\[0.3cm]
+                   & = & q^0 - q^{n+1} \\[0.3cm]
+                   & = & 1 - q^{n+1} 
+      \end{array}
+      $
+      \\[0.2cm]
+      Es gilt also 
+      \\[0.2cm]
+      \hspace*{1.3cm}      
+      $(1-q) \cdot  \sum\limits_{i=0}^{n} q^i = 1 - q^{n+1}$
+      \\[0.2cm]
+      Dividieren wir diese Gleichung durch $(1-q)$, so erhalten wir für die Partial-Summen
+      den Ausdruck
+      \\[0.2cm]
+      \hspace*{1.3cm}      
+      $\sum\limits_{i=0}^{n} q^i = \bruch{1 - q^{n+1}}{1-q}$.
+      \\[0.2cm]
+      Falls $|q| < 1$ ist, konvergiert die Folge $\folge{q^n}$ gegen $0$.  Damit gilt
+      für $|q| < 1$
+      \\[0.2cm]
+      \hspace*{1.3cm} $\sum\limits_{i=0}^{\infty} q^i = \bruch{1}{1-q}$.
+      \\[0.2cm]
+      Die Reihe $\left(\sum\limits_{i=0}^{n} q^i\right)_{n\in\mathbb{N}}$ wird als \emph{geometrische Reihe} bezeichnet.
+\end{enumerate}
+
+\begin{Definition}[Alternierende Reihe] 
+Hat eine Reihe die Form 
+\[ \Folge{\sum\limits_{i=0}^{n}  (-1)^i \cdot  a_i} \]
+und gilt entweder
+\[ \forall i \in \mathbb{N}: a_i \geq 0 \quad \mbox{oder} \quad \forall i \in \mathbb{N}: a_i \leq 0 \]
+so sprechen wir von einer \emph{alternierenden Reihe}.
+\end{Definition}
+
+\noindent
+\textbf{Beispiel}: 
+\[ \Folge{\sum\limits_{i=1}^{n} \bruch{(-1)^i}{i}} \quad \mbox{ist eine alternierende Reihe.} \]
+
+\begin{Definition}[Null-Folge]
+Die Folge $\folge{a_n}$ ist eine \emph{Null-Folge} wenn gilt:
+\[ \lim\limits_{n\rightarrow\infty} a_n = 0. \]
+\end{Definition}
+
+\begin{Satz}[Leibniz-Kriterium, (Gottfried Wilhelm Leibniz, 1646-1716)] \lb
+Wenn die Folge $\folge{a_n}$ eine monoton fallende Null-Folge ist, dann 
+konvergiert die alternierende Reihe
+\[ \left(\sum\limits_{i=0}^{n} (-1)^i \cdot  a_i\right)_{n\in\mathbb{N}.} \]
+\end{Satz}
+  
+\noindent
+\textbf{Beweis}:  Die  Partial-Summen $s_n$ sind durch
+\[ s_n = \sum\limits_{i=0}^{n} (-1)^i \cdot  a_i \]
+definiert.  Wir betrachten zunächst die Folge der Partial-Summen mit geraden Indizes, wir
+betrachten also die Folge $\folge{s_{2n}}$ und zeigen, dass diese Folge monoton fallend
+ist.  Es gilt
+\begin{equation}
+  \label{eq:seq1}
+ s_{2\cdot(n+1)} = s_{2\cdot n} + (-1)^{2\cdot n+1}\cdot a_{2 \cdot n+1} + (-1)^{2 \cdot n+2} \cdot  a_{2n+2} 
+                 = s_{2 \cdot n} - a_{2 \cdot n+1} + a_{2 \cdot n+2}. 
+\end{equation}
+Daraus folgt
+\[
+\begin{array}{lrcl}
+                 &   s_{2\cdot(n+1)} & \leq & s_{2\cdot n}       \\[0.2cm]
+ \Leftrightarrow & s_{2\cdot n} - a_{2\cdot n+1} + a_{2\cdot n+2} & \leq &s_{2\cdot n}   \\[0.2cm]
+ \Leftrightarrow &  a_{2\cdot n+2} & \leq & a_{2\cdot n+1}        
+\end{array}
+\]
+Die letzte Ungleichung ist aber nicht anderes als die Monotonie der Folge $\folge{a_n}$.
+
+Als nächstes zeigen wir durch vollständige Induktion, dass die Folge der Partial-Summen
+mit geraden Indizes nach unten beschränkt ist, genauer gilt
+\[  s_{2\cdot n} \geq a_0 - a_1. \]
+Um dies nachzuweisen, zeigen wir durch vollständige Induktion, dass für alle
+$n\in\mathbb{N}$ gilt:
+      \\[0.2cm]
+      \hspace*{1.3cm}      
+      $s_{2\cdot n+1} \geq a_0 - a_1$.
+\begin{enumerate}
+\item[I.A.:] $n=0$.
+      \\[0.2cm]
+      \hspace*{1.3cm} $s_{2\cdot 0+1} = s_1 = a_0 - a_1$.
+\item[I.S.:] $n \mapsto n+1$ 
+             \[ 
+             \begin{array}{lcll}
+               s_{2\cdot(n+1)+1} & = &  s_{2\cdot n+1} + a_{2\cdot n+2} - a_{2\cdot n+3}      \\[0.2cm]
+                            & \geq & a_0 - a_1 + a_{2\cdot n+2} - a_{2\cdot n+3} & \mbox{nach Induktions-Voraussetzung}   \\[0.2cm]
+                            & \geq & a_0 - a_1 & \mbox{wegen $a_{2\cdot n+2} \geq a_{2\cdot n+3}$.} \\[0.2cm]
+                          
+             \end{array}
+             \]
+\end{enumerate}
+Nun gilt für $n\geq 1$
+      \\[0.2cm]
+      \hspace*{1.3cm}      
+      $s_{2 \cdot n} = s_{2 \cdot n-1} + a_{2 \cdot n} \geq s_{2 \cdot n-1} \geq a_0 - a_1$
+      \\[0.2cm]
+und für $n=0$ ist $s_0 = a_0 \geq a_0 - a_1$.
+Da wir nun gezeigt haben, dass die Folge $\folge{s_{2 \cdot n}}$ sowohl monoton fallend als auch
+nach unten beschränkt ist, folgt aus Satz \ref{satz:monoton}, dass diese Folge konvergent ist.
+Der Grenzwert dieser Folge sei $s$:
+\[ s := \lim\limits_{n\rightarrow\infty} s_{2 \cdot n}. \]
+Dann konvergiert auch die Folge $\folge{s_{n}}$ gegen $s$. Dies sehen wir wie folgt:
+Sei $\varepsilon > 0$ gegeben.  Weil   $\folge{s_{2 \cdot n}}$ gegen $s$ konvergiert gibt es eine
+Zahl
+$K_1$, so dass für alle $n > K_1$ die Ungleichung
+\begin{equation}
+  \label{eq:seq2}
+  \bigl| s_{2 \cdot n} - s \bigr| < \bruch{1}{2}\cdot\varepsilon
+\end{equation}
+erfüllt ist.  Weil $\folge{a_{n}}$ eine Null-Folge ist gibt es außerdem eine Zahl $K_2$,
+so dass für alle $n > K_2$ die Ungleichung
+\begin{equation}
+  \label{eq:seq3}
+  \bigl| a_n - 0 \bigr| < \bruch{1}{2} \cdot \varepsilon
+\end{equation}
+gilt.  Wir setzen $K:= \max(2 \cdot K_1 + 1,K_2)$ und zeigen, dass für alle $n > K$ die Ungleichung
+\[ \bigl| s_n - s \bigr| < \varepsilon \]
+gilt.  Wir erbringen diesen Nachweis über eine Fall-Unterscheidung:
+\begin{enumerate}
+\item $n$ ist gerade, also gilt $n= 2 \cdot m$.
+      \[ \begin{array}{lcl}
+        \bigl| s_n - s \bigr| & = & \bigl| s_{2 \cdot m} - s \bigr| \\[0.2cm]
+                              & < & \bruch{1}{2}\cdot\varepsilon \\[0.2cm]
+                              & < & \varepsilon,
+         \end{array}
+      \]
+      denn aus $n=2 \cdot m$ und $n>K$ folgt $m>K_1$.
+\item $n$ ist ungerade, also gilt $n= 2 \cdot m+1$.
+      \[ \begin{array}{lcl}
+        \bigl| s_n - s \bigr| & = & \bigl| s_{2 \cdot m+1} - s \bigr| \\[0.2cm]
+                              & = & \bigl| s_{2 \cdot m+1} - s_{2 \cdot m} + s_{2 \cdot m} - s \bigr| \\[0.2cm]
+                              & \leq & \bigl| s_{2 \cdot m+1} - s_{2 \cdot m} \bigr| + \bigl| s_{2 \cdot m} - s \bigr| \\[0.2cm]
+                              & < & \bigl| a_{2 \cdot m+1} \bigr| + \bruch{1}{2}\cdot\varepsilon \\[0.2cm]
+                              & < & \bruch{1}{2}\cdot\varepsilon + \bruch{1}{2}\cdot\varepsilon \\[0.2cm]
+                              & = & \varepsilon,
+         \end{array}
+       \]
+       denn aus $n=2\cdot m+1$ und $n>K$ folgt $m>K_1$ und $n > K_2$.
+\end{enumerate}
+Damit ist der Beweis abgeschlossen. \hspace*{\fill} $\Box$ 
+\vspace*{0.3cm}
+
+\exercise
+Wenn die Folge $\folge{a_n}$ eine monoton fallende Null-Folge ist, dann 
+gilt für den Grenzwert der zugehörigen alternierende Reihe
+\[ \sum\limits_{i=0}^{\infty} (-1)^i \cdot  a_i \;\leq\; a_0. \]
+\textbf{Hinweis}: Zeigen Sie durch vollständige Induktion über $n$, dass für die
+Partial-Summen $s_n$ gilt:
+\[ s_n \leq a_0. \]
+\vspace*{0.3cm}
+
+\noindent
+\textbf{Lösung}: 
+\begin{enumerate}
+\item[I.A.:] $n = 0$. 
+      \\[0.2cm]
+      \hspace*{1.3cm} $s_0 = a_0 \leq a_0$. 
+\item[I.S.:] $n \mapsto n+1$.
+
+             Wir führen eine Fall-Unterscheidung durch:
+             \begin{enumerate}
+             \item $n$ ist gerade, also gilt $n=2 \cdot m$ für ein geeignetes $m \in \mathbb{N}$. 
+                   \[ 
+                    \begin{array}{lcll}
+                     s_{n+1} & = & s_{2 \cdot m+1} \\[0.2cm]
+                             & = & s_{2 \cdot m} + (-1)^{2 \cdot m+1}\cdot a_{2 \cdot m+1}  \\[0.2cm]
+                             & = & s_{n} - a_{2 \cdot m+1}              \\[0.2cm]
+                             & \leq & a_0 - a_{2 \cdot m+1}   &\mbox{nach Induktions-Voraussetzung} \\[0.2cm]
+                             & \leq & a_0              &\mbox{denn $a_{2 \cdot m+1} \geq 0$} \\[0.2cm]
+                    \end{array}
+                   \]
+             \item $n$ ist ungerade, also gilt $n=2 \cdot m+1$ für ein geeignetes $m \in \mathbb{N}$. 
+                   \[ 
+                    \begin{array}{lcll}
+                     s_{n+1} & = & s_{2 \cdot m+2} \\[0.2cm]
+                             & = & s_{2 \cdot m} + (-1)^{2 \cdot m+1}\cdot a_{2 \cdot m+1} + (-1)^{2 \cdot m+2}\cdot a_{2 \cdot m+2}  \\[0.2cm]
+                             & = & s_{n} - a_{2 \cdot m+1} + a_{2 \cdot m+2}  \\[0.2cm]
+                             & \leq & s_{n}            & \mbox{denn $a_{2 \cdot m+2} \leq a_{2 \cdot m+1}$}  \\[0.2cm]
+                             & \leq & a_0              & \mbox{nach IV} \\[0.2cm]
+                    \end{array}
+                   \]
+             \end{enumerate}
+\end{enumerate}
+Die Behauptung folgt nun aus der Tatsache, dass $\leq$-Beziehungen zwischen konvergenten
+Folgen für die Grenzwerte erhalten bleiben.
+
+\begin{Satz}[Cauchy'sches Konvergenz-Kriterium für Reihen] \lb
+Die Reihe $\folge{\sum_{i=0}^{n} a_i}$ ist genau dann konvergent, wenn es für alle 
+$\varepsilon>0$ eine Zahl $K$ gibt, so dass gilt:
+\[ \forall n,l \in \mathbb{N}: n > K \rightarrow \left|\sum\limits_{i=n+1}^{n+l} a_i \right| < \varepsilon.\]
+  
+\end{Satz}
+
+\noindent
+\textbf{Beweis}:  Nach den Sätzen aus dem Abschnitt über Folgen ist die Folge
+$\folge{s_n}$ der durch
+\[ s_n = \sum_{i=0}^{n} a_i \]
+definierten Partial-Summen genau dann konvergent, wenn $\folge{s_n}$ eine Cauchy-Folge
+ist, wenn also gilt:
+\[ \forall \varepsilon \in \mathbb{R}_+: \exists K \in \mathbb{R}: \forall m,n \in \mathbb{N}: 
+   m > K \wedge n > K \rightarrow \bigl| s_m - s_n \bigr| < \varepsilon.
+\]
+In der letzen Formel können wir ohne Einschränkung der Allgemeinheit annehmen,
+dass $n \leq m$ gilt.  Dann ist $m = n + l$ für eine natürliche Zahl $l$.  Setzen wir hier
+die Definition der Partial-Summen ein, so erhalten wir
+\[ \begin{array}{lcl}
+   \left| s_{m} - s_n \right| & = & \left| s_{n+l} - s_n \right| \\[0.2cm]
+                              & = & \left| \sum\limits_{i=0}^{n+l} a_i - \sum\limits_{i=0}^n a_i \right| \\[0.4cm]
+                              & = & \left| \sum\limits_{i=n+1}^{n+l} a_i \right| \\[0.2cm]
+   \end{array}
+\]
+und damit ist klar, dass die Ungleichung des Satzes äquivalent dazu ist,
+dass die Folge der Partial-Summen eine Cauchy-Folge ist.
+\hspace*{\fill} $\Box$
+
+\begin{Korollar} \lb
+Wenn die Reihe $\Reihe{a_n}$ konvergent ist, dann ist die Folge $\folge{a_n}$ eine Null-Folge.  
+\end{Korollar}
+
+\noindent
+\textbf{Beweis}: Nach dem Cauchy'schen Konvergenz-Kriterium gilt \\[0.2cm]
+\hspace*{1.3cm}      
+$\forall \varepsilon \in \mathbb{R}_+:\exists K \in \mathbb{R}:\forall n,l \in \mathbb{N}: n > K \rightarrow \left|\sum\limits_{i=n+1}^{n+l} a_i \right| < \varepsilon$.
+\\[0.2cm]
+Setzen wir hier $l=1$ so haben wir insbesondere
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall \varepsilon \in \mathbb{R}_+:\exists K \in \mathbb{R}:\forall n \in \mathbb{N}: n > K \rightarrow \left|\sum\limits_{i=n+1}^{n+1} a_i \right| < \varepsilon$. 
+\\[0.2cm]
+Wegen \\[0.2cm]
+      \hspace*{1.3cm}      
+      $\left|\sum\limits_{i=n+1}^{n+1} a_i \right| = |a_{n+1}|$
+      \\[0.2cm]
+folgt also 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall \varepsilon \in \mathbb{R}_+:\exists K \in \mathbb{R}:\forall n \in \mathbb{N}: n > K \rightarrow |a_{n+1}| < \varepsilon$.      
+\\[0.2cm]
+Diese Formel drückt aus, dass $\folge{a_n}$ eine Null-Folge ist.
+\hspace*{\fill} $\Box$ 
+\vspace*{0.3cm}
+
+\noindent
+Mit Hilfe des letzten Satzes können wir zeigen, dass die \emph{harmonische Reihe}
+\[ \Folge{\sum\limits_{i=0}^{n} \bruch{1}{i}} \]
+divergiert.  Wäre diese Reihe konvergent, so gäbe es nach dem Cauchy'schen
+Konvergenz-Kriterium eine Zahl $K$, so dass für alle $n > K$ und alle $l$ die Ungleichung
+\[ \sum\limits_{i=n+1}^{n+l} \bruch{1}{i} < \bruch{1}{2} \]
+gilt.  Insbesondere würde diese Ungleichung dann für $l=n$ gelten. 
+Für beliebige $n$ gilt aber die folgende Abschätzung:
+\[
+  \sum\limits_{i=n+1}^{n+n} \bruch{1}{i}  \geq  \sum\limits_{i=n+1}^{2 \cdot n} \bruch{1}{2 \cdot n} 
+ = n \cdot  \bruch{1}{2 \cdot n} = \bruch{1}{2} 
+\]
+Damit erfüllt die harmonische Reihe das Cauchy'sche Konvergenz-Kriterium nicht.
+
+\begin{Satz}[Majoranten-Kriterium]
+Für die Folgen $\folge{a_n}$  und  $\folge{b_n}$  gelte:
+\begin{enumerate}
+\item $\forall n \in \mathbb{N}: 0 \leq a_n \leq b_n$.
+\item Der Grenzwert $\sum\limits_{i=0}^\infty b_i$ existiert.
+\end{enumerate}
+Dann existiert auch der Grenzwert $\sum\limits_{i=0}^\infty a_i$.
+\end{Satz}
+
+
+\noindent
+\textbf{Beweis}:  Es gilt
+\[ \sum\limits_{i=0}^n a_i \leq \sum\limits_{i=0}^n b_i \leq \sum\limits_{i=0}^\infty b_i. \]
+Also ist die Folge $\Folge{\sum\limits_{i=0}^{n} a_i}$ monoton wachsend und beschränkt und
+damit konvergent.
+\vspace*{0.3cm}
+
+\noindent
+\textbf{Bemerkung}:  Oft wird im Majoranten-Kriterium die Voraussetzung
+$\forall n \in \mathbb{N}: 0 \leq a_n \leq b_n$ abgeschwächt zu 
+      \\[0.2cm]
+      \hspace*{1.3cm}      
+      $\forall n \in \mathbb{N}: n \geq K \rightarrow 0 \leq a_n \leq b_n$.
+      \\[0.2cm]
+Hierbei ist $K$ dann eine geeignet gewählte Schranke.  Die Gültigkeit dieser Form des
+Majoranten-Kriteriums folgt aus der Tatsache, dass das Abändern endlich vieler
+Glieder einer Reihe für die Frage, ob eine Reihe konvergent ist, unbedeutend ist.
+
+\exercise
+Zeigen Sie mit dem Majoranten-Kriterium, dass die Reihe 
+$\Folge{\sum\limits_{i=1}^{n} \bruch{1}{i^2}}$ konvergiert.
+\vspace*{0.3cm}
+
+\noindent
+\textbf{Lösung}:  Es gilt
+\[
+\begin{array}{lcl}
+            & i + 1\geq i & \mid\; \cdot  (i+1) \\[0.2cm]
+\Rightarrow & (i+1)^2 \geq i\cdot (i + 1) & \mid \bruch{1}{\cdot} \\[0.2cm]
+\Rightarrow & \bruch{1}{(i+1)^2} \leq \bruch{1}{i\cdot (i + 1)} 
+\end{array}
+\]
+Damit ist die Reihe $\Folge{\sum\limits_{i=1}^{n}\bruch{1}{i\cdot (i+1)}}$
+eine konvergente Majorante der Reihe $\Folge{\sum\limits_{i=1}^{n}\bruch{1}{(i+1)^2}}$.  Wegen
+\[ \sum\limits_{i=1}^{\infty} \bruch{1}{i^2} = \bruch{1}{1^2} + \sum\limits_{i=1}^{\infty} \bruch{1}{(i+1)^2} \]
+folgt die Konvergenz aus dem Majoranten-Kriterium.
+\vspace*{0.3cm}
+
+\noindent
+\textbf{Bemerkung}: Wir werden später zeigen, dass 
+\[ \sum\limits_{i=1}^{\infty} \bruch{1}{i^2} = \bruch{\;\pi^2}{6\;} \quad\mbox{gilt.} \]
+
+
+\begin{Satz}[Minoranten-Kriterium]
+Für die Folgen $\folge{a_n}$  und  $\folge{b_n}$  gelte:
+\begin{enumerate}
+\item $\forall n \in \mathbb{N}: 0 \leq a_n \leq b_n$.
+\item Der Grenzwert $\sum\limits_{i=0}^\infty a_i$ existiert nicht.
+\end{enumerate}
+Dann existiert auch der Grenzwert $\sum\limits_{i=0}^\infty b_i$ nicht.
+\end{Satz}
+
+\noindent
+\textbf{Beweis}:  Wir führen den Beweis indirekt und nehmen an, dass 
+$\sum\limits_{i=0}^\infty b_i$
+existiert.  Nach dem Majoranten-Kriterium müßte dann auch der Grenzwert
+$\sum\limits_{i=0}^\infty a_i$
+existieren und dass steht im Widerspruch zur Voraussetzung. \hspace*{\fill} $\Box$
+\vspace*{0.3cm}
+
+\exercise
+Zeigen Sie, dass die Reihe 
+      \\[0.2cm]
+      \hspace*{1.3cm} $\Reihe{\bruch{1}{\sqrt{i+1}}}$ \\[0.2cm]
+nicht konvergiert.
+\vspace*{0.3cm}
+
+\noindent
+\textbf{Lösung}:  Wir benutzen das Minoranten-Kriterium und zeigen, dass die
+Reihe $\Reihe{\bruch{1}{n+1}}$ eine divergente Minorante der Reihe
+  $\Reihe{\bruch{1}{\sqrt{n+1}}}$ ist:
+\[
+\begin{array}{llcll}
+                 & \bruch{1}{n+1}  & \leq & \bruch{1}{\sqrt{n+1}} & \mid \; \bruch{1}{\cdot}\\[0.3cm]
+\Leftrightarrow  & n+1            & \geq & \sqrt{n+1}           & \mid \;\cdot^2  \\[0.3cm]
+\Leftrightarrow  & (n+1)^2        & \geq & n+1                  & \mid \; \cdot \bruch{1}{n+1}  \\[0.3cm]
+\Leftrightarrow  & n+1            & \geq & 1                    & \mid \; -1  \\[0.2cm]
+\Leftrightarrow  & n              & \geq & 0                    &              \\[0.2cm]
+\end{array}
+\]
+Da die letzte Ungleichung offenbar für alle $n\in \mathbb{N}$ wahr ist, ist der Beweis abgeschlossen.
+\hspace*{\fill} $\Box$
+\pagebreak
+
+\begin{Satz}[Quotienten-Kriterium]
+Es sei $\folge{a_n}$ eine Folge und $q\in\mathbb{R}$ eine Zahl, so dass gilt:
+\begin{enumerate}
+\item $0 \leq q < 1$
+\item $\forall n \in \mathbb{N}: 0 \leq a_n$
+\item $\forall n \in \mathbb{N}: a_{n+1} \leq q \cdot  a_n$
+\end{enumerate}
+Dann konvergiert die Reihe $\Reihe{a_i}$.
+\end{Satz}
+
+\noindent 
+\textbf{Beweis}:  Wir zeigen, dass die geometrische Reihe $\Reihe{a_0\cdot q^i}$ eine konvergente Majorante der
+Reihe $\Reihe{a_n}$ ist.  Dazu zeigen wir durch Induktion über $n$ dass folgendes gilt:
+\[ \forall n \in \mathbb{N}: a_{n} \leq a_0 \cdot  q^n \]
+\begin{enumerate}
+\item[I.A.]: $n = 0$.  Wegen $q^0 = 1$ gilt trivialerweise
+      \\[0.2cm]
+      \hspace*{1.3cm} $a_0 \leq a_0 \cdot  q^0$.
+\item[I.S.]: $n \mapsto n+1$.  Es gilt: 
+      \\[0.2cm]
+      \hspace*{1.3cm}      
+      $
+      \begin{array}{lclll}
+        a_{n+1} & \leq & q \cdot  a_n        & \mbox{nach Voraussetzung} \\[0.2cm]
+                & \leq & q \cdot  a_0 \cdot  q^n  & \mbox{nach Induktions-Voraussetzung} \\[0.2cm]
+                & =    & a_0 \cdot  q^{n+1}. & &\hspace*{2cm} \Box
+              \end{array}
+      $
+\end{enumerate}
+\vspace*{0.3cm}
+
+\noindent
+\textbf{Bemerkung}:  Beim Quotienten-Kriterium sind eigentlich nur die Beträge der
+Folgenglieder $|a_n|$ wichtig, denn es läßt sich folgende Verschärfung des
+Quotienten-Kriteriums zeigen:  
+Ist $\folge{a_n}$ eine Folge, $q\in\mathbb{R}$ und $K \in \mathbb{R}$, so dass 
+\[ 0 \leq q < 1 \quad \wedge \quad \forall n \in \mathbb{N}: n \geq K \rightarrow \left|\bruch{a_{n+1}}{a_n}\right| \leq q  \]
+gilt.  Dann konvergiert die Reihe $\Reihe{a_n}$.
+
+\noindent
+\textbf{Beispiel}:
+Wir zeigen mit Hilfe des Quotienten-Kriteriums, dass die Reihe
+$\Reihe{\bruch{z^i}{i!}}$ für alle $z \in \mathbb{C}$ konvergiert.  Für $z=0$ ist die Konvergenz der
+Reihe trivial und sonst betrachten wir
+den Quotienten $a_{n+1}/a_n$ für diese Reihe, setzen $K = 2\cdot |z|$ und $q = \bruch{1}{2}$
+und zeigen, dass das Quotienten-Kriterium erfüllt ist, denn für alle $n\geq K$ gilt:
+\\[0.2cm]
+\hspace*{1.3cm}      
+$\left|\bruch{a_{n+1}}{a_n}\right| =  \bruch{\;\bruch{|z^{n+1}|}{\;(n+1)!\;}\;}{\bruch{\;|z^{n}|\;}{n!}} 
+                            =  \bruch{\;|z^{n+1}| \cdot  n!\;}{\;|z^{n}| \cdot  (n+1)!\;} 
+                            =  \bruch{\;|z|\;}{\;n+1\;} 
+                            \leq  \bruch{\;|z|\;}{\;K\;} 
+                            = \bruch{\;|z|\;}{\;2\cdot |z|\;} 
+                            =  \bruch{\;1\;}{\;2\;} 
+$.
+
+\begin{Satz}[Wurzel-Kriterium]
+Es sei $\folge{a_n}$ eine Folge und $q\in\mathbb{R}$ eine Zahl, so dass 
+\begin{enumerate}
+\item $0 \leq q < 1$
+\item $\forall n \in \mathbb{N}: 0 \leq a_n$
+\item $\forall n \in \mathbb{N}: n > 0 \rightarrow \sqrt[n]{a_n} \leq q$
+\end{enumerate}
+gilt.  Dann konvergiert die Reihe $\Reihe{a_n}$.
+\end{Satz}
+
+\noindent 
+\textbf{Beweis}: Auch hier können wir den Nachweis der Konvergenz dadurch führen indem wir
+zeigen, dass die geometrische Reihe $\Reihe{q^i}$ eine konvergente Majorante ist: Für
+$n>0$ gilt
+\\[0.2cm]
+\hspace*{1.3cm} $a_n \leq q^n \;\Leftrightarrow\; \sqrt[n]{a_n} \leq q$.
+\hspace*{\fill} $\Box$
+\vspace*{0.3cm}
+
+\noindent
+\textbf{Bemerkung}:  Beim Wurzel-Kriterium sind eigentlich nur die Beträge der
+Folgenglieder $|a_n|$ wichtig, denn es läßt sich folgende Verschärfung des
+Quotienten-Kriteriums zeigen:  
+Ist $\folge{a_n}$ eine Folge, $q\in\mathbb{R}$ und $K \in \mathbb{R}$, so dass 
+\[ 0 \leq q < 1 \quad \wedge \quad \forall n \in \mathbb{N}: n \geq K \rightarrow \sqrt[n]{|a_n|} \leq q  \]
+gilt.  Dann konvergiert die Reihe $\Reihe{a_n}$.
+
+
+\noindent
+\textbf{Beispiel}: Wir zeigen mit dem Wurzel-Kriterium, dass die Reihe
+$\Reihe{\bruch{1}{i!}}$konvergiert.  Wir setzen
+$K = 4$ und $q = \bruch{1}{2}$.  Zunächst können Sie mit vollständiger Induktion
+leicht zeigen, dass für alle natürlichen Zahlen $n\geq 4$ die Ungleichung
+$n! \geq 2^n$ gilt.  Damit haben wir für $n\geq 4$:
+\[ \sqrt[n]{\bruch{1}{n!}} \leq \bruch{1}{2}     \quad \Leftrightarrow \quad
+   \bruch{1}{n!} \leq \left(\bruch{1}{2}\right)^n  \quad \Leftrightarrow \quad
+   n! \geq 2^n. 
+\]
+
+
+\section{Potenz-Reihen}
+Es bezeichne $x$ eine Variable und $\folge{a_n}$ sei eine Folge von Zahlen.  Dann
+bezeichnen wir den Ausdruck
+      \\[0.2cm]
+      \hspace*{1.3cm} $\sum\limits_{n=0}^\infty a_n \cdot  x^n$      
+      \\[0.2cm]
+als \emph{formale Potenz-Reihe}.  Wichtig ist hier, dass $x$ keine feste Zahl ist, sondern
+eine Variable, für die wir später reelle (oder auch komplexe) Zahlen einsetzen.  Wenn wir
+in einer Potenz-Reihe für $x$ eine feste Zahl einsetzen, wird aus der Potenz-Reihe eine
+gewöhnliche Reihe.  Der Begriff der Potenz-Reihen kann als eine Verallgemeinerung des
+Begriffs des   Polynoms aufgefaßt werden. 
+\vspace*{0.3cm}
+
+\noindent
+\textbf{Beispiele}:
+\begin{enumerate}
+\item $\sum\limits_{n=0}^\infty \bruch{x^n}{n!}$ ist eine formale Potenz-Reihe.  
+      Wir haben oben mit Hilfe des Quotienten-Kriteriums gezeigt, dass diese Reihe für
+      beliebige reelle Zahlen konvergiert.
+\item $\sum\limits_{n=1}^\infty \bruch{x^n}{n}$ ist eine formale Potenz-Reihe.  
+      Setzen wir für $x$ den Wert $1$ ein, so erhalten wir die divergente harmonische
+      Reihe.  Für $x=-1$ erhalten wir eine alternierende Reihe, die nach dem Leibniz-Kriterium
+      konvergent ist.
+\end{enumerate}
+In der Theorie der Potenz-Reihen ist die Frage entscheidend, welche Zahlen wir für die
+Variable $x$ einsetzen können, so dass die Reihe konvergiert.  Diese Frage wird durch die
+folgenden Sätze beantwortet.
+
+\begin{Satz}\label{satz:konvergenz-radius}
+Wenn die Potenz-Reihe 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\sum\limits_{n=0}^\infty a_n\cdot x^n$ 
+\\[0.2cm]
+für einen Wert $u \in \mathbb{C}$ konvergiert, dann konvergiert die Reihe auch für alle $v
+\in \mathbb{C}$, für die $|v| < |u|$ ist.
+\end{Satz}
+
+\noindent 
+\textbf{Beweis}:  Da die Reihe $\sum_{n=0}^\infty a_n\cdot u^n$ konvergiert, folgt aus dem
+Korollar zum Cauchy'schen Konvergenz-Kriterium, dass die Folge $\folge{a_n\cdot u^n}$ eine
+Null-Folge ist.  Also gibt es eine Zahl $K$, so dass für alle $n \geq K$ die Ungleichung 
+\\[0.2cm]
+\hspace*{1.3cm}      
+$\left|a_n\cdot u^n\right| \leq 1$
+\\[0.2cm]
+gilt.  Wir definieren 
+\\[0.2cm]
+\hspace*{1.3cm}
+$q := \left|\bruch{v}{u}\right|$. 
+\\[0.2cm]
+ Aus $|v| < |u|$ folgt $q < 1$.
+Dann haben wir für alle $n \geq K$ die folgende Abschätzung:
+      \\[0.2cm]
+      \hspace*{1.3cm}      
+      $\left|a_n\cdot v^n\right| = 
+      \left|a_n\cdot u^n\right| \cdot  \left|\bruch{v^n}{u^n}\right| =
+      \left|a_n\cdot u^n\right| \cdot  q^n \leq q^n$.
+      \\[0.2cm]
+Diese Abschätzung zeigt, dass die geometrische Reihe eine konvergente Majorante der Reihe
+$a_n\cdot v^n$ ist.  Damit folgt die Konvergenz der Reihe $\sum_{n=0}^\infty a_n\cdot v^n$  aus dem
+Majoranten-Kriterium. \hspace*{\fill} $\Box$ 
+
+\begin{Satz}
+Wenn die Potenz-Reihe $\sum_{n=0}^\infty a_n\cdot x^n$ für einen Wert $u \in \mathbb{C}$
+divergiert, dann divergiert die Reihe auch für alle $v \in \mathbb{C}$, für die
+$|u| < |v|$ ist.
+\end{Satz}
+
+\noindent
+\textbf{Beweis}:  Würde die Reihe $\sum_{n=0}^\infty a_n\cdot v^n$ konvergieren,
+dann müßte nach Satz \ref{satz:konvergenz-radius} auch die Reihe 
+$\sum_{n=0}^\infty a_n\cdot u^n$ konvergieren. \hspace*{\fill} $\Box$
+\vspace*{0.3cm}
+
+\noindent
+Die letzten beiden Sätze ermöglichen es nun, den Begriff \emph{Konvergenz-Radius} zu
+definieren.  Es sei 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\sum\limits_{n=0}^\infty a_n\cdot x^n$ 
+\\[0.2cm]
+eine formale Potenz-Reihe.
+Wenn diese Reihe für alle $x\in\mathbb{C}$ konvergiert, dann sagen wir, dass der
+Konvergenz-Radius den Wert $\infty$ hat.  Andernfalls definieren wir den Konvergenz-Radius
+als
+\\[0.2cm]
+\hspace*{1.3cm}      
+$R := \sup \left\{ |u| \;\Big|\; u \in \mathbb{C} \wedge
+                   \sum\limits_{n=0}^\infty a_n\cdot u^n \;\mathrm{konvergiert} 
+         \right\}
+$.
+\\[0.2cm]
+Aus den letzten beiden Sätzen folgt dann:
+\begin{enumerate}
+\item $\forall z \in \mathbb{C}: |z| < R \rightarrow \sum\limits_{n=0}^\infty a_n\cdot z^n$ konvergiert. 
+\item $\forall z \in \mathbb{C}: |z| > R \rightarrow \sum\limits_{n=0}^\infty a_n\cdot z^n$ divergiert. 
+\end{enumerate}
+In der Gauß'schen Zahlen-Ebene ist die Menge 
+$\bigl\{ z \in \mathbb{C} \;\big|\; |z| < R \bigr\}$ das Innere eines Kreises mit dem
+Radius $R$ um den Nullpunkt.
+Der folgende Satz gibt uns eine effektive Möglichkeit, den Konvergenz-Radius zu berechnen.
+
+\begin{Satz}
+Es sei 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\sum\limits_{n=0}^\infty a_n\cdot z^n$ 
+\\[0.2cm]
+eine formale Potenz-Reihe und die Folge
+\\[0.2cm]
+\hspace*{1.3cm}
+$\Folge{\bruch{|a_n|}{|a_{n+1}|}}$
+\\[0.2cm]
+ konvergiere.   Dann ist der Konvergenz-Radius $R$ durch
+folgende Formel gegeben:
+      \\[0.2cm]
+      \hspace*{1.3cm}      
+      $R = \lim\limits_{n\rightarrow\infty} \left|\bruch{a_n}{\;a_{n+1}\;}\right|$.  
+\end{Satz}
+
+\noindent
+\textbf{Beweis}:
+Es sei $u \in \mathbb{C}$ mit $|u| < R$.  In diesem Fall müssen wir zeigen, dass die Reihe
+\\[0.2cm]
+\hspace*{1.3cm}
+$\sum\limits_{n=0}^\infty a_n\cdot u^n$
+\\[0.2cm]
+ konvergiert.  Wir werden diesen Nachweis mit Hilfe
+Quotienten-Kriteriums erbringen.  Wir setzen $q := \bruch{|u|}{R} < 1$ und zeigen, dass für
+alle hinreichend großen $n$ die Ungleichung 
+      \\[0.2cm]
+      \hspace*{1.3cm}      
+      $\bruch{|a_{n+1}\cdot u^{n+1}|}{|a_{n}\cdot u^{n}|} \leq q$
+      \\[0.2cm]
+erfüllt ist.  Aus 
+      \\[0.2cm]
+      \hspace*{1.3cm}      
+       $R = \lim\limits_{n\rightarrow\infty} \left|\bruch{a_n}{\;a_{n+1}\;}\right|$
+      \\[0.2cm]
+folgt, dass es für beliebige $\varepsilon >0$ eine Zahl $K$ gibt, so dass für alle $n > K$
+die Ungleichung
+      \\[0.2cm]
+      \hspace*{1.3cm}      
+      $\left| \Bigl|\bruch{a_{n}}{a_{n+1}}\Bigr| - R \right| < \varepsilon$
+      \\[0.2cm]
+gilt.  Wir setzen $\varepsilon := \bruch{1}{2}(R - |u|)$. Wir zeigen, dass dann für alle 
+$n > K$ die Ungleichung $ \left|\bruch{a_{n}}{a_{n+1}}\right| > \bruch{1}{2}(R + |u|)$ gilt:
+\[
+\begin{array}{cl}
+ & \left|\;\bigl|\bruch{a_{n}}{a_{n+1}}\bigr| + \bigl(R - \bigl|\bruch{a_{n}}{a_{n+1}}\bigr|\bigr)\;\right| = |R| = R  \\[0.5cm]
+\Rightarrow     & \bigl|\bruch{a_{n}}{a_{n+1}}\bigr| + \bigl|\; \bigl(R - \bigl|\bruch{a_{n}}{a_{n+1}}\bigr|\bigr)\;\bigr| \geq R  \\[0.5cm]
+\Rightarrow     & \bigl|\bruch{a_{n}}{a_{n+1}}\bigr| + \varepsilon > R  \\[0.5cm]
+\Rightarrow     & \bigl|\bruch{a_{n}}{a_{n+1}}\bigr| + \bruch{1}{2}(R - |u|) > R  \\[0.5cm]
+\Rightarrow     & \bigl|\bruch{a_{n}}{a_{n+1}}\bigr|   > R - \bruch{1}{2}(R - |u|)  \\[0.5cm]
+\Rightarrow     & \bigl|\bruch{a_{n}}{a_{n+1}}\bigr|   > \bruch{1}{2}(R + |u|).  \\[0.5cm]
+\end{array}
+\]
+Jetzt können wir zeigen, dass die Reihe $\sum_{n=0}^\infty a_n\cdot u^n$ das
+Quotienten-Kriterium erfüllt, denn für alle $n > K$ gilt:
+\[ \left|\bruch{a_{n+1}\cdot u^{n+1}}{a_n\cdot u^n}\right| = 
+   \left|\bruch{a_{n+1}}{a_n}\right| \cdot  |u| = 
+   \bruch{|u|}{\left|\bruch{a_{n}}{a_{n+1}}\right|} < 
+   \bruch{|u|}{\bruch{1}{2}(R + |u|)} < 
+   \bruch{|u|}{\bruch{1}{2}(R + R)} =
+   \bruch{|u|}{R} = q
+\]
+Um den Beweis abzuschließen müssen wir noch zeigen, die Reihe $\sum_{n=0}^\infty a_n\cdot u^n$
+divergiert wenn  $R < |u|$ ist.   Dies folgt aus der Tatsache, dass die Folge
+$\folge{a_n\cdot u^n}$ für $|u|>R$ keine Null-Folge ist.  Die Details bleiben dem Leser
+überlassen. 
+\hspace*{\fill} $\Box$ 
+\vspace*{0.3cm}
+
+\noindent
+\textbf{Bemerkung}:
+Der obige Satz bleibt auch richtig, wenn
+      \\[0.2cm]
+      \hspace*{1.3cm}      
+      $\lim\limits_{n\rightarrow\infty} \left|\bruch{a_n}{\;a_{n+1}\;}\right| = \infty$
+      \\[0.2cm]
+ist, denn dann ist die Potenz-Reihe $\sum_{n=0}^\infty a_n\cdot x^n$ für alle $u\in\mathbb{C}$
+konvergent.
+\vspace*{0.3cm}
+
+\noindent
+\textbf{Beispiel}:
+Die Potenz-Reihe $\sum_{n=1}^\infty \bruch{x^n}{n}$ hat den Konvergenz-Radius $R=1$, denn
+es gilt 
+\[\lim\limits_{n\rightarrow\infty} \left|\frac{\frac{1}{n}}{\;\frac{1}{n+1}\;}\right| = 
+       \lim\limits_{n\rightarrow\infty} \bruch{n+1}{n} = 
+       1 + \lim\limits_{n\rightarrow\infty}  \bruch{1}{n} = 1 + 0 = 1.
+\]
+
+
+\begin{Satz}[Hadamard]
+Es sei $\sum_{n=0}^\infty a_n\cdot x^n$ eine Potenz-Reihe und die Folge
+$\Folge{\sqrt[n]{|a_n|}}$ konvergiere.   Dann gilt 
+      \\[0.2cm]
+      \hspace*{1.3cm}      
+      $\displaystyle\bruch{1}{R} = \lim\limits_{n\rightarrow\infty} \sqrt[n]{|a_n|}$.  
+\end{Satz}
+
+\noindent
+\textbf{Bemerkung}:
+Setzen wir $\bruch{1}{\infty} = 0$, so  bleibt die Formel 
+      \\[0.2cm]
+      \hspace*{1.3cm}      
+      $\bruch{1}{R} = \lim\limits_{n\rightarrow\infty} \sqrt[n]{|a_n|}$.  
+      \\[0.2cm]
+auch in dem Fall
+$\lim\limits_{n\rightarrow\infty} \sqrt[n]{|a_n|} = 0$ richtig, denn dann gilt $R = \infty$.
+
+\vspace*{0.3cm}
+
+\noindent
+\textbf{Beispiel}:
+Die Potenz-Reihe $\sum_{n=1}^\infty \bruch{x^n}{n^n}$ hat den Konvergenz-Radius $R=\infty$, denn
+es gilt 
+\[ \lim\limits_{n\rightarrow\infty} \sqrt[n]{\bruch{1}{n^n}} =  
+   \lim\limits_{n\rightarrow\infty} \bruch{1}{n} = 0.
+\]
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "analysis"
+%%% End: 

@@ -1,0 +1,9 @@
+# Die Kepler'sche Faßregel
+restart;
+intKepler := 1/6 * (f(a) + 4 * f((a+b)/2) + f(b)) * (b - a);
+
+a := 0;
+b := 1;
+f := (t -> exp(-t^2));
+evalf(intKepler);
+err := evalf( intKepler - int( exp(-t^2), t = 0 .. 1 ) );

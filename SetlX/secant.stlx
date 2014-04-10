@@ -1,0 +1,29 @@
+secant := procedure(f, a, b, digits) {
+    fa := f(a); 
+    fb := f(b); 
+    while (abs(b - a) > (1/10)**(digits + 1)) {
+        c := (fb * a - fa * b) / (fb - fa);
+        print(c);
+        a := b; b := c; fa := fb; fb := f(c); 
+    }
+    return b;
+};
+
+f := procedure(x) {
+    return x ** 2 - 2;
+};
+
+x := secant(f, 0.0, 10, 12);
+
+print("x = $x$");
+print("\n\n\n");
+
+
+strange := procedure(x) {
+    return 2 / (x * x + 1) - 1;
+};
+
+x := secant(strange, 0, 5.0, 10);
+
+print("x = $x$");
+

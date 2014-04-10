@@ -1,0 +1,65 @@
+\begin{thebibliography}{1}
+  \providebibliographyfont{name}{}%
+  \providebibliographyfont{lastname}{}%
+  \providebibliographyfont{title}{\emph}%
+  \providebibliographyfont{jtitle}{\btxtitlefont}%
+  \providebibliographyfont{etal}{\emph}%
+  \providebibliographyfont{journal}{}%
+  \providebibliographyfont{volume}{}%
+  \providebibliographyfont{ISBN}{\MakeUppercase}%
+  \providebibliographyfont{ISSN}{\MakeUppercase}%
+  \providebibliographyfont{url}{\url}%
+  \providebibliographyfont{numeral}{}%
+  \expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
+
+\expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
+\bibitem {forster:2011}
+\btxnamefont {\btxlastnamefont {Forster}, Otto}\btxauthorcolon\ \btxtitlefont
+  {Analysis I, Differential- und Integralrechnung einer Veränderlichen}.
+\newblock \btxpublisherfont {Vieweg+Teubner}, \btxeditionnumlong {11te}{},
+  2011.
+
+\bibitem {grauert:1967}
+\btxnamefont {\btxlastnamefont {Grauert}, Hans} \btxandlong {}\ \btxnamefont
+  {Ingo \btxlastnamefont {Lieb}}\btxauthorcolon\ \btxtitlefont {Differential-
+  und Integralrechnung I}.
+\newblock \btxpublisherfont {Springer}, 1967.
+
+\bibitem {heuser:2003}
+\btxnamefont {\btxlastnamefont {Heuser}, Harro}\btxauthorcolon\ \btxtitlefont
+  {Lehrbuch der Analysis, Teil 1}.
+\newblock \btxpublisherfont {Teubner}, \btxeditionnumlong {15te}{}, 2003.
+
+\bibitem {heuser:2008}
+\btxnamefont {\btxlastnamefont {Heuser}, Harro}\btxauthorcolon\ \btxtitlefont
+  {Lehrbuch der Analysis, Teil 2}.
+\newblock \btxpublisherfont {Teubner}, \btxeditionnumlong {14te}{}, 2008.
+
+\bibitem {dedekind:1901}
+\btxnamefont {\btxlastnamefont {Dedekind}, Richard}\btxauthorcolon\
+  \btxtitlefont {Essays on the Theory of Numbers}.
+\newblock \btxpublisherfont {The Open Court Publishing Company}, 1901.
+
+\bibitem {dowell:1971}
+\btxnamefont {\btxlastnamefont {Dowell}, M.} \btxandlong {}\ \btxnamefont {P.
+  \btxlastnamefont {Jarrat}}\btxauthorcolon\ \btxjtitlefont {\btxifchangecase
+  {A modified regula falsi method for computing the root of an equation}{A
+  modified regula falsi method for computing the root of an equation}}.
+\newblock \btxjournalfont {BIT Numerical Mathematics}, 11(2):168--174, 1971.
+
+\bibitem {rosenlicht:72}
+\btxnamefont {\btxlastnamefont {Rosenlicht}, Maxwell}\btxauthorcolon\
+  \btxjtitlefont {\btxifchangecase {Integration in finite terms}{Integration in
+  finite terms}}.
+\newblock \btxjournalfont {The American Mathematical Monthly}, 79(9):963--972,
+  \btxprintmonthyear{.}{November}{1972}{long}.
+
+\bibitem {goldberg:91}
+\btxnamefont {\btxlastnamefont {Goldberg}, David}\btxauthorcolon\
+  \btxjtitlefont {\btxifchangecase {What every computer scientist should know
+  about floating-point arithmetic}{What Every Computer Scientist Should Know
+  About Floating-Point Arithmetic}}.
+\newblock \btxjournalfont {ACM Computing Surveys}, 23(1):5--48, 1991.
+\newblock Available from \texttt{http://www.validlab.com/goldberg/paper.ps}.
+
+\end{thebibliography}

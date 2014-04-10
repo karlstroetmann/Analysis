@@ -1,0 +1,90 @@
+{VERSION 6 0 "IBM INTEL LINUX" "6.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 1 }{CSTYLE "" -1 257 "" 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 }
+{CSTYLE "" -1 259 "" 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 
+260 "" 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 261 "" 0 1 0 0 
+0 0 0 1 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 262 "" 0 1 0 0 0 0 0 1 0 0 0 0 
+0 0 0 0 }{CSTYLE "" -1 263 "" 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 }
+{CSTYLE "" -1 265 "" 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 
+266 "" 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 }{PSTYLE "Normal" -1 0 1 
+{CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 
+0 0 0 0 0 -1 0 }{PSTYLE "Heading 1" 0 3 1 {CSTYLE "" -1 -1 "" 1 18 0 
+0 0 0 0 1 0 0 0 0 0 0 0 0 }1 0 0 0 8 4 0 0 0 0 0 0 -1 0 }{PSTYLE "Head
+ing 2" 3 4 1 {CSTYLE "" -1 -1 "" 1 14 0 0 0 0 0 0 0 0 0 0 0 0 0 0 }0 
+0 0 -1 8 2 0 0 0 0 0 0 -1 0 }}
+{SECT 0 {EXCHG {PARA 0 "" 0 "" {TEXT -1 0 "" }{TEXT 257 47 "Arbeitsbla
+tt zu Fourier-Reihen - Mathematik (1)" }}}{SECT 0 {PARA 3 "" 0 "" 
+{TEXT -1 14 "Fourier-Reihen" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+21 "restart; with(plots):" }}}{SECT 1 {PARA 4 "" 0 "" {TEXT -1 59 "Pro
+zedur zur Berechnung der Fourier-Koeffizenten und Grafik" }}{EXCHG 
+{PARA 0 "" 0 "" {TEXT -1 83 "Achtung: In der vorliegenden Form \374ber
+pr\374ft die Prozedur die \374bergebenen Parameter " }}{PARA 0 "" 0 "
+" {TEXT -1 11 "noch nicht!" }}{PARA 0 "" 0 "" {TEXT -1 85 "Au\337erdem
+ sucht Maple nach einer geschlossenen L\366sung f\374r die auftretende
+n Integrale. " }}{PARA 0 "" 0 "" {TEXT -1 82 "Eine (denkbare) numerisc
+he Auswertung der Integrale findet bei der Berechnung der " }}{PARA 0 
+"" 0 "" {TEXT -1 69 "Koeffizienten nicht statt, sondern erst bei einer
+ eventuellen Grafik." }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 1854 "F
+ourierkoeff := proc(left, right, func, nmax)\n# Berechnung der Fourier
+koeffizienten \n# Parameter:\n#   left, right   Periodenintervall\n#  \+
+ func          Funktion\n#   nmax          Berechnung der Koeffz. bis \+
+zum Index nmax\n# optional:\n#   plot=true     Grafik zeichnen (defaul
+t: false)  \n#   last=true     alle N\344herungen einzeichnen (default
+: nur die\n#                                                          \+
+letzte)\n\nglobal a, b;\nlocal T, omega, i, Options, Defaults, graph, \+
+onlylast, P;  \n\n# optionale Parameter auswerten\nDefaults := table([
+\n  PositionalParms = table([]),\n  OptionParms = table([ \n    'plot'
+ = [false, 'truefalse'],\n    'last' = [false, 'truefalse']  \n    ])
+\n]);\nOptions := table();\nProcessOptions( 4, [args], Defaults, Optio
+ns): \n# print(Options); # (nur zur Fehlersuche)\ngraph := Options[plo
+t]:\nonlylast  := Options[last]:\n \nT := right-left;  # Periodenl\344
+nge\nomega := 2*Pi/T;  # Kreisfrequenz\n\n# Berechnung der Koeffizient
+en\na[0] := 2/T*int(func(x), x=left..right);\nfor i from 1 to nmax by \+
+1 do\n  a[i] := 2/T*int(func(x)*cos(i*omega*x), x=left..right);\n  b[i
+] := 2/T*int(func(x)*sin(i*omega*x), x=left..right);\nend do;\n\n# Aus
+gabe der Koeffizienten\nprintf(\"a[0] = %12a\\n\", a[0]);\nfor i from \+
+1 to nmax by 1 do\n  printf(\"a[%d] = %12a   \\t\", i, a[i]);\n  print
+f(\"b[%d] = %12a\\n\", i, b[i]);\nend do;\n\n# Grafik\nif (graph) then
+ \n  P[-1] := plot(func(x), x=left..right, color=green, thickness=2):
+\n  if (onlylast) then\n    P[0] :=  plot(a[0]/2+sum(a[k]*cos(k*omega*
+x)+\n             b[k]*sin(k*omega*x),k=1..nmax), x=left..right): \n  \+
+  display(P[-1], P[0]);\n  else \n    P[0] := plot(a[0]/2, x=left..rig
+ht):\n    for i from 1 to nmax by 1 do\n      P[i] := \n        plot(a
+[0]/2+sum(a[k]*cos(k*omega*x)+b[k]*sin(k*omega*x),k=1..i),\n          \+
+                     x=left..right): \n    end do;\n    display(seq(P[
+i], i=-1..nmax));\n  fi; \nfi;\n\nend proc:" }}}}{SECT 1 {PARA 4 "" 0 
+"" {TEXT -1 22 "Anwendung 1 (Rechteck)" }}{EXCHG {PARA 0 "" 0 "" 
+{TEXT -1 0 "" }{TEXT 259 52 "Rechteckschwingung: \"st\374ckweise\" Def
+inition mittels " }{TEXT -1 0 "" }{TEXT 260 12 "piecewise():" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 61 "f := x -> piecewise(0<=x and
+ x<=Pi, 1, Pi<x and x<=2*Pi, -1);" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 22 "plot(f(x), x=0..2*Pi);" }}}{EXCHG {PARA 0 "" 0 "" 
+{TEXT -1 0 "" }{TEXT 261 86 "Berechnung der Fourierkoeffizienten  und \+
+Grafik aller Partialsummen der Reihe bis n=6:" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 51 "Fourierkoeff(0, 2*Pi, f, 6, plot=true, last=fals
+e);" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{SECT 1 {PARA 
+4 "" 0 "" {TEXT -1 23 "Anwendung 2 (Halbwelle)" }}{EXCHG {PARA 0 "" 0 
+"" {TEXT -1 0 "" }{TEXT 262 43 "Einweggleichrichtung einer Sinusschwin
+gung:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 65 "f := x -> piecewis
+e(0<=x and x<=Pi, sin(x), Pi<x and x<=2*Pi, 0);" }}}{EXCHG {PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 22 "plot(f(x), x=0..2*Pi);" }}}{EXCHG {PARA 0 "" 
+0 "" {TEXT -1 0 "" }{TEXT 263 63 "Fourierkoeffizienten und Grafik der \+
+Partialsumme (nur f\374r n=6):" }{TEXT -1 0 "" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 50 "Fourierkoeff(0, 2*Pi, f, 6, plot=true, last=true
+);" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{PARA 4 "" 0 "" 
+{TEXT -1 0 "" }}}{SECT 1 {PARA 4 "" 0 "" {TEXT -1 23 "Anwendung 3 (Vol
+lwelle)" }}{EXCHG {PARA 0 "" 0 "" {TEXT 265 44 "Zweiweggleichrichtung \+
+einer Sinusschwingung:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "f
+ := x -> abs(sin(x));" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "pl
+ot(f(x), x=0..2*Pi);" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 51 "Fou
+rierkoeff(0, 2*Pi, f, 4, plot=true, last=false);" }}}{EXCHG {PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 0 "" }}}{PARA 0 "" 0 "" {TEXT -1 0 "" }}}{SECT 1 
+{PARA 4 "" 0 "" {TEXT -1 11 "Anwendung 4" }}{EXCHG {PARA 0 "" 0 "" 
+{TEXT -1 0 "" }{TEXT 266 43 "Hier k\366nnte Ihr eigenes Beispiel stehe
+n ..." }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 0 "" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 0 "" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}}}{MARK "1 2" 0 }{VIEWOPTS 1 1 0 1 
+1 1803 1 1 1 1 }{PAGENUMBERS 0 1 2 33 1 1 }

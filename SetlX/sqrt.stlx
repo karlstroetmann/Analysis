@@ -1,0 +1,15 @@
+mySqrt := procedure(a) {
+    if (a <= 1) {
+        b := 1; 
+    } else {
+        b := a; 
+    }     
+    for (n in [1 .. 9]) {
+        b := 1/2 * (b + a/b);
+        print("$n$: $nDecimalPlaces(b, 100)$");
+    }
+    return b;
+};
+
+mySqrt(2);
+

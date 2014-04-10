@@ -1,0 +1,18 @@
+saege :=
+proc(x)
+local y;
+description "computes chain tooth function";
+    if evalb(x <= 0) then
+        y := x + 2 * Pi;
+        return saegeAux(y);
+    end if;
+    return saegeAux(x);
+end proc;
+
+saegeAux := proc(x);
+    y := x / (2*Pi);
+    return evalf(4*Pi*min( frac(y)^2, frac(1 - y)^2));
+end proc;
+
+plot( saege, -2*Pi .. 2*Pi);
+

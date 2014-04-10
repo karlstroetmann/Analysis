@@ -1,0 +1,111 @@
+\documentclass{report}
+\usepackage{german}
+\usepackage[latin1]{inputenc}
+\usepackage{a4wide}
+\usepackage{epsfig}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{fancyvrb}
+\usepackage{alltt}
+\usepackage{fleqn}
+\usepackage{epic}
+\usepackage{theorem}
+\usepackage{hyperref}
+\usepackage[all]{hypcap}
+
+\usepackage[german]{babel}
+\usepackage{babelbib}
+\bibliographystyle{babunsrt}
+
+{\theorembodyfont{\sf}
+\newtheorem{Definition}{Definition}
+\newtheorem{Axiom}[Definition]{Axiom}
+\newtheorem{Notation}[Definition]{Notation}
+\newtheorem{Korollar}[Definition]{Korollar}
+\newtheorem{Lemma}[Definition]{Lemma}
+\newtheorem{Satz}[Definition]{Satz}
+\newtheorem{Theorem}[Definition]{Theorem}
+}
+
+\newcommand{\qed}{\hspace*{\fill} $\Box$
+\vspace*{0.2cm}
+
+}
+
+\newcommand{\eod}{\hspace*{\fill} $\diamond$
+\vspace*{0.2cm}
+
+}
+
+\title{Analysis\\[0.3cm]
+      --- SS 2012 --- \\[0.3cm]
+      DHBW Stuttgart}
+\author{Prof.~Dr.~Karl Stroetmann}
+
+\newcommand{\proof}{\vspace*{0.2cm}
+
+\noindent
+\textbf{Beweis}: }
+
+\newcommand{\solution}{\vspace*{0.2cm}
+
+\noindent
+\textbf{Lösung}: }
+
+\newcounter{aufgabe}
+\newcommand{\exercise}{\vspace*{0.2cm}
+\stepcounter{aufgabe}
+
+\noindent
+\textbf{Aufgabe \arabic{aufgabe}}: }
+
+\newcommand{\example}{\vspace*{0.2cm}
+
+\noindent
+\textbf{Beispiel}: \ }
+
+\newcommand{\lb}{\hspace*{\fill} \linebreak}
+
+\newcommand{\bruch}[2]{\displaystyle\frac{\;\displaystyle#1\;}{\;\displaystyle#2\;}}
+\newcommand{\bruchs}[2]{\textstyle\frac{\;\textstyle#1\;}{\;\textstyle#2\;}}
+\newcommand{\folge}[1]{\bigl(#1\bigr)_{n\in\mathbb{N}}}
+\newcommand{\folgea}[1]{\bigl(#1\bigr)_{n\in\mathbb{N}\backslash\{0\}}}
+\newcommand{\Folge}[1]{\left(#1\right)_{n\in\mathbb{N}}}
+\newcommand{\Reihe}[1]{\left(\sum\limits_{i=0}^n #1\right)_{n\in\mathbb{N}}}
+\newcommand{\bint}{\displaystyle\int}
+\newcommand{\dint}[2]{\displaystyle\int_{#1}^{#2}\hspace{-0.2cm}}
+\newcommand{\Oh}{\mathcal{O}}
+\newcommand{\df}{\displaystyle\frac{d\;}{dx}}
+\newcommand{\err}[1]{\textsl{error}_n(#1)}
+\newcommand{\erri}[2]{\textsl{error}^{(#2)}_n(#1)}
+\newcommand{\norm}[1]{\big\|#1\bigr\|_{\infty}}
+
+\def\pair(#1,#2){\langle #1, #2 \rangle}
+
+\newlength{\mylength}
+\setlength{\mathindent}{1.3cm}
+
+%\includeonly{einleitung, folgen-und-reihen,stetige-funktionen, anwendungen, integration}
+%\includeonly{rundungsfehler}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\include{einleitung}
+\include{folgen-und-reihen}
+\include{stetige-funktionen}
+\include{anwendungen}
+\include{integration}
+\include{irrational}
+\include{fourier}
+\include{rundungsfehler}
+
+%\bibliographystyle{alpha}
+\bibliography{/Users/karldrstroetmann/Dropbox/Kurse/cs}
+%\bibliography{/Users/stroetma/Dropbox/Kurse/cs}
+
+\end{document}
+
+
+

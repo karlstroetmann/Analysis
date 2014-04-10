@@ -1,0 +1,35 @@
+// given a matrix a and a vector b this function performs k steps
+// of the gauss-seidel method to solve the linear system of equations
+//    a x = b
+gaussSeidel := procedure(a, b, k) {
+    n := #b;
+    assert(#a    == n, "wrong number of equations");
+    assert(#a[1] == n, "wrong number of variables");
+    x := [ 0 : i in [ 1 .. n ] ];
+    for (l in [1 .. k]) {
+        for (i in [1 .. n]) {
+            x[i] := b[i];
+            for (j in [ 1 .. n ]) {
+                if (i != j) {
+                    x[i] -= a[i][j] * x[j];
+                }
+            }
+            x[i] /= a[i][i];
+        }
+        print("$l$: $x$");
+    }
+    return x;       
+};
+
+demo := procedure() {
+    a := [ [ 4.0, 1.0, 0.0 ], 
+           [ 1.0, 4.0, 1.0 ],
+           [ 0.0, 1.0, 4.0 ] ];
+    b := [ 5.0, 6.0, 5.0 ];
+    k := 18;  
+    x := gaussSeidel(a, b, k);
+    print("x = $x$");
+};
+
+demo();
+

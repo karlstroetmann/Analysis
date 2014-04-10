@@ -1,0 +1,535 @@
+\chapter{Die Kreiszahl $\pi$ und die Euler'sche Zahl $e$ sind irrational}
+In diesem Kapitel zeigen wir, dass sowohl die Kreiszahl $\pi$, die als Fläche eines Kreises mit dem Radius 1
+definiert ist, als auch die Euler'sche Zahl $e$, die als Grenzwert der Reihe
+\\[0.2cm]
+\hspace*{1.3cm}
+$\exp(1) := \sum\limits_{k=0}^\infty \bruch{1}{k!}$
+\\[0.2cm] 
+festgelegt ist, irrational sind.  Da der Nachweis der Irrationalität von $e$ einfacher ist, beginnen wir
+damit.
+
+\section{Die Euler'sche Zahl $e$ ist irrational}
+Nach Definition von $e$ gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$e = \sum\limits_{k=0}^\infty \bruch{1}{k!}$.
+\\[0.2cm]
+Für alle $n \in \mathbb{N}$ definieren wir die $n$-te Partial-Summe $s_n$ als
+\\[0.2cm]
+\hspace*{1.3cm}
+$s_n := \sum\limits_{k=0}^n \bruch{1}{k!}$.
+\\[0.2cm]
+Als nächstes definieren wir für alle natürlichen Zahlen $n \in \mathbb{N}$ den $n$-ten Rest
+\\[0.2cm]
+\hspace*{1.3cm}
+$r_n := e - s_n = \sum\limits_{k=0}^\infty \bruch{1}{k!} - \sum\limits_{k=0}^n \bruch{1}{k!} 
+                = \sum\limits_{k=n+1}^\infty \bruch{1}{k!}
+$
+\\[0.2cm]
+Offenbar gilt
+\begin{equation}
+  \label{eq:e_irrational1}
+  0 < r_n,
+\end{equation}
+denn der $n$-te Rest $r_n$ enthält auf jeden Fall den Term $\frac{1}{(n+1)!}$ und der ist positiv.  
+Wir wollen nun den $n$-ten Rest $r_n$ nach oben hin abschätzen.  Dazu benötigen wir zunächst die folgende
+Abschätzung, die für alle $k > n + 1$ gültig ist:
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{llcl}
+                & \bruch{(n+1)!}{k!} & < & \bruch{1}{(n+1)^{k-(n+1)}}  \\[0.4cm]
+\Leftrightarrow & \bruch{k!}{(n+1)!} & > & (n+1)^{k-(n+1)}             \\[0.4cm]
+\Leftrightarrow & \underbrace{(n+2) \cdot (n+3) \cdot {\dots} \cdot (k-1) \cdot k}_{\mbox{$k-(n+1)$ Faktoren}} & > & 
+                  \underbrace{(n+1) \cdot {\dots} \cdot (n+1)}_{\mbox{$k-(n+1)$ Faktoren}} \\[0.4cm]
+\end{array}
+$
+\\[0.2cm]
+Die letzte Ungleichung ist richtig, denn die Faktoren auf der linken Seite haben die Form
+$(n + 1) + i$ mit $i \in \{1, \cdots, k-(n+1)\}$ und offenbar gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$(n+1) + i > n+1$ \quad für $i \in \{1, \cdots, k-(n+1)\}$,
+\\[0.2cm]
+so dass zu jedem Faktor in dem Produkt auf der linken Seite ein kleinerer Faktor auf der rechten Seite
+korrespondiert.  Falls $k = (n+1)$ ist, gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\bruch{(n+1)!}{k!} = \bruch{1}{(n+1)^{k-(n+1)}} = 1$,
+\\[0.2cm]
+was man unmittelbar durch Einsetzen bestätigen kann.  Wir haben also insgesamt Folgendes gezeigt:
+\begin{equation}
+  \label{eq:e_irrational2}
+ \bruch{(n+1)!}{k!} < \bruch{1}{(n+1)^{k-(n+1)}}  \quad \mbox{für alle $k > n+1$}
+\end{equation}
+und für $k = n + 1$ haben wir die Gleichheit beider Seiten.
+Nun gilt für alle $n \in \mathbb{N}$ mit $n \geq 1$ die folgende Ungleichungs-Kette:
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lcll}
+r_n & = & \sum\limits_{k=n+1}^\infty \bruch{1}{k!}                                      \\[0.2cm]
+    & = & \bruch{1}{(n+1)!} \cdot \sum\limits_{k=n+1}^\infty \bruch{(n+1)!}{k!}         \\[0.5cm]
+    & < & \bruch{1}{(n+1)!} \cdot \sum\limits_{k=n+1}^\infty \bruch{1}{(n+1)^{k-(n+1)}} 
+        & (\mbox{nach Gleichung (\ref{eq:e_irrational2})})                                \\[0.5cm]
+    & = & \bruch{1}{(n+1)!} \cdot \sum\limits_{k=0}^\infty \bruch{1}{(n+1)^{k}}    
+        & (\mbox{Index-Verschiebung})                                                     \\[0.5cm]
+    & = & \bruch{1}{(n+1)!} \cdot \bruch{1}{1 - \frac{1}{n+1}}                    
+        & (\mbox{geometrische Reihe})                                                    \\[0.8cm]
+    & = & \bruch{1}{(n+1)!} \cdot \bruch{1}{\frac{n + 1 - 1}{n+1}}                    
+        & (\mbox{Hauptnenner})                                                            \\[0.8cm]
+    & = & \bruch{1}{(n+1)!} \cdot \bruch{n+1}{n}                    
+        &                                                                               \\[0.5cm]
+    & = & \bruch{1}{n! \cdot n}                     
+        &                                                                               \\[0.5cm]
+\end{array}
+$
+\\[0.2cm]
+Multiplizieren wir die resultierende Ungleichung mit $n!$, so sehen wir, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$n! \cdot r_n < \bruch{1}{n}$ 
+\\[0.2cm]
+gilt.
+Fassen wir diese Gleichung zusammen mit der Gleichung (\ref{eq:e_irrational1}), so haben wir insgesamt
+\begin{equation}
+  \label{eq:e_irrational3}
+  0 < n! \cdot r_n < \bruch{1}{n} \quad \mbox{falls $n \geq 1$ ist.}
+\end{equation}
+Damit ist aber klar, dass der Ausdruck $n! \cdot r_n$ für $n \geq 1$ keine natürliche Zahl sein kann.
+
+\begin{Theorem}
+  Die Eulersche Zahl $e$ ist irrational.
+\end{Theorem}
+
+\proof
+Wir nehmen an, dass $e$ rational ist.  Dann gibt es natürliche Zahlen $p,q \in \mathbb{N}$ mit
+$q \geq 1$ und
+\\[0.2cm]
+\hspace*{1.3cm}
+$e = \bruch{p}{q}$.
+\\[0.2cm]
+Wir betrachten den Ausdruck $q! \cdot r_q = q! \cdot (e - s_q)$ und setzten dort für $e$ den Wert $\frac{p}{q}$ ein:
+\\[0.2cm]
+\hspace*{1.3cm}
+$q! \cdot r_q = q! \cdot \Bigl(\bruch{p}{q} - \sum\limits_{k=0}^q \bruch{1}{k!}\Bigr)  
+              = \displaystyle (q-1)! \cdot p - \sum\limits_{k=0}^q \bruch{q!}{k!} \in \mathbb{Z}
+$,
+\\[0.2cm]
+denn $(q-1)! \cdot p$ ist auf jeden Fall eine natürliche Zahl und für $k \leq q$ hat der Ausdruck
+$\frac{q!}{k!}$ die Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$\bruch{q!}{k!} = \bruch{1 \cdot 2 \cdot {\dots} \cdot k \cdot (k + 1) \cdot (k + 2) \cdot {\dots} \cdot (q-1) \cdot q}{1 \cdot
+  2 \cdot {\dots} \cdot k} 
+   = (k + 1) \cdot (k + 2) \cdot {\dots} \cdot (q-1) \cdot q$
+\\[0.2cm]
+und das ist ebenfalls eine natürliche Zahl.  Damit haben wir aber einen Widerspruch, denn die Aussagen
+\\[0.2cm]
+\hspace*{1.3cm}
+$0 < q! \cdot r_q < 1$  \quad und \quad $q! \cdot r_q \in \mathbb{Z}$ 
+\\[0.2cm]
+sind unvereinbar.  \qed
+
+
+\section{Die Kreiszahl $\pi$ ist irrational}
+Zur Vorbereitung des Beweises benötigen wir das folgende Lemma.
+\begin{Lemma}
+Für alle natürlichen Zahlen $n$ gilt:
+\\[0.2cm]
+\hspace*{0.8cm}
+$\dint{0}{{\pi}} f(x) \cdot \sin(x)\, dx = 
+  \sum\limits_{k=0}^n (-1)^k \cdot \bigl(f^{(2k)}(\pi) + f^{(2k)}(0)\bigr) + 
+  (-1)^{n+1} \cdot \dint{0}{\pi} f^{(2n+2)}(x) \cdot \sin(x)\, dx
+$.
+\end{Lemma}
+
+\proof
+Zur Abkürzung definieren wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$I := \dint{0}{{\pi}} f(x) \cdot \sin(x)\, dx$ 
+\\
+und 
+\\
+\hspace*{1.3cm}
+$S_n := \sum\limits_{k=0}^n (-1)^k \cdot \bigl(f^{(2k)}(\pi) + f^{(2k)}(0)\bigr) + 
+  (-1)^{n+1} \cdot \dint{0}{\pi} f^{(2n+2)}(x) \cdot \sin(x)\, dx
+$.
+\\[0.2cm]
+Die Behauptung
+\\[0.2cm]
+\hspace*{1.3cm}
+$I = S_n$
+\\[0.2cm]
+wird nun durch Induktion nach $n$ bewiesen.  Dabei werden  wir sowohl im Induktions-Anfang als auch
+im Induktions-Schritt zwei partielle Integrationen durchführen.  
+\begin{enumerate}
+\item[I.A.:] $n=0$.
+     
+     Nach Definition von $I$ gilt
+     \\[0.2cm]
+     \hspace*{1.3cm}
+     $I = \dint{0}{\pi} f(x) \cdot \sin(x)\, dx$
+     \\[0.2cm]
+     Wir integrieren partiell und setzen $u(x) = f(x)$ und $v'(x) = \sin(x)$.
+     Dann gilt $u'(x) = f'(x)$ und $v(x) = -\cos(x)$.  Also haben wir
+     \\[0.2cm]
+     \hspace*{1.3cm}
+     $I = - f(x) \cdot \cos(x) \Bigr|_0^\pi + \dint{0}{\pi} f'(x) \cdot \cos(x)$.
+     \\[0.2cm]
+     Für den ersten Summanden auf der rechten Seite dieser Gleichung finden wir
+     \\[0.2cm]
+     \hspace*{1.3cm}
+     $  - f(x) \cdot \cos(x) \Bigr|_0^\pi = - f(\pi) \cdot \cos(\pi) + f(0) \cdot \cos(0)
+      = f(\pi) + f(0)$.
+     \\[0.2cm]
+     Um das verbleibende Integral zu berechnen führen wir eine erneute partielle Integration durch, bei
+     der wir diesmal $u(x) = f'(x)$ und $v'(x) = \cos(x)$ setzen.  Dann gilt $u'(x) = f^{(2)}(x)$ und
+     $v(x) = \sin(x)$.  Damit finden wir für das Integral $I$ den Wert
+     \\[0.2cm]
+     \hspace*{1.3cm}
+     $I = f(\pi) + f(0) - \dint{0}{\pi} f^{(2)}(x) \cdot \sin(x)\, dx$.
+     \\[0.2cm]
+     Auf der anderen Seite haben wir
+     \\[0.2cm]
+     \hspace*{1.3cm}
+     $
+     \begin{array}[t]{lcl}
+       S_0 & = & \sum\limits_{k=0}^0 (-1)^k \cdot \bigl(f^{(2k)}(\pi) + f^{(2k)}(0)\bigr) + 
+                  (-1)^{0+1} \cdot \dint{0}{\pi} f^{(2\cdot 0+2)}(x) \cdot \sin(x)\, dx           \\[0.5cm]
+           & = & (-1)^0 \cdot \bigl(f^{(0)}(\pi) + f^{(0)}(0)\bigr)  
+                  - \dint{0}{\pi} f^{(2)}(x) \cdot \sin(x)\, dx           \\[0.5cm]
+           & = & f(\pi) + f(0) - \dint{0}{\pi} f^{(2)}(x) \cdot \sin(x)\, dx           \\[0.2cm]
+           & = & I.
+     \end{array}
+     $
+\item[I.S.:] $n \mapsto n + 1$
+     
+     Zur Abkürzung definieren wir
+     \\[0.2cm]
+     \hspace*{1.3cm}
+     $J_n = \dint{0}{\pi} f^{(2n+2)}(x) \cdot \sin(x)\, dx$
+     \\[0.2cm]
+     Wir berechnen $J_n$ durch partielle Integration und setzen $u(x) := f^{(2n+2)}(x)$ und
+     $v'(x) := \sin(x)$.  Dann haben wir $u'(x) = f^{(2n+3)}(x)$ und $v(x) = -\cos(x)$.
+     Das liefert
+     \\[0.2cm]
+     \hspace*{1.3cm}
+     $J_n = - f^{(2n+2)}(x) \cdot \cos(x)\Bigr|_0^\pi + \dint{0}{\pi} f^{(2n+3)}(x) \cdot \cos(x)\, dx$.
+     \\[0.2cm]
+     Wegen $\cos(\pi) = -1$ und $\cos(0) = 1$ vereinfacht sich der erste Summand auf der rechten Seite
+     wie folgt:
+     \\[0.2cm]
+     \hspace*{1.3cm}
+     $- f^{(2n+2)}(x) \cdot \cos(x)\Bigr|_0^\pi =  f^{(2n+2)}(\pi) + f^{(2n+2)}(0)$.
+     \\[0.2cm]
+     Das auf der rechten Seite der obigen Gleichung verbleibende Integral berechnen wir durch eine
+     weitere partielle Integration.  Diesmal setzen wir $u(x) = f^{(2n+3)}(x)$ und 
+     $v'(x) = \cos(x)$.  Dann haben wir $u'(x) = f^{(2n+3)}(x)$ und $v(x) = \sin(x)$ und für das Integral
+     finden wir
+     \\[0.2cm]
+     \hspace*{1.3cm}
+     $
+     \begin{array}[t]{lcl}
+            \dint{0}{\pi} f^{(2n+3)}(x) \cdot \cos(x)\, dx  
+      & = & f^{(2n+3)}(x) \cdot \sin(x)\Bigr|_0^\pi - \dint{0}{\pi} f^{(2n+4)}(x) \cdot \sin(x)\, dx  \\[0.4cm]
+      & = &  - \dint{0}{\pi} f^{(2n+4)}(x) \cdot \sin(x)\, dx  \\[0.4cm]
+     \end{array}
+     $
+     \\[0.2cm]
+     Insgesamt haben wir damit für $J_n$ den Ausdruck
+     \\[0.2cm]
+     \hspace*{1.3cm}
+     $
+     \begin{array}[t]{lcl}
+       J_n & = & f^{(2n+2)}(\pi) + f^{(2n+2)}(0) - \dint{0}{\pi} f^{(2n+4)}(x) \cdot \sin(x)\, dx \\[0.4cm]
+           & = & f^{(2n+2)}(\pi) + f^{(2n+2)}(0) - J_{n+1}
+     \end{array}
+     $
+     \\[0.2cm]
+     gefunden.  Jetzt rechnen wir wie folgt:
+     \\[0.2cm]
+     \hspace*{0.0cm}
+     $
+     \begin{array}[t]{lcl}
+      I & \stackrel{IV}{=} & \sum\limits_{k=0}^n (-1)^k \cdot \bigl(f^{(2k)}(\pi) + f^{(2k)}(0)\bigr) + 
+                 (-1)^{n+1} \cdot J_n 
+             \\[0.4cm]
+        & = & \sum\limits_{k=0}^n (-1)^k \cdot \bigl(f^{(2k)}(\pi) + f^{(2k)}(0)\bigr) 
+             + (-1)^{n+1} \cdot \Bigl( f^{(2n+2)}(\pi) + f^{(2n+2)}(0) - J_{n+1} \Bigr)
+            \\[0.4cm]
+        & = & \sum\limits_{k=0}^{n+1} (-1)^k \cdot \bigl(f^{(2k)}(\pi) + f^{(2k)}(0)\bigr) 
+             + (-1)^{n+2} \cdot J_{n+1} \; = \;S_{n+1} 
+            \\[0.4cm]
+     \end{array}
+     $
+     \\[0.2cm]
+     Damit haben wir gezeigt, dass $I = S_{n+1}$ gilt und die Induktion ist abgeschlossen. \qed
+\end{enumerate}
+
+
+\begin{Theorem}
+  Die Kreiszahl $\pi$ ist irrational.
+\end{Theorem}
+
+\proof
+Wir führen den Beweis indirekt und nehmen an, dass $\pi \in \mathbb{Q}$ ist.  Dann gibt es Zahlen
+$p,q \in \mathbb{N}$ mit 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\pi = \bruch{p}{q}$.
+\\[0.2cm]
+Für beliebige $n \in \mathbb{N}$ definieren wir das Polynom $g_n(x)$ wie folgt:
+\\[0.2cm]
+\hspace*{1.3cm}
+$g_n(x) := \bruch{1}{n!} \cdot x^n \cdot (p - q \cdot x)^n$.
+\\[0.2cm]
+Es gilt
+\\
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lcl}
+  g_n(\pi - x) 
+& = & 
+ \bruch{1}{n!} \cdot \left(\bruch{p}{q} - x\right)^n \cdot 
+  \left(p - q \cdot \Bigl(\bruch{p}{q} - x\Bigr)\right)^n    \\[0.4cm]
+& = & 
+ \bruch{1}{n!} \cdot \left(\bruch{p}{q} - x\right)^n \cdot (q \cdot x)^n    \\[0.4cm]
+& = & 
+ \bruch{1}{n!} \cdot \left(p - q \cdot x\right)^n \cdot x^n    \\[0.4cm]
+& = & 
+ g_n(x)   
+\end{array}
+$
+\\[0.2cm]
+Diese Gleichung überträgt sich natürlich auf die Ableitungen und daher haben wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$g_n^{(k)}(\pi - x) = (-1)^k \cdot g_n^{(k)}(x)$.
+\\[0.2cm]
+Offenbar ist $g_n$ ein Polynom vom Grad $2 \cdot n$ und damit ist klar, dass $g_n^{(2n+2)}(x) = 0$ ist.
+Setzen wir in der Behauptung des letzten Lemmas für $f$ die Funktion $g_n(x)$ ein, so folgt daher
+\\[0.2cm]
+\hspace*{1.3cm}
+$\dint{0}{{\pi}} g_n(x) \cdot \sin(x)\, dx = 
+  \sum\limits_{k=0}^n (-1)^k \cdot \Bigl(g_n^{(2k)}(\pi) + g_n^{(2k)}(0)\Bigr) 
+$.
+\\[0.2cm]
+Wir zeigen, dass alle Summanden in der Summe auf der rechten Seite dieser Gleichung ganze Zahlen sind.
+Dabei reicht es aus, dies für die Summanden der Form $g_n^{(2k)}(0)$ zu zeigen, denn es gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$g_n^{(2k)}(\pi) = (-1)^{2\cdot k} \cdot g_n^{(2k)}(\pi - \pi) = g_n^{(2k)}(0)$.
+\\[0.2cm]
+Wir zeigen mit Hilfe einer Fallunterscheidung, dass    
+$g_n^{(k)}(0) \in \mathbb{N}$ für alle $k \in \mathbb{N}$ gilt.
+\begin{enumerate}
+\item Fall: $k < n$.
+
+      Da das Polynom $g_n(x)$ die Form
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $g_n(x) = \bruch{1}{n!} \cdot \sum\limits_{i=n}^{2\cdot n} c_i \cdot x^i$
+      \\[0.2cm]
+      mit Koeffizienten $c_i \in \mathbb{Z}$ hat, folgt, dass für $k < n$ 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $g_n^{(k)}(x) = \bruch{1}{n!} \cdot \displaystyle\sum\limits_{i=n}^{2\cdot n} 
+             \bruch{i!}{(i- k)!} \cdot c_i \cdot x^{i- k}$
+      \\[0.2cm]
+      gilt.  Jeder Term dieser Summe enthält mindestens den Faktor $x$.
+      Setzen wir hier für $x$ den Wert $0$ ein, so wird daher jeder Term in der Summe $0$.  Damit
+      gilt 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $g_n^{(k)}(0) = 0 \in \mathbb{N}$.
+\item Fall: $k \geq n$.
+
+      Diesmal verschwinden beim Ableiten alle Summanden mit Index $i < k$.  Wir haben also
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{lcl}
+        g_n^{(k)}(x) & = &
+        \bruch{1}{n!} \cdot \displaystyle\sum\limits_{i=k}^{2\cdot n} 
+        \bruch{i!}{(i-k)!} \cdot c_i \cdot x^{i-k}                     \\[0.5cm]
+        & = &
+        \displaystyle\sum\limits_{i=k}^{2\cdot n} 
+        \bruch{k!}{n!} \cdot \bruch{i!}{k! \cdot (i-k)!} \cdot c_i \cdot x^{i-k}                     \\[0.5cm]
+        & = &
+        \displaystyle\sum\limits_{i=k}^{2\cdot n} 
+        \bruch{k!}{n!} \cdot {i \choose k} \cdot c_i \cdot x^{i-k}                     \\[0.5cm]
+      \end{array}
+      $
+      \\[0.2cm]
+      Für $x = 0$ folgt dann
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $g_n^{(k)}(0) = \bruch{k!}{n!} \cdot {k \choose k} \cdot c_k = \bruch{k!}{n!} \cdot c_k \in \mathbb{Z}$,
+      \\[0.2cm]
+      denn wenn $k \geq n$ ist, ist $\bruch{k!}{n!}$ eine natürliche Zahl.
+\end{enumerate}
+Insgesamt wissen wir jetzt, dass das Integral
+\\[0.2cm]
+\hspace*{1.3cm}
+$I_n := \dint{0}{{\pi}} g_n(x) \cdot \sin(x)\, dx$
+\\[0.2cm]
+für alle $n \in \mathbb{N}$ eine ganze Zahl ist.  Für alle $x \in [0, \pi]$ gilt nun
+\\[0.2cm]
+\hspace*{1.3cm}
+$0 \leq \sin(x)$ \quad und \quad $0 \leq g_n(x)$.
+\\[0.2cm]
+Also muss auch
+\\[0.2cm]
+\hspace*{1.3cm}
+$0 < I_n$
+\\[0.2cm]
+gelten.  Die Ungleichung ist echt, denn die beiden Funktionen $\sin(x)$ und $g_n(x)$ haben
+nur bei $x = 0$ und $x = \pi$ eine Nullstelle.
+Außerdem gilt für alle $x \in [0,\pi]$
+\\[0.2cm]
+\hspace*{1.3cm}
+$\sin(x) \leq 1$ \quad und \quad $g_n(x) \leq \bruch{1}{n!} \cdot \pi^n \cdot p^n$.
+\\[0.2cm]
+Die letzte dieser beiden Ungleichungen folgt aus der Tatsache, dass einerseits $x \leq \pi$ und andererseits
+$p - q\cdot x \leq p$ ist.  Aus den beiden oberen Ungleichungen folgt durch Intergration
+\\[0.2cm]
+\hspace*{1.3cm}
+$0 \leq I_n \leq \pi \cdot \bruch{\pi^n \cdot p^n}{n!}$
+\\[0.2cm]
+Nun gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\lim\limits_{n \rightarrow \infty} \pi \cdot \bruch{\pi^n \cdot p^n}{n!} = 0$
+\\[0.2cm]
+Daher gibt es ein $n \in \mathbb{N}$, so dass $\pi \cdot \bruch{\pi^n \cdot p^n}{n!} < 1$ ist und für dieses
+$n$ haben wir 
+\\[0.2cm]
+\hspace*{1.3cm}
+$0 < I_n < 1$.
+\\[0.2cm]
+Das ist aber ein Widerspruch dazu, dass wir oben nachgewiesen haben, dass $I_n$ eine ganze Zahl ist.  \qed
+
+\section{Tranzendente Zahlen}
+\begin{Definition}(Algebraische Zahlen) \lb
+Eine Zahl $r \in \mathbb{R}$ heißt \emph{algebraisch} genau dann, wenn es ein Polynom
+\\[0.2cm]
+\hspace*{1.3cm}
+$p(x) = \sum\limits_{i=0}^n a_i \cdot x^i$  \quad mit $a_i \in \mathbb{Z}$ für alle $i = 0, 1, \cdots, n$
+\\[0.2cm]
+gibt, so dass $r$ Nullstelle des Polynoms $p$ ist, es muss also gelten
+\\[0.2cm]
+\hspace*{1.3cm}
+$p(r) = \sum\limits_{i=0}^n a_i \cdot r^i = 0$.  \eod
+\end{Definition}
+
+Bei der obigen Definition ist die Forderung, dass die Koeffizienten $a_i$ ganze Zahlen sind, entscheidend,
+denn sonst könnten wir zu beliebigem $r \in \mathbb{R}$ einfach das Polyom
+\\[0.2cm]
+\hspace*{1.3cm}
+$p_r(x) := x - r$
+\\[0.2cm]
+definieren und offenbar gilt $p_r(r) = 0$.  Ein solches Polyom ist zur Definition einer algebraischen
+Zahl aber nur zugelassen, wenn $r$ eine ganze Zahl ist. \eod
+
+\example
+Jede rationale Zahl $r$ ist eine algebraische Zahl, denn wenn $r \in \mathbb{Q}$ ist, dann gibt es
+ganze Zahlen $a$ und $b$ mit $b \not= 0$, so dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$r = \bruch{a}{b}$
+\\[0.2cm]
+gilt.  Damit können wir ein Polynom $p$ als
+\\[0.2cm]
+\hspace*{1.3cm}
+$p(x) := a - b \cdot x$
+\\[0.2cm]
+definieren.  Für dieses Polynom gilt dann
+\\[0.2cm]
+\hspace*{1.3cm}
+$p(r) = p\left(\bruch{a}{b}\right) = a - b \cdot \bruch{a}{b} = a - a = 0$
+\\[0.2cm]
+und damit ist gezeigt, dass jede rationale Zahl $r$ algebraisch ist.  Der Begriff der algebraischen
+Zahlen ist also eine Verallgemeinerung des Begriffs der rationalen Zahlen.  \eod
+
+\example
+Die Zahl $\sqrt{2\,}$ ist eine algebraische Zahl, denn wenn wir das Polynom $p$ als
+\\[0.2cm]
+\hspace*{1.3cm}
+$p(x) := x^2 - 2$
+\\[0.2cm]
+definieren, gilt offenbar
+\\[0.2cm]
+\hspace*{1.3cm}
+$p\Bigl(\sqrt{2\,}\Bigr) = \Bigl(\sqrt{2\,}\Bigr)^2 - 2 = 2 - 2 = 0$.  
+\\[0.2cm]
+Dieses Beispiel zeigt, dass es sich bei dem Begriff der algebraischen Zahlen um eine \underline{echte} 
+Verallgemeinerung des Begriffs der rationalen Zahlen handelt, denn wir haben ja bereits im ersten
+Semester gesehen, dass die Zahl $\sqrt{2\,}$ keine rationale Zahl ist.
+\eod
+
+\exercise
+Zeigen Sie, dass die Zahl $\sqrt{2\,} + \sqrt{3\,}$ eine algebraische Zahl ist.  Zeigen Sie außerdem,
+dass diese Zahl keine rationale Zahl ist.  \eod
+
+\begin{Definition}[Transzendente Zahl]
+  Eine Zahl $x \in \mathbb{R}$ ist genau dann \emph{transzendent}, wenn $x$ nicht algebraisch ist.
+\end{Definition}
+
+Es läßt sich zeigen, dass die Menge aller Polynome mit ganzzahligen Koeffizienten abzählbar ist.  Damit
+ist natürlich auch die Menge der algebraischen Zahlen abzählbar.  Da die Menge der reellen Zahlen
+überabzählbar ist, muss es also sehr viele reelle Zahlen geben, die transzendent sind.  Allerdings ist
+der Nachweis der Transzendenz einer Zahl in der Regel recht aufwändig.  
+
+\begin{Theorem}[Charles Hermite, 1873] \lb
+  Die Eulersche Zahl $e$ ist transzendent.
+\end{Theorem}
+
+\begin{Theorem}[Ferdinand von Lindemann, 1882] \lb
+  Die Kreiszahl $\pi$ ist transzendent.
+\end{Theorem}
+
+Der Nachweis dieser beiden Theoreme gehört zu
+den wichtigsten mathematischen Erkenntnissen des 19ten Jahrhunderts.  Für diese Vorlesung sind diese
+Beweise zu aufwändig, wir könnten diese Beweise aber mit den uns jetzt zur Verfügung stehenden Mitteln
+führen.
+
+%Unter
+%\\[0.2cm]
+%\hspace*{1.3cm}
+%\texttt{http://www.mathematik.uni-muenchen.de/\symbol{126}fritsch/euler.pdf}
+%\\[0.2cm]
+%finden Sie eine Ausarbeitung des Nachweises der Transzendenz von $e$, einen Nachweis der Transzendenz
+%von $\pi$ finden Sie in dem folgenden Artikel von Herrn Prof.~Fritsch:
+%\\[0.2cm]
+%\hspace*{1.3cm}
+%\texttt{http://www.mathematik.uni-muenchen.de/\symbol{126}fritsch/pi.pdf}.
+
+\exercise 
+Zeigen Sie, dass für alle natürlichen Zahlen $n \in \mathbb{N}$
+\\[0.2cm]
+\hspace*{1.3cm}
+$\dint{0}{\infty} t^n \cdot e^{-t} dt = n!$
+\\[0.2cm]
+gilt. 
+
+\noindent
+\textbf{Bemerkung}:  Die letzte Gleichung motiviert die folgende Definition der
+\emph{Gamma-Funktion}.  Wir setzen
+\\[0.2cm]
+\hspace*{1.3cm}
+$\Gamma(x) := \dint{0}{\infty} t^{x-1} \cdot e^{-t} dt$.
+\\[0.2cm]
+Mit dieser Definition gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\Gamma(n+1) = n!$
+\\[0.2cm]
+und daher können wir die Gamma-Funktion als eine Erweiterung der Fakultäts-Funktion auf
+die natürlichen Zahlen {auf}fassen.
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "analysis"
+%%% End: 

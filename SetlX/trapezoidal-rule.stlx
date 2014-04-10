@@ -1,0 +1,38 @@
+// Compute the integral \int_a^b f(x) dx using the trapeziodal rule.
+// The intervall [a,b] is divided into n subintervals.
+trapezoidal := procedure(f, a, b, n) {
+    sum := 0;
+    x := a;
+    h := (b - a) / n;
+    sum += evalTerm(f) / 2;
+    for (i in [1 .. n - 1]) {
+        x += h;
+        sum += evalTerm(f);
+    }
+    x := b;
+    sum += evalTerm(f) / 2;
+    return sum * h; 
+};
+
+interactive := procedure() {
+    s := read("enter function");
+    f := parse(s);
+    a := read("enter left  boundary");
+    b := read("enter right boundary");
+    n := read("enter number of intervals");
+    integral := trapezoidal(f, a, b, n);
+    print("The approximate value of the integral is $integral$.");
+};
+
+demo := procedure() {
+    f := parse("exp(-x*x)");
+    a := 0;
+    b := 1;
+    n := 1;
+    while (n < 1000000) {
+        print("n = $n$: $trapezoidal(f, a, b, n)$");
+        n *= 2;
+    }
+};
+
+interactive();

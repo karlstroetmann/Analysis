@@ -1,0 +1,11 @@
+maschinenKonstante := procedure() {
+    eps := 1.0;
+    old := eps;
+    while (1.0 + eps > 1.0) {
+        old := eps;
+        eps /= 2;
+    }
+    return old;
+};
+
+print("eps = $maschinenKonstante()$");

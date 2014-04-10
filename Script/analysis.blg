@@ -1,0 +1,57 @@
+This is BibTeX, Version 0.99d (TeX Live 2012)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: analysis.aux
+The style file: babunsrt.bst
+A level-1 auxiliary file: einleitung.aux
+A level-1 auxiliary file: folgen-und-reihen.aux
+A level-1 auxiliary file: stetige-funktionen.aux
+A level-1 auxiliary file: anwendungen.aux
+A level-1 auxiliary file: integration.aux
+A level-1 auxiliary file: irrational.aux
+A level-1 auxiliary file: fourier.aux
+A level-1 auxiliary file: rundungsfehler.aux
+Database file #1: /Users/karldrstroetmann/Dropbox/Kurse/cs.bib
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--empty language in forster:2011
+You've used 8 entries,
+            2465 wiz_defined-function locations,
+            636 strings with 6426 characters,
+and the built_in function-call counts, 1881 in all, are:
+= -- 154
+> -- 40
+< -- 0
++ -- 18
+- -- 10
+* -- 170
+:= -- 248
+add.period$ -- 17
+call.type$ -- 8
+change.case$ -- 6
+chr.to.int$ -- 0
+cite$ -- 9
+duplicate$ -- 121
+empty$ -- 241
+format.name$ -- 24
+if$ -- 433
+int.to.chr$ -- 0
+int.to.str$ -- 8
+missing$ -- 16
+newline$ -- 49
+num.names$ -- 8
+pop$ -- 50
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 36
+stack$ -- 0
+substring$ -- 58
+swap$ -- 39
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 12
+width$ -- 9
+write$ -- 95
+(There was 1 warning)

@@ -1,0 +1,103 @@
+# Autor: Hans-Jürgen Herrler
+# Prozedur zur Berechnung der Fourier-Koeffizenten und Grafik
+# Achtung: In der vorliegenden Form überprüft die Prozedur die übergebenen Parameter
+# noch nicht!
+# Außerdem sucht Maple nach einer geschlossenen Lösung für die auftretenden Integrale.
+# Eine (denkbare) numerische Auswertung der Integrale findet bei der Berechnung der
+# Koeffizienten nicht statt, sondern erst bei einer eventuellen Grafik.
+
+restart;
+with(plots):
+
+# Berechnung der Fourierkoeffizienten
+# Parameter:
+#   left, right   Periodenintervall
+#   func          Funktion
+#   nmax          Berechnung der Koeffz. bis zum Index nmax
+# optional:
+#   plot=true     Grafik zeichnen (default: false)
+#   last=true     alle Näherungen einzeichnen (default: nur die
+#                                                          letzte)
+Fourierkoeff := proc(left, right, func, nmax)
+
+global a, b;
+local T, omega, i, Options, Defaults, graph, onlylast, P;
+
+# optionale Parameter auswerten
+    Defaults := table([
+        PositionalParms = table([]),
+        OptionParms = table([ 'plot' = [false, 'truefalse'],
+                              'last' = [false, 'truefalse']
+                            ])
+                      ]);
+Options := table();
+    ProcessOptions( 4, [args], Defaults, Options):
+# print(Options); # (nur zur Fehlersuche)
+    graph    := Options[plot]:
+    onlylast := Options[last]:
+
+    T := right-left;  # Periodenlänge
+    omega := 2*Pi/T;  # Kreisfrequenz
+
+# Berechnung der Koeffizienten
+    a[0] := 2/T*int(func(x), x=left..right);
+    for i from 1 to nmax by 1 do
+        a[i] := 2/T*int(func(x)*cos(i*omega*x), x=left..right);
+        b[i] := 2/T*int(func(x)*sin(i*omega*x), x=left..right);
+    end do;
+
+# Ausgabe der Koeffizienten
+    printf("a[0] = ");
+    print(a[0]);
+    for i from 1 to nmax by 1 do
+        printf("a[%d] = ", i);
+        print(a[i]);
+        printf("b[%d] = ", i);
+        print(b[i]);
+    end do;
+
+# Grafik
+    if (graph) then
+        P[-1] := plot(func(x), x=left..right, color=green, thickness=2):
+        if (onlylast) then
+            P[0] :=  plot(a[0]/2+sum(a[k]*cos(k*omega*x)+
+                                     b[k]*sin(k*omega*x),k=1..nmax), x=left..right):
+            display(P[-1], P[0]);
+        else
+            P[0] := plot(a[0]/2, x=left..right):
+            for i from 1 to nmax by 1 do
+                P[i] :=
+                plot(a[0]/2+sum(a[k]*cos(k*omega*x)+b[k]*sin(k*omega*x),k=1..i),
+                     x=left..right):
+            end do;
+            display(seq(P[i], i=-1..nmax));
+        fi;
+    fi;
+
+end proc:
+
+# Anwendung 1 (Rechteck)
+# Rechteckschwingung: "stückweise" Definition mittels piecewise():
+f := x -> piecewise(0<=x and x<=Pi, 1, Pi<x and x<=2*Pi, -1);
+plot(f(x), x=0..2*Pi);
+
+# Berechnung der Fourierkoeffizienten  und Grafik aller Partialsummen der Reihe bis n=6:
+Fourierkoeff(0, 2*Pi, f, 6, plot=true, last=false);
+
+# Anwendung 2 (Halbwelle)
+# Einweggleichrichtung einer Sinusschwingung:
+f := x -> piecewise(0<=x and x<=Pi, sin(x), Pi<x and x<=2*Pi, 0);
+plot(f(x), x=0..2*Pi);
+
+# Fourierkoeffizienten und Grafik der Partialsumme (nur für n=6):
+Fourierkoeff(0, 2*Pi, f, 6, plot=true, last=true);
+
+# Anwendung 3 (Vollwelle)
+# Zweiweggleichrichtung einer Sinusschwingung:
+f := x -> abs(sin(x));
+plot(f(x), x=0..2*Pi);
+Fourierkoeff(0, 2*Pi, f, 6, plot=true, last=false);
+
+# Anwendung 4 (x^2)
+f := x -> piecewise(0<=x and x<=Pi, x^2, Pi<x and x<=2*Pi, (2*Pi-x)^2)/4;
+Fourierkoeff(0, 2*Pi, f, 3, plot=true, last=false);

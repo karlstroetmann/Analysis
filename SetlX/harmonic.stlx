@@ -1,0 +1,17 @@
+// call this program as setlx --real32 harmonic.stlx
+harmonic := procedure() {
+    oldSum := 0.0;
+    sum := 1.0;
+    n := 1;
+    while (oldSum < sum) {
+        oldSum := sum;
+        n += 1;
+        sum += 1/n;
+        if (n % 100000 == 0) {
+            print("n = $n$, sum = $sum$");
+        }
+    }
+    print("sum = $sum$, n = $n$");
+};
+
+harmonic();

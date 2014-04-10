@@ -1,0 +1,896 @@
+\documentclass{article}
+\usepackage{german}
+\usepackage[latin1]{inputenc}
+\usepackage{a4wide}
+\usepackage{epsfig}
+\usepackage{amssymb}
+\usepackage{fancyvrb}
+\usepackage{alltt}
+\usepackage{fleqn}
+\usepackage{epic}
+
+\newtheorem{Definition}{Definition}
+\newtheorem{Axiom}[Definition]{Axiom}
+\newtheorem{Notation}[Definition]{Notation}
+\newtheorem{Korollar}[Definition]{Korollar}
+\newtheorem{Lemma}[Definition]{Lemma}
+\newtheorem{Satz}[Definition]{Satz}
+\newtheorem{Theorem}[Definition]{Theorem}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+
+\title{Analysis}
+\author{Karl Stroetmann}
+
+\newcommand{\bruch}[2]{\displaystyle\frac{\;\displaystyle#1\;}{\;\displaystyle#2\;}}
+\newcommand{\folge}[1]{\bigl(#1\bigr)_{n\in\mathbb{N}}}
+\newcommand{\Folge}[1]{\left(#1\right)_{n\in\mathbb{N}}}
+\newcommand{\Reihe}[1]{\left(\sum\limits_{i=0}^n #1\right)_{n\in\mathbb{N}}}
+\newcommand{\Oh}{\mathcal{O}}
+\newcommand{\df}{\displaystyle\frac{d\;}{dx}}
+\newcommand{\err}[1]{\textsl{error}_n(#1)}
+\newcommand{\erri}[2]{\textsl{error}^{(#2)}_n(#1)}
+\newcommand{\norm}[1]{\big\|#1\bigr\|_{\infty}}
+
+\def\pair(#1,#2){\langle #1, #2 \rangle}
+
+\newlength{\mylength}
+\setlength{\mathindent}{1.3cm}
+
+
+\begin{document}
+\noindent
+\section{Taylor-Reihe}
+\textbf{Aufgabe}: Leiten Sie die folgende Formel aus dem Additions-Theorem des
+Arcus-Tangens her und berechnen Sie damit $\pi$ auf eine Genauigkeit von $10^{-9}$:
+\begin{equation}
+  \label{eq:Pi}
+  \bruch{\pi}{4} =  2 * \arctan\Bigl(\frac{1}{2}\Bigr) -\arctan\Bigl(\frac{1}{7}\Bigr).  
+\end{equation}
+
+\noindent
+\textbf{Lösung}:
+Zum Beweis der oben angegebenen Gleichung benötigen wir zwei
+Gleichungen.  Einerseits gilt $\arctan(1) = \frac{\pi}{4}$, andererseits haben wir das
+Additions-Theorem für den Arcus-Tangens: 
+\\[0.3cm]
+\hspace*{1.3cm}
+$\displaystyle \arctan(x) + \arctan(y) = \arctan\Bigl(\frac{x + y}{1 - x*y}\Bigr)$
+\\[0.3cm]
+Daher haben wir
+\\[0.3cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lrcl}
+                 & \bruch{\pi}{4}  & = & 2 * \arctan\Bigl(\frac{1}{2}\Bigr) -\arctan\Bigl(\frac{1}{7}\Bigr) \\[0.3cm]
+ \Leftrightarrow & \arctan(1)      & = & 2 * \arctan\Bigl(\frac{1}{2}\Bigr) -\arctan\Bigl(\frac{1}{7}\Bigr) \\[0.3cm]
+ \Leftrightarrow & \arctan(1) + \arctan\Bigl(\frac{1}{7}\Bigr) & = & \arctan\Bigl(\frac{1}{2}\Bigr) + \arctan\Bigl(\frac{1}{2}\Bigr) \\[0.3cm]
+ \Leftrightarrow & \displaystyle \arctan\left( \frac{1 + \frac{1}{7}}{1 - \frac{1}{7}}\right) & = & 
+                   \displaystyle \arctan\left( \frac{\frac{1}{2} + \frac{1}{2}}{1 - \frac{1}{2}*\frac{1}{2}}\right) \\[0.5cm]
+ \Leftrightarrow & \displaystyle \arctan\left( \frac{\frac{8}{7}}{\frac{6}{7}}\right) & = & 
+                   \displaystyle \arctan\left( \frac{1}{\frac{3}{4}}\right) \\[0.5cm]
+ \Leftrightarrow & \displaystyle \arctan\left( \frac{8}{6} \right) & = & 
+                   \displaystyle \arctan\left( \frac{4}{3} \right) \quad\surd\\[0.3cm]
+\end{array}
+$
+\\[0.3cm]
+Wir berechnen $\pi$ nun indem wir Gleichung (\ref{eq:Pi}) mit $4$ multizieren und den
+Arcus-Tangens durch eine Taylor-Reihe approximieren.  Das liefert die Formel
+\begin{equation}
+  \label{eq:PiExact}  
+\pi = 8 * \sum\limits_{k=0}^\infty \bruch{(-1)^k}{2*k+1} * \left(\bruch{1}{2}\right)^{2*k+1} 
+      - 4 * \sum\limits_{k=0}^\infty \bruch{(-1)^k}{2*k+1} * \left(\bruch{1}{7}\right)^{2*k+1}
+\end{equation}
+In der Praxis können wir keine unendliche Summation durchführen,  wir müssen die Summation
+irgendwann abbrechen.  Die Näherung, die wir berechnen, hat also die Form
+\begin{equation}
+  \label{eq:PiApprox}
+\pi \approx 8 * \sum\limits_{k=0}^n \bruch{(-1)^k}{2*k+1} * \left(\bruch{1}{2}\right)^{2*k+1} 
+          - 4 * \sum\limits_{k=0}^n \bruch{(-1)^k}{2*k+1} * \left(\bruch{1}{7}\right)^{2*k+1}
+\end{equation}
+Der \emph{Abbruch-Fehler} $e$ mißt die Differenze zwischen der durch Gleichung (\ref{eq:PiApprox})
+gegebenen Näherung und dem durch Gleichung (\ref{eq:PiExact}) gegebenen exakten Wert, es
+gilt also 
+\\[0.3cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lcl}
+e & = & \displaystyle \pi - \left( 8 * \sum\limits_{k=0}^n \bruch{(-1)^k}{2*k+1} * \left(\bruch{1}{2}\right)^{2*k+1} 
+              - 4 * \sum\limits_{k=0}^n \bruch{(-1)^k}{2*k+1} * \left(\bruch{1}{7}\right)^{2*k+1} \right)\\[0.6cm]
+    & = & \displaystyle 8 * \sum\limits_{k=0}^\infty \bruch{(-1)^k}{2*k+1} * \left(\bruch{1}{2}\right)^{2*k+1} 
+          - 4 * \sum\limits_{k=0}^\infty \bruch{(-1)^k}{2*k+1} * \left(\bruch{1}{7}\right)^{2*k+1} \\[0.5cm]
+    &   & \displaystyle - \left( 8 * \sum\limits_{k=0}^n \bruch{(-1)^k}{2*k+1} * \left(\bruch{1}{2}\right)^{2*k+1} 
+                     - 4 * \sum\limits_{k=0}^n \bruch{(-1)^k}{2*k+1} * \left(\bruch{1}{7}\right)^{2*k+1}\right) \\[0.5cm]
+    & = & \displaystyle 8 * \sum\limits_{k=n+1}^\infty \bruch{(-1)^k}{2*k+1} * \left(\bruch{1}{2}\right)^{2*k+1} 
+          - 4 * \sum\limits_{k=n+1}^\infty \bruch{(-1)^k}{2*k+1} * \left(\bruch{1}{7}\right)^{2*k+1}.
+\end{array}
+$
+\\[0.3cm]
+Damit können wir den Betrag des Abbruch-Fehlers wie folgt abschätzen:
+\\[0.3cm]
+\hspace*{0.3cm}
+$
+\begin{array}[t]{lcl}
+|e|    & \leq  & \displaystyle 8 * \left| \sum\limits_{k=n+1}^\infty \bruch{(-1)^k}{2*k+1} * \left(\bruch{1}{2}\right)^{2*k+1} \right|
+               \;+\; 4 * \left| \sum\limits_{k=n+1}^\infty \bruch{(-1)^k}{2*k+1} * \left(\bruch{1}{7}\right)^{2*k+1}\right| \\[0.6cm]
+   & \leq  & \displaystyle 8 * \left| \bruch{(-1)^{n+1}}{2*(n+1)+1} * \left(\bruch{1}{2}\right)^{2*(n+1)+1} \right|
+               \;+\; 4 * \left| \bruch{(-1)^{n+1}}{2*(n+1)+1} * \left(\bruch{1}{7}\right)^{2*(n+1)+1}\right| \\[0.6cm]
+   & \leq  & \displaystyle 8 * \left(\bruch{1}{2}\right)^{2*n+3} 
+               + 4 *  \left(\bruch{1}{2}\right)^{2*n+3}  \\[0.5cm]
+   & \leq  & \displaystyle 12 * \left(\bruch{1}{2}\right)^{2*n+3}. \\[0.5cm]
+\end{array}
+$
+\\[0.1cm]
+Dabei haben wir im ersten Schritt dieser Abschätzung das Kriterium von Leibniz
+angewendet:  Der Betrag einer alternierenden Reihe ist kleiner als das erste Glied dieser
+Reihe, also gilt
+\\[0.3cm]
+\hspace*{1.3cm}
+$\left|\sum\limits_{k=0}^\infty (-1)^n * a_n \right| \leq |a_0|$.
+\\[0.3cm]
+Wollen wir jetzt $\pi$ auf eine Genauigkeit von $10^{-9}$ berechnen, so müssen wir $n$ so
+groß wählen, dass gilt:
+\\[0.1cm]
+\hspace*{0.3cm}
+$
+\begin{array}[t]{lrcl}
+            & |e| & \leq & 10^{-9} \\[0.1cm]
+\Leftarrow & \displaystyle 12 * \left(\bruch{1}{2}\right)^{2*n+3} & \leq & 10^{-9} \\[0.3cm]
+\Leftrightarrow & \displaystyle \ln(12) - (2*n+3)*\ln(2) & \leq & -9* \ln(10) \\[0.5cm]
+\Leftrightarrow & \displaystyle - (2*n+3)*\ln(2) & \leq & -9* \ln(10) - \ln(12) \\[0.5cm]
+\Leftrightarrow & \displaystyle   2*n+3 & \geq & \bruch{9* \ln(10) + \ln(12)}{\ln(2)} \\[0.5cm]
+\Leftrightarrow & \displaystyle   n & \geq & \bruch{1}{2}*\left(\bruch{9* \ln(10) + \ln(12)}{\ln(2)} - 3 \right) \approx 15.24115768 \\[0.5cm]
+\Leftarrow & n & = & 16.
+\end{array}
+$
+\\[0.3cm]
+Fall wir also die ersten $16$ Glieder der Reihen berücksichtigen, können wir $\pi$ auf
+eine Genauigkeit von $10^{-9}$ berechnen.  Rechnen wir mit 20 Stellen hinter dem Komma, so
+erhalten wir den Wert 
+\\[0.1cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{llcl}
+                    & \pi & \approx & 3.1415926535951738312. \\[0.1cm]
+  \mbox{exakt gilt} & \pi & =       & 3.1415926535897932\cdots. \\
+\end{array}
+$
+\\[0.1cm]
+Wir haben also $\pi$ auf eine Genauigkeit von 10 Stellen hinter dem Komma berechnet.
+
+\section{Interpolation}
+\textbf{Aufgabe}: Für die Funktion $x \mapsto \sin(x)$ soll im Intervall
+$[0,\frac{\pi}{2}]$ ein Tabelle erstellt werden, so dass der bei linearer Interpolation entstehende
+Interpolations-Fehler kleiner als $10^{-5}$ ist.  Das Intervall $[0,\frac{\pi}{2}]$ soll zu diesem
+Zweck in gleich große Intervalle aufgeteilt werden.  Berechnen Sie die Anzahl der
+Einträge, die für die Erstellung der Tabelle notwendig ist.
+\vspace*{0.3cm}
+
+\noindent
+\textbf{Lösung}:  
+Wir untersuchen den Interpolations-Fehler, der innerhalb eines beliebiegen Intervalls 
+$[x_0, x_1] \subseteq [0,\frac{\pi}{2}]$ auftritt.  Die Länge dieses Intervalls ist $h := x_1 - x_0$.
+Bei linearer Interploation gilt für den Interpolations-Fehler
+\\[0.1cm]
+\hspace*{1.3cm}
+$e(x) := \sin(x) - p(x) = \bruch{\sin^{(2)}(\xi)}{2!} * (x-x_0)*(x - x_1)$ \quad mit $\xi\in [x_0,x_1]$,
+\\[0.3cm]
+denn bei linearer Interploation gilt $n=1$ und folglich $n+1 = 2$.
+Da die zweite Ableitung von $x \mapsto \sin(x)$ die Funktion $x \mapsto -\sin(x)$ ist und
+da weiter $|\sin(x)| \leq 1$ ist, können wir für den Betrag des Interpolations-Fehlers 
+schreiben
+\begin{equation}
+  \label{eq:interpolationSinus}
+|e(x)| \leq \bruch{1}{2} * |(x-x_0)*(x-x_1)|. 
+\end{equation}
+Wir definieren 
+\\[0.1cm]
+\hspace*{1.3cm} $w(x) := (x-x_0)*(x-x_1)$. 
+\\[0.1cm]
+Um $|e(x)|$ näher bestimmen zu können, müssen wir die Funktion $w(x)$ in dem Intervall
+$[x_0,x_1]$ untersuchen.  Insbesondere interessiert uns die Frage, wo die Funktion $w(x)$
+in dem Intervall $[x_0,x_1]$ Extremwerte (also Minima oder Maxima) annimmt.  Falls
+die Funktion $w(x)$ an der Stelle $\chi$ einen  Extremwert hat, dann muss die Ableitung
+$\df w(\chi)$ den Wert 0 haben: 
+\\[0.1cm]
+\hspace*{1.3cm}
+$\df w(\chi) = 0$.
+\\[0.1cm]
+Es gilt 
+\\[0.1cm]
+\hspace*{1.3cm}
+$\df w(x) = \df \Bigl( x^2 - (x_0 + x_1) * x + x_0 * x_1\Bigr) = 2*x - (x_0 + x_1)$.
+\\[0.3cm]
+Für einen Extremwert im Innern des Intervalls $[x_0,x_1]$ muss also gelten:
+\\[0.3cm]
+\hspace*{1.3cm}
+$0 = 2 * \chi - (x_0 + x_1)$, \quad also \quad $\chi = \bruch{x_0 + x_1}{2}$.
+\\[0.3cm]
+Falls die Funktion $w(x) = (x - x_0)*(x - x_1)$ in dem Intervall einen Extremwert annimmt,
+so liegt dieser entweder an der Stelle $\chi = \frac{1}{2}(x_0 + x_1)$ oder an den
+Intervall-Grenzen $x_0$ bzw.~$x_1$.  Setzen wir diese Punkte ein, so erhalten wir 
+\\[0.1cm]
+\hspace*{1.3cm}
+$w(x_0) = (x_0 - x_0)*(x_1-x_0) = 0$, 
+\\[0.1cm]
+\hspace*{1.3cm}
+$w(x_1) = (x_1 - x_0)*(x_1-x_1) = 0$, \quad und 
+\\[0.1cm]
+\hspace*{1.15cm}
+$
+\begin{array}[t]{lcl}
+w\Bigl(\frac{1}{2}(x_0 + x_1)\Bigr) & = & \left(\frac{1}{2}(x_0 + x_1) - x_0\right)*\left(\frac{1}{2}(x_0 + x_1)-x_1\right) \\[0.3cm]
+                                    & = & \left(\frac{1}{2}(x_1 - x_0)\right)*\left(\frac{1}{2}(x_0 - x_1)\right) \\[0.3cm]
+                                    & = & - \frac{1}{4} (x_1 - x_0)^2 \\[0.3cm]
+                                    & = & - \frac{1}{4} h^2. \\[0.3cm]
+\end{array}\\[0.1cm]
+$
+\\[0.3cm]
+Damit ist klar, dass wir in Gleichung (\ref{eq:interpolationSinus}) den Term
+$\bigl|(x-x_0)*(x-x_1)\bigr|$ durch $\frac{h^2}{4}$ abschätzen können, wir haben also für
+den Interpolations-Fehler die Abschätzung 
+\begin{equation}
+  \label{eq:interpolationSinus2}
+  |e(x)| = \bigl|\sin(x) -p(x)\bigr| \leq \bruch{h^2}{8}
+\end{equation}
+gefunden.   Wir erreichen bei linearer Interploation eine Genauigkeit von
+$10^{-5}$ falls wir $h$ so wählen, dass $|e(x)| < 10^{-5}$ gilt.  Also bestimmen wir $h$
+wie folgt: 
+\\[0.1cm]
+\hspace*{1.3cm}
+$\bruch{h^2}{8} \leq 10^{-5} \;\Leftrightarrow\; h \leq \sqrt{8 * 10^{-5}} \approx 0.008944271908$.
+\\[0.1cm]
+Wegen \\[0.1cm]
+\hspace*{1.3cm}
+$\bruch{\pi}{2h} \approx 175.6203682$
+\\[0.1cm] 
+müssen wir das Intervall $[0,\frac{\pi}{2}]$ also in 176 Intervalle aufteilen.
+Die Tabelle hat dann 177 Einträge.
+\pagebreak
+
+\noindent
+\textbf{Aufgabe}: Lösen Sie für $y=10^6$ und $y=10^{-6}$ die Gleichung $x*\exp(x) = y$ 
+durch eine einfache Fixpunkt-Iteration.  Berechnen Sie die Lösung $x$ jeweils auf eine
+Genauigkeit von $10^{-3}$.
+\vspace*{0.3cm}
+
+\noindent
+\textbf{Lösung}:
+Es gibt  zwei auf der Hand liegende Möglickeiten um die Gleichung $x*\exp(x) = y$ in eine
+Fixpunkt-Gleichung zu verwandeln.  
+\begin{enumerate}
+\item $x*\exp(x) = y \;\Leftrightarrow\; x = y*\exp(-x)$.
+
+      In diesem Fall definieren wir $f(x) := y*\exp(-x)$. Dann gilt
+      \\[0.1cm]
+      \hspace*{1.3cm} $f'(x) = -y*\exp(-x)$.
+      \\[0.1cm]
+      Da $x>0$ sein muß, können wir den Betrag $|f'(x)|$ durch $y$ abschätzen: 
+      \\[0.1cm]
+      \hspace*{1.3cm}
+      $|f'(x)| \leq y$
+      \\[0.1cm]
+      Falls nun $y$ klein ist, wird die Iteration $x_{n+1}=f(x_n)$ schnell konvergieren,
+      in dem konkreten Fall $y=10^{-6}$ ist $f$ kontrahierend mit dem
+      Kontraktions-Koeffizienten $10^{-6}$.  Wählen wir als Startwert $x_0 = 0$,
+      so erhalten wir $x_1 = 10^{-6}$ und mit dem Banach'schen Fixpunkt-Satz erhalten wir
+      als Abschätzung für den Fehler nach $n$-Iterationen 
+      \\[0.1cm]
+      \hspace*{1.3cm}
+      $|x_n - \bar{x}| \leq \bruch{\bigl(10^{-6}\bigr)^n}{1-10^{-6}}*|x_1-x_0| \approx
+      10^{-6\cdot n} *|10^{-6}| = 10^{-6\cdot (n+1)}$ 
+      \\[0.1cm]
+      Setzen wir hier $n=1$ so sehen wir 
+      \\[0.1cm]
+      \hspace*{1.3cm}
+      $|x_1 - \bar{x}| \leq  10^{-12}$.
+      \\[0.1cm]
+      Damit ist die geforderte Genauigkeit bereits nach einer Iteration erreicht
+      und der gesuchte Wert ist $\bar{x} \approx 10^{-6}$.
+\item $x*\exp(x) = y \;\Leftrightarrow\;  x = \ln(y) - \ln(x)$.
+
+      In diesem Fall definieren wir $f(x) := \ln(y) - \ln(x)$.  Dann gilt 
+      \\[0.1cm]
+      \hspace*{1.3cm}
+      $f'(x) = -\bruch{1}{x}$.
+      \\[0.1cm]
+      Diese Funktion ist auf den Intervallen kontrahierend, auf denen $x$ größer als 1
+      ist. Sie ist geeignet, die Lösung der Gleichung für $y= 10^6$ zu finden. 
+      Setzen wir $x_0 := 1$, so erhalten wir die Werte 
+      \\[0.1cm]
+      \hspace*{0.3cm}
+      $x_1 = 13.815510$, \quad $x_2 = 11.18971$, \quad $x_3 = 11.40051$, \quad
+      $x_4 = 11.38185$, \quad $x_5 = 11.38349$.
+      \\[0.1cm]
+      Wir vermuten, dass die geforderte Genauigkeit im fünften Schritt erreicht ist.  Nach
+      dem ersten Schritt sind alle Werte von $x$ jedenfalls größer als 10, so dass wir den
+      Kontraktions-Koeffizienten $q$ durch $\frac{1}{10}$ abschätzen können. In der Vorlesung
+      wurde allgemein gezeigt, dass 
+      \\[0.1cm]
+      \hspace*{1.3cm}
+      $|x_{n} - \bar{x}| \leq \bruch{q}{1-q}*|x_n - x_{n-1}|$
+      \\[0.1cm] gilt. Setzen wir die konkreten Werte ein, so finden wir
+      \\[0.1cm]
+      \hspace*{0.3cm}
+      $|x_5 - \bar{x}| \leq \bruch{q}{1-q} * |x_5 - x_4| \approx
+      \frac{\frac{1}{10}}{\frac{9}{10}}*|11.38185 - 11.38349| \approx
+      \bruch{1}{9}*0.00163 \approx 1.8*10^{-4}$
+      \\[0.1cm]
+      Damit hat $x_5$ tatsächlich die geforderte Genauigkeit.
+\end{enumerate}
+\pagebreak
+
+\noindent
+\textbf{Aufgabe}: Untersuchen Sie mit Hilfe des Integral-Vergleichskriteriums, ob die
+Reihe 
+\\[0.1cm]
+\hspace*{1.3cm}
+$\displaystyle \sum\limits_{n=1}^\infty \bruch{1}{n*(n+1)}$ 
+\\[0.3cm]
+konvergiert.
+\vspace*{0.1cm}
+
+\noindent
+\textbf{Lösung}:  Nach dem Integral-Vergleichskriterium konvergiert die Reihe genau dann,
+wenn der Grenzwert
+\\[0.1cm]
+\hspace*{1.3cm}
+$\displaystyle \lim\limits_{x \rightarrow \infty} \int_1^x \bruch{1}{t\cdot(t+1)}\,dt$
+\\[0.1cm]
+existiert.  Um das Integral ausführen zu können, führen wir eine Partialbruch-Zerlegung
+des Integranden durch:
+\\[0.1cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{llcl}
+                & \bruch{1}{t\cdot(t+1)} & = & \bruch{\alpha}{t} + \bruch{\beta}{t+1} \\[0.3cm]
+\Leftrightarrow & 1 & = & \alpha \cdot (t+1) + \beta \cdot t \\[0.1cm]
+\Leftrightarrow & 1 & = & t\cdot (\alpha + \beta) + \alpha   \\[0.1cm]
+\end{array}
+$
+\\[0.1cm]
+Damit haben wir zur Bestimmung von $\alpha$ und $\beta$ die Gleichungen 
+\\[0.1cm]
+\hspace*{1.3cm}
+$\alpha = 1$ \quad und \quad $0 = \alpha + \beta$, \quad also \quad $\beta = -1$
+\\[0.1cm]
+gefunden und damit gilt 
+\\[0.1cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{clcl}
+    & \displaystyle \lim\limits_{x \rightarrow \infty} \int_1^x \bruch{1}{t\cdot(t+1)}\,dt 
+& = & \displaystyle \lim\limits_{x \rightarrow \infty} \int_1^x \Bigl(\bruch{1}{t} - \bruch{1}{t+1}\Bigr)\,dt \\[0.3cm]
+  = & \displaystyle \lim\limits_{x \rightarrow \infty} \Bigl(\ln(t) - \ln(t+1)\Bigr)\Big|_1^x 
+& = & \displaystyle \lim\limits_{x \rightarrow \infty} \ln\Bigl(\bruch{t}{t+1}\Bigr)\Big|_1^x \\[0.3cm]
+  = & \displaystyle \lim\limits_{x \rightarrow \infty} \ln\Bigl(\bruch{x}{x+1}\Bigr) - \ln\Bigl(\bruch{1}{2}\Bigr)  
+& = & \displaystyle \lim\limits_{x \rightarrow \infty} \ln\biggl(\frac{1}{1+\frac{1}{x}}\biggr) + \ln(2)  \\[0.3cm]
+  = & \displaystyle \ln\left(\bruch{1}{1+0}\right) + \ln(2) 
+& = & \displaystyle \ln(1) + \ln(2) \\[0.3cm]
+  = & \ln(2).
+\end{array}
+$
+\\[0.1cm]
+Da der Grenzwert existiert, konvergiert die obige Reihe.
+\pagebreak
+
+\noindent
+\textbf{Aufgabe}:  Berechnen Sie, in wieviele Teil-Intervalle das Intervall $[0,1]$
+aufgeteilt werden muss, wenn das Integral
+\\[0.1cm]
+\hspace*{1.3cm}
+$\displaystyle \int_0^1 e^{-x^2}\, dx$
+\\[0.1cm]
+mit Hilfe der Trapez-Regel mit einer Genauigkeit von $10^{-6}$ berechnet werden soll.
+\vspace*{0.3cm}
+
+\noindent
+Nach dem Satz über die Fehlerabschätzung bei der Trapez-Regel kann der Fehler, der bei der
+Approximation des Integrals mit der Trapez-Regel entsteht, durch den Ausdruck 
+\\[0.3cm]
+\hspace*{1.3cm}
+$\bruch{K}{12} \cdot \bruch{(b-a)^3}{n^2}$
+\\[0.3cm]
+abgeschätzt werden. Hier bezeichnen $a$ und $b$ die Integrations-Grenzen, in unserem Fall
+gilt also $a=0$ und $b=1$. Die Zahl $n$ gibt die Anzahl der Teil-Intervalle an und $K$ ist
+eine obere Grenze für den Betrag der zweiten Ableitung der zu integrierenden Funktion in
+dem Intervall $[a,b]$.  Die Aufgabe besteht also zunächst darin, die zweite Ableitung der
+Funktion $f(x) = \exp(-x^2)$ zu berechnen und dann das Maximum zu finden, dass die zweite
+Ableitung in dem Intervall $[0,1]$ annimmt.  Es gilt 
+\\[0.3cm]
+\hspace*{1.3cm}
+$f'(x) = -2\cdot x \cdot e^{-x^2}$ \quad und \quad 
+$f^{(2)}(x) = -2\cdot e^{-x^2} + 4\cdot x^2 \cdot e^{-x^2} = (4\cdot x^2 - 2)\cdot e^{-x^2}$.
+\\[0.3cm]
+Um das Maximum von $\bigl|f^{(2)}(x)\bigr|$ zu finden, bilden wir die Ableitung der
+Funktion $f^{(2)}(x)$, wir berechnen also $f^{(3)}(x)$:
+\\[0.3cm]
+\hspace*{1.3cm}
+$f^{(3)}(x) = \bigl(8\cdot x - 2\cdot x \cdot(4\cdot x^2 - 2)\bigr)\cdot e^{-x^2} =
+   (12 \cdot x - 8 \cdot x^3)\cdot e^{-x^2}$
+\\[0.3cm]
+Die Funktion $f^{(2)}$ kann Extremwerte  an den Randpunkten des Intervalls $[0,1]$
+annehmen und an den Stellen, wo die Ableitung dieser Funktion den Wert 0 hat.  Das führt
+auf die Gleichung 
+\\[0.3cm]
+\hspace*{1.3cm}
+$
+\begin{array}{ll}
+                &  0 = (12 \cdot x - 8 \cdot x^3)\cdot e^{-x^2} \\[0.3cm]
+\Leftrightarrow &  0 = (12 \cdot x - 8 \cdot x^3) \\[0.3cm]
+\Leftrightarrow &  x = 0 \; \vee \; 3 - 2 \cdot x^2 = 0 \\[0.3cm]
+\Leftrightarrow &  x = 0 \; \vee \; \bruch{3}{2} =  x^2  \\[0.3cm]
+\Leftrightarrow &  x = 0 \; \vee \; x = \frac{1}{2}\sqrt{6} \; \vee \; x = -\frac{1}{2}\sqrt{6}
+\end{array}
+$
+\\[0.3cm]
+Da die beiden Werte $\frac{1}{2}\sqrt{6}$ und $-\frac{1}{2}\sqrt{6}$ nicht in dem
+Intervall $[0,1]$ liegen, können Extremwerte der zweiten Ableitung nur an den Stellen $0$
+und $1$ auftreten.  Es gilt 
+\\[0.3cm]
+\hspace*{1.3cm}
+$f^{(2)}(0) = -2 \cdot e^{-0^2} = -2$ \quad  und \quad
+$f^{(2)}(1) = (4 -2) \cdot e^{-1} = 2/e \approx 0.7357588824$ 
+\\[0.3cm]
+Also ist der Betrag von $f^{(2)}(x)$ bei $x=0$ maximal und hat den Wert $2$. Damit haben
+wir  $K = 2$ gefunden und die Formel für den Approximations-Fehler $e$ lautet 
+\\[0.3cm]
+\hspace*{1.3cm}
+$ e \leq \bruch{1}{6\cdot n^2}$
+\\[0.3cm]
+Um das Integral mit einer Genauigkeit von $10^{-6}$ zu berechnen muss gelten 
+\\[0.3cm]
+\hspace*{1.3cm}
+$\bruch{1}{6\cdot n^2} \leq 10^{-6} \;\Leftrightarrow\; n^2 = \bruch{10^6}{6} \;\Leftrightarrow\;
+n = \bruch{10^3}{\sqrt{6}} \approx 408.2482906$
+\\[0.3cm]
+Als müssen wir das Intervall in 409 Teil-Intervalle aufteilen um die gewünschte
+Genauigkeit zu erreichen.
+\pagebreak
+
+\noindent
+\textbf{Aufgabe}: 
+\begin{enumerate}
+\item Berechnen Sie mit Hilfe der Kepler'schen Faß-Regel eine Approximation 
+      für das Integral 
+      \\[0.1cm]
+      \hspace*{1.3cm}$\displaystyle \int_0^{\frac{1}2} \sin(x)\, dx$.
+\item Geben Sie eine möglichst genaue Abschätzung für den Approximations-Fehler.
+\item Vergleichen Sie ihr Ergebnis mit dem exakten Wert.
+\end{enumerate}
+\vspace*{0.3cm}
+
+\noindent
+\textbf{Lösung}:  
+\begin{enumerate}
+\item Nach der Formel im Skript gilt
+      \\[0.3cm]
+      \hspace*{1.3cm}
+     $\displaystyle \int_0^{\frac{1}2} \sin(x)\, dx  \approx \frac{1}{6}*\biggl( \sin(0) + 4\cdot \sin\Bigl(\frac{1}{4}\Bigr) + \cdot
+        \sin\Bigl(\frac{1}{2}\Bigr) \biggr)\cdot \frac{1}{2}
+        \approx 0.1224201146
+       $ 
+\item Nach der im Skript angegebenen Formel kann der Approximations-Fehler
+      der Simpson'schen Regel durch den Ausdruck
+      \\[0.3cm]
+      \hspace*{1.3cm}
+      $\bruch{K}{180} * \bruch{(b-a)^5}{n^4}$
+      \\[0.3cm]
+      abgeschätzt werden.  Hier ist $K$  eine Abschätzung für die vierte Ableitung des
+      Integranden und $a$ und $b$ sind die Intervall-Grenzen, in unserem Fall gilt also
+      $a=0$ und $b=\frac{1}{2}$.  Für die Kepler'sche Faß-Regel gilt außerdem $n=2$.
+      Wir berechnen nun die Ableitungen der Funktion $f(x) = \sin(x)$: 
+      \\[0.3cm]
+      \hspace*{1.3cm}
+      $f'(x) = \cos(x)$, $f^{(2)}(x) = -\sin(x)$, $f^{(3)}(x) = -\cos(x)$ und $f^{(4)}(x) = \sin(x)$.
+      \\[0.3cm]
+      Die Ableitung von $x \mapsto \sin(x)$ ist $x \mapsto \cos(x)$.  Diese Funktion
+      hat in dem  Intervall $\bigl[0, \frac{1}{2}\bigr]$ keine Nullstelle. Also nimmt die Funktion
+      $\sin(x)$ die Extremwerte an den Randpunkten an.  Es gilt $\sin(0) = 0$ und
+      $\sin\bigl(\frac{1}{2}\bigr) = 0.4794255386$ und damit gilt 
+      \\[0.3cm]
+      \hspace*{1.3cm}
+      $K = \sin\bigl(\frac{1}{2}\bigr)$.
+      \\[0.3cm]
+      Wegen $n=2$ gilt für den Approximations-Fehler $e$ also
+      \\[0.1cm]
+      \hspace*{1.3cm}
+      $e \leq \frac{1}{180}\cdot \sin\bigl(\frac{1}{2}\bigr)\cdot \frac{1}{2^4} \cdot \bigl(\frac{1}{2}\bigr)^5 = \frac{1}{92160} \sin\bigl(\frac{1}{2}\bigr) 
+       \approx 5.202100026 \cdot 10^{-6}$
+\item Für den exakten Wert gilt
+      \\[0.3cm]
+      \hspace*{1.3cm}
+      $\displaystyle \int_0^{\frac{1}2} \sin(x)\, dx = -\cos(x) \bigg|_0^{\frac{1}{2}} = \cos(0) - \cos\bigl(\frac{1}{2}\bigr) \approx 0.1224174381$
+      \\[0.3cm]
+      Der tatsächliche Fehler beträgt $0.1224174381 - 0.1224201146 \approx 2.6765\cdot 10^{-6}$.
+\end{enumerate}
+\pagebreak
+
+\noindent
+\textbf{Aufgabe}: Gegenstand dieser Aufgabe ist die numerische Berechnung der Summe 
+\\[0.1cm]
+\hspace*{1.3cm} $\displaystyle \sum\limits_{k=1}^\infty \bruch{1}{k^3}$.
+\\[0.1cm]
+Gehen Sie zur Berechnung dieser Summe in folgenden Schritten vor.
+\begin{enumerate}
+\item Approximieren Sie die Rest-Summe $\sum\limits_{k=n}^\infty \bruch{1}{k^3}$ 
+      durch ein geeignetes Integral.
+
+      \textbf{Hinweis}: Es gilt 
+      \\[0.1cm]
+      \hspace*{1.3cm} $\displaystyle f(k) = \int_{k-\frac{1}{2}}^{k+\frac{1}{2}} f(k) \, dt \approx \int_{k-\frac{1}{2}}^{k+\frac{1}{2}} f(t) \, dt$.
+\item Berechnen Sie eine Abschätzung für den Approximations-Fehler,
+      den Sie bei der Integration in Teil (a) erhalten.
+      
+      \textbf{Hinweis}: Approximieren Sie die auftretenden Summen durch Integrale.
+\item Berechnen Sie nun, wir groß Sie $n$ wählen müssen, damit der Approximations-Fehler
+      kleiner als $10^{-6}$ bleibt.
+\item Geben Sie nun einen Näherungs-Wert für die Summe $\sum\limits_{k=1}^\infty \bruch{1}{k^3}$,
+      der sich von dem exakten Ergebnis um weniger als $10^{-6}$ unterscheidet.
+\end{enumerate}
+\vspace*{0.3cm} 
+
+\noindent
+\textbf{Lösung}: 
+\begin{enumerate}
+\item Dem Hinweis folgend approximieren wir $f(k)$ durch 
+      \\[0.1cm]
+      \hspace*{1.3cm} $\displaystyle f(k) \approx \int_{k-\frac{1}{2}}^{k+\frac{1}{2}} f(t) \, dt$.
+      \\[0.1cm]
+      Damit finden wir für die Rest-Summe die Näherungs-Formel
+      \\[0.1cm]
+      \hspace*{1.3cm}
+      $\displaystyle
+       \sum\limits_{k=n}^\infty \bruch{1}{k^3} \approx 
+       \sum\limits_{k=n}^\infty \int_{k-\frac{1}{2}}^{k+\frac{1}{2}} \bruch{1}{t^3} \, dt =
+       \int_{n-\frac{1}{2}}^{\infty} \bruch{1}{t^3} \, dt =
+       -\frac{1}{2}\cdot\bruch{1}{t^2} \bigg|_{n-\frac{1}{2}}^{\infty} =
+       \frac{1}{2} \cdot \bruch{1}{\Bigl(n-\frac{1}{2}\Bigr)^2} 
+       $
+\item Der Approximations-Fehler $e(k)$, den wir bei der Näherung von $\frac{1}{k^3}$ machen, hat
+      den Wert 
+      \\[0.1cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{lcl}
+      e(k) & = &\bruch{1}{k^3} - \int_{k-\frac{1}{2}}^{k+\frac{1}{2}} \bruch{1}{t^3}\, dt \\[0.5cm]
+           & = & \bruch{1}{k^3} + \frac{1}{2}\left(\bruch{1}{t^2} \bigg|_{k-\frac{1}{2}}^{k+\frac{1}{2}}\right) \\[0.5cm]
+           & = & \bruch{1}{k^3} + \frac{1}{2}\cdot \Biggl(\frac{1}{\bigl(k+\frac{1}{2}\bigr)^2} - \frac{1}{\bigl(k-\frac{1}{2}\bigr)^2}\Biggr)  \\[0.5cm]
+      \end{array}
+      $
+      \\[0.1cm]
+      Den gesamten Approximations-Fehler erhalten wir, wenn wir diesen Fehler für $n=k$
+      bis $\infty$ aufsummieren.  Die dabei auftretenden Summen approximieren wir ähnlich
+      wie in Teil (a) der Aufgabe durch Integrale.
+      \\[0.1cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{lcl}
+         e & = & \displaystyle 
+                 \sum\limits_{k=n}^\infty
+       \bruch{1}{k^3} + \frac{1}{2}\cdot \Biggl(\frac{1}{\bigl(k+\frac{1}{2}\bigr)^2} - \frac{1}{\bigl(k-\frac{1}{2}\bigr)^2}\Biggr)  \\[0.7cm]
+           & \approx & \displaystyle 
+                 \int_{n-\frac{1}{2}}^\infty
+       \bruch{1}{t^3} + \frac{1}{2}\cdot \Biggl(\frac{1}{\bigl(t+\frac{1}{2}\bigr)^2} - \frac{1}{\bigl(t-\frac{1}{2}\bigr)^2}\Biggr)\, dt  \\[0.5cm]
+      \end{array}
+      $
+      \\[0.1cm]
+      Also haben wir
+      \\[0.1cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{lcl}
+         e & \approx & \displaystyle 
+       -\frac{1}{2}\cdot\bruch{1}{t^2} - \frac{1}{2}\cdot \biggl(\frac{1}{t+\frac{1}{2}} - \frac{1}{t-\frac{1}{2}}\biggr)\biggl|_{n-\frac{1}{2}}^\infty  \\[0.5cm]
+           & = & \displaystyle 
+           \frac{1}{2}\cdot \biggl( \frac{1}{\bigl(n-\frac{1}{2}\bigr)^2} + \frac{1}{n} - \frac{1}{n-1}\biggr) \\[0.5cm]
+           & = & \displaystyle 
+           \frac{1}{2}\cdot \biggl( \frac{1}{\bigl(n-\frac{1}{2}\bigr)^2} + \frac{n-1 - n}{n\cdot(n-1)}\biggr) \\[0.5cm]
+           & = & \displaystyle 
+           \frac{1}{2}\cdot \biggl( \frac{1}{\bigl(n-\frac{1}{2}\bigr)^2} - \frac{1}{n\cdot(n-1)}\biggr) \\[0.5cm]
+           & = & \displaystyle 
+           \frac{1}{2}\cdot \frac{n^2-n - \bigl(n^2 - n + \frac{1}{4}\bigr)}{\bigl(n-\frac{1}{2}\bigr)^2 \cdot n \cdot (n-1)} \\[0.5cm]
+           & = & \displaystyle 
+           -\frac{1}{8}\cdot \frac{1}{\bigl(n-\frac{1}{2}\bigr)^2 \cdot n \cdot (n-1)} \\[0.5cm]
+           & \approx & \displaystyle 
+           -\frac{1}{8}\cdot \frac{1}{n^4} 
+      \end{array}
+      $
+\itemwww. Um die Summe $\sum\limits_{k=1}^\infty \bruch{1}{k^3}$ mit einer Genauigkeit von
+      $10^{6}$ zu berechnen müssen wir $n$ so wählen, dass gilt 
+      \\
+      \hspace*{1.3cm}
+      $\frac{1}{8}\cdot \bruch{1}{n^4} \leq 10^{-6} \;\Leftrightarrow\; n \geq
+      \sqrt[4]{\bruch{10^6}{8}} \approx 18.80301547
+      $.
+      \\[0.1cm]
+      Also müssen wir $n = 19$ wählen um die geforderte Genauigkeit zu erhalten.
+\item Wir haben 
+      \\[0.1cm]
+      \hspace*{1.3cm}
+      $\sum\limits_{k=1}^\infty \bruch{1}{k^3} \approx \sum\limits_{k=1}^{n-1}
+      \bruch{1}{k^3} + \frac{1}{2} \cdot \frac{1}{\bigl(n-\frac{1}{2}\bigr)^2} \approx 1.202057968
+      $
+      %maple evalf(sum(1/k^3, k=1.. n-1) + 1/2 * 1/(n-1/2)^2 - 1/8 * 1/(n*(n-1/2)^2*(n-1)))
+      \\[0.1cm]
+      Der Fehler des so berechneten Werts beträgt $1.065 \cdot 10^{-6}$.
+\end{enumerate}
+
+\pagebreak
+
+\noindent
+\textbf{Aufgabe}:
+Die Funktion $p$ sei auf dem Intervall $[-\pi,\pi]$ definiert durch
+\\[0.1cm]
+\hspace*{1.3cm}
+$p(x) = x^2$.
+\\[0.1cm]
+Die Funktion werde so auf $\mathbb{R}$ fortgesetzt, dass die resultierende Funktion die Periode
+$2\!\cdot\!\pi$ hat.  
+\begin{enumerate}
+\item Berechnen Sie die Fourier-Reihe von $p$.
+\item Berechnen Sie mit Hilfe der Fourier-Reihe von $p$ einen Wert für die Summe
+      \\[0.1cm]
+      \hspace*{1.3cm}
+      $\displaystyle \sum\limits_{n=1}^\infty \bruch{1}{n^2}$. 
+\end{enumerate}
+
+\noindent
+\textbf{Lösung}: Wir berechnen zunächst die Fourier-Reihe.  Da die Funktion $p$ gerade
+ist, haben die Koeffizienten $b_k$ alle den Wert $0$.  Für den Koeffizienten $a_0$ gilt 
+\\[0.1cm]
+\hspace*{1.3cm}
+$\displaystyle a_0 = 
+\bruch{2}{\pi}\cdot\int_0^{\pi} p(x)\,dx = 
+\bruch{2}{\pi}\cdot\int_0^{\pi} x^2\,dx = 
+\bruch{2}{\pi}\cdot \bruch{x^3}{3} \bigg|_0^{\pi} = 
+\bruch{2}{\pi}\cdot \bruch{\pi^3}{3}  = 
+\bruch{2}{3}\cdot\pi^2$. 
+\\[0.1cm]
+Für $k>0$ berechnen wir die Koeffizienten $a_k$ durch zweimalige partielle Integration.
+\\[0.3cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lcl} 
+\bruch{\pi}{2}\cdot a_k 
+& = & \displaystyle
+\int_0^{\pi}\!\! x^2\cdot \cos(n\!\cdot\!x)\, dx \\[0.5cm]
+& = & \displaystyle
+x^2\cdot\bruch{1}{n}\cdot\sin(n\!\cdot\!x) \,\bigg|_0^{\pi} - \bruch{2}{n}\cdot \int_0^{\pi}\!\! x\cdot \sin(n\!\cdot\!x)\, dx \\[0.5cm]
+& = & \displaystyle
+-\bruch{2}{n}\left( x\cdot\bruch{-1}{n}\cdot\cos(n\!\cdot\!x) \,\bigg|_0^{\pi} + \bruch{1}{n}\cdot \int_0^{\pi}\!\! \cos(n\!\cdot\!x)\, dx \right)\\[0.5cm]
+& = & \displaystyle
+-\bruch{2}{n}\left( \pi\cdot\bruch{(-1)^{n+1}}{n} + \bruch{1}{n^2}\cdot \sin(n\!\cdot\!x)\bigg|_0^{\pi} \right)\\[0.5cm]
+& = & \displaystyle
+\bruch{2\cdot\pi}{n^2} \cdot (-1)^n 
+\end{array}
+$
+\\[0.3cm]
+Damit haben für $a_k$ den Wert 
+\\[0.1cm]
+\hspace*{4.3cm}
+$a_k = 4\cdot \bruch{(-1)^n}{n^2}$
+\\[0.1cm]
+gefunden.  Also gilt 
+\\[0.1cm]
+\hspace*{4.3cm}
+$p(x) = \bruch{1}{3} \pi^2 + 4\cdot\sum\limits_{n=1}^\infty \bruch{(-1)^n}{n^2}\cdot\cos(n\!\cdot\!x)$
+\\[0.3cm]
+Setzen wir in dieser Gleichung für $x$ den Wert $\pi$ ein, so  folgt wegen 
+$p(\pi) = \pi^2$ und $\cos(n\!\cdot\!\pi) = (-1)^n$ die Gleichung:
+\\[0.3cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{llcl}
+               & \pi^2  & = & \bruch{1}{3}\cdot \pi^2 + 4 \cdot \sum\limits_{n=1}^\infty \bruch{1}{n^2} \\[0.5cm]
+\Leftrightarrow& \bruch{2}{3} \cdot \pi^2  & = &  4 \cdot\sum\limits_{n=1}^\infty \bruch{1}{n^2} \\[0.5cm]
+\Leftrightarrow& \bruch{1}{6} \cdot \pi^2  & = &  \sum\limits_{n=1}^\infty \bruch{1}{n^2} \\[0.5cm]
+\end{array}
+$
+
+\pagebreak
+\noindent
+\textbf{Aufgabe}:  Die Lambert'sche W-Funktion (Johann Heinrich Lambert; 1728 - 1777)
+$x \mapsto W(x)$ ist für $x\geq 0$ definiert als die Umkehr-Funktion der Funktion $x \mapsto x\cdot e^x$,
+es gilt also 
+\\[0.1cm]
+\hspace*{1.3cm} $\displaystyle W(x) \cdot e^{W(x)} = x$ \quad für alle $x \in \mathbb{R}_+$.
+\begin{enumerate}
+\item Berechnen Sie die Ableitung der Lambert'schen W-Funktion.
+\item Formen Sie den Ausdruck für $W'(x)$ so um, dass der Term $e^{W(x)}$ nicht mehr
+      auftritt.
+\item Berechnen Sie eine Stamm-Funktion der Lambert'schen W-Funktion.
+\item Nehmen Sie an, dass Sie die Lambert'sche W-Funktion berechnen können und
+      bestimmen Sie unter dieser Annahme für ein gegebenes $\varepsilon$ die Lösung der Gleichung 
+      \\[0.1cm]
+      \hspace*{1.3cm}
+      $\bruch{1}{n} * \Bigl(\frac{1}{2}\Bigr)^n = \varepsilon$
+      \\[0.1cm]
+      durch algebraische Umformungen.
+
+      \noindent
+      \textbf{Hinweis}: Invertieren Sie die Gleichung und bringen Sie die Gleichung dann
+      auf die Form $\alpha * e^\alpha = \beta$ für geeignete $\alpha$ und $\beta$, denn
+      dann gilt $\alpha = W(\beta)$.
+\end{enumerate}
+\vspace*{0.3cm}
+
+\noindent
+\textbf{Lösung}:
+\begin{enumerate}
+\item Um die Ableitung der Lambert'schen W-Funktion zu bestimmen, leiten wir die Gleichung
+      \\[0.1cm]
+      \hspace*{1.3cm}
+       $\displaystyle W(x) \cdot e^{W(x)} = x$ 
+      \\[0.1cm]
+      nach $x$ ab.  Das liefert: 
+      \\[0.3cm]
+      \hspace*{0.0cm}
+      $
+      \begin{array}[t]{lrcll}
+        & \displaystyle 
+        W'(x) \cdot e^{W(x)} + W(x) \cdot W'(x) \cdot e^{W(x)} & = & 1 \\[0.1cm]
+      \Leftrightarrow & \displaystyle 
+        W'(x) \cdot \bigl(1 + W(x)\bigr) \cdot e^{W(x)} & = & 1 & \hspace*{-1cm}
+                      \bigg|\; \cdot \bruch{1}{\bigl(1+W(x)\bigr) \cdot e^{W(x)}} \\[0.1cm]
+        
+      \Leftrightarrow & \displaystyle 
+        W'(x)  & = & \bruch{1}{\bigl(1+W(x)\bigr) \cdot e^{W(x)}} \\[0.1cm]
+      \end{array}
+      $
+\item Nach der Definition der Lambert'schen W-Funktion gilt 
+      \\[0.3cm]
+      \hspace*{1.3cm} 
+       $\displaystyle W(x) \cdot e^{W(x)} = x$ \quad also \quad $e^{W(x)} = \bruch{x}{W(x)}$.
+      \\[0.3cm]
+      Setzen wir dies in die obige Gleichung für $W'(x)$ ein, so erhalten wir 
+      \\[0.1cm]
+      \hspace*{1.3cm}
+      $W'(x) = \bruch{W(x)}{x*\bigl(1 + W(x)\bigr)}$.
+\item Um die Formel zur Berechnung des unbestimmten Integrals einer Umkehr-Funktion aus
+      Abschnitt 4.2.3 des Skripts verwenden zu können, berechnen wir zunächst das
+      unbestimmte Integral der Funktion $x \mapsto x\cdot e^x$ durch partielle Integration:
+      \\[0.1cm]
+      \hspace*{1.3cm}
+      $\displaystyle G(x) := \int x\cdot e^x\, dx = x\cdot e^x - \int e^x\, dx = x\cdot e^x - e^x = (x -1)\cdot e^x$
+      \\[0.1cm]
+      Nun gilt 
+      \\[0.1cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{lcl}
+      \displaystyle \int W(x)\, dx & = & x\cdot W(x) - G\bigl(W(x)\bigr) \\[0.1cm]
+                                   & = & x\cdot W(x) - \bigl(W(x) - 1\bigr)\cdot e^{W(x)} \\[0.1cm]
+                                   & = & x\cdot W(x) - \bigl(W(x) - 1\bigr)\cdot \bruch{x}{W(x)} \\[0.1cm]
+                                   & = & \bruch{W^2(x) - W(x) + 1}{W(x)} \cdot x. \\[0.1cm]
+      \end{array}
+      $
+\item Es gilt: 
+      \\[0.1cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{lrcll}
+        & \bruch{1}{n} \cdot \Bigl(\frac{1}{2}\Bigr)^n & = & \varepsilon \\[0.3cm]
+      \Leftrightarrow & \displaystyle n \cdot 2^n & = & \bruch{1}{\varepsilon} \\[0.3cm]
+      \Leftrightarrow & \displaystyle n \cdot \bigl(e^{\ln(2)}\bigr)^n & = & \bruch{1}{\varepsilon} & \\[0.3cm]
+      \Leftrightarrow & \displaystyle \bigl(\ln(2)\cdot n\bigr) \cdot e^{\ln(2)\cdot n} & = & \bruch{\ln(2)}{\varepsilon} \\[0.3cm]
+      \Leftrightarrow & \displaystyle \ln(2)\cdot n & = & W\Bigl(\bruch{\ln(2)}{\varepsilon}\Bigr) & \\[0.3cm]
+      \Leftrightarrow & \displaystyle n & = & \bruch{1}{\ln(2)} \cdot W\Bigl(\bruch{\ln(2)}{\varepsilon}\Bigr) & 
+      \end{array}
+      $
+      \\[0.1cm]
+\end{enumerate}
+\pagebreak
+
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+\begin{enumerate}
+\item Zeigen Sie an Hand der Definition des Grenzwerts, dass 
+      $\lim\limits_{n \rightarrow \infty} \bruch{1}{\sqrt{n}} = 0$ ist.
+%\item Zeigen Sie, dass die Folge $\folge{\sin(n)}$ nicht konvergent ist.
+%      leider zu schwer
+\item Es seien $a,b\in\mathbb{R}$ gegeben. 
+      Die Folge $\folge{c_n}$ werde induktiv definiert durch $c_0 = a$, $c_1 = b$ und  
+      \\[0.1cm]
+      \hspace*{1.3cm} $c_{n+2} = c_n + c_{n+1}$.
+      \begin{enumerate}
+      \item Zeigen Sie durch Induktion nach $n$, dass gilt: 
+            \\[0.1cm]
+            \hspace*{1.3cm}
+            $c_n = \bruch{1}{3}\cdot a \biggl(1-\Bigl(\frac{-1}{2}\Bigr)^{n-1}\biggr) + \bruch{2}{3}\cdot b \biggl(1-\Bigl(\frac{-1}{2}\Bigr)^{n}\biggr)$
+      \item Berechnen Sie den Grenzwert $\lim\limits_{n \rightarrow \infty} c_n$.
+      \end{enumerate}
+\end{enumerate}
+\pagebreak
+
+\noindent
+\textbf{Aufgabe}: Gegenstand dieser Aufgabe ist die numerische Berechnung der Summe 
+\\[0.1cm]
+\hspace*{1.3cm} $\displaystyle \sum\limits_{k=1}^\infty \bruch{1}{k^2}$.
+\\[0.1cm]
+Gehen Sie zur Berechnung dieser Summe in folgenden Schritten vor.
+\begin{enumerate}
+\item Approximieren Sie die Rest-Summe $\sum\limits_{k=n}^\infty \bruch{1}{k^2}$ 
+      durch ein geeignetes Integral. 
+      \hspace*{\fill} (8 Punkte)
+
+      \textbf{Hinweis}: Es gilt 
+      \\[0.1cm]
+      \hspace*{1.3cm} $\displaystyle f(k) = \int_{k-\frac{1}{2}}^{k+\frac{1}{2}} f(k) \, dt \approx \int_{k-\frac{1}{2}}^{k+\frac{1}{2}} f(t) \, dt$.
+\item Berechnen Sie eine Abschätzung für den Approximations-Fehler,
+      den Sie bei der Integration in Teil (a) erhalten.
+      
+      \textbf{Hinweis}: Approximieren Sie die auftretenden Summen durch Integrale.
+\item Berechnen Sie nun, wir groß Sie $n$ wählen müssen, damit der Approximations-Fehler
+      kleiner als $10^{-6}$ bleibt.
+\end{enumerate}
+\vspace*{0.3cm} 
+
+\noindent
+\textbf{Lösung}: 
+\begin{enumerate}
+\item Dem Hinweis folgend approximieren wir $f(k)$ durch 
+      \\[0.1cm]
+      \hspace*{1.3cm} $\displaystyle f(k) \approx \int_{k-\frac{1}{2}}^{k+\frac{1}{2}} f(t) \, dt$.
+      \\[0.1cm]
+      Damit finden wir für die Rest-Summe die Näherungs-Formel
+      \\[0.1cm]
+      \hspace*{1.3cm}
+      $\displaystyle
+       \sum\limits_{k=n}^\infty \bruch{1}{k^2} \approx 
+       \sum\limits_{k=n}^\infty \int_{k-\frac{1}{2}}^{k+\frac{1}{2}} \bruch{1}{t^2} \, dt =
+       \int_{n-\frac{1}{2}}^{\infty} \bruch{1}{t^2} \, dt =
+       -\bruch{1}{t} \bigg|_{n-\frac{1}{2}}^{\infty} =
+       \bruch{1}{n-\frac{1}{2}} 
+       $
+\item Der Approximations-Fehler $e(k)$, den wir bei der Näherung von $\frac{1}{k^2}$ machen, hat
+      den Wert 
+      \\[0.1cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{lcl}
+      e(k) & = &\bruch{1}{k^2} - \int_{k-\frac{1}{2}}^{k+\frac{1}{2}} \bruch{1}{t^2}\, dt \\[0.5cm]
+           & = & \bruch{1}{k^2} + \left(\bruch{1}{t} \bigg|_{k-\frac{1}{2}}^{k+\frac{1}{2}}\right) \\[0.5cm]
+           & = & \bruch{1}{k^2} + \Biggl(\frac{1}{k+\frac{1}{2}} - \frac{1}{k-\frac{1}{2}}\Biggr)  \\[0.5cm]
+      \end{array}
+      $
+      \\[0.1cm]
+      Den gesamten Approximations-Fehler erhalten wir, wenn wir diesen Fehler für $n=k$
+      bis $\infty$ aufsummieren.  Die dabei auftretenden Summen approximieren wir ähnlich
+      wie in Teil (a) der Aufgabe durch Integrale.
+      \\[0.1cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{lcl}
+         e & = & \displaystyle 
+                 \sum\limits_{k=n}^\infty
+       \bruch{1}{k^2} + \Biggl(\frac{1}{k+\frac{1}{2}} - \frac{1}{k-\frac{1}{2}}\Biggr)  \\[0.7cm]
+           & \approx & \displaystyle 
+                 \int_{n-\frac{1}{2}}^\infty
+       \bruch{1}{t^2} + \Biggl(\frac{1}{t+\frac{1}{2}} - \frac{1}{t-\frac{1}{2}}\Biggr)\, dt  \\[0.5cm]
+      \end{array}
+      $
+      \\[0.1cm]
+      Also haben wir
+      \\[0.1cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{lcl}
+         e & \approx & \displaystyle 
+       -\bruch{1}{t} + \Bigl(\ln\bigl(t+\frac{1}{2}\bigr) - \ln\bigl(t-\frac{1}{2}\bigr)\Bigr)\biggl|_{n-\frac{1}{2}}^\infty  \\[0.5cm]
+           & = & \displaystyle 
+       \bruch{1}{n-\frac{1}{2}} + \ln(n) - \ln(n-1)  \\[0.5cm]
+           & = & \displaystyle 
+       \bruch{1}{n-\frac{1}{2}}  - \ln\Bigl(1-\frac{1}{n}\Bigr)  \\[0.5cm]
+      \end{array}
+      $
+\end{enumerate}
+\end{document}
+
+
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

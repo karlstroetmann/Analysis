@@ -1,0 +1,31 @@
+interpolate :=
+proc(f, a, b, n)
+local h, p, q, xi, xq, i, j;
+description "create a polynom interpolation the function f at n+1 equidistant points between a and b";
+    h  := (b - a) / n;
+    p  := 0;
+    xq := a;
+    for i from 0 to n do
+        q  := 1;
+        xi := a;
+        for j from 0 to n do
+            if i <> j then
+                q := q * (x - xi) / (xq - xi);
+            end if;
+            xi := xi + h;
+        end do;
+        p := p + q * subs(x = xq, f):
+        xq := xq + h;
+    end do;
+    return simplify(normal(p));
+end proc;
+
+a := -5;
+b :=  5;
+f := 1 / (1 + x^2);
+for n from 3 to 25 do
+    print(n);
+    p := interpolate( f, a, b, n):
+    plot( [ f, p ], x = a..b );
+    plot( f - p, x = a..b );
+end do;

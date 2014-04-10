@@ -1,0 +1,82 @@
+newton := procedure(t, x, n) {
+    ts := diff(t, "x");
+    for (i in [0 .. n ]) {
+        x -= evalTerm(t) / evalTerm(ts);
+        print("i = $i$:");
+        myPrint(x);
+    }
+    return x;
+};
+
+// differentiate the term t with respect to the variable x
+diff := procedure(t, x) {
+    match (t) {
+        case t1 + t2 :
+            return diff(t1, x) + diff(t2, x);
+        case - a :
+            return - diff(a, x);
+        case t1 - t2 :
+            return diff(t1, x) - diff(t2, x);
+        case t1 * t2 :
+            return diff(t1, x) * t2 + t1 * diff(t2, x);
+        case t1 / t2 :
+            return ( diff(t1, x) * t2 - t1 * diff(t2, x) ) / t2 ** 2;
+        case f ** g :
+            if (isInteger(g) || isRational(g) || isReal(g)) {
+                g1 := g - 1;
+                return g * diff(f, x) * f ** g1;
+            } else {
+                return diff( @exp(g * @ln(f)), x);
+            }
+        case sqrt(a) :
+            return 1 / 2 * diff(a, x) / @sqrt(a);
+        case sin(a) :
+            return diff(a, x) * @cos(a);
+        case cos(a) :
+            return -diff(a, x) * @sin(a);
+        case tan(a) :
+            return diff(@sin(a) / @cos(a), x);
+        case asin(a) :
+            return diff(a, x) / @sqrt(1 - a ** 2);
+        case acos(a) :
+            return - diff(a, x) / @sqrt(1 - a ** 2);
+        case atan(a) :
+            return diff(a, x) / (1 + a ** 2);
+        case ln(a) :
+            return diff(a, x) / a;
+        case exp(a) :
+            return diff(a, x) * @exp(a);
+        case ^variable(y) :
+            if (y == x) {
+                return 1;
+            } else {
+                return 0;
+            }
+        default:
+            if (isInteger(t) || isRational(t) || isReal(t)) {
+                return 0;
+            } else {
+                abort("error: diff($t$, $x$)");
+            }
+    }
+};
+
+myPrint := procedure(x) {
+    if (isRational(x)) {
+        print("x = $nDecimalPlaces(x,101)$");
+    } else {
+        print("x = $x$");
+    }
+};
+
+interactive := procedure() {
+    s := read("enter function: ");
+    t := parse(s);
+    x := read("enter start value: ");
+    n := read("enter number of iterations: ");
+    x := newton(t, x, n);
+    print(x);
+};
+
+// interactive();
+x := newton(parse("x ** 2 - 2"), 1, 10);

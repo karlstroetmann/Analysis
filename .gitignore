@@ -1,0 +1,16 @@
+*.o
+*~
+*.aux
+*.dvi
+*.log
+*.out
+*.toc
+*.class
+*.el
+*.synctex.gz
+_region_.tex
+auto/
+.DS_Store
+Script/_region_.prv
+Script/analysis.synctex.gz
+Script/analysis.prv

@@ -1,0 +1,7 @@
+x     := 0;
+alpha := read("input alpha");
+for (i in [1 .. 12]) {
+    x := 1 / (1 + alpha) * (cos(x) + alpha * x);
+    print("$i$: $x$");
+}
+

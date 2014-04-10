@@ -1,0 +1,19 @@
+// compute pi = 3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348
+machin := procedure(n) {
+    return 4 * (4 * series(1/5, n) - series(1/239, n));
+};
+
+series := procedure(x, n) {
+    result := 0;
+    sign   := 1;
+    power  := x;
+    for (i in [0 .. n]) {
+        result += sign * power / (2 * i + 1);
+        power  *= x * x;
+        sign   := -sign;    
+    }
+    return result;
+};
+
+print("pi = $nDecimalPlaces(machin(144), 101)$");
+

@@ -1,0 +1,201 @@
+\documentclass{article}
+\usepackage{german}
+\usepackage[latin1]{inputenc}
+\usepackage{a4wide}
+\usepackage{epsfig}
+\usepackage{amssymb}
+\usepackage{fancyvrb}
+\usepackage{alltt}
+\usepackage{fleqn}
+\usepackage{epic}
+
+\newtheorem{Definition}{Definition}
+\newtheorem{Axiom}[Definition]{Axiom}
+\newtheorem{Notation}[Definition]{Notation}
+\newtheorem{Korollar}[Definition]{Korollar}
+\newtheorem{Lemma}[Definition]{Lemma}
+\newtheorem{Satz}[Definition]{Satz}
+\newtheorem{Theorem}[Definition]{Theorem}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+
+\title{Analysis}
+\author{Karl Stroetmann}
+
+\newcommand{\bruch}[2]{\displaystyle\frac{\;\displaystyle#1\;}{\;\displaystyle#2\;}}
+\newcommand{\folge}[1]{\bigl(#1\bigr)_{n\in\mathbb{N}}}
+\newcommand{\Folge}[1]{\left(#1\right)_{n\in\mathbb{N}}}
+\newcommand{\Reihe}[1]{\left(\sum\limits_{i=0}^n #1\right)_{n\in\mathbb{N}}}
+\newcommand{\Oh}{\mathcal{O}}
+\newcommand{\df}{\displaystyle\frac{d\;}{dx}}
+\newcommand{\err}[1]{\textsl{error}_n(#1)}
+\newcommand{\erri}[2]{\textsl{error}^{(#2)}_n(#1)}
+\newcommand{\norm}[1]{\big\|#1\bigr\|_{\infty}}
+
+\def\pair(#1,#2){\langle #1, #2 \rangle}
+
+\newlength{\mylength}
+\setlength{\mathindent}{1.3cm}
+
+
+\begin{document}
+\noindent
+\section{Taylor-Reihe}
+\textbf{Aufgabe}: Leiten Sie die folgende Formel aus dem Additions-Theorem des
+Arcus-Tangens her und berechnen Sie damit $\pi$ auf eine Genauigkeit von $10^{-9}$:
+\begin{equation}
+  \label{eq:Pi}
+  \bruch{\pi}{4} =  2 * \arctan\Bigl(\frac{1}{2}\Bigr) -\arctan\Bigl(\frac{1}{7}\Bigr).  
+\end{equation}
+
+
+\section{Interpolation}
+\textbf{Aufgabe}: Für die Funktion $x \mapsto \sin(x)$ soll im Intervall
+$[0,\frac{\pi}{2}]$ ein Tabelle erstellt werden, so dass der bei linearer Interpolation entstehende
+Interpolations-Fehler kleiner als $10^{-5}$ ist.  Das Intervall $[0,\frac{\pi}{2}]$ soll zu diesem
+Zweck in gleich große Intervalle aufgeteilt werden.  Berechnen Sie die Anzahl der
+Einträge, die für die Erstellung der Tabelle notwendig ist.
+\vspace*{0.3cm}
+
+
+\noindent
+\textbf{Aufgabe}: Lösen Sie für $y=10^6$ und $y=10^{-6}$ die Gleichung $x*\exp(x) = y$ 
+durch eine einfache Fixpunkt-Iteration.  Berechnen Sie die Lösung $x$ jeweils auf eine
+Genauigkeit von $10^{-3}$.
+\vspace*{0.3cm}
+
+
+\noindent
+\textbf{Aufgabe}: Untersuchen Sie mit Hilfe des Integral-Vergleichskriteriums, ob die
+Reihe 
+\\[0.1cm]
+\hspace*{1.3cm}
+$\displaystyle \sum\limits_{n=1}^\infty \bruch{1}{n*(n+1)}$ 
+\\[0.3cm]
+konvergiert.
+\vspace*{0.3cm}
+\pagebreak
+
+\noindent
+\textbf{Aufgabe}:  Berechnen Sie, in wieviele Teil-Intervalle das Intervall $[0,1]$
+aufgeteilt werden muss, wenn das Integral
+\\[0.1cm]
+\hspace*{1.3cm}
+$\displaystyle \int_0^1 e^{-x^2}\, dx$
+\\[0.1cm]
+mit Hilfe der Trapez-Regel mit einer Genauigkeit von $10^{-6}$ berechnet werden soll.
+\vspace*{0.3cm}
+
+\noindent
+\textbf{Aufgabe}: 
+\begin{enumerate}
+\item Berechnen Sie mit Hilfe der Kepler'schen Faß-Regel eine Approximation 
+      für das Integral 
+      \\[0.1cm]
+      \hspace*{1.3cm}$\displaystyle \int_0^{\frac{1}2} \sin(x)\, dx$.
+\item Geben Sie eine möglichst genaue Abschätzung für den Approximations-Fehler.
+\item Vergleichen Sie ihr Ergebnis mit dem exakten Wert.
+\end{enumerate}
+\vspace*{0.3cm}
+
+
+\noindent
+\textbf{Aufgabe}: Gegenstand dieser Aufgabe ist die numerische Berechnung der Summe 
+\\[0.1cm]
+\hspace*{1.3cm} $\displaystyle \sum\limits_{k=1}^\infty \bruch{1}{k^3}$.
+\\[0.1cm]
+Gehen Sie zur Berechnung dieser Summe in folgenden Schritten vor.
+\begin{enumerate}
+\item Approximieren Sie die Rest-Summe $\sum\limits_{k=n}^\infty \bruch{1}{k^3}$ 
+      durch ein geeignetes Integral.
+
+      \textbf{Hinweis}: Es gilt 
+      \\[0.1cm]
+      \hspace*{1.3cm} $\displaystyle f(k) = \int_{k-\frac{1}{2}}^{k+\frac{1}{2}} f(k) \, dt \approx \int_{k-\frac{1}{2}}^{k+\frac{1}{2}} f(t) \, dt$.
+\item Berechnen Sie eine Abschätzung für den Approximations-Fehler,
+      den Sie bei der Integration in Teil (a) erhalten.
+      
+      \textbf{Hinweis}: Approximieren Sie die auftretenden Summen durch Integrale.
+\item Berechnen Sie nun, wir groß Sie $n$ wählen müssen, damit der Approximations-Fehler
+      kleiner als $10^{-6}$ bleibt.
+\item Geben Sie nun einen Näherungs-Wert für die Summe $\sum\limits_{k=1}^\infty \bruch{1}{k^3}$,
+      der sich von dem exakten Ergebnis um weniger als $10^{-6}$ unterscheidet.
+\end{enumerate}
+\vspace*{0.3cm} 
+
+\noindent
+\textbf{Aufgabe}:
+Die Funktion $p$ sei auf dem Intervall $[-\pi,\pi]$ definiert durch
+\\[0.1cm]
+\hspace*{1.3cm}
+$p(x) = x^2$.
+\\[0.1cm]
+Die Funktion werde so auf $\mathbb{R}$ fortgesetzt, dass die resultierende Funktion die Periode
+$2\!\cdot\!\pi$ hat.  
+\begin{enumerate}
+\item Berechnen Sie die Fourier-Reihe von $p$.
+\item Berechnen Sie mit Hilfe der Fourier-Reihe von $p$ einen Wert für die Summe
+      \\[0.1cm]
+      \hspace*{1.3cm}
+      $\displaystyle \sum\limits_{n=1}^\infty \bruch{1}{n^2}$. 
+\end{enumerate}
+
+\pagebreak
+\noindent
+\textbf{Aufgabe}:  Die Lambert'sche W-Funktion (Johann Heinrich Lambert; 1728 - 1777)
+$x \mapsto W(x)$ ist für $x\geq 0$ definiert als die Umkehr-Funktion der Funktion $x \mapsto x\cdot e^x$,
+es gilt also 
+\\[0.1cm]
+\hspace*{1.3cm} $\displaystyle W(x) \cdot e^{W(x)} = x$ \quad für alle $x \in \mathbb{R}_+$.
+\begin{enumerate}
+\item Berechnen Sie die Ableitung der Lambert'schen W-Funktion.
+\item Formen Sie den Ausdruck für $W'(x)$ so um, dass der Term $e^{W(x)}$ nicht mehr
+      auftritt.
+\item Berechnen Sie eine Stamm-Funktion der Lambert'schen W-Funktion.
+\item Nehmen Sie an, dass Sie die Lambert'sche W-Funktion berechnen können und
+      bestimmen Sie unter dieser Annahme für ein gegebenes $\varepsilon$ die Lösung der Gleichung 
+      \\[0.1cm]
+      \hspace*{1.3cm}
+      $\bruch{1}{n} * \Bigl(\frac{1}{2}\Bigr)^n = \varepsilon$
+      \\[0.1cm]
+      durch algebraische Umformungen.
+
+      \noindent
+      \textbf{Hinweis}: Invertieren Sie die Gleichung und bringen Sie die Gleichung dann
+      auf die Form $\alpha * e^\alpha = \beta$ für geeignete $\alpha$ und $\beta$, denn
+      dann gilt $\alpha = W(\beta)$.
+\end{enumerate}
+\vspace*{0.3cm}
+
+
+\noindent
+ \textbf{Aufgabe}: Zeigen Sie an Hand der Definition des Grenzwerts, dass 
+      $\lim\limits_{n \rightarrow \infty} \bruch{1}{\sqrt{n}} = 0$ ist.
+%\item Zeigen Sie, dass die Folge $\folge{\sin(n)}$ nicht konvergent ist.
+%      leider zu schwer
+\vspace*{0.3cm}
+
+\noindent
+\textbf{Aufgabe}:
+Es seien $a,b\in\mathbb{R}$ gegeben. 
+Die Folge $\folge{c_n}$ werde induktiv definiert durch $c_0 = a$, $c_1 = b$ und  
+\\[0.1cm]
+\hspace*{1.3cm} $c_{n+2} = \frac{1}{2}*(c_n + c_{n+1})$.
+\begin{enumerate}
+\item Zeigen Sie durch Induktion nach $n$, dass gilt: 
+      \\[0.1cm]
+      \hspace*{1.3cm}
+      $c_n = \bruch{1}{3}\cdot a \biggl(1-\Bigl(\frac{-1}{2}\Bigr)^{n-1}\biggr) + \bruch{2}{3}\cdot b \biggl(1-\Bigl(\frac{-1}{2}\Bigr)^{n}\biggr)$
+\item Berechnen Sie den Grenzwert $\lim\limits_{n \rightarrow \infty} c_n$.
+\end{enumerate}
+
+\end{document}
+
+
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

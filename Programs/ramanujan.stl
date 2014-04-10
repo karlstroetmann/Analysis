@@ -1,0 +1,17 @@
+program main;
+
+    n  := 1000;    
+    M1 := { [q,p] : q in {2 .. n}, p in {2 .. n} | (p*p-1)*(q+1) = 2 * p*(q-1) };
+    print(M1);
+
+    for p in {2 .. n} loop
+        alpha   := 4.0 * p * (p*p - 1) / (p**4 - 6*p**2 + 1);
+        qApprox := (alpha + 1) / (alpha -1);
+        for q in { floor(qApprox - 0.5) .. ceil(qApprox + 0.5) } loop 
+            if (q+1)*(p**4 - 6*p**2 + 1) = 4*p*(p**2 - 1)*(q-1) then
+                print(p, " ", q);
+            end if;
+        end loop;
+    end loop; 
+
+end main;

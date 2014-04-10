@@ -1,0 +1,12 @@
+// Solve the equation 
+//    x * exp(x) = y 
+// for small values of y by using the fixpoint equation
+//    x := y * exp(-x)
+// for y = 10**(-6).
+x := 1;
+y := 1 / 10 ** 6;
+for (i in [1 .. 4]) {
+    x := y * exp(-x);
+    print("$i$: $x$");
+}
+

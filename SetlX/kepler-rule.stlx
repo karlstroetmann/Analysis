@@ -1,0 +1,22 @@
+// Compute the integral \int_a^b f(x) dx using Kepler's rule.
+// The intervall [a,b] is divided into n subintervals.
+kepler := procedure(f, a, b) {
+    x   := a;
+    sum := evalTerm(f);
+    x   := (a + b) / 2;
+    sum += 4 * evalTerm(f);
+    x   := b;
+    sum += evalTerm(f);
+    return sum * (b - a) / 6; 
+};
+
+interactive := procedure() {
+    s := read("enter function");
+    f := parse(s);
+    a := read("enter left  boundary");
+    b := read("enter right boundary");
+    integral := kepler(f, a, b);
+    print("The approximate value of the integral is $integral$.");
+};
+
+interactive();

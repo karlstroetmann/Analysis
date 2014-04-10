@@ -1,0 +1,110 @@
+{VERSION 6 0 "IBM INTEL LINUX" "6.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 1 }{CSTYLE "" -1 256 "" 1 18 0 0 0 0 0 1 1 0 0 0 0 0 0 0 }
+{CSTYLE "" -1 257 "" 1 10 0 0 0 0 0 1 1 0 0 0 0 0 0 0 }{CSTYLE "" -1 
+258 "" 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 259 "" 0 1 0 0 
+0 0 0 1 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 260 "" 0 1 0 0 0 0 0 1 0 0 0 0 
+0 0 0 0 }{CSTYLE "" -1 261 "" 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 }
+{CSTYLE "" -1 262 "" 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 
+263 "" 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 264 "" 0 1 0 0 
+0 0 0 1 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 265 "" 0 1 0 0 0 0 0 1 0 0 0 0 
+0 0 0 0 }{CSTYLE "" -1 266 "" 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 }
+{CSTYLE "" -1 267 "" 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 
+268 "" 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 269 "" 0 1 0 0 
+0 0 0 1 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 270 "" 0 1 0 0 0 0 0 1 0 0 0 0 
+0 0 0 0 }{CSTYLE "" -1 271 "" 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 }
+{CSTYLE "" -1 272 "" 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 
+273 "" 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 274 "" 0 1 0 0 
+0 0 1 0 0 0 0 0 0 0 0 0 }{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "" 
+0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }
+{PSTYLE "Heading 1" 0 3 1 {CSTYLE "" -1 -1 "" 1 18 0 0 0 0 0 1 0 0 0 
+0 0 0 0 0 }1 0 0 0 8 4 0 0 0 0 0 0 -1 0 }{PSTYLE "" 0 256 1 {CSTYLE "
+" -1 -1 "" 1 24 0 0 0 0 0 0 0 0 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 
+0 -1 0 }{PSTYLE "Normal" -1 257 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 
+1 2 2 2 2 2 2 1 1 1 1 }1 1 0 0 0 0 1 0 1 0 2 2 0 1 }}
+{SECT 0 {EXCHG {PARA 256 "" 0 "" {TEXT -1 0 "" }{TEXT 256 23 "Einf\374
+hrung in Maple (6)" }{TEXT 257 0 "" }{TEXT -1 0 "" }}}{SECT 1 {PARA 3 
+"" 0 "" {TEXT -1 21 "Folgen und Grenzwerte" }}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 8 "restart;" }}}{EXCHG {PARA 0 "" 0 "" {TEXT 266 13 "Za
+hlenfolgen:" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 66 "Wir definieren ein
+e Folge (in der Schreibweise wie eine Funktion):" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 21 "a := n -> sin(n)/n^2;" }}}{EXCHG {PARA 0 "" 0 "" 
+{TEXT -1 157 "Diese wollen wir zun\344chst grafisch darstellen (vgl. a
+uch das Arbeitsblatt zur grafischen Darstellung von Funktionen). Dazu \+
+erzeugen wir zun\344chst mittels des " }{TEXT 267 3 "seq" }{TEXT -1 
+203 "-Befehls eine Liste, bestehend aus Paaren (Index des Folgengliede
+s, Wert),  im Beispiel f\374r n=1 bis 20. Wenn Sie den Doppelpunkt im \+
+n\344chsten Befehl durch ein Semikolon ersetzten, sehen Sie die Liste \+
+... " }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 34 "Folge := [seq([n,a(n)], n=1
+..20)]:" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 22 "Dann kommt die Grafik:
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "plot(Folge, style=point);" }}}
+{EXCHG {PARA 0 "" 0 "" {TEXT -1 28 "Maple berechnet mittels des " }
+{TEXT 268 5 "limit" }{TEXT -1 23 "-Befehls den Grenzwert:" }}{PARA 0 "
+> " 0 "" {MPLTEXT 1 0 23 "limit(a(n),n=infinity);" }}}{EXCHG {PARA 0 "
+" 0 "" {TEXT -1 24 "Es gibt auch den Befehl " }{TEXT 269 5 "Limit" }
+{TEXT -1 68 ". Daraufhin stellt Maple den Grenzwert nur symbolisch dar
+, also z.B." }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 30 "ausdruck := (x^2-1)/
+(2*x^2+4);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 57 "Limit(ausdruck, x=inf
+inity) = limit(ausdruck,x=infinity);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 0 "" }}}{EXCHG {PARA 0 "" 0 "" {TEXT 270 25 "Grenzwerte von Funktion
+en" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 51 "Die Berechnung des Grenzwer
+tes folgt obiger Syntax:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "f := x \+
+-> sqrt(x);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 34 "Limit(f(x),x=2) = li
+mit(f(x),x=2);" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 62 "Bei Bedarf k
+\366nnen auch einseitige Grenzwerte berechnet werden:" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 42 "Limit(1/x,x=0,left) = limit(1/x,x=0,left);" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 44 "Limit(1/x,x=0,right) = limit(1/x,x=
+0,right);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 32 "Limit(1/x,x=0) = limit
+(1/x,x=0);" }}}{EXCHG {PARA 0 "" 0 "" {TEXT 271 76 "Berechnen Sie folg
+ende Grenzwerte und stellen Sie die Funktion grafisch dar:" }}}{EXCHG 
+{PARA 0 "" 0 "" {TEXT 273 54 "sin(x)/x  f\374r  x->0 , Darstellung zwi
+schen -10 und 10:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "" 0 "" 
+{TEXT 272 58 "x*sin(1/x)  f\374r  x->0 , Darstellung zwischen -0.5 und
+ 0.5:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 0 "" }}}}{SECT 1 {PARA 3 "" 0 "" {TEXT -1 20 "Differentialrechnung" 
+}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "restart;" }}}{EXCHG {PARA 
+0 "" 0 "" {TEXT -1 67 "In Maple gibt es zwei M\366glichkeiten zur Bere
+chnung einer Ableitung:" }}{PARA 0 "" 0 "" {TEXT 258 26 "Ableitung ein
+es Ausdrucks:" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 26 "Ein Ausdruck kan
+n mit dem " }{TEXT 259 4 "diff" }{TEXT -1 67 "-Befehl differenziert we
+rden. Das Resultat ist wieder ein Ausdruck:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 17 "diff(x^3+3*x, x);" }}}{EXCHG {PARA 0 "" 0 "" {TEXT 
+-1 5 "Oder:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "diff(ln(z^2-1)*cos(z
+),z);" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 38 "Dar\374ber hinaus gibt e
+s auch eine Form " }{TEXT 260 9 "Diff(...)" }{TEXT -1 29 " mit gro\337
+em Anfangsbuchstaben" }{TEXT 261 1 ":" }{TEXT -1 53 " Maple stellt dan
+n die Ableitung nur symbolisch dar. " }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 24 "ausdruck:=sin(x)*cos(x);" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 34 "Diff(ausdruck,x)=diff(ausdruck,x);" }}}{EXCHG {PARA 0 "" 0 "" 
+{TEXT 262 24 "Ableitung einer Funktion" }}}{EXCHG {PARA 0 "" 0 "" 
+{TEXT -1 78 "Zun\344chst definieren wir eine Funktion (s.a. das Arbeit
+sblatt \374ber Funktionen):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "f :=
+ x -> x*ln(x); " }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 55 "Eine Funktion \+
+differenziert man zweckm\344\337ig mittels des " }{TEXT 263 1 "D" }
+{TEXT -1 85 "-Operators - das Resultat ist dann wieder eine Funktion (
+und nicht nur ein Ausdruck):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 5 "D(f)
+;" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 57 "... oder, falls Sie die Able
+itung weiter benutzen wollen:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 10 "g \+
+:= D(f);" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 63 "Man kann dann z.B. de
+n Funktionswert an einer Stelle auswerten:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 8 "g(2.72);" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 18 "M\366
+glich w\344re auch:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 11 "D(f)(2.72);
+" }}}{EXCHG {PARA 0 "" 0 "" {TEXT 264 19 "H\366here Ableitungen:" }}}
+{EXCHG {PARA 0 "" 0 "" {TEXT -1 37 "Die dritte Ableitung eines Ausdruc
+ks:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 16 "diff(x^3,x,x,x);" }}}{EXCHG 
+{PARA 0 "" 0 "" {TEXT -1 45 "oder mit gleicher Wirkung, aber etwas k
+\374rzer:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 14 "diff(x^3,x$3);" }}}
+{EXCHG {PARA 0 "" 0 "" {TEXT -1 5 "Beim " }{TEXT 265 1 "D" }{TEXT -1 
+33 "-Operator sieht es wie folgt aus:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 19 "f := x -> 2*sin(x);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "D(D(f))
+;" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 11 "K\374rzer ist:" }}{PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 10 "(D@@2)(f);" }}}{EXCHG {PARA 0 "" 0 "" {TEXT 
+274 95 "Wiederholen Sie die Kurvendiskussion aus der Vorlesung mit Map
+le (in einem neuen Arbeitsblatt)!" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}}{PARA 0 "" 0 "" {TEXT -1 0 "" }}}{EXCHG {PARA 0 "
+" 0 "" {TEXT -1 8 "Quellen:" }}{PARA 0 "" 0 "" {TEXT -1 83 "(1) Wester
+mann: Mathematik f\374r Ingenieure mit Maple. Band 1. Springer Verlag \+
+2002  " }}}}{MARK "2" 0 }{VIEWOPTS 1 1 0 1 1 1803 1 1 1 1 }
+{PAGENUMBERS 0 1 2 33 1 1 }

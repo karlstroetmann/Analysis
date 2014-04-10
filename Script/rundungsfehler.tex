@@ -1,0 +1,163 @@
+\chapter{Rundungsfehler}
+Die meisten komplexen Probleme lassen sich nur mit numerischen Verfahren lösen.  Wir haben
+bereits verschiedene numerische Verfahren kennengelernt, beispielsweise Verfahren zur
+Berechnung von Nullstellen sowie Verfahren zur numerischen Integration.  Allen diesen
+Verfahren ist gemeinsam, dass zwei verschiedene Arten von Fehlern auftreten:
+\begin{enumerate}
+\item Ein \emph{Approximations-Fehler} tritt auf, wenn wir einen Wert $\lambda$ berechnen
+      wollen, zu dessen Berechnung wir nur eine Näherungsformel existiert.  Oft ist der
+      Approximations-Fehler ein \emph{Abbruch-Fehler}, der seine
+      Ursache darin hat, dass wir nur endlich viele Glieder einer unendlichen Reihe
+      berechnen können.  Wollen wir beispielsweise die Euler'sche Zahl $e$ nach der Formel
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $e = \sum\limits_{k=0}^\infty \bruch{1}{k!}$
+      \\[0.2cm]
+      berechnen, so können wir auf dem Rechner diese Summe nicht gegen unendlich laufen
+      lassen, sondern müssen die Summe nach endlich vielen Gliedern abbrechen, wir berechnen
+      also als Approximation für $e$ eine Reihe der Form
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $e_n := \sum\limits_{k=0}^n \bruch{1}{k!}$ 
+      \\[0.2cm]
+      und müssen dann $n$ so groß wählen, dass der Abbruch-Fehler
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $e - e_n = \sum\limits_{k=n+1}^\infty \bruch{1}{k!}$ 
+      \\[0.2cm]
+      unterhalb einer vorgegeben Schranke bleibt.
+\item Zusätzlich zum Approximations-Fehler gibt es noch die Rundungsfehler, die im Laufe der Rechnung 
+      entstehen.  Diese Rundungsfehler haben Ihre Ursache darin, dass Fließkomma-Zahlen auf dem Rechner 
+      mit einer vorgegebenen Genauigkeit dargestellt werden.  Rechnen wir in der Sprache \textsl{Java}
+      mit einer Fließkomma-Zahl vom Typ \texttt{float}, so stehen zur Darstellung der Stellen hinter dem
+      Komma lediglich 23 Bits zur Verfügung.  Werden nun zwei solche Zahlen multipliziert, so könnten
+      bis zu 47 Bits notwendig sein, um alle Stellen hinter dem Komma korrekt wiedergeben zu können.
+      Da aber zum Abspeichern des Ergebnisses lediglich 23 Bits zur Verfügung stehen, um die Ziffern 
+      hinter dem Komma abzuspeichern, bleibt nichts anderes übrig, als das Ergebnis auf 23 Bits zu
+      runden.  Der dadurch entstehende Fehler wird als Rundungsfehler bezeichnet.
+\end{enumerate}
+Die Auswirkungen von Rundungsfehlern werden oft unterschätzt.  Unter
+\\[0.2cm]
+\hspace*{1.3cm}
+\texttt{http://www.devtopics.com/20-famous-software-disasters-part-2/}
+\\[0.2cm]
+findet sich eine Liste der 20 spektakulärsten Software-Fehler, die Katastrophen ausgelöst haben.
+In mehreren Fällen waren Rundungsfehler ein Teil des Problems.  Um einen ersten Eindruck von der Wirkung
+von Rundungsfehlern zu bekommen, betrachten wir das in Abbildung \ref{fig:harmonic.stlx} gezeigte
+Programm zur Berechnung der Reihe
+\\[0.2cm]
+\hspace*{1.3cm}
+$\sum\limits_{n=1}^\infty \bruch{1}{n}$.
+
+\begin{figure}[!ht]
+\centering
+\begin{Verbatim}[ frame         = lines, 
+                  framesep      = 0.3cm, 
+                  firstnumber   = 1,
+                  labelposition = bottomline,
+                  numbers       = left,
+                  numbersep     = -0.2cm,
+                  xleftmargin   = 0.8cm,
+                  xrightmargin  = 0.8cm,
+                ]
+    harmonic := procedure() {
+        oldSum := 0.0;
+        sum := 1.0;
+        n := 1;
+        while (oldSum < sum) {
+            oldSum := sum;
+            n += 1;
+            sum += 1/n;
+        }
+        print("sum = $sum$, n = $n$");
+    };    
+    harmonic();
+\end{Verbatim}
+\vspace*{-0.3cm}
+\caption{Berechnung von $\sum\limits_{n=1}^\infty \bruch{1}{n}$.}
+\label{fig:harmonic.stlx}
+\end{figure}
+
+Sie erwarten jetzt vielleicht, dass diese Programm nie terminiert, aber wenn wir dieses Programm
+in einer Datei mit dem Namen ``\texttt{harmonic.stlx}'' speichern und es dann mit dem Befehl
+\\[0.2cm]
+\hspace*{1.3cm}
+\texttt{setlX --real32 harmonic.stlx}
+\\[0.2cm]
+starten, dann erhalten wir nach wenigen Sekunden die Meldung:
+\\[0.2cm]
+\hspace*{1.3cm}
+\texttt{sum = 13.05426, n = 200001}.
+\\[0.2cm]
+Da wir früher bewiesen haben, dass die Partialsummen $\sum\limits_{k=1}^n \bruch{1}{k}$ für wachsende Werte
+von $n$ beliebig groß werden, fragen wir uns, was bei der Rechnung schief gelaufen ist.
+Die Antwort ist, dass für $n= 200001$ der Wert $\frac{1}{n}$ so klein ist, dass die Summe
+\\[0.2cm]
+\hspace*{1.3cm}
+$13.05426 + \frac{1}{n}$
+\\[0.2cm]
+so nahe bei $13.05426$ liegt, dass sie auf den Wert $13.05426$ abgerundet wird.  Um diesen Effekt näher
+zu beschreiben, definiert man für einen vorgegebenen Rechner die sogenannte
+\emph{Maschinen-Konstante} \textsl{eps} als die kleinste positive Zahl, die, wenn sie auf diesem Rechner zu
+$1$ addiert wird, eine Ergebnis größer als 1 ergibt.  Die formale Definition lautet
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{eps} := \min\bigl( \{ x \in \mathbb{R} \mid x > 0 \wedge 1 \oplus x > 1 \} \bigr)$.
+\\[0.2cm]
+Hier bezeichnet $\oplus$ die auf dem Rechner implementierte Addition.
+Abbildung \ref{fig:maschinen-konstante.stlx} zeigt ein einfaches Programm zur Berechnung der
+Maschinen-Konstante.  Bei der im \textsc{Ieee}-Standard 754 definierten 32-Bit-Architektur erhalten wir
+für $\textsl{eps}$ den Wert
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{eps}_{32} = 9.536745 \cdot 10^{-7}$,
+\\[0.2cm]
+bei einer 64-Bit-Architektur lautet das Ergebnis
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{eps}_{64} = 8.88178419700125 \cdot 10^{-16}$,
+\\[0.2cm]
+und wenn wir mit 128-Bit rechnen, haben wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{eps}_{128} = 7.703719777548943412223911770339695 \cdot 10^{-34}$.
+\vspace*{0.3cm}
+
+\begin{figure}[!ht]
+\centering
+\begin{Verbatim}[ frame         = lines, 
+                  framesep      = 0.3cm, 
+                  firstnumber   = 1,
+                  labelposition = bottomline,
+                  numbers       = left,
+                  numbersep     = -0.2cm,
+                  xleftmargin   = 0.8cm,
+                  xrightmargin  = 0.8cm,
+                ]
+    maschinenKonstante := procedure() {
+        eps := 1.0;
+        old := eps;
+        while (1.0 + eps > 1.0) {
+            old := eps;
+            eps /= 2;
+        }
+        return old;
+    };
+\end{Verbatim}
+\vspace*{-0.3cm}
+\caption{Berechnung der Maschinen-Konstante \textsl{eps}.}
+\label{fig:maschinen-konstante.stlx}
+\end{figure}
+
+\noindent
+Bei modernen Rechnern, die den \textsc{Ieee}-Standard 754 implementieren, können wir davon ausgehen, dass
+der relative Rundungsfehler bei der Ausführung 
+einer  Grundrechenoperation durch die Maschinen-Konstante \textsl{eps} beschränkt ist.
+
+Leider muss die Vorlesung aus Zeitgründen an dieser Stelle enden.  Der interessierten Leser sei daher
+auf die Literatur, insbesondere den Artikel von Goldberg \cite{goldberg:91} verwiesen. 
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "analysis"
+%%% End: 
