@@ -3,12 +3,22 @@ Der vorliegende Text ist ein Fragment eines Vorlesungs-Skriptes für die Analysis
 Informatiker.  Ich habe mich bei der Ausarbeitung dieser Vorlesung im wesentlichen auf die folgenden
 Quellen gestützt:
 \begin{enumerate}
-\item Analysis \texttt{I} von Otto Forster \cite{forster:2011}.
-\item Differential- und Integralrechnung \texttt{I} von Hans Grauert und Ingo Lieb \cite{grauert:1967}.
-\item Lehrbuch der Analysis, Teil 1 und Teil 2 von Harro Heuser \cite{heuser:2003,heuser:2008}.
+\item \emph{Analysis} \texttt{I} von Otto Forster \cite{forster:2011}.
+\item \emph{Differential- und Integralrechnung \texttt{I}} von Hans Grauert und Ingo Lieb \cite{grauert:1967}.
+\item \emph{Lehrbuch der Analysis, Teil 1 und Teil 2 von} Harro Heuser \cite{heuser:2003,heuser:2008}.
+\item \emph{Differential and Integral Calculus, Volume 1} von Richard Courant  \cite{courant:1937}.
 \end{enumerate}
 Den Studenten empfehle ich das erste Buch in dieser Liste, denn dieses Buch ist auch in
-elektronischer Form in unserer Bibliothek vorhanden. 
+elektronischer Form in unserer Bibliothek vorhanden.  Bei dem Buch von Richard Courant ist das
+Copyright mittlerweile abgelaufen, so dass Sie es im Netz unter
+\\[0.2cm]
+\hspace*{0.3cm}
+\href{https://ia700700.us.archive.org/34/items/DifferentialIntegralCalculusVolI/Courant-DifferentialIntegralCalculusVolI.pdf}{\texttt{https://ia700700.us.archive.org/}
+\\
+\hspace*{0.3cm}
+\texttt{34/items/DifferentialIntegralCalculusVolI/Courant-DifferentialIntegralCalculusVolI.pdf}}
+\\[0.2cm]
+finden können.
 
 \section{Überblick über die Vorlesung}
 Im Rahmen der Vorlesung werden die folgenden Gebiete behandelt:
@@ -23,6 +33,34 @@ Im Rahmen der Vorlesung werden die folgenden Gebiete behandelt:
 \item Im sechsten Kapitel zeigen wir, dass  $\pi$ und $e$ keine rationalen Zahlen sind.
 \item Im letzten Kapitel diskutieren wir Fourier-Reihen.
 \end{enumerate}
+
+\section{Ziel der Vorlesung}
+Wir werden im Rahmen der Vorlesung nicht die Zeit haben, alle Aspekte der Analysis zu besprechen.
+Insbesondere werden wir viele interessante Anwendungen der Analysis in der Informatik nicht
+diskutieren können.  Das ist aber auch gar nicht das Ziel dieser Vorlesung:  Mir geht es vor allem
+darum, Ihnen die Fähigkeit zu vermitteln, sich 
+selbstständig in mathematische Fachliteratur hineinarbeiten zu können.  Dazu müssen Sie in der Lage
+sein, mathematische Beweise sowohl zu verstehen als auch selber entwickeln zu können.   Dies ist ein
+wesentlicher Unterschied zu der Mathematik, an die sich viele von Ihnen auf der Schule gewöhnthaben:
+Dort werden primär Verfahren vermitteln, mit denen sich spezielle Probleme lösen lassen.  Die Kenntnis
+solcher Verfahren ist allerdings in der Praxis nicht mehr wichtig, denn heutzutage werden solche 
+Verfahren programmiert und daher besteht kein Bedarf mehr dafür, solche Verfahren von Hand
+anzuwenden.  Aus diesem Grund wird in dieser Vorlesung der mathematische Beweis-Begriff im
+Vordergrund stehen.  Die Analysis dient uns dabei als ein Beispiel einer mathematischen Theorie, an
+Hand derer wir das mathematische Denken üben können. 
+
+\section{Notation}
+In diesem Skript definieren wir die Menge der natürlichen Zahlen $\mathbb{N}$ über die Formel
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathbb{N} := \{ 1, 2, 3, \cdots \}$.
+\\[0.2cm]
+Im Gegensatz zu der Vorlesung über Lineare Algebra im letzten Semester wird die Zahl $0$ in diesem
+Skript also \underline{nicht} als natürliche Zahl aufgefasst.  Weiter definieren wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathbb{N}_0 := \{ 0 \} \cup \mathbb{N}$.
+\\[0.2cm]
 
 %%% Local Variables: 
 %%% mode: latex

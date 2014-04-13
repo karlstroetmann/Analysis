@@ -12,6 +12,19 @@
 \usepackage{theorem}
 \usepackage{hyperref}
 \usepackage[all]{hypcap}
+\hypersetup{
+        colorlinks = true, % comment this to make xdvi work
+        linkcolor  = blue,
+        citecolor  = red,
+        filecolor  = Gold,
+        urlcolor   = [rgb]{0.1, 0.1, 1.0},
+        pdfborder  = {0 0 0} 
+}
+\usepackage{fancyhdr}
+\usepackage{lastpage} 
+
+\pagestyle{fancy}
+\fancyfoot[C]{--- \thepage/\pageref{LastPage}\ ---}
 
 \usepackage[german]{babel}
 \usepackage{babelbib}
@@ -27,6 +40,11 @@
 \newtheorem{Theorem}[Definition]{Theorem}
 }
 
+\newcommand{\proof}{\vspace*{0.2cm}
+
+\noindent
+\textbf{Beweis}: }
+ 
 \newcommand{\qed}{\hspace*{\fill} $\Box$
 \vspace*{0.2cm}
 
@@ -37,15 +55,40 @@
 
 }
 
+\newcommand{\eox}{\hspace*{\fill} $\diamond$
+\vspace*{0.2cm}
+
+}
+
 \title{Analysis\\[0.3cm]
-      --- SS 2012 --- \\[0.3cm]
-      DHBW Stuttgart}
+      --- Sommersemester 2014 --- \\[0.3cm]
+      DHBW Mannheim}
 \author{Prof.~Dr.~Karl Stroetmann}
-
-\newcommand{\proof}{\vspace*{0.2cm}
-
+\date{\today \\[5.5cm]
+\begin{minipage}[t]{1.0\linewidth}
 \noindent
-\textbf{Beweis}: }
+Dieses Skript ist einschließlich der \LaTeX-Quellen sowie der in diesem Skript diskutierten
+Programme unter
+\\[0.2cm]
+\hspace*{\fill}
+\href{https://github.com/karlstroetmann/Analysis}{\texttt{https://github.com/karlstroetmann/Analysis}}
+\hspace*{\fill} 
+\\[0.2cm]
+im Netz verfügbar.  Das Skript wird laufend überarbeitet.  Wenn Sie auf Ihrem Rechner \href{http://git-scm.com/download}{\texttt{git}}
+installieren und mein Repository mit Hilfe des Befehls
+\\[0.2cm]
+\hspace*{1.3cm}
+\texttt{git clone https://github.com/karlstroetmann/Analysis.git}
+\\[0.2cm]
+klonen, dann können Sie durch Absetzen des Befehls
+\\[0.2cm]
+\hspace*{1.3cm}
+\texttt{git pull}
+\\[0.2cm]
+die aktuelle Version meines Skripts aus dem Netz laden.
+\end{minipage}
+}
+
 
 \newcommand{\solution}{\vspace*{0.2cm}
 
@@ -85,7 +128,7 @@
 \newlength{\mylength}
 \setlength{\mathindent}{1.3cm}
 
-%\includeonly{einleitung, folgen-und-reihen,stetige-funktionen, anwendungen, integration}
+\includeonly{einleitung, folgen-und-reihen}
 %\includeonly{rundungsfehler}
 
 \begin{document}

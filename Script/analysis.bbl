@@ -15,7 +15,7 @@
 \expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
 \bibitem {forster:2011}
 \btxnamefont {\btxlastnamefont {Forster}, Otto}\btxauthorcolon\ \btxtitlefont
-  {Analysis I, Differential- und Integralrechnung einer Veränderlichen}.
+  {Analysis I, Differential- und Integralrechnung einer Ver\"anderlichen}.
 \newblock \btxpublisherfont {Vieweg+Teubner}, \btxeditionnumlong {11te}{},
   2011.
 
@@ -34,6 +34,12 @@
 \btxnamefont {\btxlastnamefont {Heuser}, Harro}\btxauthorcolon\ \btxtitlefont
   {Lehrbuch der Analysis, Teil 2}.
 \newblock \btxpublisherfont {Teubner}, \btxeditionnumlong {14te}{}, 2008.
+
+\bibitem {courant:1937}
+\btxnamefont {\btxlastnamefont {Courant}, Richard}\btxauthorcolon\
+  \btxtitlefont {Differential and Integral Calculus}, \btxvolumelong
+  {}~\btxvolumefont {1}.
+\newblock \btxpublisherfont {Blackie \& Son Limited}, 1937.
 
 \bibitem {dedekind:1901}
 \btxnamefont {\btxlastnamefont {Dedekind}, Richard}\btxauthorcolon\

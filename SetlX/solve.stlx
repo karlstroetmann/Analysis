@@ -1,8 +1,8 @@
 // compute the sequence (x_n)-N defined inductively as follows:
-//  1. x_0     := 0.0,
+//  1. x_1     := 0.0,
 //  2. x_{n+1} := cos(x_n)
 solve := procedure(k) {
-    x    := [];  // x[n+1] stores x_{n}
+    x    := [];  // x[n] stores x_{n}
     x[1] := 0.0;
     for (n in [1 .. k]) {
         x[n+1] := cos(x[n]);
@@ -10,5 +10,5 @@ solve := procedure(k) {
     }
 };
 
-solve(1000);
+solve(99);
 
