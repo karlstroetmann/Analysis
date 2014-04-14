@@ -1,0 +1,174 @@
+\chapter{Die Definition der reellen Zahlen}
+Bevor wir mit der eigentlichen Analysis beginnen müssen wir klären, was genau reelle Zahlen
+überhaupt sind.  Anschaulich werden reelle Zahlen zur Angabe von Längen benötigt, denn in der Geometrie
+reicht es nicht, mit den rationalen Zahlen zu arbeiten.  Das liegt daran, dass die Diagonale eines
+Quadrats der Seitenlänge 1 nach dem 
+\href{http://de.wikipedia.org/wiki/Satz_des_Pythagoras}{Satz des Pythagoras} die Länge $\sqrt{2}$ hat.
+Wir hatten im letzten Semester aber gesehen, dass es keine rationale Zahl $r$ gibt,
+so dass $r^2 = 2$ ist.  Folglich reichen die rationalen Zahlen nicht aus, alle in der Geometrie
+möglichen Längen anzugeben. 
+
+Bis jetzt haben wir so getan, als wüssten wir schon, was reelle Zahlen sind.  Aus der Schule bringen
+Sie gewiss eine anschauliche Vorstellung der reellen Zahlen mit, aber diese Vorstellung gilt es
+nun zu formalisieren, denn sonst können wir den Nachweis der \emph{Vollständigkeit} der reellen
+Zahlen nicht führen.   Unter der Vollständigkeit der reellen Zahlen verstehen wir anschaulich die Eigenschaft,
+dass es auf  der reellen Zahlengeraden keine Löcher gibt.  Bei der formalen Darstellung der reellen
+Zahlen hilft uns die folgende Definition.
+
+\begin{Definition}[Dedekind-Schnitt] \lb
+Ein Paar $\pair(M_1,M_2)$ heißt \href{http://de.wikipedia.org/wiki/Dedekindscher_Schnitt}{\emph{Dedekind-Schnitt}}
+(\href{http://de.wikipedia.org/wiki/Richard_Dedekind}{\textrm{Richard Dedekind}}, 1831-1916)
+falls folgendes gilt:
+\begin{enumerate}
+\item $M_1 \subseteq  \mathbb{Q}$, \quad $M_2 \subseteq \mathbb{Q}$.
+\item $M_1 \not= \emptyset$, \quad $M_2 \not= \emptyset$.
+\item $\forall x_1 \in M_1: \forall x_2 \in M_2: x_1 < x_2$.
+\item $M_1 \cup M_2 = \mathbb{Q}$.
+\end{enumerate}
+\end{Definition}
+
+\example Definieren wir
+\\[0.2cm]
+\hspace*{1.3cm} 
+$M_1 := \{ x \in \mathbb{Q} \mid x \leq 0 \vee x^2 \leq 2 \}$ \quad und \quad
+$M_2 := \{ x \in \mathbb{Q} \mid x > 0 \wedge x^2 > 2 \}$,
+\\[0.2cm]
+so enthält $M_1$ alle die Zahlen, die kleiner oder gleich $\sqrt{2}$ sind, während
+$M_2$ alle Zahlen enthält, die größer als $\sqrt{2}$ sind. Das Paar $\pair(M_1,M_2)$ ist dann ein
+Dedekind-Schnitt. \eox
+
+\noindent
+Formal ist die Menge der reellen Zahlen als die Menge aller Dedekind-Schnitte definiert:
+\\[0.2cm]
+\hspace*{1.3cm}
+\framebox{
+\framebox{
+$\mathbb{R} := \bigl\{ \pair(M_1,M_2) \in 2^\mathbb{Q} \times 2^\mathbb{Q} \mid \mbox{$\pair(M_1,M_2)$ ist eine Dedekind-Schnitt}\bigr\}$.}}
+\\[0.2cm]
+Nach dieser Definition müssen wir nun zeigen, wie sich auf der so definierten Menge der reellen
+Zahlen die arithmetischen Operationen Addition, Subtraktion, Multiplikation und Division definieren
+lassen.  Zusätzlich ist zu klären, wie die Relation $<$ für zwei Dedekind-Schnitte definiert
+werden kann.  Die folgende Definition der Dedekind-Menge ist dabei hilfreich.
+\pagebreak
+
+\begin{Definition}[Dedekind-Menge]
+Eine Menge $M \subseteq \mathbb{Q}$ ist eine \emph{Dedekind-Menge} genau dann, wenn die
+folgenden Bedingungen erfüllt sind.
+\begin{enumerate}
+\item $M \not= \{\}$,
+\item $M \not= \mathbb{Q}$,
+\item $\forall x, y \in \mathbb{Q}: \bigl(y < x \wedge x \in M \rightarrow y \in M)$.
+
+      Die letzte Bedingung besagt, dass $M$ \emph{nach unten abgeschlossen} ist:  Wenn eine
+      Zahl $x$ in $M$ liegt, dann liegt auch jede Zahl, die kleiner als $x$ ist, in $M$.
+\item Die Menge $M$ hat kein Maximum, es gibt also kein $m \in M$, so dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x \leq m$ \quad für alle $x \in M$ gilt.
+\end{enumerate}
+\end{Definition}
+
+\exercise
+Zeigen Sie, dass eine Menge $M \subseteq \mathbb{Q}$ genau dann eine Dedekind-Menge ist, wenn das Paar $\pair(M,\mathbb{Q} \backslash M)$
+ein Dedekind-Schnitt ist. \eox
+
+\exercise
+Es sei $\mathcal{D}$ die Menge aller rationalen Dedekind-Mengen, also
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathcal{D} := \bigl\{ M \in 2^{\mathbb{Q}} \mid \mbox{$M$ is Dedekind-Menge} \bigr\}$.
+\\[0.2cm]
+Auf der Menge $\mathcal{D}$ definieren wir eine binäre Relation $\leq$ durch die Festsetzung
+\\[0.2cm]
+\hspace*{1.3cm}
+$A \leq B \;\stackrel{\mathrm{def}}{\Longleftrightarrow}\; A \subseteq B$ \quad f.a. $A,B \in \mathcal{D}$.
+\\[0.2cm]
+Zeigen Sie, dass die so definierte Relation $\leq$ eine totale Ordnung auf der Menge $\mathcal{D}$ ist.
+
+\begin{Definition}[Infimum]
+Eine Menge $\mathcal{M} \subseteq \mathcal{D}$ ist \emph{in $\mathcal{D}$ nach unten beschränkt}, falls es ein
+ $U \in \mathcal{D}$ gibt, so dass gilt:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall A \in \mathcal{M}:  U \leq A$.
+\\[0.2cm]
+Eine Menge $I \in \mathcal{D}$ ist das \emph{Infimum} einer Menge $\mathcal{M}$, wenn $I$ die größte
+untere Schranke von $\mathcal{M}$ ist, wenn also 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall A \in \mathcal{M}: I \leq A$ \quad \mbox{und} \quad
+$\forall T \in \mathcal{D}: \Bigl(\bigl(\forall A \in \mathcal{M}: T \leq A \bigr)\rightarrow T \leq I \Bigr)$
+\\[0.2cm]
+gilt.  In diesem Fall schreiben wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$S = \inf( \mathcal{M} )$.
+\end{Definition}
+
+\exercise
+Zeigen Sie, dass jede nicht-leere und in $\mathcal{D}$ nach unten beschränkte Menge
+$\mathcal{M} \subseteq \mathcal{D}$ ein Infimum $I \in \mathcal{D}$ hat.
+
+\begin{Definition}[Addition von Dedekind-Mengen]
+Es seien $A$ und $B$ Dedekind-Mengen.  Dann definieren wir die Summe $A + B$ wie folgt:
+\\[0.2cm]
+\hspace*{1.3cm}
+$A + B := \{ x + y \mid x \in A \wedge y \in B \}$. 
+\end{Definition}
+
+\exercise
+Es seien $A,B \in \mathcal{D}$.  Zeigen Sie, dass dann auch $A + B \in \mathcal{D}$ ist.
+
+\exercise
+Zeigen Sie, dass die Menge 
+\\[0.2cm]
+\hspace*{1.3cm}
+$O := \{ x \in \mathbb{Q} \mid x < 0 \}$
+\\[0.2cm]
+eine Dedekind-Menge ist und zeigen Sie weiter, dass die Struktur $\langle \mathcal{D}, 0, + \rangle$
+eine kommutative Gruppe ist.
+\pagebreak
+
+\exercise
+Überlegen Sie, wie sich auf der Menge $\mathcal{D}$ eine Multiplikation definieren lässt,
+so dass $\mathcal{D}$ mit dieser Multiplikation und der oben definierten Addition ein Körper wird.
+\vspace*{0.5cm}
+
+
+\noindent
+\textbf{Bemerkung}:  Da Dedekind-Mengen und Dedekind-Schnitte sich eins-zu-eins entsprechen,
+können wir  die Menge $\mathbb{R}$ der reellen Zahlen auch als die Menge
+$\mathcal{D}$ der Dedekind-Mengen auffassen.   Jedes $A \in \mathcal{D}$ stellt dabei die reelle Zahl 
+$\inf(\mathbb{Q} \backslash A)$ dar.  In dem Buch ``\emph{Grundlagen der Analysis}'' von Edmund
+Landau \cite{landau:1930} wird diese Konstruktion der reellen Zahlen im Detail beschrieben.  
+
+
+\begin{Theorem}[Vollständigkeit der reellen Zahlen]
+Ist $\pair(M_1,M_2)$ ein Dedekind-Schnitt, so gibt es eine \emph{Trennungs-Zahl} $s\in\mathbb{R}$, 
+so dass gilt:
+\\[0.2cm]
+\hspace*{1.3cm}
+$ \forall x_1 \in M_1: x_1 \leq s \quad \mbox{\textrm{und}} \quad
+   \forall x_2 \in M_2: s \leq x_2.
+$ \qed
+\end{Theorem}
+
+\proof
+Da reelle Zahlen nichts anderes als Dedekind-Schnitte sind, können wir ganz einfach
+\\[0.2cm]
+\hspace*{1.3cm}
+$s = \pair(M_1,M_2)$
+\\[0.2cm]
+definieren.  \qed
+
+
+\remark
+Die Vollständigkeit der reellen Zahlen kann anschaulich als die Aussage interpretiert werden, dass
+die Menge der reellen Zahlen keine Löcher hat.  Diese Erkenntnis geht auf Richard Dedekind
+\cite{dedekind:1901} zurück.
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "analysis"
+%%% End: 
+

@@ -659,61 +659,6 @@ $ \lim\limits_{n\rightarrow\infty} a_n \leq \lim\limits_{n\rightarrow\infty} b_n
 Beweisen Sie den letzten Satz.  \eox
 
 
-
-Bis jetzt haben wir so getan, als wüssten wir schon, was reelle Zahlen sind.  Aus der Schule bringen
-Sie gewiss eine anschauliche Vorstellung der reellen Zahlen mit, aber diese Vorstellung gilt es
-jetzt zu formalisieren, denn sonst können wir den Nachweis der \emph{Vollständigkeit} der reellen
-Zahlen nicht führen.   Unter der Vollständigkeit der reellen Zahlen verstehen wir anschaulich die Eigenschaft,
-dass es auf  der reellen Zahlengeraden keine Löcher gibt.  Bei der formalen Darstellung der reellen
-Zahlen hilft uns die folgende Definition.
-
-\begin{Definition}[Dedekindscher Schnitt] \lb
-Ein Paar $\pair(M_1,M_2)$ heißt \href{http://de.wikipedia.org/wiki/Dedekindscher_Schnitt}{\emph{Dedekindscher Schnitt}}
-(\href{http://de.wikipedia.org/wiki/Richard_Dedekind}{\textrm{Richard Dedekind}}, 1831-1916)
-falls folgendes gilt:
-\begin{enumerate}
-\item $M_1 \subseteq  \mathbb{Q}$, \quad $M_2 \subseteq \mathbb{Q}$.
-\item $M_1 \not= \emptyset$, \quad $M_2 \not= \emptyset$.
-\item $\forall x_1 \in M_1: \forall x_2 \in M_2: x_1 < x_2$.
-\item $M_1 \cup M_2 = \mathbb{Q}$.
-\end{enumerate}
-\end{Definition}
-
-\example Definieren wir
-\\[0.2cm]
-\hspace*{1.3cm} 
-$M_1 := \{ x \in \mathbb{Q} \mid x \leq 0 \vee x^2 \leq 2 \}$ \quad und \quad
-$M_2 := \{ x \in \mathbb{Q} \mid x > 0 \wedge x^2 > 2 \}$,
-\\[0.2cm]
-so enthält $M_1$ alle die Zahlen, die kleiner oder gleich $\sqrt{2}$ sind, während
-$M_2$ alle Zahle enthält, die größer als $\sqrt{2}$ sind. Das Paar $\pair(M_1,M_2)$ ist dann ein
-Dedekindscher Schnitt. \eox
-
-Formal können wir nun die Menge der reellen Zahlen als die Menge aller Dedekindschen Schnitte definieren:
-\\[0.2cm]
-\hspace*{1.3cm}
-$\mathbb{R} := \bigl\{ \pair(M_1,M_2) \in 2^\mathbb{Q} \times 2^\mathbb{Q} \mid \mbox{$\pair(M_1,M_2)$ ist eine Dedekindscher Schnitt}\bigr\}$.
-\\[0.2cm]
-Nach dieser Definition müssen wir nun zeigen, wie sich auf der so definierten Menge der reellen
-Zahlen die arithmetischen Operationen Addition, Subtraktion, Multiplikation und Division definieren
-lassen.  Zusätzlich ist zu klären, wie die Relation $<$ für zwei Dedekindsche Schnitte definiert
-werden kann.  Aus Zeitgründen können wir diese Definitionen im Rahmen dieser Vorlesung nicht
-präsentieren.  Für uns wichtig ist nur das folgende Ergebnis.
-
-
-\begin{Theorem}[Vollständigkeit der reellen Zahlen]
-Ist $\pair(M_1,M_2)$ ein Dedekind'scher Schnitt, so gibt es eine \emph{Trennungs-Zahl} $s\in\mathbb{R}$, 
-so dass gilt:
-\\[0.2cm]
-\hspace*{1.3cm}
-$ \forall x_1 \in M_1: x_1 \leq s \quad \mbox{\textrm{und}} \quad
-   \forall x_2 \in M_2: s \leq x_2.
-$ \qed
-\end{Theorem}
-Die Vollständigkeit der reellen Zahlen kann anschaulich als die Aussage interpretiert werden, dass
-die Menge der reellen Zahlen keine Löcher hat.  Diese Erkenntnis geht auf Richard Dedekind
-\cite{dedekind:1901} zurück.
-
 \begin{Definition}[monoton]
 Eine Folge $\folge{a_n}$ ist \emph{monoton steigend} falls 
 \\[0.2cm]
@@ -724,7 +669,7 @@ gilt.  Analog heißt eine Folge \emph{monoton fallend} falls
 \\[0.2cm]
 \hspace*{1.3cm}
 $ \forall n \in \mathbb{N}: a_n \geq a_{n+1}. $
-\\[0.2cm]
+\eod
 \end{Definition}
 Ein Beispiel für eine monoton fallende Folge ist die Folge $\Folge{\bruch{1}{n}}$, denn es
 gilt
@@ -737,11 +682,12 @@ $
 \Rightarrow & \bruch{1}{n}   & \geq & \bruch{1}{n+1} \\[0.3cm]
 \end{array}
 $
-\\[0.2cm]
+
+
 \begin{Satz} \label{satz:monoton}
 Ist die Folge $\folge{a_n}$ monoton fallend und beschränkt, so ist die Folge auch konvergent.
 \end{Satz}
-\textbf{Beweis}:  Wir definieren einen Dedekind'schen Schnitt $\pair(M_1,M_2)$ wie folgt:
+\textbf{Beweis}:  Wir definieren einen Dedekind-Schnitt $\pair(M_1,M_2)$ wie folgt:
 \begin{enumerate}
 \item $M_1$ definieren wir als die Menge aller unteren Schranken der Folge $\folge{a_n}$
       \\[0.2cm]
@@ -766,7 +712,7 @@ $ \begin{array}{lcl}
       Wir wissen schon, dass $M_1 \not= \emptyset$, aber es gilt auch $M_2 \not= \emptyset$,
       denn offenbar liegt die Zahl $a_0 + 1$ in der Menge $M_2$.
 \end{enumerate}
-Um zu zeigen, dass das Paar $\pair(M_1,M_2)$ ein Dedekind'scher Schnitt ist, müssen wir
+Um zu zeigen, dass das Paar $\pair(M_1,M_2)$ ein Dedekind-Schnitt ist, müssen wir
  noch 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -780,7 +726,7 @@ Ungleichung dann auch für die natürliche Zahl $n$, wir haben also
 \hspace*{1.3cm}
 $ x_1 \leq a_n < x_2 \quad \mbox{und damit}\quad x_1 < x_2. $
 \\[0.2cm]
-Folglich ist $\pair(M_1,M_2)$ ein Dedekind'scher Schnitt und wegen der Vollständigkeit der reellen
+Folglich ist $\pair(M_1,M_2)$ ein Dedekind-Schnitt und wegen der Vollständigkeit der reellen
 Zahlen gibt es eine Trennungs-Zahl $s$ mit der Eigenschaft, dass
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -913,15 +859,15 @@ $M$ besitzt ein Infimum.
 
 \noindent
 \textbf{Lösung}:
-Wir konstruieren das Infimum als Trennungs-Zahl eines Dedekind'schen Schnitts.
-Wir definieren den Dedekind'schen Schnitt $\pair(M_1,M_2)$ wie folgt:
+Wir konstruieren das Infimum als Trennungs-Zahl eines Dedekind-Schnitts.
+Wir definieren den Dedekind-Schnitt $\pair(M_1,M_2)$ wie folgt:
 \begin{enumerate}
 \item $M_1 := \bigl\{ u \in \mathbb{R} \mid \forall x \in M : u \leq x \bigr\}$.
 
       $M_1$ ist also die Menge der unteren Schranken von $M$.  Da wir vorausgesetzt
       hatten, dass $M$ nach unten beschränkt ist, ist klar dass $M_1 \not= \emptyset$
       gilt.
-\item Damit $\pair(M_1,M_2)$ ein Dedekind'scher Schnitt wird, muss $M_2$ das Komplement
+\item Damit $\pair(M_1,M_2)$ ein Dedekind-Schnitt wird, muss $M_2$ das Komplement
       von $M_1$ in der Menge $\mathbb{R}$ sein:
       \\[0.2cm]
 \hspace*{1.3cm}
@@ -940,7 +886,7 @@ $
       Da die Menge $M$ nicht leer ist, gibt es ein $x \in M$.  Wegen $x < x+1$ ist $x+1$
       keine untere Schranke von $M$, also gilt $x+1 \in M_2$ und damit gilt $M_2 \not=\emptyset$.
 \end{enumerate}
-Um nachzuweisen, dass $\pair(M_1,M_2)$ ein Dedekind'scher Schnitt ist, müssen wir nur noch
+Um nachzuweisen, dass $\pair(M_1,M_2)$ ein Dedekind-Schnitt ist, müssen wir nur noch
 zeigen, dass für alle $u\in M_1$ und alle $v\in M_2$ die Ungleichung $u < v$ gilt.
 Seien also $u\in M_1$ und $v\in M_2$ gegeben.  Aus der Definition von $M_2$ folgt dann,
 dass es eine Zahl $x \in M$ gibt, so dass
@@ -958,7 +904,7 @@ Aus den letzten beiden Ungleichungen folgt nun
 \hspace*{1.3cm}
 $ u \leq x < v \quad \mbox{also} \quad u < v. $
 \\[0.2cm]
-Also ist $\pair(M_1,M_2)$ ein Dedekind'scher Schnitt und nach dem Vollständigkeits-Axioms 
+Also ist $\pair(M_1,M_2)$ ein Dedekind-Schnitt und nach dem Vollständigkeits-Axioms 
 gibt es eine Trennungs-Zahl $s$.  
 Wir behaupten, dass $s$ das Infimum der Menge $M$ ist.  Dazu  müssen wir
 zwei Dinge zeigen:
@@ -973,7 +919,7 @@ zwei Dinge zeigen:
       zwischen diesen beiden Zahlen liegen muss: \\[0.2cm]
       \hspace*{1.3cm} $z < \bruch{1}{2}\cdot (z + s) < s$.
       \\[0.2cm]
-      Da $s$ die Trennungs-Zahl des Dedekind'schen Schnitts $\pair(M_1,M_2)$ ist,
+      Da $s$ die Trennungs-Zahl des Dedekind-Schnitts $\pair(M_1,M_2)$ ist,
       folgt aus $\bruch{1}{2}\cdot (z + s) < s$ sofort $\bruch{1}{2}\cdot (z + s) \in M_1$.
       Da $M_1$ aber die Menge der unteren Schranken der Menge $M$ ist, und $z\in M$ ist,
       folgt
@@ -988,7 +934,7 @@ zwei Dinge zeigen:
       \hspace*{1.3cm} $\forall x \in M: s \leq x$. 
 \item $s$ ist die größte untere Schranke von $M$.
 
-      Für die Trennungs-Zahl $s$ des Dedekind'schen Schnitts $\pair(M_1,M_2)$ gilt:
+      Für die Trennungs-Zahl $s$ des Dedekind-Schnitts $\pair(M_1,M_2)$ gilt:
       \\[0.2cm]
       \hspace*{1.3cm} $\forall u \in M_1: u \leq s$.      
       \\[0.2cm]
@@ -1024,7 +970,6 @@ gilt also
 \\[0.2cm]
 \hspace*{1.3cm}
 $ 0 = \inf \Bigl\{ \bruch{1}{n} \Bigm| n \in \mathbb{N} \wedge n > 0 \Bigr\}. $
-\\[0.2cm]
 
 
 \begin{Definition}[Cauchy-Folge] \lb
@@ -1034,7 +979,7 @@ Eine Folge $\folge{a_n}$ heißt \emph{Cauchy-Folge} (\href{http://de.wikipedia.or
 $ \forall \varepsilon \in \mathbb{R}_+: \exists K \in \mathbb{R}: \forall m,n \in \mathbb{N}: 
    m \geq K \wedge n \geq K \rightarrow \bigl| a_m - a_n \bigr| < \varepsilon.
 $
-\\[0.2cm]
+\eod
 \end{Definition}
 
 In einer Cauchy-Folge $\folge{a_n}$ liegen also die einzelnen Folgenglieder $a_n$ mit wachsendem $n$
@@ -1121,7 +1066,7 @@ $\pair(M_1,M_2)$ wie folgt:
       Die Beschränktheit der Cauchy-Folge impliziert, dass die Menge $M_1$ nicht leer ist,
       denn wenn für alle $n \in \mathbb{N}$ die Ungleichung $|a_n| \leq S$ gilt,
       dann gilt insbesondere $-S \leq a_n$ und daraus folgt $-S \in M_1$.
-\item Da das Paar $\pair(M_1,M_2)$ eine Dedekind'scher Schnitt werden soll, definieren wir
+\item Da das Paar $\pair(M_1,M_2)$ eine Dedekind-Schnitt werden soll, definieren wir
       $M_2$ als das Komplement von $M_1$ in $\mathbb{R}$:
       \\[0.2cm]
       \hspace*{1.3cm}      
@@ -1170,7 +1115,7 @@ und damit
 $x_1 < x_2$
 \\[0.2cm]
 haben.  Damit ist das Paar $\pair(M_1,M_2)$ ein
-Dedekind'scher Schnitt.  Aus dem Vollständigkeits-Axioms folgt nun, dass eine
+Dedekind-Schnitt.  Aus der Vollständigkeit der reellen Zahlen folgt nun, dass eine
 Trennungs-Zahl $s$ mit der Eigenschaft
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1671,7 +1616,7 @@ so sprechen wir von einer \emph{alternierenden Reihe}.
 \\[0.2cm]
 \hspace*{1.3cm}
 $ \Folge{\sum\limits_{i=1}^{n} \bruch{(-1)^i}{i}} \quad \mbox{ist eine alternierende Reihe.} $
-\\[0.2cm]
+
 
 \begin{Definition}[Null-Folge]
 Die Folge $\folge{a_n}$ ist eine \emph{Null-Folge} wenn gilt:
@@ -2017,7 +1962,7 @@ folgt die Konvergenz aus dem Majoranten-Kriterium.
 \\[0.2cm]
 \hspace*{1.3cm}
 $ \sum\limits_{i=1}^{\infty} \bruch{1}{i^2} = \bruch{\;\pi^2}{6\;} \quad\mbox{gilt.} $
-\\[0.2cm]
+
 
 
 \begin{Satz}[Minoranten-Kriterium]
@@ -2169,7 +2114,7 @@ $ \sqrt[n]{\bruch{1}{n!}} \leq \bruch{1}{2}     \quad \Leftrightarrow \quad
    \bruch{1}{n!} \leq \left(\bruch{1}{2}\right)^n  \quad \Leftrightarrow \quad
    n! \geq 2^n. 
 $
-\\[0.2cm]
+
 
 
 \section{Potenz-Reihen}
@@ -2373,7 +2318,7 @@ $\lim\limits_{n\rightarrow\infty} \left|\frac{\frac{1}{n}}{\;\frac{1}{n+1}\;}\ri
        \lim\limits_{n\rightarrow\infty} \bruch{n+1}{n} = 
        1 + \lim\limits_{n\rightarrow\infty}  \bruch{1}{n} = 1 + 0 = 1.
 $
-\\[0.2cm]
+
 
 
 \begin{Satz}[Hadamard]
@@ -2405,7 +2350,7 @@ es gilt
 $ \lim\limits_{n\rightarrow\infty} \sqrt[n]{\bruch{1}{n^n}} =  
    \lim\limits_{n\rightarrow\infty} \bruch{1}{n} = 0.
 $
-\\[0.2cm]
+
 
 
 %%% Local Variables: 

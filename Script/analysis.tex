@@ -107,6 +107,10 @@ die aktuelle Version meines Skripts aus dem Netz laden.
 \noindent
 \textbf{Beispiel}: \ }
 
+\newcommand{\remark}{\vspace*{0.2cm}
+\noindent
+\textbf{Bemerkung}: }
+
 \newcommand{\lb}{\hspace*{\fill} \linebreak}
 
 \newcommand{\bruch}[2]{\displaystyle\frac{\;\displaystyle#1\;}{\;\displaystyle#2\;}}
@@ -128,7 +132,7 @@ die aktuelle Version meines Skripts aus dem Netz laden.
 \newlength{\mylength}
 \setlength{\mathindent}{1.3cm}
 
-\includeonly{einleitung, folgen-und-reihen}
+\includeonly{einleitung, dedekind-cut, folgen-und-reihen}
 %\includeonly{rundungsfehler}
 
 \begin{document}
@@ -136,6 +140,7 @@ die aktuelle Version meines Skripts aus dem Netz laden.
 \maketitle
 \tableofcontents
 \include{einleitung}
+\include{dedekind-cut}
 \include{folgen-und-reihen}
 \include{stetige-funktionen}
 \include{anwendungen}

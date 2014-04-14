@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
   \providebibliographyfont{name}{}%
   \providebibliographyfont{lastname}{}%
   \providebibliographyfont{title}{\emph}%
@@ -39,7 +39,15 @@
 \btxnamefont {\btxlastnamefont {Courant}, Richard}\btxauthorcolon\
   \btxtitlefont {Differential and Integral Calculus}, \btxvolumelong
   {}~\btxvolumefont {1}.
-\newblock \btxpublisherfont {Blackie \& Son Limited}, 1937.
+\newblock \btxpublisherfont {Blackie \& Son Limited}, \btxeditionnumlong
+  {2nd}{}, 1937.
+
+\bibitem {landau:1930}
+\btxnamefont {\btxlastnamefont {Landau}, Edmund}\btxauthorcolon\ \btxtitlefont
+  {Grundlagen der Analysis}.
+\newblock \btxpublisherfont {Akademische Verlagsgesellschaft}, 1930.
+\newblock
+  http://www.scribd.com/doc/2452802/Landau-Edmund-Grundlagen-der-Analysis.
 
 \bibitem {dedekind:1901}
 \btxnamefont {\btxlastnamefont {Dedekind}, Richard}\btxauthorcolon\
