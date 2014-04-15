@@ -687,18 +687,32 @@ $
 \begin{Satz} \label{satz:monoton}
 Ist die Folge $\folge{a_n}$ monoton fallend und beschränkt, so ist die Folge auch konvergent.
 \end{Satz}
-\textbf{Beweis}:  Wir definieren einen Dedekind-Schnitt $\pair(M_1,M_2)$ wie folgt:
+\textbf{Beweis}:  Wir definieren zunächst die Menge $M_1$ als als die Menge aller unteren Schranken der Folge $\folge{a_n}$
+\\[0.2cm]
+\hspace*{1.3cm}      
+$M_1 := \bigl\{ x \in \mathbb{Q} \mid \forall n \in \mathbb{N}: x \leq a_n \bigr\}$.
+\\[0.2cm]
+Weil wir vorausgesetzt haben, dass die Folge $\folge{a_n}$ beschränkt ist,
+ist die Menge $M_1$ sicher nicht leer.  
+Es gibt nun zwei Möglichkeiten:  Die Menge $M_1$ hat ein Maximum oder die Menge $M_1$ hat kein
+Maximum.  Wir betrachten diese beiden Fälle getrennt.
 \begin{enumerate}
-\item $M_1$ definieren wir als die Menge aller unteren Schranken der Folge $\folge{a_n}$
+\item Das Maximum der Menge $M_1$ existiert.  In diesem Fall definieren wir
       \\[0.2cm]
-      \hspace*{1.3cm}      
-      $M_1 := \bigl\{ x \in \mathbb{Q} \mid \forall n \in \mathbb{N}: x \leq a_n \bigr\}$.
+      \hspace*{1.3cm}
+      $s := \max(M_1)$.
       \\[0.2cm]
-      Weil wir vorausgesetzt haben, dass die Folge $\folge{a_n}$ beschränkt ist,
-      ist die Menge $M_1$ sicher nicht leer.
-\item $M_2$ definieren wir als das Komplement der Menge $M_1$ in $\mathbb{R}$:
+      \exercise
+      Zeigen Sie, dass dann
       \\[0.2cm]
-\hspace*{1.3cm}
+      \hspace*{1.3cm}
+      $\lim\limits_{n\rightarrow\infty} a_n = s$
+      \\[0.2cm]
+      gilt.
+\item Die Menge $M_1$ hat kein Maximum.  In diesem Fall definieren wir die Menge $M_2$ als das
+      Komplement der Menge $M_1$:
+      \\[0.2cm]
+      \hspace*{1.3cm}
 $ \begin{array}{lcl}
           M_2 & = & \mathbb{Q} \backslash M_1 \\[0.2cm]
               & = & \mathbb{Q} \backslash \bigl\{ x \in \mathbb{Q} \mid \forall n \in \mathbb{N}: x \leq a_n \bigr\} \\[0.2cm]
@@ -707,11 +721,11 @@ $ \begin{array}{lcl}
               & = & \bigl\{ x \in \mathbb{Q} \mid \exists n \in \mathbb{N}: a_n < x \bigr\}     
       \end{array}
       $
-\\[0.2cm]
+      \\[0.2cm]
       Aus dieser Definition folgt unmittelbar, dass $M_1 \cup M_2 = \mathbb{Q}$ ist.
       Wir wissen schon, dass $M_1 \not= \emptyset$, aber es gilt auch $M_2 \not= \emptyset$,
       denn offenbar liegt die Zahl $a_0 + 1$ in der Menge $M_2$.
-\end{enumerate}
+ 
 Um zu zeigen, dass das Paar $\pair(M_1,M_2)$ ein Dedekind-Schnitt ist, müssen wir
  noch 
 \\[0.2cm]
@@ -797,6 +811,7 @@ $ | a_n - s |  < \varepsilon $
 \\[0.2cm]
 für alle $n \geq n_0$ und damit ist bewiesen, dass $\lim\limits_{n\rightarrow\infty} a_n = s$
 gilt.  \hspace*{\fill} $\Box$
+\end{enumerate}
 
 \exercise
 Die Folge $\folge{a_n}$ sei monoton steigend und beschränkt.  Zeigen Sie, dass der Grenzwert
