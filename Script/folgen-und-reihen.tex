@@ -182,7 +182,7 @@ $\lim\limits_{n\rightarrow\infty} \bruch{1}{2^n} = 0$
 \hspace*{1.3cm}
 $\lim\limits_{n\rightarrow\infty} \bruch{1}{\sqrt{n}} = 0$ 
 \\[0.2cm] 
-gilt.
+gilt.  \eox
 \end{enumerate} 
 \renewcommand{\labelenumi}{\arabic{enumi}.}
 \vspace*{0.3cm}
@@ -239,7 +239,7 @@ wird durch den letzten Satz im Nachhinein gerechtfertigt.
 \vspace*{0.3cm}
 
 \exercise
-Zeigen Sie, dass die Folge $\folge{(-1)^n}$ nicht konvergent ist.
+Zeigen Sie, dass die Folge $\folge{(-1)^n}$ nicht konvergent ist. \eox
 \vspace*{0.3cm}
 
 \noindent 
@@ -442,7 +442,7 @@ Zeichen:
 $ \lim\limits_{n\rightarrow\infty} \bigl(a_n - b_n\bigr) = 
    \Bigl(\lim\limits_{n\rightarrow\infty} a_n\Bigr) -\Bigl(\lim\limits_{n\rightarrow\infty} b_n\Bigr).
 $
-\\[0.2cm]  
+\eox  
 
 \begin{Satz}[Produkt konvergenter Folgen]
 Sind $\folge{a_n}$ und $\folge{b_n}$ zwei Folgen, so dass
@@ -531,9 +531,7 @@ $ \lim\limits_{n\rightarrow\infty} \bruch{a_n}{b_n} =
      a_n\Bigr)}{\Bigl(\lim\limits_{n\rightarrow\infty} b_n\Bigr)} =
    \bruch{a}{b}.
 $
-\\[0.2cm]  
-\vspace*{0.3cm}
-
+\eox
 
 \noindent
 \textbf{Lösung}:  Zunächst können wir das Problem vereinfachen, wenn wir die Folge
@@ -687,131 +685,60 @@ $
 \begin{Satz} \label{satz:monoton}
 Ist die Folge $\folge{a_n}$ monoton fallend und beschränkt, so ist die Folge auch konvergent.
 \end{Satz}
-\textbf{Beweis}:  Wir definieren zunächst die Menge $M_1$ als als die Menge aller unteren Schranken der Folge $\folge{a_n}$
+\textbf{Beweis}:  Wir definieren zunächst die Menge $M$ als als die Menge aller unteren Schranken der Folge $\folge{a_n}$
 \\[0.2cm]
 \hspace*{1.3cm}      
-$M_1 := \bigl\{ x \in \mathbb{Q} \mid \forall n \in \mathbb{N}: x \leq a_n \bigr\}$.
+$M := \bigl\{ x \in \mathbb{Q} \mid \forall n \in \mathbb{N}: x \leq a_n \bigr\}$.
 \\[0.2cm]
 Weil wir vorausgesetzt haben, dass die Folge $\folge{a_n}$ beschränkt ist,
-ist die Menge $M_1$ sicher nicht leer.  
-Es gibt nun zwei Möglichkeiten:  Die Menge $M_1$ hat ein Maximum oder die Menge $M_1$ hat kein
-Maximum.  Wir betrachten diese beiden Fälle getrennt.
-\begin{enumerate}
-\item Das Maximum der Menge $M_1$ existiert.  In diesem Fall definieren wir
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $s := \max(M_1)$.
-      \\[0.2cm]
-      \exercise
-      Zeigen Sie, dass dann
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $\lim\limits_{n\rightarrow\infty} a_n = s$
-      \\[0.2cm]
-      gilt.
-\item Die Menge $M_1$ hat kein Maximum.  In diesem Fall definieren wir die Menge $M_2$ als das
-      Komplement der Menge $M_1$:
-      \\[0.2cm]
-      \hspace*{1.3cm}
-$ \begin{array}{lcl}
-          M_2 & = & \mathbb{Q} \backslash M_1 \\[0.2cm]
-              & = & \mathbb{Q} \backslash \bigl\{ x \in \mathbb{Q} \mid \forall n \in \mathbb{N}: x \leq a_n \bigr\} \\[0.2cm]
-              & = & \bigl\{ x \in \mathbb{Q} \mid \neg \forall n \in \mathbb{N}: x \leq a_n \bigr\} \\[0.2cm]
-              & = & \bigl\{ x \in \mathbb{Q} \mid \exists n \in \mathbb{N}: \neg x \leq a_n \bigr\} \\[0.2cm]
-              & = & \bigl\{ x \in \mathbb{Q} \mid \exists n \in \mathbb{N}: a_n < x \bigr\}     
-      \end{array}
-      $
-      \\[0.2cm]
-      Aus dieser Definition folgt unmittelbar, dass $M_1 \cup M_2 = \mathbb{Q}$ ist.
-      Wir wissen schon, dass $M_1 \not= \emptyset$, aber es gilt auch $M_2 \not= \emptyset$,
-      denn offenbar liegt die Zahl $a_0 + 1$ in der Menge $M_2$.
- 
-Um zu zeigen, dass das Paar $\pair(M_1,M_2)$ ein Dedekind-Schnitt ist, müssen wir
- noch 
+ist die Menge $M$ sicher nicht leer.  Außerdem ist die Menge $M$ nach oben beschränkt, eine obere
+Schranke ist das Folgenglied $a_1$.  Folglich hat die Menge $M$ ein Supremum und wir können daher
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \forall x_1 \in M_1: \forall x_2 \in M_2: x_1 < x_2 $
+$s := \sup(M)$
 \\[0.2cm]
-zeigen.  Sei also  $x_1\in M_1$ und $x_2\in M_2$.  Nach Definition von $M_2$ gibt es dann
-eine natürliche Zahl $n$, für die $a_n < x_2$ ist.  Nach Definition von $M_1$ gilt für
-alle natürlichen Zahlen $m$ die Ungleichung $x_1 \leq a_m$.  Insbesondere gilt die
-Ungleichung dann auch für die natürliche Zahl $n$, wir haben also
+definieren.  Wir zeigen, dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$ x_1 \leq a_n < x_2 \quad \mbox{und damit}\quad x_1 < x_2. $
+$\lim\limits_{n\rightarrow\infty} a_n = s$
 \\[0.2cm]
-Folglich ist $\pair(M_1,M_2)$ ein Dedekind-Schnitt und wegen der Vollständigkeit der reellen
-Zahlen gibt es eine Trennungs-Zahl $s$ mit der Eigenschaft, dass
-\\[0.2cm]
-\hspace*{1.3cm}
-$ \forall x_1 \in M_1: x_1 \leq s \quad \mbox{und} \quad \forall x_2 \in M_2: s \leq x_2 $
-\\[0.2cm]
-gilt.  Wir zeigen, dass diese Zahl $s$ der gesuchte Grenzwert der Folge $\folge{a_n}$ ist, wir
-zeigen also, dass
+gilt.  Sie also $\varepsilon > 0$ gegeben.  Da 
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \lim\limits_{n\rightarrow\infty} a_n = s $
+$s + \varepsilon > s$
 \\[0.2cm]
-gilt.  Dazu beweisen wir zunächst, dass $s \in M_1$ ist.  Wir führen diesen Nachweis
-indirekt und nehmen an, dass $s \in M_2$ ist.  Dann gibt es ein $n\in\mathbb{N}$, so dass
-\\[0.2cm]
-\hspace*{1.3cm}
-$a_n < s$ 
-\\[0.2cm]
-ist.   Der arithmetische Mittelwert von $a_n$ und $s$ liegt zwischen $a_n$
-und $s$, es gilt also
+ist und $s$ als das Supremum der Menge $M$ definiert ist, können wir folgern, dass 
+$s + \varepsilon \not\in M$  ist.  Nach Definition der Menge $M$ gibt es dann eine Zahl $\widehat{n} \in \mathbb{N}$,
+so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$ a_n < \bruch{1}{2} \cdot (a_n + s) < s. $
+$a_{\widehat{n}} < s + \varepsilon$ ist.
 \\[0.2cm]
-Nach Definition der Trennungs-Zahl $s$ folgt aus $\bruch{1}{2} \cdot (a_n + s) < s$, dass
-\\[0.2cm]
-\hspace*{1.3cm}
-$ \bruch{1}{2} \cdot (a_n + s) \in M_1 $
-\\[0.2cm]
-ist.  Nach Definition von $M_1$ gilt dann 
+Da die Folge monoton fallend ist, gilt dann auch
 \\[0.2cm]
 \hspace*{1.3cm}
-$
-\begin{array}{crcl}
-            & \bruch{1}{2} \cdot (a_n + s) & \leq & a_n          \\[0.2cm]
-\Rightarrow & a_n + s                      & \leq & 2 \cdot  a_n \\[0.2cm]
-\Rightarrow &       s                      & \leq & a_n.        
-\end{array}
-$
+$a_n < s + \varepsilon$ \quad für alle $n \geq \widehat{n}$.
 \\[0.2cm]
-Das steht im Widerspruch zu $a_n < s$ und widerlegt die Annahme $s\in M_2$.
-Folglich gilt $s \in M_1$ und nach Definition von $M_1$ haben wir 
-damit für alle $n \in \mathbb{N}$
+Andererseits ist $s - \frac{1}{2} \cdot \varepsilon < s$, so dass $s - \frac{1}{2} \cdot \varepsilon$ sicher ein Element der Menge $M$
+ist und damit dann auch eine untere Schranke der Folge $(a_n)_{n\in\mathbb{N}}$.  Folglich gilt für
+alle $n \in \mathbb{N}$
 \\[0.2cm]
 \hspace*{1.3cm}
-$ s \leq a_n. $
+$s - \varepsilon < s - \frac{1}{2} \cdot s \leq a_n$.
 \\[0.2cm]
-Sei nun ein $\varepsilon > 0$ vorgegeben.  Wir betrachten die Zahl $s + \varepsilon$.
-Wegen $s < s + \varepsilon$ muss diese Zahl  ein Element der Menge $M_2$ sein.
-Nach Definition von $M_2$ gibt es ein $n_0 \in \mathbb{N}$, so dass
+Damit haben wir insgesamt
 \\[0.2cm]
 \hspace*{1.3cm}
-$ a_{n_0} < s + \varepsilon $
+$s - \varepsilon < a_n < s + \varepsilon$ \quad für alle $n \geq \widehat{n}$
 \\[0.2cm]
-gilt.  Aufgrund der Monotonie folgt dann aber für alle $n \geq n_0$
-\\[0.2cm]
-\hspace*{1.3cm}
-$ a_n \leq a_{n_0} < s + \varepsilon. $
-\\[0.2cm]
-Insgesamt haben wir
+und dies können wir auch als
 \\[0.2cm]
 \hspace*{1.3cm}
-$ s \leq a_n \leq a_{n_0} < s + \varepsilon $
+$|a_n - s| < \varepsilon$ \quad für alle $n \geq \widehat{n}$
 \\[0.2cm]
-und daraus folgt
-\\[0.2cm]
-\hspace*{1.3cm}
-$ | a_n - s |  < \varepsilon $
-\\[0.2cm]
-für alle $n \geq n_0$ und damit ist bewiesen, dass $\lim\limits_{n\rightarrow\infty} a_n = s$
-gilt.  \hspace*{\fill} $\Box$
-\end{enumerate}
+schreiben.  Nach Definition des Grenzwerts haben wir damit die Behauptung gezeigt.
+\qed
+
 
 \exercise
 Die Folge $\folge{a_n}$ sei monoton steigend und beschränkt.  Zeigen Sie, dass der Grenzwert
@@ -819,7 +746,7 @@ Die Folge $\folge{a_n}$ sei monoton steigend und beschränkt.  Zeigen Sie, dass d
 \hspace*{1.3cm}
 $\lim\limits_{n\rightarrow\infty} a_n$
 \\[0.2cm]
-existiert.
+existiert.  \eox
 
 
 \exercise 
@@ -829,162 +756,8 @@ Es seien $a,b \in \mathbb{R}$ und es gelte $a < b$.  Zeigen Sie, dass dann auch
 $a < \bruch{1}{2} \cdot (a + b)$ \quad und \quad 
 $\bruch{1}{2} \cdot (a + b) < b$ 
 \\[0.2cm]
-gilt.
+gilt.  \eox
 
-\begin{Definition}[Infimum, Supremum]
-Eine Teilmenge $M$ der reellen Zahlen ist nach \emph{oben} (bzw.~\emph{nach unten}) \emph{beschränkt}, falls es eine
-Schranke $o\in\mathbb{R}$ (bzw.~$u\in\mathbb{R}$) gibt, so dass gilt:
-\\[0.2cm]
-\hspace*{1.3cm}
-$ \forall x \in M: x \leq o \quad (\mbox{bzw.}\;\; \forall x \in M : x \geq u). $
-\\[0.2cm]
-Eine Zahl $s$ ist das \emph{Supremum} einer Menge $M$, wenn $s$ die kleinste 
-obere Schranke von $M$ ist, es muss also gelten:
-\\[0.2cm]
-\hspace*{1.3cm}
-$ \forall x \in M: x \leq s \quad \mbox{und} \quad
-   \forall t \in \mathbb{R}: \Bigl(\bigl(\forall x \in M: x \leq t\bigr)\rightarrow s \leq t \Bigr)
-$
-\\[0.2cm]
-In diesem Fall schreiben wir
-\\[0.2cm]
-\hspace*{1.3cm}
-$ s = \sup( M ). $
-\\[0.2cm]
-Analog ist eine Zahl $s$ das \emph{Infimum} einer Menge $M$, wenn $s$ die größte
-untere Schranke von $M$ ist, es muss also gelten:
-\\[0.2cm]
-\hspace*{1.3cm}
-$ \forall x \in M: s \leq x \quad \mbox{und} \quad
-   \forall t \in \mathbb{R}: \Bigl(\bigl(\forall x \in M: t \leq x\bigr)\rightarrow t \leq s \Bigr)
-$
-\\[0.2cm]
-In diesem Fall schreiben wir
-\\[0.2cm]
-\hspace*{1.3cm}
-$ s = \inf( M ). $
-\eod
-\end{Definition}
-\vspace*{0.3cm}
-
-\exercise
-Zeigen Sie unter Verwendung des Vollständigkeit der reellen Zahlen: Jede nichtleere nach unten beschränkte Menge
-$M$ besitzt ein Infimum.
-\vspace*{0.3cm}
-
-\noindent
-\textbf{Lösung}:
-Wir konstruieren das Infimum als Trennungs-Zahl eines Dedekind-Schnitts.
-Wir definieren den Dedekind-Schnitt $\pair(M_1,M_2)$ wie folgt:
-\begin{enumerate}
-\item $M_1 := \bigl\{ u \in \mathbb{R} \mid \forall x \in M : u \leq x \bigr\}$.
-
-      $M_1$ ist also die Menge der unteren Schranken von $M$.  Da wir vorausgesetzt
-      hatten, dass $M$ nach unten beschränkt ist, ist klar dass $M_1 \not= \emptyset$
-      gilt.
-\item Damit $\pair(M_1,M_2)$ ein Dedekind-Schnitt wird, muss $M_2$ das Komplement
-      von $M_1$ in der Menge $\mathbb{R}$ sein:
-      \\[0.2cm]
-\hspace*{1.3cm}
-$
-      \begin{array}{lcl}
-      M_2 & := & \mathbb{R} \backslash M_1 \\[0.2cm]
-          &  = & \mathbb{R} \backslash \bigl\{ u \in \mathbb{R} \mid \forall x \in M : u \leq x \bigr\} \\[0.2cm]
-          &  = & \mathbb{R} \backslash \bigl\{ v \in \mathbb{R} \mid \forall x \in M : v \leq x \bigr\} \\[0.2cm]
-          &  = & \bigl\{ v \in \mathbb{R} \mid \neg\; \bigl(\forall x \in M : v \leq x \bigr)\bigr\} \\[0.2cm]
-          &  = & \bigl\{ v \in \mathbb{R} \mid \exists x \in M : \neg (v \leq x) \bigr\} \\[0.2cm]
-          &  = & \bigl\{ v \in \mathbb{R} \mid \exists x \in M : x < v \bigr\}
-      \end{array}
-      $
-\\[0.2cm]
-      $M_2$ ist also die Menge der Zahlen, die keine unteren Schranken von $M$ sind.
-      Da die Menge $M$ nicht leer ist, gibt es ein $x \in M$.  Wegen $x < x+1$ ist $x+1$
-      keine untere Schranke von $M$, also gilt $x+1 \in M_2$ und damit gilt $M_2 \not=\emptyset$.
-\end{enumerate}
-Um nachzuweisen, dass $\pair(M_1,M_2)$ ein Dedekind-Schnitt ist, müssen wir nur noch
-zeigen, dass für alle $u\in M_1$ und alle $v\in M_2$ die Ungleichung $u < v$ gilt.
-Seien also $u\in M_1$ und $v\in M_2$ gegeben.  Aus der Definition von $M_2$ folgt dann,
-dass es eine Zahl $x \in M$ gibt, so dass
-\\[0.2cm]
-\hspace*{1.3cm}
-$ x < v $
-\\[0.2cm]
-gilt.  Da $M_1$ die Menge der unteren Schranken von $M$ ist, folgt aus $x\in M$ sofort
-\\[0.2cm]
-\hspace*{1.3cm}
-$ u \leq x. $
-\\[0.2cm]
-Aus den letzten beiden Ungleichungen folgt nun
-\\[0.2cm]
-\hspace*{1.3cm}
-$ u \leq x < v \quad \mbox{also} \quad u < v. $
-\\[0.2cm]
-Also ist $\pair(M_1,M_2)$ ein Dedekind-Schnitt und nach dem Vollständigkeits-Axioms 
-gibt es eine Trennungs-Zahl $s$.  
-Wir behaupten, dass $s$ das Infimum der Menge $M$ ist.  Dazu  müssen wir
-zwei Dinge zeigen:
-\begin{enumerate}
-\item $s$ ist eine untere Schranke von $M$.
-
-      Wir nehmen an, dass $s \in M_2$ ist.  Nach Definition von $M_2$ gibt es dann 
-      eine Zahl $z\in M$, so dass \\
-      \hspace*{1.3cm} $z < s$
-      \\[0.2cm]
-      gilt.  Wir betrachten den arithmetischen Mittelwert von $s$ und $z$, der natürlich
-      zwischen diesen beiden Zahlen liegen muss: \\[0.2cm]
-      \hspace*{1.3cm} $z < \bruch{1}{2}\cdot (z + s) < s$.
-      \\[0.2cm]
-      Da $s$ die Trennungs-Zahl des Dedekind-Schnitts $\pair(M_1,M_2)$ ist,
-      folgt aus $\bruch{1}{2}\cdot (z + s) < s$ sofort $\bruch{1}{2}\cdot (z + s) \in M_1$.
-      Da $M_1$ aber die Menge der unteren Schranken der Menge $M$ ist, und $z\in M$ ist,
-      folgt
-      \\[0.2cm]
-      \hspace*{1.3cm} $\bruch{1}{2}\cdot (z + s) \leq z$.
-      \\[0.2cm]
-      Das steht im Widerspruch zu der Ungleichung $z < \bruch{1}{2}\cdot (z + s)$
-      und zeigt, dass die Annahme $s \in M_2$ falsch ist.  Also muss $s\in M_1$ sein.
-      Da $M_1$ die Menge der unteren Schranken der Menge $M$ ist, ist auch $s$ eine 
-      untere Schranke der Menge $M$:
-      \\[0.2cm]
-      \hspace*{1.3cm} $\forall x \in M: s \leq x$. 
-\item $s$ ist die größte untere Schranke von $M$.
-
-      Für die Trennungs-Zahl $s$ des Dedekind-Schnitts $\pair(M_1,M_2)$ gilt:
-      \\[0.2cm]
-      \hspace*{1.3cm} $\forall u \in M_1: u \leq s$.      
-      \\[0.2cm]
-      Setzen wir hier die Definition von $M_1$ ein, so erhalten wir:
-      \\[0.2cm]
-\hspace*{1.3cm}
-$
-      \begin{array}{cl}
-                  & \forall u \in M_1: u \leq s \\[0.2cm]
-      \Rightarrow & \forall u \in \mathbb{R}: u \in M_1 \rightarrow u \leq s \\[0.2cm]
-      \Rightarrow & \forall u \in \mathbb{R}: u \in \bigl\{ u \in \mathbb{R} \mid \forall
-      x \in M : u \leq x \bigr\} \rightarrow u \leq s \\[0.2cm]
-      \Rightarrow & \forall u \in \mathbb{R}: \bigl(\forall x \in M : u \leq x \bigr) \rightarrow u \leq s \\[0.2cm]
-      \end{array}
-      $
-\\[0.2cm]
-      Diese Formel drückt aus, dass alle unteren Schranken der Menge $M$
-      unterhalb von $s$ liegen.  Da wir oben schon gezeigt haben, dass $s$
-      eine untere Schranke von $M$ ist, folgt also, dass $s$ die größte untere Schranke
-      ist.  \hspace*{\fill} $\Box$
-\end{enumerate}
-\vspace*{0.3cm}
-
-\noindent
-Die Begriffe \emph{Supremum} und \emph{Infimum} sind Verallgemeinerungen der Begriffe
-Minimum und Maximum.   Betrachten wie die Menge
-\\[0.2cm]
-\hspace*{1.3cm}
-$ M = \Bigl\{ \bruch{1}{n} \Bigm| n \in \mathbb{N} \wedge n > 0 \Bigr\}. $
-\\[0.2cm]
-Diese Menge hat kein Minimum, aber $0$ ist die größte untere Schranke dieser Menge, es
-gilt also
-\\[0.2cm]
-\hspace*{1.3cm}
-$ 0 = \inf \Bigl\{ \bruch{1}{n} \Bigm| n \in \mathbb{N} \wedge n > 0 \Bigr\}. $
 
 
 \begin{Definition}[Cauchy-Folge] \lb
@@ -1043,7 +816,7 @@ $ \bigl| a_n - a_m | < 1 $
 gilt.  Sei nun $h$ eine natürliche Zahl, die größer als $K$ ist.  Wir definieren
 \\[0.2cm]
 \hspace*{1.3cm}
-$ S := \max\bigl\{ |a_0|, |a_1|, |a_2|, \cdots,  |a_h|, 1+ |a_h|\bigr\} $
+$ S := \max\bigl\{ |a_1|, |a_2|, \cdots,  |a_h|, 1+ |a_h|\bigr\} $
 \\[0.2cm]
 und zeigen, dass $S$ eine  Schranke der Cauchy-Folge $\folge{a_n}$ ist, wir zeigen also
 \\[0.2cm]
@@ -1069,74 +842,28 @@ Damit ist der Beweis abgeschlossen. \hspace*{\fill} $\Box$
 Jede Cauchy-Folge ist konvergent.  
 \end{Theorem}
 \textbf{Beweis}: Der Beweis verläuft ähnlich wie der Nachweis, dass eine monotone und
-beschränkte Folge konvergent ist.  Wir definieren zunächst ein Paar von Mengen
-$\pair(M_1,M_2)$ wie folgt:
-\begin{enumerate}
-\item $M_1 := \bigl\{ x \in \mathbb{R} \mid \exists K \in \mathbb{N}: \forall n \in \mathbb{N}: n \geq K \rightarrow x \leq a_n \bigr\}$.
-  
-      Anschaulich ist $M_1$ die Menge aller unteren Grenzen für die Mehrheit der
-      Folgenglieder:  Ist $x \in M_1$, so müssen von einem bestimmten Index $K$ an
-      alle weiteren Folgenglieder $a_n$ durch $x$ nach unten abgeschätzt werden.
+beschränkte Folge konvergent ist.  Wir definieren zunächst eine Menge $M$ wie folgt:
+\\[0.2cm]
+\hspace*{1.3cm}
+$M := \bigl\{ x \in \mathbb{R} \mid \exists K \in \mathbb{N}: \forall n \in \mathbb{N}: n \geq K \rightarrow x \leq a_n \bigr\}$.
+\\[0.2cm]
+Anschaulich ist $M$ die Menge aller unteren Grenzen für die Mehrheit der
+Folgenglieder:  Ist $x \in M$, so müssen von einem bestimmten Index $K$ an
+alle weiteren Folgenglieder $a_n$ durch $x$ nach unten abgeschätzt werden.
+Wir nennen $M$ daher die Menge der \emph{unteren Majoritäts-Schranken} der Folge
+$(a_n)_{n\in\mathbb{N}}$. 
       
-      Die Beschränktheit der Cauchy-Folge impliziert, dass die Menge $M_1$ nicht leer ist,
-      denn wenn für alle $n \in \mathbb{N}$ die Ungleichung $|a_n| \leq S$ gilt,
-      dann gilt insbesondere $-S \leq a_n$ und daraus folgt $-S \in M_1$.
-\item Da das Paar $\pair(M_1,M_2)$ eine Dedekind-Schnitt werden soll, definieren wir
-      $M_2$ als das Komplement von $M_1$ in $\mathbb{R}$:
-      \\[0.2cm]
-      \hspace*{1.3cm}      
-      $ \begin{array}{lcl}
-         M_2 & := & \mathbb{R} \backslash M_1 \\[0.2cm]
-             & =  & \mathbb{R} \backslash \bigl\{ x \in \mathbb{R} \mid \exists K \in \mathbb{N}: \forall n \in \mathbb{N}: n \geq K \rightarrow x \leq a_n \bigr\}\\[0.2cm]
-             & =  & \bigl\{ x \in \mathbb{R} \mid \neg\exists K \in \mathbb{N}: \forall n \in \mathbb{N}: n \geq K \rightarrow x \leq a_n \bigr\}\\[0.2cm]
-             & =  & \bigl\{ x \in \mathbb{R} \mid \forall K \in \mathbb{N}: \exists n \in \mathbb{N}: n \geq K \wedge a_n < x \bigr\}\\[0.2cm]
-         \end{array}
-      $      
-      \\[0.2cm]
-      Die Menge $M_2$ enthält also alle die reellen Zahlen $x$, für die wir 
-      Folgenglieder $a_n$ mit beliebig großem Index $n$ finden können, die kleiner als $x$
-      sind.
-      
-      Auch $M_2$ ist nicht leer.  Dies folgt wieder aus der Beschränktheit von
-      $\folge{a_n}$, denn wenn für alle $n \in \mathbb{N}$ die Ungleichung
-      $|a_n| \leq S$ erfüllt ist, dann gilt offenbar $S+1 \in M_2$.
-\end{enumerate}
-Als nächstes zeigen wir, dass 
+Die Beschränktheit der Cauchy-Folge impliziert, dass die Menge $M$ nicht leer ist,
+denn wenn für alle $n \in \mathbb{N}$ die Ungleichung $|a_n| \leq S$ gilt,  dann gilt insbesondere
+$-S \leq a_n$ und daraus folgt sofort $-S \in M$.  Außerdem ist die Menge $M$ nach oben
+beschränkt, denn die Folge $(a_n)_{n\in\mathbb{N}}$ ist ja nach oben beschränkt durch eine Zahl $S$
+und diese Zahl $S$ ist sicher auch eine obere Schranke von $M$.  Als nicht-leere und nach oben
+beschränkte Menge hat $M$ ein Supremum.  Wir definieren 
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \forall x_1 \in M_1: \forall x_2 \in M_2 : x_1 < x_2 $
+$s := \sup(M)$
 \\[0.2cm]
-gilt.  Wegen $x_1\in M_1$ gibt es nach Definition von $M_1$ eine natürliche Zahl $K$,
-so dass alle Folgenglieder $a_n$, deren Index $n\geq K$ ist, die Ungleichung
-\begin{equation}
-  \label{eq:ineq1}
-  x_1 \leq a_n   
-\end{equation}
-erfüllen.  Wegen $x_2\in M_2$ gibt es nach Definition von $M_2$ dann eine natürliche Zahl
-$n_0 \geq K$, so dass
-\begin{equation}
-  \label{eq:ineq2}
-  a_{n_0} < x_2   
-\end{equation}
-gilt.  Für dieses $n_0$ gilt natürlich auch die Ungleichung (\ref{eq:ineq1}), so dass wir
-insgesamt 
-\\[0.2cm]
-\hspace*{1.3cm}
-$ x_1 \leq a_{n_0} < x_2 $
-\\[0.2cm]
-und damit 
-\\[0.2cm]
-\hspace*{1.3cm}
-$x_1 < x_2$
-\\[0.2cm]
-haben.  Damit ist das Paar $\pair(M_1,M_2)$ ein
-Dedekind-Schnitt.  Aus der Vollständigkeit der reellen Zahlen folgt nun, dass eine
-Trennungs-Zahl $s$ mit der Eigenschaft
-\\[0.2cm]
-\hspace*{1.3cm}
-$ \forall x_1 \in M_1: x_1 \leq s \quad \mbox{und} \quad \forall x_2 \in M_2: s \leq x_2 $
-\\[0.2cm]
-existiert.  Wir zeigen, dass
+und zeigen, dass
 \\[0.2cm]
 \hspace*{1.3cm}
 $ \lim\limits_{n\rightarrow\infty} a_n = s $
@@ -1147,10 +874,10 @@ natürlichen Zahlen $n \geq K$ die Ungleichung
 \hspace*{1.3cm}
 $ \bigl|a_n - s \bigr| < \varepsilon $
 \\[0.2cm]
-gilt.  
-Wir betrachten zunächst die Zahl $s-\bruch{\varepsilon}{2}$.  Wegen
-$s-\bruch{\varepsilon}{2} < s$ folgt $s-\bruch{\varepsilon}{2} \in M_1$.  Damit existiert
-dann eine Zahl $K_1$, so dass für alle $n\in\mathbb{N}$ mit $n\geq K_1$ die Ungleichung
+gilt.  Wir betrachten zunächst die Zahl $s-\bruch{\varepsilon}{2}$.  Wegen
+$s-\bruch{\varepsilon}{2} < s$ folgt $s-\bruch{\varepsilon}{2} \in M$.  Damit existiert
+dann nach Definition der Menge $M$ als Menge der unteren Majoritäts-Schranken
+eine Zahl $K_1$, so dass für alle $n\in\mathbb{N}$ mit $n\geq K_1$ die Ungleichung
 \begin{equation}
   \label{eq:ineq3}
   s-\bruch{\varepsilon}{2} \leq a_n
@@ -1164,7 +891,7 @@ für alle $m,n\in\mathbb{N}$ mit $m>K_2$ und $n>K_2$ die Ungleichung
 \end{equation}
 gilt.  Wir setzen nun $K = \max(K_1,K_2)$ und betrachten die Zahl
 $s+\bruch{\varepsilon}{2}$, die wegen 
-$s < s+\bruch{\varepsilon}{2}$ sicher in $M_2$ liegt.  Nach Definition von $M_2$ finden wir
+$s < s+\bruch{\varepsilon}{2}$ sicher kein Element von $M$ mehr ist.  Nach Definition von $M$ finden wir
 dann eine natürliche Zahl $m$, die größer als $K$ ist, so dass
 \begin{equation}
   \label{eq:ineq5}
@@ -1182,7 +909,7 @@ haben.  Daraus folgt sofort
  \bigl| a_m - s \bigr| \leq \bruch{\varepsilon}{2}.  
 \end{equation}
 Aufgrund der Ungleichung (\ref{eq:ineq4}) haben wir jetzt für alle natürlichen Zahlen
-$n>K$:
+$n>K$ di e folgende Kette von Ungleichungen:
 \\[0.2cm]
 \hspace*{1.3cm}
 $
@@ -1195,7 +922,7 @@ $
 $
 \\[0.2cm]
 Damit ist der Beweis abgeschlossen. \hspace*{\fill} $\Box$ 
-\pagebreak
+
 
 \section{Berechnung der Quadrat-Wurzel}
 Wir präsentieren nun eine Anwendung der bisher entwickelte Theorie und zeigen, wie die
@@ -1207,7 +934,7 @@ Wir definieren eine Folge $b_n$ induktiv wie folgt:
 \item[I.A.:] $n=0$.  
       \\[0.2cm]
       \hspace*{1.3cm}      
-      $b_0 := \left\{ \begin{array}{ll}
+      $b_1 := \left\{ \begin{array}{ll}
                       1 & \mbox{falls}\; a \leq 1, \\
                       a & \mbox{sonst}.
                \end{array}\right.
@@ -1274,7 +1001,7 @@ die Zahl  $a$, so haben wir
  $b_{n+1}^2 \geq a$ \quad und damit auch \quad $b_{n+1} \geq \sqrt{a}$ \quad für alle $n \in \mathbb{N}$
 \\[0.2cm]
 gezeigt.  Nach unserer Definition der Folge $\folge{b_n}$ gilt diese Ungleichung auch für
-den ersten Wert $n=0$, so dass wir also insgesamt die Ungleichung
+den ersten Wert $n=1$, so dass wir also insgesamt die Ungleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $b_n^2 \geq a$ \quad und \quad $b_n \geq \sqrt{a}$ \quad für alle $n \in \mathbb{N}$
@@ -1319,7 +1046,7 @@ Stellen, bei $b_6$ sind es 47 Stellen, bei $b_7$ haben wir 96 Stellen und ab dem
 
 In modernen Mikroprozessoren wird übrigens eine verfeinerte Version des in diesem
 Abschnitt beschriebenen Verfahrens eingesetzt.  Die Verfeinerung besteht im wesentlichen
-darin, dass zunächst ein guter Startwert $b_0$ in einer Tabelle nachgeschlagen wird, die
+darin, dass zunächst ein guter Startwert $b_1$ in einer Tabelle nachgeschlagen wird, die
 restlichen Folgeglieder werden dann in der Tat über die Rekursionsformel 
       $b_{n+1} = \bruch{1}{2}\cdot  \left(b_n + \bruch{a}{b_n}\right)$
 berechnet.
@@ -1378,10 +1105,6 @@ berechnet.
   \caption{Berechnung der Quadrat-Wurzel mit Hilfe der Folge $b_{n+1} = \bruch{1}{2}\cdot(b_n + \bruch{a}{b_n})$.}
   \label{fig:sqrt-output}
 \end{figure}
-
-\pagebreak
-\vspace*{\fill}
-
 \pagebreak
 
 \section{Reihen}
@@ -1390,7 +1113,7 @@ Ist $\folge{a_n}$ eine Folge, so definieren wir die Folge der \emph{Partial-Summ
 durch die Festsetzung
 \\[0.2cm]
 \hspace*{1.3cm}
-$ s_n := \sum\limits_{i=0}^n a_i. $
+$ s_n := \sum\limits_{i=1}^n a_i. $
 \\[0.2cm]
 Diese Folge bezeichnen wir auch als unendliche  \emph{Reihe}.  Die Folge $\folge{a_n}$
 bezeichnen wir als die 
@@ -1398,14 +1121,13 @@ der Reihe $\folge{\sum_{i=0}^n a_i}$ \emph{zugrunde liegende Folge}.
 Falls die Folge der Partial-Summen konvergiert, so schreiben wir den Grenzwert als
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \sum\limits_{i=0}^\infty a_i := \lim\limits_{n\rightarrow\infty} \sum\limits_{i=0}^n a_i. $
-\\[0.2cm]  
+$ \sum\limits_{i=1}^\infty a_i := \lim\limits_{n\rightarrow\infty} \sum\limits_{i=1}^n a_i. $
+\eod
 \end{Definition}
 
 \noindent
 Gelegentlich treten in der Praxis Folgen $\folge{a_n}$ auf, für welche die Folgenglieder
-$a_i$ erst ab einem Index $k>0$ definiert sind.  Beispielsweise ist die Folge
-$\Folge{\bruch{1}{n}}$ erst ab $k=1$  definiert.
+$a_i$ erst ab einem Index $k>1$ definiert sind.  
 Um auch aus solchen Folge bequem Reihen bilden zu können, definieren wir in einem solchen
 Fall die Partial-Summen $s_n$ durch
 \\[0.2cm]
@@ -1616,7 +1338,7 @@ Wir präsentieren nun einige Beispiele für konvergente Reihen:
 Hat eine Reihe die Form 
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \Folge{\sum\limits_{i=0}^{n}  (-1)^i \cdot  a_i} $
+$ \Folge{\sum\limits_{i=1}^{n}  (-1)^i \cdot  a_i} $
 \\[0.2cm]
 und gilt entweder
 \\[0.2cm]
@@ -1646,7 +1368,7 @@ Wenn die Folge $\folge{a_n}$ eine monoton fallende Null-Folge ist, dann
 konvergiert die alternierende Reihe
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \left(\sum\limits_{i=0}^{n} (-1)^i \cdot  a_i\right)_{n\in\mathbb{N}.} $
+$ \left(\sum\limits_{i=1}^{n} (-1)^i \cdot  a_i\right)_{n\in\mathbb{N}.} $
 \\[0.2cm]
 \end{Satz}
   
@@ -1654,7 +1376,7 @@ $ \left(\sum\limits_{i=0}^{n} (-1)^i \cdot  a_i\right)_{n\in\mathbb{N}.} $
 \textbf{Beweis}:  Die  Partial-Summen $s_n$ sind durch
 \\[0.2cm]
 \hspace*{1.3cm}
-$ s_n = \sum\limits_{i=0}^{n} (-1)^i \cdot  a_i $
+$ s_n = \sum\limits_{i=1}^{n} (-1)^i \cdot  a_i $
 \\[0.2cm]
 definiert.  Wir betrachten zunächst die Folge der Partial-Summen mit geraden Indizes, wir
 betrachten also die Folge $\folge{s_{2n}}$ und zeigen, dass diese Folge monoton fallend
@@ -1773,7 +1495,7 @@ Wenn die Folge $\folge{a_n}$ eine monoton fallende Null-Folge ist, dann
 gilt für den Grenzwert der zugehörigen alternierende Reihe
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \sum\limits_{i=0}^{\infty} (-1)^i \cdot  a_i \;\leq\; a_0. $
+$ \sum\limits_{i=1}^{\infty} (-1)^i \cdot  a_i \;\leq\; a_0. $
 \\[0.2cm]
 \textbf{Hinweis}: Zeigen Sie durch vollständige Induktion über $n$, dass für die
 Partial-Summen $s_n$ gilt:
@@ -1856,7 +1578,7 @@ die Definition der Partial-Summen ein, so erhalten wir
 \hspace*{1.3cm}
 $ \begin{array}{lcl}
    \left| s_{m} - s_n \right| & = & \left| s_{n+l} - s_n \right| \\[0.2cm]
-                              & = & \left| \sum\limits_{i=0}^{n+l} a_i - \sum\limits_{i=0}^n a_i \right| \\[0.4cm]
+                              & = & \left| \sum\limits_{i=1}^{n+l} a_i - \sum\limits_{i=1}^n a_i \right| \\[0.4cm]
                               & = & \left| \sum\limits_{i=n+1}^{n+l} a_i \right| \\[0.2cm]
    \end{array}
 $
@@ -1896,7 +1618,7 @@ Diese Formel drückt aus, dass $\folge{a_n}$ eine Null-Folge ist.
 Mit Hilfe des letzten Satzes können wir zeigen, dass die \emph{harmonische Reihe}
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \Folge{\sum\limits_{i=0}^{n} \bruch{1}{i}} $
+$ \Folge{\sum\limits_{i=1}^{n} \bruch{1}{i}} $
 \\[0.2cm]
 divergiert.  Wäre diese Reihe konvergent, so gäbe es nach dem Cauchy'schen
 Konvergenz-Kriterium eine Zahl $K$, so dass für alle $n \geq K$ und alle $l$ die Ungleichung
@@ -1919,9 +1641,9 @@ Damit erfüllt die harmonische Reihe das Cauchy'sche Konvergenz-Kriterium nicht.
 Für die Folgen $\folge{a_n}$  und  $\folge{b_n}$  gelte:
 \begin{enumerate}
 \item $\forall n \in \mathbb{N}: 0 \leq a_n \leq b_n$.
-\item Der Grenzwert $\sum\limits_{i=0}^\infty b_i$ existiert.
+\item Der Grenzwert $\sum\limits_{i=1}^\infty b_i$ existiert.
 \end{enumerate}
-Dann existiert auch der Grenzwert $\sum\limits_{i=0}^\infty a_i$.
+Dann existiert auch der Grenzwert $\sum\limits_{i=1}^\infty a_i$.
 \end{Satz}
 
 
@@ -1929,9 +1651,9 @@ Dann existiert auch der Grenzwert $\sum\limits_{i=0}^\infty a_i$.
 \textbf{Beweis}:  Es gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \sum\limits_{i=0}^n a_i \leq \sum\limits_{i=0}^n b_i \leq \sum\limits_{i=0}^\infty b_i. $
+$ \sum\limits_{i=1}^n a_i \leq \sum\limits_{i=1}^n b_i \leq \sum\limits_{i=1}^\infty b_i. $
 \\[0.2cm]
-Also ist die Folge $\Folge{\sum\limits_{i=0}^{n} a_i}$ monoton wachsend und beschränkt und
+Also ist die Folge $\Folge{\sum\limits_{i=1}^{n} a_i}$ monoton wachsend und beschränkt und
 damit konvergent.
 \vspace*{0.3cm}
 
@@ -1984,16 +1706,16 @@ $ \sum\limits_{i=1}^{\infty} \bruch{1}{i^2} = \bruch{\;\pi^2}{6\;} \quad\mbox{gi
 Für die Folgen $\folge{a_n}$  und  $\folge{b_n}$  gelte:
 \begin{enumerate}
 \item $\forall n \in \mathbb{N}: 0 \leq a_n \leq b_n$.
-\item Der Grenzwert $\sum\limits_{i=0}^\infty a_i$ existiert nicht.
+\item Der Grenzwert $\sum\limits_{i=1}^\infty a_i$ existiert nicht.
 \end{enumerate}
-Dann existiert auch der Grenzwert $\sum\limits_{i=0}^\infty b_i$ nicht.
+Dann existiert auch der Grenzwert $\sum\limits_{i=1}^\infty b_i$ nicht.
 \end{Satz}
 
 \noindent
 \textbf{Beweis}:  Wir führen den Beweis indirekt und nehmen an, dass 
-$\sum\limits_{i=0}^\infty b_i$
+$\sum\limits_{i=1}^\infty b_i$
 existiert.  Nach dem Majoranten-Kriterium müßte dann auch der Grenzwert
-$\sum\limits_{i=0}^\infty a_i$
+$\sum\limits_{i=1}^\infty a_i$
 existieren und dass steht im Widerspruch zur Voraussetzung. \hspace*{\fill} $\Box$
 \vspace*{0.3cm}
 
