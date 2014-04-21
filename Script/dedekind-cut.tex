@@ -8,12 +8,28 @@ Wir hatten im letzten Semester aber gesehen, dass es keine rationale Zahl $r$ gi
 so dass $r^2 = 2$ ist.  Folglich reichen die rationalen Zahlen nicht aus, alle in der Geometrie
 möglichen Längen anzugeben. 
 
-Bis jetzt haben wir so getan, als wüssten wir schon, was reelle Zahlen sind.  Aus der Schule bringen
-Sie gewiss eine anschauliche Vorstellung der reellen Zahlen mit, aber diese Vorstellung gilt es
-nun zu formalisieren, denn sonst können wir den Nachweis der \emph{Vollständigkeit} der reellen
-Zahlen nicht führen.   Unter der Vollständigkeit der reellen Zahlen verstehen wir anschaulich die Eigenschaft,
-dass es auf  der reellen Zahlengeraden keine Löcher gibt.  Bei der formalen Darstellung der reellen
-Zahlen hilft uns die folgende Definition.
+\section{Dedekind-Schnitte}
+Bis jetzt haben wir so getan, als wüssten wir schon, was reelle Zahlen sind.  Aus der Schule bringen  
+Sie gewiss eine anschauliche Vorstellung der reellen Zahlen mit, aber diese Vorstellung gilt es  
+nun zu formalisieren, denn sonst können wir den Nachweis der \emph{Vollständigkeit} der reellen  
+Zahlen nicht führen.   Unter der Vollständigkeit der reellen Zahlen verstehen wir anschaulich die Eigenschaft, 
+dass es auf  der reellen Zahlengeraden keine \emph{Lücken} gibt.  
+
+Die zentrale Idee bei der Konstruktion der reellen Zahlen ist die Beobachtung, dass eine reelle
+Zahl $x$ durch die Menge $M_1$ aller rationalen Zahlen kleiner als $x$ und die Menge $M_2$ der
+rationalen Zahlen größer-gleich $x$ bereits vollständig festgelegt wird.  Definieren wir für eine
+reelle Zahl $x$
+\\[0.2cm]
+\hspace*{1.3cm}
+$M_1 := \{ q \in \mathbb{Q} \mid q < x \}$ \quad und \quad 
+$M_2 := \{ q \in \mathbb{Q} \mid x \leq q \}$,
+\\[0.2cm]
+so liegt $x$ gerade zwischen $M_1$ und $M_2$.  Falls die Menge $M_2$ kein Minimum hat, so haben die
+rationalen Zahlen  zwischen $M_1$ und $M_2$ eine Lücke.  Die Idee ist nun, die reellen Zahlen als
+die Lücken der rationalen Zahlen zu definieren um dadurch sicherzustellen, dass es bei den
+reellen Zahlen keine Lücken mehr gibt.  
+Versuchen wir den Begriff eines \emph{Lücke} zu präzisieren, so kommen wir zur nun folgende Definition eines
+Dedekind'schen-Schnittes.
 
 \begin{Definition}[Dedekind-Schnitt] \lb
 Ein Paar $\pair(M_1,M_2)$ heißt \href{http://de.wikipedia.org/wiki/Dedekindscher_Schnitt}{\emph{Dedekind-Schnitt}}
@@ -23,8 +39,22 @@ falls folgendes gilt:
 \item $M_1 \subseteq  \mathbb{Q}$, \quad $M_2 \subseteq \mathbb{Q}$.
 \item $M_1 \not= \emptyset$, \quad $M_2 \not= \emptyset$.
 \item $\forall x_1 \in M_1: \forall x_2 \in M_2: x_1 < x_2$.
+
+       Diese Bedingung besagt, dass alle Elemente aus $M_1$ kleiner als alle Elemente aus $M_2$
+       sind.  Diese Bedingung bezeichnen wir als die \emph{Trennungs-Eigenschaft}.
 \item $M_1 \cup M_2 = \mathbb{Q}$.
 \item $M_1$ hat kein Maximum.
+
+      Da alle Elemente aus $M_1$ kleiner als alle Elemente von $M_2$ sind und da darüber hinaus 
+      $M_2 \not= \emptyset$ ist, ist $M_1$ sicher nach oben beschränkt.  Aber wenn für ein $y$
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\forall x \in M_1: x \leq y$
+      \\[0.2cm]
+      gilt, dann darf $y$ eben kein Element von $M_1$ sein.  Als Formel schreibt sich das als
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\forall y \in Q: \bigl((\forall x \in M_1: x \leq y) \rightarrow y \not\in M_1\bigr)$. \eod
 \end{enumerate}
 \end{Definition}
 
@@ -36,27 +66,36 @@ $M_2 := \{ x \in \mathbb{Q} \mid x > 0 \wedge x^2 > 2 \}$,
 \\[0.2cm]
 so enthält $M_1$ alle die Zahlen, die kleiner oder gleich $\sqrt{2}$ sind, während
 $M_2$ alle Zahlen enthält, die größer als $\sqrt{2}$ sind. Das Paar $\pair(M_1,M_2)$ ist dann ein
-Dedekind-Schnitt. \eox
+Dedekind-Schnitt.  Intuitiv spezifiziert dieser Dedekind-Schnitt die Zahl $\sqrt{2}$.
+\eox
 
-\noindent
-Formal ist die Menge der reellen Zahlen als die Menge aller Dedekind-Schnitte definiert:
+Das Beispiel legt nahe, die Menge der reellen Zahlen formal als die Menge aller Dedekind-Schnitte zu
+definieren
 \\[0.2cm]
 \hspace*{1.3cm}
+\colorbox{orange}{
 \framebox{
 \framebox{
-$\mathbb{R} := \bigl\{ \pair(M_1,M_2) \in 2^\mathbb{Q} \times 2^\mathbb{Q} \mid \mbox{$\pair(M_1,M_2)$ ist eine Dedekind-Schnitt}\bigr\}$.}}
+$\mathbb{R} := \bigl\{ \pair(M_1,M_2) \in 2^\mathbb{Q} \times 2^\mathbb{Q} \mid \mbox{$\pair(M_1,M_2)$ ist eine Dedekind-Schnitt}\bigr\}$.}}}
 \\[0.2cm]
 Nach dieser Definition müssen wir nun zeigen, wie sich auf der so definierten Menge der reellen
 Zahlen die arithmetischen Operationen Addition, Subtraktion, Multiplikation und Division definieren
-lassen.  Zusätzlich ist zu klären, wie die Relation $<$ für zwei Dedekind-Schnitte definiert
-werden kann.  Die folgende Definition der Dedekind-Menge ist dabei hilfreich.
-\pagebreak
+lassen und wie die Relation $\leq$ für zwei Dedekind-Schnitte definiert
+werden kann.  Zusätzlich müssen wir nachweisen, dass unsere Definitionen die Eigenschaften haben,
+die wir von diesen Operationen erwarten.
+
+Bei einem Dedekind-Schnitt $\pair(M_1,M_2)$ ist die Menge $M_2$ durch die Angabe von
+$M_1$ bereits vollständig festgelegt, denn aus der Gleichung $M_1 \cup M_2 = \mathbb{Q}$ folgt
+sofort $M_2 = \mathbb{Q} \backslash M_1$.  Die Frage ist nun, welche Eigenschaften eine Menge $M$
+haben muss, damit umgekehrt das Paar $\pair(M, \mathbb{Q} \backslash M)$ ein Dedekind-Schnitt ist.
+Die Antwort auf diese Frage wird in der nun folgenden Definition einer \emph{Dedekind-Menge} gegeben.
+
 
 \begin{Definition}[Dedekind-Menge]
 Eine Menge $M \subseteq \mathbb{Q}$ ist eine \emph{Dedekind-Menge} genau dann, wenn die
 folgenden Bedingungen erfüllt sind.
 \begin{enumerate}
-\item $M \not= \{\}$,
+\item $M \not= \emptyset$,
 \item $M \not= \mathbb{Q}$,
 \item $\forall x, y \in \mathbb{Q}: \bigl(y < x \wedge x \in M \rightarrow y \in M)$.
 
@@ -65,7 +104,16 @@ folgenden Bedingungen erfüllt sind.
 \item Die Menge $M$ hat kein Maximum, es gibt also kein $m \in M$, so dass
       \\[0.2cm]
       \hspace*{1.3cm}
-      $x \leq m$ \quad für alle $x \in M$ gilt.
+      $x \leq M$ \quad für alle $x \in M$ gilt.
+      \\[0.2cm]
+      Diese Bedingung können wir auch etwas anders formulieren:  Wenn $x \in M$ ist, dann finden wir
+      immer ein $y \in M$, dass noch größer als $x$ ist, denn sonst wäre $x$ ja das Maximum von $M$.
+      Formal können wir das als
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\forall x \in M: \exists y \in M: x < y$
+      \\[0.2cm]
+      schreiben.
 \end{enumerate}
 \end{Definition}
 
@@ -73,18 +121,96 @@ folgenden Bedingungen erfüllt sind.
 Zeigen Sie, dass eine Menge $M \subseteq \mathbb{Q}$ genau dann eine Dedekind-Menge ist, wenn das Paar $\pair(M,\mathbb{Q} \backslash M)$
 ein Dedekind-Schnitt ist. \eox
 
-\exercise
-Es sei $\mathcal{D}$ die Menge aller rationalen Dedekind-Mengen, also
+\solution
+Da es sich bei der zu beweisenden Aussage um eine Äquivalenz-Aussage handelt,  zerfällt der Beweis
+in zwei Teile.
+\begin{enumerate}
+\item[``$\Rightarrow$'':] Zunächst nehmen wir an, dass $M \subseteq \mathbb{Q}$ eine Dedekind-Menge ist.  Wir haben zu
+      zeigen, dass dann $\pair(M,\mathbb{Q} \backslash M)$ ein Dedekind-Schnitt ist.  Von den zu
+      überprüfenden Eigenschaften ist nur die Trennungs-Eigenschaft nicht offensichtlich.
+      Sei als $x \in M$ und $y \in \mathbb{Q} \backslash M$.  Wir haben zu zeigen, dass dann
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x < y$
+      \\[0.2cm]
+      gilt.  Wir führen diesen Nachweis indirekt und nehmen an, dass $y \leq x$.  Da $M$ nach unten
+      abgeschlossen ist, folgt daraus aber $y \in M$, was im Widerspruch zu $y \in \mathbb{Q} \backslash M$ steht.
+      Dieser Widerspruch zeigt, dass $x < y$ ist und das war zum Nachweis der Trennungs-Eigenschaft
+      zu zeigen.
+\item[``$\Leftarrow$'':] Nun nehmen wir an, dass $\pair(M, \mathbb{Q} \backslash M)$ ein Dedekind-Schnitt ist und
+     zeigen, dass dann $M$ eine Dedekind-Menge sein muss.  Von den zu überprüfenden Eigenschaften
+     ist nur Tatsache, dass $M$ nach unten abgeschlossen ist, nicht offensichtlich.  Sei also $x \in M$
+     und $y < x$.  Wir haben zu zeigen, dass dann $y$ ebenfalls ein Element von $M$ ist.  Wir führen
+     diesen Nachweis indirekt und nehmen $y \in \mathbb{Q} \backslash M$ an.  Aufgrund der
+     Trennungs-Eigenschaft des Dedekind-Schnitts $\pair(M, \mathbb{Q} \backslash M)$ muss dann
+     \\[0.2cm]
+     \hspace*{1.3cm}
+     $x < y$
+     \\[0.2cm]
+     gelten, was im Widerspruch zu $y < x$ steht.  Dieser Widerspruch zeigt, dass $y \in M$ gilt
+     und das war zu zeigen.  \qed
+\end{enumerate}
+
+Die letzte Aufgabe hat gezeigt, dass Dedekind-Schnitte und Dedekind-Mengen zu einander äquivalent
+sind.  Daher werden wir im Folgenden mit Dedekind-Mengen
+arbeiten,  denn das macht die Notation einfacher.  Wir definieren dazu
+$\mathcal{D}$ als die Menge aller rationalen Dedekind-Mengen, wir setzen also
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathcal{D} := \bigl\{ M \in 2^{\mathbb{Q}} \mid \mbox{$M$ is Dedekind-Menge} \bigr\}$.
+\colorbox{orange}{
+$\mathcal{D} := \bigl\{ M \in 2^{\mathbb{Q}} \mid \mbox{$M$ is Dedekind-Menge} \bigr\}$}
 \\[0.2cm]
+und identifizieren $\mathcal{D}$ mit der Menge $\mathbb{R}$.  Die nächste Aufgabe zeigt, wie wir auf
+der Menge $\mathcal{D}$ eine lineare Ordnung definieren können. 
+
+\exercise
 Auf der Menge $\mathcal{D}$ definieren wir eine binäre Relation $\leq$ durch die Festsetzung
 \\[0.2cm]
 \hspace*{1.3cm}
-$A \leq B \;\stackrel{\mathrm{def}}{\Longleftrightarrow}\; A \subseteq B$ \quad f.a. $A,B \in \mathcal{D}$.
+$A \leq B \;\stackrel{\mathrm{def}}{\Longleftrightarrow}\; A \subseteq B$ \quad für alle $A,B \in \mathcal{D}$.
 \\[0.2cm]
-Zeigen Sie, dass die so definierte Relation $\leq$ eine totale Ordnung auf der Menge $\mathcal{D}$ ist.
+Zeigen Sie, dass die so definierte Relation $\leq$ eine lineare Ordnung auf der Menge $\mathcal{D}$ ist.
+
+\solution
+Es ist zu zeigen, dass die Relation $\leq$ reflexiv, anti-symmetrisch und transitiv ist und dass außerdem die Linearitäts-Eigenschaft
+\\[0.2cm]
+\hspace*{1.3cm} $A \leq B \vee B \leq A$ \quad für alle Dedekind-Mengen $A,B \in \mathcal{D}$
+\\[0.2cm]
+gilt.  Die Reflexivität, Anti-Symmetrie und Transitivität der Relation $\leq$ folgen sofort aus der Reflexivität,
+Anti-Symmetrie und Transitivität der Teilmengen-Relation $\subseteq$.  Es bleibt, den Nachweis der
+Linearitäts-Eigenschaft zu führen.  Seien also $A,B \in \mathcal{D}$ gegeben.  Falls $A = B$ ist, gilt sowohl
+$A \subseteq B$ als auch $B \subseteq A$, woraus sofort $A \leq B$ und $B \leq B$ folgt.  Wir nehmen
+daher an, dass $A \not= B$ ist.  Dann gibt es zwei Möglichkeiten:
+\begin{enumerate}
+\item Fall: Es existiert ein $x \in \mathbb{Q}$ mit $x \in A$ und $x \not\in B$.
+
+            Wir zeigen, dass dann $B \subseteq A$, also $B \leq A$ gilt.  Zum Nachweis der Beziehung
+            $B \subseteq A$ nehmen wir an, dass $y \in B$ ist und müssen $y \in A$ zeigen.
+
+            Wir behaupten, dass $y < x$ ist und führen den Beweis dieser Behauptung indirekt, nehmen also
+            $x \leq y$ an.  Da die Dedekind-Menge $B$ nach unten abgeschlossen ist und $y \in B$ ist, würde daraus
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $x \in B$
+            \\[0.2cm]
+            folgen, was im Widerspruch zu der in diesem Fall gemachten Annahme $x \not\in B$ steht.  Also
+            haben wir
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $y < x$.
+            \\[0.2cm]
+            Da die Menge $A$ als Dedekind-Menge nach unten abgeschlossen ist und $x \in A$ ist, folgt
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $y \in A$,
+            \\[0.2cm]
+            so dass wir $B \subseteq A$ gezeigt haben.
+\item Fall: Es existiert ein $x \in \mathbb{Q}$ mit $x \in B$ und $x \not\in A$.
+
+            Dieser Fall ist offenbar analog zum ersten Fall.
+            \qed
+\end{enumerate}
+
 
 \begin{Definition}[Infimum]
 Eine Menge $\mathcal{M} \subseteq \mathcal{D}$ ist \emph{in $\mathcal{D}$ nach unten beschränkt}, falls es ein
@@ -104,21 +230,347 @@ gilt.  In diesem Fall schreiben wir
 \\[0.2cm]
 \hspace*{1.3cm}
 $S = \inf( \mathcal{M} )$.
+\eod
 \end{Definition}
+
+\begin{Definition}[Vollständige Ordnung]
+  Ein Paar $\pair(M, \leq)$ bestehend aus einer Menge $M$ und einer Relation $\leq \subseteq M \times M$ 
+  ist eine \emph{vollständige} Ordnung genau denn, wenn folgendes gilt:
+  \begin{enumerate}
+  \item Die Relation $\leq$ ist reflexiv auf $M$, es gilt 
+        \\[0.2cm]
+        \hspace*{1.3cm}
+        $\forall x \in M: x \leq x$.
+  \item Die Relation $\leq$ ist anti-symmetrisch, es gilt
+        \\[0.2cm]
+        \hspace*{1.3cm}
+        $\forall x, y \in M: x \leq y \wedge y \leq x \rightarrow x = y$.
+  \item Die Relation $\leq$ ist transitiv, es gilt
+        \\[0.2cm]
+        \hspace*{1.3cm}
+        $\forall x, y, z \in M: x \leq y \wedge y \leq z \rightarrow x \leq z$.
+  \item Die Relation $\leq$ ist linear, es gilt
+        \\[0.2cm]
+        \hspace*{1.3cm}
+        $\forall x, y \in M: x \leq y \vee y \leq x$.
+  \item Jede nach unten beschränkte Menge $X \subseteq M$ besitzt ein Infimum. \eod
+  \end{enumerate}
+\end{Definition}
+Die ersten drei Eigenschaften der Definition einer vollständigen Ordnung fordern, dass 
+$\pair(M, \leq)$ eine partielle Ordnung auf $M$ ist, die ersten vier Eigenschaften fordern, dass 
+$\pair(M, \leq)$ eine lineare Ordnung auf $M$ ist und die fünfte Eigenschaft fordert schließlich die
+Vollständigkeit der Ordnung.
+
+
+\remark
+Die Menge der rationalen Zahlen zusammen mit der üblichen $\leq$-Relation ist
+\underline{nicht} vollständig, denn beispielsweise ist die Menge
+\\[0.2cm]
+\hspace*{1.3cm}
+$M := \{ x \in \mathbb{Q} \mid x \geq 0 \wedge x^2 \geq 2 \}$
+\\[0.2cm]
+nach unten beschränkt, aber innerhalb der rationalen Zahlen hat die Menge $M$ kein Infimum, denn
+$\sqrt{2}$ ist keine rationale Zahl.  
+In der nächsten Aufgabe werden wir sehen,  dass die reellen Zahlen zusammen mit
+der oben definierten Ordnung $\leq$ vollständig sind.
 
 \exercise
 Zeigen Sie, dass jede nicht-leere und in $\mathcal{D}$ nach unten beschränkte Menge
-$\mathcal{M} \subseteq \mathcal{D}$ ein Infimum $I \in \mathcal{D}$ hat.
+$\mathcal{M} \subseteq \mathcal{D}$ ein Infimum $I \in \mathcal{D}$ hat.  \eox
+
+
+\solution
+Bevor wir das gesuchte Infimum konstruieren, gilt es eine technische Schwierigkeit zu überwinden,
+die aus der Forderung entsteht, dass Dedekind-Mengen kein Maximum besitzen.  Wir
+definieren für eine beliebige Teilmenge $A \subseteq \mathbb{Q}$
+die Menge $A^-$, die in dem Falle, dass die Menge $A$ kein Maximum hat, mit der Menge $A$ identisch ist.
+Andernfalls wird bei der Definition von $A^-$ das Maximum aus der Menge $A$ entfernt:
+\\[0.2cm]
+\hspace*{1.3cm}
+$A^- := \left\{
+\begin{array}[c]{ll}
+  A \backslash \{ \max(A) \} & \mbox{falls die Menge $A$ ein Maximum hat}; \\
+  A                          & \mbox{sonst}.
+\end{array}
+\right.$
+\\[0.2cm]
+Nun definieren wir zu der gegebenen Menge $\mathcal{M} \subseteq \mathcal{D}$ eine Menge $J$ als
+\\[0.2cm]
+\hspace*{1.3cm}
+$J := \{ q \in \mathbb{Q} \mid \forall A \in \mathcal{M}: q \in A \} = \bigcap \mathcal{M}$ 
+\quad und setzen $I := J^-$. 
+\\[0.2cm]
+Wir zeigen, dass die so definierte Menge $I$ eine Dedekind-Menge ist.
+\begin{enumerate}
+\item Wir zeigen $I \not= \{\}$.
+
+      Nach Voraussetzung ist die Menge $\mathcal{M}$ nach unten beschränkt.  Also gibt es eine Dedekind-Menge 
+      $U \in \mathcal{D}$, so dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $U \subseteq A$ \quad für alle $A \in \mathcal{M}$
+      \\[0.2cm]
+      gilt.  Wegen $J = \bigcap \mathcal{M}$ folgt dann $U \subseteq J$.  Nun gibt es zwei
+      Möglichkeiten:
+      \begin{enumerate}
+      \item $I = J$.
+
+            Damit gilt auch $U \subseteq I$  und da $U$ als Dedekind-Menge nicht leer
+            ist, folgt $I \not= \{\}$.
+      \item $I = J \backslash \{ \max(J) \}$, die Menge $J$ hat also ein Maximum.
+            Wegen $U \subseteq J$ ist $\max(J)$ dann sicher auch eine obere Schranke
+            von $U$.  Wäre $\max(J) \in U$, dann wäre $\max(J)$ auch das Maximum von $U$,
+            was nicht sein kann, da $U$ als Dedekind-Menge kein Maximum hat.
+            Folglich gilt $\max(J) \not\in U$ und damit folgt, dass
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $U \subseteq J \backslash \{ \max(J) \} = I$
+            \\[0.2cm]
+            gilt.  Da $U \not= \emptyset$ ist, folgt auch $I \not= \emptyset$.
+      \end{enumerate}
+\item Wir zeigen $I \not= \mathbb{Q}$.
+
+      Nach Voraussetzung ist die Menge $\mathcal{M}$ nicht leer.  Sei $A \in \mathcal{M}$. Nach
+      Definition von $J$ gilt $J \subseteq A$ und wegen $I \subseteq J$ folgt  $I \subseteq A$.
+      Da $A$ eine Dedekind-Menge ist, gilt $A \not= \mathbb{Q}$.  Wegen $I \subseteq A$ folgt daraus sofort
+      $I \not= \mathbb{Q}$.
+\item Wir zeigen, dass $I$ nach unten abgeschlossen ist.
+
+      Es sei also $x \in I$ und $y < x$.  Dann gilt natürlich auch $x \in J$ und damit haben wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x \in A$ \quad für alle $A \in \mathcal{M}$.
+      \\[0.2cm]
+      Nun sind die Mengen $A \in \mathcal{M}$ alle Dedekind-Mengen und damit nach unten abgeschlossen.
+      Damit folgt aus $x \in A$ und $y < x$ also
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $y \in A$ \quad für alle $A \in \mathcal{M}$.      
+      \\[0.2cm]
+      Nach Definition der Menge $J$ folgt daraus 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $y \in J$.
+      \\[0.2cm]
+      Aus $x \in J$ und $y < x$ folgt, dass $y$ sicher nicht das Maximum der Menge $J$ ist.  Damit gilt
+      dann auch
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $y \in I$
+      \\[0.2cm]
+      und das war zu zeigen.
+\item Wir zeigen, dass die Menge $I$ kein Maximum hat.
+      Wir führen dazu eine Fallunterscheidung nach der Definition von $I = J^-$ durch.
+      \begin{enumerate}
+      \item Fall: $I = J$.
+
+            Dann hat die Menge $J$ kein Maximum und damit hat auch $I$ kein Maximum.
+      \item Fall: $I = J \backslash \{ a \}$ mit $a = \max(J)$.
+            
+            Wir führen den Nachweis indirekt und nehmen an, dass es ein $b \in I$ mit $b = \max(I)$ gibt.
+            Aus $b \in J$,  und $a = \max(J)$ folgt dann $b < a$, denn der Fall $b = a$ scheidet
+            wegen $a \not\in I$ aus.  Das arithmetische Mittel von $a$ und $b$ liegt zwischen $a$ und
+            $b$, wir haben also
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $b < \bruch{1}{2} \cdot (a + b) < a$.
+            \\[0.2cm]
+            Da die Menge $J$ nach unten abgeschlossen ist und $a \in J$ ist, folgt dann
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $\bruch{1}{2} \cdot (a + b) \in J$
+            \\[0.2cm]
+            und wegen $\bruch{1}{2} \cdot (a + b) \not= a$ muss dann auch
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $\bruch{1}{2} \cdot (a + b) \in I$
+            \\[0.2cm]
+            gelten, denn die Mengen $I$ und $J$ stimmen ja bis auf das Element $a$ überein.  Wegen
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $b < \bruch{1}{2} \cdot (a + b)$.
+            \\[0.2cm]
+            steht dies aber im Widerspruch zu $b = \max(I)$, so dass die Annahme, dass 
+            es ein $b \in I$ mit $b = \max(I)$ gibt, widerlegt ist.  
+      \end{enumerate}
+\end{enumerate}
+Um den Beweis abzuschließen zeigen wir nun, dass $I$ tatsächlich die kleinste untere Schranke der Menge
+$\mathcal{M}$ ist.  Aus der Definition
+\\[0.2cm]
+\hspace*{1.3cm}
+$J := \bigcap \mathcal{M}$
+\\[0.2cm]
+folgt zunächst $J \subseteq A$ für alle $A \in M$.  Wegen $I \subseteq J$ haben wir dann
+\\[0.2cm]
+\hspace*{1.3cm}
+$I \subseteq A$ \quad für alle $A \in \mathcal{M}$
+\\[0.2cm]
+und damit ist gezeigt, dass $I$ eine untere Schranke der Menge $\mathcal{M}$ ist.  Es bleibt zu zeigen,
+dass $I$ die größte untere Schranke der Menge $\mathcal{M}$ ist.  Sei also $U \in \mathcal{D}$ eine
+weitere untere Schranke von $\mathcal{M}$. Wir müssen zeigen, dass dann $U \subseteq I$ gilt.  Die
+Aussage, dass $U$ eine untere Schranke der Menge $\mathcal{M}$ bedeutet, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$U \subseteq A$ \quad für alle $A \in \mathcal{M}$ gilt.
+\\[0.2cm]
+Sei nun $x \in U$.  Dann gilt also auch
+\\[0.2cm]
+\hspace*{1.3cm}
+$x \in A$ \quad für alle $A \in \mathcal{M}$.
+\\[0.2cm]
+und aus der Definition $J = \bigcap \mathcal{M}$ folgt $x \in J$.  Damit haben wir schon mal 
+\\[0.2cm]
+\hspace*{1.3cm}
+$U \subseteq J$
+\\[0.2cm]
+gezeigt.  Um auch die Ungleichung $U \subseteq I$ zu zeigen,  nehmen wir an, dass zusätzlich zu $x \in U$
+auch $x = \max(J)$ gilt.  Aus $U \subseteq J$ folgt dann auch $x = \max(U)$,  was aber nicht sein kann,
+denn $U$ ist eine Dedekind-Menge und enthält daher kein Maximum.  Daher wird $x$ beim Übergang von $J$ zu
+$I = J^-$ nicht aus der Menge $J$ entfernt und es gilt auch $x \in I$.   Insgesamt haben wir damit
+$U \subseteq I$
+gezeigt und damit ist $I$ tatsächlich die größte untere Schranke der Menge $\mathcal{M}$.
+\qed
+
+
+
+\begin{Definition}[Supremum]
+Eine Menge $\mathcal{M} \subseteq \mathcal{D}$ ist \emph{in $\mathcal{D}$ nach oben beschränkt}, falls es ein
+ $O \in \mathcal{D}$ gibt, so dass gilt:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall A \in \mathcal{M}:  A \leq O$.
+\\[0.2cm]
+Eine Menge $S \in \mathcal{D}$ ist das \emph{Supremum} einer Menge $\mathcal{M}$, wenn $S$ die kleinste
+obere Schranke von $\mathcal{M}$ ist, wenn also 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall A \in \mathcal{M}: A \leq S$ \quad \mbox{und} \quad
+$\forall T \in \mathcal{D}: \Bigl(\bigl(\forall A \in \mathcal{M}: A \leq T \bigr)\rightarrow S \leq T \Bigr)$
+\\[0.2cm]
+gilt.  In diesem Fall schreiben wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$S = \sup( \mathcal{M} )$.
+\eod
+\end{Definition}
+
+
+\exercise
+Zeigen Sie, dass jede nicht-leere und in $\mathcal{D}$ oben beschränkte Menge
+$\mathcal{M} \subseteq \mathcal{D}$ ein Supremum $S \in \mathcal{D}$ hat.
+\vspace*{0.2cm}
+
+\noindent
+\textbf{Hinweis}:  Es gibt zwei Möglichkeiten, diesen Nachweis zu führen.
+\begin{enumerate}
+\item Wir definieren $S := \bigcup \mathcal{M}$.  Es lässt sich zeigen, dass die so definierte Menge
+      $S$ bereits eine Dedekind-Menge ist und damit insbesondere kein Maximum enthält.  
+      Weiter können Sie dann nachweisen, dass tatsächlich $S = \sup(M)$ gilt.  
+\item Alternativ können Sie auch versuchen auszunutzen, dass wir bereits gezeigt haben, dass für
+      eine nach unten beschränkte Menge $\mathcal{M} \subseteq \mathcal{D}$
+      das Infimum existiert.
+
+      Diese zweite Alternative ist deutlich einfacher als die erste, aber die erste Alternative hat den
+      Vorteil, dass Sie damit einen unabhängigen Beweis der Vollständigkeit der reellen Zahlen erbringen.
+      \eox 
+\end{enumerate}
 
 \begin{Definition}[Addition von Dedekind-Mengen]
 Es seien $A$ und $B$ Dedekind-Mengen.  Dann definieren wir die Summe $A + B$ wie folgt:
 \\[0.2cm]
 \hspace*{1.3cm}
-$A + B := \{ x + y \mid x \in A \wedge y \in B \}$. 
+$A + B := \{ x + y \mid x \in A \wedge y \in B \}$. \eod
 \end{Definition}
 
 \exercise
 Es seien $A,B \in \mathcal{D}$.  Zeigen Sie, dass dann auch $A + B \in \mathcal{D}$ ist.
+\eox
+
+\solution
+Wir zeigen, dass $A + B$ eine Dedekind-Menge ist.
+\begin{enumerate}
+\item Wir zeigen $A + B \not= \{\}$.
+
+      Da $A$ eine Dedekind-Menge ist, gibt es ein Element $a \in A$ und da $B$ ebenfalls eine
+      Dedekind-Menge ist, gibt es auch ein Element $b \in B$.  Nach Definition von $A + B$ folgt dann
+      $a + b \in A + B$ und damit gilt $A + B \not= \{\}$.
+\item Wir zeigen $A + B \not= \mathbb{Q}$.
+
+      Da $A$ und $B$ Dedekind-Mengen sind, gilt $A \not= \mathbb{Q}$ und $B \not= \mathbb{Q}$.  Also gibt es 
+      $x,y \in \mathbb{Q}$ mit $x \not\in A$ und $y \not\in B$.  Wir zeigen, dass dann  $x + y \not\in A + B$
+      ist und führen diesen Nachweis indirekt.  Wir nehmen also an, dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x + y \in A + B$
+      \\[0.2cm]
+      gilt.  Nach Definition der Menge $A + B$ gibt es dann ein $a \in A$ und ein $b \in B$, so dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x + y = a + b$
+      \\[0.2cm]
+      ist.  Aus $x \not\in A$ und $a \in A$ folgt, dass 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $a < x$ 
+      \\[0.2cm]
+      ist, denn da $A$ eine Dedekind-Menge ist, würde aus $x \leq a$ sofort $x \in A$ folgern.  Weil $B$ eine
+      Dedekind-Menge ist, gilt dann auch
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $b < y$.
+      \\[0.2cm]
+      Addieren wir diese beiden Ungleichungen, so erhalten wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $a + b < x + y$,
+      \\[0.2cm]
+      was im Widerspruch zu der Gleichung $x + y = a + b$ steht.
+\item Wir zeigen, dass die Menge $A + B$ nach unten abgeschlossen ist.
+
+      Sei also $x \in A + B$ und $y < x$.  Nach Definition von $A + B$ gibt es dann ein $a \in A$ und ein
+      $b \in B$, so dass $x = a + b$ gilt.  Wir definieren
+      \\[0.2cm]
+      \hspace*{1.3cm} 
+      $c := x - y$, \quad $u := a - \bruch{1}{2} \cdot c$ \quad und \quad
+      $v := b - \bruch{1}{2} \cdot c$.
+      \\[0.2cm]
+      Aus $y < x $ folgt zunächst $c > 0$ und daher gilt $u < a$ und $v < b$.  Da $a \in A$ ist und die
+      Menge $A$ als Dedekind-Menge nach unten abgeschlossen ist, folgt $u \in A$.  Analog sehen wir, dass
+      auch $v \in B$ ist.  Insgesamt folgt dann
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $u + v \in A + B$.
+      \\[0.2cm]
+      Wir haben aber
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{lcll}
+        u + v & = & a - \bruch{1}{2} \cdot c + b - \bruch{1}{2} \cdot c \\[0.2cm]
+              & = & a + b - c                                           \\[0.2cm]
+              & = & a + b - (x - y)                                     
+                  & \mbox{denn $c = x - y$}                             \\[0.2cm]
+              & = & x - (x - y)                                     
+                  & \mbox{denn $x = a + b$}                             \\[0.2cm]
+              & = & y
+      \end{array}
+      $
+      \\[0.2cm]
+      Wegen $u + v \in A + B$ haben wir insgesamt $y \in A + B$ nachgewiesen, was zu zeigen war.
+\item Wir zeigen, dass die Menge $A + B$ kein Maximum enthält.
+
+      Wir führen den Beweis indirekt und nehmen an, dass ein $m \in A + B$ existiert, so dass
+      $m = \max(A + B)$ gilt.  Nach Definition der Menge $A + B$ gibt es dann ein $a \in A$ und ein 
+      $b \in B$ so dass $m = a + b$ ist.  Sei nun $u \in A$.  Wir wollen zeigen, dass $u \leq a$
+      ist. Wäre $u > a$, dann würde auch 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $u + b > a + b$
+      \\[0.2cm]
+      gelten, und da $u + b \in A + B$ ist, könnte $m$ dann nicht das Maximum der Menge $A + B$ sein.
+      Also gilt $u \leq a$.  Dann ist aber $a$ das Maximum der Menge $A$ und außerdem in $A$ enthalten.
+      Dies ist ein Widerspruch zu der Voraussetzung, dass $A$ eine Dedekind-Menge ist. \qed
+\end{enumerate}
 
 \exercise
 Zeigen Sie, dass die Menge 
@@ -128,45 +580,339 @@ $O := \{ x \in \mathbb{Q} \mid x < 0 \}$
 \\[0.2cm]
 eine Dedekind-Menge ist und zeigen Sie weiter, dass die Struktur $\langle \mathcal{D}, 0, + \rangle$
 eine kommutative Gruppe ist.
-\pagebreak
+\eox
+
+\solution
+Wir zeigen zunächst, dass $O$ eine Dedekind-Menge ist und weisen dazu die einzelnen Eigenschaften einer
+Dedekind-Menge nach. 
+\begin{enumerate}
+\item $O \not= \{\}$, denn es gilt $-1 \in O$.
+\item $O \not= \mathbb{Q}$, denn es gilt $1 \not\in O$.
+\item Die Menge $O$ ist nach unten abgeschlossen.
+
+      Sei $x \in O$ und $y < x$.  Nach Definition von $O$ haben wir
+      $x < 0$ und aus $y < x$ und $x < 0$ folgt $y < 0$, also gilt nach Definition der Menge $O$ 
+      auch $y \in O$.
+\item Die Menge $O$ enthält kein Maximum, denn falls $m$ das Maximum der Menge $O$ wäre,
+      dann wäre $m < 0$ und daraus folgt sofort $\bruch{1}{2} \cdot m < 0$.  Damit wäre dann nach
+      Definition der Menge $O$ auch
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\bruch{1}{2} \cdot m \in O$.
+      \\[0.2cm]
+      Da andererseits aber
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $m < \bruch{1}{2} \cdot m$
+      \\[0.2cm]
+      ist, kann dann $m$ nicht das Maximum der Menge $O$ sein.   Folglich hat die Menge $O$ kein Maximum.
+\end{enumerate}
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+Als nächstes zeigen wir, dass die Menge $O$ das links-neutrale Element bezüglich der Addition von
+Dedekind-Mengen ist, wir zeigen also, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$O + A = A$
+\\[0.2cm]
+gilt.  Wir spalten den Nachweis dieser Mengen-Gleichheit in den Nachweis zweier Inklusionen auf.
+\begin{enumerate}
+\item ``$\subseteq$'': Es sei $u \in O + A$.  Wir müssen $u \in A$ zeigen.
+
+      Nach Definition von $O + A$ existiert ein $o \in O$
+      und ein $a \in A$ mit $u = o + a$.  Aus $o \in O$ folgt $o < 0$.  Also haben wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $u < a$
+      \\[0.2cm]
+      und da $A$ als Dedekind-Menge nach unten abgeschlossen ist, folgt $u \in A$.
+\item ``$\supseteq$'': Sei nun $a \in A$.  Zu zeigen ist $a \in O + A$.
+
+      Da die Menge $A$ eine Dedekind-Menge ist, kann $a$ nicht das Maximum der Menge $A$ sein.
+      Folglich gibt es ein $b \in A$, dass größer als $a$ ist, wir haben also
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $a < b$.
+      \\[0.2cm]
+      Wir definieren $u := a - b$.  Aus $a < b$ folgt dann $u < 0$ und damit gilt $u \in O$.
+      Damit haben wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $u + b \in O + A$.
+      \\[0.2cm]
+      Andererseits gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $u + b = (a - b) + b = a$,
+      \\[0.2cm]
+      so dass wir insgesamt $a \in O + A$ gezeigt haben.
+\end{enumerate}
+Die Tatsache, dass für die Addition von Dedekind-Mengen sowohl das Kommutativ-Gesetz als auch das
+Assoziativ-Gesetz gilt, folgt unmittelbar aus der Kommutativität und der Assoziativität der Addition
+rationaler Zahlen.
+
+Als nächstes geben wir für eine Dedekind-Menge $A$ das additive Inverse $-\!A$ an:  
+\\[0.2cm]
+\hspace*{1.3cm}
+$-\!A := \{ x \in \mathbb{Q} \mid \exists r \in \mathbb{Q}: r > 0 \wedge -x - r \not\in A \}$.
+\\[0.2cm]
+Die Menge $-\!A$ enthält also die rationalen Zahlen $x$ für die $-x$ so groß ist, dass für ein
+geeignetes $r > 0$ die Zahl  $-x - r$ kein Element von $A$ mehr ist.  Als erstes zeigen wir, dass 
+$-\!A$ eine Dedekind-Menge ist.
+\begin{enumerate}
+\item Wir zeigen $-\!A \not= \emptyset$.
+
+      Da $A$ eine Dedekind-Menge ist, ist $A \not= \mathbb{Q}$.  Daher gibt es ein $y \in \mathbb{Q}$ 
+      mit $y \not\in A$.  Wir definieren 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x := -(y +1)$ \quad und \quad $r := 1$.
+      \\[0.2cm]
+      Dann gilt offenbar 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $-x - r = y + 1 - 1 = y \not\in A$
+      \\[0.2cm]
+      und nach Definition der Menge $-\!A$ folgt $x \in -\!A$.  Also haben wir $-\!A \not= \emptyset$ gezeigt.
+\item Wir zeigen $-\!A \not= \mathbb{Q}$.
+
+      Da $A$ eine Dedekind-Menge ist, gilt $A \not= \emptyset$.  Also gibt es ein $y \in A$.
+      Wir definieren
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x := -y$.
+      \\[0.2cm]
+      Für beliebige $r \in \mathbb{Q}$ mit $r > 0$ gilt dann
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $-x - r = y - r < y$
+      \\[0.2cm]
+      und das $y \in A$ ist und $A$ als Dedekind-Menge nach unten abgeschlossen ist, folgt daraus
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $-x - r \in A$  \quad für alle $r \in \mathbb{Q}$ mit $r > 0$.
+      \\[0.2cm]
+      Nach der Definition von $-\!A$ folgt nun, dass $x$ kein Element von $-\!A$ ist.
+      Also gilt $-\!A \not= \mathbb{Q}$.
+\item Wir zeigen, dass die Menge $-\!A$ nach unten abgeschlossen ist.
+
+      Sei als $x \in -\!A$ und $y < x$.  Wir müssen zeigen, dass dann auch $y \in -\!A$ ist.
+      Aus der Voraussetzung  $x \in -\!A$ folgt, dass es ein $r \in \mathbb{Q}$ mit $r>0$ gibt,
+      so dass 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $-x - r \not\in A$ 
+      \\[0.2cm]
+      ist.  Aus  $y < x$ folgt $-y > -x$ und damit gilt auch
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $-x - r < -y - r$.
+      \\[0.2cm]
+      Wir zeigen, dass $-y - r \not\in A$ ist und führen diesen Nachweis indirekt:  Wäre 
+      $-y - r \in A$, so folgt aus der Ungleichung $-x - r < -y - r$ und der Tatsache, dass $A$ als
+      Dedekind-Menge nach unten abgeschlossen ist, dass $-x - r \in A$ wäre, was falsch ist.
+      Also folgt $-y - r \not\in A$ und nach Definition von $-\!A$ folgern wir $y \in -\!A$.
+      Damit haben wir gezeigt, dass $-\!A$ nach unten abgeschlossen ist.
+\item Wir zeigen, dass $-\!A$ kein Maximum hat.
+
+      Wir führen diesen Nachweis indirekt und nehmen an, dass $x = \max(-\!A)$ ist.
+      Insbesondere ist $x$ dann ein Element von $-\!A$ und daher gibt es dann ein $r \in \mathbb{Q}$
+      mit $r>0$ und $-x - r \not\in A$.  Die letzte Formel können wir auch als
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $-x - \frac{1}{2} \cdot r - \frac{1}{2} \cdot r \not\in A$
+      \\[0.2cm]
+      schreiben, woraus wir folgern können, dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x + \frac{1}{2} \cdot r \in -\!A$
+      \\[0.2cm]
+      ist.  Da andererseits $x < x + \frac{1}{2} \cdot r$ ist, kann dann aber $x$ nicht das Maximum
+      von $-\!A$ sein.  Dieser Widerspruch zeigt, dass die Menge $-\!A$ kein Maximum hat.
+\end{enumerate}
+Als nächstes zeigen wir, dass für jede Dedekind-Menge $A$ die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$(-\!A) + A = O$ 
+\\[0.2cm]
+gilt.  Wir spalten den Nachweis dieser Mengengleicheit in zwei Teile auf.
+\begin{enumerate}
+\item ``$\subseteq$'':  Es sei $x + y \in -\!A + A$, also $x \in -\!A$ und $y \in A$.
+      Wir haben zu zeigen, dass $x + y \in O$ ist.
+
+      Wegen $x \in -\!A$ gibt es nach Definition der Menge $-\!A$ ein $r \in \mathbb{Q}$ mit $r > 0$, so dass 
+      $-x - r \not\in A$ ist.  Da $y \in A$ ist, muss $y < -x - r$ gelten.  Daraus folgt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x + y < -r < 0$
+      \\[0.2cm]
+      und damit gilt $x + y \in O$.
+
+\item ``$\supseteq$'': Es sei nun $o \in O$, also $o < 0$.  Wir müssen ein $x \in -\!A$ und ein $y \in A$
+      finden, so dass $o = x + y$ gilt.
+
+      Wir definieren 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $r := -\frac{1}{2} \cdot o$.
+      \\[0.2cm]
+      Da $o < 0$ ist, folgt $r > 0$ und außerdem gilt $r \in \mathbb{Q}$.  Wir definieren die Menge
+      $M$ als
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $M := \{ n \in \mathbb{Z} \mid n \cdot r \in  A \}$
+      \\[0.2cm]
+      Da $A \not= \mathbb{Q}$ ist, gibt es ein $z \in \mathbb{Q}$ so dass $z \not\in A$ ist.
+      Für die Zahlen $n \in \mathbb{Z}$, für die $n \cdot r > z$ ist, folgt dann $n \not\in M$.
+      Folglich ist die Menge $M$ nach oben beschränkt und hat daher ein Maximum.  Wir definieren
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\widehat{n} := \max(M)$.
+      \\[0.2cm]
+      Dann gilt $\widehat{n} + 1 \not\in M$, also 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $(\widehat{n} + 1) \cdot r \not\in A$.  
+      \\[0.2cm]
+      Wir  definieren  jetzt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x := \widehat{n} \cdot r$ \quad und \quad $y := -(\widehat{n} + 2) \cdot r$.  
+      \\[0.2cm]
+      Nach  Definition von $\widehat{n}$ und $M$ gilt dann $x \in A$ und aus 
+      $(\widehat{n} + 1) \cdot r \not\in A$ folgt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $-y - r = (\widehat{n} + 2) \cdot r - r = (\widehat{n} + 1) \cdot r \not\in A$,
+      \\[0.2cm]
+      so dass $y \in -\!A$ ist.  Außerdem gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x + y = \widehat{n} \cdot r - (\widehat{n} + 2) \cdot r = - 2 \cdot r = o$.
+      \\[0.2cm]
+      Damit haben wir $O \subseteq A + -\!A$ gezeigt. 
+      \qed
+\end{enumerate}
+
 
 \exercise
 Überlegen Sie, wie sich auf der Menge $\mathcal{D}$ eine Multiplikation definieren lässt,
 so dass $\mathcal{D}$ mit dieser Multiplikation und der oben definierten Addition ein Körper wird.
-\vspace*{0.5cm}
+
+
+\solution
+Wir nennen eine Dedekind-Menge $A$ positiv, wenn $0 \in A$ gilt.  Für zwei positive Dedekind-Mengen $A$
+und $B$ läßt sich die Multiplikation $A \cdot B$ als
+\\[0.2cm]
+\hspace*{1.3cm}
+$A \cdot B := \{ x \cdot y \mid x \in A \wedge y \in B \wedge x > 0 \wedge y > 0 \} \cup 
+              \{ z \in \mathbb{Q} \mid z \leq 0 \}$
+\\[0.2cm]
+definieren.  Wir zeigen, dass die so definerte Menge $A \cdot B$ eine Dedekind-Menge ist.
+Dazu weisen wir die einzelnen Eigenschaften getrennt nach.
+\begin{enumerate}
+\item Wir zeigen $A \cdot B \not= \{\}$.
+
+      Nach Definition von $A \cdot B$ gilt $0 \in A \cdot B$.   Daraus folgt sofort $A \cdot B \not= \{\}$.
+\item Wir zeigen $A \cdot B \not= \mathbb{Q}$.
+
+      Da $A$ und $B$ als Dedekind-Mengen von der Menge $\mathbb{Q}$ verschieden sind, gibt es 
+      $u,v \in Q$ mit $u \not\in A$ und $v \not\in B$. Wir definieren $w := \max(u, v)$.  Dann gilt 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $(\forall x \in A: x < w) \wedge (\forall y \in B: y < w)$
+      \\[0.2cm]
+      Daraus folgt sofort, dass für alle $x \in A$ und $y \in B$ die Ungleichung
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x \cdot y < w \cdot w$
+      \\[0.2cm]
+      gilt.  Das heißt aber $w^2 \not\in A \cdot B$.
+\item Wir zeigen, dass $A \cdot B$ nach unten abgeschlossen ist.
+
+      Es sei $x \cdot y \in A \cdot B$ und $z \in \mathbb{Q}$ mit $z < x \cdot y$.  
+      Wir müssen $z \in A \cdot B$ zeigen.  
+      Wir führen eine Fall-Unterscheidung danach durch, ob $z > 0$ ist.
+      \begin{enumerate}
+      \item Fall: $z > 0$.  Dann definieren wir
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $\alpha := \bruch{z}{x \cdot y}$
+            \\[0.2cm]
+            Aus $z < x \cdot y$ folgt $\alpha < 1$.  Wir setzen $u := \alpha \cdot x$
+            und folglich gilt $u < x$.  Da $A$ nach unten abgeschlossen ist, folgt $u \in A$.
+            Damit haben wir insgesamt $u \cdot y \in A$.  Es gilt aber
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $u \cdot y = \alpha \cdot x \cdot y = \bruch{z}{x \cdot y} \cdot x \cdot y = z$,
+            \\[0.2cm]
+            so dass wir insgesamt $z \in A \cdot B$ gezeigt haben.
+      \item Fall: $z \leq 0$.  Dann folgt unmittelbar aus der Definition von $A \cdot B$, dass 
+            $z \in A \cdot B$  ist.
+      \end{enumerate}
+\item Wir zeigen, dass $A \cdot B$ kein Maximum hat.  
+
+      Wir führen den Nachweis indirekt und nehmen an, dass die Menge $A \cdot B$ eine Maximum $c$ hat.
+      Es gilt dann 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $c \in A \cdot B$ \quad und \quad $\forall z \in A \cdot B: z \leq c$.
+      \\[0.2cm]
+      Nach Definition von $A \cdot B$ gibt es dann ein $a \in A$ und ein $b \in B$ mit $c = a \cdot b$.
+      Wir zeigen, dass dann $a$ das Maximum der Menge $A$ ist.  Sei also $u \in A$.  Dann gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $u \cdot b \in A \cdot B$ \quad und folglich gilt \quad $u \cdot b \leq c = a \cdot b$.
+      \\[0.2cm]
+      Teilen wir die letzte Ungleichung durch $b$ so folgt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $u \leq a$
+      \\[0.2cm]
+      und damit wäre $a$ das Maximum der Menge $A$.  Das ist eine Widerspruch zu der Tatsache, dass
+      $A$ eine Dedekind-Menge ist.
+\end{enumerate}
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+Bisher haben wir das Produkt $A \cdot B$ 
+nur für den Fall definiert, dass $A$ und $B$ beide positiv sind.  Es gibt
+aber noch drei weitere Fälle:
+\begin{enumerate}
+\item[2.] Fall: $A$ ist positiv, aber $B$ ist nicht positiv.  Dann ist $-\!B$ positiv und wir können
+          \\[0.2cm]
+          \hspace*{1.3cm}
+          $A \cdot B := -\!\bigl(A \cdot (-\!B)\bigr)$
+          \\[0.2cm]
+          definieren.
+\item[3.] Fall: $B$ ist positiv, aber $A$ ist nicht positiv.  Dann setzen wir
+          \\[0.2cm]
+          \hspace*{1.3cm}
+          $A \cdot B := -\!\bigl((-\!A) \cdot B\bigr)$.
+\item[4.] Fall: Weder $A$ noch $B$ ist positiv.  Wir definieren
+          \\[0.2cm]
+          \hspace*{1.3cm}
+          $A \cdot B := (-\!A) \cdot (-\!B)$.
+\end{enumerate}
+Nun müssten wir noch nachweisen, dass für die so definierte Multiplikation zusammen mit der oben definierten
+Addition die Körper-Axiome gelten.  Der detailierte Nachweis dieser Axiome ist für eine einführende
+Vorlesung aber zu zeitaufwendig. 
 
 
 \noindent
-\textbf{Bemerkung}:  Da Dedekind-Mengen und Dedekind-Schnitte sich eins-zu-eins entsprechen,
-können wir  die Menge $\mathbb{R}$ der reellen Zahlen auch als die Menge
-$\mathcal{D}$ der Dedekind-Mengen auffassen.   Jedes $A \in \mathcal{D}$ stellt dabei die reelle Zahl 
-$\inf(\mathbb{Q} \backslash A)$ dar.  In dem Buch ``\emph{Grundlagen der Analysis}'' von Edmund
-Landau \cite{landau:1930} wird diese Konstruktion der reellen Zahlen im Detail beschrieben.  
+\textbf{Literatur-Hinweise}
+In dem Buch ``\emph{Grundlagen der Analysis}'' von Edmund Landau \cite{landau:1930} wird diese
+Konstruktion der reellen Zahlen im Detail beschrieben.   Auch das Buch 
+``\emph{Principles of Mathematical Analysis}'' von Walter Rudin
+\cite{rudin:1976} zeigt die Konstruktion der reellen Zahlen mit Hilfe von Dedekind-Mengen im Detail.
 
 
-\begin{Theorem}[Vollständigkeit der reellen Zahlen]
-Ist $\pair(M_1,M_2)$ ein Dedekind-Schnitt, so gibt es eine \emph{Trennungs-Zahl} $s\in\mathbb{R}$, 
-so dass gilt:
-\\[0.2cm]
-\hspace*{1.3cm}
-$ \forall x_1 \in M_1: x_1 \leq s \quad \mbox{\textrm{und}} \quad
-   \forall x_2 \in M_2: s \leq x_2.
-$ \qed
-\end{Theorem}
-
-\proof
-Da reelle Zahlen nichts anderes als Dedekind-Schnitte sind, können wir ganz einfach
-\\[0.2cm]
-\hspace*{1.3cm}
-$s = \pair(M_1,M_2)$
-\\[0.2cm]
-definieren.  \qed
 
 
-\remark
+
+\section{Geschichte}
 Die Vollständigkeit der reellen Zahlen kann anschaulich als die Aussage interpretiert werden, dass
-die Menge der reellen Zahlen keine Löcher hat.  Diese Erkenntnis geht auf Richard Dedekind
-\cite{dedekind:1901} zurück.
+die Menge der reellen Zahlen keine Löcher hat.  Diese Erkenntnis und die Konstruktion der reellen
+Zahlen mit Hilfe von Schnitten geht auf Richard Dedekind zurück, der die nach ihm benannten Schnitte in dem Buch
+\href{http://books.google.de/books?id=n-43AAAAMAAJ&printsec=frontcover&source=gbs_ge_summary_r&cad=0#v=onepage&q&f=false}{Stetigkeit und irrationale Zahlen} 
+\cite{dedekind:1872}, das im Jahre 1872 erschienen ist, beschrieben hat.
 
 %%% Local Variables: 
 %%% mode: latex

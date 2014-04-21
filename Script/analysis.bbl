@@ -12,11 +12,11 @@
   \providebibliographyfont{numeral}{}%
   \expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
 
-\expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
+\btxselectlanguage {german}
 \bibitem {forster:2011}
 \btxnamefont {\btxlastnamefont {Forster}, Otto}\btxauthorcolon\ \btxtitlefont
-  {Analysis I, Differential- und Integralrechnung einer Ver\"anderlichen}.
-\newblock \btxpublisherfont {Vieweg+Teubner}, \btxeditionnumlong {11te}{},
+  {Analysis I, Differential- und Integralrechnung einer Ver\"{a}nderlichen}.
+\newblock \btxpublisherfont {Vieweg \& Teubner}, \btxeditionnumlong {11te}{},
   2011.
 
 \bibitem {grauert:1967}
@@ -28,13 +28,16 @@
 \bibitem {heuser:2003}
 \btxnamefont {\btxlastnamefont {Heuser}, Harro}\btxauthorcolon\ \btxtitlefont
   {Lehrbuch der Analysis, Teil 1}.
-\newblock \btxpublisherfont {Teubner}, \btxeditionnumlong {15te}{}, 2003.
+\newblock \btxpublisherfont {Teubner Verlag}, \btxeditionnumlong {15te}{},
+  2003.
 
 \bibitem {heuser:2008}
 \btxnamefont {\btxlastnamefont {Heuser}, Harro}\btxauthorcolon\ \btxtitlefont
   {Lehrbuch der Analysis, Teil 2}.
-\newblock \btxpublisherfont {Teubner}, \btxeditionnumlong {14te}{}, 2008.
+\newblock \btxpublisherfont {Teubner Verlag}, \btxeditionnumlong {14te}{},
+  2008.
 
+\btxselectlanguage {english}
 \bibitem {courant:1937}
 \btxnamefont {\btxlastnamefont {Courant}, Richard}\btxauthorcolon\
   \btxtitlefont {Differential and Integral Calculus}, \btxvolumelong
@@ -42,6 +45,7 @@
 \newblock \btxpublisherfont {Blackie \& Son Limited}, \btxeditionnumlong
   {2nd}{}, 1937.
 
+\btxselectlanguage {german}
 \bibitem {landau:1930}
 \btxnamefont {\btxlastnamefont {Landau}, Edmund}\btxauthorcolon\ \btxtitlefont
   {Grundlagen der Analysis}.
@@ -49,11 +53,22 @@
 \newblock
   http://www.scribd.com/doc/2452802/Landau-Edmund-Grundlagen-der-Analysis.
 
-\bibitem {dedekind:1901}
-\btxnamefont {\btxlastnamefont {Dedekind}, Richard}\btxauthorcolon\
-  \btxtitlefont {Essays on the Theory of Numbers}.
-\newblock \btxpublisherfont {The Open Court Publishing Company}, 1901.
+\btxselectlanguage {english}
+\bibitem {rudin:1976}
+\btxnamefont {\btxlastnamefont {Rudin}, Walter}\btxauthorcolon\ \btxtitlefont
+  {Principles of Mathematical Analysis}.
+\newblock \btxpublisherfont {McGraw-Hill International}, \btxeditionnumlong
+  {3rd}{}, 1976.
 
+\btxselectlanguage {german}
+\bibitem {dedekind:1872}
+\btxnamefont {\btxlastnamefont {Dedekind}, Richard}\btxauthorcolon\
+  \btxtitlefont {Stetigkeit und irrationale Zahlen}.
+\newblock \btxpublisherfont {Friedrich Vieweg und Sohn}, 1872.
+\btxkeywordlanguage {\btxannotation
+  {http://books.google.de/books?id=n-43AAAAMAAJ}}
+
+\btxselectlanguage {english}
 \bibitem {dowell:1971}
 \btxnamefont {\btxlastnamefont {Dowell}, M.} \btxandlong {}\ \btxnamefont {P.
   \btxlastnamefont {Jarrat}}\btxauthorcolon\ \btxjtitlefont {\btxifchangecase
