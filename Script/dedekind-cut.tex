@@ -872,30 +872,38 @@ Dazu weisen wir die einzelnen Eigenschaften getrennt nach.
       $A$ eine Dedekind-Menge ist.
 \end{enumerate}
 \renewcommand{\labelenumi}{\arabic{enumi}.}
-Bisher haben wir das Produkt $A \cdot B$ 
-nur für den Fall definiert, dass $A$ und $B$ beide positiv sind.  Es gibt
-aber noch drei weitere Fälle:
+Bisher haben wir das Produkt $A \cdot B$ nur für den Fall definiert, dass $A$ und $B$ beide positiv
+sind.  Falls $A$ oder $B$ gleich $O$ ist, definieren wir das Produkt als $O$:
+\\[0.2cm]
+\hspace*{1.3cm}
+$A \cdot O := O \cdot B := O$
+\\[0.2cm]
+Falls $A$ weder positiv noch gleich $O$ ist, sagen wir, dass $A$  \emph{negativ} ist.  In einem
+solchen Fall ist $-\!A$ positiv.  Falls $A$ oder $B$ negativ ist, lautet die Definition wie folgt:
 \begin{enumerate}
-\item[2.] Fall: $A$ ist positiv, aber $B$ ist nicht positiv.  Dann ist $-\!B$ positiv und wir können
+\item[2.] Fall: $A$ ist positiv, aber $B$ negativ.  Dann ist $-\!B$ positiv und wir können
           \\[0.2cm]
           \hspace*{1.3cm}
           $A \cdot B := -\!\bigl(A \cdot (-\!B)\bigr)$
           \\[0.2cm]
           definieren.
-\item[3.] Fall: $B$ ist positiv, aber $A$ ist nicht positiv.  Dann setzen wir
+\item[3.] Fall: $B$ ist positiv, aber $A$ ist negativ.  Dann setzen wir
           \\[0.2cm]
           \hspace*{1.3cm}
           $A \cdot B := -\!\bigl((-\!A) \cdot B\bigr)$.
-\item[4.] Fall: Weder $A$ noch $B$ ist positiv.  Wir definieren
+\item[4.] Fall: $A$ und $B$ sind negativ.  Wir definieren
           \\[0.2cm]
           \hspace*{1.3cm}
           $A \cdot B := (-\!A) \cdot (-\!B)$.
 \end{enumerate}
 Nun müssten wir noch nachweisen, dass für die so definierte Multiplikation zusammen mit der oben definierten
-Addition die Körper-Axiome gelten.  Der detailierte Nachweis dieser Axiome ist für eine einführende
-Vorlesung aber zu zeitaufwendig. 
-\vspace*{0.3cm}
+Addition die Körper-Axiome gelten.  Aus Zeitgründen verzichten wir darauf.
 
+
+\exercise
+Es sei $r \in \mathbb{Q}$ mit $r > 0$.  Beweisen Sie, dass es eine natürliche Zahl $n$ gibt, so dass
+$r < n$ ist. \eox
+\vspace*{0.3cm}
 
 \noindent
 \textbf{Literatur-Hinweise} \\
@@ -903,17 +911,19 @@ In dem Buch ``\emph{Grundlagen der Analysis}'' von Edmund Landau \cite{landau:19
 Konstruktion der reellen Zahlen im Detail beschrieben.   Auch das Buch ``\emph{Principles of
   Mathematical Analysis}'' von Walter Rudin \cite{rudin:1976} diskutiert die Konstruktion der reellen
 Zahlen mit Hilfe von Dedekind-Mengen ausführlich. 
-\pagebreak
+
 
 
 
 
 \section{Geschichte}
-Die Vollständigkeit der reellen Zahlen kann anschaulich als die Aussage interpretiert werden, dass
-die Menge der reellen Zahlen keine Löcher hat.  Diese Erkenntnis und die Konstruktion der reellen
+Die Konstruktion der reellen
 Zahlen mit Hilfe von Schnitten geht auf Richard Dedekind zurück, der die nach ihm benannten Schnitte in dem Buch
 \href{http://books.google.de/books?id=n-43AAAAMAAJ&printsec=frontcover&source=gbs_ge_summary_r&cad=0#v=onepage&q&f=false}{Stetigkeit und irrationale Zahlen} 
-\cite{dedekind:1872}, das im Jahre 1872 erschienen ist, beschrieben hat.  
+\cite{dedekind:1872}, das im Jahre 1872 erschienen ist, beschrieben hat.  Damit war erstmals eine
+formale Definition des Begriffs der reellen Zahlen gefunden worden.  Diese Definition war eine der wichtigsten
+mathematischen Erkenntnisse des 19ten Jahrhunderts, denn sie ermöglichte es, die Analysis auf ein
+festes Fundament zu setzen.
 
 %%% Local Variables: 
 %%% mode: latex
