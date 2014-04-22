@@ -394,7 +394,7 @@ Wir zeigen, dass die so definierte Menge $I$ eine Dedekind-Menge ist.
             es ein $b \in I$ mit $b = \max(I)$ gibt, widerlegt ist.  
       \end{enumerate}
 \end{enumerate}
-Um den Beweis abzuschließen zeigen wir nun, dass $I$ tatsächlich die kleinste untere Schranke der Menge
+Um den Beweis abzuschließen zeigen wir nun, dass $I$ tatsächlich die größte untere Schranke der Menge
 $\mathcal{M}$ ist.  Aus der Definition
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -465,9 +465,9 @@ $\mathcal{M} \subseteq \mathcal{D}$ ein Supremum $S \in \mathcal{D}$ hat.
 \begin{enumerate}
 \item Wir definieren $S := \bigcup \mathcal{M}$.  Es lässt sich zeigen, dass die so definierte Menge
       $S$ bereits eine Dedekind-Menge ist und damit insbesondere kein Maximum enthält.  
-      Weiter können Sie dann nachweisen, dass tatsächlich $S = \sup(M)$ gilt.  
+      Weiter können Sie dann nachweisen, dass tatsächlich $S = \sup(\mathcal{M})$ gilt.  
 \item Alternativ können Sie auch versuchen auszunutzen, dass wir bereits gezeigt haben, dass für
-      eine nach unten beschränkte Menge $\mathcal{M} \subseteq \mathcal{D}$
+      eine nach unten beschränkte nicht-leere Menge $\mathcal{M} \subseteq \mathcal{D}$
       das Infimum existiert.
 
       Diese zweite Alternative ist deutlich einfacher als die erste, aber die erste Alternative hat den
@@ -816,7 +816,7 @@ Dazu weisen wir die einzelnen Eigenschaften getrennt nach.
 \item Wir zeigen $A \cdot B \not= \mathbb{Q}$.
 
       Da $A$ und $B$ als Dedekind-Mengen von der Menge $\mathbb{Q}$ verschieden sind, gibt es 
-      $u,v \in Q$ mit $u \not\in A$ und $v \not\in B$. Wir definieren $w := \max(u, v)$.  Dann gilt 
+      $u,v \in \mathbb{Q}$ mit $u \not\in A$ und $v \not\in B$. Wir definieren $w := \max(u, v)$.  Dann gilt 
       \\[0.2cm]
       \hspace*{1.3cm}
       $(\forall x \in A: x < w) \wedge (\forall y \in B: y < w)$
@@ -840,7 +840,7 @@ Dazu weisen wir die einzelnen Eigenschaften getrennt nach.
             \\[0.2cm]
             Aus $z < x \cdot y$ folgt $\alpha < 1$.  Wir setzen $u := \alpha \cdot x$
             und folglich gilt $u < x$.  Da $A$ nach unten abgeschlossen ist, folgt $u \in A$.
-            Damit haben wir insgesamt $u \cdot y \in A$.  Es gilt aber
+            Damit haben wir insgesamt $u \cdot y \in A \cdot B$.  Es gilt aber
             \\[0.2cm]
             \hspace*{1.3cm}
             $u \cdot y = \alpha \cdot x \cdot y = \bruch{z}{x \cdot y} \cdot x \cdot y = z$,
