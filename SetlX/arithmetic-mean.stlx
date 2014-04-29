@@ -1,0 +1,18 @@
+mean := procedure(a, b) {
+    while (abs(a - b) > 1/10**17) {
+        [b, a] := [0.5 * (a + b), b];
+        print(b);
+    }
+    return b;
+};
+
+test := procedure(a, b) {
+    print("a = $a$, $b$ = b");
+    mean(a, b);
+};
+
+test(0, 1);
+test(1, 0);
+test(0, 2);
+test(1, 2);
+test(-1, 1);
