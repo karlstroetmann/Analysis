@@ -17,7 +17,7 @@
         colorlinks = true, % comment this to make xdvi work
         linkcolor  = blue,
         citecolor  = red,
-        filecolor  = Gold,
+        filecolor  = [rgb]{0.1, 0.1, 1.0},
         urlcolor   = [rgb]{0.1, 0.1, 1.0},
         pdfborder  = {0 0 0} 
 }
@@ -124,6 +124,11 @@ die aktuelle Version meines Skripts aus dem Netz laden.
 \noindent
 \textbf{Beispiel}: \ }
 
+\newcommand{\examples}{\vspace*{0.2cm}
+
+\noindent
+\textbf{Beispiele}: \ }
+ 
 \newcommand{\remark}{\vspace*{0.2cm}
 \noindent
 \textbf{Bemerkung}: }
@@ -135,7 +140,7 @@ die aktuelle Version meines Skripts aus dem Netz laden.
 \newcommand{\folge}[1]{\bigl(#1\bigr)_{n\in\mathbb{N}}}
 \newcommand{\folgea}[1]{\bigl(#1\bigr)_{n\in\mathbb{N}\backslash\{0\}}}
 \newcommand{\Folge}[1]{\left(#1\right)_{n\in\mathbb{N}}}
-\newcommand{\Reihe}[1]{\left(\sum\limits_{i=0}^n #1\right)_{n\in\mathbb{N}}}
+\newcommand{\Reihe}[1]{\left(\sum\limits_{i=1}^n #1\right)_{n\in\mathbb{N}}}
 \newcommand{\bint}{\displaystyle\int}
 \newcommand{\dint}[2]{\displaystyle\int_{#1}^{#2}\hspace{-0.2cm}}
 \newcommand{\Oh}{\mathcal{O}}

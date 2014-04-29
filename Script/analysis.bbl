@@ -25,18 +25,6 @@
   und Integralrechnung I}.
 \newblock \btxpublisherfont {Springer}, 1967.
 
-\bibitem {heuser:2003}
-\btxnamefont {\btxlastnamefont {Heuser}, Harro}\btxauthorcolon\ \btxtitlefont
-  {Lehrbuch der Analysis, Teil 1}.
-\newblock \btxpublisherfont {Teubner Verlag}, \btxeditionnumlong {15te}{},
-  2003.
-
-\bibitem {heuser:2008}
-\btxnamefont {\btxlastnamefont {Heuser}, Harro}\btxauthorcolon\ \btxtitlefont
-  {Lehrbuch der Analysis, Teil 2}.
-\newblock \btxpublisherfont {Teubner Verlag}, \btxeditionnumlong {14te}{},
-  2008.
-
 \btxselectlanguage {english}
 \bibitem {courant:1937}
 \btxnamefont {\btxlastnamefont {Courant}, Richard}\btxauthorcolon\
@@ -44,6 +32,13 @@
   {}~\btxvolumefont {1}.
 \newblock \btxpublisherfont {Blackie \& Son Limited}, \btxeditionnumlong
   {2nd}{}, 1937.
+
+\bibitem {wrede:2010}
+\btxnamefont {\btxlastnamefont {Wrede}, Robert} \btxandlong {}\ \btxnamefont
+  {Murray \btxlastnamefont {Spiegel}}\btxauthorcolon\ \btxtitlefont {Advanced
+  Calculus}.
+\newblock \btxpublisherfont {The McGraw-Hill Companies}, \btxeditionnumlong
+  {3rd}{}, 2010.
 
 \btxselectlanguage {german}
 \bibitem {landau:1930}

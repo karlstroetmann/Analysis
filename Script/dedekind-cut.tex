@@ -104,7 +104,7 @@ folgenden Bedingungen erfüllt sind.
 \item Die Menge $M$ hat kein Maximum, es gibt also kein $m \in M$, so dass
       \\[0.2cm]
       \hspace*{1.3cm}
-      $x \leq M$ \quad für alle $x \in M$ gilt.
+      $x \leq m$ \quad für alle $x \in M$ gilt.
       \\[0.2cm]
       Diese Bedingung können wir auch etwas anders formulieren:  Wenn $x \in M$ ist, dann finden wir
       immer ein $y \in M$, dass noch größer als $x$ ist, denn sonst wäre $x$ ja das Maximum von $M$.
@@ -253,7 +253,8 @@ $S = \inf( \mathcal{M} )$.
         \\[0.2cm]
         \hspace*{1.3cm}
         $\forall x, y \in M: x \leq y \vee y \leq x$.
-  \item Jede nach unten beschränkte Menge $X \subseteq M$ besitzt ein Infimum. \eod
+  \item Zu jeder nicht-leeren und nach unten beschränkte Menge $X \subseteq M$ exxistiert ein
+        Infimum in $M$. \eod
   \end{enumerate}
 \end{Definition}
 Die ersten drei Eigenschaften der Definition einer vollständigen Ordnung fordern, dass 
@@ -906,6 +907,115 @@ $r < n$ ist. \eox
 \vspace*{0.3cm}
 
 \noindent
+In der nun folgenden Definition stellen wir die Eigenschaften der reellen Zahlen noch einmal in
+axiomatischer Form zusammen.
+\pagebreak
+
+\begin{Definition}[Angeordneter Körper]
+  Ein \emph{angeordneter Körper} ist ein 6-Tupel 
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $\langle \mathbb{K}, 0, 1, +, \cdot, \leq \rangle$
+  \\[0.2cm]
+  für das Folgendes gilt:
+  \begin{enumerate}
+  \item $\mathbb{K}$ ist eine Menge, 
+  \item $0 \in \mathbb{K}$, $1 \in \mathbb{K}$ und $0 \not= 1$,
+  \item $+: \mathbb{K} \times \mathbb{K} \rightarrow \mathbb{K}$
+
+        ist eine binäre Operation auf $\mathbb{K}$, so dass $\langle \mathbb{K}, 0, + \rangle$
+        eine kommutatve Gruppe ist, für alle $x,y,z \in \mathbb{K}$ gilt also:
+        \begin{enumerate}
+        \item $(x + y) + z = x + (y + z)$,
+        \item $x + y = y + x$,
+        \item $0 + x = x$,
+        \item $\exists y \in \mathbb{K}: x + y = 0$.
+
+              Dasjenige $y \in \mathbb{K}$, für welches $x + y = 0$ gilt, ist dann eindeutig bestimmt und wird mit
+              $-x$ bezeichnet.
+        \end{enumerate}
+  \item $\cdot: \mathbb{K} \times \mathbb{K} \rightarrow \mathbb{K}$
+
+        ist eine binäre Operation auf $\mathbb{K}$, so dass $\langle \mathbb{K}\backslash\{0\}, 1, \cdot \rangle$
+        eine kommutative Gruppe ist, für alle $x,y,z \in \mathbb{K} \backslash\{0\}$ gilt also:
+        \begin{enumerate}
+        \item $(x \cdot y) \cdot z = x \cdot (y \cdot z)$,
+        \item $x \cdot y = y \cdot x$,
+        \item $1 \cdot x = x$,
+        \item $\exists y \in \mathbb{K}: x \cdot y = 1$.
+
+              Das eindeutig bestimmte $y \in \mathbb{K}$, für das $x \cdot y = 1$ gilt, wird mit $\frac{1}{x}$ bezeichnet.
+        \end{enumerate}
+  \item Die Operationen $+$ und $\cdot$ genügen dem Distributiv-Gesetz
+        \\[0.2cm]
+        \hspace*{1.3cm}
+        $x \cdot (y + z) = x \cdot y + x \cdot z$.
+  \item $\leq: \mathbb{K} \times \mathbb{K} \rightarrow \mathbb{B}$
+    
+        ist eine binäre Relation auf $\mathbb{K}$, so dass das Paar $\langle \mathbb{K}, \leq
+       \rangle$ eine lineare Ordnung ist.  Für alle
+        $x,y,z \in \mathbb{K}$ gilt also
+        \begin{enumerate}
+        \item $x \leq x$,
+        \item $x \leq y \wedge y \leq x \rightarrow x = y$,
+        \item $x \leq y \wedge y \leq z \rightarrow x \leq z$,
+        \item $x \leq y \vee y \leq x$.
+        \end{enumerate}
+  \item Definieren wir die binäre Relation $<: \mathbb{K} \times \mathbb{K} \rightarrow \mathbb{B}$
+        für alle $x,y \in \mathbb{K}$ durch die Festlegung
+        \\[0.2cm]
+        \hspace*{1.3cm}
+        $x < y \stackrel{\mathrm{def}}{\Longleftrightarrow} x \leq y \wedge x \not= y$
+        \\[0.2cm]
+        so sind die Operationen $+$ und $\cdot$ mit der Relation $<$ in folgender Weise verträglich:
+        \begin{enumerate}
+        \item $0 < x \wedge 0 < y \rightarrow 0 < x + y$,
+        \item $0 < x \wedge 0 < y \rightarrow 0 < x \cdot y$,
+        \end{enumerate}
+\end{enumerate}
+Falls die Ordnung $\langle \mathbb{K}, \leq \rangle$ zusätzlich eine vollständige Ordnung ist, wenn
+also zu jeder nicht-leeren nach unten beschränkten Menge $M \subseteq \mathbb{K}$ ein Infimum
+existiert, dann ist die Struktur  $\langle \mathbb{K}, 0, 1, +, \cdot, \leq \rangle$ ein vollständig
+angeordneter Körper.  \eod
+\end{Definition}
+
+
+\examples
+\begin{enumerate}
+\item Die Struktur
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\mathcal{Q} := \langle \mathbb{Q}, 0, 1, +, \cdot, \leq \rangle$ 
+      \\[0.2cm]
+      ist ein angeordneter Körper,  aber wir hatten früher bereits gesehen, dass die Ordnung $\langle \mathbb{Q}, \leq \rangle$
+      keine vollständige Ordnung ist und daher ist $\mathcal{Q}$ kein vollständig angeordneter Körper.
+\item Die Struktur 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\mathcal{R} := \langle \mathbb{R}, 0, 1, +, \cdot, \leq \rangle$ 
+      \\[0.2cm]
+      ist ein vollständig angeordneter Körper.  Es lässt sich zeigen, dass diese Struktur bis auf
+      Isomorphie der einzige vollständig angeordnete Körper ist.  Wenn also
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\mathcal{K} := \langle \mathbb{K}, \widehat{0}, \widehat{1}, \widehat{+}, \hat{\cdot}, \widehat{\leq} \rangle$ 
+      \\[0.2cm]
+      ein weiterer vollständig angeordneter Körper ist, dann gibt es eine bijektive Funktion
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $f: \mathbb{R} \rightarrow \mathbb{K}$
+      \\[0.2cm]
+      die mit den Operationen $+$, $\cdot$ und $\leq$ verträglich ist, es gilt dann also
+      \begin{enumerate}
+      \item $f(x + y) = f(x) \;\widehat{+}\; f(y)$,
+      \item $f(x \cdot y) = f(x) \;\hat{\cdot}\; f(y)$,
+      \item $x \leq y  \leftrightarrow f(x) \;\widehat{\leq}\; f(y)$.
+      \end{enumerate}
+      Damit stimmen die Strukturen $\mathcal{R}$ und $\mathcal{K}$ dann bis auf die Benennung der
+      Elemente überein. \eox
+\end{enumerate}
+
+\noindent
 \textbf{Literatur-Hinweise} \\
 In dem Buch ``\emph{Grundlagen der Analysis}'' von Edmund Landau \cite{landau:1930} wird die oben skizzierte
 Konstruktion der reellen Zahlen im Detail beschrieben.   Auch das Buch ``\emph{Principles of
@@ -922,8 +1032,8 @@ Zahlen mit Hilfe von Schnitten geht auf Richard Dedekind zurück, der die nach ih
 \href{http://books.google.de/books?id=n-43AAAAMAAJ&printsec=frontcover&source=gbs_ge_summary_r&cad=0#v=onepage&q&f=false}{Stetigkeit und irrationale Zahlen} 
 \cite{dedekind:1872}, das im Jahre 1872 erschienen ist, beschrieben hat.  Damit war erstmals eine
 formale Definition des Begriffs der reellen Zahlen gefunden worden.  Diese Definition war eine der wichtigsten
-mathematischen Erkenntnisse des 19ten Jahrhunderts, denn sie ermöglichte es, die Analysis auf ein
-festes Fundament zu setzen.
+Fortschritte im Bereich der mathematischen Grundlagenforschung des 19ten Jahrhunderts, denn sie
+ermöglichte es, die Analysis auf ein solides Fundament zu stellen.
 
 %%% Local Variables: 
 %%% mode: latex

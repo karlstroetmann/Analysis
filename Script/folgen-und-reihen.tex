@@ -6,7 +6,8 @@ spezielle Folgen, beginnen wir unsere Diskussion mit den Folgen.
 \section{Folgen}
 \begin{Definition}[Folge]
   Eine Funktion $f: \mathbb{N} \rightarrow \mathbb{R}$ bezeichnen wir als eine  \emph{reellwertige Folge}. 
-  Eine Funktion $f: \mathbb{N} \rightarrow \mathbb{C}$ bezeichnen wir als eine  \emph{komplexwertige Folge}.
+  Eine Funktion $f: \mathbb{N} \rightarrow \mathbb{C}$ bezeichnen wir als eine  \emph{komplexwertige
+    Folge}. \eod
 \end{Definition}
 
 \noindent
@@ -25,7 +26,7 @@ $\bigl(f(n)\bigr)_{n\in\mathbb{N}}$ oder $\bigl(f_n\bigr)_{n\in\mathbb{N}}$ oder
       $\bigl((-1)^n\bigr)_{n\in\mathbb{N}}$.
 \item Die Funktion $a:\mathbb{N} \rightarrow \mathbb{R}$, die durch  
       $a(n) = n$ definiert ist, schreiben wir als die Folge
-      $\bigl(n\bigr)_{n\in\mathbb{N}}$.
+      $\bigl(n\bigr)_{n\in\mathbb{N}}$. 
 \end{enumerate}
 Folgen können auch induktiv definiert werden.  Um die Gleichung $x = \cos(x)$ zu lösen,
 können wir eine Folge $(x_n)_{n\in\mathbb{N}}$ induktiv wie folgt definieren:
@@ -795,7 +796,7 @@ $
    \begin{array}{lcl}
      |a_m - a_n| &   =  & \bigl|(a_m - a) + (a - a_n)\bigr| \\[0.2cm]
                  & \leq & \bigl|a_m - a\bigr| \;+\; \bigr|a - a_n\bigr| \\[0.2cm]
-                 &   <  & \bruch{\varepsilon}{2} + \bruch{\varepsilon}{2} \\
+                 &   <  & \bruch{\varepsilon}{2} + \bruch{\varepsilon}{2} \\[0.2cm]
                  &   =  & \varepsilon     
    \end{array}
 $
@@ -851,13 +852,13 @@ Anschaulich ist $M$ die Menge aller unteren Grenzen für die Mehrheit der
 Folgenglieder:  Ist $x \in M$, so müssen von einem bestimmten Index $K$ an
 alle weiteren Folgenglieder $a_n$ durch $x$ nach unten abgeschätzt werden.
 Wir nennen $M$ daher die Menge der \emph{unteren Majoritäts-Schranken} der Folge
-$(a_n)_{n\in\mathbb{N}}$. 
+$(a_n)_{n\in\mathbb{N}}$, denn jedes Element aus $M$ ist eine untere Schranke für die Mehrheit der
+Folgenglieder.
       
 Die Beschränktheit der Cauchy-Folge impliziert, dass die Menge $M$ nicht leer ist,
 denn wenn für alle $n \in \mathbb{N}$ die Ungleichung $|a_n| \leq S$ gilt,  dann gilt insbesondere
 $-S \leq a_n$ und daraus folgt sofort $-S \in M$.  Außerdem ist die Menge $M$ nach oben
-beschränkt, denn die Folge $(a_n)_{n\in\mathbb{N}}$ ist ja nach oben beschränkt durch eine Zahl $S$
-und diese Zahl $S$ ist sicher auch eine obere Schranke von $M$.  Als nicht-leere und nach oben
+beschränkt, denn die Folge $(a_n)_{n\in\mathbb{N}}$ ist durch $S$ nach oben beschränkt.  Als nicht-leere und nach oben
 beschränkte Menge hat $M$ ein Supremum.  Wir definieren 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -909,7 +910,7 @@ haben.  Daraus folgt sofort
  \bigl| a_m - s \bigr| \leq \bruch{\varepsilon}{2}.  
 \end{equation}
 Aufgrund der Ungleichung (\ref{eq:ineq4}) haben wir jetzt für alle natürlichen Zahlen
-$n>K$ di e folgende Kette von Ungleichungen:
+$n>K$ die folgende Kette von Ungleichungen:
 \\[0.2cm]
 \hspace*{1.3cm}
 $
@@ -931,7 +932,7 @@ gegeben.  Gesucht ist eine reelle Zahl $b>0$, so dass $b^2 = a$ ist. Unsere Idee
 die Zahl $b$ iterativ als Lösung einer Fixpunkt-Gleichung zu berechnen.  
 Wir definieren eine Folge $b_n$ induktiv wie folgt:
 \begin{enumerate}
-\item[I.A.:] $n=0$.  
+\item[I.A.:] $n=1$.  
       \\[0.2cm]
       \hspace*{1.3cm}      
       $b_1 := \left\{ \begin{array}{ll}
@@ -1105,7 +1106,66 @@ berechnet.
   \caption{Berechnung der Quadrat-Wurzel mit Hilfe der Folge $b_{n+1} = \bruch{1}{2}\cdot(b_n + \bruch{a}{b_n})$.}
   \label{fig:sqrt-output}
 \end{figure}
-\pagebreak
+
+\exercise
+\begin{enumerate}
+\item[(a)] Es seien $a,b \in \mathbb{R}$.  Die Folge $(a_n)_{n\in\mathbb{N}}$ werde durch Induktion wie folgt
+           definiert:
+           \begin{enumerate}
+           \item $a_1 := a$,
+           \item $a_2 := b$,
+           \item $a_{n+2} := \frac{1}{2} \cdot (a_n + a_{n+1})$.
+           \end{enumerate}
+           Zeigen Sie, dass die Folge $(a_n)_{n\in\mathbb{N}}$ konvergiert und berechnen Sie den Grenzwert
+           $\lim\limits_{n\rightarrow\infty} a_n$  in Abhängigkeit von den Startwerten $a$ und $b$.
+
+           \noindent
+           \textbf{Hinweis}: Die Gleichung für $a_{n+2}$ ist eine Rekurrenz-Gleichung, die Sie über den
+           Ansatz $\alpha_n = \lambda^n$ lösen können.  Sie werden dabei für $\lambda$ zwei mögliche Werte
+           $\lambda_1$ und $\lambda_2$ finden, die Sie für die Lösung in der Form
+           \\[0.2cm]
+           \hspace*{1.3cm}
+           $a_n = c_1 \cdot \lambda_1^n + c_2 \cdot \lambda_2^n$
+           \\[0.2cm]
+           linear kombinieren müssen.  Die Koeffizienten $c_1$ und $c_2$ können Sie aus den Gleichungen für
+           $a_1$ und $a_2$ bestimmen.  
+\item[(b)] Es seien $a,b \in \mathbb{R}$ und zusätzlich gelte $a > 0$ und $b > 0$.  
+           Die Folge $(a_n)_{n\in\mathbb{N}}$ werde durch Induktion wie folgt definiert:
+           \begin{enumerate}
+           \item $a_1 := a$,
+           \item $a_2 := b$,
+           \item $a_{n+2} := \sqrt{a_n \cdot a_{n+1}}$.
+           \end{enumerate}
+           Zeigen Sie, dass die Folge $(a_n)_{n\in\mathbb{N}}$ konvergiert und berechnen Sie den Grenzwert
+           $\lim\limits_{n\rightarrow\infty} a_n$ in  Abhängigkeit von den Startwerten $a$ und $b$. \eox
+
+           \noindent
+           \textbf{Bemerkung}: Für zwei positive Zahlen $a$ und $b$ wird die Zahl $c$ für die 
+           \\[0.2cm]
+           \hspace*{1.3cm}
+           $c := \sqrt{a \cdot b\;}$
+           \\[0.2cm]
+           gilt, als das \href{http://de.wikipedia.org/wiki/Geometrisches_Mittel}{\emph{geometrische Mittel}} von $a$ und $b$ bezeichnet.
+\item[(b)] Es seien $a,b \in \mathbb{R}$ und zusätzlich gelte $a > 0$ und $b > 0$.  
+           Die Folge $(a_n)_{n\in\mathbb{N}}$ werde durch Induktion wie folgt definiert:
+           \begin{enumerate}
+           \item $a_1 := a$,
+           \item $a_2 := b$,
+           \item $\bruch{1}{a_{n+2}} := \bruch{1}{2} \cdot \left(\bruch{1}{a_n} + \bruch{1}{a_{n+1}}\right)$.
+           \end{enumerate}
+           Zeigen Sie, dass die Folge $(a_n)_{n\in\mathbb{N}}$ konvergiert und berechnen Sie den Grenzwert
+           $\lim\limits_{n\rightarrow\infty} a_n$ in  Abhängigkeit von den Startwerten $a$ und $b$. \eox
+
+           \noindent
+           \textbf{Bemerkung}: Für zwei positive Zahlen $a$ und $b$ wird die Zahl $c$ für die 
+           \\[0.2cm]
+           \hspace*{1.3cm}
+           $\bruch{1}{c} := \bruch{1}{2} \cdot \left(\bruch{1}{a} + \bruch{1}{b}\right)$
+           \\[0.2cm]
+           gilt, als das \href{http://de.wikipedia.org/wiki/Harmonisches_Mittel}{\emph{harmonische Mittel}} von $a$ und $b$ bezeichnet.
+\end{enumerate}
+
+
 
 \section{Reihen}
 \begin{Definition}[Reihe]
@@ -1143,12 +1203,13 @@ Es sei $x \in \mathbb{R}$, $n \in \mathbb{N}$ und es gelte $x \geq -1$.   Dann g
 \hspace*{1.3cm}
 $(1 + x)^n \geq 1 + n \cdot x$.
 \\[0.2cm]
-Diese Ungleichung wird als \emph{Bernoullische Ungleichung} (Jakob Bernoulli, 1655-1705)
+Diese Ungleichung wird als \emph{Bernoullische Ungleichung}
+(\href{http://en.wikipedia.org/wiki/Jacob_Bernoulli}{Jakob Bernoulli}, 1655-1705)
 bezeichnet.
 \end{Satz}
 
 \proof
-Wir beweisen die Ungleichung durch vollständige Induktion nach $n$.
+Wir beweisen die Ungleichung durch vollständige Induktion für alle $n \in \mathbb{N}_0$.
 \begin{enumerate}
 \item[I.A.:] $n = 0$.  Es gilt
              \\[0.2cm]
@@ -1159,7 +1220,7 @@ Wir beweisen die Ungleichung durch vollständige Induktion nach $n$.
                \label{eq:Bernoulli}
              (1 + x)^n \geq 1 + n \cdot x
              \end{equation}
-             Da $x \geq -1$ ist, folgt $1 + x \geq 0$ positiv, so dass wir die Ungleichung
+             Da $x \geq -1$ ist, folgt $1 + x \geq 0$, so dass wir die Ungleichung
              \ref{eq:Bernoulli} mit $1 + x$ multiplizieren können.  Dann erhalten wir die 
              folgende Ungleichungs-Kette
              \\[0.2cm]
@@ -1177,7 +1238,7 @@ Wir beweisen die Ungleichung durch vollständige Induktion nach $n$.
              \hspace*{1.3cm}
              $(1 + x)^{n+1} \geq 1 + (n + 1) \cdot x$ 
              \\[0.2cm]
-             gezeigt.  \qed
+             gezeigt und das ist die Behauptung für $n+1$. $\checkmark$ \qed
 \end{enumerate}
 
 \begin{Satz}
@@ -1258,12 +1319,13 @@ gültig ist und damit ist die Behauptung bewiesen.  \qed
 \noindent
 Wir präsentieren nun einige Beispiele für konvergente Reihen:
 \begin{enumerate}
-\item Wir betrachten die Folge $\folge{\bruch{1}{n\cdot (n+1)}}$, die nur für $n \geq 1$ definiert ist.
-      Für die Partial-Summen zeigen wir durch Induktion über $n$, dass gilt:
+\item Wir betrachten die Folge $\folge{\bruch{1}{n\cdot (n+1)}}$.
+      Für die Partial-Summen zeigen wir durch Induktion über $n$, dass 
       \begin{equation}
         \label{eq:seq0}        
       \sum\limits_{i=1}^n \bruch{1}{i\cdot (i+1)} = 1 - \bruch{1}{n+1}
       \end{equation}
+      gilt.
       \begin{enumerate}
       \item (Induktions-Anfang) $n=1$: Einerseits haben wir für $n=1$
            \\[0.2cm]
@@ -1274,7 +1336,7 @@ Wir präsentieren nun einige Beispiele für konvergente Reihen:
            andererseits gilt
            \\[0.2cm]
            \hspace*{1.3cm}      
-           $1 - \bruch{1}{n+1} = 1 - \bruch{1}{1+1} = 1 - \bruch{1}{2} = \bruch{1}{2}$.
+           $1 - \bruch{1}{n+1} = 1 - \bruch{1}{1+1} = 1 - \bruch{1}{2} = \bruch{1}{2}$. $\checkmark$
       \item (Induktions-Schritt) $n \mapsto n+1$:  
             \\[0.2cm]
             \hspace*{1.3cm}      
@@ -1285,11 +1347,12 @@ Wir präsentieren nun einige Beispiele für konvergente Reihen:
               & \stackrel{IV}{=} & 1 - \bruch{1}{(n+1)} + \bruch{1}{(n+1)\cdot (n+2)}                     \\[0.3cm]
               &               =  & 1 - \bruch{n+2 -1}{(n+1)\cdot (n+2)}                                  \\[0.3cm]
               &               =  & 1 - \bruch{n+1}{(n+1)\cdot (n+2)}                                     \\[0.3cm]
-              &               =  & 1 - \bruch{1}{n+2}                                               
+              &               =  & 1 - \bruch{1}{n+2}\quad \checkmark                                               
             \end{array}
             $
       \end{enumerate}
-      Aus Gleichung (\ref{eq:seq0}) folgt nun sofort 
+      Damit haben wir Gleichung (\ref{eq:seq0}) durch vollständige Induktion nachgewiesen.
+      Aus Gleichung (\ref{eq:seq0}) folgt nun 
       \\[0.2cm]
       \hspace*{1.3cm}      
       $\sum\limits_{i=1}^\infty \bruch{1}{i\cdot (i+1)} = \lim\limits_{n\rightarrow\infty} \sum\limits_{i=1}^n \bruch{1}{i\cdot (i+1)} = 
@@ -1331,7 +1394,8 @@ Wir präsentieren nun einige Beispiele für konvergente Reihen:
       \\[0.2cm]
       \hspace*{1.3cm} $\sum\limits_{i=0}^{\infty} q^i = \bruch{1}{1-q}$.
       \\[0.2cm]
-      Die Reihe $\left(\sum\limits_{i=0}^{n} q^i\right)_{n\in\mathbb{N}}$ wird als \emph{geometrische Reihe} bezeichnet.
+      Die Reihe $\left(\sum\limits_{i=0}^{n} q^i\right)_{n\in\mathbb{N}}$ wird als
+      \emph{geometrische Reihe} bezeichnet. \eox
 \end{enumerate}
 
 \begin{Definition}[Alternierende Reihe] 
@@ -1345,31 +1409,32 @@ und gilt entweder
 \hspace*{1.3cm}
 $ \forall i \in \mathbb{N}: a_i \geq 0 \quad \mbox{oder} \quad \forall i \in \mathbb{N}: a_i \leq 0 $
 \\[0.2cm]
-so sprechen wir von einer \emph{alternierenden Reihe}.
+so sprechen wir von einer \emph{alternierenden Reihe}.  \eod
 \end{Definition}
 
 \noindent
-\textbf{Beispiel}: 
+\textbf{Beispiel}: Die Reihe
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \Folge{\sum\limits_{i=1}^{n} \bruch{(-1)^i}{i}} \quad \mbox{ist eine alternierende Reihe.} $
+$\Folge{\sum\limits_{i=1}^{n} \bruch{(-1)^i}{i}}$
+\\[0.2cm]
+ist eine alternierende Reihe.  Wir werden später sehen, dass diese Reihe gegen den Wert $-\ln(2)$ konvergiert.
+\eox
 
 
 \begin{Definition}[Null-Folge]
 Die Folge $\folge{a_n}$ ist eine \emph{Null-Folge} wenn gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \lim\limits_{n\rightarrow\infty} a_n = 0. $
-\\[0.2cm]
+$ \lim\limits_{n\rightarrow\infty} a_n = 0. $ \eod
 \end{Definition}
 
-\begin{Satz}[Leibniz-Kriterium, (Gottfried Wilhelm Leibniz, 1646-1716)] \lb
+\begin{Satz}[Leibniz-Kriterium, (\href{http://de.wikipedia.org/wiki/Leibniz}{Gottfried Wilhelm Leibniz}, 1646-1716)] \lb
 Wenn die Folge $\folge{a_n}$ eine monoton fallende Null-Folge ist, dann 
 konvergiert die alternierende Reihe
 \\[0.2cm]
 \hspace*{1.3cm}
 $ \left(\sum\limits_{i=1}^{n} (-1)^i \cdot  a_i\right)_{n\in\mathbb{N}.} $
-\\[0.2cm]
 \end{Satz}
   
 \noindent
@@ -1403,36 +1468,35 @@ Als nächstes zeigen wir durch vollständige Induktion, dass die Folge der Partial
 mit geraden Indizes nach unten beschränkt ist, genauer gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$  s_{2\cdot n} \geq a_0 - a_1. $
+$  s_{2\cdot n} \geq - a_1. $
 \\[0.2cm]
 Um dies nachzuweisen, zeigen wir durch vollständige Induktion, dass für alle
-$n\in\mathbb{N}$ gilt:
+$n\in\mathbb{N}_0$ gilt:
       \\[0.2cm]
       \hspace*{1.3cm}      
-      $s_{2\cdot n+1} \geq a_0 - a_1$.
+      $s_{2\cdot n+1} \geq - a_1$.
 \begin{enumerate}
 \item[I.A.:] $n=0$.
       \\[0.2cm]
-      \hspace*{1.3cm} $s_{2\cdot 0+1} = s_1 = a_0 - a_1$.
+      \hspace*{1.3cm} $s_{2\cdot 0+1} = s_1 = - a_1$.
 \item[I.S.:] $n \mapsto n+1$ 
              \\[0.2cm]
 \hspace*{1.3cm}
 $ 
              \begin{array}{lcll}
                s_{2\cdot(n+1)+1} & = &  s_{2\cdot n+1} + a_{2\cdot n+2} - a_{2\cdot n+3}      \\[0.2cm]
-                            & \geq & a_0 - a_1 + a_{2\cdot n+2} - a_{2\cdot n+3} & \mbox{nach Induktions-Voraussetzung}   \\[0.2cm]
-                            & \geq & a_0 - a_1 & \mbox{wegen $a_{2\cdot n+2} \geq a_{2\cdot n+3}$.} \\[0.2cm]
+                            & \geq & - a_1 + a_{2\cdot n+2} - a_{2\cdot n+3} & \mbox{nach Induktions-Voraussetzung}   \\[0.2cm]
+                            & \geq & - a_1 & \mbox{wegen $a_{2\cdot n+2} \geq a_{2\cdot n+3}$.} \\[0.2cm]
                           
              \end{array}
              $
 \\[0.2cm]
 \end{enumerate}
-Nun gilt für $n\geq 1$
+Nun gilt für $n \in \mathbb{N}$
       \\[0.2cm]
       \hspace*{1.3cm}      
-      $s_{2 \cdot n} = s_{2 \cdot n-1} + a_{2 \cdot n} \geq s_{2 \cdot n-1} \geq a_0 - a_1$
+      $s_{2 \cdot n} = s_{2 \cdot n-1} + a_{2 \cdot n} \geq s_{2 \cdot n-1} \geq - a_1$.
       \\[0.2cm]
-und für $n=0$ ist $s_0 = a_0 \geq a_0 - a_1$.
 Da wir nun gezeigt haben, dass die Folge $\folge{s_{2 \cdot n}}$ sowohl monoton fallend als auch
 nach unten beschränkt ist, folgt aus Satz \ref{satz:monoton}, dass diese Folge konvergent ist.
 Der Grenzwert dieser Folge sei $s$:
@@ -1490,61 +1554,6 @@ $ \begin{array}{lcl}
 Damit ist der Beweis abgeschlossen. \hspace*{\fill} $\Box$ 
 \vspace*{0.3cm}
 
-\exercise
-Wenn die Folge $\folge{a_n}$ eine monoton fallende Null-Folge ist, dann 
-gilt für den Grenzwert der zugehörigen alternierende Reihe
-\\[0.2cm]
-\hspace*{1.3cm}
-$ \sum\limits_{i=1}^{\infty} (-1)^i \cdot  a_i \;\leq\; a_0. $
-\\[0.2cm]
-\textbf{Hinweis}: Zeigen Sie durch vollständige Induktion über $n$, dass für die
-Partial-Summen $s_n$ gilt:
-\\[0.2cm]
-\hspace*{1.3cm}
-$ s_n \leq a_0. $
-\\[0.2cm]
-\vspace*{0.3cm}
-
-\noindent
-\textbf{Lösung}: 
-\begin{enumerate}
-\item[I.A.:] $n = 0$. 
-      \\[0.2cm]
-      \hspace*{1.3cm} $s_0 = a_0 \leq a_0$. 
-\item[I.S.:] $n \mapsto n+1$.
-
-             Wir führen eine Fall-Unterscheidung durch:
-             \begin{enumerate}
-             \item $n$ ist gerade, also gilt $n=2 \cdot m$ für ein geeignetes $m \in \mathbb{N}$. 
-                   \\[0.2cm]
-\hspace*{1.3cm}
-$ 
-                    \begin{array}{lcll}
-                     s_{n+1} & = & s_{2 \cdot m+1} \\[0.2cm]
-                             & = & s_{2 \cdot m} + (-1)^{2 \cdot m+1}\cdot a_{2 \cdot m+1}  \\[0.2cm]
-                             & = & s_{n} - a_{2 \cdot m+1}              \\[0.2cm]
-                             & \leq & a_0 - a_{2 \cdot m+1}   &\mbox{nach Induktions-Voraussetzung} \\[0.2cm]
-                             & \leq & a_0              &\mbox{denn $a_{2 \cdot m+1} \geq 0$} \\[0.2cm]
-                    \end{array}
-                   $
-\\[0.2cm]
-             \item $n$ ist ungerade, also gilt $n=2 \cdot m+1$ für ein geeignetes $m \in \mathbb{N}$. 
-                   \\[0.2cm]
-\hspace*{1.3cm}
-$ 
-                    \begin{array}{lcll}
-                     s_{n+1} & = & s_{2 \cdot m+2} \\[0.2cm]
-                             & = & s_{2 \cdot m} + (-1)^{2 \cdot m+1}\cdot a_{2 \cdot m+1} + (-1)^{2 \cdot m+2}\cdot a_{2 \cdot m+2}  \\[0.2cm]
-                             & = & s_{n} - a_{2 \cdot m+1} + a_{2 \cdot m+2}  \\[0.2cm]
-                             & \leq & s_{n}            & \mbox{denn $a_{2 \cdot m+2} \leq a_{2 \cdot m+1}$}  \\[0.2cm]
-                             & \leq & a_0              & \mbox{nach IV} \\[0.2cm]
-                    \end{array}
-                   $
-\\[0.2cm]
-             \end{enumerate}
-\end{enumerate}
-Die Behauptung folgt nun aus der Tatsache, dass $\leq$-Beziehungen zwischen konvergenten
-Folgen für die Grenzwerte erhalten bleiben.
 
 \begin{Satz}[Cauchy'sches Konvergenz-Kriterium für Reihen] \lb
 Die Reihe $\folge{\sum_{i=0}^{n} a_i}$ ist genau dann konvergent, wenn es für alle 
@@ -1657,13 +1666,17 @@ Also ist die Folge $\Folge{\sum\limits_{i=1}^{n} a_i}$ monoton wachsend und besc
 damit konvergent.
 \vspace*{0.3cm}
 
-\noindent
-\textbf{Bemerkung}:  Oft wird im Majoranten-Kriterium die Voraussetzung
-$\forall n \in \mathbb{N}: 0 \leq a_n \leq b_n$ abgeschwächt zu 
-      \\[0.2cm]
-      \hspace*{1.3cm}      
-      $\forall n \in \mathbb{N}: n \geq K \rightarrow 0 \leq a_n \leq b_n$.
-      \\[0.2cm]
+\remark
+Oft wird im Majoranten-Kriterium die Voraussetzung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall n \in \mathbb{N}: 0 \leq a_n \leq b_n$ 
+\\[0.2cm] 
+abgeschwächt zu 
+\\[0.2cm]
+\hspace*{1.3cm}      
+$\forall n \in \mathbb{N}: n \geq K \rightarrow 0 \leq a_n \leq b_n$.
+\\[0.2cm]
 Hierbei ist $K$ dann eine geeignet gewählte Schranke.  Die Gültigkeit dieser Form des
 Majoranten-Kriteriums folgt aus der Tatsache, dass das Abändern endlich vieler
 Glieder einer Reihe für die Frage, ob eine Reihe konvergent ist, unbedeutend ist.
@@ -1672,6 +1685,7 @@ Glieder einer Reihe für die Frage, ob eine Reihe konvergent ist, unbedeutend ist
 Zeigen Sie mit dem Majoranten-Kriterium, dass die Reihe 
 $\Folge{\sum\limits_{i=1}^{n} \bruch{1}{i^2}}$ konvergiert.
 \vspace*{0.3cm}
+
 
 \noindent
 \textbf{Lösung}:  Es gilt
@@ -1721,30 +1735,29 @@ existieren und dass steht im Widerspruch zur Voraussetzung. \hspace*{\fill} $\Bo
 
 \exercise
 Zeigen Sie, dass die Reihe 
-      \\[0.2cm]
-      \hspace*{1.3cm} $\Reihe{\bruch{1}{\sqrt{i+1}}}$ \\[0.2cm]
+\\[0.2cm]
+\hspace*{1.3cm} $\Reihe{\bruch{1}{\sqrt{i\,}}}$ \\[0.2cm]
 nicht konvergiert.
 \vspace*{0.3cm}
 
 \noindent
 \textbf{Lösung}:  Wir benutzen das Minoranten-Kriterium und zeigen, dass die
-Reihe $\Reihe{\bruch{1}{n+1}}$ eine divergente Minorante der Reihe
-  $\Reihe{\bruch{1}{\sqrt{n+1}}}$ ist:
+Reihe $\Reihe{\bruch{1}{n}}$ eine divergente Minorante der Reihe
+  $\Reihe{\bruch{1}{\sqrt{n}}}$ ist:
 \\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}{llcll}
-                 & \bruch{1}{n+1}  & \leq & \bruch{1}{\sqrt{n+1}} & \mid \; \bruch{1}{\cdot}\\[0.3cm]
-\Leftrightarrow  & n+1            & \geq & \sqrt{n+1}           & \mid \;\cdot^2  \\[0.3cm]
-\Leftrightarrow  & (n+1)^2        & \geq & n+1                  & \mid \; \cdot \bruch{1}{n+1}  \\[0.3cm]
-\Leftrightarrow  & n+1            & \geq & 1                    & \mid \; -1  \\[0.2cm]
-\Leftrightarrow  & n              & \geq & 0                    &              \\[0.2cm]
+                 & \bruch{1}{n}   & \leq & \bruch{1}{\sqrt{n}}  & \mid \; \bruch{1}{\cdot}\\[0.3cm]
+\Leftrightarrow  & n              & \geq & \sqrt{n}             & \mid \;\cdot^2  \\[0.3cm]
+\Leftrightarrow  & n^2            & \geq & n                    & \mid \; \cdot \bruch{1}{n}  \\[0.3cm]
+\Leftrightarrow  & n              & \geq & 1                    & \mid \; 
 \end{array}
 $
 \\[0.2cm]
 Da die letzte Ungleichung offenbar für alle $n\in \mathbb{N}$ wahr ist, ist der Beweis abgeschlossen.
 \hspace*{\fill} $\Box$
-\pagebreak
+
 
 \begin{Satz}[Quotienten-Kriterium]
 Es sei $\folge{a_n}$ eine Folge und $q\in\mathbb{R}$ eine Zahl, so dass gilt:
@@ -1761,20 +1774,20 @@ Dann konvergiert die Reihe $\Reihe{a_i}$.
 Reihe $\Reihe{a_n}$ ist.  Dazu zeigen wir durch Induktion über $n$ dass folgendes gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \forall n \in \mathbb{N}: a_{n} \leq a_0 \cdot  q^n $
+$\forall n \in \mathbb{N}: a_{n} \leq a_1 \cdot q^{n-1}$
 \\[0.2cm]
 \begin{enumerate}
-\item[I.A.]: $n = 0$.  Wegen $q^0 = 1$ gilt trivialerweise
+\item[I.A.]: $n = 1$.  Wegen $q^0 = 1$ gilt trivialerweise
       \\[0.2cm]
-      \hspace*{1.3cm} $a_0 \leq a_0 \cdot  q^0$.
+      \hspace*{1.3cm} $a_1  \leq a_1 \cdot  q^0$.
 \item[I.S.]: $n \mapsto n+1$.  Es gilt: 
       \\[0.2cm]
       \hspace*{1.3cm}      
       $
       \begin{array}{lclll}
         a_{n+1} & \leq & q \cdot  a_n        & \mbox{nach Voraussetzung} \\[0.2cm]
-                & \leq & q \cdot  a_0 \cdot  q^n  & \mbox{nach Induktions-Voraussetzung} \\[0.2cm]
-                & =    & a_0 \cdot  q^{n+1}. & &\hspace*{2cm} \Box
+                & \leq & q \cdot  a_1 \cdot  q^{n-1}  & \mbox{nach Induktions-Voraussetzung} \\[0.2cm]
+                & =    & a_1 \cdot  q^{n}. & &\hspace*{2cm} \Box
               \end{array}
       $
 \end{enumerate}
