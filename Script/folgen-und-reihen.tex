@@ -876,7 +876,7 @@ natürlichen Zahlen $n \geq K$ die Ungleichung
 $ \bigl|a_n - s \bigr| < \varepsilon $
 \\[0.2cm]
 gilt.  Wir betrachten zunächst die Zahl $s-\bruch{\varepsilon}{2}$.  Wegen
-$s-\bruch{\varepsilon}{2} < s$ folgt $s-\bruch{\varepsilon}{2} \in M$.  Damit existiert
+$s-\bruch{\varepsilon}{2} < s$ und $s = \sup(M)$ folgt $s-\bruch{\varepsilon}{2} \in M$.  Damit existiert
 dann nach Definition der Menge $M$ als Menge der unteren Majoritäts-Schranken
 eine Zahl $K_1$, so dass für alle $n\in\mathbb{N}$ mit $n\geq K_1$ die Ungleichung
 \begin{equation}
@@ -1025,7 +1025,8 @@ Dieser Mittelwert ist aber gerade $b_{n+1}$, es gilt also
 \hspace*{1.3cm}
 $ b_{n} \geq b_{n+1} \geq \bruch{a}{b_n}. $
 \\[0.2cm]
-Dies zeigt, dass die Folge $\folge{b_n}$ monoton fallend ist und damit muß die Folge auch konvergieren.
+Dies zeigt, dass die Folge $\folge{b_n}$ monoton fallend ist und da wir oben gesehen haben, dass die
+Folge durch $\sqrt{a}$ nach unten beschränkt ist, konvergiert die Folge.
 Wir hatten oben schon gezeigt, dass der Grenzwert dieser Folge dann den Wert $\sqrt{a}$ haben muss, es
 gilt also
 \\[0.2cm]
@@ -1198,7 +1199,7 @@ wobei wir vereinbaren, dass $\sum_{i=k}^n a_i = 0$ ist, falls $k > n$ ist.
 \vspace*{0.3cm}
 
 \begin{Satz}[Bernoullische Ungleichung]
-Es sei $x \in \mathbb{R}$, $n \in \mathbb{N}$ und es gelte $x \geq -1$.   Dann gilt 
+Es sei $x \in \mathbb{R}$, $n \in \mathbb{N}_0$ und es gelte $x \geq -1$.   Dann gilt 
 \\[0.2cm]
 \hspace*{1.3cm}
 $(1 + x)^n \geq 1 + n \cdot x$.
@@ -1319,7 +1320,7 @@ gültig ist und damit ist die Behauptung bewiesen.  \qed
 \noindent
 Wir präsentieren nun einige Beispiele für konvergente Reihen:
 \begin{enumerate}
-\item Wir betrachten die Folge $\folge{\bruch{1}{n\cdot (n+1)}}$.
+\item Wir betrachten die Folge $\left(\bruch{1}{n\cdot (n+1)}\right)_{n\in\mathbb{N}}$.
       Für die Partial-Summen zeigen wir durch Induktion über $n$, dass 
       \begin{equation}
         \label{eq:seq0}        
@@ -1355,7 +1356,7 @@ Wir präsentieren nun einige Beispiele für konvergente Reihen:
       Aus Gleichung (\ref{eq:seq0}) folgt nun 
       \\[0.2cm]
       \hspace*{1.3cm}      
-      $\sum\limits_{i=1}^\infty \bruch{1}{i\cdot (i+1)} = \lim\limits_{n\rightarrow\infty} \sum\limits_{i=1}^n \bruch{1}{i\cdot (i+1)} = 
+      $\displaystyle\sum\limits_{i=1}^\infty \bruch{1}{i\cdot (i+1)} = \lim\limits_{n\rightarrow\infty} \sum\limits_{i=1}^n \bruch{1}{i\cdot (i+1)} = 
        \lim\limits_{n\rightarrow\infty} \Bigl(1 - \bruch{1}{n+1} \Bigr) = 1$.
 \item Wir betrachten die Folge $\folge{q^n}$ für eine Zahl $q \in \mathbb{R}$.
       Für die Partial-Summen gilt
@@ -1387,7 +1388,7 @@ Wir präsentieren nun einige Beispiele für konvergente Reihen:
       den Ausdruck
       \\[0.2cm]
       \hspace*{1.3cm}      
-      $\sum\limits_{i=0}^{n} q^i = \bruch{1 - q^{n+1}}{1-q}$.
+      $\displaystyle \sum\limits_{i=0}^{n} q^i = \bruch{1 - q^{n+1}}{1-q}$.
       \\[0.2cm]
       Falls $|q| < 1$ ist, konvergiert die Folge $\folge{q^n}$ gegen $0$.  Damit gilt
       für $|q| < 1$
@@ -1397,6 +1398,7 @@ Wir präsentieren nun einige Beispiele für konvergente Reihen:
       Die Reihe $\left(\sum\limits_{i=0}^{n} q^i\right)_{n\in\mathbb{N}}$ wird als
       \emph{geometrische Reihe} bezeichnet. \eox
 \end{enumerate}
+\pagebreak
 
 \begin{Definition}[Alternierende Reihe] 
 Hat eine Reihe die Form 
@@ -1444,11 +1446,11 @@ $ \left(\sum\limits_{i=1}^{n} (-1)^i \cdot  a_i\right)_{n\in\mathbb{N}.} $
 $ s_n = \sum\limits_{i=1}^{n} (-1)^i \cdot  a_i $
 \\[0.2cm]
 definiert.  Wir betrachten zunächst die Folge der Partial-Summen mit geraden Indizes, wir
-betrachten also die Folge $\folge{s_{2n}}$ und zeigen, dass diese Folge monoton fallend
+betrachten also die Folge $\folge{s_{2 \cdot n}}$ und zeigen, dass diese Folge monoton fallend
 ist.  Es gilt
 \begin{equation}
   \label{eq:seq1}
- s_{2\cdot(n+1)} = s_{2\cdot n} + (-1)^{2\cdot n+1}\cdot a_{2 \cdot n+1} + (-1)^{2 \cdot n+2} \cdot  a_{2n+2} 
+ s_{2\cdot(n+1)} = s_{2\cdot n} + (-1)^{2\cdot n+1}\cdot a_{2 \cdot n+1} + (-1)^{2 \cdot n+2} \cdot  a_{2\cdot n+2} 
                  = s_{2 \cdot n} - a_{2 \cdot n+1} + a_{2 \cdot n+2}. 
 \end{equation}
 Daraus folgt
@@ -1478,7 +1480,7 @@ $n\in\mathbb{N}_0$ gilt:
 \begin{enumerate}
 \item[I.A.:] $n=0$.
       \\[0.2cm]
-      \hspace*{1.3cm} $s_{2\cdot 0+1} = s_1 = - a_1$.
+      \hspace*{1.3cm} $s_{2\cdot 0+1} = s_1 = -a_1 \geq -a_1$.
 \item[I.S.:] $n \mapsto n+1$ 
              \\[0.2cm]
 \hspace*{1.3cm}
@@ -1535,7 +1537,7 @@ $ \begin{array}{lcl}
          \end{array}
       $
 \\[0.2cm]
-      denn aus $n=2 \cdot m$ und $n>K$ folgt $m>K_1$.
+      denn aus $n=2 \cdot m$ und $n \geq K$ folgt $m \geq K_1$.
 \item $n$ ist ungerade, also gilt $n= 2 \cdot m+1$.
       \\[0.2cm]
 \hspace*{1.3cm}
@@ -1549,11 +1551,11 @@ $ \begin{array}{lcl}
          \end{array}
        $
 \\[0.2cm]
-       denn aus $n=2\cdot m+1$ und $n>K$ folgt $m>K_1$ und $n \geq K_2$.
+       denn aus $n=2\cdot m+1$ und $n \geq K$ folgt $m \geq K_1$ und $n \geq K_2$.
 \end{enumerate}
 Damit ist der Beweis abgeschlossen. \hspace*{\fill} $\Box$ 
 \vspace*{0.3cm}
-
+\pagebreak
 
 \begin{Satz}[Cauchy'sches Konvergenz-Kriterium für Reihen] \lb
 Die Reihe $\folge{\sum_{i=0}^{n} a_i}$ ist genau dann konvergent, wenn es für alle 
@@ -1570,14 +1572,14 @@ $ \forall n,l \in \mathbb{N}: n \geq K \rightarrow \left|\sum\limits_{i=n+1}^{n+
 $\folge{s_n}$ der durch
 \\[0.2cm]
 \hspace*{1.3cm}
-$ s_n = \sum_{i=0}^{n} a_i $
+$ s_n = \sum\limits_{i=0}^{n} a_i $
 \\[0.2cm]
 definierten Partial-Summen genau dann konvergent, wenn $\folge{s_n}$ eine Cauchy-Folge
 ist, wenn also gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
 $ \forall \varepsilon \in \mathbb{R}_+: \exists K \in \mathbb{R}: \forall m,n \in \mathbb{N}: 
-   m > K \wedge n \geq K \rightarrow \bigl| s_m - s_n \bigr| < \varepsilon.
+   m \geq K \wedge n \geq K \rightarrow \bigl| s_m - s_n \bigr| < \varepsilon.
 $
 \\[0.2cm]
 In der letzen Formel können wir ohne Einschränkung der Allgemeinheit annehmen,
@@ -1775,7 +1777,6 @@ Reihe $\Reihe{a_n}$ ist.  Dazu zeigen wir durch Induktion über $n$ dass folgende
 \\[0.2cm]
 \hspace*{1.3cm}
 $\forall n \in \mathbb{N}: a_{n} \leq a_1 \cdot q^{n-1}$
-\\[0.2cm]
 \begin{enumerate}
 \item[I.A.]: $n = 1$.  Wegen $q^0 = 1$ gilt trivialerweise
       \\[0.2cm]

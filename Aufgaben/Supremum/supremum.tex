@@ -1,0 +1,159 @@
+\documentclass{article}
+\usepackage{german}
+\usepackage[latin1]{inputenc}
+\usepackage{a4wide}
+\usepackage{amssymb}
+\usepackage{fancyvrb}
+\usepackage{alltt}
+\usepackage{fleqn}
+\usepackage{theorem}
+
+{\theorembodyfont{\sf}
+\newtheorem{Definition}{Definition}
+}
+
+\newcommand{\solution}{\vspace*{0.2cm}
+
+\noindent
+\textbf{Lösung}: }
+
+\def\pair(#1,#2){\langle #1, #2 \rangle}
+
+\newcommand{\qed}{\hspace*{\fill} $\Box$
+\vspace*{0.2cm}
+
+}
+
+\newcommand{\eod}{\hspace*{\fill} $\diamond$
+\vspace*{0.2cm}
+
+}
+
+\newcommand{\eox}{\hspace*{\fill} $\diamond$
+\vspace*{0.2cm}
+
+}
+
+\newcounter{aufgabe}
+\newcommand{\exercise}{\vspace*{0.4cm}
+\stepcounter{aufgabe}
+
+\noindent
+\textbf{Aufgabe \arabic{aufgabe}}: }
+
+\begin{document}
+\noindent
+Zur Vereinfachung der Schreibweise vereinbaren wir für eine Menge $X \subseteq D$ und ein Element 
+$a \in D$ die folgenden Kurzschreibweisen:
+\begin{enumerate}
+\item $X \leq a \;\stackrel{\mathrm{def}}{\Longleftrightarrow}\; \forall x \in X: x \leq a$,
+\item $a \leq X \;\stackrel{\mathrm{def}}{\Longleftrightarrow}\; \forall x \in X: a \leq x$. 
+\end{enumerate}
+
+\begin{Definition}[Infimum, vollständige Ordnung]
+Es sei $\pair(D, \leq)$ eine lineare Ordnung.
+Eine Menge $X \subseteq D$ ist \emph{nach unten beschränkt}, falls es ein
+ $u \in D$ gibt, so dass 
+\\[0.2cm]
+\hspace*{1.3cm}
+$u \leq X$.
+\\[0.2cm]
+Ein $i \in D$ ist das \emph{Infimum} einer Menge $X$, wenn $i$ die größte
+untere Schranke von $X$ ist, wenn also 
+\\[0.2cm]
+\hspace*{1.3cm}
+$i \leq X$ \quad \mbox{und} \quad
+$\forall u \in D: u \leq X \rightarrow u \leq i$
+\\[0.2cm]
+gilt.  In diesem Fall schreiben wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$i = \inf(X)$.
+\\[0.2cm]
+Eine lineare Ordnung $\langle D, \leq \rangle$ ist eine \emph{vollständige} Ordnung, wenn
+jede nicht-leere Menge $X \subseteq D$, die nach unten beschränkt ist, ein Infimum hat.
+\end{Definition}
+
+\begin{Definition}[Supremum]
+Es sei $\pair(D, \leq)$ eine lineare Ordnung.
+Eine Menge $X \subseteq D$ ist \emph{nach oben beschränkt}, falls es ein
+ $o \in D$ gibt, so dass 
+\\[0.2cm]
+\hspace*{1.3cm}
+$X \leq o$.
+\\[0.2cm]
+Ein $s \in D$ ist das \emph{Supremum} einer Menge $X$, wenn $s$ die kleinste
+obere Schranke von $X$ ist, wenn also 
+\\[0.2cm]
+\hspace*{1.3cm}
+$X \leq s$ \quad \mbox{und} \quad
+$\forall o \in D: X \leq o \rightarrow s \leq o$
+\\[0.2cm]
+gilt.  In diesem Fall schreiben wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$i = \sup(X)$.
+\end{Definition}
+\pagebreak
+
+
+
+\exercise
+Es sei $\pair(D, \leq)$ eine vollständige Ordnung.  Die Menge $X \subseteq D$ sei nicht leer und nach oben beschränkt.
+Zeigen Sie, dass $X$ dann ein Supremum besitzt. \eox
+
+\solution
+Wir definieren nun $O$ als die Menge der oberen Schranken von $X$:
+\\[0.2cm]
+\hspace*{1.3cm}
+$O := \{ o \in D \mid X \leq o \}$.
+\\[0.2cm]
+Da $X$ nach oben beschränkt ist, ist $O$ sicher nicht leer.  Da $X$ nicht leer ist, gibt es ein 
+$x_0 \in X$ und dann gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$x_0 \leq O$.
+\\[0.2cm]
+Folglich ist die Menge $O$ durch $x_0$ nach unten beschränkt.  Da $O$ außerdem nicht leer ist, hat
+$O$ dann ein Infimum, denn $\pair(D, \leq)$ ist eine vollständige Ordnung.  Wir definieren
+\\[0.2cm]
+\hspace*{1.3cm}
+$s := \inf(O)$.
+\\[0.2cm]
+Wir werden zeigen, dass auch
+\\[0.2cm]
+\hspace*{1.3cm}
+$s = \sup(X)$
+\\[0.2cm]
+gilt.  Dazu sind zwei Bedingungen nachzuweisen.
+\begin{enumerate}
+\item Wir zeigen: $s$ ist eine obere Schranke von $X$.  Dazu ist $X \leq s$ nachzuweisen.
+
+      Sei also $x \in X$.  Zu zeigen ist $x \leq s$.  Wir führen diesen Nachweis
+      indirekt und nehmen $s < x$ an.   Aus 
+      $s < x$ und $s = \inf(O)$ folgt, dass $x$ keine untere Schranke von $O$ sein kann, denn $s$
+      ist ja die größte untere Schranke von $O$.  Wir haben also 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\neg (x \leq O)$.
+      \\[0.2cm]
+      Folglich existiert ein $o \in O$ mit $o < x$.  Da für alle $o \in O$ nach Definition
+      der Menge $O$ als der Menge der oberen Schranken von $X$ die Ungleichung
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x \leq o$
+      \\[0.2cm]
+      gilt, haben wir einen Widerspruch zu der Annahme $s < x$ und folglich muss
+      $x \leq s$ gelten.
+\item Wir zeigen: $s$ ist die kleinste obere Schranke von $X$.      
+
+      Wir nehmen an, dass $o$ eine weitere obere Schranke von $X$ ist.  Wir müssen $s \leq o$
+      zeigen.  Dann gilt offenbar $o \in O$.  Da $s$ als das Infimum von $O$ definiert ist, folgt
+      ist, gilt $s \leq O$ und daraus folgt sofort $s \leq o$. \qed
+\end{enumerate}
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
