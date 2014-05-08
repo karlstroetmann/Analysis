@@ -839,11 +839,36 @@ $
 \\[0.2cm]
 Damit ist der Beweis abgeschlossen. \hspace*{\fill} $\Box$ 
 
+\exercise
+In dem gleich folgenden Beweis der Tatsache, dass jede Cauchy-Folge konvergent ist, werden wir zwei
+Eigenschaften des Supremums einer Menge $M$ benutzt, die zwar offensichtlich sind, die wir aber auch
+formal beweisen sollten.  Nehmen Sie an, dass Folgendes gilt:
+\begin{enumerate}
+\item $M \subseteq \mathbb{R}$ ist nach unten abgeschlossen, es gilt also
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $y < x \wedge x \in M \rightarrow y \in M$,
+\item $s = \sup(M)$ \quad und
+\item $\varepsilon > 0$.
+\end{enumerate}
+Beweisen Sie, dass dann
+\\[0.2cm]
+\hspace*{1.3cm}
+$s - \varepsilon \in M$ \quad und \quad $s + \varepsilon \not\in M$
+\\[0.2cm] 
+gilt. \eox
+
 \begin{Theorem}
 Jede Cauchy-Folge ist konvergent.  
 \end{Theorem}
 \textbf{Beweis}: Der Beweis verläuft ähnlich wie der Nachweis, dass eine monotone und
-beschränkte Folge konvergent ist.  Wir definieren zunächst eine Menge $M$ wie folgt:
+beschränkte Folge konvergent ist und zerfällt in zwei Teile: 
+\begin{enumerate}
+\item Zunächst definieren wir eine Menge $M$, die nicht leer und nach oben beschränkt ist
+      und definieren $s$ als das Supremum dieser Menge.
+\item Anschließend zeigen wir, dass die Folge $\folge{a_n}$ gegen $s$ konvergiert.
+\end{enumerate}
+Wir definieren die Menge $M$ wie folgt:
 \\[0.2cm]
 \hspace*{1.3cm}
 $M := \bigl\{ x \in \mathbb{R} \mid \exists K \in \mathbb{N}: \forall n \in \mathbb{N}: n \geq K \rightarrow x \leq a_n \bigr\}$.
@@ -854,11 +879,21 @@ alle weiteren Folgenglieder $a_n$ durch $x$ nach unten abgeschätzt werden.
 Wir nennen $M$ daher die Menge der \emph{unteren Majoritäts-Schranken} der Folge
 $(a_n)_{n\in\mathbb{N}}$, denn jedes Element aus $M$ ist eine untere Schranke für die Mehrheit der
 Folgenglieder.
-      
+
+Es ist klar, dass $M$ nach unten abgeschlossen ist, es gilt 
+\\[0.2cm]
+\hspace*{1.3cm}
+$y < x \wedge x \in M \rightarrow x \in M$,
+\\[0.2cm]
+denn wenn $x$ eine untere Schranke der Mehrheit aller Folgenglieder ist, dann ist sicher jeder Zahl 
+$y$ die kleiner als $x$ ist, ebenfalls eine untere Schranke der Mehrheit der Folgenglieder. 
+Wir werden diese Eigenschaft später benötigen. 
+
+Außerdem ist die Menge $M$ nach oben 
+beschränkt, denn die Folge $(a_n)_{n\in\mathbb{N}}$ ist durch $S$ nach oben beschränkt.       
 Die Beschränktheit der Cauchy-Folge impliziert, dass die Menge $M$ nicht leer ist,
 denn wenn für alle $n \in \mathbb{N}$ die Ungleichung $|a_n| \leq S$ gilt,  dann gilt insbesondere
-$-S \leq a_n$ und daraus folgt sofort $-S \in M$.  Außerdem ist die Menge $M$ nach oben
-beschränkt, denn die Folge $(a_n)_{n\in\mathbb{N}}$ ist durch $S$ nach oben beschränkt.  Als nicht-leere und nach oben
+$-S \leq a_n$ und daraus folgt sofort $-S \in M$.  Als nicht-leere und nach oben
 beschränkte Menge hat $M$ ein Supremum.  Wir definieren 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -876,7 +911,8 @@ natürlichen Zahlen $n \geq K$ die Ungleichung
 $ \bigl|a_n - s \bigr| < \varepsilon $
 \\[0.2cm]
 gilt.  Wir betrachten zunächst die Zahl $s-\bruch{\varepsilon}{2}$.  Wegen
-$s-\bruch{\varepsilon}{2} < s$ und $s = \sup(M)$ folgt $s-\bruch{\varepsilon}{2} \in M$.  Damit existiert
+$s-\bruch{\varepsilon}{2} < s$ und $s = \sup(M)$ folgt $s-\bruch{\varepsilon}{2} \in M$, denn $M$
+ist nach unten abgeschlossen.  Damit existiert
 dann nach Definition der Menge $M$ als Menge der unteren Majoritäts-Schranken
 eine Zahl $K_1$, so dass für alle $n\in\mathbb{N}$ mit $n\geq K_1$ die Ungleichung
 \begin{equation}
@@ -892,7 +928,9 @@ für alle $m,n\in\mathbb{N}$ mit $m>K_2$ und $n>K_2$ die Ungleichung
 \end{equation}
 gilt.  Wir setzen nun $K = \max(K_1,K_2)$ und betrachten die Zahl
 $s+\bruch{\varepsilon}{2}$, die wegen 
-$s < s+\bruch{\varepsilon}{2}$ sicher kein Element von $M$ mehr ist.  Nach Definition von $M$ finden wir
+$s < s+\bruch{\varepsilon}{2}$ sicher kein Element von $M$ mehr ist, denn sonst wäre $s$ nicht das
+Supremum von $M$.
+Nach Definition von $M$ finden wir
 dann eine natürliche Zahl $m$, die größer als $K$ ist, so dass
 \begin{equation}
   \label{eq:ineq5}
@@ -923,6 +961,7 @@ $
 $
 \\[0.2cm]
 Damit ist der Beweis abgeschlossen. \hspace*{\fill} $\Box$ 
+
 
 
 \section{Berechnung der Quadrat-Wurzel}
@@ -1107,6 +1146,7 @@ berechnet.
   \caption{Berechnung der Quadrat-Wurzel mit Hilfe der Folge $b_{n+1} = \bruch{1}{2}\cdot(b_n + \bruch{a}{b_n})$.}
   \label{fig:sqrt-output}
 \end{figure}
+\pagebreak
 
 \exercise
 \begin{enumerate}
@@ -1398,7 +1438,7 @@ Wir präsentieren nun einige Beispiele für konvergente Reihen:
       Die Reihe $\left(\sum\limits_{i=0}^{n} q^i\right)_{n\in\mathbb{N}}$ wird als
       \emph{geometrische Reihe} bezeichnet. \eox
 \end{enumerate}
-\pagebreak
+
 
 \begin{Definition}[Alternierende Reihe] 
 Hat eine Reihe die Form 
@@ -1430,6 +1470,7 @@ Die Folge $\folge{a_n}$ ist eine \emph{Null-Folge} wenn gilt:
 \hspace*{1.3cm}
 $ \lim\limits_{n\rightarrow\infty} a_n = 0. $ \eod
 \end{Definition}
+\pagebreak
 
 \begin{Satz}[Leibniz-Kriterium, (\href{http://de.wikipedia.org/wiki/Leibniz}{Gottfried Wilhelm Leibniz}, 1646-1716)] \lb
 Wenn die Folge $\folge{a_n}$ eine monoton fallende Null-Folge ist, dann 
@@ -1555,7 +1596,7 @@ $ \begin{array}{lcl}
 \end{enumerate}
 Damit ist der Beweis abgeschlossen. \hspace*{\fill} $\Box$ 
 \vspace*{0.3cm}
-\pagebreak
+
 
 \begin{Satz}[Cauchy'sches Konvergenz-Kriterium für Reihen] \lb
 Die Reihe $\folge{\sum_{i=0}^{n} a_i}$ ist genau dann konvergent, wenn es für alle 
@@ -1667,6 +1708,7 @@ $ \sum\limits_{i=1}^n a_i \leq \sum\limits_{i=1}^n b_i \leq \sum\limits_{i=1}^\i
 Also ist die Folge $\Folge{\sum\limits_{i=1}^{n} a_i}$ monoton wachsend und beschränkt und
 damit konvergent.
 \vspace*{0.3cm}
+\pagebreak
 
 \remark
 Oft wird im Majoranten-Kriterium die Voraussetzung
@@ -1804,9 +1846,9 @@ Ist $\folge{a_n}$ eine Folge, $q\in\mathbb{R}$ und $K \in \mathbb{R}$, so dass
 $ 0 \leq q < 1 \quad \wedge \quad \forall n \in \mathbb{N}: n \geq K \rightarrow \left|\bruch{a_{n+1}}{a_n}\right| \leq q  $
 \\[0.2cm]
 gilt.  Dann konvergiert die Reihe $\Reihe{a_n}$.
+\pagebreak
 
-\noindent
-\textbf{Beispiel}:
+\example
 Wir zeigen mit Hilfe des Quotienten-Kriteriums, dass die Reihe
 $\Reihe{\bruch{z^i}{i!}}$ für alle $z \in \mathbb{C}$ konvergiert.  Für $z=0$ ist die Konvergenz der
 Reihe trivial und sonst betrachten wir
@@ -1880,6 +1922,7 @@ in einer Potenz-Reihe für $x$ eine feste Zahl einsetzen, wird aus der Potenz-Rei
 gewöhnliche Reihe.  Der Begriff der Potenz-Reihen kann als eine Verallgemeinerung des
 Begriffs des   Polynoms aufgefaßt werden. 
 \vspace*{0.3cm}
+\pagebreak
 
 \noindent
 \textbf{Beispiele}:
