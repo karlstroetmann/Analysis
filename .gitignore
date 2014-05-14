@@ -14,4 +14,7 @@ auto/
 Script/_region_.prv
 Script/analysis.synctex.gz
 Script/analysis.prv
+Sympy-Scipy/_region_.prv
+Sympy-Scipy/sympy-scipy.synctex.gz
+Sympy-Scipy/sympy-scipy.prv
 .dropbox
