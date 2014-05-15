@@ -1951,7 +1951,7 @@ für einen Wert $u \in \mathbb{C}$ konvergiert, dann konvergiert die Reihe auch f
 
 \noindent 
 \textbf{Beweis}:  Da die Reihe $\sum_{n=0}^\infty a_n\cdot u^n$ konvergiert, folgt aus dem
-Korollar zum Cauchy'schen Konvergenz-Kriterium, dass die Folge $\folge{a_n\cdot u^n}$ eine
+Korollar zum Cauchy'schen Kon\-vergenz-Kriterium, dass die Folge $\folge{a_n\cdot u^n}$ eine
 Null-Folge ist.  Also gibt es eine Zahl $K$, so dass für alle $n \geq K$ die Ungleichung 
 \\[0.2cm]
 \hspace*{1.3cm}      
@@ -2040,25 +2040,45 @@ Es sei $u \in \mathbb{C}$ mit $|u| < R$.  In diesem Fall müssen wir zeigen, dass
 $\sum\limits_{n=0}^\infty a_n\cdot u^n$
 \\[0.2cm]
  konvergiert.  Wir werden diesen Nachweis mit Hilfe
-Quotienten-Kriteriums erbringen.  Wir setzen $q := \bruch{|u|}{R} < 1$ und zeigen, dass für
+Quotienten-Kriteriums erbringen.  Wir setzen
+\\[0.2cm]
+\hspace*{1.3cm}
+ $q := \bruch{|u|}{\frac{1}{2} \cdot (R + |u|)}$ 
+\\[0.2cm] 
+und zeigen, dass $q < 1$ ist:
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{cl}
+                & q < 1 \\[0.2cm]
+\Leftrightarrow & \bruch{|u|}{\frac{1}{2} \cdot (R + |u|)} < 1  \\[0.8cm] 
+\Leftrightarrow & 2 \cdot |u| < R + |u|                        \\[0.2cm]  
+\Leftrightarrow & |u| < R                         
+\end{array}
+$
+\\[0.2cm]
+und die letzte Ungleichung ist nach Wahl von $u$ wahr.  Da wir nur Äquivalenzumformungen benutzt
+haben, ist damit auch die Formel $q < 1$ wahr.  Wir zeigen weiter,  dass für
 alle hinreichend großen $n$ die Ungleichung 
       \\[0.2cm]
       \hspace*{1.3cm}      
       $\bruch{|a_{n+1}\cdot u^{n+1}|}{|a_{n}\cdot u^{n}|} \leq q$
       \\[0.2cm]
-erfüllt ist.  Aus 
+erfüllt ist.  Um diesen Beweis zu führen, müssen wir etwas ausholen.  Zunächst flogt aus 
       \\[0.2cm]
       \hspace*{1.3cm}      
-       $R = \lim\limits_{n\rightarrow\infty} \left|\bruch{a_n}{\;a_{n+1}\;}\right|$
+       $R = \lim\limits_{n\rightarrow\infty} \left|\bruch{a_n}{\;a_{n+1}\;}\right|$,
       \\[0.2cm]
-folgt, dass es für beliebige $\varepsilon >0$ eine Zahl $K$ gibt, so dass für alle $n \geq K$
+dass es für beliebige $\varepsilon >0$ eine Zahl $K$ gibt, so dass für alle $n \geq K$
 die Ungleichung
       \\[0.2cm]
       \hspace*{1.3cm}      
       $\left| \Bigl|\bruch{a_{n}}{a_{n+1}}\Bigr| - R \right| < \varepsilon$
       \\[0.2cm]
 gilt.  Wir setzen $\varepsilon := \bruch{1}{2}(R - |u|)$. Wir zeigen, dass dann für alle 
-$n \geq K$ die Ungleichung $ \left|\bruch{a_{n}}{a_{n+1}}\right| > \bruch{1}{2}(R + |u|)$ gilt:
+$n \geq K$ die Ungleichung
+\\
+ $ \left|\bruch{a_{n}}{a_{n+1}}\right| > \bruch{1}{2}(R + |u|)$ gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
 $
@@ -2079,9 +2099,7 @@ Quotienten-Kriterium erfüllt, denn für alle $n \geq K$ gilt:
 $ \left|\bruch{a_{n+1}\cdot u^{n+1}}{a_n\cdot u^n}\right| = 
    \left|\bruch{a_{n+1}}{a_n}\right| \cdot  |u| = 
    \bruch{|u|}{\left|\bruch{a_{n}}{a_{n+1}}\right|} < 
-   \bruch{|u|}{\bruch{1}{2}(R + |u|)} < 
-   \bruch{|u|}{\bruch{1}{2}(R + R)} =
-   \bruch{|u|}{R} = q
+   \bruch{|u|}{\bruch{1}{2}(R + |u|)} = q
 $
 \\[0.2cm]
 Um den Beweis abzuschließen müssen wir noch zeigen, die Reihe $\sum_{n=0}^\infty a_n\cdot u^n$
@@ -2108,10 +2126,11 @@ Die Potenz-Reihe $\sum_{n=1}^\infty \bruch{x^n}{n}$ hat den Konvergenz-Radius $R
 es gilt 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\lim\limits_{n\rightarrow\infty} \left|\frac{\frac{1}{n}}{\;\frac{1}{n+1}\;}\right| = 
+$\displaystyle
+      \lim\limits_{n\rightarrow\infty} \left|\frac{\frac{1}{n}}{\;\frac{1}{n+1}\;}\right| = 
        \lim\limits_{n\rightarrow\infty} \bruch{n+1}{n} = 
        1 + \lim\limits_{n\rightarrow\infty}  \bruch{1}{n} = 1 + 0 = 1.
-$
+$  \eox
 
 
 
