@@ -5,27 +5,27 @@ illinois := procedure(f, a, b, n) {
     [ fa, fb ] := [ f(a), f(b) ];
     assert(fa < 0 && 0 < fb, "We need f(a) < 0 and 0 < f(b)!");
     k := 1;
-    [ oldA, oldB ] := [ a, b ];
+    [ oldA1, oldB1 ] := [ 1.0/0.0, 1.0/0.0 ];
+    [ oldA2, oldB2 ] := [ 1.0/0.0, 1.0/0.0 ];
+    alpha := 1; beta := 1;
     while (k <= n) {
         c  := (fb * a - fa * b) / (fb - fa);
         fc := f(c);
-        alpha := 1; beta := 1;
         if (fc < 0) {
             a := c; fa := fc; alpha := 1;
-            if (oldB == b) {
-                fb /= 2;
-                beta /= 2;
+            if (oldB2 == b) {
+                fb /= 2; beta /= 2;
             }
         } else if (fc > 0) {
             b := c; fb := fc; beta := 1;
-            if (oldA == a) {
-                fa /= 2;
-                alpha /= 2;
+            if (oldA2 == a) {
+                fa /= 2; alpha /= 2;
             }
         } else {
             return c;
         }
-        [ oldA, oldB ] := [ a, b ];
+        [ oldA2, oldB2 ] := [ oldA1, oldB1 ];
+        [ oldA1, oldB1 ] := [ a, b ];
         if (isRational(a) && isRational(b)) {
             print("$k$: a = $nDecimalPlaces(a, 41)$, b = $nDecimalPlaces(b, 41)$");
         } else {
@@ -40,21 +40,24 @@ f := procedure(x) {
     return x ** 4 - 1;
 };
 
-/* x := illinois(f, 0.0, 10.0, 1/100000000); */
-/* print("solution to x ** 4 - 1 = 0 is $x$\n"); */
+x := illinois(f, 0.0, 10.0, 25);
+print("solution to x ** 4 - 1 = 0 is $x$\n");
 
-/* g := procedure(x) { */
-/*     return x ** 2 - 2; */
-/* }; */
+g := procedure(x) {
+    return x ** 2 - 2;
+};
 
-/* x := illinois(g, 1, 2, (1/10)**41); */
-/* print("solution to x ** 2 = 2 is $nDecimalPlaces(x, 40)$\n"); */
+x := illinois(g, 1, 2, 13);
+print("solution to x ** 2 = 2 is $nDecimalPlaces(x, 41)$\n");
 
-/* strange := procedure(x) { */
-/*     return 1 - 2 / (x * x + 1); */
-/* }; */
+strange := procedure(x) {
+    return 1 - 2 / (x * x + 1);
+};
 
-x := illinois(x |-> -cos(x), 1, 2, 4);
+x := illinois(strange, 0.0, 5.0, 20);
+print("solution to 1 - 2 / (x * x + 1) is $x$\n");
+
+x := illinois(x |-> -cos(x), 1, 2, 23);
 pi := mathConst("pi");
 
 print("solution of 0 = cos(x): x = $x$");

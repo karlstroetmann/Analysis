@@ -15,8 +15,7 @@ findZero := procedure(f, a, b, n) {
         } else {
             b := c; fb := fc; 
         }
-        print("$k$: a = $nDecimalPlaces(a, 41)$, b = $nDecimalPlaces(b, 41)$");
-        print("$k$: a = $a$, b = $b$");
+        print("$k$: a = $nDecimalPlaces(a, 42)$, b = $nDecimalPlaces(b, 42)$");
         k += 1;
     }
     return 1/2 * (a + b);
@@ -26,17 +25,26 @@ root3 := procedure(x) {
     return x * x * x - 2;
 };
 
-// r3 := findZero(root3, 1, 2, 40);
+r3 := findZero(root3, 1, 2, 136);
 
-// print("2 ** (1/3) = $nDecimalPlaces(r3, 40)$");
-// print("\n\n\n");
+print("2 ** (1/3) = $nDecimalPlaces(r3, 42)$");
+print("\n\n\n");
 
-cosXEqualsX := procedure(x) {
-    return x - cos(x);
+root2 := procedure(x) {
+    return x * x - 2;
 };
 
-x := findZero(cos, 1, 2, 4);
-pi := mathConst("pi");
+r2 := findZero(root2, 1, 2, 136);
 
-print("solution of 0 = cos(x), $nDecimalPlaces(x,15)$");
-print("difference: $x - pi/2$");
+print("sqrt(2) = $nDecimalPlaces(r2, 42)$");
+print("\n\n\n");
+
+// cosXEqualsX := procedure(x) {
+//     return x - cos(x);
+// };
+// 
+// x := findZero(cos, 1, 2, 4);
+// pi := mathConst("pi");
+// 
+// print("solution of 0 = cos(x), $nDecimalPlaces(x,15)$");
+// print("difference: $x - pi/2$");

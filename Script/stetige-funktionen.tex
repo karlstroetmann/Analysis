@@ -11,7 +11,8 @@ für die es $a,b \in \mathbb{R}$ gibt mit $f(a) < 0$ und $f(b) > 0$, auch ein $c 
 existiert, so dass $f(c) = 0$ ist.  Anschaulich ist dieser Satz klar:  Ist beispielsweise $a < b$ und
 zeichne ich die Funktion $f$ in dem Intervall $[a, b]$, so muss der Graph der Funktion an irgendeiner
 Stelle des Intervalls $[a,b]$ die $x$-Achse schneiden.  Voraussetzung dafür, dass dies tatsächlich so
-ist, ist aber die Forderung, dass die Funktion $f$ glatt ist, denn wenn wir beispielsweise die Funktion
+ist, ist aber die Forderung, dass die Funktion $f$ in einem gewissen Sinne \emph{glatt} ist, denn wenn wir
+beispielsweise die Funktion 
 \\[0.2cm]
 \hspace*{1.3cm}
 $g: \mathbb{R} \rightarrow \mathbb{R}$
@@ -36,7 +37,8 @@ bedarf es einer Reihe von zusätzlichen Definitionen, die nun folgen.
 
 
 Es sei $\folge{x_n}$ eine Folge und $D\subseteq \mathbb{R}$.  Wir sagen, dass 
-\emph{die Folge $\folge{x_n}$ in $D$ liegt}, wenn für alle $n \in \mathbb{N}$  gilt $x_n \in D$.
+\emph{die Folge $\folge{x_n}$ in $D$ liegt}, wenn für alle $n \in \mathbb{N}$ das Folgenglied $x_n
+\in D$ ist.
 
 
 \begin{Definition}[Grenzwert]
@@ -45,41 +47,43 @@ Es sei $\folge{x_n}$ eine Folge und $D\subseteq \mathbb{R}$.  Wir sagen, dass
   mindestens eine Folge $\folge{x_n}$, die gegen $\widehat{x}$ konvergiert.
   Dann ist $\lambda$ der \emph{Grenzwert} der Funktion $f$ \emph{im Punkt} $\widehat{x}$,
   wenn für jede in $D$ liegende Folge $\folge{x_n}$ gilt:
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{1.3cm}      
       $\lim\limits_{n\rightarrow\infty} x_n = \widehat{x} \;\Rightarrow\; \lim\limits_{n\rightarrow\infty} f(x_n) = \lambda$.
-      \\[0.1cm]
+      \\[0.2cm]
       In diesem Fall schreiben wir 
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{1.3cm}      
-      $\lim\limits_{x \rightarrow \widehat{x}} f(x) = \lambda$.
+      $\lim\limits_{x \rightarrow \widehat{x}} f(x) = \lambda$. 
+      \eod
 \end{Definition}
 
 \noindent
 \textbf{Bemerkung}:  In der obigen Definition ist nicht gefordert,
 dass $\widehat{x}$ ein Element des Definitions-bereichs  $D$ ist.  In vielen interessanten Fällen
 ist dies auch nicht der Fall, beispielsweise werden wir später zeigen, dass 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}      
 $\lim\limits_{x \rightarrow 0} \bruch{\sin(x)}{x} = 1$
-\\[0.1cm]
+\\[0.2cm]
 gilt. Die Funktion $x \mapsto \bruch{\sin(x)}{x}$ ist für $x=0$ nicht definiert, trotzdem
 existiert der Grenzwert.
+\eox
 
 
 \begin{Definition}[Stetigkeit]
   Es sei $D\subseteq \mathbb{R}$ und $f:D \rightarrow \mathbb{R}$.
   Weiter sei $\widehat{x}\in D$. Dann ist die Funktion $f$ \emph{stetig im Punkt} $\widehat{x}$,
-  wenn gilt: \\[0.1cm]
+  wenn gilt: \\[0.2cm]
   \hspace*{1.3cm}      
-  $\lim\limits_{x\rightarrow \widehat{x}} f(x) = f(\widehat{x})$.
+  $\lim\limits_{x\rightarrow \widehat{x}} f(x) = f(\widehat{x})$.  \eod
 \end{Definition}
 
 \noindent
 Aus den beiden letzten Definitionen folgt, dass
 eine stetige Funktion mit dem Prozeß der Grenzwert-Bildung vertauschbar ist.  
 Für eine konvergente Folge $\folge{x_n}$ und eine stetige Funktion $f$ gilt 
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{1.3cm}      
       $f\Bigl(\lim\limits_{n\rightarrow\infty} x_n\Bigr) = \lim\limits_{n\rightarrow\infty} f(x_n)$.
 \vspace*{0.3cm}
@@ -90,34 +94,34 @@ Für eine konvergente Folge $\folge{x_n}$ und eine stetige Funktion $f$ gilt
 \item Es sei $c \in \mathbb{R}$.  Dann ist die konstante Funktion
       $f: \mathbb{R} \rightarrow \mathbb{R}$, die durch $f(x) := c$ definiert ist, in
       jedem Punkt $\widehat{x}\in\mathbb{R}$ stetig, denn für jede beliebige Folge $\folge{x_n}$ gilt 
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{1.3cm}      
       $\lim\limits_{n\rightarrow\infty} f(x_n) = \lim\limits_{n\rightarrow\infty} c = c$.
 \item Die identische Funktion $\textsl{id}:\mathbb{R} \rightarrow \mathbb{R}$, die durch 
       $\textsl{id}(x) = x$ definiert ist, ist in jedem Punkt $\widehat{x}\in\mathbb{R}$ stetig,
       denn wenn $\folge{x_n}$ eine Folge ist, so dass
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{1.3cm}      
       $\lim\limits_{n\rightarrow\infty} x_n = \widehat{x}$
-      \\[0.1cm]
+      \\[0.2cm]
       gilt, dann folgt sofort 
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{1.3cm}      
       $\lim\limits_{n\rightarrow\infty} \textsl{id}(x_n) = \lim\limits_{n\rightarrow\infty} x_n = \widehat{x}$.
 \item Die Funktion $f: \mathbb{R} \rightarrow \mathbb{R}$, die durch
       $f(x) = x^2$ definiert ist, ist in jedem Punkt stetig, denn falls
       $\folge{x_n}$ eine Folge ist, so dass 
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{1.3cm}      
       $\lim\limits_{n\rightarrow\infty} x_n = \widehat{x}$ 
-      \\[0.1cm]
+      \\[0.2cm]
       gilt, dann folgt nach dem Satz über den Grenzwert einer Folge von Produkten
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{1.3cm}      
       $\lim\limits_{n\rightarrow\infty} f(x_n) = 
        \lim\limits_{n\rightarrow\infty} x_n^2 = 
        \left(\lim\limits_{n\rightarrow\infty} x_n\right) \cdot\left(\lim\limits_{n\rightarrow\infty} x_n\right) =
-       \widehat{x} \cdot \widehat{x} = \widehat{x}^2$
+       \widehat{x} \cdot \widehat{x} = \widehat{x}^2$.
 \item Das letzte Beispiel läßt sich verallgemeinern: Die Funktionen
       $f:\mathbb{R} \rightarrow \mathbb{R}$ und $g:\mathbb{R} \rightarrow \mathbb{R}$
       seien im Punkt $\widehat{x}$ stetig.  Dann ist auch die Funktion
@@ -146,16 +150,16 @@ Für eine konvergente Folge $\folge{x_n}$ und eine stetige Funktion $f$ gilt
       ``$+$'', ``$-$'', ``$\cdot $'' und ``$/$'' gebildet werden können, stetig sind.  Solche
       Funktionen werden als rationale Funktionen bezeichnet.
       Ein       Beispiel für eine solche Funktion ist 
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{1.3cm}      
       $x \mapsto \bruch{x^3 - 2\cdot x +1}{x^2 -1}$.
-      \\[0.1cm]
+      \\[0.2cm]
       Diese Funktion ist für alle $x\in\mathbb{R} \backslash \{1,-1\}$ definiert und ist
       nach der obigen Argumentation stetig.
 
 
 \item Die Funktion $\textsl{sign}:\mathbb{R} \rightarrow \mathbb{R}$ sei durch
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{1.3cm}      
       $\textsl{sign}(x) = \left\{
        \begin{array}{rl}
@@ -164,73 +168,76 @@ Für eine konvergente Folge $\folge{x_n}$ und eine stetige Funktion $f$ gilt
         -1 & \mbox{falls}\; x < 0. \\
        \end{array}\right.
       $
-      \\[0.1cm]
+      \\[0.2cm]
       definiert. Diese Funktion ist im Punkt $0$ nicht stetig, denn für die Folge
       $\folge{\frac{1}{n+1}}$ gilt
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{1.3cm}      
       $\lim\limits_{n\rightarrow\infty} \frac{1}{n+1} = 0$, \quad aber \quad
       $\lim\limits_{n\rightarrow\infty} \textsl{sign}\left(\frac{1}{n+1}\right) =
-       \lim\limits_{n\rightarrow\infty} 1 = 1 \not= 0 = \textsl{sign}(0)$.
+       \lim\limits_{n\rightarrow\infty} 1 = 1 \not= 0 = \textsl{sign}(0)$. 
+
+       Anschaulich ist die Funktion $\textsl{sign}:\mathbb{R} \rightarrow \mathbb{R}$  im Punkt
+       0 nicht stetig, weil sie an dieser Stelle einen Sprung hat.
+       \eox
 \end{enumerate}
-Anschaulich ist die Funktion $\textsl{sign}:\mathbb{R} \rightarrow \mathbb{R}$  im Punkt
-0 nicht stetig, weil sie an dieser Stelle einen Sprung hat.
 
 \begin{Definition}[Uneigentliche Konvergenz]
-Wir sagen, dass eine Folge
- $\folge{x_n}$ gegen Unendlich konvergiert und schreiben 
-      \\[0.1cm]
-      \hspace*{1.3cm}      
-      $\lim\limits_{n\rightarrow\infty} x_n = \infty$
-      \\[0.1cm]
+Wir sagen, dass eine Folge  $\folge{x_n}$ gegen Unendlich konvergiert und schreiben 
+\\[0.2cm]
+\hspace*{1.3cm}      
+$\lim\limits_{n\rightarrow\infty} x_n = \infty$
+\\[0.2cm]
 wenn gilt:
-      \\[0.1cm]
-      \hspace*{1.3cm}      
-      $\forall c \in \mathbb{R}: \exists K \in \mathbb{N}: \forall n \in \mathbb{N}: 
+\\[0.2cm]
+\hspace*{1.3cm}      
+$\forall c \in \mathbb{R}: \exists K \in \mathbb{N}: \forall n \in \mathbb{N}: 
        n > K \rightarrow x_n > c$.
+\eod
 \end{Definition}
 
-\noindent
-\textbf{Beispiel}:  Für die Folge $\folge{n}$ gilt offenbar 
-      \\[0.1cm]
-      \hspace*{1.3cm}      
-      $\lim\limits_{n\rightarrow\infty} n = \infty$.
+\example  Für die Folge $\folge{n}$ gilt offenbar 
+\\[0.2cm]
+\hspace*{1.3cm}      
+$\lim\limits_{n\rightarrow\infty} n = \infty$.
+\eox
 
 \begin{Definition}
 Es sei $f:\mathbb{R} \rightarrow \mathbb{R}$ eine Funktion und $\lambda\in \mathbb{R}$.
 Gilt für jede Folge $\folge{x_n}$
- \\[0.1cm]
-      \hspace*{1.3cm}      
-     $\lim\limits_{n\rightarrow\infty} x_n = \infty \;\Rightarrow\;
-     \lim\limits_{n\rightarrow\infty} f(x_n) = \lambda$
-      \\[0.1cm]
+\\[0.2cm]
+\hspace*{1.3cm}      
+$\lim\limits_{n\rightarrow\infty} x_n = \infty \;\Rightarrow\;
+     \lim\limits_{n\rightarrow\infty} f(x_n) = \lambda$,
+\\[0.2cm]
 dann schreiben wir 
-      \\[0.1cm]
-      \hspace*{1.3cm}      
-      $\lim\limits_{x\rightarrow\infty} f(x) = \lambda$ 
+\\[0.2cm]
+\hspace*{1.3cm}      
+$\lim\limits_{x\rightarrow\infty} f(x) = \lambda$ 
+\eod
 \end{Definition}
 
-\noindent 
-\textbf{Beispiel}: Es gilt
-      \\[0.1cm]
-      \hspace*{1.3cm}      
-      $\lim\limits_{x\rightarrow\infty} \bruch{1}{x} = 0$.
-      \\[0.1cm]
+\example 
+Es gilt
+\\[0.2cm]
+\hspace*{1.3cm}      
+$\lim\limits_{x\rightarrow\infty} \bruch{1}{x} = 0$.
+\\[0.2cm]
 \textbf{Beweis}:  Es sei eine Folge $\folge{x_n}$ gegeben, so dass 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}      
 $\lim\limits_{n\rightarrow\infty} x_n = \infty$
-\\[0.1cm]
+\\[0.2cm]
 gilt.   Nach Definition der uneigentlichen Konvergenz gegen $\infty$ gilt dann
 \begin{equation}
   \label{eq:stetig0}  
   \forall c \in \mathbb{R}: \exists K \in \mathbb{N}: \forall n \in \mathbb{N}: n > K \rightarrow x_n > c
 \end{equation}
 Wir müssen zeigen, dass gilt:
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $\lim\limits_{n\rightarrow\infty} \bruch{1}{x_n} = 0$.
-\\[0.1cm]
+\\[0.2cm]
 Dies ist nach der Definition des Grenzwerts einer Folge äquivalent zu der Formel
 \begin{equation}
   \label{eq:stetig1}
@@ -240,56 +247,64 @@ Dies ist nach der Definition des Grenzwerts einer Folge äquivalent zu der Formel
 Um diese Formel nachzuweisen, nehmen wir an, dass eine Zahl $\varepsilon>0$
 gegeben ist.  Wir müssen dann ein $K$ finden, so dass für alle natürlichen Zahlen $n$, die
 größer als $K$ sind, die Ungleichung 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm} $\left|\bruch{1}{x_n}\right| < \varepsilon$
-\\[0.1cm]
+\\[0.2cm]
 gilt.  Dies gelingt uns mit Hilfe der Formel (\ref{eq:stetig0}), denn wenn wir in dieser Formel
 $c := \frac{1}{\varepsilon}$ definieren, dann finden wir eine Zahl $K$, so dass für alle
 natürlichen Zahlen $n$, die
 größer als $K$ sind, die Ungleichung  
-\\[0.1cm] \hspace*{1.3cm} $x_n > c$, \quad also $x_n > \frac{1}{\varepsilon}$ \\[0.1cm]
+\\[0.2cm] \hspace*{1.3cm} $\displaystyle x_n > c$, \quad also $\displaystyle x_n > \frac{1}{\varepsilon}$ \\[0.2cm]
 gilt.  Invertieren wir nun diese Ungleichung, so folgt
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $\bruch{1}{x_n} < \varepsilon$
-\\[0.1cm]
+\\[0.2cm]
 und da andererseits aus $x_n > \frac{1}{\varepsilon}$ und $\varepsilon > 0$ auch $x_n > 0$
 und damit $\bruch{1}{x_n} > 0$ folgt, haben wir insgesamt 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $\left|\bruch{1}{x_n}\right| < \varepsilon$
-\\[0.1cm]
+\\[0.2cm]
 für alle $n > K$ gezeigt. \hspace*{\fill} $\Box$
 \vspace*{0.3cm}
 
 \noindent
 Es gibt eine alternative Definition der Stetigkeit, die zur der oben gegebenen Definition
-äquivalent ist. Diese Definition trägt den Namen $\varepsilon$-$\delta$-Definition der
-Steigkeit.  Wir formulieren die Äquivalenz dieser Definition mit der oben gegebenen
-Definition als Satz.
+äquivalent ist. Diese Definition trägt den Namen \emph{$\varepsilon$-$\delta$-Definition der Stetigkeit} und
+Funktionen, die nach dieser Definition stetig sind, heißen $\varepsilon$-$\delta$-stetig.
 
-\begin{Satz} 
-  Eine Funktion $f:D \rightarrow \mathbb{R}$ ist genau dann stetig im Punkt
+\begin{Definition}[$\varepsilon$-$\delta$-Stetigkeit] 
+  Eine Funktion $f:D \rightarrow \mathbb{R}$ ist \emph{$\varepsilon$-$\delta$-stetig} im Punkt
   $\widehat{x}$, wenn gilt: 
-  \\[0.1cm]
+  \\[0.2cm]
   \hspace*{1.3cm}
   $\forall \varepsilon \in \mathbb{R}_+: \exists \delta \in \mathbb{R}_+: \forall x \in \mathbb{R}: 
    |x - \widehat{x}| < \delta \rightarrow |f(x) - f(\widehat{x})| < \varepsilon$.
-\end{Satz}
+  \eod
+\end{Definition}
 
 \exercise
-Beweisen Sie den letzten Satz.  \eox
+\begin{enumerate}
+\item Zeigen Sie, dass jede Funktion, die $\varepsilon$-$\delta$-stetig ist,
+      auch stetig ist.
+\item Zeigen Sie, dass jede stetige Funktion auch $\varepsilon$-$\delta$-stetig ist.
+      \eox
+\end{enumerate}
+
 
 \begin{Definition}[Allgemeine Stetigkeit] \lb
 Eine Funktion $f:\mathbb{D} \rightarrow \mathbb{R}$ heißt \emph{stetig} genau dann, wenn
 die Funktion $f$ für alle $\widehat{x} \in D$ stetig ist.
+\eod
 \end{Definition}
 
 \exercise
 Es sei $f: \mathbb{R} \rightarrow \mathbb{R}$.  Geben Sie eine sinnvolle Definition für 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $\lim\limits_{x\rightarrow\infty} f(x) = \infty$.
+\eox
 
 \section{Bestimmung von Nullstellen}
 In der Praxis tritt häufig die Frage auf, ob eine Funktion in einem bestimmten Intervall
@@ -306,7 +321,7 @@ $f(b) \geq 0$.  Dann gibt es ein $x_0 \in [a,b]$, so dass $f(x_0) = 0$ ist.
 und weisen dann nach, dass der von diesem Verfahren gelieferte Wert tatsächlich eine
 Nullstelle der Funktion ist.  Das Verfahren, dass wir vorstellen werden, wird in der
 Literatur als \emph{Verfahren der Intervall-Halbierung} oder auch als
-\emph{Bisektions-Verfahren} bezeichnet.  Das Verfahren folgt dem Pradigma 
+\emph{Bisektions-Verfahren} bezeichnet.  Das Verfahren folgt dem Paradigma 
 ``\emph{Teile und Herrsche}''.
 Beim Bisektions-Verfahren definieren wir induktiv zwei Folgen $\folge{a_n}$ und
 $\folge{b_n}$.
@@ -317,10 +332,10 @@ $\folge{b_n}$.
 \item[I.S.:] $n \mapsto n+1$
 
       Zunächst definieren wir $c_n$ als das arithmetische Mittel von $a_n$ und $b_n$:
-      \\[0.1cm]
-      \hspace*{1.3cm} $c_n := \frac{1}{2} \cdot (a_n + b_n)$. \\[0.1cm]
+      \\[0.2cm]
+      \hspace*{1.3cm} $c_n := \frac{1}{2} \cdot (a_n + b_n)$. \\[0.2cm]
       Dann definieren wir $a_{n+1}$ und $b_{n+1}$ simultan durch Fall-Unterscheidung:
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{1.3cm}
       $\pair(a_{n+1}, b_{n+1}) := \left\{ \begin{array}{ll}
                           \pair(a_n,c_n) & \mbox{falls}\quad f(c_n) >    0 \\
@@ -339,13 +354,13 @@ gilt:
 \item $b_n \geq b_{n+1}$, \quad die Folge $\folge{b_n}$ ist also monoton
       fallend.
 \item $a_n \leq b_n$.
-\item $b_n - a_n = \left(\frac{1}{2}\right)^n \cdot (b - a)$.
+\item $\displaystyle b_n - a_n = \left(\frac{1}{2}\right)^n \cdot (b - a)$.
 \end{enumerate}
 Wir führen hier nur den Nachweis der letzten Behauptung vor, denn diese Behauptung
 ist am wenigsten offensichtlich.
 \begin{enumerate}
 \item[I.A.:] $n = 0$. Es gilt 
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{1.3cm} $b_0 - a_0 = b - a = \left(\frac{1}{2}\right)^0 \cdot (b-a)$.
 \item[I.S.:] $n \mapsto n+1$.  
 
@@ -355,27 +370,27 @@ ist am wenigsten offensichtlich.
       \item $f(c_n) > 0$.  Dann gilt $a_{n+1} = a_n$ und 
             $b_{n+1} = c_n = \frac{1}{2} \cdot(a_n + b_n)$.
             Also haben wir      
-            \\[0.1cm]
+            \\[0.2cm]
             \hspace*{1.3cm}
             $
             \begin{array}[t]{lcl}
-              b_{n+1} - a_{n+1} & = & \frac{1}{2}\cdot(a_n + b_n) - a_n \\[0.1cm]
-                                & = & \frac{1}{2}\cdot(b_n - a_n)       \\[0.1cm]  
-                  & \stackrel{IV}{=} & \frac{1}{2}\cdot\left(\frac{1}{2}\right)^n\cdot(b - a) \\[0.1cm]  
-                                & = & \left(\frac{1}{2}\right)^{n+1}\cdot(b - a) \\[0.1cm]  
+              b_{n+1} - a_{n+1} & = & \frac{1}{2}\cdot(a_n + b_n) - a_n \\[0.2cm]
+                                & = & \frac{1}{2}\cdot(b_n - a_n)       \\[0.2cm]  
+                  & \stackrel{IV}{=} & \frac{1}{2}\cdot\left(\frac{1}{2}\right)^n\cdot(b - a) \\[0.2cm]  
+                                & = & \left(\frac{1}{2}\right)^{n+1}\cdot(b - a) \\[0.2cm]  
             \end{array}
             $
       \item $f(c_n) \leq 0$.  Jetzt gilt $a_{n+1} = c_n = \frac{1}{2}\cdot(a_n + b_n)$ und 
             $b_{n+1} = b_n$.
             Also haben wir      
-            \\[0.1cm]
+            \\[0.2cm]
             \hspace*{1.3cm}
             $
             \begin{array}[t]{lcl}
-              b_{n+1} - a_{n+1} & = & b_n - \frac{1}{2}\cdot(a_n + b_n) \\[0.1cm]
-                                & = & \frac{1}{2}\cdot(b_n - a_n)       \\[0.1cm]  
-                  & \stackrel{IV}{=} & \frac{1}{2}\cdot\left(\frac{1}{2}\right)^n\cdot(b - a) \\[0.1cm]  
-                                & = & \left(\frac{1}{2}\right)^{n+1}\cdot(b - a) \\[0.1cm]  
+              b_{n+1} - a_{n+1} & = & b_n - \frac{1}{2}\cdot(a_n + b_n) \\[0.2cm]
+                                & = & \frac{1}{2}\cdot(b_n - a_n)       \\[0.2cm]  
+                  & \stackrel{IV}{=} & \frac{1}{2}\cdot\left(\frac{1}{2}\right)^n\cdot(b - a) \\[0.2cm]  
+                                & = & \left(\frac{1}{2}\right)^{n+1}\cdot(b - a) \\[0.2cm]  
             \end{array}
             $
       \end{enumerate}
@@ -383,23 +398,23 @@ ist am wenigsten offensichtlich.
 \end{enumerate}
 Aus den Behauptungen 3., 4., und 5.~folgt, dass die Folge $\folge{b_n}$ durch $a$ nach unten
 beschränkt ist, denn es gilt
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm} $a = a_0 \leq a_1 \leq \cdots a_{n-1} \leq a_n \leq b_n$, 
-                also gilt $a \leq b_n$ für alle $n\in\mathbb{N}$ \\[0.1cm]
+                also gilt $a \leq b_n$ für alle $n\in\mathbb{N}$ \\[0.2cm]
 Da die Folge $\folge{b_n}$ monoton fallend und nach unten beschränkt ist, muss diese Folge
 nach Satz \ref{satz:monoton} auch konvergent sein.  Wir definieren
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $\widehat{b} := \lim\limits_{n\rightarrow\infty} b_n$.
-\\[0.1cm]
+\\[0.2cm]
 In analoger Weise sehen wir, dass die Folge $\folge{a_n}$ konvergent ist und definieren
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $\widehat{a} := \lim\limits_{n\rightarrow\infty} a_n$.
-\\[0.1cm]
+\\[0.2cm]
 Als nächstes weisen wir nach dass $\widehat{a} = \widehat{b}$ ist.  Dazu betrachten wir
 die Differenz der Grenzwerte: 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}[t]{lcl}  
@@ -410,34 +425,34 @@ $
 & = & (b-a) \cdot \lim\limits_{n\rightarrow\infty} \left(\frac{1}{2}\right)^n = 0.
 \end{array}
 $
-\\[0.1cm]
+\\[0.2cm]
 Da die Funktion $f$ stetig ist, gilt
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $\lim\limits_{n\rightarrow\infty} f(a_n) = f\left(\lim\limits_{n\rightarrow\infty} a_n\right) = f(\widehat{a})$.
 \\[0.31cm]
 Wegen   $\forall n\in\mathbb{N}: f(a_n) \leq 0$ folgt dann sofort
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $f(\widehat{a}) \leq 0$.
-\\[0.1cm]
+\\[0.2cm]
 Genauso folgt aus der Stetigkeit von $f$, dass
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $\lim\limits_{n\rightarrow\infty} f(b_n) = f\left(\lim\limits_{n\rightarrow\infty}
   b_n\right) = f\bigl(\,\widehat{b}\,\bigr)$ 
 \\[0.3cm]
 gilt.  Aus $\forall n\in\mathbb{N}: f(b_n) \geq 0$ folgt dann sofort
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $f(\widehat{b}) \geq 0$.
-\\[0.1cm]
+\\[0.2cm]
 Da $\widehat{a} = \widehat{b}$ gilt, haben wir natürlich auch 
 $f\bigl(\widehat{a}\bigr) = f\bigl(\,\widehat{b}\,\bigr)$.  Dann haben wir aber sowohl
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $f\bigl(\widehat{a}\bigr) \leq 0$ \quad als auch \quad $f\bigl(\widehat{a}\bigr) = f\bigr(\,\widehat{b}\,\bigr) \geq 0$ 
-\\[0.1cm]
+\\[0.2cm]
 und das funktioniert nur, wenn $f\bigl(\widehat{a}\bigr) = 0$ ist.  Damit haben wir eine
 Nullstelle von $f$ in dem Intervall $[a,b]$ gefunden.
 \hspace*{\fill} $\Box$
@@ -491,12 +506,12 @@ wollen um in einem vorgegeben Intervall nach einer Nullstelle zu suchen, so könn
 voraus berechnen, wieviele Iterationen zur Erzielung einer geforderten Genauigkeit
 benötigt werden:  Soll die Nullstelle mit einer Genauigkeit von $\varepsilon$ bestimmt
 werden, so muß die Zahl $n$ der Iterationen so gewählt werden, dass 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $\left(\bruch{1}{2}\right)^n \cdot \;(b - a) \leq \varepsilon$
-\\[0.1cm]
+\\[0.2cm]
 gilt.  Um $n$ zu bestimmen, logarithmieren wir diese Ungleichung und erhalten:
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}[t]{ll} 
@@ -504,17 +519,17 @@ $
 \Leftrightarrow & n \cdot \ln\bigl(\frac{1}{2}\bigr) \leq \ln(\varepsilon) - \ln(b - a) \\[0.2cm]
 \Leftrightarrow & n \cdot \ln\bigl(\frac{1}{2}\bigr) \leq \ln\left(\bruch{\varepsilon}{b - a}\right) \\[0.4cm]
 \Leftrightarrow & - n \cdot \ln(2) \leq \ln\left(\bruch{\varepsilon}{b - a}\right) \\[0.4cm]
-\Leftrightarrow & n \geq - \frac{1}{\ln(2)} \cdot \ln\Bigl(\bruch{\varepsilon}{b - a}\Bigr) \\[0.4cm]
-\Leftrightarrow & n \geq \frac{1}{\ln(2)} \cdot \ln\Bigl(\bruch{b - a}{\varepsilon}\Bigr)
+\Leftrightarrow & \displaystyle n \geq - \frac{1}{\ln(2)} \cdot \ln\Bigl(\bruch{\varepsilon}{b - a}\Bigr) \\[0.4cm]
+\Leftrightarrow & \displaystyle n \geq \frac{1}{\ln(2)} \cdot \ln\Bigl(\bruch{b - a}{\varepsilon}\Bigr)
 \end{array}
 $
 \\[0.4cm]
 Wollen wir bespielsweise die Nullstelle der Funktion $x \mapsto x - \cos(x)$ im Intervall
 $[0,1]$ auf eine Genauigkeit von $\varepsilon = 10^{-9}$ bestimmen, so finden wir
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $n \geq \bruch{\ln\bigl(10^{9}\bigr)}{\ln(2)} = 9 \cdot \bruch{\ln(10)}{\ln(2)} \approx 29.89735286$,
-\\[0.1cm]
+\\[0.2cm]
 Damit ist klar, dass wir 30 Iterationen des Verfahrens benötigen um die geforderte
 Genauigkeit zu erreichen.  Tabelle \ref{tab:bisection} zeigt die Werte, die $a_n$ und
 $b_n$ bei der Lösung der Gleichung $x - \cos(x) = 0$ beim Intervall-Halbierungs-Verfahren
@@ -599,9 +614,9 @@ $10^{-9}$ voneinander ab.
 \subsection{Die Regula Falsi}
 Beim Bisektions-Verfahren wird das Interval in jedem Schritt in zwei gleich große Teile
 zerteilt, denn wir bestimmen den Mittelpunkt des Intervalls $[a, b]$ nach der Formel
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm} $c = \frac{1}{2} \cdot (a + b)$.
-\\[0.1cm]
+\\[0.2cm]
 Bei dieser Formel werden die Beträge der Funktionswerte von $f$ an den Stellen $a$ und $b$ überhaupt
 nicht berücksichtigt.  Es liegt nahe, die Beträge der Funktionswerte in die Formel mit einfließen zu
 lassen, denn wenn beisielsweise $|f(a)|$ wesentlich kleiner $|f(b)|$ ist, dann ist zu
@@ -622,7 +637,7 @@ weil wir dann vermuten würden, dass dieser Punkt schon näher an der Nullstelle l
 Eine naheliegende Idee ist daher, die Punkte $a$ und $b$ mit den Beträgen der reziproken
 Funktionswerten zu gewichten, denn die werden um so größer, je kleiner der Funktionswert
 ist.  Dieser Ansatz führt auf die Formel
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm} $c = \bruch{\frac{1}{|f(a)|}\cdot a + \frac{1}{|f(b)|}\cdot b}{\frac{1}{|f(a)|} +
   \frac{1}{|f(b)|}} = \bruch{|f(b)|\cdot a + |f(a)|\cdot b}{|f(a)| + |f(b)|}$
 \\[0.3cm]
@@ -631,9 +646,9 @@ Gerade durch die Punkte $\bigl\langle a, f(a)\bigr\rangle$ und $\bigl\langle b, 
 $c$ als 
 den Punkt festsetzen, bei dem diese Gerade die $x$-Achse scheidet.  Die Gleichung für eine
 Gerade $g(x)$ hat die Form
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm} $g(x) = \alpha \cdot x + \beta$.
-\\[0.1cm]
+\\[0.2cm]
 Setzen wir hier für $x$ den Wert $a$ und für $g(x)$ den Wert $f(a)$ ein, so erhalten wir
 die Gleichung
 \begin{equation}
@@ -647,22 +662,22 @@ Analog erhalten wir die Gleichung
 \end{equation}
 wenn wir für $x$ den Wert $b$ und für $g(x)$ den Wert $f(b)$ einsetzen.  Subtrahieren wir
 die beiden Gleichungen voneinander, so verschwindet die Unbekannte $\beta$ und wir haben
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
    $f(b) - f(a) = \alpha \cdot (b-a)$, \quad also \quad $\alpha = \bruch{f(b) - f(a)}{b-a}$.
-\\[0.1cm]
+\\[0.2cm]
 Setzen wir diesen Wert für $\alpha$ in die Gleichung \ref{eq:null0} ein, so ergibt sich
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
   $f(a) = \bruch{f(b) - f(a)}{b-a} \cdot a + \beta$.
-\\[0.1cm]
+\\[0.2cm]
 Wir lösen diese Gleichung nach $\beta$ auf und erhalten
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
  $\beta = \bruch{f(a)\cdot (b-a) - \bigl(f(b) - f(a)\bigr)\cdot a}{b-a} = \bruch{f(a)\cdot b - f(b)\cdot a}{b-a}$. 
-\\[0.1cm]
+\\[0.2cm]
  Wir bestimmen $c$ aus der Forderung, dass $g(c) = 0$ ist, also
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}[t]{ll}
@@ -670,7 +685,7 @@ $
 \Leftrightarrow & c = - \bruch{\beta}{\alpha} \\[0.4cm]
 \end{array}
 $
-\\[0.1cm]
+\\[0.2cm]
 Setzen wir hier die eben berechneten Werte für $\alpha$ und $\beta$ ein, so erhalten wir
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -705,7 +720,7 @@ die oben abgeleitete Formel verwenden:
 
       \hspace*{1.3cm} $c_n := \bruch{|f(b_n)|\cdot a_n + |f(a_n)|\cdot b_n}{|f(a_n)| + |f(b_n)|}$. \\[0.3cm]
       Dann definieren wir $a_{n+1}$ und $b_{n+1}$ durch Fall-Unterscheidung:
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{1.3cm}
       $\pair(a_{n+1},b_{n+1}) := 
          \left\{ \begin{array}{ll}
@@ -726,10 +741,10 @@ Abbildung \ref{fig:regulaFalsi.stlx} zeigt die Implementierung der Methode
 \textsl{findZero}().   Im Gegensatz zu der Implementierung des Bisektions-Verfahrens, in
 dem wir nur gefordert hatten, dass die Funktion einen Vorzeichen-Wechsel in dem Intervall
 $[a,b]$ hat, verlangen wir bei der Implementierung der Regula Falsi, dass
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $f(a) < 0$ \quad und \quad $f(b) > 0$ ist.
-\\[0.1cm]
+\\[0.2cm]
 Diese Forderung ermöglicht eine etwas einfachere Implementierung.
 
 Das letzte Argument der Methode \textsl{findZero}() gibt nun die gewünschte Zahl der
@@ -830,13 +845,13 @@ benötigt als das Bisektions-Verfahren.
   \caption{Die ersten 12 Schritte der Regula Falsi zur Lösung von $x - \cos(x) = 0$.}
   \label{tab:regula-falsi}
 \end{table}
-
+\pagebreak
 \exercise
  Verwenden Sie die Regula Falsi zur Lösung der Gleichung 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $x^4 - 1 = 0$.
-\\[0.1cm]
+\\[0.2cm]
 Starten Sie mit dem Intervall $[0, 10]$. Zeigen Sie, dass für alle natürlichen Zahlen $n$
 mit $n \leq 1000$ die folgende Ungleichung für die linke Intervall-Grenze $a_n$ gilt:
 \\[0.2cm]
@@ -847,7 +862,7 @@ Ungleichung kann beispielsweise gefolgert werden, dass $a_{100} \leq 0.1$ gilt.
  Der mit dem obigen Programm ermittelte Wert für $a_{100}$ ist
 $a_{100} = 0.0985146583$.  In diesem Fall hat die Regula Falsi also selbst nach  100
 Iterationen nicht eine einzige korrekte Stelle 
-im Ergebnis berechnen können!
+im Ergebnis berechnen können!  \eox
 \vspace*{0.3cm}
 
 \noindent
@@ -856,16 +871,16 @@ $n\leq 1000$ zum einen die Ungleichung $a_n \leq n \cdot 10^{-3}$ gilt und dass 
 $b_n$ konstant ist, es gilt $b_n = 10$.
 \begin{enumerate}
 \item[I.A.:] $n = 0$.  Es gilt
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{1.3cm} $a_0 = 0 \leq 0 \cdot 10^{-3}$ \quad und \quad $b_0 = 10$.
 \item[I.S.:] $n \mapsto n + 1$.
 
       Die Funktion $f := (x \mapsto x^4 - 1)$ ist für nichtnegative Zahlen monoton steigend,
       dass heißt aus $0 \leq u \leq v$ folgt auch $f(u) \leq f(v)$.  Es gilt 
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{1.3cm}
       $f(n \cdot 10^{-3}) = n^4 \cdot 10^{-12} - 1$ \quad und \quad $f(10) = 10^4 - 1$.
-      \\[0.1cm]
+      \\[0.2cm]
       Nach Induktions-Voraussetzung können wir $a_n$ durch $n\cdot 10^{-3}$ abschätzen und 
       aufgrund der Monotonie von $f$ können wir dann $f(a_n)$ durch $f(n\cdot 10^{-3})$
       abschätzen.
@@ -873,7 +888,7 @@ $b_n$ konstant ist, es gilt $b_n = 10$.
       Näherung $c_n'$ für die Nullstelle von $f$       zu berechnen, so wird
       $c_n'$ größer sein als der wahre Wert von $c_n$, der in dem Algorithmus tatsächlich auftritt.
       Es gilt:
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{1.3cm}
     $
     \begin{array}[t]{lcl}
@@ -884,14 +899,14 @@ $b_n$ konstant ist, es gilt $b_n = 10$.
       & = & 10^{-3}\cdot \bruch{n + 1 - n \cdot 10^{-4} - n^4 \cdot 10^{-12}}{1 - n^4\cdot 10^{-16}} \\[0.5cm]
     \end{array}  
     $
-      \\[0.1cm]
+      \\[0.2cm]
       Wir untersuchen nun, für welche natürlichen Zahlen $n$ die Ungleichung 
       $c_n' \leq 10^{-3}\cdot (n+1)$ gilt.
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{1.3cm}
       $
       \begin{array}[t]{ll}        
-                        & c_n' \leq 10^{-3}\cdot (n+1) \\[0.1cm]
+                        & c_n' \leq 10^{-3}\cdot (n+1) \\[0.2cm]
         \Leftrightarrow & 10^{-3}\cdot \bruch{n + 1 - n \cdot 10^{-4} - n^4 \cdot 10^{-12}}{1 - n^4\cdot 10^{-16}} \leq 10^{-3}\cdot (n+1) \\[0.5cm]
         \Leftrightarrow & n + 1 - n \cdot 10^{-4} - n^4 \cdot 10^{-12} \leq (n+1)\cdot \bigl(1 - n^4\cdot 10^{-16}\bigr)   \\[0.3cm]
         \Leftrightarrow & n + 1 - n \cdot 10^{-4} - n^4 \cdot 10^{-12} \leq (n+1)  - (n+1)\cdot n^4\cdot 10^{-16}   \\[0.3cm]
@@ -906,8 +921,9 @@ $b_n$ konstant ist, es gilt $b_n = 10$.
       \\[0.3cm]
       Solange $n < 1000$ ist, gilt also sicher $c_n' < 1$ und damit ist $f(c_n')$ negativ.
       Daher gilt 
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{1.3cm}  $a_{n+1} \leq a_{n+1}' = c_n' \leq 10^{-3} \cdot n$ und $b_{n+1} = b_n = 1$.
+      \qed
 \end{enumerate}
 
 \subsection{Das Sekanten-Verfahren}
@@ -920,10 +936,10 @@ $\folge{x_n}$ bilden.  Den Punkt $x_{n+1}$ bestimmen wir, indem wir durch die Pu
 $x_{n+1}$ und $x_n$ eine Gerade legen und dann $x_n$ als den Schnittpunkt dieser Geraden
 mit der $x$-Achse bestimmen.  Das führt auf die selbe Formel wie bei der Regula-Falsi, wir
 setzen nämlich
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $x_{n+1} := \bruch{f(x_{n}) \cdot x_{n-1} - f(x_{n-1}) \cdot x_n}{f(x_{n}) - f(x_{n-1})}$.
-\\[0.1cm]
+\\[0.2cm]
 Dann brauchen wir nur noch zwei Startwerte $x_0$ und $x_1$ und die Rechnung kann los gehen.
 Abbildung \ref{fig:secant.stlx} zeigt eine Implementierung des Sekanten-Verfahrens in
 \textsc{SetlX}.  Testen wir dieses Programm mit der Funktion $x \mapsto x - \cos(x)$, so
@@ -934,10 +950,10 @@ Sekanten-Verfahren den anderen Verfahren überlegen ist.  In der Tat kann gezeigt
 das Sekanten-Verfahren, \textbf{wenn} es denn konvergiert, schneller konvergiert als die anderen
 Verfahren. Wir werden das später präzisieren.  Das Problem ist, dass das Sekanten-Verfahren
 gar nicht immer konvergiert.  Betrachten wir beispielsweise die Funktion 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $x \mapsto \bruch{2}{x^2 + 1} - 1$. 
-\\[0.1cm]
+\\[0.2cm]
 Diese Funktion hat bei $x = 1.0$ eine Nullstelle.  Mit
 den Startwerten $a = 0$ und $b = 5.0$ produziert unser Programm die in Tabelle
 \ref{tab:secant-method2}
@@ -1090,7 +1106,14 @@ Definition der Folgen $\folge{a_n}$ und $\folge{b_n}$:
       \hspace*{1.3cm}
       $\beta_{n+1} = 1$ \quad und \quad $\alpha_{n+1} := \bruch{1}{2} \cdot \alpha_n$.
 \end{enumerate}
-Die Umsetzung dieses Verfahrens sehen Sie in Abbildung \ref{fig:illinois.stlx}.
+Die Umsetzung dieses Verfahrens sehen Sie in Abbildung \ref{fig:illinois.stlx}.  In den Variablen
+\texttt{oldA1} und \texttt{oldB1} speichern wir die Werte von $a_{n-1}$ und $b_{n-1}$, in den
+Variablen \texttt{oldA2} und \texttt{oldB2} sind die Werte $a_{n-2}$ und $b_{n-2}$ gespeichert.  Wir
+initialisieren diese Werte mit $1.0/0.0 = \infty$.
+Falls wir in Zeile 18 feststellen, dass der Wert von $a_n = a_{n-2}$ ist, dann teilen wir den Wert
+$f(a_n)$ durch zwei.  Analog testen wir in Zeile 13, ob $b_n = b_{n-2}$ ist und teilen
+gegebenenfalls $f(b_n)$ durch zwei.
+
 
 
 \begin{figure}[!ht]
@@ -1108,32 +1131,26 @@ Die Umsetzung dieses Verfahrens sehen Sie in Abbildung \ref{fig:illinois.stlx}.
         [ fa, fb ] := [ f(a), f(b) ];
         assert(fa < 0 && 0 < fb, "We need f(a) < 0 and 0 < f(b)!");
         k := 1;
-        [ oldA, oldB ] := [ a, b ];
+        [ oldA1, oldB1 ] := [ 1.0/0.0, 1.0/0.0 ];
+        [ oldA2, oldB2 ] := [ 1.0/0.0, 1.0/0.0 ];
         while (k <= n) {
             c  := (fb * a - fa * b) / (fb - fa);
             fc := f(c);
-            alpha := 1; beta := 1;
             if (fc < 0) {
-                a := c; fa := fc; alpha := 1;
-                if (oldB == b) {
-                    fb /= 2;
-                    beta /= 2;
+                a := c; fa := fc; 
+                if (oldB2 == b) {
+                    fb /= 2; 
                 }
             } else if (fc > 0) {
-                b := c; fb := fc; beta := 1;
-                if (oldA == a) {
-                    fa /= 2;
-                    alpha /= 2;
+                b := c; fb := fc; 
+                if (oldA2 == a) {
+                    fa /= 2; 
                 }
             } else {
                 return c;
             }
-            [ oldA, oldB ] := [ a, b ];
-            if (isRational(a) && isRational(b)) {
-                print("$k$: a = $nDecimalPlaces(a, 41)$, b = $nDecimalPlaces(b, 41)$");
-            } else {
-                print("$k$: a = $a$, b = $b$, alpha = $alpha$, beta = $beta$");
-            }
+            [ oldA2, oldB2 ] := [ oldA1, oldB1 ];
+            [ oldA1, oldB1 ] := [ a, b ];
             k += 1;
         }
         return (a + b) / 2;
@@ -1142,7 +1159,8 @@ Die Umsetzung dieses Verfahrens sehen Sie in Abbildung \ref{fig:illinois.stlx}.
 \vspace*{-0.3cm}
   \caption{Implementierung des Illinois-Verfahrens zur Berechnung von Nullstellen.}
   \label{fig:illinois.stlx}
-\end{figure} %\$
+\end{figure} 
+\pagebreak
 
 \section{Differenzierbare Funktionen}
 \begin{Definition}[Ableitung]
@@ -1161,6 +1179,7 @@ $\displaystyle\frac{d\,f}{dx}(\widehat{x}) = \lim\limits_{h \rightarrow 0}
 Wir bezeichnen den Wert $\frac{d\,f}{dx}(\widehat{x})$ als die \emph{Ableitung} der
 Funktion $f$ an der Stelle $\widehat{x}$.  Gelegentlich werden wir auch die Schreibweise 
 $f'(\widehat{x})$ für die Ableitung verwenden.
+\eod
 \end{Definition}
 
 \noindent
@@ -1302,7 +1321,7 @@ $
 \\[0.3cm]
 Dabei haben wir im letzten Schritt ausgenutzt, dass eine differenzierbare Funktion auch stetig ist.
 Daher gilt 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $\lim\limits_{h \rightarrow 0} g(\widehat{x} + h) = g(\widehat{x})$. \hspace*{\fill} $\Box$
 \vspace*{0.3cm}
@@ -1365,7 +1384,7 @@ Term genauer ansehen. Es gilt
       \lim\limits_{h \rightarrow 0} \bruch{h\cdot f'(\widehat{x}) + r_1(h)}{h} \\[0.5cm]
 & = & \lim\limits_{h \rightarrow 0}\bruch{r_2\bigl(h\bigr)}{h} \cdot 
       \left(\lim\limits_{h \rightarrow 0} f'(\widehat{x}) + \bruch{r_1(h)}{h}\right) \\[0.5cm]
-& = & 0 \cdot \bigl(f'(\widehat{x}) + 0\bigr) \\[0.1cm]
+& = & 0 \cdot \bigl(f'(\widehat{x}) + 0\bigr) \\[0.2cm]
 & = & 0
 \end{array}
 $
@@ -1390,15 +1409,15 @@ Plausibilitätsbetrachtung.  Nach Definition der Ableitung gilt
 $g'(\widehat{y}) = \lim\limits_{h \rightarrow 0} \bruch{g(\widehat{y} + h) - g(\widehat{y})}{h}$
 \\[0.3cm]
 Für kleine Werte von $h$ gilt daher ungefähr 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $g(\widehat{y} + h) \approx g(\widehat{y}) + g'(\widehat{y})\cdot h$.
-\\[0.1cm]
+\\[0.2cm]
 Analog finden wir für die Funktion $f$
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $f(\widehat{x} + h) \approx f(\widehat{x}) + f'(\widehat{x})\cdot h$.
-\\[0.1cm]
+\\[0.2cm]
 Damit finden wir für den Differenzial-Quotienten der Funktion $g \circ f$ im Punkt
 $\widehat{x}$: \\[0.3cm]
 \hspace*{1.3cm}
@@ -1510,7 +1529,7 @@ Wir berechnen als nächstes die Ableitung einiger wichtiger Funktionen.
        bekannt: 
        \\[0.3cm]
        \hspace*{1.3cm} $\sin(x+y) = \sin(x) \cdot \cos(y) + \cos(x) \cdot \sin(y)$.
-         \\[0.1cm]
+         \\[0.2cm]
        Daraus folgt einerseits
        \\[0.3cm]
        \hspace*{1.3cm}
@@ -1586,10 +1605,10 @@ Wir berechnen als nächstes die Ableitung einiger wichtiger Funktionen.
 \item Die Ableitung der Arcus-Tangens-Funktion kann nun mit dem selben Trick berechnet werden,
       den wir schon bei der Berechnung der Ableitung des Logarithmus benutzt haben.
       Wir gehen diesmal von der Gleichungen 
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{1.3cm}
       $\arctan\bigl(\tan(x)\bigr) = x$
-      \\[0.1cm]
+      \\[0.2cm]
       aus und differenzieren beide Seiten dieser Gleichung.  Nach der Ketten-Regel erhalten wir 
       \\[0.3cm]
       \hspace*{1.3cm}
@@ -1649,23 +1668,26 @@ Berechnen Sie die Ableitung der Funktion $x \mapsto \sqrt{x}$.
 \section{Mittelwert-Sätze}
 \begin{Definition}[lokales Maximum]
   Eine Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ hat im Punkt $\bar{x}\in \mathbb{R}$ ein \emph{lokales Maximum}, wenn gilt:
-  \\[0.1cm]
+  \\[0.2cm]
   \hspace*{1.3cm}
-  $\exists \varepsilon \in \mathbb{R}_+: \forall x \in \mathbb{R}: |x - \bar{x}| < \varepsilon \rightarrow f(x) \leq f(\bar{x})$.
+  $\exists \varepsilon \in \mathbb{R}_+: \forall x \in \mathbb{R}: |x - \bar{x}| < \varepsilon
+  \rightarrow f(x) \leq f(\bar{x})$.
+  \eod
 \end{Definition}
+
 Die in der obigen Definition auftretende Menge von Zahlen, deren Abstand von $\bar{x}$
 kleiner ist als $\varepsilon$, bezeichnen wir auch als $\varepsilon$-Umgebung des Punktes
 $\bar{x}$, die $\varepsilon$-Umgebung des Punktes $x$ ist also die Menge 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm} $U_\varepsilon(\bar{x}) := \bigl\{ x \in \mathbb{R} \;\big|\; |x - \bar{x}| < \varepsilon \bigr\}$.
-\\[0.1cm]
+\\[0.2cm]
 Der Begriff des lokalen Maximums steht im Kontrast zu dem Begriff eines \emph{globalen Maximums}.
 Eine Funktion $f:D \rightarrow \mathbb{R}$ hat in einem Punkt $\bar{x} \in D$ ein globales
 Maximum, wenn
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $\forall x \in D: f(x) \leq f(\bar{x})$
-\\[0.1cm]
+\\[0.2cm]
 gilt.  Natürlich ist jedes globale Maximum auch ein lokales Maximum, aber die Umkehrung
 gilt im allgemeinen nicht.  Der nächste Satz liefert ein notwendiges Kriterium für das
 Auftreten eines lokalen Maximums.
@@ -1681,10 +1703,10 @@ $\df f(\bar{x}) = 0$.
 \proof
 Wir betrachten zunächst die Folge $\folge{\bar{x} + \frac{1}{n+1}}$.
 O.B.d.A. sei $\varepsilon$ so klein gewählt, dass 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $\forall x \in \mathbb{R} : |x - \bar{x}| < \varepsilon \rightarrow f(x) \leq f(\bar{x})$
-\\[0.1cm]
+\\[0.2cm]
 gilt.  Wenn $n>\frac{1}{\varepsilon}$ liegt daher  $\bar{x} + \frac{1}{n+1}$ in der
 $\varepsilon$-Umgebung von $\bar{x}$.  Daher gilt für alle $n > \frac{1}{\varepsilon}$
 \\[0.3cm]
@@ -1704,10 +1726,10 @@ $\df f(\bar{x}) = \lim\limits_{n \rightarrow \infty} \bruch{f\Bigl(\bar{x} + \fr
 \\[0.3cm]
 Wir betrachten nun die Folge $\folge{\bar{x} - \frac{1}{n+1}}$.
 Wieder sei $\varepsilon$ so gewählt, dass 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $\forall x \in \mathbb{R} : |x - \bar{x}| < \varepsilon \rightarrow f(x) \leq f(\bar{x})$
-\\[0.1cm]
+\\[0.2cm]
 gilt.  Wenn $n>\frac{1}{\varepsilon}$ liegt daher  $\bar{x} - \frac{1}{n+1}$ in der
 $\varepsilon$-Umgebung von $\bar{x}$.  Daher gilt für alle $n > \frac{1}{\varepsilon}$
 \\[0.3cm]
@@ -1741,11 +1763,12 @@ definiert werden.  Auch in einem lokalen Minimum hat die Ableitung den Wert 0.
  Ist die Funktion $f:[a,b] \rightarrow \mathbb{R}$ stetig, so nimmt $f$ auf dem Intervall
  $[a,b]$ sowohl das Maximum als auch das Minimum an, es gibt also Punkte
  $x_{\textsl{\footnotesize min}}$ und  $x_{\textsl{\footnotesize max}}$, so dass gilt 
- \\[0.1cm]
+ \\[0.2cm]
  \hspace*{1.3cm}
  $\forall x \in [a,b]: f(x) \leq f(x_{\textsl{\footnotesize max}})$ \quad und \quad $\forall x \in [a,b]: f(x) \geq f(x_{\textsl{\footnotesize min}})$.
+\eox
 \end{Satz}
-Aus Zeitgründen verzichten wir auf einen Beweis des letzten Satzes.
+
 
 \begin{Satz}[Michel Rolle, 1652 -- 1719]
   Ist die Funktion $f:[a,b]\rightarrow \mathbb{R}$ differenzierbar und gilt $f(a) = f(b)$, dann gibt es ein
@@ -1767,22 +1790,22 @@ Fälle:
       daher sowohl ein Minimum als auch ein Maximum in dem Intervall $[a,b]$ an.  
       Es gibt also  $x_{\textsl{\footnotesize min}}$ und  $x_{\textsl{\footnotesize max}}$
       mit
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{1.3cm}
       $\forall x \in [a,b]: f(x) \leq f(x_{\textsl{\footnotesize max}})$ \quad und \quad $\forall x \in [a,b]: f(x) \geq f(x_{\textsl{\footnotesize min}})$.
-      \\[0.1cm]
+      \\[0.2cm]
       Da wir jetzt voraussetzen können, dass die Funktion nicht konstant ist, und da
       weiterhin $f(a) = f(b)$ gilt, muss 
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{1.3cm}
       $f\bigl(x_{\textsl{\footnotesize min}}\bigr) < f(a)$ \quad  oder \quad
       $f\bigl(x_{\textsl{\footnotesize max}}\bigr) > f(a)$
-      \\[0.1cm]
+      \\[0.2cm]
       gelten.  Daraus folgt 
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{1.3cm}
       $x_{\textsl{\footnotesize min}}\not\in \{a,b\}$ \quad  oder \quad $x_{\textsl{\footnotesize max}}\not\in \{a,b\}$.
-      \\[0.1cm]
+      \\[0.2cm]
       Damit hat die Funktion dann in $x_{\textsl{\footnotesize min}}$ ein
       lokales Minimum oder in $x_{\textsl{\footnotesize max}}$ ein lokales
       Maximum (oder beides) und nach dem Satz von Fermat folgt 
@@ -1948,7 +1971,7 @@ Zeigen Sie, dass für alle natürlichen Zahlen $n$ gilt:
 \hspace*{1.3cm} $\lim\limits_{x \rightarrow \infty} \bruch{x^n}{\exp(x)} = 0$.
 \\[0.3cm]
 Damit sehen wir, dass die Exponential-Funktion schneller wächst als jede Potenz.
-\pagebreak
+
 
 \section{Monotonie und Konvexität}
 \begin{Definition}[monoton]
@@ -1973,13 +1996,15 @@ Damit sehen wir, dass die Exponential-Funktion schneller wächst als jede Potenz.
   $\forall x,y \in D: x < y \rightarrow f(x) > f(y)$
   \\[0.2cm]
   erfüllt ist.
+\eod
 \end{Definition}
 
 \begin{Satz}
   Eine differenzierbare Funktion $f:D \rightarrow \mathbb{R}$ ist genau dann
   monoton steigend, wenn gilt: 
-  \\[0.1cm]
+  \\[0.2cm]
   \hspace*{1.3cm} $\forall x \in D: f'(x) \geq 0$.
+  \eod
 \end{Satz}
 
 \noindent
@@ -2015,9 +2040,9 @@ gelten.
 Wir nehmen nun an, dass für alle $x\in D$ die Ungleichung $f'(x) \geq 0$ gilt und
 zeigen, dass $f$ dann monoton steigend ist.  Diesen Beweis führen wir indirekt.
 Wir nehmen an, es gäbe $x,y\in D$ mit 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm} $x < y$ \quad aber \quad $f(x) > f(y)$.
-\\[0.1cm]
+\\[0.2cm]
 Nach dem Mittelwert-Satz der Differenzial-Rechnung gibt es dann ein $z\in[x,y]$, so dass
 \\[0.3cm]
 \hspace*{1.3cm} $f'(z) = \bruch{f(y) - f(x)}{y - x}$
@@ -2054,6 +2079,7 @@ Satzes nicht umkehren läßt.
   \hspace*{1.3cm}
   $\exists \varepsilon \in \mathbb{R}_+: \forall x \in \mathbb{R}: 
   |x - \bar{x}| < \varepsilon \wedge\ x \not= \bar{x} \rightarrow f(x) > f(\bar{x})$.
+\eod
 \end{Definition}
 
 \noindent
@@ -2152,6 +2178,7 @@ $
 gilt.  Hier liegen die Funktionswerte der Funktion $f$ also oberhalb 
 der Sekante durch die Punkte 
 $\bigl\langle x_1, f(x_1) \bigl\rangle$ und $\bigl\langle x_2, f(x_2) \bigl\rangle$.
+\eod
 \end{Definition}
 
 \begin{Lemma}[Invarianz der Konvexität unter linearen Transformationen]
@@ -2284,7 +2311,7 @@ $f$  konvex \quad $\Leftrightarrow$ \quad $\forall x \in \mathbb{R}: f''(x) \geq
   \\[0.2cm]
   Das ist aber gerade die Konvexität der Funktion $f$. \qed
 \end{enumerate}
-\pagebreak 
+
 
 \section{Die Exponential-Funktion}
 Wir wollen in diesem Abschnitt zeigen, dass für die früher definierte
@@ -2393,9 +2420,9 @@ Dann ist die Funktion $g$ differenzierbar und es gilt
 $
 \begin{array}[t]{lcll}
 g'(x) & = & f'(x) \cdot \exp(-\lambda \cdot x) + f(x) \cdot (-\lambda) \cdot \exp(-\lambda \cdot x) 
-          \\[0.1cm]
+          \\[0.2cm]
       & = & \lambda \cdot f(x) \cdot \exp(-\lambda \cdot x) - \lambda \cdot f(x) \cdot \exp(-\lambda \cdot x) 
-          \\[0.1cm]
+          \\[0.2cm]
       & = & 0
 \end{array}
 $
