@@ -15,7 +15,11 @@ findZero := procedure(f, a, b, n) {
         } else {
             b := c; fb := fc; 
         }
-        print("$k$: a = $nDecimalPlaces(a, 42)$, b = $nDecimalPlaces(b, 42)$");
+        if (isRational(a) && isRational(b)) {
+            print("a = $nDecimalPlaces(a, 42)$, b = $nDecimalPlaces(b, 42)$");
+        } else {
+            print("a = $a$, b = $b$");
+        }
         k += 1;
     }
     return 1/2 * (a + b);
@@ -39,12 +43,12 @@ r2 := findZero(root2, 1, 2, 136);
 print("sqrt(2) = $nDecimalPlaces(r2, 42)$");
 print("\n\n\n");
 
-// cosXEqualsX := procedure(x) {
-//     return x - cos(x);
-// };
-// 
-// x := findZero(cos, 1, 2, 4);
-// pi := mathConst("pi");
-// 
-// print("solution of 0 = cos(x), $nDecimalPlaces(x,15)$");
-// print("difference: $x - pi/2$");
+cosXEqualsX := procedure(x) {
+    return x - cos(x);
+};
+
+x := findZero(cos, 1.0, 2.0, 40);
+pi := mathConst("pi");
+
+print("solution of 0 = cos(x), $x$");
+print("difference: $x - pi/2$");

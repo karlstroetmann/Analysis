@@ -28,18 +28,22 @@ $g(x) := \left\{
  \right.
 $
 \\[0.2cm]
-betrachten, so haben wir zwar  $g(-1) = -1$ und $g(1) = 1$, aber es gibt kein $x \in [-1,1]$, 
+definiert ist, so haben wir zwar  $g(-1) = -1$ und $g(1) = 1$, aber es gibt kein $x \in [-1,1]$, 
 für das $g(x) = 0$ wäre.   Das liegt daran, dass die Funktion eben nicht \emph{glatt} ist, denn die
 Funktion hat an der Stelle $x = 0$ einen Sprung.  Unser Ziel in diesem Abschnitt ist es, zunächst exakt zu
 definieren, was wir unter einer glatten Funktion verstehen wollen.  In der Mathematik wird an Stelle des
-Attributs \emph{glatt} der Begriff der \emph{Stetigkeit} verwendet.  Um diesen Begriff einführen zu können,
+Attributs \emph{glatt} der Begriff der \emph{Stetigkeit} verwendet.\footnote{
+Gelegentlich wird eine Funktion  als \emph{glatt} bezeichnet, wenn die Funktion unendlich oft
+differenzierbar ist.  Das ist eine wesentlich schärfere Forderung als der Begriff der Stetigkeit.
+In diesem Skript verwende ich den Begriff \emph{glatt} aber synonym mit dem Begriff \emph{stetig}.}
+Um diesen Begriff einführen zu können,
 bedarf es einer Reihe von zusätzlichen Definitionen, die nun folgen.
 
 
 Es sei $\folge{x_n}$ eine Folge und $D\subseteq \mathbb{R}$.  Wir sagen, dass 
 \emph{die Folge $\folge{x_n}$ in $D$ liegt}, wenn für alle $n \in \mathbb{N}$ das Folgenglied $x_n
 \in D$ ist.
-
+\pagebreak
 
 \begin{Definition}[Grenzwert]
   Es sei $D\subseteq \mathbb{R}$ und $f:D \rightarrow \mathbb{R}$.
@@ -170,11 +174,11 @@ Für eine konvergente Folge $\folge{x_n}$ und eine stetige Funktion $f$ gilt
       $
       \\[0.2cm]
       definiert. Diese Funktion ist im Punkt $0$ nicht stetig, denn für die Folge
-      $\folge{\frac{1}{n+1}}$ gilt
+      $\folge{\frac{1}{n}}$ gilt
       \\[0.2cm]
       \hspace*{1.3cm}      
-      $\lim\limits_{n\rightarrow\infty} \frac{1}{n+1} = 0$, \quad aber \quad
-      $\lim\limits_{n\rightarrow\infty} \textsl{sign}\left(\frac{1}{n+1}\right) =
+      $\ds \lim\limits_{n\rightarrow\infty} \frac{1}{n} = 0$, \quad aber \quad
+      $\ds \lim\limits_{n\rightarrow\infty} \textsl{sign}\left(\frac{1}{n}\right) =
        \lim\limits_{n\rightarrow\infty} 1 = 1 \not= 0 = \textsl{sign}(0)$. 
 
        Anschaulich ist die Funktion $\textsl{sign}:\mathbb{R} \rightarrow \mathbb{R}$  im Punkt
@@ -196,7 +200,8 @@ $\forall c \in \mathbb{R}: \exists K \in \mathbb{N}: \forall n \in \mathbb{N}:
 \eod
 \end{Definition}
 
-\example  Für die Folge $\folge{n}$ gilt offenbar 
+\example  
+Für die Folge $\folge{n}$ gilt offenbar 
 \\[0.2cm]
 \hspace*{1.3cm}      
 $\lim\limits_{n\rightarrow\infty} n = \infty$.
@@ -216,6 +221,7 @@ dann schreiben wir
 $\lim\limits_{x\rightarrow\infty} f(x) = \lambda$ 
 \eod
 \end{Definition}
+\pagebreak
 
 \example 
 Es gilt
@@ -236,7 +242,7 @@ gilt.   Nach Definition der uneigentlichen Konvergenz gegen $\infty$ gilt dann
 Wir müssen zeigen, dass gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
-$\lim\limits_{n\rightarrow\infty} \bruch{1}{x_n} = 0$.
+$\ds \lim\limits_{n\rightarrow\infty} \bruch{1}{x_n} = 0$.
 \\[0.2cm]
 Dies ist nach der Definition des Grenzwerts einer Folge äquivalent zu der Formel
 \begin{equation}
@@ -284,8 +290,9 @@ Funktionen, die nach dieser Definition stetig sind, heißen $\varepsilon$-$\delta
   \eod
 \end{Definition}
 
+
 \exercise
-\begin{enumerate}
+\begin{enumerate}[(a)]
 \item Zeigen Sie, dass jede Funktion, die $\varepsilon$-$\delta$-stetig ist,
       auch stetig ist.
 \item Zeigen Sie, dass jede stetige Funktion auch $\varepsilon$-$\delta$-stetig ist.
@@ -294,7 +301,7 @@ Funktionen, die nach dieser Definition stetig sind, heißen $\varepsilon$-$\delta
 
 
 \begin{Definition}[Allgemeine Stetigkeit] \lb
-Eine Funktion $f:\mathbb{D} \rightarrow \mathbb{R}$ heißt \emph{stetig} genau dann, wenn
+Eine Funktion $f:D \rightarrow \mathbb{R}$ heißt \emph{stetig} genau dann, wenn
 die Funktion $f$ für alle $\widehat{x} \in D$ stetig ist.
 \eod
 \end{Definition}
@@ -305,6 +312,48 @@ Es sei $f: \mathbb{R} \rightarrow \mathbb{R}$.  Geben Sie eine sinnvolle Definit
 \hspace*{1.3cm}
 $\lim\limits_{x\rightarrow\infty} f(x) = \infty$.
 \eox
+
+\remark
+Wir haben den Begriff des Grenzwerts einer Funktion mit Hilfe von Folgen definiert.  Es gibt eine
+dazu äquivalente $\varepsilon$-$\delta$-Definition des Grenzwerts.  Bei dieser Definition sagen wir,
+dass eine Funktion
+\\[0.2cm]
+\hspace*{1.3cm}
+$f: D \rightarrow \mathbb{R}$
+\\[0.2cm]
+an der Stelle $\bar{x}$ den Grenzwert $\lambda$ hat, wenn
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall \varepsilon\in\mathbb{R}_+: \exists\delta\in\mathbb{R}_+: \forall x\in D: |x-\bar{x}|<\delta \rightarrow |f(x) - \lambda| < \varepsilon$
+\\[0.2cm]
+gilt.  Genau wie die $\varepsilon$-$\delta$ Definition der Stetigkeit äquivalent ist zu dem
+Stetigkeits-Begriff, den wir mit Hilfe von Folgen definiert haben, ist auch die
+$\varepsilon$-$\delta$-Definition des Grenzwerts äquivalent zu der Definition des Grenzwerts, die wir
+früher mit Hilfe von Folgen gegeben haben.  Der Beweis dieser Behauptung ist Gegenstand der 
+folgenden Aufgabe.
+
+\exercise
+Es sei \\[0.2cm]
+\hspace*{1.3cm}
+$f: D \rightarrow \mathbb{R}$
+\\[0.2cm]
+eine reellwertige Funktion.  Beweisen Sie die beiden folgenden Behauptungen:
+\begin{enumerate}[(a)]
+\item Falls die Formel
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\forall \varepsilon\in\mathbb{R}_+: \exists\delta\in\mathbb{R}_+: \forall x\in D: |x-\bar{x}|<\delta \rightarrow |f(x) - \lambda| < \varepsilon$
+      \\[0.2cm]
+      richtig ist, dann gilt
+      $\ds \lim\limits_{x\rightarrow\bar{x}} = \lambda$.
+\item Falls  $\ds \lim\limits_{x\rightarrow\bar{x}} = \lambda$ gilt, dann gilt auch
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\forall \varepsilon\in\mathbb{R}_+: \exists\delta\in\mathbb{R}_+: \forall x\in D: |x-\bar{x}|<\delta \rightarrow |f(x) - \lambda| < \varepsilon$.
+      \eox
+\end{enumerate}
+
+
 
 \section{Bestimmung von Nullstellen}
 In der Praxis tritt häufig die Frage auf, ob eine Funktion in einem bestimmten Intervall
@@ -324,7 +373,9 @@ Literatur als \emph{Verfahren der Intervall-Halbierung} oder auch als
 \emph{Bisektions-Verfahren} bezeichnet.  Das Verfahren folgt dem Paradigma 
 ``\emph{Teile und Herrsche}''.
 Beim Bisektions-Verfahren definieren wir induktiv zwei Folgen $\folge{a_n}$ und
-$\folge{b_n}$.
+$\folge{b_n}$ wie folgt:
+\pagebreak
+
 \begin{enumerate}
 \item[I.A.:] $n=0$.
 
@@ -610,6 +661,7 @@ $10^{-9}$ voneinander ab.
   \caption{Die ersten 30 Schritte des Bisektions-Verfahrens zur Lösung von $x - \cos(x) = 0$.}
   \label{tab:bisection}
 \end{table}
+\pagebreak
 
 \subsection{Die Regula Falsi}
 Beim Bisektions-Verfahren wird das Interval in jedem Schritt in zwei gleich große Teile
@@ -846,6 +898,7 @@ benötigt als das Bisektions-Verfahren.
   \label{tab:regula-falsi}
 \end{table}
 \pagebreak
+
 \exercise
  Verwenden Sie die Regula Falsi zur Lösung der Gleichung 
 \\[0.2cm]
@@ -1045,16 +1098,18 @@ gezeigten Werte.
   \caption{Divergenz des Sekanten-Verfahrens bei der Lösung von $\bruch{2}{x^2 + 1} - 1 = 0$.}
   \label{tab:secant-method2}
 \end{table}
+
 \pagebreak
 \vspace*{\fill}
 
+\pagebreak
 
 \subsection{Das Illinois-Verfahren}
 Von den bisher vorgestellten Verfahren ist nur das Bisektions-Verfahren wirklich robust.
 Bei der Regula-Falsi ist das Problem, dass eine Intervall-Grenze stehen bleiben kann. Am
 Beispiel der Funktion $x \mapsto x^4 - 1$ haben wir gesehen, dass dies zu einer sehr
 langsamen Konvergenz führen kann.  Beim Sekanten-Verfahren hatten wir dieses Problem
-behoben, aber dort kann es in ungünstigen Fällen passieren, dass das Verfahren überhaupt nicht
+behoben, aber dort kann es in ungünstigen Fällen passieren, dass das Verfahren überhaupt nicht mehr
 konvergiert.  Das \emph{Illinois-Verfahren} \cite{dowell:1971} versucht die Konvergenz der Regula Falsi
 auf andere Weise zu beschleunigen.  Die Idee des Verfahrens ist eigentlich sehr naheliegend:
 Wenn bei der Regula Falsi eine der Intervall-Grenzen über zwei oder mehr Schritte konstant bleibt,
@@ -1092,14 +1147,15 @@ Definition der Folgen $\folge{a_n}$ und $\folge{b_n}$:
          \right.
       $
       \\[0.2cm]
-      Falls wir nun feststellen, dass $b_{n+1} = b_n$ gilt, so hat sich der Wert der rechten
-      Intervall-Grenze nicht geändert.  Wir wollen diesen Wert daher beim nächsten Iterations-Schritt
+      Falls wir nun feststellen, dass $b_{n+1} = b_{n-1}$ ist, so hat sich der Wert der rechten
+      Intervall-Grenze während der letzten zwei Iterationen nicht geändert.  Wir wollen diesen Wert
+      daher beim nächsten Iterations-Schritt 
       schwächer gewichten und setzen deshalb in diesem Fall
       \\[0.2cm]
       \hspace*{1.3cm}
       $\beta_{n+1} = \bruch{1}{2} \cdot \beta_n$ \quad und \quad $\alpha_{n+1} := 1$.
       \\[0.2cm]
-      Ist umgekehrt $a_{n+1} = a_n$, so hat sich der Wert der linken
+      Ist umgekehrt $a_{n+1} = a_{n-1}$, so hat sich der Wert der linken
       Intervall-Grenze nicht geändert.  Wir gewichten daher die linke Intervall-Grenze beim nächsten
       Iterations-Schritt schwächer und setzen 
       \\[0.2cm]
@@ -1109,10 +1165,11 @@ Definition der Folgen $\folge{a_n}$ und $\folge{b_n}$:
 Die Umsetzung dieses Verfahrens sehen Sie in Abbildung \ref{fig:illinois.stlx}.  In den Variablen
 \texttt{oldA1} und \texttt{oldB1} speichern wir die Werte von $a_{n-1}$ und $b_{n-1}$, in den
 Variablen \texttt{oldA2} und \texttt{oldB2} sind die Werte $a_{n-2}$ und $b_{n-2}$ gespeichert.  Wir
-initialisieren diese Werte mit $1.0/0.0 = \infty$.
-Falls wir in Zeile 18 feststellen, dass der Wert von $a_n = a_{n-2}$ ist, dann teilen wir den Wert
-$f(a_n)$ durch zwei.  Analog testen wir in Zeile 13, ob $b_n = b_{n-2}$ ist und teilen
-gegebenenfalls $f(b_n)$ durch zwei.
+initialisieren diese Werte mit $\mathtt{om}$, denn $\mathtt{om}$ bezeichnet in \textsc{SetlX}
+den undefinierten Wert.
+Falls wir in Zeile 19 feststellen, dass der Wert von $a_n = a_{n-2}$ ist, dann setzen wir den Wert
+$\alpha_{n+1}$ auf $\alpha_n/2$.  Analog testen wir in Zeile 14, ob $b_n = b_{n-2}$ ist und setzen
+gegebenenfalls $\beta_{n+1}$ auf $\beta_n/2$.
 
 
 
@@ -1131,27 +1188,27 @@ gegebenenfalls $f(b_n)$ durch zwei.
         [ fa, fb ] := [ f(a), f(b) ];
         assert(fa < 0 && 0 < fb, "We need f(a) < 0 and 0 < f(b)!");
         k := 1;
-        [ oldA1, oldB1 ] := [ 1.0/0.0, 1.0/0.0 ];
-        [ oldA2, oldB2 ] := [ 1.0/0.0, 1.0/0.0 ];
+        oldA1 := om; oldB1 := om;
+        oldA2 := om; oldB2 := om;
+        alpha := 1; beta := 1;
         while (k <= n) {
-            c  := (fb * a - fa * b) / (fb - fa);
+            c  := (beta * fb * a - alpha * fa * b) / (beta * fb - alpha * fa);
             fc := f(c);
             if (fc < 0) {
-                a := c; fa := fc; 
+                a := c; fa := fc; alpha := 1;
                 if (oldB2 == b) {
-                    fb /= 2; 
+                    beta /= 2;
                 }
             } else if (fc > 0) {
-                b := c; fb := fc; 
+                b := c; fb := fc; beta := 1;
                 if (oldA2 == a) {
-                    fa /= 2; 
+                    alpha /= 2;
                 }
             } else {
                 return c;
             }
-            [ oldA2, oldB2 ] := [ oldA1, oldB1 ];
-            [ oldA1, oldB1 ] := [ a, b ];
-            k += 1;
+            oldA2 := oldA1; oldB2 := oldB1;
+            oldA1 := a;     oldB1 := b;
         }
         return (a + b) / 2;
     };
@@ -1176,14 +1233,16 @@ existiert.  In diesem Fall definieren wir
 $\displaystyle\frac{d\,f}{dx}(\widehat{x}) = \lim\limits_{h \rightarrow 0}
 \bruch{f(\widehat{x} + h) - f(\widehat{x})}{h}$.
 \\[0.3cm]
-Wir bezeichnen den Wert $\frac{d\,f}{dx}(\widehat{x})$ als die \emph{Ableitung} der
-Funktion $f$ an der Stelle $\widehat{x}$.  Gelegentlich werden wir auch die Schreibweise 
-$f'(\widehat{x})$ für die Ableitung verwenden.
+Wir bezeichnen den Wert $\ds\frac{d\,f}{dx}(\widehat{x})$ als die \emph{Ableitung} der
+Funktion $f$ an der Stelle $\widehat{x}$.  Gelegentlich werden \\[0.2cm]
+wir für die Ableitung auch die Schreibweise 
+$f'(\widehat{x})$ verwenden.
 \eod
 \end{Definition}
+\pagebreak
 
-\noindent
-\textbf{Bemerkung}: Beachten Sie, dass wir in der obigen Definition den Ausdruck
+\remark
+Beachten Sie, dass wir in der obigen Definition den Ausdruck
 \\[0.3cm]
 \hspace*{1.3cm} $\bruch{f(\widehat{x} + h) - f(\widehat{x})}{h}$ \\[0.3cm]
 als Funktion von $h$ auffassen.  Dieser Ausdruck wird auch als \emph{Differenzial-Quotient}
@@ -1206,12 +1265,11 @@ und andererseits haben wir
 $f(\widehat{x} + h) = f(\widehat{x}) + h \cdot \df f(\widehat{x}) + r(h)$.
 \\[0.3cm]
 Die Funktion $r(h)$ ist also der Fehler, der bei der linearen Approximation
-entsteht.  
-\vspace*{0.3cm}
+entsteht.  \eox
 
 
-\noindent
-\textbf{Bemerkung}: Falls die Funktion $f$ im Punkt $\widehat{x}$ differenzierbar ist,
+\remark
+Falls die Funktion $f$ im Punkt $\widehat{x}$ differenzierbar ist,
 dann ist die Funktion dort auch stetig, denn es gilt 
 \\[0.3cm]
 \hspace*{1.3cm}
@@ -1227,11 +1285,10 @@ $
 $
 \\[0.3cm]
 und $\lim\limits_{h \rightarrow 0} f(\widehat{x}+h) = f(\widehat{x})$ heißt gerade, dass $f$
-im Punkt $\widehat{x}$ stetig ist.
+im Punkt $\widehat{x}$ stetig ist. \qed
 \vspace*{0.3cm}
 
-\noindent
-\textbf{Beispiele}:
+\examples
 \begin{enumerate}
 \item Die konstante Funktion $f := (x \mapsto c)$ hat überall die Ableitung
       $0$, denn es gilt \\[0.3cm]
@@ -1263,7 +1320,7 @@ im Punkt $\widehat{x}$ stetig ist.
        \lim\limits_{n\rightarrow\infty} \frac{\;\frac{1}{n}\;}{\frac{1}{n}} = 1 $.
       \\[0.3cm]
       Betrachten wir andererseits die Folge $\folge{-\frac{1}{n}}$ und berücksichtigen,
-      Dass diese Folge ebenfalls gegen 0 konvergiert, so erhalten wir
+      dass diese Folge ebenfalls gegen 0 konvergiert, so erhalten wir
       \\[0.3cm]
       \hspace*{1.3cm}
       $a = \displaystyle \lim\limits_{h \rightarrow 0} \bruch{\textsl{abs}(h) - \textsl{abs}(0)}{h} = 
@@ -1272,9 +1329,9 @@ im Punkt $\widehat{x}$ stetig ist.
       \\[0.3cm]
       Da $a$ nicht gleichzeitig die Werte $+1$ und $-1$ annehmen kann, müssen wir folgern,
       dass die Funktion $\textsl{abs}$ an der Stelle $\widehat{x} = 0$ nicht
-      differenzierbar ist.
+      differenzierbar ist.  \eox
 \end{enumerate}
-\vspace*{0.3cm}
+
 
 \begin{Satz}[Ableitungs-Regeln]
 Es seien $f: D \rightarrow \mathbb{R}$  und $g: D \rightarrow \mathbb{R}$ Funktionen, die
@@ -1336,15 +1393,18 @@ differenzierbar und es gilt
 $\left(\bruch{1}{g}\right)'(\widehat{x}) = -\bruch{g'(\widehat{x})}{g(\widehat{x})^2}$.
 \\[0.3cm]
 Folgern Sie aus diesem Ergebnis die Quotienten-Regel.
-
+\eox
 
 \begin{Satz}[Ketten-Regel] 
   Die Funktionen $f:\mathbb{R} \rightarrow \mathbb{R}$ 
   sei differenzierbar im Punkt $\widehat{x}\in\mathbb{R}$ und die Funktion
   $g:\mathbb{R} \rightarrow \mathbb{R}$ sei differenzierbar im Punkt 
-  $\widehat{y} = f(\widehat{x})$.  Dann ist auch
-  die Funktion $g \circ f := \bigr(x \mapsto g(f(x))\bigr)$ im Punkt $\widehat{x}$ 
-  differenzierbar und es gilt 
+  $\widehat{y} = f(\widehat{x})$.  Dann ist auch die Funktion
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $g \circ f := \bigr(x \mapsto g(f(x))\bigr)$ 
+  \\[0.2cm]
+  im Punkt $\widehat{x}$  differenzierbar und es gilt 
   \\[0.3cm]
   \hspace*{1.3cm}
   $(g\circ f)'(\widehat{x}) = g'(f(\widehat{x})) \cdot f'(\widehat{x})$.  
@@ -1435,7 +1495,7 @@ $
 Die linke Seite der Gleichung stellt den Differenzial-Quotienten der Funktion $g\circ f$
 dar und muß daher für $h \rightarrow 0$ gegen die Ableitung $(g \circ f)(\widehat{x})$
 konvergieren. \hspace*{\fill} $\Box$
-\vspace*{0.3cm}
+\pagebreak
 
 \exercise
  Zeigen Sie, dass für alle natürlichen Zahlen $n$ gilt: 
@@ -1523,7 +1583,7 @@ Wir berechnen als nächstes die Ableitung einiger wichtiger Funktionen.
       Wegen $\lim_{\varphi \rightarrow 0} \cos(\varphi) = \cos(0) = 1$ folgt daraus
       \\[0.3cm]
       \hspace*{1.3cm}
-      $\lim\limits_{\varphi \rightarrow 0} \bruch{\sin(\varphi)}{\varphi} = 1$
+      $\lim\limits_{\varphi \rightarrow 0} \bruch{\sin(\varphi)}{\varphi} = 1$.
       \\[0.3cm]
        Aus dem Geometrie-Untericht ist das Additionstheorem für den Sinus 
        bekannt: 
@@ -1595,7 +1655,7 @@ Wir berechnen als nächstes die Ableitung einiger wichtiger Funktionen.
       \hspace*{1.3cm}
       $\displaystyle
       \begin{array}[t]{lcl}
-      \frac{d\;}{dx} \tan(x) & = & \frac{d\;}{dx} \left(\bruch{\sin(x)}{\cos(x)}\right) \\[0.3cm]
+      \ds \frac{d\;}{dx} \tan(x) & = & \ds\frac{d\;}{dx} \left(\bruch{\sin(x)}{\cos(x)}\right) \\[0.3cm]
       & = & \bruch{\Bigl(\frac{d\;}{dx} \sin(x)\Bigr) \cdot \cos(x) - \sin(x) \cdot \Bigl(\frac{d\;}{dx} \cos(x)\Bigr)}{\cos^2(x)} \\[0.5cm]
       & = & \bruch{\cos(x) \cdot \cos(x) - \sin(x) \cdot \bigr(-\sin(x)\bigr)}{\cos^2(x)} \\[0.5cm]
       & = & \bruch{\cos^2(x) + \sin^2(x)}{\cos^2(x)} \\[0.5cm]
@@ -1617,12 +1677,12 @@ Wir berechnen als nächstes die Ableitung einiger wichtiger Funktionen.
       Setzen wir hier die Ableitung für die Tangens-Funktion ein, so haben wir
       \\[0.3cm]
       \hspace*{1.3cm}
-      $\frac{d\;}{dx} \arctan\bigl(\tan(x)\bigr) \cdot \bruch{1}{\cos^2(x)} = 1$.
+      $\ds \frac{d\;}{dx} \arctan\bigl(\tan(x)\bigr) \cdot \bruch{1}{\cos^2(x)} = 1$.
       \\[0.3cm]
       Multiplikation mit $\cos^2(x)$ ergibt
       \\[0.3cm]
       \hspace*{1.3cm}
-      $\frac{d\;}{dx} \arctan\bigl(\tan(x)\bigr) = \cos^2(x)$.
+      $\ds \frac{d\;}{dx} \arctan\bigl(\tan(x)\bigr) = \cos^2(x)$.
       \\[0.3cm]
       Den in dieser  Gleichung auftretenden Term $\cos^2(x)$ müssen wir durch einen Term ausdrücken, in dem
       nur $\tan(x)$ auftritt.  Dazu betrachten wir die Definition der Tangens-Funktion:      
@@ -1653,16 +1713,30 @@ Wir berechnen als nächstes die Ableitung einiger wichtiger Funktionen.
 \exercise
 Zeigen Sie 
 \\[0.3cm]
-\hspace*{1.3cm} $\frac{d\;}{dx} \arcsin(x) = \bruch{1}{\sqrt{1 - x^2}}$.
+\hspace*{1.3cm} $\ds\frac{d\;}{dx} \arcsin(x) = \bruch{1}{\sqrt{1 - x^2}}$.  \eox
 
 
 
 \exercise
-Berechnen Sie die Ableitung der Funktion $x \mapsto \sqrt{x}$.
+Berechnen Sie die Ableitung der Funktion $x \mapsto \sqrt{x}$.  
 \vspace*{0.3cm}
 
 \noindent
-\textbf{Hinweis}: Verwenden Sie die Produkt-Regel.
+\textbf{Hinweis}: Verwenden Sie die Produkt-Regel. \eox
+
+\exercise
+Es sei $p \in \mathbb{Z}$ und $q \in \mathbb{N}$.  Überlegen Sie, was die Ableitung der Funktion
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds x \mapsto x^{\frac{p}{q}}$
+\\[0.2cm]
+ist und beweisen Sie Ihre Behauptung.
+\vspace*{0.3cm}
+
+\noindent
+\textbf{Hinweis}: Betrachten Sie zunächst den Fall $p = 1$.  \eox
+\eox
+
 
 
 \section{Mittelwert-Sätze}
@@ -1692,7 +1766,7 @@ gilt.  Natürlich ist jedes globale Maximum auch ein lokales Maximum, aber die Um
 gilt im allgemeinen nicht.  Der nächste Satz liefert ein notwendiges Kriterium für das
 Auftreten eines lokalen Maximums.
 
-\begin{Satz}[Pierre de Fermat, 160?--1665]
+\begin{Satz}[\href{http://en.wikipedia.org/wiki/Fermat}{Pierre de Fermat}, 160?--1665]
 Hat die Funktion $f: D \rightarrow \mathbb{R}$ im Punkt $\bar{x}$ ein lokales
 Maximum, ist $U_\varepsilon(\bar{x}) \subseteq D$ und ist die Funktion $f$ zusätzlich im Punkt $\bar{x}$ differenzierbar, so gilt 
 \\[0.3cm]
@@ -1701,51 +1775,52 @@ $\df f(\bar{x}) = 0$.
 \end{Satz}
 
 \proof
-Wir betrachten zunächst die Folge $\folge{\bar{x} + \frac{1}{n+1}}$.
+Wir betrachten zunächst die Folge $\folge{\bar{x} + \frac{1}{n}}$.
 O.B.d.A. sei $\varepsilon$ so klein gewählt, dass 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\forall x \in \mathbb{R} : |x - \bar{x}| < \varepsilon \rightarrow f(x) \leq f(\bar{x})$
 \\[0.2cm]
-gilt.  Wenn $n>\frac{1}{\varepsilon}$ liegt daher  $\bar{x} + \frac{1}{n+1}$ in der
+gilt.  Wenn $n>\frac{1}{\varepsilon}$ ist, liegt  $\bar{x} + \frac{1}{n}$ in der
 $\varepsilon$-Umgebung von $\bar{x}$.  Daher gilt für alle $n > \frac{1}{\varepsilon}$
 \\[0.3cm]
-\hspace*{1.3cm} $f\bigl(\bar{x} + \frac{1}{n+1}\bigr) \leq f(\bar{x})$. 
+\hspace*{1.3cm}
+ $f\bigl(\bar{x} + \frac{1}{n}\bigr) \leq f(\bar{x})$. 
 \\[0.3cm]
 Damit gilt für den Differenzial-Quotienten
 \\[0.3cm]
 \hspace*{1.3cm}
-$\bruch{f\Bigl(\bar{x} + \frac{1}{n+1}\Bigr) - f(\bar{x})}{\bar{x} + \frac{1}{n+1} - \bar{x}} \;=\;
- (n+1) \cdot \left(f\Bigl(\bar{x} + \frac{1}{n+1}\Bigr) - f(\bar{x})\right) \leq 0$. 
+$\bruch{f\Bigl(\bar{x} + \frac{1}{n}\Bigr) - f(\bar{x})}{\bar{x} + \frac{1}{n} - \bar{x}} \;=\;
+ n \cdot \left(f\Bigl(\bar{x} + \frac{1}{n}\Bigr) - f(\bar{x})\right) \leq 0$. 
 \\[0.3cm]
 Da wir vorausgesetzt haben, dass die Funktion $f$ im Punkt $\bar{x}$ differenzierbar ist,
 gilt 
 \\[0.3cm]
 \hspace*{1.3cm}
-$\df f(\bar{x}) = \lim\limits_{n \rightarrow \infty} \bruch{f\Bigl(\bar{x} + \frac{1}{n+1}\Bigr) - f(\bar{x})}{\bar{x} + \frac{1}{n+1} - \bar{x}} \leq 0$.
+$\df f(\bar{x}) = \lim\limits_{n \rightarrow \infty} \bruch{f\Bigl(\bar{x} + \frac{1}{n}\Bigr) - f(\bar{x})}{\bar{x} + \frac{1}{n} - \bar{x}} \leq 0$.
 \\[0.3cm]
-Wir betrachten nun die Folge $\folge{\bar{x} - \frac{1}{n+1}}$.
+Wir betrachten nun die Folge $\folge{\bar{x} - \frac{1}{n}}$.
 Wieder sei $\varepsilon$ so gewählt, dass 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\forall x \in \mathbb{R} : |x - \bar{x}| < \varepsilon \rightarrow f(x) \leq f(\bar{x})$
 \\[0.2cm]
-gilt.  Wenn $n>\frac{1}{\varepsilon}$ liegt daher  $\bar{x} - \frac{1}{n+1}$ in der
+gilt.  Wenn $n>\frac{1}{\varepsilon}$ liegt daher  $\bar{x} - \frac{1}{n}$ in der
 $\varepsilon$-Umgebung von $\bar{x}$.  Daher gilt für alle $n > \frac{1}{\varepsilon}$
 \\[0.3cm]
-\hspace*{1.3cm} $f\bigl(\bar{x} - \frac{1}{n+1}\bigr) \leq f(\bar{x})$. 
+\hspace*{1.3cm} $f\bigl(\bar{x} - \frac{1}{n}\bigr) \leq f(\bar{x})$. 
 \\[0.3cm]
 Damit gilt für den Differenzial-Quotienten
 \\[0.3cm]
 \hspace*{1.3cm}
-$\bruch{f\Bigl(\bar{x} + \frac{1}{n+1}\Bigr) - f(\bar{x})}{\bar{x} - \frac{1}{n+1} - \bar{x}} \;=\;
- - (n+1) \cdot \left(f\Bigl(\bar{x} - \frac{1}{n+1}\Bigr) - f(\bar{x})\right) \geq 0$. 
+$\bruch{f\Bigl(\bar{x} + \frac{1}{n}\Bigr) - f(\bar{x})}{\bar{x} - \frac{1}{n} - \bar{x}} \;=\;
+ - n \cdot \left(f\Bigl(\bar{x} - \frac{1}{n}\Bigr) - f(\bar{x})\right) \geq 0$. 
 \\[0.3cm]
 Da wir vorausgesetzt haben, dass die Funktion $f$ im Punkt $\bar{x}$ differenzierbar ist,
 gilt 
 \\[0.3cm]
 \hspace*{1.3cm}
-$\df f(\bar{x}) = \lim\limits_{n \rightarrow \infty} \bruch{f\Bigl(\bar{x} - \frac{1}{n+1}\Bigr) - f(\bar{x})}{\bar{x} - \frac{1}{n+1} - \bar{x}} \geq 0$.
+$\df f(\bar{x}) = \lim\limits_{n \rightarrow \infty} \bruch{f\Bigl(\bar{x} - \frac{1}{n}\Bigr) - f(\bar{x})}{\bar{x} - \frac{1}{n} - \bar{x}} \geq 0$.
 \\[0.3cm]
 Wir haben jetzt also die beiden Ungleichungen 
 \\[0.3cm]
@@ -1770,8 +1845,8 @@ definiert werden.  Auch in einem lokalen Minimum hat die Ableitung den Wert 0.
 \end{Satz}
 
 
-\begin{Satz}[Michel Rolle, 1652 -- 1719]
-  Ist die Funktion $f:[a,b]\rightarrow \mathbb{R}$ differenzierbar und gilt $f(a) = f(b)$, dann gibt es ein
+\begin{Satz}[\href{http://en.wikipedia.org/wiki/Michel_Rolle}{Michel Rolle}, 1652 -- 1719]
+  Ist die Funktion \mbox{$f:[a,b]\rightarrow \mathbb{R}$} differenzierbar und gilt außer\-dem $f(a) = f(b)$, dann gibt es ein
   $\bar{x} \in (a,b)$, so dass gilt 
   \\[0.3cm]
   \hspace*{1.3cm}
@@ -1817,7 +1892,7 @@ Fälle:
 Aus dem Satz von Rolle folgern wir später zwei wichtige Mittelwert-Sätze und den Satz von 
 \textsl{L'H\^opital} (Guillaume Fran\c{c}ois Antoine, Marquis de L'H\^opital, 1661--1704).
 
-\begin{Satz}[Mittelwert-Satz der Differenzial-Rechnung, Augustin Louis Cauchy, 1789--1857]
+\begin{Satz}[Mittelwert-Satz der Differenzial-Rechnung, \href{http://de.wikipedia.org/wiki/Augustin-Louis_Cauchy}{Augustin-Louis Cauchy}, 1789--1857]
   Ist die Funktion $f:[a,b] \rightarrow \mathbb{R}$ für alle $x\in[a,b]$ differenzierbar, 
   so gilt: 
   \\[0.3cm]
@@ -1834,9 +1909,9 @@ Die Funktion $g$ ist offenbar differenzierbar und es gilt
 \\[0.3cm]
 \hspace*{1.3cm}
 $g(a) = f(a) - f(a) - \bruch{f(b) - f(a)}{b-a}\cdot (a-a) =0$.
-\\[0.3cm]
+\\[0.0cm]
 und
-\\[0.3cm]
+\\[0.0cm]
 \hspace*{1.3cm} $g(b) = f(b) - f(a) - \bruch{f(b) - f(a)}{b-a}\cdot (b-a) = f(b) - f(a) - \bigl(f(b) - f(a)\bigr) = 0$.
 \\[0.3cm]
 Damit erfüllt die Funktion $g$ die Voraussetzung des Satzes von Rolle.  Also gibt es ein
@@ -1867,6 +1942,7 @@ die Sekante, die durch die Punkte $\pair(a,f(a))$ und $\pair(b,f(b))$  geht.
         \label{fig:mean-value-theorem}
       \end{figure}
 
+\pagebreak
 
 \begin{Satz}[Erweiterter Mittelwert-Satz]
   Sind die Funktion $f,g:[a,b] \rightarrow \mathbb{R}$ für alle $x\in[a,b]$
@@ -1875,12 +1951,13 @@ die Sekante, die durch die Punkte $\pair(a,f(a))$ und $\pair(b,f(b))$  geht.
   \\[0.3cm]
   \hspace*{1.3cm}
   $\exists c \in (a,b): \bruch{f'(c)}{g'(c)} = \bruch{f(b) - f(a)}{g(b) - g(a)}$.
+  \eox
 \end{Satz}
 
 \noindent
 \textbf{Bemerkung}: Auf den ersten Blick mag es verwundern, dass nicht explizit 
 $g(a) \not = g(b)$ gefordert wird.  Dies folgt aber sofort aus der Bedingung
-$\forall x \in [a,b]:\df g(x) \not= 0$ und dem Satz von Rolle.
+$\forall x \in [a,b]:\df g(x) \not= 0$ und dem Satz von Rolle. \eox
 \vspace*{0.3cm}
 
 \exercise
@@ -1889,7 +1966,7 @@ Beweisen Sie den erweiterten Mittelwert-Satz.  Betrachten Sie dazu die Funktion
 \hspace*{1.3cm}
 $h(x) := \alpha \cdot f(x) + \beta \cdot g(x)$
 \\[0.2cm]
-und wählen Sie $\alpha$ und $\beta$ geeignet.
+und wählen Sie $\alpha$ und $\beta$ geeignet. \eox
 
 \begin{Satz}[Guillaume Fran\c{c}ois Antoine, Marquis de L'H\^opital, 1661 --1704] \lb 
   Die Funktionen $f,g: (a,b) \rightarrow \mathbb{R}$ seien
@@ -1930,13 +2007,16 @@ $
 \hspace*{\fill} $\Box$
 \vspace*{0.3cm}
 
-\noindent
-\textbf{Beispiel}: Mit dem Satz von L'H\^opital können wir nun den Grenzwert
-$\lim\limits_{x \rightarrow 0} \frac{\sin(x)}{x}$ noch einmal berechnen: 
+\example
+Mit dem Satz von L'H\^opital können wir nun den Grenzwert
+$\ds\lim\limits_{x \rightarrow 0} \frac{\sin(x)}{x}$ noch einmal berechnen: 
 \\[0.3cm]
-\hspace*{1.3cm} $\lim\limits_{x \rightarrow 0} \frac{\sin(x)}{x} = \lim\limits_{x \rightarrow 0}
+\hspace*{1.3cm} $\ds\lim\limits_{x \rightarrow 0} \frac{\sin(x)}{x} = \lim\limits_{x \rightarrow 0}
 \frac{\cos(x)}{1} = \cos(0) = 1$.
-\\[0.3cm]
+\eox
+\vspace*{0.3cm}
+
+\noindent
 Der Satz von L'H\^opital behält seine Gültigkeit, wenn $x$ gegen Unendlich strebt.  Sind 
 $f,g:\mathbb{R} \rightarrow \mathbb{R}$ differenzierbare Funktionen, so dass der Grenzwert
 \\[0.3cm]
@@ -1952,17 +2032,17 @@ $\Bigl(\lim\limits_{x \rightarrow \infty} f(x) = 0 \;\wedge\; \lim\limits_{x \ri
 so folgt
 \\
 \hspace*{1.3cm}
-$\lim\limits_{x \rightarrow \infty} \frac{f(x)}{g(x)} = \lim\limits_{x \rightarrow \infty} \frac{f'(x)}{g'(x)}$.
+$\ds\lim\limits_{x \rightarrow \infty} \frac{f(x)}{g(x)} = \lim\limits_{x \rightarrow \infty} \frac{f'(x)}{g'(x)}$.
 \\[0.3cm]
 Wir geben ein Beispiel.  Es gilt 
 \\[0.3cm]
 \hspace*{1.3cm}
-$\lim\limits_{x \rightarrow \infty} \frac{x}{\exp(x)} = \lim\limits_{x \rightarrow \infty} \frac{1}{\exp(x)} = 0$.
+$\ds\lim\limits_{x \rightarrow \infty} \frac{x}{\exp(x)} = \lim\limits_{x \rightarrow \infty} \frac{1}{\exp(x)} = 0$.
 \\[0.3cm]
 Der Satz von L'H\^opital läßt sich iteriert anwenden.  Beispielsweise gilt
 \\[0.3cm]
 \hspace*{1.3cm}
-$\lim\limits_{x \rightarrow \infty} \frac{x^2}{\exp(x)} = \lim\limits_{x \rightarrow \infty} \frac{2\cdot x}{\exp(x)} =\lim\limits_{x \rightarrow \infty} \frac{2}{\exp(x)} = 0$.
+$\ds\lim\limits_{x \rightarrow \infty} \frac{x^2}{\exp(x)} = \lim\limits_{x \rightarrow \infty} \frac{2\cdot x}{\exp(x)} =\lim\limits_{x \rightarrow \infty} \frac{2}{\exp(x)} = 0$.
 \vspace*{0.3cm}
 
 \exercise
@@ -1971,6 +2051,14 @@ Zeigen Sie, dass für alle natürlichen Zahlen $n$ gilt:
 \hspace*{1.3cm} $\lim\limits_{x \rightarrow \infty} \bruch{x^n}{\exp(x)} = 0$.
 \\[0.3cm]
 Damit sehen wir, dass die Exponential-Funktion schneller wächst als jede Potenz.
+\eox
+\pagebreak
+
+\exercise
+Berechnen Sie den Grenzwert
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\lim\limits_{x \rightarrow 0} x \cdot \ln(x)$.  \eox
 
 
 \section{Monotonie und Konvexität}

@@ -13,8 +13,11 @@ regulaFalsi := procedure(f, a, b, n) {
         } else {
             b := c; fb := fc; 
         }
-        print("a = $a$, b = $b$");
-        // print("a = $nDecimalPlaces(a, 42)$, b = $nDecimalPlaces(b, 42)$");
+        if (isRational(a) && isRational(b)) {
+            print("a = $nDecimalPlaces(a, 42)$, b = $nDecimalPlaces(b, 42)$");
+        } else {
+            print("a = $a$, b = $b$");
+        }
     }
     if (-fa < fb) {
         return a;
@@ -38,7 +41,11 @@ cosXEqualsX := procedure(x) {
 
 x := regulaFalsi(cosXEqualsX, 0.0, 1.0, 14);
 
-print("x = $x$");
+print("x = $x$\n\n\n");
+
+f4 := x |-> x ** 4 - 1;
+
+x := regulaFalsi(f4, 0.0, 10.0, 100);
 
 
 

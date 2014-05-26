@@ -3,8 +3,11 @@ secant := procedure(f, a, b, digits) {
     fb := f(b); 
     while (abs(b - a) > (1/10)**(digits + 1)) {
         c := (fb * a - fa * b) / (fb - fa);
-        // print(c);
-        print("c = $nDecimalPlaces(c, 42)$");
+        if (isRational(a) && isRational(b)) {
+            print("c = $nDecimalPlaces(c, 42)$");
+        } else {
+            print("c = $c$");
+        }
         a := b; b := c; fa := fb; fb := f(c); 
     }
     return b;
@@ -20,11 +23,11 @@ print("x = $nDecimalPlaces(x, 42)$");
 print("\n\n\n");
 
 
-// strange := procedure(x) {
-//     return 2 / (x * x + 1) - 1;
-// };
-// 
-// x := secant(strange, 0, 5.0, 10);
-// 
-// print("x = $x$");
+strange := procedure(x) {
+    return 2 / (x * x + 1) - 1;
+};
+
+x := secant(strange, 0, 5.0, 10);
+
+print("x = $x$");
 
