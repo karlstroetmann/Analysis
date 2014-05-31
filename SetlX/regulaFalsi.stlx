@@ -16,7 +16,7 @@ regulaFalsi := procedure(f, a, b, n) {
         if (isRational(a) && isRational(b)) {
             print("a = $nDecimalPlaces(a, 42)$, b = $nDecimalPlaces(b, 42)$");
         } else {
-            print("a = $a$, b = $b$");
+          print("a = $a$, b = $b$");
         }
     }
     if (-fa < fb) {

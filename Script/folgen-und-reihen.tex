@@ -1640,7 +1640,7 @@ dass die Folge der Partial-Summen eine Cauchy-Folge ist.
 \hspace*{\fill} $\Box$
 
 \begin{Korollar} \lb
-Wenn die Reihe $\Reihe{a_n}$ konvergent ist, dann ist die Folge $\folge{a_n}$ eine Null-Folge.  
+Wenn die Reihe $\Reihe{a_i}$ konvergent ist, dann ist die Folge $\folge{a_n}$ eine Null-Folge.  
 \end{Korollar}
 
 \noindent
@@ -1786,16 +1786,16 @@ nicht konvergiert.
 
 \noindent
 \textbf{Lösung}:  Wir benutzen das Minoranten-Kriterium und zeigen, dass die
-Reihe $\Reihe{\bruch{1}{n}}$ eine divergente Minorante der Reihe
-  $\Reihe{\bruch{1}{\sqrt{n}}}$ ist:
+Reihe $\Reihe{\bruch{1}{i}}$ eine divergente Minorante der Reihe
+  $\Reihe{\bruch{1}{\sqrt{i}}}$ ist:
 \\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}{llcll}
-                 & \bruch{1}{n}   & \leq & \bruch{1}{\sqrt{n}}  & \mid \; \bruch{1}{\cdot}\\[0.3cm]
-\Leftrightarrow  & n              & \geq & \sqrt{n}             & \mid \;\cdot^2  \\[0.3cm]
-\Leftrightarrow  & n^2            & \geq & n                    & \mid \; \cdot \bruch{1}{n}  \\[0.3cm]
-\Leftrightarrow  & n              & \geq & 1                    & \mid \; 
+                 & \bruch{1}{i}   & \leq & \bruch{1}{\sqrt{i}}  & \mid \; \bruch{1}{\cdot}\\[0.3cm]
+\Leftrightarrow  & i              & \geq & \sqrt{i}             & \mid \;\cdot^2  \\[0.3cm]
+\Leftrightarrow  & i^2            & \geq & i                    & \mid \; \cdot \bruch{1}{i}  \\[0.3cm]
+\Leftrightarrow  & i              & \geq & 1                    & \mid \; 
 \end{array}
 $
 \\[0.2cm]
@@ -1815,7 +1815,7 @@ Dann konvergiert die Reihe $\Reihe{a_i}$.
 
 \noindent 
 \textbf{Beweis}:  Wir zeigen, dass die geometrische Reihe $\Reihe{a_0\cdot q^i}$ eine konvergente Majorante der
-Reihe $\Reihe{a_n}$ ist.  Dazu zeigen wir durch Induktion über $n$ dass folgendes gilt:
+Reihe $\Reihe{a_i}$ ist.  Dazu zeigen wir durch Induktion über $n$ dass folgendes gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
 $\forall n \in \mathbb{N}: a_{n} \leq a_1 \cdot q^{n-1}$
@@ -1871,7 +1871,7 @@ Es sei $\folge{a_n}$ eine Folge und $q\in\mathbb{R}$ eine Zahl, so dass
 \item $\forall n \in \mathbb{N}: 0 \leq a_n$
 \item $\forall n \in \mathbb{N}: n > 0 \rightarrow \sqrt[n]{a_n} \leq q$
 \end{enumerate}
-gilt.  Dann konvergiert die Reihe $\Reihe{a_n}$.
+gilt.  Dann konvergiert die Reihe $\Reihe{a_i}$.
 \end{Satz}
 
 \noindent 
@@ -1892,7 +1892,7 @@ Ist $\folge{a_n}$ eine Folge, $q\in\mathbb{R}$ und $K \in \mathbb{R}$, so dass
 \hspace*{1.3cm}
 $ 0 \leq q < 1 \quad \wedge \quad \forall n \in \mathbb{N}: n \geq K \rightarrow \sqrt[n]{|a_n|} \leq q  $
 \\[0.2cm]
-gilt.  Dann konvergiert die Reihe $\Reihe{a_n}$.
+gilt.  Dann konvergiert die Reihe $\Reihe{a_i}$.
 
 
 \noindent
