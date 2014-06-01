@@ -1220,6 +1220,13 @@ gegebenenfalls $\beta_{n+1}$ auf $\beta_n/2$.
 \pagebreak
 
 \section{Differenzierbare Funktionen}
+Wir haben nun alles Material zusammen, um den Begriff der \emph{Ableitung} definieren zu können, welcher
+der wichtigste Begriff der Analysis ist.  Dieser Begriff wurde unabhängig von 
+\href{http://de.wikipedia.org/wiki/Isaac_Newton}{Isaac Newton} und
+\href{http://de.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz}{Gottfried Wilhelm Leibniz} gefunden,
+die folgende formale Definition der Ableitung geht auf 
+\href{http://de.wikipedia.org/wiki/Augustin-Louis_Cauchy}{Augustin-Louis Cauchy} zurück.
+
 \begin{Definition}[Ableitung]
 Eine Funktion $f: D \rightarrow \mathbb{R}$ ist im Punkt $\widehat{x} \in D$ \emph{differenzierbar},
 wenn der Grenzwert
@@ -1239,30 +1246,30 @@ wir für die Ableitung auch die Schreibweise
 $f'(\widehat{x})$ verwenden.
 \eod
 \end{Definition}
-\pagebreak
+
 
 \remark
 Beachten Sie, dass wir in der obigen Definition den Ausdruck
 \\[0.3cm]
 \hspace*{1.3cm} $\bruch{f(\widehat{x} + h) - f(\widehat{x})}{h}$ \\[0.3cm]
-als Funktion von $h$ auffassen.  Dieser Ausdruck wird auch als \emph{Differenzial-Quotient}
-bezeichnet.  Er gibt die Steigung einer Sekante an, die die Funktion$x \mapsto f(x)$
+als Funktion von $h$ auffassen.  Dieser Ausdruck wird auch als \emph{Differential-Quotient}
+bezeichnet.  Er gibt die Steigung einer Sekante an, die die Funktion $x \mapsto f(x)$
 in den Punkten $\widehat{x}$ und $\widehat{x} + h$ schneidet.  Definieren wir 
 \\[0.3cm]
 \hspace*{1.3cm}
-$r(h) := f(\widehat{x} + h) - f(\widehat{x}) - h \cdot \df f(\widehat{x})$,
+$r(h) := f(\widehat{x} + h) - f(\widehat{x}) - h \cdot \df{f}(\widehat{x})$,
 \\[0.3cm]
 so gilt einerseits 
 \\[0.3cm]
 \hspace*{1.3cm}
 $\lim\limits_{h \rightarrow 0} \bruch{r(h)}{h} = 
  \lim\limits_{h \rightarrow 0} \bruch{f(\widehat{x} + h) -
-  f(\widehat{x})}{h} - \df f(\widehat{x}) = \df f(\widehat{x}) - \df f(\widehat{x}) = 0$,
+  f(\widehat{x})}{h} - \df{f}(\widehat{x}) = \df{f}(\widehat{x}) - \df{f}(\widehat{x}) = 0$,
 \\[0.3cm]
 und andererseits haben wir 
 \\[0.3cm]
 \hspace*{1.3cm}
-$f(\widehat{x} + h) = f(\widehat{x}) + h \cdot \df f(\widehat{x}) + r(h)$.
+$f(\widehat{x} + h) = f(\widehat{x}) + h \cdot \df{f}(\widehat{x}) + r(h)$.
 \\[0.3cm]
 Die Funktion $r(h)$ ist also der Fehler, der bei der linearen Approximation
 entsteht.  \eox
@@ -1418,7 +1425,7 @@ $r_2(h)$ gibt, so dass gilt:
 \item $f(\widehat{x}+h) = f(\widehat{x}) + h\cdot f'(\widehat{x}) + r_1(h)$ \quad mit $\lim\limits_{h \rightarrow 0} \bruch{r_1(h)}{h} = 0$,
 \item $g(\widehat{y}+h) = g(\widehat{y}) + h\cdot g'(\widehat{y}) + r_2(h)$ \quad mit $\lim\limits_{h \rightarrow 0} \bruch{r_2(h)}{h} = 0$.
 \end{enumerate}
-Damit finden wir für den Differenzial-Quotienten der Funktion $g \circ f$ im Punkt
+Damit finden wir für den Differential-Quotienten der Funktion $g \circ f$ im Punkt
 $\widehat{x}$: \\[0.3cm]
 \hspace*{1.3cm}
 $
@@ -1478,7 +1485,7 @@ Analog finden wir für die Funktion $f$
 \hspace*{1.3cm}
 $f(\widehat{x} + h) \approx f(\widehat{x}) + f'(\widehat{x})\cdot h$.
 \\[0.2cm]
-Damit finden wir für den Differenzial-Quotienten der Funktion $g \circ f$ im Punkt
+Damit finden wir für den Differential-Quotienten der Funktion $g \circ f$ im Punkt
 $\widehat{x}$: \\[0.3cm]
 \hspace*{1.3cm}
 $
@@ -1492,7 +1499,7 @@ $
 \end{array}
 $
 \\[0.3cm]
-Die linke Seite der Gleichung stellt den Differenzial-Quotienten der Funktion $g\circ f$
+Die linke Seite der Gleichung stellt den Differential-Quotienten der Funktion $g\circ f$
 dar und muß daher für $h \rightarrow 0$ gegen die Ableitung $(g \circ f)(\widehat{x})$
 konvergieren. \hspace*{\fill} $\Box$
 \pagebreak
@@ -1644,8 +1651,8 @@ Wir berechnen als nächstes die Ableitung einiger wichtiger Funktionen.
       \hspace*{1.3cm}
       $
       \begin{array}[t]{lcll}
-      \df\cos(x) & = & \df\sin\bigl(\frac{\pi}{2}- x\bigr) \\[0.3cm]
-                 & = & \cos(\frac{\pi}{2}- x\bigr) \cdot \df(\frac{\pi}{2}- x\bigr) & \mbox{nach der Ketten-Regel} \\[0.3cm]
+      \dfo\cos(x) & = & \dfo\sin\Bigl(\frac{\pi}{2}- x\Bigr) \\[0.3cm]
+                 & = & \cos\Bigl(\frac{\pi}{2}- x\Bigr) \cdot \dfo\Bigl(\frac{\pi}{2}- x\Bigr) & \mbox{nach der Ketten-Regel} \\[0.3cm]
                  & = & \sin(x) \cdot (-1) \\[0.3cm]
                  & = & -\,\sin(x). \\[0.3cm]
       \end{array}$
@@ -1769,7 +1776,7 @@ Hat die Funktion $f: D \rightarrow \mathbb{R}$ im Punkt $\bar{x}$ ein lokales
 Maximum, ist $U_\varepsilon(\bar{x}) \subseteq D$ und ist die Funktion $f$ zusätzlich im Punkt $\bar{x}$ differenzierbar, so gilt 
 \\[0.3cm]
 \hspace*{1.3cm}
-$\df f(\bar{x}) = 0$.
+$\df{f}(\bar{x}) = 0$.
 \end{Satz}
 
 \proof
@@ -1785,7 +1792,7 @@ $\varepsilon$-Umgebung von $\bar{x}$.  Daher gilt für alle $n > \frac{1}{\vareps
 \hspace*{1.3cm}
  $f\bigl(\bar{x} + \frac{1}{n}\bigr) \leq f(\bar{x})$. 
 \\[0.3cm]
-Damit gilt für den Differenzial-Quotienten
+Damit gilt für den Differential-Quotienten
 \\[0.3cm]
 \hspace*{1.3cm}
 $\bruch{f\Bigl(\bar{x} + \frac{1}{n}\Bigr) - f(\bar{x})}{\bar{x} + \frac{1}{n} - \bar{x}} \;=\;
@@ -1795,7 +1802,7 @@ Da wir vorausgesetzt haben, dass die Funktion $f$ im Punkt $\bar{x}$ differenzie
 gilt 
 \\[0.3cm]
 \hspace*{1.3cm}
-$\df f(\bar{x}) = \lim\limits_{n \rightarrow \infty} \bruch{f\Bigl(\bar{x} + \frac{1}{n}\Bigr) - f(\bar{x})}{\bar{x} + \frac{1}{n} - \bar{x}} \leq 0$.
+$\df{f}(\bar{x}) = \lim\limits_{n \rightarrow \infty} \bruch{f\Bigl(\bar{x} + \frac{1}{n}\Bigr) - f(\bar{x})}{\bar{x} + \frac{1}{n} - \bar{x}} \leq 0$.
 \\[0.3cm]
 Wir betrachten nun die Folge $\folge{\bar{x} - \frac{1}{n}}$.
 Wieder sei $\varepsilon$ so gewählt, dass 
@@ -1808,7 +1815,7 @@ $\varepsilon$-Umgebung von $\bar{x}$.  Daher gilt für alle $n > \frac{1}{\vareps
 \\[0.3cm]
 \hspace*{1.3cm} $f\bigl(\bar{x} - \frac{1}{n}\bigr) \leq f(\bar{x})$. 
 \\[0.3cm]
-Damit gilt für den Differenzial-Quotienten
+Damit gilt für den Differential-Quotienten
 \\[0.3cm]
 \hspace*{1.3cm}
 $\bruch{f\Bigl(\bar{x} + \frac{1}{n}\Bigr) - f(\bar{x})}{\bar{x} - \frac{1}{n} - \bar{x}} \;=\;
@@ -1818,14 +1825,14 @@ Da wir vorausgesetzt haben, dass die Funktion $f$ im Punkt $\bar{x}$ differenzie
 gilt 
 \\[0.3cm]
 \hspace*{1.3cm}
-$\df f(\bar{x}) = \lim\limits_{n \rightarrow \infty} \bruch{f\Bigl(\bar{x} - \frac{1}{n}\Bigr) - f(\bar{x})}{\bar{x} - \frac{1}{n} - \bar{x}} \geq 0$.
+$\df{f}(\bar{x}) = \lim\limits_{n \rightarrow \infty} \bruch{f\Bigl(\bar{x} - \frac{1}{n}\Bigr) - f(\bar{x})}{\bar{x} - \frac{1}{n} - \bar{x}} \geq 0$.
 \\[0.3cm]
 Wir haben jetzt also die beiden Ungleichungen 
 \\[0.3cm]
 \hspace*{1.3cm}
-$\df f(\bar{x}) \leq 0$ \quad und \quad $\df f(\bar{x}) \geq 0$ 
+$\df{f}(\bar{x}) \leq 0$ \quad und \quad $\df{f}(\bar{x}) \geq 0$ 
 \\[0.3cm]
-gezeigt.  Daraus folgt sofort $\df f(\bar{x}) = 0$. \hspace*{\fill} $\Box$
+gezeigt.  Daraus folgt sofort $\df{f}(\bar{x}) = 0$. \hspace*{\fill} $\Box$
 \vspace*{0.3cm}
 
 \noindent
@@ -1848,7 +1855,7 @@ definiert werden.  Auch in einem lokalen Minimum hat die Ableitung den Wert 0.
   $\bar{x} \in (a,b)$, so dass gilt 
   \\[0.3cm]
   \hspace*{1.3cm}
-  $\df f(\bar{x}) = 0$.  
+  $\df{f}(\bar{x}) = 0$.  
 \end{Satz}
 
 \noindent
@@ -1858,7 +1865,7 @@ Fälle:
 \item Die Funktion $f$ ist konstant, für alle $x\in[a,b]$ gilt also $f(x) = f(a)$.
       Da die Ableitung einer konstanten Funktion den Wert $0$ hat, gilt dann offenbar sogar für alle $x\in[a,b]$ 
       \\[0.3cm]
-      \hspace*{1.3cm} $\df f(x) = 0$.
+      \hspace*{1.3cm} $\df{f}(x) = 0$.
 \item Da die Funktion $f$ differenzierbar ist, ist sie auch stetig und nimmt
       daher sowohl ein Minimum als auch ein Maximum in dem Intervall $[a,b]$ an.  
       Es gibt also  $x_{\textsl{\footnotesize min}}$ und  $x_{\textsl{\footnotesize max}}$
@@ -1884,18 +1891,18 @@ Fälle:
       Maximum (oder beides) und nach dem Satz von Fermat folgt 
       \\[0.3cm]
       \hspace*{1.3cm}
-      $\df f\bigl(x_{\textsl{\footnotesize min}}\bigr) = 0$ \quad  oder \quad $\df f\bigl(x_{\textsl{\footnotesize max}}\bigr) = 0$.
+      $\df{f}\bigl(x_{\textsl{\footnotesize min}}\bigr) = 0$ \quad  oder \quad $\df{f}\bigl(x_{\textsl{\footnotesize max}}\bigr) = 0$.
       \hspace*{\fill} $\Box$
 \end{enumerate}
 Aus dem Satz von Rolle folgern wir später zwei wichtige Mittelwert-Sätze und den Satz von 
 \textsl{L'H\^opital} (Guillaume Fran\c{c}ois Antoine, Marquis de L'H\^opital, 1661--1704).
 
-\begin{Satz}[Mittelwert-Satz der Differenzial-Rechnung, \href{http://de.wikipedia.org/wiki/Augustin-Louis_Cauchy}{Augustin-Louis Cauchy}, 1789--1857]
+\begin{Satz}[Mittelwert-Satz der Differential-Rechnung, \href{http://de.wikipedia.org/wiki/Augustin-Louis_Cauchy}{Augustin-Louis Cauchy}, 1789--1857]
   Ist die Funktion $f:[a,b] \rightarrow \mathbb{R}$ für alle $x\in[a,b]$ differenzierbar, 
   so gilt: 
   \\[0.3cm]
   \hspace*{1.3cm}
-  $\exists c \in (a,b): \df f(c) = \bruch{f(b) - f(a)}{b - a}$.
+  $\exists c \in (a,b): \df{f}(c) = \bruch{f(b) - f(a)}{b - a}$.
 \end{Satz}
 
 \noindent
@@ -1903,7 +1910,7 @@ Aus dem Satz von Rolle folgern wir später zwei wichtige Mittelwert-Sätze und den
 \\[0.3cm]
 \hspace*{1.3cm} $g(x) := f(x) - f(a) - \bruch{f(b) - f(a)}{b-a}\cdot (x-a)$.
 \\[0.3cm]
-Die Funktion $g$ ist offenbar differenzierbar und es gilt 
+Da die Funktion $f$ nach Voraussetzung differenzierbar ist, ist auch die Funktion $g$ differenzierbar und es gilt 
 \\[0.3cm]
 \hspace*{1.3cm}
 $g(a) = f(a) - f(a) - \bruch{f(b) - f(a)}{b-a}\cdot (a-a) =0$.
@@ -1912,19 +1919,19 @@ und
 \\[0.0cm]
 \hspace*{1.3cm} $g(b) = f(b) - f(a) - \bruch{f(b) - f(a)}{b-a}\cdot (b-a) = f(b) - f(a) - \bigl(f(b) - f(a)\bigr) = 0$.
 \\[0.3cm]
-Damit erfüllt die Funktion $g$ die Voraussetzung des Satzes von Rolle.  Also gibt es ein
+Damit gilt $g(a) = g(b)$ und folglich erfüllt die Funktion $g$ die Voraussetzung des Satzes von Rolle.  Also gibt es ein
 $c \in (a,b)$, so dass 
 \\[0.3cm]
 \hspace*{1.3cm}
-$\df g(c) = 0$
+$\df{g}(c) = 0$
 \\[0.3cm]
 gilt.  Setzen wir hier die Definition von $g$ ein, so haben wir 
 \\[0.3cm]
 \hspace*{1.3cm}
 $
 \begin{array}[b]{ll}
-                & \df g(c) = \df f(c) - \bruch{f(b) - f(a)}{b-a} = 0 \\[0.3cm]
-\Rightarrow & \df f(c) = \bruch{f(b) - f(a)}{b-a}
+            & \df{g}(c) = \df{f}(c) - \bruch{f(b) - f(a)}{b-a} = 0 \\[0.3cm]
+\Rightarrow & \df{f}(c) = \bruch{f(b) - f(a)}{b-a}
 \end{array}
 $
 \hspace*{\fill} $\Box$
@@ -1944,7 +1951,7 @@ die Sekante, die durch die Punkte $\pair(a,f(a))$ und $\pair(b,f(b))$  geht.
 
 \begin{Satz}[Erweiterter Mittelwert-Satz]
   Sind die Funktion $f,g:[a,b] \rightarrow \mathbb{R}$ für alle $x\in[a,b]$
-  differenzierbar und gilt $\df g(x) \not= 0$ für alle $x \in [a,b]$,
+  differenzierbar und gilt $\df{g}(x) \not= 0$ für alle $x \in [a,b]$,
   so gilt: 
   \\[0.3cm]
   \hspace*{1.3cm}
@@ -1955,16 +1962,56 @@ die Sekante, die durch die Punkte $\pair(a,f(a))$ und $\pair(b,f(b))$  geht.
 \noindent
 \textbf{Bemerkung}: Auf den ersten Blick mag es verwundern, dass nicht explizit 
 $g(a) \not = g(b)$ gefordert wird.  Dies folgt aber sofort aus der Bedingung
-$\forall x \in [a,b]:\df g(x) \not= 0$ und dem Satz von Rolle. \eox
+$\forall x \in [a,b]:\df{g}(x) \not= 0$ und dem Satz von Rolle. \eox
 \vspace*{0.3cm}
 
 \exercise
 Beweisen Sie den erweiterten Mittelwert-Satz.  Betrachten Sie dazu die Funktion
 \\[0.2cm]
 \hspace*{1.3cm}
-$h(x) := \alpha \cdot f(x) + \beta \cdot g(x)$
+$h(x) := \alpha \cdot f(x) - \beta \cdot g(x)$
 \\[0.2cm]
-und wählen Sie $\alpha$ und $\beta$ geeignet. \eox
+und bestimmen Sie $\alpha$ und $\beta$ so, dass Sie auf die Funktion $h$ den Satz von Rolle anwenden können. \eox
+
+% \solution
+% Nach dem Mittelwert-Satz der Differential-Rechnung gibt es ein $c \in [a,b]$, so dass
+% \\[0.2cm]
+% \hspace*{1.3cm}
+% $\ds \df{h}(c) = \frac{h(b) - h(a)}{b - a}$
+% \\[0.2cm]
+% gilt.  Wir berechnen die Werte von $h$, die in dieser Gleichung eine Rolle spielen, getrennt.
+% \begin{enumerate}
+% \item $h(a) = \bigl(g(b) - g(a) \bigr) \cdot f(a) - \bigl(f(b) - f(a)\bigr) \cdot g(a)$, 
+% \item $h(b) = \bigl(g(b) - g(a) \bigr) \cdot f(b) - \bigl(f(b) - f(a)\bigr) \cdot g(b)$,
+% \item $\df{h}(x) = \bigl(g(b) - g(a) \bigr) \cdot \df{f}(x) - \bigl(f(b) - f(a)\bigr) \cdot \df{g}(x)$.
+% \end{enumerate}
+% Damit finden wir
+% \\[0.2cm]
+% \hspace*{0.3cm}
+% $
+% \begin{array}[t]{lcrl}
+% h(b) - h(a) & = &   & \bigl(g(b) - g(a) \bigr) \cdot f(b) - \bigl(f(b) - f(a)\bigr) \cdot g(b) \\[0.1cm]
+%             &   & - & \bigl(g(b) - g(a) \bigr) \cdot f(a) + \bigl(f(b) - f(a)\bigr) \cdot g(a) \\[0.2cm]
+%             & = &   & \bigl(g(b) - g(a) \bigr) \cdot \bigl(f(b) - f(a)\bigr) - \bigl(f(b) - f(a)\bigr) \cdot \bigl(g(b) - g(a) \bigr) \\[0.2cm]
+%             & = &   & 0.
+% \end{array}
+% $
+% \\[0.2cm]
+% Nach dem Satz von Rolle finden wir also ein $c \in [a,b]$, so dass $\df{h}(c) = 0$ ist.  Setzen wir
+% $c$ in die Formel für $\df{h}(x)$ ein, so erhalten wir
+% \\[0.2cm]
+% \hspace*{1.3cm}
+% $0 = \bigl(g(b) - g(a) \bigr) \cdot \df{f}(c) - \bigl(f(b) - f(a)\bigr) \cdot \df{g}(c)$
+% \\[0.2cm]
+% Daraus folgt
+% \\[0.2cm]
+% \hspace*{1.3cm}
+% $\ds \frac{f'(c)}{g'(c)} = \frac{f(b) - f(a)}{g(b) - g( a)}$ 
+% \\[0.2cm]
+% und das ist die Behauptung.
+% \qed
+
+Der folgende Satz ist für die praktische Berechnung von Grenzwerten unentbehrlich.
 
 \begin{Satz}[Guillaume Fran\c{c}ois Antoine, Marquis de L'H\^opital, 1661 --1704] \lb 
   Die Funktionen $f,g: (a,b) \rightarrow \mathbb{R}$ seien
@@ -1993,17 +2040,18 @@ Wir haben die folgende Kette von Gleichungen:
 \\[0.3cm]
 \hspace*{1.3cm}
 $
-\begin{array}[b]{lcl}
+\begin{array}[b]{lclcl}
     \lim\limits_{h \rightarrow 0} \bruch{f(c+h)}{g(c+h)} &=&
-    \lim\limits_{h \rightarrow 0} \bruch{f(c) + h\cdot f'(c) + r_1(h)}{g(c) + h\cdot g'(c) + r_2(h)} \\[0.5cm]
+    \lim\limits_{h \rightarrow 0} \bruch{f(c) + h\cdot f'(c) + r_1(h)}{g(c) + h\cdot g'(c) + r_2(h)} 
 &=& \lim\limits_{h \rightarrow 0} \bruch{h\cdot f'(c) + r_1(h)}{h\cdot g'(c) + r_2(h)} \\[0.5cm]
-&=& \lim\limits_{h \rightarrow 0} \bruch{f'(c) + \frac{r_1(h)}{h}}{g'(c) + \frac{r_2(h)}{h}} \\[0.9cm]
+&=& \lim\limits_{h \rightarrow 0} \bruch{f'(c) + \frac{r_1(h)}{h}}{g'(c) + \frac{r_2(h)}{h}} 
 &=& \bruch{f'(c) + \lim\limits_{h \rightarrow 0} \frac{r_1(h)}{h}}{g'(c) + \lim\limits_{h \rightarrow 0} \frac{r_2(h)}{h}} \\[0.8cm]
 &=& \bruch{f'(c)}{g'(c)} \\[0.5cm]
 \end{array}
 $
 \hspace*{\fill} $\Box$
 \vspace*{0.3cm}
+\pagebreak
 
 \example
 Mit dem Satz von L'H\^opital können wir nun den Grenzwert
@@ -2043,20 +2091,44 @@ Der Satz von L'H\^opital läßt sich iteriert anwenden.  Beispielsweise gilt
 $\ds\lim\limits_{x \rightarrow \infty} \frac{x^2}{\exp(x)} = \lim\limits_{x \rightarrow \infty} \frac{2\cdot x}{\exp(x)} =\lim\limits_{x \rightarrow \infty} \frac{2}{\exp(x)} = 0$.
 \vspace*{0.3cm}
 
+\begin{Definition}[Schnelleres Wachstum]
+  Wir sagen, dass die Funktion $x \mapsto f(x)$ für $x \rightarrow \infty$ \emph{schneller als} die
+  Funktion $x \mapsto g(x)$ \emph{wächst}, falls 
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $\ds \lim\limits_{x \rightarrow \infty} \frac{g(x)}{f(x)} = 0$
+  \\[0.2cm]
+  gilt. \eox
+\end{Definition}
+
 \exercise
 Zeigen Sie, dass für alle natürlichen Zahlen $n$ gilt: 
 \\[0.3cm]
 \hspace*{1.3cm} $\lim\limits_{x \rightarrow \infty} \bruch{x^n}{\exp(x)} = 0$.
 \\[0.3cm]
-Damit sehen wir, dass die Exponential-Funktion schneller wächst als jede Potenz.
+Damit sehen wir, dass die Exponential-Funktion schneller wächst als jede Potenz.  
 \eox
-\pagebreak
+
+\exercise
+\begin{enumerate}
+\item Zeigen Sie, dass die Funktion $\ds x \mapsto e^{\ln(x) \cdot \ln(x)}$ für alle $n \in \mathbb{N}$ schneller
+      als die Funktion $x \mapsto x^n$ wächst.
+\item Zeigen Sie, dass die Funktion $\ds x \mapsto e^x$ schneller wächst als die Funktion
+      $\ds x \mapsto e^{\ln(x) \cdot \ln(x)}$. \eox
+\end{enumerate} 
 
 \exercise
 Berechnen Sie den Grenzwert
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds\lim\limits_{x \rightarrow 0} x \cdot \ln(x)$.  \eox
+\pagebreak
+
+\exercise
+Berechnen Sie den Grenzwert
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\lim\limits_{x \rightarrow \infty} \sqrt{x + \sqrt{x\;}\;} - \sqrt{x\;}$.  \eox
 
 
 \section{Monotonie und Konvexität}
@@ -2076,13 +2148,11 @@ $\ds\lim\limits_{x \rightarrow 0} x \cdot \ln(x)$.  \eox
   \hspace*{1.3cm}
   $\forall x,y \in D: x < y \rightarrow f(x) \geq f(y)$
   \\[0.2cm]
-  gilt.  Analog ist $f$ \emph{streng monoton fallend}, falls die Bedingung
+  gilt.  Analog ist $f$ \emph{streng monoton fallend}, falls die folgende Bedingung gilt:
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\forall x,y \in D: x < y \rightarrow f(x) > f(y)$
-  \\[0.2cm]
-  erfüllt ist.
-\eod
+  $\forall x,y \in D: x < y \rightarrow f(x) > f(y)$.
+  \eod
 \end{Definition}
 
 \begin{Satz}
@@ -2099,7 +2169,7 @@ dann $f'(x) \geq 0$ gilt.  Die Ableitung ist definiert als der Grenzwert
 \\[0.3cm]
 \hspace*{1.3cm} $f'(x) = \lim\limits_{h \rightarrow 0} \bruch{f(x+h) - f(x)}{h}$.
 \\[0.3cm]
-Wir zeigen, dass der Differenzial-Quotient 
+Wir zeigen, dass der Differential-Quotient 
 \\[0.3cm]
 \hspace*{1.3cm} $\bruch{f(x+h) - f(x)}{h}$
 \\[0.3cm]
@@ -2119,7 +2189,7 @@ eine Fallunterscheidung bezüglich des Vorzeichens von $h$ durch.
       \\[0.3cm]
       \hspace*{1.3cm} $\bruch{f(x+h) - f(x)}{h} \geq 0$.
 \end{enumerate}
-Da der Differenzial-Quotient in jedem Fall größer-gleich $0$ ist, muss $f'(x) \geq 0$
+Da der Differential-Quotient in jedem Fall größer-gleich $0$ ist, muss $f'(x) \geq 0$
 gelten.
 \vspace*{0.2cm}
 
@@ -2129,7 +2199,7 @@ Wir nehmen an, es gäbe $x,y\in D$ mit
 \\[0.2cm]
 \hspace*{1.3cm} $x < y$ \quad aber \quad $f(x) > f(y)$.
 \\[0.2cm]
-Nach dem Mittelwert-Satz der Differenzial-Rechnung gibt es dann ein $z\in[x,y]$, so dass
+Nach dem Mittelwert-Satz der Differential-Rechnung gibt es dann ein $z\in[x,y]$, so dass
 \\[0.3cm]
 \hspace*{1.3cm} $f'(z) = \bruch{f(y) - f(x)}{y - x}$
 \\[0.3cm]
@@ -2238,7 +2308,7 @@ $x_0$ haben. \qed
 \hspace*{1.3cm}
 $f'(x_0) = 0 \wedge f''(x_0) > 0$.
 \\[0.2cm]
-erfüllt ist, dann hat die Funktion an der Stelle $x_0$ ein strenges lokales Minimum.
+erfüllt ist, dann hat die Funktion an der Stelle $x_0$ ein strenges lokales Minimum. \eox
 
 \begin{Definition}[konvex, konkav]
 Eine Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ heißt \emph{konvex} genau dann, wenn 
@@ -2360,7 +2430,7 @@ $f$  konvex \quad $\Leftrightarrow$ \quad $\forall x \in \mathbb{R}: f''(x) \geq
   $x_0 := t \cdot x_1 + (1 - t) \cdot x_2$
   \\[0.2cm]
   Es läßt sich sofort nachrechnen, dass dann $x_1 < x_0 < x_2$ gilt.  Nach dem Mittelwert-Satz der
-  Differenzial-Rechnung gibt es jeweils ein $c_1 \in [x_1,x_0]$ und ein $c_2 \in [x_0,x_2]$, so dass
+  Differential-Rechnung gibt es jeweils ein $c_1 \in [x_1,x_0]$ und ein $c_2 \in [x_0,x_2]$, so dass
   \\[0.2cm]
   \hspace*{1.3cm}
   $f'(c_1) = \bruch{f(x_0) - f(x_1)}{x_0 - x_1}$  \quad und \quad
@@ -2469,7 +2539,7 @@ Funktionen $f:\mathbb{R} \rightarrow \mathbb{R}$ gilt, für deren $n$-te Ableitun
 \\[0.2cm]
 \hspace*{1.3cm}
 $f^{(n)}(x) = 0$ \quad für alle $x \in \mathbb{R}$ ist.
-\vspace*{0.3cm}
+\pagebreak
 
 \exercise
 Zeigen Sie, dass für alle $x\in \mathbb{R}$
@@ -2477,7 +2547,9 @@ Zeigen Sie, dass für alle $x\in \mathbb{R}$
 \hspace*{1.3cm}
 $\exp(x) \cdot \exp(-x) = 1$ 
 \\[0.2cm]
-gilt.  Folgern Sie daraus, dass die Exponential-Funktion keine Nulstelle hat.
+gilt.  Bei Ihrem Beweis sollen Sie die Gleichung $\exp(x+y) = \exp(x) \cdot \exp(y)$ nicht benutzen!
+Folgern Sie aus der von Ihnen gezeigten Gleichung, dass Die Exponential-Funktion keine Nulstelle hat. \eox
+\vspace*{0.3cm}
 
 \noindent
 Aus dem letzten Lemma folgt eine wichtige Charakterisierung der Exponential-Funktion.
@@ -2574,7 +2646,10 @@ $\exp(x+y) = \exp(y) \cdot \exp(x)$. \qed
 \vspace*{0.3cm}
 
 
-
+\remark
+Mit Hilfe der Funktional-Gleichung der Exponential-Funktion können wir nun für beliebige $\lambda \in \mathbb{R}_0$
+und $x \in \mathbb{R}$ den Ausdruck $\lambda^x$ definieren.  Wir betrachten zunächst den Spezialfall
+$\lambda = e$:
 Ist $n \in \mathbb{N}$ so können wir mit Hilfe der Funktional-Gleichung durch eine leichte Induktion
 nach $n$ zeigen, dass 
 \\[0.2cm]
@@ -2617,14 +2692,24 @@ Damit haben wir also nun für alle rationalen Zahlen $r \in \mathbb{Q}$ die Gleic
 \hspace*{1.3cm}
 $e^r = \exp(r)$
 \\[0.2cm]
-gezeigt.  Daher macht es Sinn, für beliebige reelle Zahlen $x \in \mathbb{R}$ den
+gezeigt.  Es stellt sich die Frage, wie wir am sinnvollsten den Wert von Ausdrücken wie
+\\[0.2cm]
+\hspace*{1.3cm}
+$e^{sqrt{2}}$
+\\[0.2cm]
+definieren können.  Es ist naheliegend, für beliebige reelle Zahlen $x \in \mathbb{R}$ den
 Wert $e^x$ als
 \\[0.2cm]
 \hspace*{1.3cm}
 $e^x := \exp(x)$
 \\[0.2cm]
-zu definieren.
-
+zu definieren.  Für beliebige $\lambda \in \mathbb{R}_+$ setzen wir dann
+\\[0.2cm]
+\hspace*{1.3cm}
+$\lambda^x := \mathtt{exp}\bigl(x \cdot \ln(\lambda) \bigr)$.
+\\[0.2cm]
+Mit Hilfe der Funktional-Gleichung der Exponential-Funktion können Sie nun leicht nachweisen, dass
+für die so definierte Potenz die aus der Schule bekannten Potenz-Gesetze gelten. \eox
 
 %%% Local Variables: 
 %%% mode: latex

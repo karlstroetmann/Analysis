@@ -349,7 +349,7 @@ Wir führen dies exemplarisch für den Eintrag $\ln(x)$ vor.  Es gilt
 \hspace*{1.3cm}
 $
 \begin{array}[t]{lcll}  
-\df \bigl( x\cdot \ln(x) - x\bigr) & = & \df \bigl( x\cdot \ln(x) \bigr) - \df x \\[0.3cm] 
+\dfo \bigl( x\cdot \ln(x) - x\bigr) & = & \dfo \bigl( x\cdot \ln(x) \bigr) - \dfo x \\[0.3cm] 
  & = & 1 \cdot  \ln(x) + x \cdot  \bruch{1}{x} - 1 & (\mbox{Produkt-Regel}) \\[0.2cm]
  & = & \ln(x) + 1 - 1  \\[0.2cm]
  & = & \ln(x) \\
@@ -396,17 +396,17 @@ Bemerkenswert ist vielleicht noch die Stamm-Funktion von $\bruch{1}{x}$.  Für $x
 sicher 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\df \ln(x) = \bruch{1}{x}$
+$\dfo \ln(x) = \bruch{1}{x}$
 \\[0.2cm]
 Außerdem gilt nach der Ketten-Regel für $x < 0$ 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\df \ln(-x) = -1 \cdot  \bruch{1}{-x} = \bruch{1}{x}$.
+$\dfo \ln(-x) = -1 \cdot  \bruch{1}{-x} = \bruch{1}{x}$.
 \\[0.2cm]
 Diese beiden Gleichungen können wir zu 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\df \ln\bigl(|x|\bigr) = \bruch{1}{x}$
+$\dfo \ln\bigl(|x|\bigr) = \bruch{1}{x}$
 \\[0.2cm]
 zusammen fassen und folglich haben wir
 \\[0.2cm]
@@ -425,8 +425,8 @@ Wir beginnen damit, dass wir die Ketten-Regel umstellen.
 \hspace*{1.3cm}
 $
 \begin{array}[t]{llcll}
-            & \df h(f(x)) & = & f'(x) \cdot  h'(f(x)) & \mbox{Ketten-Regel} \\[0.3cm]
-\Rightarrow & \bint\df h(f(x))\, dx & = & \bint f'(x) \cdot  h'(f(x))\, dx  \;+\; c & \mbox{Stamm-Funktion bilden} \\[0.3cm]
+            & \dfo h(f(x)) & = & f'(x) \cdot  h'(f(x)) & \mbox{Ketten-Regel} \\[0.3cm]
+\Rightarrow & \bint\dfo h(f(x))\, dx & = & \bint f'(x) \cdot  h'(f(x))\, dx  \;+\; c & \mbox{Stamm-Funktion bilden} \\[0.3cm]
 \Rightarrow & h(f(x))  & = & \bint f'(x) \cdot  h'(f(x))\, dx \;+\; c   & \mbox{Definition der Stamm-Funktion}. \\[0.3cm]
 \end{array}
 $
@@ -527,13 +527,13 @@ eine Regel zur Berechnung von Integralen gewinnen können.  Es gilt
 \\[0.2cm]
 $
 \begin{array}[t]{llcll}
-                & \df \Bigl(f(x)\cdot g(x)\Bigr)  & = & f'(x)\cdot  g(x) + f(x) \cdot  g'(x) &\mbox{(Umstellen)} \\[0.3cm]
-\Leftrightarrow & f'(x) \cdot  g(x) & = & \df \Bigl(f(x)\cdot g(x)\Bigr) - f(x) \cdot  g'(x) &\mbox{(Stamm-Funktion)} \\[0.3cm]
-\Leftrightarrow & \displaystyle \int f'(x)\cdot  g(x)\,dx & = & \bint\df \Bigl(f(x)\cdot g(x)\Bigr)\,dx - \int f(x) \cdot  g'(x)\,dx \\[0.3cm]
+                & \dfo \Bigl(f(x)\cdot g(x)\Bigr)  & = & f'(x)\cdot  g(x) + f(x) \cdot  g'(x) &\mbox{(Umstellen)} \\[0.3cm]
+\Leftrightarrow & f'(x) \cdot  g(x) & = & \dfo \Bigl(f(x)\cdot g(x)\Bigr) - f(x) \cdot  g'(x) &\mbox{(Stamm-Funktion)} \\[0.3cm]
+\Leftrightarrow & \displaystyle \int f'(x)\cdot  g(x)\,dx & = & \bint\dfo \Bigl(f(x)\cdot g(x)\Bigr)\,dx - \int f(x) \cdot  g'(x)\,dx \\[0.3cm]
 \end{array}
 $
 \\[0.2cm]
-Die Stamm-Funktion von $\df\Bigl( f(x)\cdot g(x) \Bigr)$ ist natürlich $f(x)\cdot g(x)$, also haben wir
+Die Stamm-Funktion von $\dfo\Bigl( f(x)\cdot g(x) \Bigr)$ ist natürlich $f(x)\cdot g(x)$, also haben wir
 \begin{equation}
   \label{eq:partInt0}
  \int f'(x)\cdot  g(x)\,dx =  \displaystyle f(x)\cdot g(x) - \int f(x) \cdot  g'(x)\,dx 
@@ -550,7 +550,7 @@ Funktion $\ln(x)$ mittels partieller Integration bestimmen läßt.
 $
 \begin{array}[t]{lcl}
  \bint\ln(x)\,dx & = &  \bint1\cdot \ln(x)\,dx \\[0.2cm]
-                 & = &  x\cdot \ln(x) - \bint x\cdot \df \ln(x)\,dx \\[0.3cm]
+                 & = &  x\cdot \ln(x) - \bint x\cdot \dfo \ln(x)\,dx \\[0.3cm]
                  & = &  x\cdot \ln(x) - \bint x\cdot \bruch{1}{x}\,dx \\[0.3cm]
                  & = &  x\cdot \ln(x) - \bint 1\,dx \\[0.2cm]
                  & = &  x\cdot \ln(x) - x \\[0.2cm]

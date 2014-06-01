@@ -68,13 +68,13 @@ $x$.
              \begin{array}[t]{lcl}
              f^{(k+1)}(x) & = & \df f^{(k)}(x) \\[0.3cm]
              & \stackrel{IV}{=} & 
-               \df \sum\limits_{n=k}^\infty \bruch{n!}{(n-k)!} \cdot a_n \cdot x^{n-k} 
+               \ds \dfo \sum\limits_{n=k}^\infty \bruch{n!}{(n-k)!} \cdot a_n \cdot x^{n-k} 
              \\[0.5cm]
-             & = & \sum\limits_{n=k+1}^\infty \bruch{n!}{(n-k)!} \cdot (n-k) \cdot a_n \cdot x^{n-k-1} 
+             & = & \ds\sum\limits_{n=k+1}^\infty \bruch{n!}{(n-k)!} \cdot (n-k) \cdot a_n \cdot x^{n-k-1} 
                    \\[0.5cm]
-             & = & \sum\limits_{n=k+1}^\infty \bruch{n!}{(n-k-1)!} \cdot a_n \cdot x^{n-(k+1)} 
+             & = & \ds\sum\limits_{n=k+1}^\infty \bruch{n!}{(n-k-1)!} \cdot a_n \cdot x^{n-(k+1)} 
                    \\[0.5cm]
-             & = & \sum\limits_{n=k+1}^\infty \bruch{n!}{\bigl(n-(k+1)\bigr)!} \cdot a_n \cdot x^{n-(k+1)} 
+             & = & \ds\sum\limits_{n=k+1}^\infty \bruch{n!}{\bigl(n-(k+1)\bigr)!} \cdot a_n \cdot x^{n-(k+1)} 
              \end{array}
              $
 \end{enumerate}
@@ -142,10 +142,10 @@ $[0,x]$ den erweiterten
 Mittelwert-Satz an.  Dann gibt es ein $\chi_1 \in [0,x]$, so dass 
 \begin{equation}
   \label{eq:taylorErr0}  
-\bruch{\df \err{\chi_1}}{ \df g_0(\chi_1)} = \bruch{\textsl{error}_n(x) - \textsl{error}_n(0)}{g_0(x) - g_0(0)}
+\bruch{\dfo \err{\chi_1}}{ \dfo g_0(\chi_1)} = \bruch{\textsl{error}_n(x) - \textsl{error}_n(0)}{g_0(x) - g_0(0)}
 \end{equation}
 gilt. 
-Für die Ableitung der Funktion $g_0(x) = x^{n+1}$ finden wir $\df g_0(x) = (n+1) \cdot  x^n$.
+Für die Ableitung der Funktion $g_0(x) = x^{n+1}$ finden wir $\dfo g_0(x) = (n+1) \cdot  x^n$.
 Wegen $\err{0} = 0$ und $g_0(0) = 0$  vereinfacht sich Gleichung (\ref{eq:taylorErr0}) zu
 \begin{equation}
   \label{eq:taylorErr0a}
@@ -156,10 +156,10 @@ auf die beiden Funktionen $\erri{x}{1}$ und
 $g_1(x) := (n+1)\cdot x^n$ an.  Dann gibt es ein $\chi_2 \in[0,\chi_1]$, so dass
 \begin{equation}
   \label{eq:taylorErr1}  
-\bruch{\df \erri{\chi_2}{1}}{ \df g_1(\chi_2)} = \bruch{\erri{\chi_1}{1} - \erri{0}{1}}{g_1(\chi_1) - g_1(0)}
+\bruch{\dfo \erri{\chi_2}{1}}{ \dfo g_1(\chi_2)} = \bruch{\erri{\chi_1}{1} - \erri{0}{1}}{g_1(\chi_1) - g_1(0)}
 \end{equation}
 gilt.
-Für die Ableitung der Funktion $g_1(x) = (n+1)\cdot x^{n}$ finden wir $\df g_1(x) = (n+1) \cdot  n \cdot x^{n-1}$.
+Für die Ableitung der Funktion $g_1(x) = (n+1)\cdot x^{n}$ finden wir $\dfo g_1(x) = (n+1) \cdot  n \cdot x^{n-1}$.
 Wegen $\erri{0}{1} = 0$ und $g_1(0) = 0$  vereinfacht sich Gleichung (\ref{eq:taylorErr1})
 unter Berücksichtigung von Gleichung (\ref{eq:taylorErr0a}) zu
 \\[0.3cm]
@@ -181,7 +181,7 @@ $g_{k}(x) :=  \bruch{(n+1)!}{(n+1 - k)!}\cdot x^{n+1-k}$ den erweiterten
 Mittelwert-Satz an.  Wir finden dann ein $\chi_{k+1} \in [0,\chi_k]$, so dass
 \begin{equation}
   \label{eq:taylorDiffInd}
-\bruch{\df \erri{\chi_{k+1}}{k}}{\df g_{k}(\chi_{k+1})} =
+\bruch{\dfo \erri{\chi_{k+1}}{k}}{\dfo g_{k}(\chi_{k+1})} =
  \bruch{\erri{\chi_k}{k} - \erri{0}{k}}{g_{k}(\chi_k) - g_{k}(0)} 
 \end{equation}
 gilt.  
@@ -190,7 +190,7 @@ Für die Ableitung der Funktion $g_k(x)$ finden wir
 \hspace*{1.3cm}
 $
 \begin{array}[t]{lcl}
-  \df g_k(x) & = & \bruch{(n+1)!}{(n+1-k)!} \cdot (n+1-k) \cdot x^{n+1-k-1} \\[0.3cm]
+  \dfo g_k(x) & = & \bruch{(n+1)!}{(n+1-k)!} \cdot (n+1-k) \cdot x^{n+1-k-1} \\[0.3cm]
              & = &  \bruch{(n+1)!}{(n+1-(k+1))!} \cdot x^{n+1-(k+1)} \\[0.3cm]
              & = & g_{k+1}(x)
 \end{array}
@@ -220,7 +220,7 @@ gezeigt. Wir wenden nun den erweiterten Mittelwert-Satz auf die Funktionen $\err
 und $x \mapsto (n+1)!\cdot x$ an.  Dann erhalten wir ein $\chi \in [0,\chi_n] \subseteq [0,x]$, so dass
 \begin{equation}
   \label{eq:taylorErrn}
-  \bruch{\df \erri{\chi}{n}}{\df (n+1)!\cdot x (\chi)} = 
+  \bruch{\dfo \erri{\chi}{n}}{\dfo (n+1)!\cdot x (\chi)} = 
   \bruch{\erri{\chi_{n}}{n} - \erri{0}{n}}{(n+1)!\cdot \chi_n - (n+1)!\cdot 0}
 \end{equation}
 gilt.  Wegen $\erri{0}{n} = 0$ haben wir also
@@ -252,15 +252,16 @@ $x^{n+1}$, so haben wir gezeigt, dass es ein $\chi \in [0,x]$ gibt, so dass
   f(x) = \sum\limits_{k=0}^n \bruch{f^{(k)}(0)}{k!} \cdot  x^k + f^{(n+1)}(\chi)\cdot \bruch{x^{n+1}}{(n+1)!}
 \end{equation}
 gilt.  Diese Formel bezeichnen wir als die 
-\emph{Taylor-Entwicklung} (Brook Taylor, 1685 -- 1731) der Funktion $f$ mit \emph{Lagrange'schem Restglied}
-(Joseph Louis Lagrange, 1736 -- 1813). 
+\emph{Taylor-Entwicklung} 
+(\href{http://en.wikipedia.org/wiki/Brook_Taylor}{Brook Taylor}, 1685 -- 1731) der Funktion $f$ mit \emph{Lagrange'schem Restglied}
+(\href{http://en.wikipedia.org/wiki/Lagrange}{Joseph Louis Lagrange}, 1736 -- 1813). 
 
-\subsection{Beispiele von Taylor-Entwicklungen}
+\section{Beispiele von Taylor-Entwicklungen}
 Wir zeigen nun, wie wir transzendente Funktionen 
 mit Hilfe der Taylor-Entwicklungen approximieren können.  Dadurch werden diese Funktionen
 einer numerischen Behandlung zugänglich.  
 
-\subsubsection{Berechnung des natürlichen Logarithmus}
+\subsection{Berechnung des natürlichen Logarithmus}
 Wir beginnen mit dem natürlichen Logarithmus $x \mapsto \ln(x)$.  Dieser ist als die Umkehrfunktion der
 Exponential-Funktion definiert, es gilt also
 \\[0.2cm]
@@ -277,14 +278,14 @@ natürlichen Zahlen $n\geq 1$ die $n$-te Ableitung der Funktion $f$ die folgende 
 \item[I.A.:] $n=1$.  Es gilt
   \\[0.1cm]
   \hspace*{1.3cm}
-  $\df f(x) = \df \ln(1+x) = \bruch{1}{1+x} = (-1)^{1+1}\cdot \bruch{(1-1)!}{(1+x)^1}$
+  $\dfo f(x) = \dfo \ln(1+x) = \bruch{1}{1+x} = (-1)^{1+1}\cdot \bruch{(1-1)!}{(1+x)^1}$
 \item[I.S.:] $n \mapsto n+1$.  Wir haben 
   \\[0.3cm]
   \hspace*{1.3cm}
   $
   \begin{array}[t]{lcl}  
-    f^{(n+1)}(x) & = & \df f^{(n)}(x) \\[0.3cm]
-    & \stackrel{IV}{=} & \df \left((-1)^{n+1}\cdot \bruch{(n-1)!}{(1+x)^n}\right) \\[0.5cm]
+    f^{(n+1)}(x) & = & \dfo f^{(n)}(x) \\[0.3cm]
+    & \stackrel{IV}{=} & \dfo \left((-1)^{n+1}\cdot \bruch{(n-1)!}{(1+x)^n}\right) \\[0.5cm]
     & = & (-1)^{n+1}\cdot (n-1)!\cdot \bruch{(-n)}{(1+x)^{n+1}} \\[0.5cm]
     & = & (-1)^{(n+1)+1}\cdot \bruch{n!}{(1+x)^{n+1}} \\[0.3cm]
   \end{array}
@@ -304,7 +305,7 @@ Wir wollen nun zeigen, dass diese Taylor-Reihe tatsächlich gegen $\ln(1+x)$ konv
 zeigen, dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$\textsl{taylor}(x \mapsto \ln(1+x), x) = \ln(1+x)$
+$\textsl{taylor}\bigl(x \mapsto \ln(1+x), x \bigr) = \ln(1+x)$
 \\[0.2cm]
 gilt.  Dazu betrachten
 wir die Taylor-Entwicklung mit dem Lagrange'schen Restglied: 
@@ -317,7 +318,7 @@ Für den Abbruch-Fehler haben wir also
 \hspace*{1.3cm} $\textsl{error}_n(x) = (-1)^n \cdot \bruch{1}{(1+\chi)^{n+1}}\cdot \bruch{x^{n+1}}{n+1}$
 \\[0.1cm]
 mit $\chi \in[0,x]$ und für $x \in [0, 1]$ geht dieser Wert für $n \rightarrow \infty$ gegen $0$.
-Damit haben wir insgesamt $\textsl{taylor}(x \mapsto \ln(1+x), x) = \ln(1+x)$ für $x >= 0$ gezeigt und folglich können
+Damit haben wir insgesamt $\textsl{taylor}\bigl(x \mapsto \ln(1+x), x \bigr) = \ln(1+x)$ für $x >= 0$ gezeigt und folglich können
 wir
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -326,11 +327,13 @@ $\ln(1+x) = \sum\limits_{k=1}^{\infty} (-1)^{k+1}\cdot \bruch{x^k}{k}$
 schreiben.\footnote{Die Formel gilt auch für für negative $x$, deren Betrag kleiner als 1 ist, aber das können
 wir mit unseren Mitteln nicht beweisen.}
  Setzen wir hier für $x$ den Wert 1 ein, so haben wir die Formel
-\begin{equation}
-  \label{eq:taylorLn2}
+\\[0.2cm]
+\hspace*{1.3cm}
+$
 \ln(2) = \displaystyle\sum\limits_{k=1}^\infty \bruch{(-1)^{k+1}}{k} 
        = 1 - \bruch{1}{2} + \bruch{1}{3} - \bruch{1}{4} + \bruch{1}{5} \pm \cdots
-\end{equation}
+$
+\\[0.2cm] 
 gefunden.  Um den Abbruch-Fehler abzuschätzen, setzen wir in $\textsl{error}_n(x)$ für $x$ den Wert 1 ein
 und finden
 \\[0.2cm]
@@ -372,15 +375,16 @@ Glied $2\cdot n+1$ abbrechen, schätzen wir den Abbruch-Fehler wie folgt ab:
 \hspace*{1.3cm}
 $
 \begin{array}[t]{clcl}
-      = &  \multicolumn{3}{l}{
+        & \multicolumn{3}{l}{\ds 
             \left| \ln\left(\frac{1+\frac{1}{3}}{1-\frac{1}{3}}\right) - 2\cdot \sum\limits_{k=0}^n \frac{1}{2\cdot k+1} \cdot  \left(\frac{1}{3}\right)^{2\cdot k+1} \right|} \\[0.5cm]
-      = &  \multicolumn{3}{l}{2 \cdot  \left| \sum\limits_{k=n+1}^\infty \frac{1}{2\cdot k+1} \cdot  \left(\frac{1}{3}\right)^{2\cdot k+1} \right|} \\[0.5cm]
-   \leq &  2 \cdot  \sum\limits_{k=n+1}^\infty \left(\frac{1}{3}\right)^{2\cdot k+1} & = &  2 \cdot  \sum\limits_{k=0}^\infty \left(\frac{1}{3}\right)^{2\cdot n+2\cdot k+3}  \\[0.5cm]
-      = &  2 \cdot  \left(\frac{1}{3}\right)^{2\cdot n+3} \sum\limits_{k=0}^\infty \left(\frac{1}{3}\right)^{2\cdot k}  
-         & = &  2 \cdot  \left(\frac{1}{3}\right)^{2\cdot n+3} \sum\limits_{k=0}^\infty \left(\frac{1}{9}\right)^{k}  \\[0.5cm]
-      = &  2 \cdot  \left(\frac{1}{3}\right)^{2\cdot n+3} \bruch{1}{1-\frac{1}{9}} 
-     & = &  2 \cdot  \left(\frac{1}{3}\right)^{2\cdot n+3} \bruch{9}{8}  \\[0.5cm]
-      = &  \frac{1}{4} \cdot  \left(\frac{1}{3}\right)^{2\cdot n+1}   \\[0.5cm]
+      = &\multicolumn{3}{l}{\ds 2 \cdot  \left| \sum\limits_{k=n+1}^\infty \frac{1}{2\cdot k+1} \cdot  \left(\frac{1}{3}\right)^{2\cdot k+1} \right|} \\[0.5cm]
+   \leq &\ds  2 \cdot  \sum\limits_{k=n+1}^\infty \left(\frac{1}{3}\right)^{2\cdot k+1} 
+     & = &\ds  2 \cdot  \sum\limits_{k=0}^\infty \left(\frac{1}{3}\right)^{2\cdot n+2\cdot k+3}  \\[0.5cm]
+      = &\ds  2 \cdot  \left(\frac{1}{3}\right)^{2\cdot n+3} \sum\limits_{k=0}^\infty \left(\frac{1}{3}\right)^{2\cdot k}  
+      & = &\ds  2 \cdot  \left(\frac{1}{3}\right)^{2\cdot n+3} \sum\limits_{k=0}^\infty \left(\frac{1}{9}\right)^{k}  \\[0.5cm]
+       = &\ds  2 \cdot  \left(\frac{1}{3}\right)^{2\cdot n+3} \bruch{1}{1-\frac{1}{9}} 
+     & = &\ds  2 \cdot  \left(\frac{1}{3}\right)^{2\cdot n+3} \bruch{9}{8}  \\[0.5cm]
+      = &\ds  \frac{1}{4} \cdot  \left(\frac{1}{3}\right)^{2\cdot n+1}   \\[0.5cm]
 \end{array}
 $
 \\[0.1cm]
@@ -390,11 +394,11 @@ dass gilt:
 \hspace*{1.3cm}
 $
 \begin{array}[t]{lrcl}
-                & \frac{1}{4} \cdot  \left(\frac{1}{3}\right)^{2\cdot n+1} & \leq 10^{-9} \\[0.3cm]
-\Leftrightarrow & \left(\frac{1}{3}\right)^{2\cdot n+1} & \leq 4 \cdot  10^{-9} \\[0.3cm]
-\Leftrightarrow & -\ln(3) \cdot  (2\cdot n+1)  & \leq \ln(4) - 9 \cdot  \ln(10) \\[0.3cm]
-\Leftrightarrow &           (2\cdot n+1)  & \geq \bruch{9 \cdot  \ln(10) - \ln(4)}{\ln(3)} \\[0.5cm]
-\Leftrightarrow &           n        & \geq 0.5\cdot \left(\bruch{9 \cdot  \ln(10) - \ln(4)}{\ln(3)}  - 1\right) \approx 8.3 \\[0.5cm]
+                & \ds\frac{1}{4} \cdot  \left(\frac{1}{3}\right)^{2\cdot n+1} & \leq 10^{-9} \\[0.3cm]
+\Leftrightarrow & \ds\left(\frac{1}{3}\right)^{2\cdot n+1} & \leq 4 \cdot  10^{-9} \\[0.3cm]
+\Leftrightarrow & \ds-\ln(3) \cdot  (2\cdot n+1)  & \leq \ln(4) - 9 \cdot  \ln(10) \\[0.3cm]
+\Leftrightarrow & \ds          (2\cdot n+1)  & \geq \bruch{9 \cdot  \ln(10) - \ln(4)}{\ln(3)} \\[0.5cm]
+\Leftrightarrow &           n        & \ds \geq 0.5\cdot \left(\bruch{9 \cdot  \ln(10) - \ln(4)}{\ln(3)}  - 1\right) \approx 8.3 \\[0.5cm]
 \Leftarrow      &           n        & \geq 9 \\[0.3cm]
 \end{array}
 $
@@ -446,15 +450,16 @@ berechnen, wobei $\ln(r)$ mit Hilfe der Formel (\ref{eq:Ln}) gefunden wird.
 
 \exercise
  Berechnen Sie die Taylor-Reihen für die Funktionen $x \mapsto \sin(x)$ und $x \mapsto \cos(x)$ geben Sie eine
-Abschätzung für den Abbruch-Fehler an.  Folgern Sie außerdem die Gleichung
+Abschätzung für den Abbruch-Fehler an.  Folgern Sie außerdem die auf 
+\href{http://en.wikipedia.org/wiki/Leonard_Euler}{Leonard Euler} (1707 --- 1783) zurück gehende Formel
 \\[0.2cm]
 \hspace*{1.3cm}
-$\exp(i \cdot x) = \cos(x) + i \cdot \sin(x)$,
+$\ds e^{i \cdot x} = \cos(x) + i \cdot \sin(x)$,
 \\[0.2cm]
-bei der $i$ die imaginäre Einheit bezeichnet, es gilt also $i\cdot i = -1$.
-\pagebreak
+bei der $i$ die imaginäre Einheit bezeichnet, es gilt also $i\cdot i = -1$. \eox
 
-\subsubsection{Berechnung des Arcus-Tangens}
+
+\subsection{Berechnung des Arcus-Tangens}
 Die direkte Berechnung der Taylor-Reihe einer Funktion mit Hilfe der Formel
 (\ref{eq:taylorFormula}) ist unter Umständen sehr mühsam.  Wollen wir beispielsweise die
 Funktion $x \mapsto \arctan(x)$ in einer Taylor-Reihe entwickeln, so berechnen wir die
@@ -473,7 +478,7 @@ Versuchen Sie, eine allgemeine Formel für die $n$-te Ableitung der Funktion
 \hspace*{1.3cm}
 $x \mapsto \arctan(x)$ 
 \\[0.2cm]
-zu finden.  Beweisen Sie die Richtigkeit Ihrer Formel.
+zu finden.  Beweisen Sie die Richtigkeit Ihrer Formel. \eox
 \vspace*{0.3cm}
 
 Wir gehen in der Vorlesung einen anderen Weg um die Taylor-Reihe der Arkustangens-Funktion
@@ -500,6 +505,7 @@ gefunden.  Für einen vollständigen Beweis dieser Formel müßten wir den Abbruch-F
 nach der Lagrange'schen Formel berechnen.  Das würde uns jetzt allerdings zuviel Zeit
 kosten.
 
+\subsection{Berechnung von $\pi^*$}
 Zur effizienten Berechnung von $\pi$ ist die  Formel (\ref{eq:PiViertel}) nicht geeignet.
 Aus dem Beweis des Kriteriums von Leibniz für die Konvergenz alternierender Summen folgt,
 dass der Abbruch-Fehler durch das erste weggelassene Glied abgeschätzt werden kann.  Für die obige
@@ -614,7 +620,7 @@ $\pi \approx \sum\limits_{k=0}^12 (-1)^k \cdot  \bruch{(\sqrt{2}-1)^{2\cdot k+1}
 Der tatsächliche Fehler ist hier kleiner als $2\cdot 10^{-11}$.
 \vspace*{0.3cm}
 
-\subsubsection{Die Machin'sche Formel}
+\subsubsection{Die Machin'sche Formel$^*$}
 Es gibt noch eine elegantere Möglichkeit, die Kreiszahl $\pi$ mit Hilfe des Arkustangens zu
 berechnen.  Es gilt nämlich die Machin'sche Formel (John Machin, 1686 -- 1751):
 \\[0.2cm]
@@ -665,7 +671,7 @@ $\dfrac{\frac{10}{12}}{1 - \frac{25}{12}\cdot\frac{25}{12}} = \cfrac{120}{119}$.
 \\[0.2cm]
 Damit haben wir die Machin'sche Formel bewiesen.  \qed
 
-\exercise
+\exercises
 Leiten Sie die folgende Formel aus dem Additions-Theorem des
 Arcus-Tangens her und berechnen Sie damit $\pi$ auf eine Genauigkeit von $10^{-9}$:
 \\[0.3cm]
@@ -778,6 +784,7 @@ $
 \end{array}
 $
 \vspace*{0.3cm}
+\pagebreak
 
 \exercise
 Bei einer Klausur können insgesamt $n$ Punkte erreicht werden. Bestimmen
@@ -786,7 +793,7 @@ Sie ein Polynom $p(x)$ vom Grade 1, so dass
 \hspace*{1.3cm} $p(n) = 1.0$ \quad und \quad $p\bigl(\frac{n}{2}\bigr) = 4.0$
 \\[0.1cm]
 gilt.  Hat ein Teilnehmer einer Klausur $k$ von $n$ Punkten erreicht, so ist $p(k)$ die
-Note, mit der die Leistung bewertet wird.
+Note, mit der die Leistung bewertet wird.  \eox
 
 \subsection{Interpolation nach Newton}
 Bei der Rechnung mit den oben definierten Lagrange'schen Polynomen tritt in der Praxis ein
@@ -922,7 +929,7 @@ Diesen Nachweis führen wir durch Induktion über $k$.
              jeweils zwischen zwei Nullstellen $y_i$ und $y_{i+1}$ eine Nullstelle, 
              für $i=1,\cdots,n-k-1$ gibt es also $z_i \in [y_i,y_{i+1}] \subseteq[x_0,x_n]$ mit 
              \\[0.1cm]
-             \hspace*{1.3cm} $\df f^{(k)}(z_i) = f^{(k+1)}(z_i) = 0$.
+             \hspace*{1.3cm} $\dfo f^{(k)}(z_i) = f^{(k+1)}(z_i) = 0$.
 \end{enumerate}
 Setzen wir nun $k=n$, so sehen wir, dass die Funktion $f^{(n)}(x)$ in dem Interval
 $[x_0,x_n]$ mindestens $n+1-n=1$ Nullstellen hat, also gibt es das gesuchte
@@ -936,8 +943,8 @@ $p(x)$ höchstens $n$ verschiedene Nullstellen hat.  Folgern Sie daraus, dass es 
 \hspace*{1.3cm}
 $\pair(x_0,y_0)$, $\pair(x_1,y_1)$, $\cdots$, $\pair(x_n,y_n)$,
 \\[0.1cm]
-genau ein Polynom $p(x)$ gibt, so dass $p(x_i) = y_i$ für alle $i=0,1,\cdots,n$ gilt.
-\vspace*{0.1cm}
+genau ein Polynom $p(x)$ gibt, so dass $p(x_i) = y_i$ für alle $i=0,1,\cdots,n$ gilt. \eox
+
 
 
 
@@ -1013,11 +1020,12 @@ Für die Funktion $x \mapsto \sin(x)$ soll im Intervall
 $[0,\frac{\pi}{2}]$ ein Tabelle erstellt werden, so dass der bei linearer Interpolation entstehende
 Interpolations-Fehler kleiner als $10^{-5}$ ist.  Das Intervall $[0,\frac{\pi}{2}]$ soll zu diesem
 Zweck in gleich große Intervalle aufgeteilt werden.  Berechnen Sie die Anzahl der
-Einträge, die für die Erstellung der Tabelle notwendig ist.
-\pagebreak
+Einträge, die für die Erstellung der Tabelle notwendig ist. \eox
+
 
 \section{Der Banach'sche Fixpunkt-Satz}
-Der Banach'sche Fixpunkt-Satz, der 1922 von Stefan Banach (1892 -- 1945) bewiesen wurde, ist ein
+Der Banach'sche Fixpunkt-Satz, der 1922 von 
+\href{http://en.wikipedia.org/wiki/Stefan_Banach}{Stefan Banach} (1892 -- 1945) bewiesen wurde, ist ein
 wichtiges Hilfsmittel zur Lösung von Gleichungen.  Wir werden den Banach'schen
 Fixpunkt-Satz nur für den Spezialfall der reellen Zahlen formulieren und beweisen.
 In der Mathematik wird dieser Satz in einem abstrakteren Rahmen verwendet, die Menge der
@@ -1039,7 +1047,7 @@ ist eine kontrahierende Abbildung.
 Zunächst müssen wir uns davon überzeugen, dass diese Funktion wohldefiniert ist.
 Dazu muss aus $x\in[0,1]$ folgen, dass auch $\cos(x) \in [0,1]$ gilt.  Dies folgt aus  $\cos(0) = 1$, 
 $\cos(1) \approx 0.54$ und der Tatsache, dass die Kosinus-Funktion in dem Intervall
-$[0,1]$ monoton fallend ist, denn $\df \cos(x) = -\sin(x)$  und für alle $x \in \bigl[0,\pi\bigr]$
+$[0,1]$ monoton fallend ist, denn $\dfo \cos(x) = -\sin(x)$  und für alle $x \in \bigl[0,\pi\bigr]$
 gilt $\sin(x) \geq 0$.
  Seien nun Zahlen $x,y\in[0,1]$ gegeben. 
 Nach dem Mittelwert-Satz der Differenzial-Rechnung gibt es dann ein $\zeta\in[x,y]$ mit 
@@ -1063,6 +1071,7 @@ $q < 1$, so dass
 $\forall t \in [a,b]: |f'(t)| \leq q$
 \\[0.1cm]
 gilt, dann ist die Abbildung $f$ kontrahierend mit dem Kontraktions-Koeffizienten $q$.
+\pagebreak
 
 \begin{Satz}
   Ist $f:[a,b] \rightarrow [a,b]$ eine kontrahierende Abbildung, so ist $f$ auch stetig.
@@ -1070,7 +1079,7 @@ gilt, dann ist die Abbildung $f$ kontrahierend mit dem Kontraktions-Koeffiziente
 
 \exercise
 Beweisen Sie den letzten Satz.
-
+\eox
 
 \begin{Satz}[Banach'scher Fixpunkt-Satz]
 Es sei $f:[a,b] \rightarrow [a,b]$ eine kontrahierende Abbildung mit dem
@@ -1226,7 +1235,7 @@ mehr wir uns der Lösung annähern.
 \exercise
 Lösen Sie für $y=10^6$ und $y=10^{-6}$ die Gleichung $x\cdot \exp(x) = y$ 
 durch eine einfache Fixpunkt-Iteration.  Berechnen Sie die Lösung $x$ jeweils auf eine
-Genauigkeit von $10^{-7}$.
+Genauigkeit von $10^{-7}$. \eox
 
 \vspace*{0.3cm}
 Auch mit 36 Iterationen ist die Fixpunkt-Iteration bei der Lösung der Gleichung $x = \cos(x)$
@@ -1407,7 +1416,7 @@ Setzen wir in Gleichung (\ref{eq:fixpunktNewton}) für $f(x)$ die Funktion $x + g
 so erhalten wir wegen
 \\[0.1cm]
 \hspace*{1.3cm}
-$\df \bigl(x+g(x)\bigr) = 1 + g'(x)$
+$\dfo \bigl(x+g(x)\bigr) = 1 + g'(x)$
 \\[0.1cm]
 die Gleichung 
 \\[0.1cm]
@@ -1438,7 +1447,7 @@ Tangente im Punkt $\langle x_n, g(x_n) \rangle$ ersetzen and dann die Nullstelle
 Tangente hat.
 
 \exercise
-Beweisen Sie diese Behauptung.
+Beweisen Sie diese Behauptung. \eox
 
 
 \example
@@ -1771,11 +1780,12 @@ gefunden, die in der Tat zeigt, dass sich die Anzahl der korrekten Stellen bei j
 Analysieren Sie das Newton'sche Verfahren zur Berechnung der dritten Wurzel aus $2$ und berechnen Sie,
 wieviele Iterationen höchstens notwendig sind um den Wert von $\sqrt[3]{2}$ auf eine Genauigkeit von
 $10^{-101}$ zu berechnen.
+\eox
 \pagebreak
 
 
 
-\section{Iterative Lösung linearer Gleichungs-Systeme}
+\section{Iterative Lösung linearer Gleichungs-Systeme$^*$}
 Es sei eine $n\times n$ Matrix $\mathbf{A} \in \mathbb{R}^{n\times n}$ und ein Vektor
  $\vec{b}\in \mathbb{R}^n$ gegeben.  Eine Möglichkeit, 
 das Glei\-chungs-System 
@@ -2128,7 +2138,7 @@ nach 35 Schritten gefunden.
   \label{tab:jacobi}
 \end{table}
 
-\subsubsection{Das Gauß-Seidel-Verfahren}
+\subsubsection{Das Gauß-Seidel-Verfahren$*$}
 Betrachten wir die Implementierung des Gesamtschritt-Verfahrens, so liegt die folgende
 Optimierung auf der Hand.  Wenn wir mit der Formel
 \\[0.1cm]
