@@ -100,8 +100,12 @@ gefunden.  Also definieren wir für eine Funktion $f:\mathbb{R} \rightarrow \math
 beliebig oft differenzierbar ist, die der Funktion $f$ zugeordnete \emph{Taylor-Reihe} als
 \begin{equation}
   \label{eq:taylorFormula}
-  \textsl{taylor}(f,x) := \sum\limits_{n=0}^\infty \bruch{f^{(n)}(0)}{n!} \cdot  x^n.
+  \framebox{$\ds \textsl{taylor}(f,x) := \sum\limits_{n=0}^\infty \bruch{f^{(n)}(0)}{n!} \cdot  x^n$}
 \end{equation}
+definiert.
+\pagebreak
+
+\remark
 Im Allgemeinen wissen wir nicht, ob die Reihe $\textsl{taylor}(f,x)$ konvergiert.  Selbst
 wenn die Reihe konvergiert folgt daraus noch nicht, dass $f(x) = \textsl{taylor}(f,x)$
 ist.  Als Beispiel dazu betrachten wir die Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$, die durch
@@ -117,8 +121,10 @@ $
 \\[0.2cm]
 definiert ist.  Im Buch von Otto Forster \cite{forster:2011} wird gezeigt, dass für diese Funktion
 die Werte sämtlicher Ableitungen an der Stelle $x = 0$ verschwinden.   Damit gilt dann
- $\textsl{taylor}(f,x) = 0$.
+ $\textsl{taylor}(f,x) = 0$.  \eox
 
+
+\subsection{Der Abbruch-Fehler bei der Taylor-Reihe}
 Um zu untersuchen wann die Taylor-Reihe $\textsl{taylor}(f,x)$ gegen $f(x)$
 konvergiert, definieren wir zu einer gegebenen Funktion $f$ und einer natürlichen Zahl
 $n\in \mathbb{N}$ den \emph{Abbruch-Fehler vom Grad $n$} als
@@ -126,6 +132,8 @@ $n\in \mathbb{N}$ den \emph{Abbruch-Fehler vom Grad $n$} als
 \hspace*{1.3cm}
 $\textsl{error}_n(x) := f(x) - \displaystyle\sum\limits_{i=0}^n \bruch{f^{(i)}(0)}{i!} \cdot  x^i$.
 \\[0.3cm]
+Der Abbruch-Fehler gibt also an, wie groß der Fehler ist, wenn wir die Berechnung der Summe einer
+Taylor-Reihe nach dem $n$-ten Glied abbrechen.
 Wir berechnen  eine Abschätzung für den Abbruch-Fehler
 $\textsl{error}_n(x)$.  Dazu benutzen wir den erweiterten Mittelwert-Satz.
 Zunächst bemerken wir, dass für alle $k=0,\cdots,n$ die $k$-te Ableitung
@@ -237,7 +245,7 @@ $\err{x} = f(x) - \displaystyle\sum\limits_{k=0}^n \bruch{f^{(k)}(0)}{k!} \cdot 
 definiert ist.  Wenn wir die $(n+1)$-te Ableitung der Funktion $\err{x}$ bilden, dann bleibt
 von der Summe nichts über, es gilt also 
 \\[0.1cm]
-\hspace*{1.3cm} $\erri{x}{n+1} = f^{n+1}(x)$.
+\hspace*{1.3cm} $\erri{x}{n+1} = f^{(n+1)}(x)$.
 \\[0.1cm]
 Setzen wir dieses Ergebnis in Gleichung (\ref{eq:taylorErrn1}) ein und berücksichtigen
 Gleichung (\ref{eq:taylorErrna}), so finden wir
