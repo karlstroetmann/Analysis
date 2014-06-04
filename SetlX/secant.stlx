@@ -1,10 +1,10 @@
-secant := procedure(f, a, b, digits) {
+secant := procedure(f, a, b, n) {
     fa := f(a); 
     fb := f(b); 
-    while (abs(b - a) > (1/10)**(digits + 1)) {
+    for (k in [1 .. n]) {
         c := (fb * a - fa * b) / (fb - fa);
         if (isRational(a) && isRational(b)) {
-            print("c = $nDecimalPlaces(c, 42)$");
+            print("c = $nDecimalPlaces(c, 100)$");
         } else {
             print("c = $c$");
         }
@@ -17,9 +17,9 @@ f := procedure(x) {
     return x ** 2 - 2;
 };
 
-x := secant(f, 1, 2, 42);
+x := secant(f, 1, 2, 10);
 
-print("x = $nDecimalPlaces(x, 42)$");
+print("x = $nDecimalPlaces(x, 100)$");
 print("\n\n\n");
 
 

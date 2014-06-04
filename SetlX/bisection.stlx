@@ -4,13 +4,11 @@
 // f(a) >= 0 >= f(b).  Also, the function f is required to be smooth.
 findZero := procedure(f, a, b, n) {
     assert(a < b, "a has to be less than b");   
+    assert(f(a) < 0 && 0 < f(b), "we need f($a$) < 0 and f($b$) > 0");
     [ fa, fb ] := [ f(a), f(b) ]; 
-    assert(fa * fb <= 0, "no sign change in interval [$a$, $b$]");
-    k := 1;
-    while (k <= n) {
-        c := 1/2 * (a + b);
-        fc := f(c); 
-        if ((fa < 0 && fc < 0.0) || (fa >= 0 && fc >= 0)) {
+    for (k in [1 .. n]) {
+        c := 1/2 * (a + b); fc := f(c); 
+        if (fc < 0) {
             a := c; fa := fc; 
         } else {
             b := c; fb := fc; 
@@ -20,7 +18,6 @@ findZero := procedure(f, a, b, n) {
         } else {
             print("a = $a$, b = $b$");
         }
-        k += 1;
     }
     return 1/2 * (a + b);
 };
@@ -47,7 +44,7 @@ cosXEqualsX := procedure(x) {
     return x - cos(x);
 };
 
-x := findZero(cos, 1.0, 2.0, 40);
+x := findZero(x |-> -cos(x), 1.0, 2.0, 40);
 pi := mathConst("pi");
 
 print("solution of 0 = cos(x), $x$");
