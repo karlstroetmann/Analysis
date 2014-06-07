@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass{report}
 \usepackage[latin1]{inputenc}
 \usepackage{a4wide}
 \usepackage{epsfig}
@@ -34,7 +34,7 @@
 \renewcommand{\headrulewidth}{0pt}
 }
 
-%\renewcommand{\chaptermark}[1]{\markboth{\chaptername \ \thechapter.\ #1}{}}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername \ \thechapter.\ #1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection. \ #1}{}}
 \fancyhead[R]{\leftmark}
 \fancyhead[L]{\rightmark}
@@ -121,7 +121,7 @@
 \maketitle
 \tableofcontents
 
-\section{Preliminary Remarks}
+\chapter{Preliminary Remarks}
 This tutorial demonstrates some of the most important features of \href{http://sympy.org/en/index.html}{\textsl{SymPy}}
 and \href{http://www.scipy.org}{\textsl{SciPy}}.  \textsl{SymPy} and \textsl{SciPy} are modules that extend the
 programming language \href{http://www.python.org}{\textsl{Python}}.  
@@ -134,7 +134,7 @@ Both of the packages can be used without prior knowledge of the programming lang
 In this short paper we do not have the time to describe either \textsl{SymPy} or \textsl{SciPy} exhaustively.  Rather,
 the idea is to arise the curiosity of the reader by describing some of the most interesting features.
 
-\subsection{Installation}
+\section{Installation}
 This tutorial assumes that both \textsl{Python} and
 \textsl{SymPy} have been installed.  \textsl{Python} can be installed  by following the instructions given on  
 \\[0.2cm]
@@ -158,7 +158,7 @@ and \textsl{Mac OS X})  already have \textsl{Python} preinstalled, since a lot o
 on it.  Fiddling around with the preinstalled version of \textsl{Python} can compromise the
 stability of the system.
 
-\section{Introduction to \textsl{SymPy}}
+\chapter{Introduction to \textsl{SymPy}}
 \textsl{SymPy} is the module that supports symbolic computation.  In particular, \textsl{SymPy} is able to
 \begin{enumerate}
 \item perform symbolic differentiation and integration,
@@ -270,7 +270,7 @@ and thereby shows that
 \hspace*{1.3cm}
 $x^2 - 8 \cdot x + 15 = (x - 5) \cdot (x - 3)$.
 
-\subsection{Differentiation and Integration}
+\section{Differentiation and Integration}
 In order to compute the derivative of
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -323,7 +323,7 @@ $\displaystyle\int_{-\infty}^{+\infty} e^{-x^2} \; dx = \sqrt{\pi}$.
 \\[0.2cm]
 Note the $\infty$ is represented as the variable \texttt{oo} in the module \texttt{sympy}.  
 
-\subsection{Computation of Limits}
+\section{Computation of Limits}
 \textsl{SymPy} supports the computation of limits.  In order to verify that 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -344,7 +344,7 @@ shows that
 \hspace*{1.3cm}
 $\lim\limits_{x \rightarrow 0} \bruch{\sin(x)}{x} = 0$.
 
-\subsection{Finite Sums and Infinite Series}
+\section{Finite Sums and Infinite Series}
 In order to compute an analytical expression for the sum
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -409,7 +409,7 @@ showing that
 $\ds\sum\limits_{i=1}^\infty \frac{1}{i^2} = \frac{\pi}{6}$.
 
 
-\subsection{Solving Equations}
+\section{Solving Equations}
 In order to solve the quadratic equation
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -445,7 +445,7 @@ $x + y = 1$ has to be converted into $x + y - 1 = 0$.  Also note that both the e
 and the variables to solve for have to be 
 specified as sets.
 
-\subsection{Solving Recurrence Equations}
+\section{Solving Recurrence Equations}
 Suppose we want to solve the recurrence equation
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -483,7 +483,7 @@ $\displaystyle a(n) = \frac{\sqrt{5}}{5} \left(\frac{1}{2} + \frac{\sqrt{5}}{2}\
 Incidentally, $a(n)$ is the $n$-th 
 \href{http://en.wikipedia.org/wiki/Fibonacci_number}{\emph{Fibonacci number}}.
 
-\subsection{Solving Differential Equations}
+\section{Solving Differential Equations}
 In order to solve the differential equation
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -511,7 +511,7 @@ $f(x) = x \cdot (c_{1} + x)$
 \\[0.2cm]
 is a solution for the given differential equation.
 
-\subsection{Substitution and Simplification}
+\section{Substitution and Simplification}
 In order to substitute a value for a variable, we can use the function \texttt{subs}.  For
 example, after declaring \texttt{n} as a symbolic variable via
 \\[0.2cm]
@@ -622,10 +622,10 @@ by induction.  We discuss this function line by line.
       \texttt{n} in \texttt{s}, then the formula (2) has been proven by mathematical induction.
 \end{enumerate}
 
-\subsection{Miscellaneous}
+\section{Miscellaneous}
 In the following subsections we discuss some minor issues and helper functions.
 
-\subsubsection{Dealing with Rational Numbers}
+\subsection{Dealing with Rational Numbers}
 In \textsl{Python}, an expression of the form 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -641,7 +641,7 @@ In order to avoid this pitfall, we should use the expression
 \\[0.2cm]
 This creates the rational number $\ds\frac{1}{3}$ which is printed as \texttt{1/3}.
 
-\subsubsection{Converting output to \LaTeX}
+\subsection{Converting output to \LaTeX}
 Sometimes it is useful to convert the output produced by a \textsl{SymPy} function into \LaTeX.
 For example, the command
 \\[0.2cm]
@@ -685,7 +685,7 @@ $z^3 + 2 \cdot z + 1 = 0$.
 In this case, I had to massage the output produced by the function \texttt{latex} manually, but I
 only had to do minor edits to achieve the result displayed above.
 
-\section{Introduction to \textsl{SciPy}}
+\chapter{Introduction to \textsl{SciPy}}
 In this short section we will show how \textsl{SciPy} can be used for
 \begin{enumerate}
 \item solving equations numerically, 
@@ -693,7 +693,7 @@ In this short section we will show how \textsl{SciPy} can be used for
 \item linear algebra.
 \end{enumerate}
 
-\subsection{Solving Equations}
+\section{Solving Equations}
 Suppose we want to solve the equation
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -725,7 +725,7 @@ This will produce the following output:
 \end{verbatim}
 This shows that the equation has the solution $\mathtt{x} = 0.73908513$.
 
-\subsection{Numerical Integration}
+\section{Numerical Integration}
 Suppose we need to evaluate the integral
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -759,7 +759,7 @@ The result of this command is the pair
 The first component of this pair is the value of the integral, while the second value is the
 precision.
 
-\subsection{Linear Algebra}
+\section{Linear Algebra}
 Assume we have been given the matrix
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -873,7 +873,7 @@ $\displaystyle
 $.
 
 
-\section{Plotting using \texttt{Matplotlib}}
+\chapter{Plotting using \texttt{Matplotlib}}
 \textsl{Python} has a module called \texttt{matplotlib} that is capable of producing high quality
 plots of data.  In order to use it, we have to use the following import declarations:
 \\[0.2cm]
@@ -883,25 +883,65 @@ plots of data.  In order to use it, we have to use the following import declarat
 \texttt{import numpy as np}
 \\[0.2cm]
 The module \texttt{numpy} provides some basic numerical routines that come in handy when plotting
-functions.  As an example, let us plot the sine function in the interval from $-\pi$ to $\pi$.  In
+functions.  As an example, let us plot the sine function in the interval from $-2\cdot\pi$ to $2\cdot\pi$.  In
 order to do this, we first create an array of $x$-values via the command
 \\[0.2cm]
 \hspace*{1.3cm}
-\texttt{xs = np.linspace(-np.pi, np.pi, 100)}
+\texttt{xs = np.linspace(-2*np.pi, 2*np.pi, 200)}
 \\[0.2cm]
-This command creates an array of a 100 values evenly spaced between $-\pi$ and $+\pi$.  Next, we
+This command creates an array of a 200 values evenly spaced between $-2\cdot\pi$ and $2\cdot\pi$.  Next, we
 need to compute the corresponding values of the sine function.  This can be done using the command
 \\[0.2cm]
 \hspace*{1.3cm}
 \texttt{ys = [np.sin(x) for x in xs]}
 \\[0.2cm]
-Next, we create a plot using the command:
+Now we are ready to start some plotting.  Since we would like to have the plot appear immediately
+after typing the \texttt{plot} command, we activate the \emph{interactive mode} via the command:
+\\[0.2cm]
+\hspace*{1.3cm}
+\texttt{plt.ion()}
+\\[0.2cm]
+This enables us to build a plot incrementally. Then, we create a plot of the sine in the intervall
+$[-2\cdot \pi, 2\cdot\pi]$ using the command:
 \\[0.2cm]
 \hspace*{1.3cm}
 \texttt{plt.plot(xs, ys)}
 \\[0.2cm]
-Now we habe created the basic data structure for the plot but have not yet made the plot visible as
-we still need to add some decorations to it.  For example, the plot still needs a title and we
+This command causes a window to pop up that contains the plot shown in Figure
+\ref{fig:naked-sine.eps}.  If we had not used the command \texttt{plt.ion()} to turn on interactive
+mode we would have to issue the command
+\\[0.2cm]
+\hspace*{1.3cm}
+\texttt{plt.show()}
+\\[0.2cm]
+to make the plot visible.
+
+\begin{figure}[!ht]
+  \centering
+  \framebox{\epsfig{file=naked-sine.eps, scale=0.6}} 
+  \caption{A plot of the naked sine function in the interval $[-2\cdot\pi, 2\cdot\pi]$.}
+  \label{fig:naked-sine.eps}
+\end{figure} 
+
+We can add a plot of the cosine to the plot of the sine using the commands:
+\\[0.2cm]
+\hspace*{1.3cm}
+\texttt{zs = np.cos(xs)}
+\\[0.2cm]
+\hspace*{1.3cm}
+\texttt{plt.plot(xs, zs)}
+\\[0.2cm]
+The resulting plot is shown in Figure \ref{fig:naked-sine-and-cosine.eps}.
+
+\begin{figure}[!ht]
+  \centering
+  \framebox{\epsfig{file=naked-sine-and-cosine.eps, scale=0.6}} 
+  \caption{A plot of the sine and cosine functions in the interval $[-2\cdot\pi, 2\cdot\pi]$.}
+  \label{fig:naked-sine-and-cosine.eps}
+\end{figure}
+
+
+We should add some decorations to the plot.  For example, the plot still needs a title and we
 should put labels at the axis.  All this is done using the following commands:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -909,30 +949,33 @@ should put labels at the axis.  All this is done using the following commands:
 \hspace*{1.3cm} 
 \texttt{plt.xlabel(\symbol{34}x\symbol{34})} \\
 \hspace*{1.3cm}
-\texttt{plt.ylabel(\symbol{34}sin(x)\symbol{34})} 
+\texttt{plt.ylabel(\symbol{34}sin(x) vs. cos(x)\symbol{34})} 
 \\[0.2cm]
 Finally, the command
 \\[0.2cm]
 \hspace*{1.3cm}
-\texttt{plt.show()}
+\texttt{plt.savefig(\symbol{34}sine-and-cosine.eps\symbol{34})}
 \\[0.2cm]
-makes the plot visible.  The resulting plot is shown in Figure \ref{fig:sine.eps}.
+will save the plot as an encapsulated postscript file.  We can also store the plot in other formats
+like, e.g.~\texttt{jpg} or \texttt{png}.   The resulting plot is shown in Figure \ref{fig:sine-and-cosine.eps}.  
 
 \begin{figure}[!ht]
   \centering
-  \framebox{\epsfig{file=sine.eps, scale=0.6}} 
+  \framebox{\epsfig{file=sine-and-cosine.eps, scale=0.6}} 
   \caption{A plot of the sine function in the interval $[-\pi, \pi]$.}
-  \label{fig:sine.eps}
+  \label{fig:sine-and-cosine.eps}
 \end{figure}
-There are lots of options to tweak the resulting figures.  Unfortunately, we do not have the time to
-cover this topic in more depth.  Instead, I would encourage you to visit
+
+
+There are lots of options to tweak the figures produced with \texttt{matplotlib}.  Unfortunately, we
+do not have the time to cover this topic in more depth.  Instead, I would encourage you to visit
 \\[0.2cm]
 \hspace*{1.3cm}
 \href{http://matplotlib.org}{\texttt{http://matplotlib.org}}
 \\[0.2cm]
 for further information.
 
-\section{Conclusion}
+\chapter{Conclusion}
 The combination of \textsl{Python}, \textsl{SymPy}, \textsl{Scipy}, and \textsl{Matplotlib} is a
 very powerful and versatile toolbox.  Unfortunately, this short paper can only serve as an appetizer.
 In order to get a deeper understanding of the above mentioned tools, the lectures of J.R.~Johansson, which are

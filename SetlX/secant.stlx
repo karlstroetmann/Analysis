@@ -4,7 +4,7 @@ secant := procedure(f, a, b, n) {
     for (k in [1 .. n]) {
         c := (fb * a - fa * b) / (fb - fa);
         if (isRational(a) && isRational(b)) {
-            print("c = $nDecimalPlaces(c, 100)$");
+            print("c = $nDecimalPlaces(c, 80)$");
         } else {
             print("c = $c$");
         }
@@ -29,5 +29,5 @@ strange := procedure(x) {
 
 x := secant(strange, 0, 5.0, 10);
 
-print("x = $x$");
+
 

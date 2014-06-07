@@ -14,7 +14,7 @@ regulaFalsi := procedure(f, a, b, n) {
             b := c; fb := fc; 
         }
         if (isRational(a) && isRational(b)) {
-            print("a = $nDecimalPlaces(a, 42)$, b = $nDecimalPlaces(b, 42)$");
+            print("a = $nDecimalPlaces(a, 40)$, b = $nDecimalPlaces(b, 40)$");
         } else {
           print("a = $a$, b = $b$");
         }
@@ -30,18 +30,18 @@ sqrt := procedure(x) {
     return x * x - 2;
 };
 
-r2 := regulaFalsi(sqrt, 0, 2, 60);
+// r2 := regulaFalsi(sqrt, 0, 2, 60);
 
-print("2 ** (1/2) = $nDecimalPlaces(r2, 42)$");
-print("\n\n\n");
+// print("2 ** (1/2) = $nDecimalPlaces(r2, 42)$");
+// print("\n\n\n");
 
 cosXEqualsX := procedure(x) {
     return x - cos(x);
 };
 
-x := regulaFalsi(cosXEqualsX, 0.0, 1.0, 14);
+// x := regulaFalsi(cosXEqualsX, 0.0, 1.0, 14);
 
-print("x = $x$\n\n\n");
+// print("x = $x$\n\n\n");
 
 f4 := x |-> x ** 4 - 1;
 

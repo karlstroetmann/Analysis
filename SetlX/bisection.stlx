@@ -14,7 +14,7 @@ findZero := procedure(f, a, b, n) {
             b := c; fb := fc; 
         }
         if (isRational(a) && isRational(b)) {
-            print("a = $nDecimalPlaces(a, 42)$, b = $nDecimalPlaces(b, 42)$");
+            print("a = $nDecimalPlaces(a, 40)$, b = $nDecimalPlaces(b, 40)$");
         } else {
             print("a = $a$, b = $b$");
         }
