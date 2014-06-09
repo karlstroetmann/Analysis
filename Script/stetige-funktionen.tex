@@ -773,7 +773,7 @@ Abbildung \ref{fig:regula-falsi} zeigt die graphische Bestimmung von $c$
 als Schnittpunkt der Geraden mit der $x$-Achse.
 \begin{figure}[!h]
   \centering
-   \epsfig{file=regula-falsi.eps,scale=1.0}
+   \epsfig{file=Figures/regula-falsi.eps,scale=1.0}
    \caption{Die Regula-Falsi zur Nullstellen-Bestimmung.}
   \label{fig:regula-falsi}
 \end{figure}
@@ -1580,7 +1580,7 @@ Wir berechnen als nächstes die Ableitung einiger wichtiger Funktionen.
       betrachten wir die Definition von  Sinus und Tangens am Einheitskreis:
       \begin{figure}[!h]
         \centering
-        \epsfig{file=circle.eps,scale=1.5}
+        \epsfig{file=Figures/circle.eps,scale=1.5}
         \caption{Die Winkel-Funktionen am Einheitskreis.}
         \label{fig:circle}
       \end{figure}
@@ -1959,7 +1959,7 @@ Mittelwert-Satzes:  Es gibt eine Tangente an die Funktion, die die selbe Steigun
 die Sekante, die durch die Punkte $\pair(a,f(a))$ und $\pair(b,f(b))$  geht.
       \begin{figure}[!h]
         \centering
-        \epsfig{file=mean-value-theorem.eps,scale=1.5}
+        \epsfig{file=Figures/mean-value-theorem.eps,scale=1.5}
         \caption{Geometrische Bedeutung des Mittelwert-Satzes.}
         \label{fig:mean-value-theorem}
       \end{figure}
@@ -2146,6 +2146,25 @@ $\ds\lim\limits_{x \rightarrow \infty} \sqrt{x + \sqrt{x\;}\;} - \sqrt{x\;}$.  \
 
 
 \section{Monotonie und Konvexität}
+Im Folgenden bezeichnet $D$ entweder ein
+\href{http://de.wikipedia.org/wiki/Intervall_(Mathematik)}{Intervall} der Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$[a, b]$, \quad  
+$(a, b]$, \quad   
+$[a, b)$, \quad    
+$(a, b)$,
+\\[0.2cm]
+ein unbeschränktes Intervall der Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$[a, \infty)$, \quad      
+$(a, \infty)$, \quad       
+$(-\infty, b]$, \quad        
+$(-\infty, b)$ \quad        
+\\[0.2cm]
+oder die Menge $\mathbb{R}$ der reellen Zahlen.
+
 \begin{Definition}[monoton]
   Eine Funktion $f: D \rightarrow \mathbb{R}$ ist \emph{monoton steigend} g.d.w.
   \\[0.2cm]
@@ -2178,49 +2197,54 @@ $\ds\lim\limits_{x \rightarrow \infty} \sqrt{x + \sqrt{x\;}\;} - \sqrt{x\;}$.  \
 \end{Satz}
 
 \noindent
-\textbf{Beweis}:  Wir nehmen zunächst an, dass $f$ monoton steigend ist und zeigen, dass
-dann $f'(x) \geq 0$ gilt.  Die Ableitung ist definiert als der Grenzwert 
-\\[0.3cm]
-\hspace*{1.3cm} $f'(x) = \lim\limits_{h \rightarrow 0} \bruch{f(x+h) - f(x)}{h}$.
-\\[0.3cm]
-Wir zeigen, dass der Differential-Quotient 
-\\[0.3cm]
-\hspace*{1.3cm} $\bruch{f(x+h) - f(x)}{h}$
-\\[0.3cm]
-für alle $h \not = 0$ größer oder gleich 0 ist.  Zm Nachweis dieser Behauptung führen wir
-eine Fallunterscheidung bezüglich des Vorzeichens von $h$ durch.
+\textbf{Beweis}: Da es sich bei diesem Beweis um eine "genau-dann-wenn"-Aussage handelt, spalten wir
+den Beweis in zwei Teile auf.
 \begin{enumerate}
-\item Fall: $h > 0$.
-
-      Dann folgt aus der Monotonie von $f$,  dass 
-      $f(x+h) \geq f(x)$ ist.  Also gilt $f(x+h)-f(x) \geq 0$ und daraus folgt
+\item[``$\Rightarrow$'':]  Wir nehmen zunächst an, dass $f$ monoton steigend ist und zeigen, dass
+      dann $f'(x) \geq 0$ gilt.  Die Ableitung ist definiert als der Grenzwert 
       \\[0.3cm]
-      \hspace*{1.3cm} $\bruch{f(x+h) - f(x)}{h} \geq 0$.
-\item Fall: $h < 0$.
-
-      Jetzt folgt aus der Monotonie von $f$ die Ungleichung 
-      $f(x+h) \leq f(x)$.  Also haben wir  $f(x+h)-f(x) \leq 0$.  Wegen $h<0$ gilt dann
+      \hspace*{1.3cm} $f'(x) = \lim\limits_{h \rightarrow 0} \bruch{f(x+h) - f(x)}{h}$.
       \\[0.3cm]
-      \hspace*{1.3cm} $\bruch{f(x+h) - f(x)}{h} \geq 0$.
-\end{enumerate}
-Da der Differential-Quotient in jedem Fall größer-gleich $0$ ist, muss $f'(x) \geq 0$
-gelten.
-\vspace*{0.2cm}
-
-Wir nehmen nun an, dass für alle $x\in D$ die Ungleichung $f'(x) \geq 0$ gilt und
-zeigen, dass $f$ dann monoton steigend ist.  Diesen Beweis führen wir indirekt.
-Wir nehmen an, es gäbe $x,y\in D$ mit 
-\\[0.2cm]
-\hspace*{1.3cm} $x < y$ \quad aber \quad $f(x) > f(y)$.
-\\[0.2cm]
-Nach dem Mittelwert-Satz der Differential-Rechnung gibt es dann ein $z\in[x,y]$, so dass
-\\[0.3cm]
-\hspace*{1.3cm} $f'(z) = \bruch{f(y) - f(x)}{y - x}$
-\\[0.3cm]
-gilt.  Aus $x < y$ folgt  $y - x \geq 0$ und aus $f(x) > f(y)$ folgt $f(y) - f(x) <0$.
-Damit hätten wir dann aber $f'(z) < 0$ im Widerspruch zur Voraussetzung.
-\hspace*{\fill} $\Box$
-\vspace*{0.3cm}
+      Wir zeigen, dass der Differential-Quotient 
+      \\[0.3cm]
+      \hspace*{1.3cm} $\bruch{f(x+h) - f(x)}{h}$
+      \\[0.3cm]
+      für alle $h \not = 0$ größer oder gleich 0 ist.  Zm Nachweis dieser Behauptung führen wir
+      eine Fallunterscheidung bezüglich des Vorzeichens von $h$ durch.
+      \begin{enumerate}[(a)]
+      \item Fall: $h > 0$.
+        
+            Aus $h > 0$ folgt $x + h > x$.  Aus der Monotonie von $f$ folgt dann,  dass 
+            $f(x+h) \geq f(x)$ ist.  Also gilt $f(x+h)-f(x) \geq 0$ und daraus folgt
+            \\[0.3cm]
+            \hspace*{1.3cm} $\bruch{f(x+h) - f(x)}{h} \geq 0$.
+      \item Fall: $h < 0$.
+        
+            Aus $h < 0$ folgt nun $x - h < x$.
+            Aus der Monotonie von $f$ folgt jetzt die Ungleichung 
+            $f(x+h) \leq f(x)$.  Also haben wir  $f(x+h)-f(x) \leq 0$.  Wegen $h<0$ gilt dann
+            insgesamt
+            \\[0.3cm]
+            \hspace*{1.3cm} $\bruch{f(x+h) - f(x)}{h} \geq 0$.
+      \end{enumerate}
+      Da der Differential-Quotient in jedem Fall größer-gleich $0$ ist und die Ableitung $f'(x)$ als
+      Grenzwert des Differential-Quotienten für $h$ gegen $0$ definiert ist, muss $f'(x) \geq 0$
+      gelten.
+\item[``$\Leftarrow$'':] Wir nehmen nun an, dass für alle $x\in D$ die Ungleichung $f'(x) \geq 0$ gilt und
+      zeigen, dass $f$ dann monoton steigend ist.  Diesen Beweis führen wir indirekt.
+      Wir nehmen an, es gäbe $x,y\in D$ mit 
+      \\[0.2cm]
+      \hspace*{1.3cm} $x < y$ \quad aber \quad $f(x) > f(y)$.
+      \\[0.2cm]
+      Nach dem Mittelwert-Satz der Differential-Rechnung gibt es dann ein $z\in[x,y]$, so dass
+      \\[0.3cm]
+      \hspace*{1.3cm} $f'(z) = \bruch{f(y) - f(x)}{y - x}$
+      \\[0.3cm]
+      gilt.  Aus $x < y$ folgt  $y - x \geq 0$ und aus $f(x) > f(y)$ folgt $f(y) - f(x) <0$.
+      Damit hätten wir dann aber $f'(z) < 0$ im Widerspruch zur Voraussetzung.
+      \qed
+\end{enumerate} 
+\vspace*{0.1cm}
 
 \noindent
 In Analogie zum letzten Satz kann gezeigt werden, dass eine differenzierbare Funktion 
@@ -2272,8 +2296,8 @@ setzen und finden dann ein $\delta > 0$, so dass
 \hspace*{1.3cm} $\forall x \in \mathbb{R}: |x - x_0| < \delta \rightarrow |f''(x) - f''(x_0)|
 < \varepsilon = f''(x_0)$.
 \\[0.2cm]
-gilt.  Daraus folgt, dass für alle $x \in \mathbb{R}$ mit $|x - x_0| < \delta$ die
-Ungleichung
+gilt.  Subtrahieren wir $|f''(x) - f''(x_0)|$ auf beiden Seiten dieser Gleichung, so folgt, dass für
+alle $x \in \mathbb{R}$ mit $|x - x_0| < \delta$ die Ungleichung
 \\[0.2cm]
 \hspace*{1.3cm} $f''(x_0) - |f''(x) - f''(x_0)| > 0$
 \\[0.2cm]
@@ -2312,7 +2336,7 @@ $f'(x) < 0$ \quad für alle $x\in U_\delta(x_0)$ mit $x < x_0$ \quad und \quad \\
 $f'(x) > 0$ \quad für alle $x\in U_\delta(x_0)$ mit $x > x_0$.
 \\[0.2cm]
 Damit ist die Funktion $f$ innerhalb der $\delta$-Umgebung $U_\delta(x_0)$ für $x < x_0$
-streng monoton fallend und für $x > x_0$ streng monoton wachsend.  Dann muss $f$ aber ein Minimum in
+streng monoton fallend und für $x > x_0$ streng monoton wachsend.  Dann muss $f$ aber ein lokales Minimum in
 $x_0$ haben. \qed
 
 
@@ -2335,7 +2359,20 @@ $
 gilt.  Geometrisch bedeutet dies, dass die Funktionswerte der Funktion $f$  unterhalb
 der Sekante durch die Punkte 
 $\bigl\langle x_1, f(x_1) \bigl\rangle$ und $\bigl\langle x_2, f(x_2) \bigl\rangle$
-liegen.
+liegen.  Abbildung \ref{fig:convex.eps} auf Seite \pageref{fig:convex.eps} zeigt die anschaulich: 
+In dem Intervall $(x_1,x_2)$ liegen die Werte der Funktion $f$ unterhalb der Gerade $g$, die durch die beiden Punkte 
+$\langle x_1, f(x_1)\rangle$ und $\langle x_2, f(x_2)\rangle$ geht.  Die Gleichung dieser Geraden
+ist 
+\\[0.2cm]
+\hspace*{1.3cm}
+$g(t) = (t-x_1)/(x_2-x_1)\cdot f(x_2)+(t-x_2)/(x_1-x_2)\cdot f(x_1)$.
+\\[0.2cm]
+Sie können dies sofort verifizieren, denn offenbar gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$g(x_1) = (x_1-x_1)/(x_2-x_1)\cdot f(x_2)+(x_1-x_2)/(x_1-x_2)\cdot f(x_1) = f(x_1)$
+\\[0.2cm]
+und analog sehen wir, dass auch $g(x_2) = f(x_2)$ ist.
 \vspace*{0.2cm}
 
 Eine Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ heißt \emph{konkav} genau dann, wenn 
@@ -2348,8 +2385,30 @@ $
 gilt.  Hier liegen die Funktionswerte der Funktion $f$ also oberhalb 
 der Sekante durch die Punkte 
 $\bigl\langle x_1, f(x_1) \bigl\rangle$ und $\bigl\langle x_2, f(x_2) \bigl\rangle$.
+\\[0.2cm]
+Abbildung \ref{fig:concav.eps} auf Seite \pageref{fig:concav.eps} zeigt eine konkave Funktion $f$
+zusammen mit einer Sekante $g$.  Es ist deutlich zu sehen, dass hier die Funktionswerte oberhalb der
+Sekante liegen.
 \eod
 \end{Definition}
+
+\begin{figure}[!h]
+  \centering
+    \epsfig{file=Figures/convex.eps,scale=0.6}
+   \caption{Eine konvexe Funktion $f$ zusammen mit einer Sekante $g$.}
+  \label{fig:convex.eps}
+\end{figure}
+\begin{figure}[!h]
+  \centering
+    \epsfig{file=Figures/concav.eps,scale=0.6}
+   \caption{Eine konkave Funktion $f$ zusammen mit einer Sekante $g$.}
+  \label{fig:concav.eps}
+\end{figure}
+\pagebreak
+
+\vspace*{\fill}
+\pagebreak
+
 
 \begin{Lemma}[Invarianz der Konvexität unter linearen Transformationen]
   \label{lemma:konvex_invarianz} \lb
