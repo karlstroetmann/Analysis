@@ -2365,12 +2365,13 @@ $\langle x_1, f(x_1)\rangle$ und $\langle x_2, f(x_2)\rangle$ geht.  Die Gleichu
 ist 
 \\[0.2cm]
 \hspace*{1.3cm}
-$g(t) = (t-x_1)/(x_2-x_1)\cdot f(x_2)+(t-x_2)/(x_1-x_2)\cdot f(x_1)$.
+$\ds g(t) = \frac{t-x_1}{x_2-x_1}\cdot f(x_2) + \frac{t-x_2}{x_1-x_2}\cdot f(x_1)$.
 \\[0.2cm]
-Sie können dies sofort verifizieren, denn offenbar gilt
+Sie können dies sofort verifizieren, denn offenbar ist $g(t)$ in der Variablen $t$ linear und
+andererseits gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$g(x_1) = (x_1-x_1)/(x_2-x_1)\cdot f(x_2)+(x_1-x_2)/(x_1-x_2)\cdot f(x_1) = f(x_1)$
+$\ds g(x_1) = \frac{x_1-x_1}{x_2-x_1}\cdot f(x_2)+\frac{x_1-x_2}{x_1-x_2}\cdot f(x_1) = f(x_1)$
 \\[0.2cm]
 und analog sehen wir, dass auch $g(x_2) = f(x_2)$ ist.
 \vspace*{0.2cm}
@@ -2406,8 +2407,6 @@ Sekante liegen.
 \end{figure}
 \pagebreak
 
-\vspace*{\fill}
-\pagebreak
 
 
 \begin{Lemma}[Invarianz der Konvexität unter linearen Transformationen]
@@ -2464,7 +2463,11 @@ $f$  konvex \quad $\Leftrightarrow$ \quad $\forall x \in \mathbb{R}: f''(x) \geq
   \\[0.2cm]
   gilt.  O.B.d.A. können wir voraussetzen, dass $\delta_2 \leq \delta_1$ gilt.  
   Nach dem Lemma \ref{lemma:konvex_invarianz} wissen wir, dass die Funktion $g$ ebenfalls konvex ist.
-  Definieren wir $x_1 := x_0 - \frac{\delta_2}{2}$, $x_2 := x_0 + \frac{\delta_2}{2}$ und $t := \frac{1}{2}$,
+  Definieren wir
+\\[0.2cm]
+\hspace*{1.3cm}
+ $\ds x_1 := x_0 - \frac{\delta_2}{2}$, \quad $\ds x_2 := x_0 + \frac{\delta_2}{2}$ \quad und \quad $\ds t := \frac{1}{2}$,
+\\[0.2cm]
   so folgt also
   \begin{equation}
     \label{eq:konvex1}
@@ -2473,7 +2476,7 @@ $f$  konvex \quad $\Leftrightarrow$ \quad $\forall x \in \mathbb{R}: f''(x) \geq
   Nun gilt 
   \\[0.2cm]
   \hspace*{1.3cm}
-  $t \cdot x_1 + (1-t) \cdot x_2 = 
+  $\ds t \cdot x_1 + (1-t) \cdot x_2 = 
    \frac{1}{2} \cdot x_0 - \frac{1}{2} \cdot\frac{\delta_2}{2} + 
    \frac{1}{2} \cdot x_0 + \frac{1}{2} \cdot\frac{\delta_2}{2}
    = x_0
@@ -2482,7 +2485,7 @@ $f$  konvex \quad $\Leftrightarrow$ \quad $\forall x \in \mathbb{R}: f''(x) \geq
   Damit folgt aus der Ungleichung (\ref{eq:konvex1}) die Ungleichung
   \begin{equation}
     \label{eq:konvex2}    
-  \frac{1}{2} \cdot g(x_1) + \frac{1}{2} \cdot g(x_2) \geq g(x_0)
+  \frac{1}{2} \cdot g(x_1) + \frac{1}{2} \cdot g(x_2) \geq g(x_0).
   \end{equation} 
   Andererseits folgt aus der Tatsache, dass sowohl $x_1$ als auch $x_2$ in der $\delta_1$-Umgebung von $x_0$
   liegen, dass
@@ -2559,7 +2562,8 @@ gilt.  Die oben definierte Zahl $e$ hat den Wert
 \hspace*{0.3cm}
 $e = 2.718\,281\,828\,459\,045\,235\,360\,287\,471\,352\,662\,497\,757\,247\,093\,699\,959\,574\,966\,967\,627\,724\,\cdots$
 \\[0.2cm]
-und wird als Eulersche Zahl (Leonhard Euler, 1707--1783) bezeichnet.  Zum Nachweis der
+und wird als Eulersche Zahl (\href{http://de.wikipedia.org/wiki/Leonhard_Euler}{Leonhard Euler},
+1707--1783) bezeichnet.  Zum Nachweis der 
 oben behaupteten Gleichung benötigen wir das folgende Lemma.
 
 \begin{Lemma} \label{lemma:0_ableitung}
@@ -2612,7 +2616,7 @@ Funktionen $f:\mathbb{R} \rightarrow \mathbb{R}$ gilt, für deren $n$-te Ableitun
 \\[0.2cm]
 \hspace*{1.3cm}
 $f^{(n)}(x) = 0$ \quad für alle $x \in \mathbb{R}$ ist.  \eox
-\pagebreak
+
 
 \exercise
 Zeigen Sie, dass für alle $x\in \mathbb{R}$
@@ -2723,7 +2727,7 @@ $\exp(x+y) = \exp(y) \cdot \exp(x)$. \qed
 Mit Hilfe der Funktional-Gleichung der Exponential-Funktion können wir nun für beliebige $\lambda \in \mathbb{R}_0$
 und $x \in \mathbb{R}$ den Ausdruck $\lambda^x$ definieren.  Wir betrachten zunächst den Spezialfall
 $\lambda = e$:
-Ist $n \in \mathbb{N}$ so können wir mit Hilfe der Funktional-Gleichung durch eine leichte Induktion
+Ist $n \in \mathbb{N}$, so können wir mit Hilfe der Funktional-Gleichung durch eine leichte Induktion
 nach $n$ zeigen, dass 
 \\[0.2cm]
 \hspace*{1.3cm}

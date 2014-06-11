@@ -1,5 +1,5 @@
 \chapter{Anwendungen der Theorie}
-In diesem Kapitel stellen verschiedene Anwendungen der bisher entwickelten Theorie vor.
+In diesem Kapitel stellen wir verschiedene Anwendungen der bisher entwickelten Theorie vor.
 Zunächst zeigen wir, wie sich bestimmte transzendente Funktionen wie der natürliche Logarithmus und die
 trigonometrischen Funktionen effektiv mit Hilfe von Reihen berechnen lassen.   Anschließend diskutieren
 wir, wann eine Funktion sich durch ein Polynom interpolieren läßt.
@@ -100,9 +100,8 @@ gefunden.  Also definieren wir für eine Funktion $f:\mathbb{R} \rightarrow \math
 beliebig oft differenzierbar ist, die der Funktion $f$ zugeordnete \emph{Taylor-Reihe} als
 \begin{equation}
   \label{eq:taylorFormula}
-  \framebox{$\ds \textsl{taylor}(f,x) := \sum\limits_{n=0}^\infty \bruch{f^{(n)}(0)}{n!} \cdot  x^n$}
+  \framebox{$\ds \textsl{taylor}(f,x) := \sum\limits_{n=0}^\infty \bruch{f^{(n)}(0)}{n!} \cdot  x^n$.}
 \end{equation}
-definiert.
 \pagebreak
 
 \remark
@@ -125,7 +124,7 @@ die Werte sämtlicher Ableitungen an der Stelle $x = 0$ verschwinden.   Damit gil
 
 
 \subsection{Der Abbruch-Fehler bei der Taylor-Reihe}
-Um zu untersuchen wann die Taylor-Reihe $\textsl{taylor}(f,x)$ gegen $f(x)$
+Um zu untersuchen, wann die Taylor-Reihe $\textsl{taylor}(f,x)$ gegen $f(x)$
 konvergiert, definieren wir zu einer gegebenen Funktion $f$ und einer natürlichen Zahl
 $n\in \mathbb{N}$ den \emph{Abbruch-Fehler vom Grad $n$} als
 \\[0.3cm]
@@ -307,7 +306,7 @@ $f^{(n)}(0) = (-1)^{n+1}\cdot \bruch{(n-1)!}{(1+0)^n} = (-1)^{n+1}\cdot (n-1)!$
 Damit erhalten wir für die Taylor-Entwicklungen der Funktion $\ln(1+x)$ das Ergebnis 
 \begin{equation}
   \label{eq:taylorLnSimple}
-  \textsl{taylor}(x \mapsto \ln(1+x),x) = \sum\limits_{k=1}^\infty (-1)^{k+1}\cdot \bruch{(k-1)!\cdot x^k}{k!} = \sum\limits_{k=1}^\infty (-1)^{k+1}\cdot \bruch{x^k}{k}.
+  \textsl{taylor}\bigl(x \mapsto \ln(1+x),x \bigr) = \sum\limits_{k=1}^\infty (-1)^{k+1}\cdot \bruch{(k-1)!\cdot x^k}{k!} = \sum\limits_{k=1}^\infty (-1)^{k+1}\cdot \bruch{x^k}{k}.
 \end{equation}
 Wir wollen nun zeigen, dass diese Taylor-Reihe tatsächlich gegen $\ln(1+x)$ konvergiert, wir wollen also
 zeigen, dass
@@ -325,8 +324,8 @@ Für den Abbruch-Fehler haben wir also
 \\[0.1cm]
 \hspace*{1.3cm} $\textsl{error}_n(x) = (-1)^n \cdot \bruch{1}{(1+\chi)^{n+1}}\cdot \bruch{x^{n+1}}{n+1}$
 \\[0.1cm]
-mit $\chi \in[0,x]$ und für $x \in [0, 1]$ geht dieser Wert für $n \rightarrow \infty$ gegen $0$.
-Damit haben wir insgesamt $\textsl{taylor}\bigl(x \mapsto \ln(1+x), x \bigr) = \ln(1+x)$ für $x >= 0$ gezeigt und folglich können
+mit $\chi \in[0,x]$ und für $x \in (-1, 1]$ geht dieser Wert für $n \rightarrow \infty$ gegen $0$.
+Damit haben wir insgesamt $\textsl{taylor}\bigl(x \mapsto \ln(1+x), x \bigr) = \ln(1+x)$ für $x \in (-1, 1]$ gezeigt und folglich können
 wir
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -369,7 +368,7 @@ wir
    & = & 2 \cdot  \displaystyle\sum\limits_{n=0}^\infty \bruch{x^{2\cdot n+1}}{2\cdot n+1} \\[0.5cm]
   \end{array}
 \end{equation}
-Setzen wir hier für $x$ den Wert $\frac{1}{3}$, so erhalten wir 
+Setzen wir hier für $x$ den Wert $\ds\frac{1}{3}$ ein, so erhalten wir 
 \\[0.1cm]
 \hspace*{1.3cm}
 $\displaystyle \ln\left(\frac{1+\frac{1}{3}}{1-\frac{1}{3}}\right) =  
@@ -418,7 +417,9 @@ $
  \bruch{1}{2\cdot n+1}\left(\frac{1}{3}\right)^{2\cdot n+1} \approx 0.69314718054981171974$
 \\[0.1cm]
 Der wirkliche Fehler ist sogar noch kleiner, er beträgt etwa $10^{-11}$.  Das liegt daran,
-dass wir bei der Abschätzung der Summe durch die geometrische Reihe den Faktor $\frac{1}{2\cdot k+1}$ vernachläßigt haben.
+dass wir bei der Abschätzung der Summe durch die geometrische Reihe den Faktor $\ds\frac{1}{2\cdot
+  k+1}$ vernachläßigt haben.
+\vspace*{0.3cm}
 
 Das Verfahren, das wir oben benutzt haben um $\ln(2)$ zu berechnen, läßt sich
 verallgemeinern.  Ist die Aufgabe gegeben, für eine gegebene reelle Zahl $r$ den
@@ -436,7 +437,7 @@ $
 \end{array}
 $
 \\[0.1cm]
-Bei gegebenem $r$ bestimmen wir also $x$ nach der Formel $x=\frac{r-1}{r+1}$.  Für
+Bei gegebenem $r$ bestimmen wir also $x$ nach der Formel $x=\ds\frac{r-1}{r+1}$.  Für
 das so bestimmte $x$ gilt dann
 \begin{equation}
   \label{eq:Ln}
@@ -499,8 +500,7 @@ Stelle $0$ den Wert $0$ haben, denn es gilt $\arctan(0) = 0$.  Damit finden wir
   \label{eq:taylorArctan}
   \arctan(x) = \sum\limits_{n=0}^\infty \bigl(-1\bigr)^n \cdot  \bruch{x^{2\cdot n+1}}{2\cdot n+1}
 \end{equation}
-Da $\tan\bigl(\frac{\pi}{4}\bigr) = 1$, also $\arctan\bigl(1) = \frac{\pi}{4}$ ist, haben
-wir die Formel
+Da $\ds\tan\Bigl(\frac{\pi}{4}\Bigr) = 1$, also $\ds\arctan\bigl(1) = \frac{\pi}{4}$ ist, haben wir die Formel
 \begin{equation}
   \label{eq:PiViertel}
   \bruch{\pi}{4} = \sum\limits_{n=0}^\infty (-1)^n \cdot  \bruch{1}{2\cdot n+1} = 
@@ -800,7 +800,7 @@ Sie ein Polynom $p(x)$ vom Grade 1, so dass
 gilt.  Hat ein Teilnehmer einer Klausur $k$ von $n$ Punkten erreicht, so ist $p(k)$ die
 Note, mit der die Leistung bewertet wird.  \eox
 
-\subsection{Interpolation nach Newton}
+\subsection{Interpolation nach Newton$^*$}
 Bei der Rechnung mit den oben definierten Lagrange'schen Polynomen tritt in der Praxis ein
 Problem auf.  Hat man für eine gegebene Zahl von Stützstellen das Interpolations-Problem
 gelöst und erhält man nun eine zusätzliche Stützstelle, so ist es erforderlich, alle
