@@ -35,12 +35,12 @@ Treppen-Funktion $f^\downarrow_{n}(x)$ wie folgt:
 \begin{equation}
   \label{eq:treppeOben}
   f^\downarrow_n(x) := f(a + i\cdot h) \quad \mbox{falls}\; 
-  x \in  \bigl]a+(i-1)\cdot h,\, a+i\cdot h\bigr[\;\mbox{und}\;i=1,\cdots,n.
+  x \in  \bigl(a+(i-1)\cdot h,\, a+i\cdot h\bigr)\;\mbox{und}\;i=1,\cdots,n.
 \end{equation}
 Da wir $f$ als monoton steigend vorausgesetzt haben, gilt 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall x \in \bigl]a+(i-1)\cdot h, a+i\cdot h\bigr[: f(x) \leq f(a+i\cdot h) = f^\downarrow(x)$,
+$\forall x \in \bigl( a+(i-1)\cdot h, a+i\cdot h\bigr): f(x) \leq f(a+i\cdot h) = f^\downarrow(x)$,
 \\[0.2cm]
 die Funktion $f$ liegt also unterhalb der Treppen-Funktion $f^\downarrow$.
 Wie die Treppen-Funktion an den Randpunkten der Intervalle $[a+(i-1)\cdot h, a+i\cdot h]$ definiert
@@ -49,7 +49,7 @@ $f(x) = x^2$ und die zugehörige Treppen-Funktion $f^\downarrow_{10}(x)$.  Die Fl
 einer solchen Treppen-Funktion kann leicht berechnet werden:  Schreiben wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$\displaystyle \int_a^b f(x) \,dx$
+$\ds \int_a^b f(x) \,dx$
 \\[0.2cm] 
 für die Fläche unter einer Funktion $f$ in dem Intervall $[a,b]$, so gilt für die
 Treppen-Funktion $f^\downarrow_{n}$ offenbar
@@ -73,7 +73,7 @@ diese Fläche auch von unten approximieren. Die dazu notwendige Treppen-Funktion
 $f^\uparrow_n(x)$ definieren wir analog zu Gleichung (\ref{eq:treppeOben})
 \begin{equation}
   \label{eq:treppeUnten}
-  f^\uparrow_n(x) = f(a + (i-1)\cdot h) \quad \mbox{falls}\; x \in ]a+(i-1)\cdot h, a+i\cdot h[,
+  f^\uparrow_n(x) = f(a + (i-1)\cdot h) \quad \mbox{falls}\; x \in (a+(i-1)\cdot h, a+i\cdot h),
 \end{equation}
 wir werten also diesmal in jedem Intervall die Funktion $f$ am linken Eckpunkt aus.
 Da die Funktion $f$ monoton steigend ist,  ist dann klar, dass die Funktion $f^\uparrow$
@@ -81,14 +81,14 @@ unterhalb der Funktion $f$ liegt.
 Für diese Treppen-Funktion berechnet sich die Fläche also nach der Formel
 \begin{equation}
   \label{eq:intUnter}
-  \int_a^b f^\uparrow_n(x) \,dx = \sum\limits_{i=1}^{n} f\bigl(a+(i-1)\cdot h\bigr)\cdot hw
+  \int_a^b f^\uparrow_n(x) \,dx = \sum\limits_{i=1}^{n} f\bigl(a+(i-1)\cdot h\bigr)\cdot h
   = \sum\limits_{i=0}^{n-1} f(a+i\cdot h)\cdot h.
 \end{equation}
 Für die Fläche, die zwischen der Funktion $f$ und der $x$-Achse liegt, haben wir insgesamt
 die Abschätzung
 \\[0.2cm]
 \hspace*{1.3cm}
-$\sum\limits_{i=0}^{n-1} f(a+i\cdot h)\cdot h \leq \int_a^b f(x) \,dx \leq \sum\limits_{i=1}^{n} f(a+i\cdot h)\cdot h$ 
+$\ds\sum\limits_{i=0}^{n-1} f(a+i\cdot h)\cdot h \leq \int_a^b f(x) \,dx \leq \sum\limits_{i=1}^{n} f(a+i\cdot h)\cdot h$ 
 \\[0.2cm]
 gefunden.  Die linke Summe bezeichnen wir als \emph{Unter-Summe}, die Summe auf der
 rechten Seite der Ungleichungskette nennen wir \emph{Ober-Summe}.
@@ -99,11 +99,11 @@ Differenz dieser beiden Summen:
 \hspace*{1.3cm}
 $
 \begin{array}{cl} 
-    & \sum\limits_{i=1}^{n} f(a+i\cdot h)\cdot h - \sum\limits_{i=0}^{n-1} f(a+i\cdot h)\cdot h \\[0.4cm]
- =  &  f(a+n\cdot h)\cdot h - f(a)\cdot h  \\[0.1cm]
- =  &  \biggl(f\Bigl(a+n\cdot \bruch{b-a}{n}\Bigr) - f(a)\biggr)\cdot  \bruch{b-a}{n}  \\[0.3cm]
- =  &  \Bigl(f(a+ b-a) - f(a)\Bigr)\cdot  \bruch{b-a}{n}  \\[0.3cm]
- =  &  \Bigl(f(b) - f(a)\Bigr)\cdot  \bruch{b-a}{n}  \\[0.3cm]
+    & \ds \sum\limits_{i=1}^{n} f(a+i\cdot h)\cdot h - \sum\limits_{i=0}^{n-1} f(a+i\cdot h)\cdot h \\[0.4cm]
+ =  & \ds f(a+n\cdot h)\cdot h - f(a)\cdot h  \\[0.1cm]
+ =  & \ds \biggl(f\Bigl(a+n\cdot \bruch{b-a}{n}\Bigr) - f(a)\biggr)\cdot  \bruch{b-a}{n}  \\[0.3cm]
+ =  & \ds \Bigl(f(a+ b-a) - f(a)\Bigr)\cdot  \bruch{b-a}{n}  \\[0.3cm]
+ =  & \ds \Bigl(f(b) - f(a)\Bigr)\cdot  \bruch{b-a}{n}  \\[0.3cm]
 {\longrightarrow \atop {n \rightarrow \infty}} & 0
 \end{array}
 $
@@ -133,28 +133,36 @@ Berechnen Sie das Integral
 $\dint{0}{b} x^2\, dx$
 \\[0.2cm]
 nach der in (\ref{eq:integral}) angegebenen Formel.
+\vspace*{0.2cm}
 
+\noindent
+\textbf{Hinweis:}  Es gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds \sum\limits_{i=1}^n i^2 = \frac{n}{6} \cdot (n + 1) \cdot (2 \cdot n + 1)$.
+\eox
+\pagebreak
 
 \begin{Definition}[Integral]
   Ist $f:[a,b] \rightarrow \mathbb{R}$ eine Funktion, so dass der Grenzwert 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\lim\limits_{n\rightarrow \infty} \sum\limits_{i=1}^n f\Bigl(a + i \cdot  \bruch{b-a}{n}\Bigr) \cdot \bruch{b-a}{n}$
+$\ds\lim\limits_{n\rightarrow \infty} \sum\limits_{i=1}^n f\Bigl(a + i \cdot  \bruch{b-a}{n}\Bigr) \cdot \bruch{b-a}{n}$
 \\[0.2cm]
-existiert, so nennen wir $f$ \emph{integriebar} und definieren das \emph{Integral} von $f$
+existiert, so nennen wir $f$ \emph{integrierbar} und definieren das \emph{Integral} von $f$
 in dem Intervall $[a,b]$ als 
   \\[0.2cm]
   \hspace*{1.3cm}
   $\dint{a}{b} f(x) \,dx = 
    \lim\limits_{n\rightarrow \infty} \sum\limits_{i=1}^n f\Bigl(a + i \cdot \bruch{b-a}{n}\Bigr) \cdot \bruch{b-a}{n}
-  $.
+  $.  \eod
 \end{Definition}
 
 \noindent
 Der so eingeführte Integral-Begriff hat folgende Eigenschaften:
 \begin{enumerate}
 \item Linearität: Sind $f$ und $g$ zwei Funktionen, so dass
-      das Integral über $f$ bzw.~$g$ in dem Intervall $[a,b]$ definiert ist
+      das Integral über $f$ bzw.~$g$ in dem Inter\-vall $[a,b]$ definiert ist
       und sind $\alpha,\beta \in\mathbb{R}$,
       so ist auch das Integral der Funktion
       \\[0.2cm]
@@ -162,19 +170,26 @@ Der so eingeführte Integral-Begriff hat folgende Eigenschaften:
       definiert und es gilt 
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\int_a^b \alpha\cdot f(x) + \beta\cdot g(x)\,dx = \alpha\cdot \int_a^b f(x)\,dx + \beta\cdot \int_a^b g(x)\,dx$.
+      $\ds\int_a^b \alpha\cdot f(x) + \beta\cdot g(x)\,dx = \alpha\cdot \int_a^b f(x)\,dx + \beta\cdot \int_a^b g(x)\,dx$.
+      \\[0.2cm]
+      Diese Eigenschaft folgt aus der Tatsache, dass sowohl die Summe als auch das Produkt zweier konvergenter Folgen 
+      wieder konvergent sind.
 \item Monotonie:  Sind $f$ und $g$ zwei Funktionen, so dass
       das Integral über $f$ und  $g$ in dem Intervall $[a,b]$ definiert ist, so gilt: 
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\Bigl(\forall x \in [a,b]: f(x) \leq g(x)\Bigr) \;\Rightarrow\;
+      $\ds\Bigl(\forall x \in [a,b]: f(x) \leq g(x)\Bigr) \;\Rightarrow\;
        \int_a^b f(x)\, dx \,\leq\, \int_a^b g(x)\, dx$.
+      \\[0.2cm] 
+      Auch diese Eigenschaft folgt aus der entsprechenden Eigenschaft konvergenter Folgen.
 \end{enumerate}
- 
+
+
 \begin{Satz}[Mittelwert-Satz der Integral-Rechnung] \hspace*{\fill} \\
 Es sei $f:[a,b] \rightarrow \mathbb{R}$ eine stetige Funktion. Dann existiert ein $\xi \in [a,b]$, so dass gilt:
 \\[0.2cm]
-\hspace*{1.3cm} $\int_a^b f(x) \,dx = f(\xi) \cdot  (b - a)$.
+\hspace*{1.3cm}
+$\ds\int_a^b f(x) \,dx = f(\xi) \cdot  (b - a)$.
 \end{Satz}
 
 \noindent
@@ -190,28 +205,27 @@ Aufgrund der Monotonie des Integral-Operators folgt daraus sofort
 $
 \begin{array}{cl} 
                 & \dint{a}{b} f\bigl(x_{min}\bigr)\, dx \leq \int_a^b f(x)\, dx \leq \int_a^b f\bigl(x_{max}\bigr)\,dx \\[0.3cm]
-\Leftrightarrow & \displaystyle f\bigl(x_{min}\bigr) \cdot  (b-a) \leq \int_a^b f(x)\, dx \leq f\bigl(x_{max}\bigr)\cdot (b-a) \\[0.3cm]
-\Leftrightarrow & \displaystyle f\bigl(x_{min}\bigr) \leq \frac{\normalsize\int_a^b f(x)\, dx}{b-a} \leq f\bigl(x_{max}\bigr) \\[0.3cm]
+\Leftrightarrow & \ds f\bigl(x_{min}\bigr) \cdot  (b-a) \leq \int_a^b f(x)\, dx \leq f\bigl(x_{max}\bigr)\cdot (b-a) \\[0.3cm]
+\Leftrightarrow & \ds f\bigl(x_{min}\bigr) \leq \frac{1}{b-a} \cdot \int_a^b f(x)\, dx \leq f\bigl(x_{max}\bigr) \\[0.3cm]
 \end{array}
 $
 \\[0.2cm]
-Die obige
-Ungleichungskette zeigt, dass 
+Die obige Ungleichungskette zeigt, dass 
 \\[0.2cm]
 \hspace*{1.3cm}
- $\displaystyle \frac{\;\normalsize\int_a^b f(x)\, dx\;}{b-a} \in \bigl[f(x_{min}), f(x_{max})\bigr]$ \\[0.2cm]
+ $\ds \frac{1}{b-a} \cdot \int_a^b f(x)\, dx\; \in \bigl[f(x_{min}), f(x_{max})\bigr]$ \\[0.2cm]
 gilt.  
 Aufgrund des Zwischenwert-Satzes nimmt die stetige Funktion $f$ jeden Wert in dem 
 Intervall $\bigl[f\bigl(x_{min}\bigr), f\bigl(x_{max}\bigr)\bigr]$ an.  
 Also gibt es ein $\xi \in [a,b]$, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$f(\xi) = \displaystyle \frac{\;\int_a^b f(x)\, dx\;}{b-a}$
+$f(\xi) = \ds \frac{1}{b-a} \cdot \int_a^b f(x)\, dx$
 \\[0.2cm]
 gilt und dass ist äquivalent zu 
 \\[0.2cm]
 \hspace*{1.3cm}
-$f(\xi) \cdot  (b- a) = \int_a^b f(x)\, dx$. \hspace*{\fill} $\Box$
+$\ds f(\xi) \cdot  (b- a) = \int_a^b f(x)\, dx$. \hspace*{\fill} $\Box$
 \vspace*{0.3cm}
 
 \noindent
@@ -224,7 +238,7 @@ Differenzial-Rechnung und Integral-Rechnung herzustellen.
   $x \in [a,b]$ die Funktion  $F:[a,b] \rightarrow \mathbb{R}$ durch 
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\displaystyle F(x) := \int_a^x f(t)\, dt$,
+  $\ds F(x) := \int_a^x f(t)\, dt$,
   \\[0.2cm]
   so ist die Funktion $F$ im Intervall $[a,b]$ differenzierbar und es gilt 
   \\[0.2cm]
@@ -240,13 +254,13 @@ $
 
    & \df F(x) \\[0.3cm]
  = &  \lim\limits_{h\rightarrow 0} \bruch{F(x+h) - F(x)}{h} \\[0.3cm]
- = & \lim\limits_{h\rightarrow 0} \displaystyle\frac{\int_a^{x+h} f(t)\, dt - \int_a^x f(t)\, dt}{h} &
+ = & \lim\limits_{h\rightarrow 0} \ds\frac{\int_a^{x+h} f(t)\, dt - \int_a^x f(t)\, dt}{h} &
       \mbox{nach Definition von $F$} \\[0.3cm]
- = & \lim\limits_{h\rightarrow 0} \displaystyle\frac{1}{h}\int_{x}^{x+h} f(t)\, dt \\[0.5cm]
- = & \lim\limits_{h\rightarrow 0} \displaystyle\frac{1}{h} \cdot  (x+h - h) \cdot   f(\xi_h) &
+ = & \lim\limits_{h\rightarrow 0} \ds\frac{1}{h}\int_{x}^{x+h} f(t)\, dt \\[0.5cm]
+ = & \lim\limits_{h\rightarrow 0} \ds\frac{1}{h} \cdot  (x+h - x) \cdot   f(\xi_h) &
       \mbox{nach dem Mittelwertsatz für ein $\xi_h\in[x, x+h]$} \\[0.5cm]
- = & \lim\limits_{h\rightarrow 0} \displaystyle f(\xi_h) \\[0.3cm]
- = & \displaystyle f(x) & \mbox{wegen $\xi_h \in [x, x+h]$}.
+ = & \lim\limits_{h\rightarrow 0} \ds f(\xi_h) \\[0.3cm]
+ = & \ds f(x) & \mbox{wegen $\xi_h \in [x, x+h]$}.
 \end{array}
 $
 \\[0.3cm]
@@ -261,13 +275,13 @@ eine \emph{Stamm-Funktion} von $f$, falls $F$ differenzierbar ist und
 \\[0.2cm]
 \hspace*{1.3cm} $\df F(x) = f(x)$
 \\[0.2cm]
-gilt.  In diesem Fall schreiben wir auch  $F(x) = \int f(x) \, dx$.
-Der Ausdruck $\int f(x) \, dx$ wird auch als \emph{unbestimmtes Integral} bezeichnet.
+gilt.  In diesem Fall schreiben wir auch  $\ds F(x) = \int f(x) \, dx$.
+Der Ausdruck $\ds\int f(x) \, dx$ wird auch als \emph{unbestimmtes Integral} bezeichnet. \eod
 \end{Definition}
 
 
 
-Die Schreibweise $F(x) = \int f(x) \, dx$ ist problematisch, denn die Stamm-Funktion einer
+Die Schreibweise $\ds F(x) = \int f(x) \, dx$ ist problematisch, denn die Stamm-Funktion einer
 gegebenen Funktion ist nicht eindeutig.  Ist $F(x)$ eine Stamm-Funktion von $f(x)$ und
 definieren wir die Funktion $G$ durch $G(x) := F(x) + c$ für eine beliebige Konstante $c$,
 so ist natürlich auch $G(x)$ eine Stamm-Funktion von $f$, denn es gilt
@@ -296,14 +310,14 @@ Wir kommen jetzt zu einem zentralen Ergebnis dieser Vorlesung.
 sei eine Stamm-Funktion von $f$ und es gelte $u,v\in[a,b]$.  Dann gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\dint{u}{v} f(x)\,dx = F(v) - F(u)$.  
+\colorbox{orange}{\framebox{$\dint{u}{v} f(x)\,dx = F(v) - F(u)$.}}  
 \end{Satz}
 
 \noindent
 \textbf{Beweis}: Definieren wir die Funktion $G(x)$ durch 
 \\[0.2cm]
 \hspace*{1.3cm}
-$G(x) := \int_a^x f(t)\, dt$ \quad für alle $x\in[a,b]$,
+$\ds G(x) := \int_a^x f(t)\, dt$ \quad für alle $x\in[a,b]$,
 \\[0.2cm]
 so besagt Satz \ref{satz:ableitungInt}, dass die Funktion $G$ eine Stamm-Funktion der
 Funktion $f$ ist.  Ist nun $F$ eine beliebige weitere Stamm-Funktion von $f$, so haben wir
@@ -320,10 +334,11 @@ $
 \begin{array}[t]{lcl}
   F(v) - F(u) & = & G(v) + c - \bigl(G(u) + c\bigr) \\[0.2cm]
               & = & G(v) - G(u)                     \\[0.2cm]
-              & = & \int_a^v f(t)\, dt - \int_a^u f(t)\, dt \\[0.3cm]
-              & = & \int_u^v f(t)\, dt. \hspace*{9cm} \Box  \\[0.3cm]              
+              & = & \ds\int_a^v f(t)\, dt - \int_a^u f(t)\, dt \\[0.3cm]
+              & = & \ds\int_u^v f(t)\, dt. \hspace*{9cm} \Box  
 \end{array}
 $
+\vspace*{0.3cm}
 
 \noindent
 Der letzte Satz gibt Anlaß zu einer Schreibweise.  Für eine Funktion $F$  definieren wir
@@ -333,11 +348,12 @@ $F(x) \Big|_u^v := F(v) - F(u)$.
 \\[0.2cm]
 Den letzten Satz können wir wie folgt umformulieren.  Ist $f:[a,b] \rightarrow\mathbb{R}$
 eine differenzierbare Funktion, so ist $f$ offenbar eine Stamm-Funktion der Funktion $f'(x)$.
-Also gilt dann
+Also gilt:
 \begin{equation}
   \label{eq:hauptsatzKorollar}
-  \int_u^v f'(x)\,dx = f(v) - f(u) = f(x)\Big|_u^v.    
+  \colorbox{orange}{\framebox{$\ds\int_u^v f'(x)\,dx = f(v) - f(u) = f(x)\Big|_u^v$}}
 \end{equation}
+\pagebreak
 
 \section{Regeln zur Berechnung von Integralen}
 Der Hauptsatz der Differenzial- und Integral-Rechnung ermöglicht es, Regeln zur Berechnung
@@ -356,14 +372,14 @@ $
 \end{array}
 $
 \\[0.3cm]
-Damit ist gezeigt, dass $\int \ln(x)\;dx = x\cdot \ln(x) - x$ gilt.  Die übrigen Einträge der
+Damit ist gezeigt, dass $\ds\int \ln(x)\;dx = x\cdot \ln(x) - x$ gilt.  Die übrigen Einträge der
 Tabelle können auf ähnliche Weise verifiziert werden.
 
 \begin{table}[h]
   \centering
   \begin{tabular}[t]{|l|l|}
     \hline
-    Funktion $f(x)$ & Stamm-Funktion $\displaystyle \rule[-12pt]{0pt}{30pt}\int\!\! f(x) \, dx$ \\
+    Funktion $f(x)$ & Stamm-Funktion $\ds \rule[-12pt]{0pt}{30pt}\int\!\! f(x) \, dx$ \\
     \hline
     \hline
     $x^\alpha$ mit $\alpha\not= -1$ & \rule[-12pt]{0pt}{30pt} $\bruch{1}{\alpha + 1}\cdot x^{\alpha + 1}$ \\
@@ -435,8 +451,7 @@ Nach dem Hauptsatz können wir hier bei den Integralen Grenzen einsetzen. Dann er
 \begin{equation}
   \label{eq:subst0}
   \int_a^b f'(x) \cdot  h'(f(x))\, dx  =  h\bigl(f(b)\bigr) - h\bigl(f(a)\bigr)
-\end{equation}
- 
+\end{equation} 
 Wir definieren nun $g(x) := h'(x)$.  Dann ist $h$ eine Stamm-Funktion der Funktion $g$, es
 gilt also $h(x) = \int g(x)\, dx \,+\, d$ , was wir nach dem Hauptsatz auch als
 \begin{equation}
@@ -448,20 +463,20 @@ Ersetzen wir in Gleichung (\ref{eq:subst0})  $h'$
 durch $g$ so erhalten wir zusammen mit Gleichung (\ref{eq:subst1})  die \emph{Substitutions-Regel}:
 \begin{equation}
   \label{eq:subst}
-\int_a^b f'(x) \cdot  g\bigl(f(x)\bigr)\, dx = \int_{f(a)}^{f(b)} g(x)\, dx  
+\colorbox{orange}{\framebox{$\ds\int_a^b f'(x) \cdot  g\bigl(f(x)\bigr)\, dx = \int_{f(a)}^{f(b)} g(x)\, dx$}}.  
 \end{equation}
 Sie können sich die Substitutions-Regel mit Hilfe der folgenden suggestiven Pseudo-Ableitung
 leicht merken.  Wir gehen aus von dem unbestimmten Integral 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\int g(y)\, dy$.
+$\ds\int g(y)\, dy$.
 \\[0.2cm]
 Hier führen wir die Variablen-Transformation $y = f(x)$ durch. Dann gilt 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\bruch{dy}{dx} = f'(x)$
 \\[0.2cm]
-Wir rechnen nun mit dem Ausdruck $\frac{dy}{dx}$ so, als ob es ein gewöhnlicher Bruch wäre und stellen die
+Wir rechnen nun mit dem Ausdruck $\ds\frac{dy}{dx}$ so, als ob es ein gewöhnlicher Bruch wäre und stellen die
 letzte Gleichung nach $dy$ um.  Dann haben wir 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -470,12 +485,15 @@ $dy = f'(x)\cdot dx$
 Ersetzen wir in dem ursprünglichen Integral $dy$ durch diesen Ausdruck, so haben wir 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\int g(y)\, dy = \int g\bigl(f(x)\bigr)\cdot f'(x)\, dx$
+$\ds\int g(y)\, dy = \int g\bigl(f(x)\bigr)\cdot f'(x)\, dx$
 \\[0.2cm]
 Das ist aber genau die Substitutions-Regel.
 
 \exercise
-Als Anwendung der Substitutions-Regel zeigen wir die Berechnung von $\int \tan(t)\,dt$:
+Berechnen Sie das Integral $\ds \int_0^x \tan(t)\, dt$ mit Hilfe der Substitutions-Regel.  \eox
+
+\solution
+Es gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
 $
@@ -496,22 +514,22 @@ Damit ist gezeigt, dass  $x \mapsto -\ln\bigl(|\cos(x)|\bigr)$ eine Stamm-Funkti
 \hspace*{1.3cm} $\bint\tan(x)\, dx = - \ln\bigl(|\cos(x)|\bigr) + c$.
 \\[0.2cm]
 Wir zeigen, wie sich die Stamm-Funktion von $\tan(x)$ suggestiver berechnen läßt.  Bei dem
-Integral $\int \frac{\sin(t)}{\cos(t)}\,dt$ führen wir die Variablen-Transformation $x =
+Integral $\ds\int \frac{\sin(t)}{\cos(t)}\,dt$ führen wir die Variablen-Transformation $x =
 \cos(t)$ durch.  Dann gilt
 \\[0.2cm]
 \hspace*{1.3cm} $\bruch{dx}{dt} = -\sin(t) \;\Leftrightarrow\; dt = \bruch{dx}{-\sin(t)}$.
 \\[0.2cm]
-Ersetzen wir in dem Integral $\int \frac{\sin(t)}{\cos(t)}\,dt$ den Ausdruck $dt$ durch
+Ersetzen wir in dem Integral $\ds\int \frac{\sin(t)}{\cos(t)}\,dt$ den Ausdruck $dt$ durch
 $\frac{dx}{-\sin(t)}$ und $\cos(t)$ durch $x$, so erhalten wir
 \\[0.2cm]
 \hspace*{1.3cm} 
-$\displaystyle \int \bruch{\sin(t)}{\cos(t)}\,dt \;=\; \int
+$\ds \int \bruch{\sin(t)}{\cos(t)}\,dt \;=\; \int
 \bruch{\sin(t)}{x}\cdot \bruch{dx}{-\sin(t)} \;=\; - \int \bruch{1}{x}\, dx = -\ln(|x|) =
 -\ln\bigl(|\cos(t)|\bigr) $.  
 \\[0.2cm]
 Das Rechnen mit den \emph{infinitesimalen} Größen $dx$ und $dt$ ist
-offensichtlich intuitiver als die formale Anwendung der Substitutions-Regel.
-\pagebreak
+offensichtlich intuitiver als die formale Anwendung der Substitutions-Regel.  \qed
+
 
 \exercise
 Berechnen Sie das Integral
@@ -519,7 +537,8 @@ Berechnen Sie das Integral
 \hspace*{1.3cm}
 $\bint\bruch{x}{1 + x^2} \, dx$
 \\[0.2cm]
-mit  Hilfe der Substitutions-Regel.
+mit  Hilfe der Substitutions-Regel.  \eox
+\pagebreak
 
 \subsection{Partielle Integration}
 Als nächstes überlegen wir, wie wir aus der Produkt-Regel der Differenzial-Rechnung
@@ -529,14 +548,14 @@ $
 \begin{array}[t]{llcll}
                 & \dfo \Bigl(f(x)\cdot g(x)\Bigr)  & = & f'(x)\cdot  g(x) + f(x) \cdot  g'(x) &\mbox{(Umstellen)} \\[0.3cm]
 \Leftrightarrow & f'(x) \cdot  g(x) & = & \dfo \Bigl(f(x)\cdot g(x)\Bigr) - f(x) \cdot  g'(x) &\mbox{(Stamm-Funktion)} \\[0.3cm]
-\Leftrightarrow & \displaystyle \int f'(x)\cdot  g(x)\,dx & = & \bint\dfo \Bigl(f(x)\cdot g(x)\Bigr)\,dx - \int f(x) \cdot  g'(x)\,dx \\[0.3cm]
+\Leftrightarrow & \ds \int f'(x)\cdot  g(x)\,dx & = & \bint\dfo \Bigl(f(x)\cdot g(x)\Bigr)\,dx - \int f(x) \cdot  g'(x)\,dx \\[0.3cm]
 \end{array}
 $
 \\[0.2cm]
 Die Stamm-Funktion von $\dfo\Bigl( f(x)\cdot g(x) \Bigr)$ ist natürlich $f(x)\cdot g(x)$, also haben wir
 \begin{equation}
   \label{eq:partInt0}
- \int f'(x)\cdot  g(x)\,dx =  \displaystyle f(x)\cdot g(x) - \int f(x) \cdot  g'(x)\,dx 
+ \colorbox{orange}{\framebox{$\ds\int f'(x)\cdot  g(x)\,dx =  \ds f(x)\cdot g(x) - \int f(x) \cdot  g'(x)\,dx$}}
 \end{equation}
 gefunden. Diese Gleichung setzt die Stamm-Funktionen von $f'(x)\cdot  g(x)$
 und $f(x) \cdot  g'(x)$ in Beziehung: Die Stamm-Funktion der ersten Funktion kann auf die
@@ -558,16 +577,20 @@ $
 $
 
 \exercise
-Berechnen Sie die Stamm-Funktion $\int \arctan(x)\,dx$.
+Berechnen Sie die Stamm-Funktion $\ds\int \arctan(x)\,dx$.  \eox
 
 \subsection{Das Integral von Umkehr-Funktionen}
 Wir zeigen noch einen anderen Weg, mit dem das Integral der Umkehr-Funktion einer Funktion
 berechnet werden kann.  Es sei also eine Funktion $f:[a,b] \rightarrow\mathbb{R}$ geben,
 die eine Umkehr-Funktion hat.  Wir setzen zur Vereinfachung jetzt voraus, dass die
 Funktion $f$ monoton steigend ist, wenn $f$ monoton fallend ist, liegen die Dinge analog.
-Die Umkehr-Funktion von $f$ sei die Funktion $g:\bigl[f(a), f(b)\bigl]
-\rightarrow\mathbb{R}$, für alle $x\in[a,b]$ gilt
-also $g\bigl(f(x)\bigr) = x$.  Analog gilt dann für alle $y\in\bigl[f(a),f(b)\bigr]$
+Die Umkehr-Funktion von $f$ sei die Funktion
+\\[0.2cm]
+\hspace*{1.3cm}
+ $g:\bigl[f(a), f(b)\bigl]
+\rightarrow\mathbb{R}$, \quad für alle $x\in[a,b]$ gilt also $g\bigl(f(x)\bigr) = x$.  
+\\[0.2cm]
+Analog gilt dann für alle $y\in\bigl[f(a),f(b)\bigr]$ die Gleichung
 $f\bigl(g(y)\bigr) = y$. Abbildung \ref{fig:umkehr.eps} zeigt die Funktion.  Durch
 Spiegelung an der Winkelhalbierung geht die Funktion $f$ in die Umkehr-Funktion über,
 wenn wir also die $y$-Achse als $x$-Achse ansehen, zeigt die Abbildung die Umkehr-Funktion.
@@ -584,11 +607,11 @@ sind.
 \item Die vertikal schraffierte Fläche ist die Fläche unter der Kurve $f(x)$ und ist
       folglich gegeben durch das Integral
       \\[0.2cm]
-      \hspace*{1.3cm} $\displaystyle \int_a^b f(x)\, dx$.
+      \hspace*{1.3cm} $\ds \int_a^b f(x)\, dx$.
 \item Die horizontal schraffierte Fläche ist die Fläche unter der Kurve $g(y)$ der
       Umkehr-Funktion   und ist daher gegeben durch 
       \\[0.2cm]
-      \hspace*{1.3cm} $\displaystyle \int_{f(a)}^{f(b)} g(y)\, dy$.
+      \hspace*{1.3cm} $\ds \int_{f(a)}^{f(b)} g(y)\, dy$.
 \end{enumerate}
 Natürlich ist die gesamte Fläche des Rechtecks die Summe aller drei Teile, es gilt also
 \begin{equation}
@@ -616,20 +639,20 @@ weglassen.  Dann schreibt sich die letzte Gleichung als
   \label{eq:umkehr1}
   \int f(x)\, dx = x\cdot f(x) - G\bigl(f(x)\bigr) \quad \mbox{mit}\;\; G(x) := \int g(x)\, dx. 
 \end{equation}
-Als Beispiel betrachten wir die Funktion $f(x) = \ln(x)$ mit der Umkehr-Funktion 
-$g(x) = \exp(x)$.  Wegen $\int \exp(x)\,dx = \exp(x)$ gilt 
+
+\example 
+Wir betrachten die Funktion $f(x) = \ln(x)$ mit der Umkehr-Funktion 
+$g(x) = \exp(x)$.  Wegen $\ds\int \exp(x)\,dx = \exp(x)$ gilt 
 \\[0.3cm]
 \hspace*{1.3cm}
-$\bint \ln(x) = x\cdot \ln(x) - \exp\bigl(\ln(x)\bigr) = x\cdot \ln(x) - x$.
+$\bint \ln(x) = x\cdot \ln(x) - \exp\bigl(\ln(x)\bigr) = x\cdot \ln(x) - x$. \eox
 
-\subsection{Beispiele}
-Wir geben ein Paar Beispiele die zeigen, wie Integrale berechnet werden. 
-Als erstes berechnen wir den Flächen-Inhalt eines Kreises.  Ein Kreis vom Radius 1 kann
-nach dem Satz des Pythagoras 
-in der Koordinaten-Ebene durch die Relation $x^2 + y^2 = 1$ dargestellt werden.
-Lösen wir diese Gleichung nach $x$ auf, so wird der Kreis durch die beiden Funktion $x
+\subsection{Berechnung der Fläche eines Kreises}
+Wir zeigen, wie sich der Flächen-Inhalt eines Kreises berechnen läßt.  Ein Kreis vom Radius 1 kann
+nach dem Satz des Pythagoras  in der Koordinaten-Ebene durch die Relation $x^2 + y^2 = 1$ dargestellt werden.
+Lösen wir diese Gleichung nach $x$ auf, so wird der Kreis durch die beiden Funktionen $x
 \mapsto \sqrt{1 - x^2}$
-und Funktion $x \mapsto -\sqrt{1 - x^2}$ für $x\in[-1,1]$ beschrieben.  Wir beschränken
+und $x \mapsto -\sqrt{1 - x^2}$ für $x\in[-1,1]$ beschrieben.  Wir beschränken
 uns nun auf den Viertelkreis im ersten Quadranten der Koordinaten-Ebene.  Die Fläche
 dieses Viertelkreises ist durch das Integral 
 \\[0.2cm]
@@ -645,29 +668,29 @@ $x = \sin(t)$ durch.  Dann erhalten wir
 Wegen $0=\sin(0)$ und $1 = \sin(\pi/2)$ haben wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$\displaystyle I = \int_0^{\frac{\pi}{2}} \sqrt{1 - \sin^2(t)\,} \cdot \cos(t)\, dt = \int_0^{\frac{\pi}{2}} \cos(t) \cdot \cos(t)\, dt$.
+$\ds I = \int_0^{\frac{\pi}{2}} \sqrt{1 - \sin^2(t)\,} \cdot \cos(t)\, dt = \int_0^{\frac{\pi}{2}} \cos(t) \cdot \cos(t)\, dt$.
 \\[0.2cm]
 Dieses Integral versuchen wir nun mit partieller Integration zu vereinfachen.  Wir setzen
 in Gleichung \ref{eq:partInt0} $f'(t) := \cos(t)$ und $g(t) = \cos(t)$.  Wegen $f(t) =
 \sin(t)$ und $g'(t) = -\sin(t)$ erhalten wir dann
 \\[0.2cm]
 \hspace*{1.3cm}
-$\displaystyle I = \sin(t)\cdot \cos(t)\bigg|_0^{\frac{\pi}{2}} + \int_0^{\frac{\pi}{2}}\sin(t)\cdot\sin(t)\,dt
+$\ds I = \sin(t)\cdot \cos(t)\bigg|_0^{\frac{\pi}{2}} + \int_0^{\frac{\pi}{2}}\sin(t)\cdot\sin(t)\,dt
    = \int_0^{\frac{\pi}{2}}\sin^2(t)\,dt$
 \\[0.2cm]
 Damit haben wir jetzt 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\displaystyle I = \int_0^{\frac{\pi}{2}}\cos^2(t)\,dt =  \int_0^{\frac{\pi}{2}}\sin^2(t)\,dt$
+$\ds I = \int_0^{\frac{\pi}{2}}\cos^2(t)\,dt =  \int_0^{\frac{\pi}{2}}\sin^2(t)\,dt$
 \\[0.2cm]
 Daraus folgt \\
 \hspace*{1.3cm}
 $
 \begin{array}[t]{llcl}
-\Leftrightarrow &  2\cdot I & = & \displaystyle \int_0^{\frac{\pi}{2}}\cos^2(t)\,dt + \int_0^{\frac{\pi}{2}}\sin^2(t)\,dt \\[0.5cm]
-\Leftrightarrow &  2\cdot I & = & \displaystyle \int_0^{\frac{\pi}{2}}\bigl(\cos^2(t)\,dt + \sin^2(t)\bigr)\,dt \\[0.5cm]
-\Leftrightarrow &  2\cdot I & = & \displaystyle \int_0^{\frac{\pi}{2}} 1 \,dt \\[0.5cm]
-\Leftrightarrow &  2\cdot I & = & \displaystyle t\; \Big|_0^{\frac{\pi}{2}}  \\[0.4cm]
+\Leftrightarrow &  2\cdot I & = & \ds \int_0^{\frac{\pi}{2}}\cos^2(t)\,dt + \int_0^{\frac{\pi}{2}}\sin^2(t)\,dt \\[0.5cm]
+\Leftrightarrow &  2\cdot I & = & \ds \int_0^{\frac{\pi}{2}}\bigl(\cos^2(t)\,dt + \sin^2(t)\bigr)\,dt \\[0.5cm]
+\Leftrightarrow &  2\cdot I & = & \ds \int_0^{\frac{\pi}{2}} 1 \,dt \\[0.5cm]
+\Leftrightarrow &  2\cdot I & = & \ds t\; \Big|_0^{\frac{\pi}{2}}  \\[0.4cm]
 \Leftrightarrow &  2\cdot I & = & \bruch{\pi}{2}  \\[0.4cm]
 \Leftrightarrow & I & = & \bruch{\pi}{4}
 \end{array}
@@ -694,10 +717,10 @@ Pythagoras hat diese Sekante die Länge
 \hspace*{1.3cm}
 $ds = \sqrt{dx^2 + \bigl(f(x+dx) - f(x)\bigr)^2\,}$.
 \\[0.2cm] 
-Nach Definition dee Ableitung von $f$ gilt für kleine Werte von $dx$
+Nach Definition der Ableitung von $f$ gilt für kleine Werte von $dx$
 \\[0.2cm]
 \hspace*{1.3cm}
-$\bruch{f(x+dx) - f(x)}{x + dx - dx} \approx f'(x)$.
+$\bruch{f(x+dx) - f(x)}{x + dx - x} \approx f'(x)$.
 \\[0.2cm]
 Also haben wir 
 \\[0.2cm]
@@ -707,13 +730,13 @@ $f(x+dx) - f(x) \approx f'(x) dx$.
 Setzen wir diesen Wert in der obigen Formel für ein, so erhalten wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$ds \approx \sqrt{dx^2 + \bigl(f'(x) \cdot dx\bigr)^2\,} = \sqrt{1 + \Bigl(\bruch{df}{dx}\Bigr)^2\,}\cdot dx$.
+$ds \approx \sqrt{dx^2 + \bigl(f'(x) \cdot dx\bigr)^2\,} = \sqrt{1 + \Bigl(\bruch{d\/f}{dx}\Bigr)^2\,}\cdot dx$.
 \\[0.2cm]
 Die Länge $l$ des gesamten Funktions-Graphen erhalten wir, wenn wir diesen Ausdruck von $a$ bis $b$
 aufintegrieren: 
 \\[0.2cm]
 \hspace*{1.3cm}
-$l = \dint{a}{b} \sqrt{1 + \Bigl(\bruch{df}{dx}\Bigr)^2\,} dx$.
+\colorbox{orange}{\framebox{$\ds l = \dint{a}{b} \sqrt{1 + \Bigl(\bruch{df}{dx}\Bigr)^2\,} dx$}}.
 
 \example
 Wir berechnen die Länge $l$ des Kreisbogens, der durch die Funktion $f:[0,1] \rightarrow\mathbb{R}$ mit
@@ -725,7 +748,7 @@ definiert ist.  Anschaulich sollte diese Länge ein Viertel des Umfangs eines Kre
 Es gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\bruch{df}{dx} = \frac{1}{2} \cdot \bruch{-2 \cdot x}{\sqrt{1 - x^2}} = 
+$\ds\frac{d\/f}{dx} = \frac{1}{2} \cdot \bruch{-2 \cdot x}{\sqrt{1 - x^2}} = 
                   \bruch{- x}{\sqrt{1 - x^2}}
 $.
 \\[0.2cm]
@@ -783,13 +806,13 @@ ist die Funktion $x \mapsto \frac{1}{\sqrt{x}}$ im Punkt $x=0$ nicht definiert. 
 Fall definieren wir 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\displaystyle \int_a^b f(x)\, dx := \lim\limits_{h\rightarrow 0 \atop h > 0} \int_{a+h}^b f(x)\, dx$.
+$\ds \int_a^b f(x)\, dx := \lim\limits_{h\rightarrow 0 \atop h > 0} \int_{a+h}^b f(x)\, dx$.
 \\[0.2cm]
 Wir betrachten als Beispiel das Integral der Funktion $x \mapsto \frac{1}{\sqrt{x}}$ in
 dem Intervall $[0,1]$.  Es gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\displaystyle \int_0^1 \bruch{1}{\sqrt{x}}\, dx 
+$\ds \int_0^1 \bruch{1}{\sqrt{x}}\, dx 
  = \lim\limits_{h\rightarrow 0 \atop h >  0} \int_{h}^1 \bruch{1}{\sqrt{x}}\, dx
  = \lim\limits_{h\rightarrow 0 \atop h >  0} 2\cdot\sqrt{x}\; \Big|_h^1
  = \lim\limits_{h\rightarrow 0 \atop h >  0} 2\cdot\sqrt{1} - 2\cdot\sqrt{h} = 2$.
@@ -798,13 +821,13 @@ Ein anderer Fall liegt vor, wenn eine der Integrations-Grenzen den Wert Unendlic
 Wir betrachten nur den Fall $b= \infty$.  In diesem Fall definieren wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$\displaystyle \int_a^\infty f(t)\, dt := \lim\limits_{x\rightarrow \infty} \int_{a}^x f(t)\, dt$.
+$\ds \int_a^\infty f(t)\, dt := \lim\limits_{x\rightarrow \infty} \int_{a}^x f(t)\, dt$.
 \\[0.2cm]
 Wir betrachten als Beispiel die Funktion $x \mapsto \frac{1}{x^2}$ in dem Intervall
 $[1,\infty)$. Es gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\displaystyle \int_1^\infty \frac{1}{t^2}\, dt = 
+$\ds \int_1^\infty \frac{1}{t^2}\, dt = 
 \lim\limits_{x\rightarrow \infty} \int_{1}^x \frac{1}{t^2}\, dt =
 \lim\limits_{x\rightarrow \infty} - \frac{1}{t}\;\Big|_1^x =
 \lim\limits_{x\rightarrow \infty} - \frac{1}{x} + \frac{1}{1}  = 1
@@ -818,8 +841,8 @@ Umständen leicht sehen, dass eine Reihe konvergiert, denn es gilt der folgende S
 Es sei $f:[1,\infty) \rightarrow\mathbb{R}_+$ eine monoton fallende Funktion.  Dann gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\displaystyle \lim\limits_{n \rightarrow \infty} \sum\limits_{i=1}^n f(i)$ existiert \quad g.d.w. \quad
-$\displaystyle \lim\limits_{x \rightarrow \infty} \int\limits_1^x f(t)\,dt$ existiert.  
+$\ds \lim\limits_{n \rightarrow \infty} \sum\limits_{i=1}^n f(i)$ existiert \quad g.d.w. \quad
+$\ds \lim\limits_{x \rightarrow \infty} \int\limits_1^x f(t)\,dt$ existiert.  
 \end{Satz}
 
 \noindent
@@ -875,7 +898,7 @@ $\sum\limits_{i=1}^{n} f(i) \leq f(1) + \int\limits_{1}^n f(x)\, dx \leq f(1) + 
 Damit ist dann die Folge 
 \\
 \hspace*{1.3cm}
-$\displaystyle \biggl(\sum\limits_{i=1}^{n}  f(i)\biggr)_{n\in\mathbb{N}}$ 
+$\ds \biggl(\sum\limits_{i=1}^{n}  f(i)\biggr)_{n\in\mathbb{N}}$ 
 \\ 
 monoton und
 beschränkt, folglich konvergent.  Existiert umgekehrt der Grenzwert
@@ -898,10 +921,10 @@ Falls $\alpha \not= 1$ ist,  gilt
 \hspace*{1.3cm}
 $
 \begin{array}[t]{clcl}  
-  &I(\alpha) & := & \displaystyle \int_{1}^\infty \bruch{1}{t^\alpha}\, dt  \\[0.3cm]
-= & \displaystyle \lim\limits_{x \rightarrow \infty} \int_1^x \bruch{1}{t^\alpha}\, dt 
-& = & \displaystyle \lim\limits_{x \rightarrow \infty} \bruch{t^{1-\alpha}}{1-\alpha} \,\bigg|_1^x \\[0.5cm]
-= & \displaystyle \lim\limits_{x \rightarrow \infty} \bruch{x^{1-\alpha}-1}{1-\alpha}
+  &I(\alpha) & := & \ds \int_{1}^\infty \bruch{1}{t^\alpha}\, dt  \\[0.3cm]
+= & \ds \lim\limits_{x \rightarrow \infty} \int_1^x \bruch{1}{t^\alpha}\, dt 
+& = & \ds \lim\limits_{x \rightarrow \infty} \bruch{t^{1-\alpha}}{1-\alpha} \,\bigg|_1^x \\[0.5cm]
+= & \ds \lim\limits_{x \rightarrow \infty} \bruch{x^{1-\alpha}-1}{1-\alpha}
 \end{array}
 $
 \\[0.3cm]
@@ -916,7 +939,7 @@ Nun hängt alles davon ab, ob $\alpha < 1$, $\alpha = 1$ oder
 \item Falls $\alpha < 1$ ist, haben wir $1-\alpha>0$ und damit gilt
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\displaystyle I(\alpha) = \lim\limits_{x \rightarrow \infty} \bruch{x^{1-\alpha}-1}{1-\alpha} = \infty$
+      $\ds I(\alpha) = \lim\limits_{x \rightarrow \infty} \bruch{x^{1-\alpha}-1}{1-\alpha} = \infty$
       \\[0.2cm]
       Also konvergiert die Summe 
       \\[0.2cm]
@@ -952,7 +975,7 @@ Nun hängt alles davon ab, ob $\alpha < 1$, $\alpha = 1$ oder
 \item Falls $\alpha > 1$ ist, haben wir $1-\alpha<0$ und damit gilt
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\displaystyle I(\alpha) = \lim\limits_{x \rightarrow \infty} \bruch{x^{1-\alpha}-1}{1-\alpha} = \bruch{1}{\alpha-1}$
+      $\ds I(\alpha) = \lim\limits_{x \rightarrow \infty} \bruch{x^{1-\alpha}-1}{1-\alpha} = \bruch{1}{\alpha-1}$
       \\[0.2cm]
       In diesem Fall konvergiert also die Summe 
       \\[0.2cm]
@@ -965,12 +988,12 @@ Untersuchen Sie mit Hilfe des Integral-Vergleichskriteriums, ob die
 Reihe 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\displaystyle \sum\limits_{n=1}^\infty \bruch{1}{n\cdot (n+1)}$ 
+$\ds \sum\limits_{n=1}^\infty \bruch{1}{n\cdot (n+1)}$ 
 \\[0.2cm]
 konvergiert.
 \pagebreak
 
-\section{Numerische Integration}
+\section{Numerische Integration$^*$}
 Die Gleichung $x = \cos(x)$ haben wir zwar numerisch lösen können, aber wir waren nicht in
 der Lage, einen algebraischen Ausdruck für die Lösung anzugeben.  Auch bei der Integration
 von Funktionen ist es nicht immer möglich, einen algebraischen Ausdruck für die
@@ -1025,12 +1048,12 @@ Um das Integral über das gesamte Intervall $[a,b]$ zu berechnen,
 müssen wir die Integrale über die einzelnen Intervalle lediglich aufsummieren.  Wir erhalten dann 
 $$
 \begin{array}[t]{lcl}
- \dint{a}{b} f(x)\,dx & \approx & \displaystyle
+ \dint{a}{b} f(x)\,dx & \approx & \ds
        \sum\limits_{i=1}^n \bruch{1}{2} \cdot \bigl(f(x_i) + f(x_{i-1})\bigr) \cdot (x_i-x_{i-1})  
        \\[0.5cm]
- & = & \displaystyle
+ & = & \ds
        \sum\limits_{i=1}^n \bruch{1}{2} \cdot \bigl(f(a+i\cdot h) + f(a+(i-1)\cdot h)\bigr) \cdot  h  \\[0.5cm]
- & = & \displaystyle
+ & = & \ds
        \biggl(\bruch{1}{2}\cdot f(a) \;+\; \sum\limits_{i=1}^{n-1} f\Bigl(a+i\cdot \frac{b-a}{n}\Bigr)\;+\;\bruch{1}{2}\cdot f(b)\biggr) \cdot  \bruch{b-a}{n}  \\[0.5cm]
 \end{array}
 $$
@@ -1070,7 +1093,7 @@ Fehlers.
   wie folgt abgeschätzt werden:
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\displaystyle \left| \int_a^b f(x)\,dx - I_{\mbox{\scriptsize Trapez}} \right| \;\leq\; 
+  $\ds \left| \int_a^b f(x)\,dx - I_{\mbox{\scriptsize Trapez}} \right| \;\leq\; 
    \bruch{K}{12}\cdot  \bruch{(b-a)^3}{n^2}$
 \end{Satz}
 
@@ -1105,12 +1128,12 @@ erhalten wir
 \hspace*{1.3cm}
 $
 \begin{array}[t]{cl}
-      & \displaystyle  \left|\int_{x_{i-1}}^{x_i} f(x)\,dx - \int_{x_{i-1}}^{x_i}p(x)\,dx\right| \\[0.5cm]
- \leq & \displaystyle  \int_{x_{i-1}}^{x_i} \bigl|f(x)\,dx - p(x)\bigr|\,dx \\[0.5cm]
- \leq & \displaystyle \bruch{K}{2} \cdot  \int_{x_{i-1}}^{x_i} \bigl|(x-x_{i-1})\cdot (x-x_i)\bigr|\,dx  \\[0.5cm]
- \leq & \displaystyle -\bruch{K}{2} \cdot  \int_{x_{i-1}}^{x_i} (x-x_{i-1})\cdot (x-x_i)\,dx  \\[0.5cm]
- =    & \displaystyle -\bruch{K}{2} \cdot  \bruch{-1}{6} \cdot  (x_i-x_{i-1})^3\\[0.3cm]
- =    & \displaystyle \bruch{K}{12} \cdot  (x_i-x_{i-1})^3
+      & \ds  \left|\int_{x_{i-1}}^{x_i} f(x)\,dx - \int_{x_{i-1}}^{x_i}p(x)\,dx\right| \\[0.5cm]
+ \leq & \ds  \int_{x_{i-1}}^{x_i} \bigl|f(x)\,dx - p(x)\bigr|\,dx \\[0.5cm]
+ \leq & \ds \bruch{K}{2} \cdot  \int_{x_{i-1}}^{x_i} \bigl|(x-x_{i-1})\cdot (x-x_i)\bigr|\,dx  \\[0.5cm]
+ \leq & \ds -\bruch{K}{2} \cdot  \int_{x_{i-1}}^{x_i} (x-x_{i-1})\cdot (x-x_i)\,dx  \\[0.5cm]
+ =    & \ds -\bruch{K}{2} \cdot  \bruch{-1}{6} \cdot  (x_i-x_{i-1})^3\\[0.3cm]
+ =    & \ds \bruch{K}{12} \cdot  (x_i-x_{i-1})^3
 \end{array}
 $
 \\[0.2cm]
@@ -1120,11 +1143,11 @@ für alle Intervalle auf, so erhalten wir
 \hspace*{1.3cm}
 $
 \begin{array}[t]{lcl}  
-\displaystyle \left| \int_a^b f(x)\,dx - I_{\mbox{\scriptsize Trapez}} \right|
-& \leq & \displaystyle \sum\limits_{i=1}^n \bruch{K}{12} \cdot  (x_i-x_{i-1})^3 \\[0.5cm]
-& \leq & \displaystyle \sum\limits_{i=1}^n \bruch{K}{12} \cdot  \Bigl(\frac{b-a}{n}\Bigr)^3 \\[0.5cm]
-& \leq & \displaystyle n \cdot  \bruch{K}{12} \cdot  \Bigl(\frac{b-a}{n}\Bigr)^3  \\[0.5cm]
-& \leq & \displaystyle \bruch{K}{12} \cdot  \frac{(b-a)^3}{n^2} \\[0.5cm]
+\ds \left| \int_a^b f(x)\,dx - I_{\mbox{\scriptsize Trapez}} \right|
+& \leq & \ds \sum\limits_{i=1}^n \bruch{K}{12} \cdot  (x_i-x_{i-1})^3 \\[0.5cm]
+& \leq & \ds \sum\limits_{i=1}^n \bruch{K}{12} \cdot  \Bigl(\frac{b-a}{n}\Bigr)^3 \\[0.5cm]
+& \leq & \ds n \cdot  \bruch{K}{12} \cdot  \Bigl(\frac{b-a}{n}\Bigr)^3  \\[0.5cm]
+& \leq & \ds \bruch{K}{12} \cdot  \frac{(b-a)^3}{n^2} \\[0.5cm]
 \end{array}
 $
 \\[0.2cm]
@@ -1137,7 +1160,7 @@ Berechnen Sie, in wieviele Teilintervalle das Intervall $[0,1]$
 aufgeteilt werden muss, wenn das Integral
 \\[0.2cm]
 \hspace*{1.3cm}
-$\displaystyle \int_0^1 e^{-x^2}\, dx$
+$\ds \int_0^1 e^{-x^2}\, dx$
 \\[0.2cm]
 mit Hilfe der Trapez-Regel mit einer Genauigkeit von $10^{-6}$ berechnet werden soll. \eod
 
@@ -1170,7 +1193,7 @@ integrieren dann $p(x)$ in dem Intervall $[x_{i}-h,x_{i}+h]$, so erhalten wir mi
 % IntKeppler := int( p(x), x = x[i-1] .. x[[i+1] );
 \\[0.2cm]
 \hspace*{1.3cm}
-$\displaystyle \int_{x_{i-1}}^{x_{i+1}} p(x)\,dx = \bruch{1}{6}\cdot \bigl(f(x_{i-1}) + 4 \cdot  f(x_i) + f(x_{i+1})\bigr)\cdot (x_{i+1}-x_{i-1})$
+$\ds \int_{x_{i-1}}^{x_{i+1}} p(x)\,dx = \bruch{1}{6}\cdot \bigl(f(x_{i-1}) + 4 \cdot  f(x_i) + f(x_{i+1})\bigr)\cdot (x_{i+1}-x_{i-1})$
 \\[0.2cm]
 Unterteilen wir das Intervall $[a,b]$ lediglich in zwei Teilintervalle $[a,\frac{a+b}{2}]$
 und $[\frac{a+b}{2},b]$, so können wir die obige Formel direkt verwenden.  Wir erhalten
@@ -1191,9 +1214,9 @@ die Formel
 \begin{equation}
   \label{eq:intSimpson}  
 \begin{array}[t]{lcl}
- \displaystyle \int_a^b f(x)\,dx 
-& \approx & \displaystyle\frac{h}{3}\cdot \sum\limits_{i=0}^{(n-1)/2} \Bigl( f(x_{2\cdot i}) + 4\cdot f(x_{2\cdot i+1}) + f(x_{2\cdot i+2}) \Bigr) \\[0.3cm]
-& = & \displaystyle\frac{h}{3}\cdot \biggl(f(x_0) \;+\; 4\cdot \sum\limits_{i=0}^{(n-1)/2} f(x_{2\cdot i+1}) \;+\;
+ \ds \int_a^b f(x)\,dx 
+& \approx & \ds\frac{h}{3}\cdot \sum\limits_{i=0}^{(n-1)/2} \Bigl( f(x_{2\cdot i}) + 4\cdot f(x_{2\cdot i+1}) + f(x_{2\cdot i+2}) \Bigr) \\[0.3cm]
+& = & \ds\frac{h}{3}\cdot \biggl(f(x_0) \;+\; 4\cdot \sum\limits_{i=0}^{(n-1)/2} f(x_{2\cdot i+1}) \;+\;
                                                           2\cdot \sum\limits_{i=1}^{(n-1)/2} f(x_{2\cdot i}) \;+\; f(x_n)\biggr) \\[0.3cm]
 \end{array}
 \end{equation}
@@ -1221,7 +1244,7 @@ $0.746824183$ und der Fehler ist kleiner als $10^{-7}$.
 \item Berechnen Sie mit Hilfe der Kepler'schen Faß-Regel eine Approximation 
       für das Integral 
       \\[0.2cm]
-      \hspace*{1.3cm}$\displaystyle \int_0^{\frac{1}2} \sin(x)\, dx$.
+      \hspace*{1.3cm}$\ds \int_0^{\frac{1}2} \sin(x)\, dx$.
 \item Geben Sie eine möglichst genaue Abschätzung für den Approximations-Fehler.
 \item Vergleichen Sie ihr Ergebnis mit dem exakten Wert. \eod
 \end{enumerate}
@@ -1232,14 +1255,14 @@ $0.746824183$ und der Fehler ist kleiner als $10^{-7}$.
 Gegenstand dieser Aufgabe ist die numerische Berechnung der Summe
 \\[0.2cm]
 \hspace*{1.3cm}
- $\displaystyle \sum\limits_{k=1}^\infty \bruch{1}{k^2}$.
+ $\ds \sum\limits_{k=1}^\infty \bruch{1}{k^2}$.
 \\[0.2cm]
 Gehen  Sie zur Berechnung dieser Summe in folgenden Schritten vor.
 \begin{enumerate}
 \item Approximieren Sie die Rest-Summe $\sum\limits_{k=n}^\infty \bruch{1}{k^2}$ 
       durch ein geeignetes Integral.
 
-      \textbf{Hinweis}: Es gilt $\displaystyle f(k) = \int_{k-\frac{1}{2}}^{k+\frac{1}{2}} f(k) \, dt \approx \int_{k-\frac{1}{2}}^{k+\frac{1}{2}} f(t) \, dt$.
+      \textbf{Hinweis}: Es gilt $\ds f(k) = \int_{k-\frac{1}{2}}^{k+\frac{1}{2}} f(k) \, dt \approx \int_{k-\frac{1}{2}}^{k+\frac{1}{2}} f(t) \, dt$.
 \item Berechnen Sie eine obere Abschätzung für den Approximations-Fehler,
       den Sie bei der Integration in Teil (a) erhalten.
       
