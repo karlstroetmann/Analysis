@@ -1,8 +1,7 @@
 x := 0; 
 n := 7;
 for (i in [1 .. 7]) {
-    alpha := -sin(x);
-    x := (cos(x) - alpha * x) / (1 - alpha);
+x := (cos(x) + sin(x) * x) / (1 + sin(x));
     print("$i$: $x$");
 }
 for (i in [n+1 .. n+4]) {

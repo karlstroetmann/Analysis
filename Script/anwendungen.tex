@@ -102,7 +102,7 @@ beliebig oft differenzierbar ist, die der Funktion $f$ zugeordnete \emph{Taylor-
   \label{eq:taylorFormula}
   \colorbox{orange}{\framebox{$\ds \textsl{taylor}(f,x) := \sum\limits_{n=0}^\infty \bruch{f^{(n)}(0)}{n!} \cdot  x^n$.}}
 \end{equation}
-\pagebreak
+
 
 \remark
 Im Allgemeinen wissen wir nicht, ob die Reihe $\textsl{taylor}(f,x)$ konvergiert.  Selbst
@@ -237,15 +237,15 @@ gilt.  Wegen $\erri{0}{n} = 0$ haben wir also
 \end{equation}
 Um diese Gleichung zu vereinfachen, errinnern wir daran, dass 
 $\err{x}$ als 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $\err{x} = f(x) - \displaystyle\sum\limits_{k=0}^n \bruch{f^{(k)}(0)}{k!} \cdot  x^k$
-\\[0.1cm]
+\\[0.2cm]
 definiert ist.  Wenn wir die $(n+1)$-te Ableitung der Funktion $\err{x}$ bilden, dann bleibt
 von der Summe nichts über, es gilt also 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm} $\erri{x}{n+1} = f^{(n+1)}(x)$.
-\\[0.1cm]
+\\[0.2cm]
 Setzen wir dieses Ergebnis in Gleichung (\ref{eq:taylorErrn1}) ein und berücksichtigen
 Gleichung (\ref{eq:taylorErrna}), so finden wir
 \begin{equation}
@@ -279,11 +279,11 @@ Da die Exponential-Funktion immer positiv ist, ist der natürliche Logarithmus fü
 definiert ist.  Wir betrachten daher die Funktion $f(x)  := \ln(1 + x)$.  Zunächst berechnen wir die
 Ableitungen dieser Funktion.  Wir beweisen durch Induktion, dass für alle
 natürlichen Zahlen $n\geq 1$ die $n$-te Ableitung der Funktion $f$ die folgende Form hat:
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm} $f^{(n)}(x) = (-1)^{n+1}\cdot \bruch{(n-1)!}{(1+x)^n}$
 \begin{enumerate}
 \item[I.A.:] $n=1$.  Es gilt
-  \\[0.1cm]
+  \\[0.2cm]
   \hspace*{1.3cm}
   $\dfo f(x) = \dfo \ln(1+x) = \bruch{1}{1+x} = (-1)^{1+1}\cdot \bruch{(1-1)!}{(1+x)^1}$
 \item[I.S.:] $n \mapsto n+1$.  Wir haben 
@@ -299,7 +299,7 @@ natürlichen Zahlen $n\geq 1$ die $n$-te Ableitung der Funktion $f$ die folgende 
   $  
 \end{enumerate}
 Daraus folgt sofort 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $f^{(n)}(0) = (-1)^{n+1}\cdot \bruch{(n-1)!}{(1+0)^n} = (-1)^{n+1}\cdot (n-1)!$ 
 \\[0.3cm]
@@ -321,9 +321,9 @@ wir die Taylor-Entwicklung mit dem Lagrange'schen Restglied:
   \ln(1+x) = \sum\limits_{k=1}^n  (-1)^{k+1}\cdot \bruch{x^k}{k} + (-1)^{n}\cdot \bruch{1}{(1+\chi)^{n+1}}\cdot \bruch{x^{n+1}}{n+1}
 \end{equation}
 Für den Abbruch-Fehler haben wir also
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm} $\textsl{error}_n(x) = (-1)^n \cdot \bruch{1}{(1+\chi)^{n+1}}\cdot \bruch{x^{n+1}}{n+1}$
-\\[0.1cm]
+\\[0.2cm]
 mit $\chi \in[0,x]$ und für $x \in (-1, 1]$ geht dieser Wert für $n \rightarrow \infty$ gegen $0$.
 Damit haben wir insgesamt $\textsl{taylor}\bigl(x \mapsto \ln(1+x), x \bigr) = \ln(1+x)$ für $x \in (-1, 1]$ gezeigt und folglich können
 wir
@@ -369,16 +369,16 @@ wir
   \end{array}
 \end{equation}
 Setzen wir hier für $x$ den Wert $\ds\frac{1}{3}$ ein, so erhalten wir 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $\displaystyle \ln\left(\frac{1+\frac{1}{3}}{1-\frac{1}{3}}\right) =  
  \ln\left(\frac{\;\frac{4}{3}\;}{\frac{2}{3}}\right) = \ln(2) = 
  2\cdot \sum\limits_{n=0}^\infty \frac{1}{2\cdot n+1} \cdot  \left(\frac{1}{3}\right)^{2\cdot n+1}
 $
-\\[0.1cm]
+\\[0.2cm]
 Um den Fehler $e$ abzuschätzen, den wir erhalten, wenn wir diese Reihe nach dem
 Glied $2\cdot n+1$ abbrechen, schätzen wir den Abbruch-Fehler wie folgt ab:
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}[t]{clcl}
@@ -394,10 +394,10 @@ $
       = &\ds  \frac{1}{4} \cdot  \left(\frac{1}{3}\right)^{2\cdot n+1}   \\[0.5cm]
 \end{array}
 $
-\\[0.1cm]
+\\[0.2cm]
 Wir wollen $\ln(2)$ auf eine Genauigkeit von $10^{-9}$ berechnen.  Also wählen wir $n$ so,
 dass gilt: 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}[t]{lrcl}
@@ -409,13 +409,13 @@ $
 \Leftarrow      &           n        & \geq 9 \\[0.3cm]
 \end{array}
 $
-\\[0.1cm]
+\\[0.2cm]
  Um $\ln(2)$ auf eine Genauigkeit von $10^{-9}$ zu berechnen reicht es also aus, wenn wir
  in der Formel (\ref{eq:taylorLnEfficient}) die ersten 9 Glieder der Summe berücksichtigen.  Wir erhalten
- \\[0.1cm]
+ \\[0.2cm]
  \hspace*{1.3cm} $\ln(2) \approx 2 \cdot  \displaystyle\sum\limits_{n=0}^9
  \bruch{1}{2\cdot n+1}\left(\frac{1}{3}\right)^{2\cdot n+1} \approx 0.69314718054981171974$
-\\[0.1cm]
+\\[0.2cm]
 Der wirkliche Fehler ist sogar noch kleiner, er beträgt etwa $10^{-11}$.  Das liegt daran,
 dass wir bei der Abschätzung der Summe durch die geometrische Reihe den Faktor $\ds\frac{1}{2\cdot
   k+1}$ vernachläßigt haben.
@@ -424,7 +424,7 @@ dass wir bei der Abschätzung der Summe durch die geometrische Reihe den Faktor $
 Das Verfahren, das wir oben benutzt haben um $\ln(2)$ zu berechnen, läßt sich
 verallgemeinern.  Ist die Aufgabe gegeben, für eine gegebene reelle Zahl $r$ den
 natürlichen Logarithmus $\ln(r)$ zu berechnen, so setzen wir 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}[t]{clcl}
@@ -436,7 +436,7 @@ $
 \Leftrightarrow & \bruch{r - 1}{r+1} = x   \\[0.3cm]
 \end{array}
 $
-\\[0.1cm]
+\\[0.2cm]
 Bei gegebenem $r$ bestimmen wir also $x$ nach der Formel $x=\ds\frac{r-1}{r+1}$.  Für
 das so bestimmte $x$ gilt dann
 \begin{equation}
@@ -446,15 +446,15 @@ das so bestimmte $x$ gilt dann
 \end{equation}
 Falls $r \leq 2$ ist, gilt $x \leq \frac{1}{3}$ und dann konvergiert die obige Reihe sehr
 gut.  In modernen Rechnern werden reelle Zahlen $y$ in der Form
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $y = s \cdot  r \cdot  2^n$ \quad mit $s\in\{-1,+1\}$, \quad $r \in [1,2)$ \quad und $n\in\mathbb{Z}$
-\\[0.1cm]
+\\[0.2cm]
 dargestellt.  Ist $y$ positiv, so läßt sich der natürliche Logarithmus nach der Formel 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $\ln(y) = \ln(r) + n \cdot  \ln(2)$
-\\[0.1cm]
+\\[0.2cm]
 berechnen, wobei $\ln(r)$ mit Hilfe der Formel (\ref{eq:Ln}) gefunden wird.
 
 \exercise
@@ -530,18 +530,18 @@ $\left|\arctan(x) - \sum\limits_{k=0}^n (-1)^k \cdot  \bruch{1}{2\cdot k+1}\righ
 \\[0.3cm]
 Überlegen wir, wieviele Glieder der Summe benötigt werden, um $\ds\frac{\pi}{4}$ auf eine Genauigkeit von $10^{-9}$ 
 zu berechnen.  Dann muss $n$ die folgende Ungleichung erfüllen:
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm} 
 $
 \begin{array}[t]{lrcl} 
                 & \bruch{1}{2\cdot n+3} & \leq & 10^{-9} \\[0.3cm]
-\Leftrightarrow & 2\cdot n+3 \geq 10^9                   \\[0.1cm]
-\Leftrightarrow & n \geq 0.5\cdot (10^9-3)                    \\[0.1cm]
-\Leftrightarrow & n \geq 499\,999\,998.5                    \\[0.1cm]
-\Leftarrow      & n \geq 499\,999\,999                    \\[0.1cm]
+\Leftrightarrow & 2\cdot n+3 \geq 10^9                   \\[0.2cm]
+\Leftrightarrow & n \geq 0.5\cdot (10^9-3)                    \\[0.2cm]
+\Leftrightarrow & n \geq 499\,999\,998.5                    \\[0.2cm]
+\Leftarrow      & n \geq 499\,999\,999                    \\[0.2cm]
 \end{array}
 $
-\\[0.1cm]
+\\[0.2cm]
 Wir  müßten wir also etwa 500 Millionen Terme aufsummieren um die geforderte Genauigkeit
 zu erreichen.  Um eine Formel zu erhalten, die schneller konvergiert, gehen wir von den
 Additions-Theoremen von Sinus und Cosinus aus.  Diese lauten:
@@ -598,9 +598,9 @@ Wir wollen $\arctan(1)$ berechnen.  Daher wählen wir $x$ so, dass Folgendes gilt
 $
 \begin{array}[t]{lrcl}
                & \bruch{2\cdot x}{1 - x^2} &=& 1 \\[0.3cm]
-\Leftrightarrow& 2\cdot x  &=& 1 - x^2 \\[0.1cm]
-\Leftrightarrow& x^2 + 2\cdot x +1 &=& 2  \\[0.1cm]
-\Leftarrow&x   &=& \sqrt{2} - 1  \\[0.1cm]
+\Leftrightarrow& 2\cdot x  &=& 1 - x^2 \\[0.2cm]
+\Leftrightarrow& x^2 + 2\cdot x +1 &=& 2  \\[0.2cm]
+\Leftarrow&x   &=& \sqrt{2} - 1  \\[0.2cm]
 \end{array}
 $
 \\[0.3cm]
@@ -617,8 +617,8 @@ Leibniz-Kriterium ab, wobei wir zur Vereinfachung  den Nenner $2\cdot n+1$ durch
 \hspace*{1.3cm}
 $
 \begin{array}[t]{lrcl}
-                & 8 \cdot  \bigl(\sqrt{2}-1\bigr)^{2\cdot (n+1)+1} & \leq & 10^{-9} \\[0.1cm]
-\Leftrightarrow & \ln(8) + (2\cdot n+3)\cdot \ln\bigl(\sqrt{2}-1\bigr) & \leq & -9 \cdot \ln(10) \\[0.1cm]
+                & 8 \cdot  \bigl(\sqrt{2}-1\bigr)^{2\cdot (n+1)+1} & \leq & 10^{-9} \\[0.2cm]
+\Leftrightarrow & \ln(8) + (2\cdot n+3)\cdot \ln\bigl(\sqrt{2}-1\bigr) & \leq & -9 \cdot \ln(10) \\[0.2cm]
 \Leftrightarrow &  (2\cdot n+3)\cdot \ln\bigl(\sqrt{2}-1\bigr) & \leq & -9 \cdot \ln(10) - \ln(8)\\[0.3cm]
 \Leftrightarrow &  2\cdot n+3 & \geq & - \bruch{9 \cdot \ln(10) + \ln(8)}{\ln\bigl(\sqrt{2}-1\bigr)}\\[0.5cm]
 \Leftrightarrow &  n & \geq &  -0.5\cdot \left(\bruch{9 \cdot \ln(10) + \ln(8)}{\ln\bigl(\sqrt{2}-1\bigr)} + 3\right) \approx 11.4
@@ -627,10 +627,10 @@ $
 \\[0.3cm]
 Also reicht es sicher aus, die ersten 12 Glieder der Summe zu berücksichtigen um $\pi$ auf eine Genauigkeit von $10^{-9}$
 zu berechnen.  Führen wir die Rechnung durch, so finden wir 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $\ds\pi \approx \sum\limits_{k=0}^{12} (-1)^k \cdot  \bruch{(\sqrt{2}-1)^{2\cdot k+1}}{2\cdot k+1} \approx 3.141592653601609$.
-\\[0.1cm]
+\\[0.2cm]
 Der tatsächliche Fehler ist hier kleiner als $2\cdot 10^{-11}$.
 \vspace*{0.3cm}
 
@@ -697,27 +697,28 @@ Nach dem wir uns im letzten Abschnitt damit beschäftigt haben für eine gegebene 
 $f$ eine Folge von Polynomen zu konstruieren, deren Ableitungen im Punkt $0$ mit der
 Funktion $f$ übereinstimmen, zeigen wir jetzt, wie sich Polynome konstruieren lassen, die
 mit eine Funktion $f$ an vorgegebenen Punkten übereinstimmen.  Sind $n+1$ Paare der Form
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $\pair(x_0,y_0)$,
 $\pair(x_1,y_1)$,
 $\cdots$
-$\pair(x_n,y_n)$,
-\\[0.1cm]
-so besteht die Aufgabe der Polynom-Interpolation darin, ein Polynom $p(x)$ vom  $n$ zu
+$\pair(x_n,y_n)$
+\\[0.2cm]
+gegeben, so besteht die Aufgabe der \emph{Polynom-Interpolation} darin, ein Polynom $p(x)$ vom  $n$ zu
 finden, so dass
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $\forall i \in \{0,1,\cdots,n\}: p(x_i) = y_i$
-\\[0.1cm]
+\\[0.2cm]
 gilt.  Wir zeigen sofort, dass diese Aufgabe lösbar ist.  Zu einer gegebenen Liste von 
 $n+1$ verschiedenen \emph{Stützstellen} 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $\bigl[x_0, x_1, \cdots, x_n]$
-\\[0.1cm]
-definieren wir für alle $k\in\{0,1,\cdots,n\}$ das $k$-te Lagrange'sche Polynom vom Grad
-$n$ wie folgt: 
+\\[0.2cm]
+definieren wir für alle $k\in\{0,1,\cdots,n\}$ das $k$-te \emph{Lagrange'sche Polynom} 
+(\href{http://de.wikipedia.org/wiki/Lagrange}{Joseph Louis Lagrange}, 1736 -- 1813)
+vom Grad $n$ wie folgt: 
 \begin{equation}
   \label{eq:lagrangePolynom}
 \colorbox{orange}{\framebox{$\ds L_k\bigl([x_0,\cdots,x_n];x\bigr) := \prod\limits_{i=0 \atop i\not=k}^n \bruch{x-x_i}{x_k-x_i}$}}
@@ -750,51 +751,58 @@ Diese Eigenschaft läßt sich durch einfaches Nachrechnen bestätigen.  Wir betrach
 $j=k$ und $j\not=k$ getrennt:
 \begin{enumerate}
 \item Fall: $j=k$.  Dann haben wir 
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{0.0cm}
       $\ds L_k\bigl([x_0,\cdots,x_n];x_k\bigr) = \prod\limits_{i=0 \atop i\not=k}^n
       \bruch{x_k-x_i}{x_k-x_i} = 1 = \delta_{k,k}$
 \item Fall: $j\not=k$.  Dann haben wir 
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{-0.0cm}
       $
       \begin{array}[c]{lcl}
       L_k\bigl([x_0,\cdots,x_n];x_j\bigr) 
-      & = & \ds\prod\limits_{i=0 \atop i\not=k}^n \bruch{x_j-x_i}{x_k-x_i} \\[0.5cm]
-      & = & \ds\frac{(x_j - x_0) \cdot  \cdots \cdot  (x_j - x_j) \cdot  \cdots \cdot (x_j - x_n)}{(x_k - x_0) \cdot  \cdots \cdot  (x_k - x_j) \cdot  \cdots \cdot (x_k - x_n)} \\[0.3cm]
-      & = & 0 \\[0.1cm]
+      & = & \ds\prod\limits_{i=0 \atop i\not=k}^n \bruch{x_j-x_i}{x_k-x_i} \\[0.6cm]
+      & = & \ds\frac{(x_j - x_0) \cdot \mbox{$\dots$} \cdot  (x_j - x_j) \cdot \mbox{$\dots$} \cdot (x_j - x_n)}{
+                     (x_k - x_0) \cdot \mbox{$\dots$} \cdot (x_k - x_j) \cdot \mbox{$\dots$} \cdot (x_k - x_n)} 
+            \\[0.3cm]
+      & = & 0 \\[0.2cm]
       & = & \delta_{j,k}
       \end{array}
       $
 \end{enumerate}
 Die Eigenschaft (\ref{eq:lagrangeProperty}) macht es jetzt einfach, Polynome zu
-konstruieren, die an den  Stützstellen $[x_0,x_1,\cdots,x_n]$ vorgegebene Werte 
+konstruieren, die an den  Stützstellen $x_0,x_1,\cdots,x_n$ die vorgegebenen Werte 
 $y_0$, $y_1$, $\cdots$, $y_n$ annehmen. Wir definieren 
 \\[0.3cm]
 \hspace*{1.3cm}
 $\displaystyle p(x) := \sum\limits_{k=0}^n y_k \cdot  L_k(x)$.
 \\[0.3cm]
 Dann gilt $p(x_j) = y_j$ für alle $j=0,1,\cdots,n$, denn wir haben
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
-$\displaystyle p(x_j) = \sum\limits_{k=0}^n y_k \cdot  L_k(x_j) = \sum\limits_{k=0}^n y_j \cdot  \delta_{j,k} = y_j \cdot  1 = y_j$. 
-\vspace*{0.3cm}
+$\displaystyle p(x_j) = \sum\limits_{k=0}^n y_k \cdot  L_k(x_j) = \sum\limits_{k=0}^n y_j \cdot  \delta_{j,k} = y_j \cdot \delta_{j,j} = y_j$. 
+\\[0.2cm] 
+Also löst das oben definierte Polynom $p(x)$ das Interpolations-Problem 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\pair(x_0, y_0)$, $\pair(x_1, y_1)$, $\cdots$, $\pair(x_n, y_n)$.
 
-\noindent
-\textbf{Beispiel}: Wollen wir ein Polynom $p(x)$ konstruieren, welches das Interpolations-Problem
-\\[0.1cm]
+
+\example
+Wollen wir ein Polynom $p(x)$ konstruieren, welches das Interpolations-Problem
+\\[0.2cm]
 \hspace*{1.3cm}
 $\pair(-1,1)$, $\pair(0,0)$ und $\pair(1,1)$
-\\[0.1cm]
+\\[0.2cm]
 löst, so können wir mit den oben gefundenen Lagrange'schen Polynomen das Polynom $p(x)$ wie folgt
 definieren: 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}[t]{lcl}
-  p(x) & = & 1 \cdot  L_0\bigl([-1,0,1];x\bigr) + 0 \cdot  L_1\bigl([-1,0,1];x\bigr) + 1\cdot L_2\bigl([-1,0,1];x\bigr) \\[0.1cm]
+  p(x) & = & 1 \cdot  L_0\bigl([-1,0,1];x\bigr) + 0 \cdot  L_1\bigl([-1,0,1];x\bigr) + 1\cdot L_2\bigl([-1,0,1];x\bigr) \\[0.2cm]
        & = & \bigl(\frac{1}{2}\cdot x^2 - \frac{1}{2}\cdot x\bigr) + \bigl(\frac{1}{2}\cdot x^2 + 
-             \frac{1}{2}\cdot x\bigr)  \\[0.1cm]
+             \frac{1}{2}\cdot x\bigr)  \\[0.2cm]
        & = & x^2
 \end{array}
 $
@@ -804,9 +812,9 @@ $
 \exercise
 Bei einer Klausur können insgesamt $n$ Punkte erreicht werden. Bestimmen
 Sie ein Polynom $p(x)$ vom Grade 1, so dass
-\\[0.1cm]
-\hspace*{1.3cm} $p(n) = 1.0$ \quad und \quad $p\bigl(\frac{n}{2}\bigr) = 4.0$
-\\[0.1cm]
+\\[0.2cm]
+\hspace*{1.3cm} $p(n) = 1.0$ \quad und \quad $\ds p\Bigl(\frac{n}{2}\Bigr) = 4.0$
+\\[0.2cm]
 gilt.  Hat ein Teilnehmer einer Klausur $k$ von $n$ Punkten erreicht, so ist $p(k)$ die
 Note, mit der die Leistung bewertet wird.  \eox
 
@@ -827,48 +835,48 @@ p_n(x) & = & \ds\sum\limits_{k=0}^n c_k \cdot  \prod\limits_{i=0}^{k-1}(x-x_i) \
 \end{equation}
 Der Vorteil dieses Ansatzes besteht darin, dass das Newton'sche Interpolations-Polynom vom Grad $n+1$ unmittelbar aus
 dem Newton'schen Interpolations-Polynom vom Grad $n$ wie folgt hervorgeht: 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $\ds p_{n+1}(x) = p_n(x) + c_{n+1} \cdot  \prod\limits_{i=0}^{n}(x-x_i)$.
-\\[0.1cm]
+\\[0.2cm]
 Ist eine Interpolations-Aufgabe 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $\pair(x_0,y_0)$, 
 $\pair(x_1,y_1)$, 
 $\cdots$, 
 $\pair(x_n,y_n)$, 
-\\[0.1cm]
+\\[0.2cm]
 gegeben, so können die Koeffizienten $c_k$ für $k=0,1,\cdots,n$ der Reihe nach wie folgt
 berechnet werden.
 \begin{enumerate}
 \item Um $c_0$ zu bestimmen, setzen wir in Gleichung (\ref{eq:newtonInterpolation}) für 
       $x$ den Wert $x_0$ ein.  Dann fallen alle Terme bis auf den ersten Term weg und wir 
       erhalten
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{1.3cm}
       $y_0 = c_0$.
 \item Um $c_1$ zu bestimmen, setzen wir in Gleichung (\ref{eq:newtonInterpolation}) für 
       $x$ den Wert $x_1$ ein.  Dann fallen alle Terme bis auf die ersten beiden Term weg und wir 
       erhalten
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{1.3cm}
       $y_1 = c_0 + c_1\cdot (x_1-x_0)$.
-      \\[0.1cm]
+      \\[0.2cm]
       Setzen wir hier für $c_0$ den im letzten Schritt gefundenen Wert $y_0$ ein, so finden wir 
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{1.3cm}
       $c_1 = \bruch{y_1 - y_0}{x_1 - x_0}$.
 \item Um $c_2$ zu bestimmen, setzen wir in Gleichung (\ref{eq:newtonInterpolation}) für 
       $x$ den Wert $x_2$ ein.  Dann fallen alle Terme bis auf die ersten drei Terme weg und wir 
       erhalten
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{1.3cm}
       $y_2 = c_0 + c_1\cdot (x_2-x_0) + c_2\cdot (x_2-x_0)\cdot (x_2-x_1)$.
-      \\[0.1cm]
+      \\[0.2cm]
       Hier setzen wir für $c_0$ und $c_1$ die in den letzten Schritten gefundenen Werte
       ein und haben dann
-      \\[0.1cm]
+      \\[0.2cm]
       \hspace*{1.3cm}
       $
       \begin{array}[t]{rcl}
@@ -885,11 +893,11 @@ Die obige Rechnung gibt Anlaß zur Definition der sogenannten
 Induktion über  $k$ definieren.  
 \begin{enumerate}
 \item[I.A.:] $k=1$.  Für alle $i=0,\cdots,n$ setzen wir 
-             \\[0.1cm]
+             \\[0.2cm]
              \hspace*{1.3cm}
              $[x_k]_{\mathrm{dd}} := y_k$.
 \item[I.S.:] $k\mapsto k+1$. Für $i=0,\cdots,n-k$ setzen wir 
-             \\[0.1cm]
+             \\[0.2cm]
              \hspace*{1.3cm}
              $[x_i,x_{i+1},\cdots,x_{i+k}]_{\mathrm{dd}} := \bruch{[x_{i+1},\cdots,x_{i+k}]_{\mathrm{dd}} - [x_{i},\cdots,x_{i+k-1}]_{\mathrm{dd}}}{x_{i+k}-x_i}$.
 \end{enumerate}
@@ -902,12 +910,12 @@ Newton'schen Ansatz (\ref{eq:newtonInterpolation}) gilt nun
   c_k = [x_0,x_1,\cdots,x_k]_{\mathrm{dd}},
 \end{equation}
 das Interpolations-Problem ein Polynom $p(x)$ zu finden, für das
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $p(x_0) = y_0$, \quad
 $p(x_1) = y_1$, \quad $\cdots$ \quad und \quad
 $p(x_n) = y_n$
-\\[0.1cm]
+\\[0.2cm]
 gilt, wird also durch das Polynom
 \begin{equation}
   \label{eq:newtonInterpolationFinal}
@@ -915,16 +923,16 @@ gilt, wird also durch das Polynom
 \end{equation}
 gelöst.
 \subsection{Der Interpolations-Fehler}
-Wir untersuchen als nächstes wie groß der Fehler bei der Polynom-Interpolation werden
-kann.
-Dazu beweisen wir zunächst den folgenden Hilfs-Satz.
+Wir untersuchen als nächstes, wie groß der Fehler bei der Polynom-Interpolation werden
+kann.  Dazu beweisen wir zunächst den folgenden Hilfs-Satz.  Dieser Satz ist eine Verallgemeinerung
+des Satzes von Rolle (Satz \ref{satz:rolle}). 
 
 \begin{Satz}
   Ist $f:\mathbb{R} \rightarrow \mathbb{R}$ eine Funktion, die $n$-mal differenzierbar
   ist und die $n+1$ verschiedene Null-Stellen 
-  \\[0.1cm]
+  \\[0.2cm]
   \hspace*{1.3cm}  $x_0 < x_1 < \cdots < x_n$
-  \\[0.1cm]
+  \\[0.2cm]
   hat, so gibt es ein $\xi\in[x_0,x_n]$ mit $f^{(n)}(\xi) = 0$.
 \end{Satz}
 \textbf{Beweis}:  Wir zeigen, dass für alle $k=0,1,\cdots,n$ die $k$-te Ableitung
@@ -936,16 +944,16 @@ Diesen Nachweis führen wir durch Induktion über $k$.
 \item[I.S.:] $k\mapsto k+1$.  Nach Induktions-Voraussetzung hat die Funktion
              $f^{(k)}(x)$ mindestens $n + 1 -k$ verschiedene Nullstellen.
              Nehmen wir an, diese Nullstellen seien der Größe nach geordnet als
-             \\[0.1cm]
-             \hspace*{1.3cm} $y_1 < y_2 < \cdots y_{n+1-k}$. \\[0.1cm]
+             \\[0.2cm]
+             \hspace*{1.3cm} $y_1 < y_2 < \cdots y_{n+1-k}$. \\[0.2cm]
              Wegen $k+1\leq n$ ist die Funktion $f^{(k)}(x)$ nach Voraussetzung
              differenzierbar und nach dem Satz von Rolle hat die Ableitung dieser Funktion
              jeweils zwischen zwei Nullstellen $y_i$ und $y_{i+1}$ eine Nullstelle, 
              für $i=1,\cdots,n-k-1$ gibt es also $z_i \in (y_i,y_{i+1}) \subseteq[x_0,x_n]$ mit 
-             \\[0.1cm]
+             \\[0.2cm]
              \hspace*{1.3cm} $\dfo f^{(k)}(z_i) = f^{(k+1)}(z_i) = 0$.
 \end{enumerate}
-Setzen wir nun $k=n$, so sehen wir, dass die Funktion $f^{(n)}(x)$ in dem Interval
+Setzen wir in der gerade bewiesenen Behauptung für $k$ den Wert $n$ ein, so sehen wir, dass die Funktion $f^{(n)}(x)$ in dem Interval
 $[x_0,x_n]$ mindestens $n+1-n=1$ Nullstelle hat, also gibt es das gesuchte
 $\xi\in[x_0,x_n]$.
 \hspace*{\fill} $\Box$
@@ -953,26 +961,24 @@ $\xi\in[x_0,x_n]$.
 \exercise
 Es sei $p(x)$  ein Polynom vom Grad $n\geq 1$.  Zeigen Sie, dass
 $p(x)$ höchstens $n$ verschiedene Nullstellen hat.  Folgern Sie daraus, dass es zu $n$ gegebenen Paaren 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $\pair(x_0,y_0)$, $\pair(x_1,y_1)$, $\cdots$, $\pair(x_n,y_n)$,
-\\[0.1cm]
+\\[0.2cm]
 genau ein Polynom $p(x)$ gibt, so dass $p(x_i) = y_i$ für alle $i=0,1,\cdots,n$ gilt. \eox
-
-
 
 
 \begin{Satz} 
   \label{satz:interpolationsFehler}
   Ist die Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ mindestens $(n+1)$-mal differenzierbar, ist $p(x)$ eine Polynom vom Grad
   kleiner gleich $n$, sind $x_0 < x_1 < \cdots < x_n$ Punkte mit
-  \\[0.1cm]
+  \\[0.2cm]
   \hspace*{1.3cm}
   $f(x_i) = p(x_i)$ für alle $i=0,1,\cdots,n$,
-  \\[0.1cm]
+  \\[0.2cm]
   und ist $\bar{x} \in [x_0,x_n]$, so gibt es ein $\zeta\in [x_0,x_n]$, so dass für
   den Interpolations-Fehler $f(\bar{x}) - p(\bar{x})$ gilt: 
-  \\[0.1cm]
+  \\[0.2cm]
   \hspace*{1.3cm}
 \colorbox{orange}{\framebox{$\ds f(\bar{x}) - p(\bar{x}) = \bruch{f^{(n+1)}(\zeta)}{(n+1)!} \cdot  \prod\limits_{i=0}^{n}(\bar{x}-x_i)$.}}
 \end{Satz}
@@ -986,27 +992,27 @@ $f(\bar{x}) - p(\bar{x}) = 0$ und da dann auch
 \\[0.2cm]
 gilt, ist die Behauptung in diesem Fall offensichtlich.  Andernfalls 
 definieren wir die Funktion 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $\ds g(x) := f(x) - p(x) - \left(\prod\limits_{i=0}^{n} \bruch{x-x_i}{\bar{x}-x_i}\right) \cdot  \bigl(f(\bar{x}) - p(\bar{x})\bigr)$.
-\\[0.1cm]
+\\[0.2cm]
 Mit $f$ ist auch die Funktion $g$ mindestens $(n+1)$-mal differenzierbar.  Außerdem gilt
 wegen $p(x_k) = f(x_k)$ für alle $k=0,1,\cdots,n$
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $\ds g(x_k) = f(x_k) - p(x_k) - \left(\prod\limits_{i=0}^{n} \bruch{x_k-x_i}{\bar{x}-x_i}\right) \cdot  \bigl(f(\bar{x}) - p(\bar{x})\bigr) = 0$,
-\\[0.1cm]
+\\[0.2cm]
 denn der Faktor $x_k-x_i$ verschwindet im Falle $i=k$. Außerdem haben wir 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}[t]{lcl}
   g(\bar{x}) & = & \ds f(\bar{x}) - p(\bar{x}) - \left(\prod\limits_{i=0}^{n} \bruch{\bar{x}-x_i}{\bar{x}-x_i}\right) \cdot  \bigl(f(\bar{x}) - p(\bar{x})\bigr) \\[0.5cm]
-             & = & \ds f(\bar{x}) - p(\bar{x}) - 1\cdot \bigl(f(\bar{x}) - p(\bar{x})\bigr) \\[0.1cm]
+             & = & \ds f(\bar{x}) - p(\bar{x}) - 1\cdot \bigl(f(\bar{x}) - p(\bar{x})\bigr) \\[0.2cm]
              & = & 0.
 \end{array}
 $
-\\[0.1cm]
+\\[0.2cm]
 Damit hat die Funktion insgesamt $n+2$ verschiedene Nullstellen.  Wenden wir jetzt auf die
 Funktion $g$ den eben gezeigten Hilfs-Satz an, so finden wir
 ein $\zeta\in [x_0,x_n]$  mit 
@@ -1020,12 +1026,12 @@ g^{(n+1)}(x) = f^{(n+1)}(x) - 0 - (n+1)!\cdot  \left(\prod\limits_{i=0}^{n} \bru
 \end{equation}
 denn die $(n+1)$-te Ableitung eines Polynoms vom Grad $n$ ist $0$ und die $(n+1)$-te
 Ableitung des Polynoms 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm} $\displaystyle\prod\limits_{i=0}^{n} \bruch{x-x_i}{\bar{x}-x_i}$ 
-\\[0.1cm]
+\\[0.2cm]
 ist $(n+1)!$ mal der Koeffizient der Potenz $x^{n+1}$.  Setzen
 wir in Gleichung (\ref{eq:polynomAbschaetzung}) die Nullstelle $\zeta$ ein, so finden wir 
-\\[0.1cm]
+\\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}[b]{ll}
@@ -1041,24 +1047,27 @@ $[0,\frac{\pi}{2}]$ ein Tabelle erstellt werden, so dass der bei linearer Interp
 Interpolations-Fehler kleiner als $10^{-5}$ ist.  Das Intervall $[0,\frac{\pi}{2}]$ soll zu diesem
 Zweck in gleich große Intervalle aufgeteilt werden.  Berechnen Sie die Anzahl der
 Einträge, die für die Erstellung der Tabelle notwendig ist. \eox
-\pagebreak
+
 
 \section{Der Banach'sche Fixpunkt-Satz}
-Der Banach'sche Fixpunkt-Satz, der 1922 von 
+Der \href{http://de.wikipedia.org/wiki/Banachscher_Fixpunktsatz}{Banach'sche Fixpunkt-Satz}, der 1922 von 
 \href{http://en.wikipedia.org/wiki/Stefan_Banach}{Stefan Banach} (1892 -- 1945) bewiesen wurde, ist ein
 wichtiges Hilfsmittel zur Lösung von Gleichungen.  Wir werden den Banach'schen
 Fixpunkt-Satz nur für den Spezialfall der reellen Zahlen formulieren und beweisen.
 In der Mathematik wird dieser Satz in einem abstrakteren Rahmen verwendet, die Menge der
-reellen Zahlen wird dann durch einen beliebigen metrischen Raum ersetzt.  
+reellen Zahlen wird dann durch einen \emph{vollständigen}
+\href{http://de.wikipedia.org/wiki/Metrischer_Raum}{\emph{metrischen Raum}} ersetzt.
+  
 
 \begin{Definition}[kontrahierend] 
 Eine Funktion $f:[a,b] \rightarrow [a,b]$ ist eine \emph{kontrahierende Abbildung} wenn es eine
-Zahl $q < 1$ gibt, so dass gilt:
+Zahl $q < 1$ gibt, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall x,y \in \mathbb{R}: |f(x) - f(y)| \leq q \cdot  |x - y|$.  
+$\forall x,y \in [a,b]: |f(x) - f(y)| \leq q \cdot  |x - y|$.  
 \\[0.2cm]
-Wir nennen $q$ den Kontraktions-Koeffizienten.
+gilt.  Wir bezeichnen die Zahl $q$ als den \emph{Kontraktions-Koeffizienten}.
+\eod
 \end{Definition}
 
 \noindent
@@ -1131,7 +1140,7 @@ Diese Summe wird als \emph{Teleskop-Summe} bezeichnet.
 Daraus folgt sofort 
 \\[0.2cm]
 \hspace*{1.3cm}
-$x_n = x_0 + \sum\limits_{i=1}^n (x_i - x_{i-1})$.
+$\ds x_n = x_0 + \sum\limits_{i=1}^n (x_i - x_{i-1})$.
 \\[0.2cm]
 Damit gilt dann aber
 \\[0.2cm]
@@ -1148,17 +1157,21 @@ $\ds|x_{i+1} - x_i| \leq q^i \cdot |x_1 - x_0|$
 gilt.  Der Induktions-Anfang ist trivial.  Im Induktions-Schritt haben wir
 \\[0.3cm]
 \hspace*{0.8cm}
-$\ds|x_{i+2} - x_{i+1}| = |f(x_{i+1}) - f(x_i)| \leq q \cdot  |x_{i+1} - x_i| \stackrel{IV}{\leq}
+$\ds|x_{i+2} - x_{i+1}| = |f(x_{i+1}) - f(x_i)| \leq q \cdot  |x_{i+1} - x_i| \stackrel{\mbox{\scriptsize IV}}{\leq}
 q \cdot  q^i \cdot  |x_1 - x_0| = q^{i+1} \cdot  |x_1 - x_0|$.
 \\[0.3cm]
 Nachdem wir jetzt wissen, dass die Folge $\folge{x_n}$ konvergiert, zeigen wir, dass der
 Grenzwert $\bar{x}$ ein Fixpunkt der Funktion $f$ ist.  Da $f$ als kontrahierende
-Abbildung auch stetig ist haben wir 
+Abbildung auch stetig ist, können wir die Anwendung der Funktion $f$ mit der Grenzwert-Bildung
+vertauschen.  Also haben wir 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds f(\bar{x}) = f\Bigl(\lim\limits_{n\rightarrow\infty} x_n\Bigr) =
-\lim\limits_{n\rightarrow\infty} f(x_n) = \lim\limits_{n\rightarrow\infty} x_{n+1} = \lim\limits_{n\rightarrow\infty} x_{n} = \bar{x}$.
+\lim\limits_{n\rightarrow\infty} f(x_n) = \lim\limits_{n\rightarrow\infty} x_{n+1} =
+\lim\limits_{n\rightarrow\infty} x_{n} = \bar{x}$
 \\[0.2cm]
+und dies zeigt, dass $\bar{x}$ ein Fixpunkt der Funktion $f$ ist.
+
 Den Abstand zwischen $\bar{x}$ und $x_n$ können wir abschätzen, wenn wir 
 $\bar{x}$ als unendliche Reihe schreiben und gleichzeitig $x_n$ durch eine Teleskop-Summe
 ausdrücken. 
@@ -1167,23 +1180,23 @@ ausdrücken.
 $
 \begin{array}[t]{lclcl}
        |\bar{x} - x_n| 
-& = & \multicolumn{3}{l}{\left|\, x_0 + \sum\limits_{i=1}^\infty (x_i - x_{i-1}) - \Bigl(x_0 + \sum\limits_{i=1}^n (x_i - x_{i-1}) \Bigr) \,\right|} \\[0.5cm]
-& = & \left|\, \sum\limits_{i=n+1}^\infty (x_i - x_{i-1}) \,\right| & \leq & \sum\limits_{i=n+1}^\infty \bigl|x_i - x_{i-1}\bigr| \\[0.5cm]
-& = & \sum\limits_{i=n}^\infty \bigl|x_{i+1} - x_{i}\bigr| & \leq & \sum\limits_{i=n}^\infty q^i \cdot  \bigl|x_1 - x_0\bigr| \\[0.5cm]
-& = & \bigl|x_1 - x_0\bigr| \cdot  \sum\limits_{i=n}^\infty q^i & = & \bigl|x_1 - x_0\bigr| \cdot  \sum\limits_{i=0}^\infty q^{n+i} \\[0.5cm]
-& = & \bigl|x_1 - x_0\bigr| \cdot  q^{n} \cdot  \sum\limits_{i=0}^\infty q^i & = & \bigl|x_1 - x_0\bigr| \cdot  q^{n} \cdot  \bruch{1}{1 - q} \\[0.5cm]
+& = & \multicolumn{3}{l}{\ds\left|\, x_0 + \sum\limits_{i=1}^\infty (x_i - x_{i-1}) - \Bigl(x_0 + \sum\limits_{i=1}^n (x_i - x_{i-1}) \Bigr) \,\right|} \\[0.6cm]
+& = & \ds \left|\, \sum\limits_{i=n+1}^\infty (x_i - x_{i-1}) \,\right| & \leq & \ds\sum\limits_{i=n+1}^\infty \bigl|x_i - x_{i-1}\bigr| \\[0.6cm]
+& = & \ds \sum\limits_{i=n}^\infty \bigl|x_{i+1} - x_{i}\bigr| & \leq & \ds\sum\limits_{i=n}^\infty q^i \cdot  \bigl|x_1 - x_0\bigr| \\[0.5cm]
+& = & \ds \bigl|x_1 - x_0\bigr| \cdot  \sum\limits_{i=n}^\infty q^i & = & \ds\bigl|x_1 - x_0\bigr| \cdot  \sum\limits_{i=0}^\infty q^{n+i} \\[0.5cm]
+& = & \ds \bigl|x_1 - x_0\bigr| \cdot  q^{n} \cdot  \sum\limits_{i=0}^\infty q^i & = & \ds\bigl|x_1 - x_0\bigr| \cdot  q^{n} \cdot  \bruch{1}{1 - q} \\[0.5cm]
 \end{array}
 $
 \\[0.2cm]
-Damit haben wir die Abschätzung 
+Die obige Ungleichungskette zeigt insgesamt die Gültigkeit der Abschätzung 
 \\[0.2cm]
 \hspace*{1.3cm}
-$|\bar{x} - x_n| \leq \bruch{q^n}{1 - q} \cdot  |x_1 - x_0|$
+$\ds|\bar{x} - x_n| \leq \frac{q^n}{1 - q} \cdot  |x_1 - x_0|$
 \\[0.2cm]
-gezeigt. \hspace*{\fill} $\Box$
+und damit ist der Beweis ist abgeschlossen. \hspace*{\fill} $\Box$
 \vspace*{0.3cm}
 
-Setzen wir in der eben gezeigten Abschätzung $n=1$, so erhalten wir 
+Setzen wir in der eben gezeigten Abschätzung für  $n$ den Wert $1$ ein, so erhalten wir 
 \\[0.2cm]
 \hspace*{1.3cm}
 $|\bar{x} - x_1| \leq \bruch{q}{1 - q} \cdot |x_1 - x_0|$. 
@@ -1220,7 +1233,7 @@ Wir können auch die Zahl der Iterationen abschätzen, die notwendig sind um den F
 mit einer Genauigkeit von $\varepsilon$ zu berechnen.  Wir gehen dazu von der Ungleichung 
 \\[0.2cm]
 \hspace*{1.3cm}
-$|x_n - \bar{x}| \leq \bruch{q^n}{1- q} \cdot  |x_1 - x_0|$.
+$\ds |x_n - \bar{x}| \leq \frac{q^n}{1- q} \cdot  |x_1 - x_0|$.
 \\[0.2cm]
 aus.  Starten wir die Fixpunkt-Iteration mit $x_0 = 0$, so erhalten wir $x_1 = \cos(0) =
 1$ und damit können wir die Anzahl der Iterationen $n$ abschätzen: 
@@ -1228,16 +1241,16 @@ aus.  Starten wir die Fixpunkt-Iteration mit $x_0 = 0$, so erhalten wir $x_1 = \
 \hspace*{1.3cm}
 $
 \begin{array}[t]{lcl}
-                & |x_n - \bar{x}| \leq \varepsilon \\[0.2cm]
-\Leftarrow      & \bruch{q^n}{1- q} \cdot  |x_1 - x_0| \leq \varepsilon \\[0.3cm]
-\Leftrightarrow & \bruch{q^n}{1- q} \cdot  |1 - 0| \leq \varepsilon \\[0.3cm]
-\Leftrightarrow & \bruch{q^n}{1- q} \leq \varepsilon \\[0.3cm]
-\Leftrightarrow & n \cdot  \ln(q) - \ln(1 - q) \leq \ln(\varepsilon) \\[0.3cm]
-\Leftrightarrow & n \cdot  \ln(q) \leq \ln(\varepsilon) + \ln(1 - q) \\[0.3cm]
-\Leftrightarrow & n \geq \bruch{\ln(\varepsilon) + \ln(1 - q)}{\ln(q)} \\[0.5cm]
-\Leftrightarrow & n \geq \bruch{\ln(10^{-6}) + \ln(1 - 0.85)}{\ln(0.85)} \\[0.5cm]
-\Leftrightarrow & n \geq \bruch{-6 \cdot  \ln(10) + \ln(1 - 0.85)}{\ln(0.85)} \\[0.5cm]
-\Leftrightarrow & n \geq 96.7
+                & \ds|x_n - \bar{x}| \leq \varepsilon \\[0.2cm]
+\Leftarrow      & \ds \frac{q^n}{1- q} \cdot  |x_1 - x_0| \leq \varepsilon \\[0.3cm]
+\Leftrightarrow & \ds \frac{q^n}{1- q} \cdot  |1 - 0| \leq \varepsilon \\[0.3cm]
+\Leftrightarrow & \ds \frac{q^n}{1- q} \leq \varepsilon \\[0.3cm]
+\Leftrightarrow & \ds n \cdot  \ln(q) - \ln(1 - q) \leq \ln(\varepsilon) \\[0.3cm]
+\Leftrightarrow & \ds n \cdot  \ln(q) \leq \ln(\varepsilon) + \ln(1 - q) \\[0.3cm]
+\Leftrightarrow & \ds n \geq \frac{\ln(\varepsilon) + \ln(1 - q)}{\ln(q)} \\[0.5cm]
+\Leftrightarrow & \ds n \geq \frac{\ln(10^{-6}) + \ln(1 - 0.85)}{\ln(0.85)} \\[0.5cm]
+\Leftrightarrow & \ds n \geq \frac{-6 \cdot  \ln(10) + \ln(1 - 0.85)}{\ln(0.85)} \\[0.5cm]
+\Leftrightarrow & \ds n \geq 96.7
 \end{array} 
 $
 \\[0.2cm]
@@ -1245,8 +1258,8 @@ Damit benötigen wir also höchstens $97$ Iterationen um die gewünschte Genauigkei
 Wir haben die einzelnen Werte der Folge, die sich bei der iterativen Lösung der Gleichung
 $x = \cos(x)$ ergibt, in Tabelle \ref{tab:x-cos-x} auf Seite \pageref{tab:x-cos-x}
 angegeben.  Diese Tabelle zeigt, dass bereits nach 36 Iterationen eine Genauigkeit von
-$10^{-6}$ erreicht ist.  Der Grund dafür, dass es deutlich schneller ging als wir mit der
-obigen Abschätzung berechnet haben liegt darin, dass der Kontraktions-Koeffizient $q$ den
+$10^{-6}$ erreicht ist.  Der Grund dafür, dass es deutlich schneller ging, als wir mit der
+obigen Abschätzung berechnet haben, liegt darin, dass der Kontraktions-Koeffizient $q$ den
 Wert von $\sin(x)$ in dem Intervall $[0,1]$ abschätzen muss.  Da die Sinus-Funktion in
 diesem Intervall monoton wächst, haben wir den Kontraktions-Koeffizient als 
 $\sin(1) \approx 0.85$ berechnet.  Für die  Lösung $\bar{x}$ der Fixpunkt-Gleichung gilt
@@ -1272,22 +1285,22 @@ Fixpunkt-Gleichung $x = f(x)$ wie folgt um:
 \hspace*{1.3cm}
 $
 \begin{array}[t]{crcll}
-                & x & = & f(x)                                                & \mid\; + \;\alpha \cdot  x            \\[0.2cm]
-\Leftrightarrow & (1 + \alpha) \cdot  x & = & f(x) + \alpha \cdot  x                    & \mid\; \cdot  \;\bruch{1}{1 + \alpha} \\[0.2cm]
-\Leftrightarrow &                x & = & \bruch{f(x) + \alpha \cdot  x}{1 + \alpha}            
+                & x & = & f(x)                                           & \mid\; + \;\alpha \cdot  x            \\[0.2cm]
+\Leftrightarrow & \ds (1 + \alpha) \cdot  x & = & f(x) + \alpha \cdot  x & \ds\mid\; \cdot  \;\frac{1}{1 + \alpha} \\[0.2cm]
+\Leftrightarrow &                x & = & \ds\frac{f(x) + \alpha \cdot  x}{1 + \alpha}            
 \end{array}
 $
 \\[0.2cm]
 Damit haben wir also die Funktion 
 \\[0.2cm]
 \hspace*{1.3cm}
-$g(x) = \bruch{f(x) + \alpha \cdot  x}{1 + \alpha}$
+$g(x) = \ds\frac{f(x) + \alpha \cdot  x}{1 + \alpha}$
 \\[0.2cm]
-gefunden, die die selben Fixpunkte hat wie die ursprüngliche Funktion $f$.  Für die
+gefunden, welche die selben Fixpunkte hat wie die ursprüngliche Funktion $f$.  Für die
 Ableitung gilt 
 \\[0.2cm]
 \hspace*{1.3cm}
-$g'(x) = \bruch{f'(x) + \alpha}{1 + \alpha}$
+$\ds g'(x) = \frac{f'(x) + \alpha}{1 + \alpha}$
 \\[0.2cm]
 Der Betrag diese Ableitung wird für den Fixpunkt $\bar{x}$ dann am kleinsten, wenn wir 
 \\[0.2cm]
@@ -1317,7 +1330,7 @@ Iterations-Schritten eine Genauigkeit von mehr als $10^{-6}$ erreicht ist.
     }
 \end{Verbatim}
 \vspace*{-0.3cm}
-  \caption{Berechnung der durch $x_{n+1} = \bruch{\cos(x) + \alpha \cdot  x_n}{1 + \alpha}$ definierten
+  \caption{Berechnung der durch $\ds x_{n+1} = \frac{\cos(x) + \alpha \cdot  x_n}{1 + \alpha}$ definierten
     Folge.}
   \label{fig:cosXisX.stlx}
 \end{figure} %\$
@@ -1343,7 +1356,7 @@ Iterations-Schritten eine Genauigkeit von mehr als $10^{-6}$ erreicht ist.
 6  & 0.739085132732678 & 12 & 0.739085133215161 \\
 \hline
   \end{tabular}}
-  \caption{Die ersten 12 Glieder der durch $x_{n+1} = \bruch{\cos(x) + \alpha \cdot  x_n}{1 + \alpha}$ definierten
+  \caption{Die ersten 12 Glieder der durch $x_{n+1} = \frac{\cos(x) + \alpha \cdot  x_n}{1 + \alpha}$ definierten
     Folge für $\alpha = 0.7$.}
   \label{tab:alpha-x-cos-x}
 \end{table}
@@ -1356,7 +1369,7 @@ in jedem Schritt $-f'(x_n)$ einsetzen.  Das führt auf folgende
 Definition für die Folge $\folge{x_n}$:
 \begin{equation}
   \label{eq:fixpunktNewton}
-   x_{n+1} = \bruch{f(x_n) - f'(x_n) \cdot  x_n}{1 - f'(x_n)}  
+   x_{n+1} = \frac{f(x_n) - f'(x_n) \cdot  x_n}{1 - f'(x_n)}  
 \end{equation}
 Abbildung \ref{fig:cosXisX-newton.stlx} zeigt ein Programm zur Umsetzung dieser Idee.
 Hier haben wir die ersten 7 Werte mit Gleichung (\ref{eq:fixpunktNewton})
@@ -1397,7 +1410,7 @@ Weiter sehen Sie, dass durch die Nach-Iteration die letzte angezeigte Stelle ver
     }
 \end{Verbatim}
 \vspace*{-0.3cm}
-  \caption{Berechnung der durch $x_{n+1} = \bruch{\cos(x_n) + \sin(x_n) \cdot  x}{1 + \sin(x_n)}$ definierten Folge.}
+  \caption{Berechnung der durch $x_{n+1} = \frac{\cos(x_n) + \sin(x_n) \cdot  x}{1 + \sin(x_n)}$ definierten Folge.}
   \label{fig:cosXisX-newton.stlx}
 \end{figure} %\$
 
@@ -1444,25 +1457,25 @@ die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $\begin{array}[t]{lcl}
- x_{n+1} & = & \bruch{x_n + g(x_n) - \bigl(1 + g'(x_n)) \cdot  x_{n}}{1 - \bigl(1 + g'(x_n)\bigr)} \\[0.5cm]
-         & = & \bruch{x_n + g(x_n)  - x_{n} - g'(x_n)\cdot x_n}{-g'(x_n)} \\[0.5cm]
-         & = & \bruch{- g(x_n) + g'(x_n)\cdot x_n}{g'(x_n)} \\[0.5cm]
-         & = & x_n - \bruch{g(x_n)}{g'(x_n)} \\[0.5cm]
+ x_{n+1} & = & \ds\frac{x_n + g(x_n) - \bigl(1 + g'(x_n)) \cdot  x_{n}}{1 - \bigl(1 + g'(x_n)\bigr)} \\[0.5cm]
+        & = & \ds\frac{x_n + g(x_n)  - x_{n} - g'(x_n)\cdot x_n}{-g'(x_n)} \\[0.5cm]
+        & = & \ds\frac{- g(x_n) + g'(x_n)\cdot x_n}{g'(x_n)} \\[0.5cm]
+        & = & \ds x_n - \frac{g(x_n)}{g'(x_n)} \\[0.5cm]
  \end{array}
 $
 \\[0.2cm]
 Wir haben also  die Iterations-Vorschrift 
 \begin{equation}
   \label{eq:NewtonZero}
-  \colorbox{orange}{\framebox{$\ds x_{n+1} = x_n - \bruch{g(x_n)}{g'(x_n)}$}} 
+  \colorbox{orange}{\framebox{$\ds x_{n+1} = x_n - \frac{g(x_n)}{g'(x_n)}$}} 
 \end{equation}
 gefunden.  Dieses Verfahren wird als  \emph{Newton'sches Verfahren} bezeichnet.
 Die Gleichung  (\ref{eq:NewtonZero}) läßt sich geometrisch interpretieren: Legen wir im Punkt
-$\langle x_n, g(x_n) \rangle$ eine Tangente and die Funktion $g$, so schneidet diese Tangente die
+$\langle x_n, g(x_n) \rangle$ eine Tangente an die Funktion $g$, so schneidet diese Tangente die
 $x$-Achse im Punkt 
 \\[0.2cm]
 \hspace*{1.3cm}
-$x_n - \bruch{g(x_n)}{g'(x_n)}$.
+$\ds x_n - \frac{g(x_n)}{g'(x_n)}$.
 \\[0.2cm]
 Der neue Wert $x_{n+1}$ ist also die Näherung, die wir erhalten, wenn wir die Funktion $g$ durch die
 Tangente im Punkt $\langle x_n, g(x_n) \rangle$ ersetzen and dann die Nullstelle berechnen, die diese
@@ -1478,7 +1491,7 @@ Newton'schen Verfahrens betrachten wir die Berechnung der $k$-ten Wurzel ($k\in\
 $k\geq 2$) einer gegebenen Zahl $a>0$. Wegen 
 \\[0.2cm]
 \hspace*{1.3cm}
-$x = \sqrt[k]{a} \quad\Leftrightarrow\quad x^k - a = 0$
+$\ds x = \sqrt[k]{a} \quad\Leftrightarrow\quad x^k - a = 0$
 \\[0.2cm]
 setzen wir $g(x) := x^k - a$ und bestimmen die Nullstellen der Funktion $g(x)$ mit dem
 Newton'schen Verfahren.  Für die Ableitung der Funktion $g(x)$ finden wir 
@@ -1489,12 +1502,12 @@ $g'(x) = k\cdot x^{k-1}$.
 Damit lautet die Iterations-Vorschrift
 \\[0.3cm]
 \hspace*{1.3cm}
-$x_{n+1} = x_n - \bruch{x_n^k - a}{k\cdot x_n^{k-1}} = \bruch{1}{k} \left( (k-1)\cdot x_n + \bruch{a}{x_n^{k-1}}\right)$.
+$\ds x_{n+1} = x_n - \frac{x_n^k - a}{k\cdot x_n^{k-1}} = \frac{1}{k} \left( (k-1)\cdot x_n + \frac{a}{x_n^{k-1}}\right)$.
 \\[0.3cm]
 Berechnen wir mit diesem Verfahren die dritte Wurzel aus $2$, so lautet die Iterations-Vorschrift
 \\[0.2cm]
 \hspace*{1.3cm}
-$x_{n+1} = \bruch{1}{3} \cdot \left( 2\cdot x_n + \bruch{2}{x_n^{2}}\right)$
+$\ds x_{n+1} = \frac{1}{3} \cdot \left( 2\cdot x_n + \frac{2}{x_n^{2}}\right)$
 \\[0.2cm]                                 
 Lassen wir die Folge mit 1 starten so finden wir die Werte 
 \\[0.2cm]
@@ -1515,24 +1528,24 @@ Zwischenwert-Satz über stetige Funktionen muss die Funktion $g$ daher in dem Int
 Nullstelle haben.  Das Newton'sche Verfahren ergibt die Formel
 \\[0.2cm]
 \hspace*{1.3cm}
-$x_{n+1} = x_n - \bruch{x_n^3 - 2 \cdot x_n + 2}{3 \cdot x_n^2 - 2}$.
+$\ds x_{n+1} = x_n - \frac{x_n^3 - 2 \cdot x_n + 2}{3 \cdot x_n^2 - 2}$.
 \\[0.2cm]
 Wählen wir als Start-Wert $x_0 := 0$, so erhalten wir 
 \\[0.2cm]
 \hspace*{1.3cm}
-$x_1 = 0 - \bruch{2}{-2} = 1$.
+$\ds x_1 = 0 - \frac{2}{-2} = 1$.
 \\[0.2cm]
 Für $x_2$ finden wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$x_{2} = 1 - \bruch{1 - 2 + 2}{3 - 2} = 1 - 1 = 0 = x_0$.
+$\ds x_{2} = 1 - \frac{1 - 2 + 2}{3 - 2} = 1 - 1 = 0 = x_0$.
 \\[0.2cm]
 Wir sind also wieder bei unserem Start-Wert angekommen!  Damit gilt allgemein
 \\[0.2cm]
 \hspace*{1.3cm}
 $x_n = \left\{
 \begin{array}{ll}
-  0 & \mbox{falls $n \,\texttt{\%}\, 2 = 0$,} \\
+  0 & \mbox{falls $n \,\texttt{\%}\, 2 = 0$,} \\[0.2cm]
   1 & \mbox{falls $n \,\texttt{\%}\, 2 = 1$.}
 \end{array} 
 \right.
@@ -1542,11 +1555,11 @@ Folglich konvergiert das Verfahren in diesem Fall nicht.  Wählen wir den Startwe
 konvergiert das Verfahren gegen die Lösung $-2.23070764576\cdots$, die außerhalb des Intervalls $[-2,2]$
 liegt.  Wählen wir als Startwert $x_0 = -1.5$, so konvergiert das Verfahren gegen die Lösung
 $-1.769292354238631\cdots$.  Diese Beispiele zeigen, dass das Newton'sche Verfahren ohne weitere
-Einschränkungen nicht robust ist.
+Einschränkungen nicht zuverlässig ist.
 
 \subsection{Analyse des Newton'schen Verfahrens}
 Wir wollen in diesem Abschnitt herausfinden, unter welchen Umständen das Newton'sche Verfahren
-konvergiert und wollen außerdem die Geschwindikeit der Konvergenz des Verfahrens untersuchen.
+konvergiert und wollen außerdem die Geschwindigkeit der Konvergenz des Verfahrens untersuchen.
 Als erstes benötigen wir einen Hilfssatz über konvexe Funktionen.
 
 \begin{Lemma}
@@ -1630,10 +1643,7 @@ und das Quadrat $(x-x_0)^{2}$ ist sicher immer größer oder gleich $0$.  \qed
   Falls der Startwert $x_0 \in [a,b]$ so gewählt wird, dass $f(x_0) > 0$ ist, 
   dann ist die durch das Newton'sche Verfahren definierte Folge $\folge{x_n}$ monoton fallend und
   beschränkt und damit konvergent.  Für den Grenzwert
-  \\[0.2cm]
-  \hspace*{1.3cm}
   $\bar{x} := \lim\limits_{n\rightarrow\infty} x_n$
-  \\[0.2cm]
   gilt $f(\bar{x}) = 0$.
 \end{Satz}
 
@@ -1674,13 +1684,13 @@ $f(x_n) \geq 0$ \quad für alle $n \in \mathbb{N}$ gilt.
 Nach Definition von $x_{n+1}$ gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$x_{n+1} = x_n - \bruch{f(x_n)}{f'(x_n)}$.
+$\ds x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$.
 \\[0.2cm]
 Einerseits haben wir gerade gezeigt, dass $f(x_n) \geq 0$ ist, andererseits ist die Voraussetzung, dass
 für alle $x \in [a,b]$ die Ungleichung $f'(x) > 0$ gilt.  Daraus folgt aber
 \\[0.2cm]
 \hspace*{1.3cm}
-$\bruch{f(x_n)}{f'(x_n)} \geq 0$
+$\ds\frac{f(x_n)}{f'(x_n)} \geq 0$
 \\[0.2cm]
 und damit gilt
 \\[0.2cm]
@@ -1688,28 +1698,28 @@ und damit gilt
 $x_{n+1} \leq x_n$.
 \\[0.2cm]
 Dies zeigt, dass die Folge $\folge{x_n}$ monoton fallend ist.  Da wir andererseits wissen, dass
-$f(x_n) \geq 0$ ist, muss $x_n \geq \xi$ gelten.  Also ist die Folge $x_n$ nach unten beschränkt.
+$f(x_n) \geq 0$ ist, muss $x_n \geq \xi$ gelten.  Also ist die Folge $x_n$ durch $\xi$ nach unten beschränkt.
 Als monoton fallend und beschränkte Folge hat $\folge{x_n}$ damit einen Grenzwert $\bar{x}$.  
-Für diesen Grenzwert gilt dann
+Für diesen Grenzwert gilt 
 \\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}{lcl}
-  \bar{x} & = & \lim\limits_{n\rightarrow\infty} x_n                             \\[0.2cm]
-          & = & \lim\limits_{n\rightarrow\infty} x_{n+1}                         \\[0.2cm]
-          & = & \lim\limits_{n\rightarrow\infty} x_{n} - \bruch{f(x_n)}{f'(x_n)} \\[0.2cm]
-          & = & \bar{x} - \bruch{f(\bar{x})}{f'(\bar{x})} \\[0.2cm]
+  \bar{x} & = & \ds\lim\limits_{n\rightarrow\infty} x_n                             \\[0.3cm]
+          & = & \ds\lim\limits_{n\rightarrow\infty} x_{n+1}                         \\[0.3cm]
+          & = & \ds\lim\limits_{n\rightarrow\infty} x_{n} - \frac{f(x_n)}{f'(x_n)} \\[0.3cm]
+          & = & \ds\bar{x} - \frac{f(\bar{x})}{f'(\bar{x})}. 
 \end{array}
 $
 \\[0.2cm]
 Aus der Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
-$\bar{x} = \bar{x} - \bruch{f(\bar{x})}{f'(\bar{x})}$ \quad folgt sofort \quad $0 = - \bruch{f(\bar{x})}{f'(\bar{x})}$
+$\ds \bar{x} = \bar{x} - \frac{f(\bar{x})}{f'(\bar{x})}$ \quad folgt sofort \quad $\ds 0 = - \frac{f(\bar{x})}{f'(\bar{x})}$
 \\[0.2cm]
 und daraus folgt durch Multiplikation mit $-f'(\bar{x})$ die gesuchte Gleichung $f(\bar{x}) = 0$.  \qed
-\vspace*{0.3cm}
 
+\subsubsection{Analyse der Konvergenz-Geschwindigkeit}
 Benutzen wir das Newton'sche Verfahren zur Berechnung  von $\sqrt{2\,}$, so erhalten wir 
 die folgenden Ergebnisse:
 {\footnotesize
@@ -1734,40 +1744,40 @@ Dazu entwicken wir die Funktion $f(x)$ an der Stelle $x_n$  in einer Taylor-Reih
 linearen Glied abbrechen.  Wir erhalten
 \\[0.2cm]
 \hspace*{1.3cm}
-$f(x) = f(x_n) + f'(x_n) \cdot (x- x_n) + \frac{1}{2} \cdot f^{(2)}(\varphi) \cdot (x - x_n)^2$
+$\ds f(x) = f(x_n) + f'(x_n) \cdot (x- x_n) + \frac{1}{2} \cdot f^{(2)}(\varphi) \cdot (x - x_n)^2$
 \\[0.2cm]
-Hier setzen wir für $x$ den Wert $\bar{x}$, also die Nullstelle ein und erhalten
-\\[0.2cm]
-\hspace*{1.3cm}
-$0 =  f(x_n) + f'(x_n) \cdot (\bar{x} - x_n) + \frac{1}{2} \cdot f^{(2)}(\varphi) \cdot (\bar{x} - x_n)^2$
-\\[0.2cm]
-Hier subtrahieren wir $f(x_n)$ und teilen anschließend durch $f'(x_n)$.  Das liefert die Gleichung
+Hier setzen wir für $x$ den Wert $\bar{x}$, also die Nullstelle von $f$ ein und erhalten
 \\[0.2cm]
 \hspace*{1.3cm}
-$- \bruch{f(x_n)}{f'(x_n)} = 
- \bar{x} - x_n + \frac{1}{2} \cdot \bruch{f^{(2)}(\varphi)}{f'(x_n)} \cdot (\bar{x} - x_n)^2$
+$\ds 0 =  f(x_n) + f'(x_n) \cdot (\bar{x} - x_n) + \frac{1}{2} \cdot f^{(2)}(\varphi) \cdot (\bar{x} - x_n)^2$
+\\[0.2cm]
+Wir subtrahieren $f(x_n)$ und teilen anschließend durch $f'(x_n)$.  Das liefert die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds - \frac{f(x_n)}{f'(x_n)} = 
+ \bar{x} - x_n + \frac{1}{2} \cdot \frac{f^{(2)}(\varphi)}{f'(x_n)} \cdot (\bar{x} - x_n)^2$
 \\[0.2cm]
 Jetzt addieren wir $x_n$ und subtrahieren $\bar{x}$.  Das liefert
 \\[0.2cm]
 \hspace*{1.3cm}
-$x_n - \bruch{f(x_n)}{f'(x_n)} - \bar{x} = 
- \frac{1}{2} \cdot \bruch{f^{(2)}(\varphi)}{f'(x_n)} \cdot (\bar{x} - x_n)^2
+$\ds x_n - \frac{f(x_n)}{f'(x_n)} - \bar{x} = 
+ \frac{1}{2} \cdot \frac{f^{(2)}(\varphi)}{f'(x_n)} \cdot (\bar{x} - x_n)^2
 $.
 \\[0.2cm]
-An dieser Stelle bemerken wir, dass $x_n - \bruch{f(x_n)}{f'(x_n)} = x_{n+1}$ ist und haben damit
+An dieser Stelle bemerken wir, dass $\ds x_n - \frac{f(x_n)}{f'(x_n)} = x_{n+1}$ ist und haben damit
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds x_{n+1} - \bar{x} = \frac{1}{2} \cdot \bruch{f^{(2)}(\varphi)}{f'(x_n)} \cdot (\bar{x} - x_n)^2$.
+$\ds x_{n+1} - \bar{x} = \frac{1}{2} \cdot \frac{f^{(2)}(\varphi)}{f'(x_n)} \cdot (\bar{x} - x_n)^2$.
 \\[0.2cm]
 Wir definieren nun $\varepsilon_n := |x_n - \bar{x}|$.  Der Wert $\varepsilon_n$ gibt also den
 Betrag des Approximations-Fehler an, den wir nach der $n$-ten Iteration des Newton'schen Verfahrens
 haben.  Damit schreibt sich die letzte Gleichung als
 \\[0.2cm]
 \hspace*{1.3cm}
-$\varepsilon_{n+1} = \frac{1}{2} \cdot \left|\bruch{f^{(2)}(\varphi)}{f'(x_n)}\right| \cdot \varepsilon_n^2$.
+$\ds \varepsilon_{n+1} = \frac{1}{2} \cdot \left|\frac{f^{(2)}(\varphi)}{f'(x_n)}\right| \cdot \varepsilon_n^2$.
 \\[0.2cm]
 In den Fällen, in denen  wir den Ausdruck 
-$\frac{1}{2} \cdot \left|\bruch{f^{(2)}(\varphi)}{f'(x_n)}\right|$ 
+$\ds \frac{1}{2} \cdot \left|\frac{f^{(2)}(\varphi)}{f'(x_n)}\right|$ 
 durch
 eine Konstante $K$ abschätzen können, haben wir dann
 \\[0.2cm]
@@ -1779,7 +1789,7 @@ Die Zahl der korrekten Stellen nach der $n$-ten Iteration ist in etwa durch
 \hspace*{1.3cm}
 $\lambda_{n} \approx -\log_{10}(\varepsilon_n)$ 
 \\[0.2cm]
-gegeben.  Logarithmieren wir die obige Gleichung zur Basis 10, so erhalten wir
+gegeben.  Logarithmieren wir die obige Gleichung zur Basis 10 und multiplizieren mit $-1$, so erhalten wir
 \\[0.2cm]
 \hspace*{1.3cm}
 $\lambda_{n+1} \geq 2 \cdot \lambda_n - \log_{10}(K)$.
@@ -1792,14 +1802,14 @@ $f'(x) = 2 \cdot x \geq 2$ \quad falls $x \geq 1$ ist
 und weiter gilt $f^{(2)}(x) = 2$.  Damit gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\frac{1}{2} \cdot \left|\bruch{f^{(2)}(\varphi)}{f'(x_n)}\right| \leq \frac{1}{2}$
+$\ds \frac{1}{2} \cdot \left|\frac{f^{(2)}(\varphi)}{f'(x_n)}\right| \leq \frac{1}{2}$
 \\[0.2cm]
 und wegen $\log_{10}\bigl(\frac{1}{2}\bigr) \approx - 0.3$ haben wir die Abschätzung
 \\[0.2cm]
 \hspace*{1.3cm}
 $\lambda_{n+1} = 2 \cdot \lambda_{n} + 0.3$ 
 \\[0.2cm]
-gefunden, die in der Tat zeigt, dass sich die Anzahl der korrekten Stellen bei jedem Schritt etwa verdoppelt.
+gefunden, die in der Tat zeigt, dass sich die Anzahl der korrekten Stellen bei jedem Schritt mehr als verdoppelt.
 
 \exercise
 Analysieren Sie das Newton'sche Verfahren zur Berechnung der dritten Wurzel aus $2$ und berechnen Sie,
@@ -1825,7 +1835,8 @@ Verfahren zu
 aufwendig ist.  Dies ist beispielsweise dann der Fall, wenn einerseits $n$ groß ist und
 wenn andererseits die meisten Komponenten der Matrix $A$ den Wert 0 haben.  Solche
 Matrizen heißen \emph{dünn besetzte} Matrizen.  Diese Art von Matrizen tritt bei
-der numerischen Lösung von Differenzial-Gleichungen auf.  
+der numerischen Lösung von
+\href{http://de.wikipedia.org/wiki/Partielle_Differentialgleichung}{partiellen Differential-Gleichungen} auf.   
 Das Gauß'sche Eliminations-Verfahren besitzt  eine
 Komplexität von $O(n^3)$ und ist damit für große dünn besetzte Matrizen ungeeignet.
 Hier ist der Rechenaufwand bei iterative Verfahren geringer.   
@@ -1846,14 +1857,14 @@ $
                 &  \displaystyle \sum\limits_{j=1}^n a_{ij} \cdot  x_j & = & b_i \\[0.6cm]
 \Leftrightarrow & \displaystyle a_{ii} \cdot  x_i + \sum\limits_{j=1 \atop j \not= i}^n a_{ij} \cdot  x_j & = & b_i \\[0.2cm]
 \Leftrightarrow & a_{ii} \cdot  x_i & = & \displaystyle b_i - \sum\limits_{j=1 \atop j \not= i}^n a_{ij} \cdot  x_j \\[0.6cm]
-\Leftrightarrow & x_i & = & \displaystyle \bruch{1}{a_{ii}} \cdot  \Biggl( b_i - \sum\limits_{j=1 \atop j \not= i}^n a_{ij} \cdot  x_j \Biggr). \\[0.3cm]
+\Leftrightarrow & x_i & = & \displaystyle \frac{1}{a_{ii}} \cdot  \Biggl( b_i - \sum\limits_{j=1 \atop j \not= i}^n a_{ij} \cdot  x_j \Biggr). \\[0.3cm]
 \end{array}
 $
 \\[0.2cm]
 Diese Umformung liefert uns die Iterations-Vorschrift
 \\[0.2cm]
 \hspace*{1.3cm}
-$x^{(n+1)}_i = \displaystyle \bruch{1}{a_{ii}} \cdot  \Biggl( b_i - \sum\limits_{j=1 \atop j \not= i}^n a_{ij} \cdot  x^{(n)}_j \Biggr)$
+$x^{(n+1)}_i = \displaystyle \frac{1}{a_{ii}} \cdot  \Biggl( b_i - \sum\limits_{j=1 \atop j \not= i}^n a_{ij} \cdot  x^{(n)}_j \Biggr)$
 \\[0.2cm]
 mit der wir versuchen können, eine Lösung der Fixpunkt-Gleichung zu finden.
 Das Verfahren, das wir auf diese Weise erhalten, wird als \emph{Gesamtschritt-Verfahren}
@@ -1875,7 +1886,7 @@ Falls $a_{ii} \not=0$ ist, ist die in der obigen Definition gegebene Ungleichung
 äquivalent zu  der Ungleichung
 \\[0.2cm]
 \hspace*{1.3cm}
-$\displaystyle\bruch{1}{\bigl|a_{ii}\bigr|}\cdot\sum\limits_{j=1 \atop j \not= i}^n \bigl| a_{ij} \bigr| \leq q$. 
+$\displaystyle\frac{1}{\bigl|a_{ii}\bigr|}\cdot\sum\limits_{j=1 \atop j \not= i}^n \bigl| a_{ij} \bigr| \leq q$. 
 
 
 \noindent
@@ -1923,7 +1934,7 @@ Gesamtschritt-Verfahrens in einem für Anwendungen wichtigen Spezial-Fall.
   Abschätzung 
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\norm{\vec{x}^{(\infty)} - \vec{x}^{(n)}} \leq \bruch{q^n}{1-q} \cdot \norm{\vec{x}^{(0)} - \vec{x}^{(1)}}$.
+  $\norm{\vec{x}^{(\infty)} - \vec{x}^{(n)}} \leq \frac{q^n}{1-q} \cdot \norm{\vec{x}^{(0)} - \vec{x}^{(1)}}$.
 \end{Satz}
 
 \proof
@@ -1931,7 +1942,7 @@ Wir definieren eine Funktion $f:\mathbb{R}^n \rightarrow \mathbb{R}^n$
 komponentenweise:
 \\[0.2cm]
 \hspace*{1.3cm}
-$f_i(\vec{x}) = \bruch{1}{a_{ii}} \cdot  \Biggl( b_i - \sum\limits_{j=1 \atop j \not= i}^n a_{ij} \cdot  x_j \Biggr)$. 
+$f_i(\vec{x}) = \frac{1}{a_{ii}} \cdot  \Biggl( b_i - \sum\limits_{j=1 \atop j \not= i}^n a_{ij} \cdot  x_j \Biggr)$. 
 \\[0.2cm]
 Die $i$-te Komponente der Funktion $f$ berechnet also gerade die $i$-te
 Komponente des Vektors $\vec{x}^{(n+1)}$.  Wir zeigen nun, dass für beliebige Vektoren
@@ -2162,8 +2173,11 @@ nach 35 Schritten gefunden.
   \caption{Konvergenz des Jacobi-Verfahrens.}
   \label{tab:jacobi}
 \end{table}
+\vspace*{\fill}
+\pagebreak
 
-\subsubsection{Das Gauß-Seidel-Verfahren$*$}
+
+\subsubsection{Das Gauß-Seidel-Verfahren}
 Betrachten wir die Implementierung des Gesamtschritt-Verfahrens, so liegt die folgende
 Optimierung auf der Hand.  Wenn wir mit der Formel
 \\[0.2cm]
