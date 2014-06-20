@@ -295,12 +295,12 @@ eine Konstante unterscheiden.  Dies sehen wir wie folgt: Angenommen, $F_1$ und $
 zwei Stamm-Funktionen einer Funktion $f$, es gelte also 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\df F_1(x) = f(x)$ \quad und \quad $\df F_2(x) = f(x)$.
+$\df{F_1}(x) = f(x)$ \quad und \quad $\df{F_2}(x) = f(x)$.
 \\[0.2cm]
 Dann definieren wir die Funktion $H$ als $H(x) := F_1(x) - F_2(x)$.  Damit gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\df H(x) = \df F_1(x) - \df F_2(x) = f(x) - f(x) = 0$.
+$\df H(x) = \df{F_1}(x) - \df{F_2}(x) = f(x) - f(x) = 0$.
 \\[0.2cm]
 Nach Lemma \ref{lemma:0_ableitung} gibt es nun eine Konstante $c$, so dass $H(x) = c$ gilt.
 Dies zeigt, dass sich zwei verschiedene Stamm-Funktionen nur um eine Konstante unterscheiden.
@@ -502,7 +502,7 @@ $
        \dint{0}{x} \tan(t) \, dt 
  & = & \dint{0}{x} \;\frac{\sin(t)}{\cos(t)}\, dt \\[0.3cm]
  & = & - \dint{0}{x} \;\bigl(- \sin(t)\bigr)\cdot \frac{1}{\cos(t)}\, dt \\[0.6cm]
- & = & - \dint{\cos(0)}{\cos(x)} \;\frac{1}{t}\, dt \\[0.6cm]
+ & = & - \dint{\cos(0)}{\cos(x)} \;\frac{1}{y}\, dy \\[0.6cm]
  & = & - \Bigl( \ln\bigl(|\cos(x)|\bigr) - \ln\bigl(|\cos(0)|\bigr) \Bigr) \\[0.3cm]
  & = & \ln\bigl(|\cos(0)|\bigr) - \ln\bigl(|\cos(x)|\bigr) \\[0.3cm]
  & = & \ln(1) - \ln\bigl(|\cos(x)|\bigr) \\[0.2cm]
