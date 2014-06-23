@@ -216,7 +216,8 @@ Die obige Ungleichungskette zeigt, dass
 \hspace*{1.3cm}
  $\ds \frac{1}{b-a} \cdot \int_a^b f(x)\, dx\; \in \bigl[f(x_{min}), f(x_{max})\bigr]$ \\[0.2cm]
 gilt.  
-Aufgrund des Zwischenwert-Satzes nimmt die stetige Funktion $f$ jeden Wert in dem 
+Aufgrund des Zwischenwert-Satzes für stetige Funktionen (Satz \ref{satz:zws-stetig} auf Seite
+\pageref{satz:zws-stetig}) nimmt die stetige Funktion $f$ jeden Wert in dem  
 Intervall $\bigl[f\bigl(x_{min}\bigr), f\bigl(x_{max}\bigr)\bigr]$ an.  
 Also gibt es ein $\xi \in [a,b]$, so dass 
 \\[0.2cm]
@@ -267,6 +268,27 @@ $
 \\[0.3cm]
 Damit ist die Behauptung bewiesen. \hspace*{\fill} $\Box$
 
+\remark
+Der letzte Satz zeigt uns, dass der Differentiations-Operator
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\frac{d\,\cdot}{dx} := \left(f \mapsto \frac{df}{dx} \right)$ 
+\\[0.2cm]
+zu dem Integral-Operator
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\int_{a}^x \cdot \;dt := \left(f \mapsto \int_a^x f(t) \, dt\right)$ 
+\\[0.2cm]
+invers ist: Wenden wir auf eine Funktion zunächst den
+Integral-Operator an und wenden wir dann auf die resultierende Funktion den
+Differentiations-Operator an, so erhalten wir wieder die ursprüngliche Funktion:
+\\[0.2cm]
+\hspace*{1.3cm}
+\colorbox{orange}{\framebox{$\ds \frac{d\;}{dx} \int_a^x f(t)\,dt = f(x)$.}}
+\\[0.2cm]
+Diese Aussage
+lässt sich im Wesentlichen auch umkehren.  Diese Umkehrung ist der Hauptsatz der Differential- und
+Integral-Rechnung.  Bevor wir diesen Satz in Angriff nehmen können, benötigen wir noch eine Definition.
 
 
 \begin{Definition}[Stamm-Funktion] \lb
@@ -277,7 +299,7 @@ eine \emph{Stamm-Funktion} von $f$, falls $F$ differenzierbar ist und
 \hspace*{1.3cm} $\df F(x) = f(x)$
 \\[0.2cm]
 gilt.  In diesem Fall schreiben wir auch  $\ds F(x) = \int f(x) \, dx$.
-Der Ausdruck $\ds\int f(x) \, dx$ wird auch als \emph{unbestimmtes Integral} bezeichnet. \eod
+Der Ausdruck $\ds\int f(x) \, dx$ wird als \emph{unbestimmtes Integral} bezeichnet. \eod
 \end{Definition}
 
 
@@ -303,7 +325,6 @@ Dann definieren wir die Funktion $H$ als $H(x) := F_1(x) - F_2(x)$.  Damit gilt
 $\df H(x) = \df{F_1}(x) - \df{F_2}(x) = f(x) - f(x) = 0$.
 \\[0.2cm]
 Nach Lemma \ref{lemma:0_ableitung} gibt es nun eine Konstante $c$, so dass $H(x) = c$ gilt.
-Dies zeigt, dass sich zwei verschiedene Stamm-Funktionen nur um eine Konstante unterscheiden.
 Wir kommen jetzt zu einem zentralen Ergebnis dieser Vorlesung.
 
 \begin{Satz}[Hauptsatz der Differential- und Integral-Rechnung] \hspace*{\fill} \\
@@ -347,14 +368,14 @@ Der letzte Satz gibt Anlaß zu einer Schreibweise.  Für eine Funktion $F$  defini
 \hspace*{1.3cm}
 $F(x) \Big|_u^v := F(v) - F(u)$.
 \\[0.2cm]
-Den letzten Satz können wir wie folgt umformulieren.  Ist $f:[a,b] \rightarrow\mathbb{R}$
+Den letzten Satz können wir eine wichtige Schlussfolgerung ziehen:  Ist $f:[a,b] \rightarrow\mathbb{R}$
 eine differenzierbare Funktion, so ist $f$ offenbar eine Stamm-Funktion der Funktion $f'(x)$.
 Also gilt:
 \begin{equation}
   \label{eq:hauptsatzKorollar}
   \colorbox{orange}{\framebox{$\ds\int_u^v f'(x)\,dx = f(v) - f(u) = f(x)\Big|_u^v$}}
 \end{equation}
-\pagebreak
+Dies zeigt uns, dass der Integral-Operator in gewisser Weise zum Differential-Operator invers ist.
 
 \section{Regeln zur Berechnung von Integralen}
 Der Hauptsatz der Differential- und Integral-Rechnung ermöglicht es, Regeln zur Berechnung
@@ -409,7 +430,8 @@ Tabelle können auf ähnliche Weise verifiziert werden.
   \caption{Tabelle einiger Integrale}
   \label{tab:integrale}
 \end{table}
-Bemerkenswert ist vielleicht noch die Stamm-Funktion von $\frac{1}{x}$.  Für $x>0$ gilt
+Bemerkenswert ist vielleicht noch die Stamm-Funktion der Funktion $\ds x \mapsto \frac{1}{x}$:
+Für $x>0$ gilt 
 sicher 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -488,7 +510,7 @@ Ersetzen wir in dem ursprünglichen Integral $dy$ durch diesen Ausdruck, so haben
 \hspace*{1.3cm}
 $\ds\int g(y)\, dy = \int g\bigl(f(x)\bigr)\cdot f'(x)\, dx$
 \\[0.2cm]
-Das ist aber genau die Substitutions-Regel.
+Das ist aber genau die Substitutions-Regel für unbestimmte Integrale.
 
 \exercise
 Berechnen Sie das Integral $\ds \int_0^x \tan(t)\, dt$ mit Hilfe der Substitutions-Regel.  \eox
@@ -510,7 +532,8 @@ $
 \end{array}
 $
 \\[0.2cm]
-Damit ist gezeigt, dass  $x \mapsto -\ln\bigl(|\cos(x)|\bigr)$ eine Stamm-Funktion von $x\mapsto\tan(x)$ ist:
+Damit ist gezeigt, dass die Funktion  $x \mapsto -\ln\bigl(|\cos(x)|\bigr)$ eine Stamm-Funktion der
+Funktion $x\mapsto\tan(x)$ ist:
 \\[0.2cm]
 \hspace*{1.3cm} $\bint\tan(x)\, dx = - \ln\bigl(|\cos(x)|\bigr) + c$.
 \\[0.2cm]
@@ -549,7 +572,7 @@ Berechnen Sie das Integral
 $\bint\frac{x}{1 + x^2} \, dx$
 \\[0.2cm]
 mit  Hilfe der Substitutions-Regel.  \eox
-\pagebreak
+
 
 \subsection{Partielle Integration}
 Als nächstes überlegen wir, wie wir aus der Produkt-Regel der Differential-Rechnung
@@ -707,7 +730,7 @@ $
 \end{array}
 $
 \\[0.3cm]
-Damit haben wir für die Fläche eines Viertelkreises den Wert $\frac{\pi}{4}$ gefunden, der
+Damit haben wir für die Fläche eines Viertelkreises den Wert $\ds\frac{\pi}{4}$ gefunden, der
 ganze Kreis hat also die Fläche $\pi$.
 
 \section{Berechnung der Bogenlänge}
@@ -720,28 +743,28 @@ Intervall in $[a,b]$ in $n$ Teilintervalle der Länge
 $\ds h = \frac{b - a}{n}$.
 \\[0.2cm]
 Das Teilstück des Graphen, das von dem Punkt $\bigl\langle x, f(x) \bigr\rangle$  zu dem Punkt 
-$\bigl\langle x + dx, f(x+dx) \bigr\rangle$ kann für kleine Werte von $h$ näherungsweise
+$\bigl\langle x + h, f(x+h) \bigr\rangle$ kann für kleine Werte von $h$ näherungsweise
 durch die Sekante von dem  Punkt $\bigl\langle x, f(x) \bigr\rangle$  zu dem Punkt
-$\bigl\langle x + dx, f(x+dx) \bigr\rangle$  approximiert werden.  Nach dem Satz des
+$\bigl\langle x + h, f(x+h) \bigr\rangle$  approximiert werden.  Nach dem Satz des
 Pythagoras hat diese Sekante die Länge
 \\[0.2cm]
 \hspace*{1.3cm}
-$ds = \sqrt{dx^2 + \bigl(f(x+dx) - f(x)\bigr)^2\,}$.
+$ds = \sqrt{h^2 + \bigl(f(x+h) - f(x)\bigr)^2\,}$.
 \\[0.2cm] 
-Nach Definition der Ableitung von $f$ gilt für kleine Werte von $dx$
+Nach Definition der Ableitung von $f$ gilt für kleine Werte von $h$
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds \frac{f(x+dx) - f(x)}{x + dx - x} \approx f'(x)$.
+$\ds \frac{f(x+h) - f(x)}{h} \approx f'(x)$.
 \\[0.2cm]
 Also haben wir 
 \\[0.2cm]
 \hspace*{1.3cm}
-$f(x+dx) - f(x) \approx f'(x) dx$.
+$f(x+h) - f(x) \approx f'(x) h$.
 \\[0.2cm]
 Setzen wir diesen Wert in der obigen Formel für ein, so erhalten wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$ds \approx \sqrt{dx^2 + \bigl(f'(x) \cdot dx\bigr)^2\,} = \sqrt{1 + \Bigl(\frac{d\/f}{dx}\Bigr)^2\,}\cdot dx$.
+$\ds ds \approx \sqrt{h^2 + \bigl(f'(x) \cdot h\bigr)^2\,} = \sqrt{1 + \Bigl(\frac{d\/f}{dx}\Bigr)^2\,}\cdot h$.
 \\[0.2cm]
 Die Länge $l$ des gesamten Funktions-Graphen erhalten wir, wenn wir diesen Ausdruck von $a$ bis $b$
 aufintegrieren: 
@@ -834,7 +857,7 @@ Wir betrachten nur den Fall $b= \infty$.  In diesem Fall definieren wir
 \hspace*{1.3cm}
 $\ds \int_a^\infty f(t)\, dt := \lim\limits_{x\rightarrow \infty} \int_{a}^x f(t)\, dt$.
 \\[0.2cm]
-Wir betrachten als Beispiel die Funktion $x \mapsto \frac{1}{x^2}$ in dem Intervall
+Wir betrachten als Beispiel die Funktion $\ds x \mapsto \frac{1}{x^2}$ in dem Intervall
 $[1,\infty)$. Es gilt
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -846,7 +869,7 @@ $.
 \\[0.2cm]
 Indem wir Reihen und uneigentliche Integrale in Beziehung setzen, können wir unter
 Umständen leicht sehen, dass eine Reihe konvergiert, denn es gilt der folgende Satz.
-\pagebreak
+
 
 \begin{Satz}[Integral-Vergleichskriterium]
 Es sei $f:[1,\infty) \rightarrow\mathbb{R}_+$ eine monoton fallende Funktion.  Dann gilt
@@ -858,8 +881,7 @@ $\ds \lim\limits_{x \rightarrow \infty} \int\limits_1^x f(t)\,dt$ existiert.
 
 \noindent
 \textbf{Beweis}:
-Da die Funktion $f$ monoton ist, gelten für alle $i\in \mathbb{N}$ mit $i>1$ und alle
-$x \in [i-1,i]$ die Ungleichungen
+Für alle $i\in \mathbb{N}$ mit $i>1$ und alle $x \in [i-1,i]$ gelten die Ungleichungen
 \\[0.2cm]
 \hspace*{1.3cm}
 $i-1 \leq x$ \quad und \quad $x \leq i$.
@@ -872,18 +894,18 @@ $f(i) \leq f(x)$ \quad und \quad $f(x) \leq f(i-1)$.
 Aus der Monotonie des Integral-Operators folgt nun
 \\[0.2cm]
 \hspace*{1.3cm}
-$\dint{i-1}{i} f(i)\, dx \leq \dint{i-1}{i} f(x)\, dx$
+$\ds\int\limits_{i-1}^{i} f(i)\, dx \leq \int\limits_{i-1}^{i} f(x)\, dx$
 \quad und \quad
-$\dint{i-1}i f(x)\, dx \leq \dint{i-1}i f(i-1)\, dx$
+$\ds \int\limits_{i-1}^i f(x)\, dx \leq \int\limits_{i-1}^i f(i-1)\, dx$
 \\[0.2cm]
 Das Integral über die konstanten Funktionen $x \mapsto f(i)$ bzw.~$x \mapsto f(i-1)$
 liefert nur den konstanten Funktions-Wert multipliziert mit der Länge des Intervalls, die natürlich 1
 ist.  Also haben wir die Ungleichungen
 \\[0.2cm]
 \hspace*{1.3cm}
-$f(i) \leq \dint{i-1}{i} f(x)\, dx$
+$\ds f(i) \leq \int\limits_{i-1}^{i} f(x)\, dx$
 \quad und \quad
-$\dint{i-1}{i} f(x)\, dx \leq f(i\!-\!1)$
+$\ds\int_{i-1}^{i} f(x)\, dx \leq f(i\!-\!1)$
 \\[0.2cm]
 gezeigt.  Summieren wir diese Ungleichungen für alle $i$ aus der Menge $\{2,\cdots,n\}$,
   so erhalten wir 
@@ -969,7 +991,7 @@ Nun hängt alles davon ab, ob $\alpha < 1$, $\alpha = 1$ oder
       \hspace*{1.3cm}
       $\lim\limits_{x \rightarrow \infty} \ln(x) = \infty$
       \\[0.2cm]
-      gilt.  Das folgt daraus, dass die Funktion $x \mapsto \ln(x)$ einerseits monoton steigent ist und
+      gilt.  Das folgt daraus, dass die Funktion $x \mapsto \ln(x)$ einerseits monoton steigend ist und
       dass andererseits 
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -981,7 +1003,7 @@ Nun hängt alles davon ab, ob $\alpha < 1$, $\alpha = 1$ oder
       harmonische Reihe divergiert:
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\sum\limits_{i=1}^{\infty} \frac{1}{i} = \infty$.
+      $\ds\sum\limits_{i=1}^{\infty} \frac{1}{i} = \infty$.
 \item Falls $\alpha > 1$ ist, haben wir $1-\alpha<0$ und damit gilt
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -1001,7 +1023,7 @@ Reihe
 $\ds \sum\limits_{n=1}^\infty \frac{1}{n\cdot (n+1)}$ 
 \qquad
 konvergiert.  \eox
-\pagebreak
+
 
 \section{Numerische Integration$^*$}
 Die Gleichung $x = \cos(x)$ haben wir zwar numerisch lösen können, aber wir waren nicht in
@@ -1028,22 +1050,22 @@ Wir setzen $x_i := a+i\cdot h$.
 Innerhalb des $i$-ten Teilintervalls wird die Funktion $f(x)$ dann durch die Gerade 
 \\[0.2cm]
 \hspace*{1.3cm}
-$g(x) = f\bigl(x_{i-1}\bigr)\cdot \frac{x - x_i}{x_{i-1} - x_i} + f\bigl(x_{i}\bigr)\cdot \frac{x - x_{i-1}}{x_{i} - x_{i-1}}$
+$\ds g(x) = f\bigl(x_{i-1}\bigr)\cdot \frac{x - x_i}{x_{i-1} - x_i} + f\bigl(x_{i}\bigr)\cdot \frac{x - x_{i-1}}{x_{i} - x_{i-1}}$
 \\[0.2cm]
 approximiert.  Das Integral über $g(x)$ im Intervall $[x_{i-1}, x_i]$ ist dann
 $$
 \begin{array}[t]{cl}
   &  \dint{x_{i-1}}{x_i} g(x)\, dx \\[0.5cm]
 = &  \dint{x_{i-1}}{x_i} f\bigl(x_{i-1}\bigr)\cdot \frac{x - x_i}{x_{i-1} - x_i} + f\bigl(x_{i}\bigr)\cdot \frac{x - x_{i-1}}{x_{i} - x_{i-1}}\,dx \\[0.5cm]
-= &  \frac{f\bigl(x_{i-1}\bigr)}{x_{i-1} - x_i} \cdot  \int_{x_{i-1}}^{x_i} (x - x_i)\,dx +
+= &  \ds\frac{f\bigl(x_{i-1}\bigr)}{x_{i-1} - x_i} \cdot  \int_{x_{i-1}}^{x_i} (x - x_i)\,dx +
                   \frac{f\bigl(x_{i}\bigr)}{x_{i} - x_{i-1}} \cdot  \int_{x_{i-1}}^{x_i} (x - x_{i-1})\,dx \\[0.5cm]
-= &  \frac{f\bigl(x_{i-1}\bigr)}{x_{i-1} - x_i} \cdot \frac{1}{2} \cdot (x - x_i)^2 \Big|_{x_{i-1}}^{x_i}  +
+= &  \ds\frac{f\bigl(x_{i-1}\bigr)}{x_{i-1} - x_i} \cdot \frac{1}{2} \cdot (x - x_i)^2 \Big|_{x_{i-1}}^{x_i}  +
                   \frac{f\bigl(x_{i}\bigr)}{x_{i} - x_{i-1}} \cdot \frac{1}{2} \cdot (x - x_{i-1})^2 \Big|_{x_{i-1}}^{x_i} \\[0.5cm]
-= &  -\frac{f\bigl(x_{i-1}\bigr)}{x_{i-1} - x_i} \cdot \frac{1}{2} \cdot (x_{i-1} - x_i)^2   +
+= &  \ds-\frac{f\bigl(x_{i-1}\bigr)}{x_{i-1} - x_i} \cdot \frac{1}{2} \cdot (x_{i-1} - x_i)^2   +
                    \frac{f\bigl(x_{i}\bigr)}{x_{i} - x_{i-1}} \cdot \frac{1}{2} \cdot (x_i - x_{i-1})^2  \\[0.5cm]
-= &  \frac{1}{2} \cdot f\bigl(x_{i-1}\bigr) \cdot (x_i - x_{i-1}) +
+= &  \ds \frac{1}{2} \cdot f\bigl(x_{i-1}\bigr) \cdot (x_i - x_{i-1}) +
      \frac{1}{2} \cdot f\bigl(x_{i}\bigr)   \cdot (x_i - x_{i-1})    \\[0.5cm]
-= &  \frac{1}{2} \cdot  \Bigl(f\bigl(x_{i}\bigr) + f\bigl(x_{i-1}\bigr)\Bigr) \cdot  (x_{i} - x_{i-1}) \\[0.5cm]
+= &  \ds \frac{1}{2} \cdot  \Bigl(f\bigl(x_{i}\bigr) + f\bigl(x_{i-1}\bigr)\Bigr) \cdot  (x_{i} - x_{i-1}) 
 \end{array}
 $$
 Die letzte Formel läßt sich geometrisch deuten, denn der Ausdruck 
@@ -1097,7 +1119,7 @@ Fehlers.
   und definieren wir gemäß der Trapez-Regel 
   \\[0.2cm]
   \hspace*{1.3cm}
-  $I_{\mbox{\scriptsize Trapez}} := \biggl(\frac{1}{2}\cdot f(a) \;+\; \sum\limits_{i=1}^{n-1} f\Bigl(a+i\cdot \frac{b-a}{n}\Bigr)\;+\;\frac{1}{2}\cdot f(b)\biggr) \cdot  \frac{b-a}{n}$
+  $\ds I_{\mbox{\scriptsize Trapez}} := \biggl(\frac{1}{2}\cdot f(a) \;+\; \sum\limits_{i=1}^{n-1} f\Bigl(a+i\cdot \frac{b-a}{n}\Bigr)\;+\;\frac{1}{2}\cdot f(b)\biggr) \cdot  \frac{b-a}{n}$
   \\[0.2cm]
   so kann der Unterschied zwischen dem exakten Integral und der Näherung $I_{\mbox{\scriptsize Trapez}}$
   wie folgt abgeschätzt werden:
@@ -1113,13 +1135,13 @@ Polynom interpoliert.  Nach Satz \ref{satz:interpolationsFehler} gilt für den Un
 zwischen $f(x)$ und dem interpolierenden Polynom $p(x)$ vom Grad $n$
 \\[0.2cm]
 \hspace*{1.3cm}
-  $f(x) - p(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} \cdot  \prod\limits_{i=0}^{n}(x-x_i)$.
+  $\ds f(x) - p(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} \cdot  \prod\limits_{i=0}^{n}(x-x_i)$.
 \\[0.2cm]
 Dabei ist $\xi$ ein nicht näher bekannter Wert aus dem Intervall $[a,b]$.
 Bei linearer Interpolation ist $n=1$ und also haben wir
 \\[0.2cm]
 \hspace*{1.3cm}
-  $f(x) - p(x) = \frac{f^{(2)}(\xi)}{2} \cdot  (x-x_{i-1})\cdot (x-x_i)$.
+  $\ds f(x) - p(x) = \frac{f^{(2)}(\xi)}{2} \cdot  (x-x_{i-1})\cdot (x-x_i)$.
 \\[0.2cm]
 Aufgrund der Voraussetzung über die zweite Ableitung von $f(x)$ haben wir also
 \begin{equation}
@@ -1187,14 +1209,13 @@ der Formel
 \hspace*{1.3cm}
 $
 \begin{array}[t]{lcl}
-p(x) & = & f(x_{i-1})\cdot \frac{(x-x_i)\cdot (x-x_{i+1})}{(x_{i-1}-x_i)\cdot (x_{i-1}-x_{i+1})}  \\[0.5cm]
-     & + & f(x_{i})\cdot \frac{(x-x_{i-1})\cdot (x-x_{i+1})}{(x_{i}-x_{i-1})\cdot (x_{i}-x_{i+1})}  \\[0.5cm]
-     & + & f(x_{i+1})\cdot \frac{(x-x_{i-1})\cdot (x-x_{i})}{(x_{i+1}-x_{i-1})\cdot (x_{i+1}-x_{i})}
+p(x) & = & \ds f(x_{i-1})\cdot \frac{(x-x_i)\cdot (x-x_{i+1})}{(x_{i-1}-x_i)\cdot (x_{i-1}-x_{i+1})}  \\[0.5cm]
+     & + & \ds f(x_{i})\cdot \frac{(x-x_{i-1})\cdot (x-x_{i+1})}{(x_{i}-x_{i-1})\cdot (x_{i}-x_{i+1})}  \\[0.5cm]
+     & + & \ds f(x_{i+1})\cdot \frac{(x-x_{i-1})\cdot (x-x_{i})}{(x_{i+1}-x_{i-1})\cdot (x_{i+1}-x_{i})}
 \end{array}$
 \\[0.2cm]
 Setzen wir hier $x_{i-1}= x_i-h$ und $x_{i+1}= x_i+h$ und
-integrieren dann $p(x)$ in dem Intervall $[x_{i}-h,x_{i}+h]$, so erhalten wir mit Hilfe von 
-\textsl{Maple} das Ergebnis 
+integrieren dann $p(x)$ in dem Intervall $[x_{i}-h,x_{i}+h]$, so erhalten wir mit Hilfe von \textsl{SymPy} das Ergebnis 
 % x[i-1] := x[i] - h;
 % x[i+1] := x[i] + h;
 % p(x) := f[i-1] * (x - x[i])   * (x - x[i+1]) / ( (x[i-1] - x[i]  ) * (x[i-1] - x[i+1]) ) +
@@ -1258,8 +1279,7 @@ $0.746824183$ und der Fehler ist kleiner als $10^{-7}$.
 \item Geben Sie eine möglichst genaue Abschätzung für den Approximations-Fehler.
 \item Vergleichen Sie ihr Ergebnis mit dem exakten Wert. \eod
 \end{enumerate}
-%\vspace*{0.3cm}
-
+\pagebreak
 
 \exercise
 Gegenstand dieser Aufgabe ist die numerische Berechnung der Summe
