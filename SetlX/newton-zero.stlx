@@ -63,7 +63,7 @@ diff := procedure(t, x) {
 
 myPrint := procedure(x) {
     if (isRational(x)) {
-        print("x = $nDecimalPlaces(x,101)$");
+        print("x = $nDecimalPlaces(x,102)$");
     } else {
         print("x = $x$");
     }
@@ -78,5 +78,5 @@ interactive := procedure() {
     print(x);
 };
 
-interactive();
-// x := newton(parse("x ** 2 - 2"), 1, 10);
+//interactive();
+x := newton(parse("x ** 3 - 2"), 1, 8);
