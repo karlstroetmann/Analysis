@@ -2,7 +2,7 @@
 In diesem Kapitel stellen wir verschiedene Anwendungen der bisher entwickelten Theorie vor.
 Zunächst zeigen wir, wie sich bestimmte transzendente Funktionen wie der natürliche Logarithmus und die
 trigonometrischen Funktionen effektiv mit Hilfe von Reihen berechnen lassen.   Anschließend diskutieren
-wir, wann eine Funktion sich durch ein Polynom interpolieren läßt.
+wir, wann eine Funktion sich durch ein Polynom interpolieren lässt.
 Danach besprechen wir das Newton'sche Verfahren zur Bestimmung von Nullstellen, dass dann anwendbar ist,
 wenn die Funktion, deren Nullstelle bestimmt werden soll, differenzierbar ist.  Außerdem untersuchen 
 wir die Konvergenz von Fixpunkt-Verfahren und zeigen, wie sich lineare Gleichungs-Systeme mit Hilfe von
@@ -348,7 +348,7 @@ und finden
 $|\textsl{error}_n(1)| \leq \bruch{1}{n+1}$.
 \\[0.2cm]
 Um $\ln(2)$ also nach der
-obigen Formel auf eine Genauigkeit von $10^{-9}$ berechnen zu können, müßten wir
+obigen Formel auf eine Genauigkeit von $10^{-9}$ berechnen zu können, müssten wir
 $1\,000\,000\,000$ Terme aufsummieren!  Es geht auch effizienter.  Dazu ersetzen wir in
 Gleichung (\ref{eq:taylorLnSimple}) $x$ durch $-x$ und erhalten
 \begin{equation}
@@ -421,7 +421,7 @@ dass wir bei der Abschätzung der Summe durch die geometrische Reihe den Faktor $
   k+1}$ vernachläßigt haben.
 \vspace*{0.3cm}
 
-Das Verfahren, das wir oben benutzt haben um $\ln(2)$ zu berechnen, läßt sich
+Das Verfahren, das wir oben benutzt haben um $\ln(2)$ zu berechnen, lässt sich
 verallgemeinern.  Ist die Aufgabe gegeben, für eine gegebene reelle Zahl $r$ den
 natürlichen Logarithmus $\ln(r)$ zu berechnen, so setzen wir 
 \\[0.2cm]
@@ -450,7 +450,7 @@ gut.  In modernen Rechnern werden reelle Zahlen $y$ in der Form
 \hspace*{1.3cm}
 $y = s \cdot  r \cdot  2^n$ \quad mit $s\in\{-1,+1\}$, \quad $r \in [1,2)$ \quad und $n\in\mathbb{Z}$
 \\[0.2cm]
-dargestellt.  Ist $y$ positiv, so läßt sich der natürliche Logarithmus nach der Formel 
+dargestellt.  Ist $y$ positiv, so lässt sich der natürliche Logarithmus nach der Formel 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ln(y) = \ln(r) + n \cdot  \ln(2)$
@@ -515,7 +515,7 @@ Da $\ds\tan\Bigl(\frac{\pi}{4}\Bigr) = 1$, also $\ds\arctan\bigl(1) = \frac{\pi}
   \bruch{\pi}{4} = \sum\limits_{n=0}^\infty (-1)^n \cdot  \bruch{1}{2\cdot n+1} = 
   1 - \bruch{1}{3} + \bruch{1}{5} - \bruch{1}{7} + \bruch{1}{9} \pm \cdots
 \end{equation}
-gefunden.  Für einen vollständigen Beweis dieser Formel müßten wir den Abbruch-Fehler
+gefunden.  Für einen vollständigen Beweis dieser Formel müssten wir den Abbruch-Fehler
 nach der Lagrange'schen Formel berechnen.  Das würde uns jetzt allerdings zuviel Zeit
 kosten.
 
@@ -542,7 +542,7 @@ $
 \end{array}
 $
 \\[0.2cm]
-Wir  müßten wir also etwa 500 Millionen Terme aufsummieren um die geforderte Genauigkeit
+Wir  müssten wir also etwa 500 Millionen Terme aufsummieren um die geforderte Genauigkeit
 zu erreichen.  Um eine Formel zu erhalten, die schneller konvergiert, gehen wir von den
 Additions-Theoremen von Sinus und Cosinus aus.  Diese lauten:
 \\[0.2cm]
@@ -747,7 +747,7 @@ Damit gilt nun
   \label{eq:lagrangeProperty}
 L_k\bigl([x_0,x_1,\cdots,x_n];x_j\bigr) = \delta_{k,j}. 
 \end{equation}
-Diese Eigenschaft läßt sich durch einfaches Nachrechnen bestätigen.  Wir betrachten die Fälle
+Diese Eigenschaft lässt sich durch einfaches Nachrechnen bestätigen.  Wir betrachten die Fälle
 $j=k$ und $j\not=k$ getrennt:
 \begin{enumerate}
 \item Fall: $j=k$.  Dann haben wir 
@@ -1470,7 +1470,7 @@ Wir haben also  die Iterations-Vorschrift
   \colorbox{orange}{\framebox{$\ds x_{n+1} = x_n - \frac{g(x_n)}{g'(x_n)}$}} 
 \end{equation}
 gefunden.  Dieses Verfahren wird als  \emph{Newton'sches Verfahren} bezeichnet.
-Die Gleichung  (\ref{eq:NewtonZero}) läßt sich geometrisch interpretieren: Legen wir im Punkt
+Die Gleichung  (\ref{eq:NewtonZero}) lässt sich geometrisch interpretieren: Legen wir im Punkt
 $\langle x_n, g(x_n) \rangle$ eine Tangente an die Funktion $g$, so schneidet diese Tangente die
 $x$-Achse im Punkt 
 \\[0.2cm]
@@ -2204,7 +2204,7 @@ Gauß-Seidel-Verfahrens ist einfacher als die Implementierung des Jacobi-Verfahre
 wir benötigen keine Hilfsvariable \texttt{xNew} mehr.
 Tabelle \ref{tab:seidel} zeigt, dass das Gauß-Seidel-Verfahren für
 unser Beispiel etwa doppelt so schnell konvergiert wie das Jacobi-Verfahren.
-Es läßt sich zeigen, dass das Gauß-Seidel-Verfahren zur Lösung immer dann konvergiert, wenn die Matrix
+Es lässt sich zeigen, dass das Gauß-Seidel-Verfahren zur Lösung immer dann konvergiert, wenn die Matrix
 $\mathbf{A}$ des linearen Gleichungs-Systems
 \\[0.2cm]
 \hspace*{1.3cm}

@@ -85,7 +85,7 @@ existiert der Grenzwert.
 
 \noindent
 Aus den beiden letzten Definitionen folgt, dass
-eine stetige Funktion mit dem Prozeﬂ der Grenzwert-Bildung vertauschbar ist.  
+eine stetige Funktion mit dem Prozess der Grenzwert-Bildung vertauschbar ist.  
 F¸r eine konvergente Folge $\folge{x_n}$ und eine stetige Funktion $f$ gilt 
       \\[0.2cm]
       \hspace*{1.3cm}      
@@ -126,7 +126,7 @@ F¸r eine konvergente Folge $\folge{x_n}$ und eine stetige Funktion $f$ gilt
        \lim\limits_{n\rightarrow\infty} x_n^2 = 
        \left(\lim\limits_{n\rightarrow\infty} x_n\right) \cdot\left(\lim\limits_{n\rightarrow\infty} x_n\right) =
        \widehat{x} \cdot \widehat{x} = \widehat{x}^2$.
-\item Das letzte Beispiel l‰ﬂt sich verallgemeinern: Die Funktionen
+\item Das letzte Beispiel l‰sst sich verallgemeinern: Die Funktionen
       $f:\mathbb{R} \rightarrow \mathbb{R}$ und $g:\mathbb{R} \rightarrow \mathbb{R}$
       seien im Punkt $\widehat{x}$ stetig.  Dann ist auch die Funktion
       $h: \mathbb{R} \rightarrow \mathbb{R}$ die durch $h(x) := f(x) \cdot g(x)$
@@ -276,7 +276,7 @@ f¸r alle $n > K$ gezeigt. \hspace*{\fill} $\Box$
 \vspace*{0.3cm}
 
 \noindent
-Es gibt eine alternative Definition der Stetigkeit, die zur der oben gegebenen Definition
+Es gibt eine alternative Definition der Stetigkeit, die zu der oben gegebenen Definition
 ‰quivalent ist. Diese Definition tr‰gt den Namen 
 \href{http://de.wikipedia.org/wiki/Epsilon-Delta-Kriterium#Stetigkeit_reeller_Funktionen}{\emph{$\varepsilon$-$\delta$-Definition der Stetigkeit}} 
 und Funktionen, die nach dieser Definition stetig sind, heiﬂen $\varepsilon$-$\delta$-stetig.
@@ -469,7 +469,7 @@ In analoger Weise sehen wir, dass die Folge $\folge{a_n}$ konvergent ist und def
 \hspace*{1.3cm}
 $\widehat{a} := \lim\limits_{n\rightarrow\infty} a_n$.
 \\[0.2cm]
-Als n‰chstes weisen wir nach dass $\widehat{a} = \widehat{b}$ ist.  Dazu betrachten wir
+Als n‰chstes weisen wir nach, dass $\widehat{a} = \widehat{b}$ ist.  Dazu betrachten wir
 die Differenz der Grenzwerte: 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -546,7 +546,7 @@ Nullstelle von $f$ in dem Intervall $[a,b]$ gefunden.
 \end{figure} %\$
 
 \noindent
-Das im Beweis des letzten Satzes beschriebene Intervall-Halbierungs-Verfahren l‰ﬂt sich
+Das im Beweis des letzten Satzes beschriebene Intervall-Halbierungs-Verfahren l‰sst sich
 ohne groﬂe M¸he  implementieren.  Abbildung \ref{fig:bisection.setlx}
 zeigt eine solche Implementierung in der Sprache \textsc{SetlX}.  Die Funktion \texttt{findZero}
 erh‰lt vier Argumente:
@@ -558,22 +558,22 @@ erh‰lt vier Argumente:
 \end{enumerate}
 Zu Beginn testen wir, ob erstens die linke Intervall-Grenze \texttt{a} kleiner als die rechte
 Intervall-Grenze \texttt{b} ist und zweitens ob $\mathtt{f(a)} < \mathtt{f(b)}$ ist, denn sonst sind
-die Voraussetzungen des Zwischenwert-Satzes nicht erf¸llt und das Bisektions-Verfahren l‰sst sich anwenden.
+die Voraussetzungen des Zwischenwert-Satzes nicht erf¸llt und das Bisektions-Verfahren l‰sst sich nicht anwenden.
 
 Die Implementierung setzt den oben skizzierten Algorithmus unmittelbar um.  Da wir immer nur die
 beiden letzten Werte der Folgen $(a_n)_n$ und $(b_n)_n$ benˆtigen, ist es nicht notwendig, die
 Folgen zu speichern.  Es reicht, die Werte $a_n$ und $b_n$ in den Variablen \texttt{a} und
 \texttt{b} abzulegen.  Wir haben bei der Implementierung auﬂerdem geachtet, dass die Funktion
-\texttt{f} nicht an der selben Stelle mehrfach berechnet wird.  Wir erreichen dies, indem wir den Funktionswert,
+\texttt{f} nicht an derselben Stelle mehrfach berechnet wird.  Wir erreichen dies, indem wir den Funktionswert,
 den die Funktion \texttt{f} an der Stelle \texttt{a} annimmt, in der Variablen \texttt{fa}
 abspeichern.  Genauso wird der Funktionswert der Funktion \texttt{f} an der Stelle \texttt{b}
 in der Variablen \texttt{fb} abgelegt.
 
 Wenn wir dieses Verfahren einsetzen
 wollen um in einem vorgegeben Intervall nach einer Nullstelle zu suchen, so kˆnnen wir im
-voraus berechnen, wieviele Iterationen zur Erzielung einer geforderten Genauigkeit
+Voraus berechnen, wie viele Iterationen zur Erzielung einer geforderten Genauigkeit
 benˆtigt werden:  Soll die Nullstelle mit einer Genauigkeit von $\varepsilon$ bestimmt
-werden, so muﬂ die Zahl $n$ der Iterationen so gew‰hlt werden, dass 
+werden, so muss die Zahl $n$ der Iterationen so gew‰hlt werden, dass 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\left(\bruch{1}{2}\right)^n \cdot \;(b - a) \leq \varepsilon$
@@ -592,7 +592,7 @@ $
 \end{array}
 $
 \\[0.4cm]
-Wollen wir bespielsweise die Nullstelle der Funktion $x \mapsto x - \cos(x)$ im Intervall
+Wollen wir beispielsweise die Nullstelle der Funktion $x \mapsto x - \cos(x)$ im Intervall
 $[0,1]$ auf eine Genauigkeit von $\varepsilon = 10^{-9}$ bestimmen, so finden wir
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -689,14 +689,14 @@ $\ds c = \frac{1}{2} \cdot (a + b)$.
 \\[0.2cm]
 Bei dieser Formel werden die Betr‰ge der Funktionswerte von $f$ an den Stellen $a$ und $b$ ¸berhaupt
 nicht ber¸cksichtigt.  Es liegt nahe, die Betr‰ge der Funktionswerte in die Formel mit einflieﬂen zu
-lassen, denn wenn beisielsweise $|f(a)|$ wesentlich kleiner $|f(b)|$ ist, dann ist zu
+lassen, denn wenn beispielsweise $|f(a)|$ wesentlich kleiner $|f(b)|$ ist, dann ist zu
 vermuten, dass die Nullstelle von $f$ n‰her an $a$ als an $b$ liegt.
 
  Betrachten wir beispielsweise die Tabelle \ref{tab:bisection}, so sehen wir, dass
 in dem 24-ten Iterations-Schritt die Funktion $x \mapsto x - \cos(x)$ an der rechten
 Intervall-Grenze $b_n$ den Wert $\approx 7.7 \cdot 10^{-9}$ hat, w‰hrend die Funktion an der
 linken Intervall-Grenze $a_n$ den Wert $-9.2 \cdot 10^{-8}$ hat.  Der Betrag dieses Wertes ist
-mehr als 10 mal so groﬂ als der Wert an der rechten Intervall-Grenze.  Folglich liegt es
+mehr als 10 mal so groﬂ wie der Wert an der rechten Intervall-Grenze.  Folglich liegt es
 nahe zu vermuten, dass die Nullstelle n‰her an der rechten Intervall-Grenze liegt als an
 der linken.  Die weitere Berechnung best‰tigt diese Vermutung auch, denn die rechte
 Intervall-Grenze ‰ndert sich bei den n‰chsten drei Iterationen nicht.  Wie kˆnnen wir
@@ -705,13 +705,13 @@ Punkte $a$ und $b$ unabh‰ngig von den Funktionswerten gleich stark zu gewichten,
 wir eine Intervall-Grenze dann st‰rker gewichten, wenn der Funktionswert dort kleiner ist,
 weil wir dann vermuten w¸rden, dass dieser Punkt schon n‰her an der Nullstelle liegt.
 Eine naheliegende Idee ist daher, die Punkte $a$ und $b$ mit den Betr‰gen der reziproken
-Funktionswerten zu gewichten, denn die werden um so grˆﬂer, je kleiner der Funktionswert
+Funktionswerte zu gewichten, denn die werden um so grˆﬂer, je kleiner der Funktionswert
 ist.  Dieser Ansatz f¸hrt auf die Formel
 \\[0.2cm]
 \hspace*{1.3cm} $c = \bruch{\frac{1}{|f(a)|}\cdot a + \frac{1}{|f(b)|}\cdot b}{\frac{1}{|f(a)|} +
   \frac{1}{|f(b)|}} = \bruch{|f(b)|\cdot a + |f(a)|\cdot b}{|f(a)| + |f(b)|}$
 \\[0.3cm]
-Wir erhalten die selbe Formel, wenn wir $c$ dadurch bestimmen, dass wir eine
+Wir erhalten dieselbe Formel, wenn wir $c$ dadurch bestimmen, dass wir eine
 Gerade durch die Punkte $\bigl\langle a, f(a)\bigr\rangle$ und $\bigl\langle b, f(b)\bigr\rangle$ legen und
 $c$ als 
 den Punkt festsetzen, bei dem diese Gerade die $x$-Achse scheidet.  Die Gleichung f¸r eine
@@ -801,11 +801,11 @@ die oben abgeleitete Formel verwenden:
          \right.
       $
 \end{enumerate}
-ƒhnlich wie beim Beweis des Zwischenwert-Satzes l‰ﬂt sich zeigen, dass die Folge
+ƒhnlich wie beim Beweis des Zwischenwert-Satzes l‰sst sich zeigen, dass die Folge
 $\folge{a_n}$ monoton steigend ist, w‰hrend die Folge $\folge{b_n}$ monoton fallend ist.
 Da die Folgen ¸berdies beschr‰nkt sind, denn $a_n$ ist immer kleiner als $b$ und $b_n$ ist
 immer grˆﬂer als $a$, konvergieren beide Folgen.  Allerdings ist nicht garantiert, dass
-$a_n$ und $b_n$ gegen den gleichen Grenzwert konvergieren!  Es l‰ﬂt sich lediglich zeigen,
+$a_n$ und $b_n$ gegen den gleichen Grenzwert konvergieren!  Es l‰sst sich lediglich zeigen,
 dass entweder $a_n$ oder $b_n$ gegen eine Nullstelle der Funktion $f$ konvergiert.
 Um das Verfahren experimentell untersuchen zu kˆnnen, implementieren wir es.
 Abbildung \ref{fig:regulaFalsi.stlx} zeigt die Implementierung der Methode
@@ -823,7 +823,7 @@ Bisektions-Verfahrens.  Es gibt eigentlich nur zwei wesentliche Unterschiede:
       $\ds c := \frac{1}{2} \cdot (a + b)$
       \\[0.2cm]
       verwendet.
-\item Bei der R¸ckgabe des berechneten Wertes in Zeile14 bzw.~16 ist es erforderlich, die Betr‰ge der
+\item Bei der R¸ckgabe des berechneten Wertes in Zeile 14 bzw.~16 ist es erforderlich, die Betr‰ge der
       Funktionswerte an den Intervall-Grenzen  \texttt{a} und \texttt{b} zu vergleichen, denn wir
       wissen nicht, ob die Folge $(a_n)_n$ oder die Folge $(b_n)_n$ gegen die Nullstelle von $f$
       konvergiert.  Wir geben daher als Ergebnis die 
@@ -1337,7 +1337,7 @@ im Punkt $\widehat{x}$ stetig ist. \qed
       \hspace*{1.3cm}
       $\lim\limits_{n\rightarrow\infty} \frac{1}{n} = 0$ 
       \\[0.3cm]
-      ist, m¸ﬂte nach Definition des Grenzwerts dann gelten: \\[0.3cm]
+      ist, m¸sste nach Definition des Grenzwerts dann gelten: \\[0.3cm]
       \hspace*{1.3cm}
       $a = \displaystyle \lim\limits_{h \rightarrow 0} \bruch{\textsl{abs}(h) - \textsl{abs}(0)}{h} = 
        \lim\limits_{n\rightarrow\infty} \frac{\textsl{abs}(\frac{1}{n})}{\frac{1}{n}} = 
@@ -1517,7 +1517,7 @@ $
 $
 \\[0.3cm]
 Die linke Seite der Gleichung stellt den Differential-Quotienten der Funktion $g\circ f$
-dar und muﬂ daher f¸r $h \rightarrow 0$ gegen die Ableitung $(g \circ f)(\widehat{x})$
+dar und muss daher f¸r $h \rightarrow 0$ gegen die Ableitung $(g \circ f)(\widehat{x})$
 konvergieren. \hspace*{\fill} $\Box$
 \pagebreak
 
@@ -2099,7 +2099,7 @@ Wir geben ein Beispiel.  Es gilt
 \hspace*{1.3cm}
 $\ds\lim\limits_{x \rightarrow \infty} \frac{x}{\exp(x)} = \lim\limits_{x \rightarrow \infty} \frac{1}{\exp(x)} = 0$.
 \\[0.3cm]
-Der Satz von L'H\^opital l‰ﬂt sich iteriert anwenden.  Beispielsweise gilt
+Der Satz von L'H\^opital l‰sst sich iteriert anwenden.  Beispielsweise gilt
 \\[0.3cm]
 \hspace*{1.3cm}
 $\ds\lim\limits_{x \rightarrow \infty} \frac{x^2}{\exp(x)} = \lim\limits_{x \rightarrow \infty} \frac{2\cdot x}{\exp(x)} =\lim\limits_{x \rightarrow \infty} \frac{2}{\exp(x)} = 0$.
@@ -2264,7 +2264,7 @@ Zeigen Sie, dass die Funktion $f$ dann \underline{stren}g monoton steigend ist.
 \textbf{Bemerkung:}
 Die Funktion $x \mapsto x^3$ ist streng monoton steigend, aber an der Stelle $x=0$
 verschwindet die Ableitung dieser Funktion.  Dies zeigt, dass sich die Aussage des letzten
-Satzes nicht umkehren l‰ﬂt.
+Satzes nicht umkehren l‰sst.
 
 \begin{Definition}[strenges lokales Minimum] \lb
   Eine Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ hat im Punkt $\bar{x}\in \mathbb{R}$
@@ -2277,7 +2277,7 @@ Satzes nicht umkehren l‰ﬂt.
 \end{Definition}
 
 \noindent
-\textbf{Bemerkung}:  Der Begriff des \emph{strengen lokalen Maximum} l‰ﬂt sich analog definieren.
+\textbf{Bemerkung}:  Der Begriff des \emph{strengen lokalen Maximum} l‰sst sich analog definieren.
 
 \begin{Satz} \label{satz:minimum}
   Die Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ sei zweimal differenzierbar, die
@@ -2359,7 +2359,7 @@ $
 gilt.  Geometrisch bedeutet dies, dass die Funktionswerte der Funktion $f$  unterhalb
 der Sekante durch die Punkte 
 $\bigl\langle x_1, f(x_1) \bigl\rangle$ und $\bigl\langle x_2, f(x_2) \bigl\rangle$
-liegen.  Abbildung \ref{fig:convex.eps} auf Seite \pageref{fig:convex.eps} zeigt die anschaulich: 
+liegen.  Abbildung \ref{fig:convex.eps} auf Seite \pageref{fig:convex.eps} zeigt dies anschaulich: 
 In dem Intervall $(x_1,x_2)$ liegen die Werte der Funktion $f$ unterhalb der Gerade $g$, die durch die beiden Punkte 
 $\langle x_1, f(x_1)\rangle$ und $\langle x_2, f(x_2)\rangle$ geht.  Die Gleichung dieser Geraden
 ist 
@@ -2505,7 +2505,7 @@ $f$  konvex \quad $\Leftrightarrow$ \quad $\forall x \in \mathbb{R}: f''(x) \geq
   \hspace*{1.3cm}
   $x_0 := t \cdot x_1 + (1 - t) \cdot x_2$
   \\[0.2cm]
-  Es l‰ﬂt sich sofort nachrechnen, dass dann $x_1 < x_0 < x_2$ gilt.  Nach dem Mittelwert-Satz der
+  Es l‰sst sich sofort nachrechnen, dass dann $x_1 < x_0 < x_2$ gilt.  Nach dem Mittelwert-Satz der
   Differential-Rechnung gibt es jeweils ein $c_1 \in [x_1,x_0]$ und ein $c_2 \in [x_0,x_2]$, so dass
   \\[0.2cm]
   \hspace*{1.3cm}
