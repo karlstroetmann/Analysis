@@ -599,7 +599,7 @@ und erhalten ein $K_2$, so dass für alle $n>K_2$ die Ungleichung
   \label{eq:ab3}
   \bigl|b - b_n\bigr| < \bruch{1}{2} \cdot  |b|^2 \cdot  \varepsilon
 \end{equation}
-gilt.  Setzen wir $K := \max(K_1,K_2)$, so erhalten wir für alle $n>k$  die folgende
+gilt.  Setzen wir $K := \max(K_1,K_2)$, so erhalten wir für alle $n>K$  die folgende
 Ungleichungs-Kette: 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -703,7 +703,7 @@ definieren.  Wir zeigen, dass
 \hspace*{1.3cm}
 $\lim\limits_{n\rightarrow\infty} a_n = s$
 \\[0.2cm]
-gilt.  Sie also $\varepsilon > 0$ gegeben.  Da 
+gilt.  Sei also $\varepsilon > 0$ gegeben.  Da 
 \\[0.2cm]
 \hspace*{1.3cm}
 $s + \varepsilon > s$
@@ -841,7 +841,7 @@ Damit ist der Beweis abgeschlossen. \hspace*{\fill} $\Box$
 
 \exercise
 In dem gleich folgenden Beweis der Tatsache, dass jede Cauchy-Folge konvergent ist, werden wir zwei
-Eigenschaften des Supremums einer Menge $M$ benutzt, die zwar offensichtlich sind, die wir aber auch
+Eigenschaften des Supremums einer Menge $M$ benutzen, die zwar offensichtlich sind, die wir aber auch
 formal beweisen sollten.  Nehmen Sie an, dass Folgendes gilt:
 \begin{enumerate}
 \item $M \subseteq \mathbb{R}$ ist nach unten abgeschlossen, es gilt also
@@ -885,7 +885,7 @@ Es ist klar, dass $M$ nach unten abgeschlossen ist, es gilt
 \hspace*{1.3cm}
 $y < x \wedge x \in M \rightarrow y \in M$,
 \\[0.2cm]
-denn wenn $x$ eine untere Schranke der Mehrheit aller Folgenglieder ist, dann ist sicher jeder Zahl 
+denn wenn $x$ eine untere Schranke der Mehrheit aller Folgenglieder ist, dann ist sicher jede Zahl 
 $y$ die kleiner als $x$ ist, ebenfalls eine untere Schranke der Mehrheit der Folgenglieder. 
 Wir werden diese Eigenschaft später benötigen. 
 
@@ -1505,7 +1505,7 @@ $
 \end{array}
 $
 \\[0.2cm]
-Die letzte Ungleichung ist aber nicht anderes als die Monotonie der Folge $\folge{a_n}$.
+Die letzte Ungleichung ist aber nichts anderes als die Monotonie der Folge $\folge{a_n}$.
 
 Als nächstes zeigen wir durch vollständige Induktion, dass die Folge der Partial-Summen
 mit geraden Indizes nach unten beschränkt ist, genauer gilt
@@ -1623,7 +1623,7 @@ $ \forall \varepsilon \in \mathbb{R}_+: \exists K \in \mathbb{R}: \forall m,n \i
    m \geq K \wedge n \geq K \rightarrow \bigl| s_m - s_n \bigr| < \varepsilon.
 $
 \\[0.2cm]
-In der letzen Formel können wir ohne Einschränkung der Allgemeinheit annehmen,
+In der letzten Formel können wir ohne Einschränkung der Allgemeinheit annehmen,
 dass $n \leq m$ gilt.  Dann ist $m = n + l$ für eine natürliche Zahl $l$.  Setzen wir hier
 die Definition der Partial-Summen ein, so erhalten wir
 \\[0.2cm]
@@ -1707,6 +1707,7 @@ $ \sum\limits_{i=1}^n a_i \leq \sum\limits_{i=1}^n b_i \leq \sum\limits_{i=1}^\i
 \\[0.2cm]
 Also ist die Folge $\Folge{\sum\limits_{i=1}^{n} a_i}$ monoton wachsend und beschränkt und
 damit konvergent.
+\hspace*{\fill} $\Box$
 \vspace*{0.3cm}
 \pagebreak
 
@@ -1772,7 +1773,7 @@ Dann existiert auch der Grenzwert $\sum\limits_{i=1}^\infty b_i$ nicht.
 \noindent
 \textbf{Beweis}:  Wir führen den Beweis indirekt und nehmen an, dass 
 $\sum\limits_{i=1}^\infty b_i$
-existiert.  Nach dem Majoranten-Kriterium müßte dann auch der Grenzwert
+existiert.  Nach dem Majoranten-Kriterium müsste dann auch der Grenzwert
 $\sum\limits_{i=1}^\infty a_i$
 existieren und dass steht im Widerspruch zur Voraussetzung. \hspace*{\fill} $\Box$
 \vspace*{0.3cm}
@@ -1815,7 +1816,7 @@ Dann konvergiert die Reihe $\Reihe{a_i}$.
 
 \noindent 
 \textbf{Beweis}:  Wir zeigen, dass die geometrische Reihe $\Reihe{a_0\cdot q^i}$ eine konvergente Majorante der
-Reihe $\Reihe{a_i}$ ist.  Dazu zeigen wir durch Induktion über $n$ dass folgendes gilt:
+Reihe $\Reihe{a_i}$ ist.  Dazu zeigen wir durch Induktion über $n$, dass folgendes gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
 $\forall n \in \mathbb{N}: a_{n} \leq a_1 \cdot q^{n-1}$
@@ -1838,7 +1839,7 @@ $\forall n \in \mathbb{N}: a_{n} \leq a_1 \cdot q^{n-1}$
 
 \noindent
 \textbf{Bemerkung}:  Beim Quotienten-Kriterium sind eigentlich nur die Beträge der
-Folgenglieder $|a_n|$ wichtig, denn es läßt sich folgende Verschärfung des
+Folgenglieder $|a_n|$ wichtig, denn es lässt sich folgende Verschärfung des
 Quotienten-Kriteriums zeigen:  
 Ist $\folge{a_n}$ eine Folge, $q\in\mathbb{R}$ und $K \in \mathbb{R}$, so dass 
 \\[0.2cm]
@@ -1885,8 +1886,8 @@ $n>0$ gilt
 
 \noindent
 \textbf{Bemerkung}:  Beim Wurzel-Kriterium sind eigentlich nur die Beträge der
-Folgenglieder $|a_n|$ wichtig, denn es läßt sich folgende Verschärfung des
-Quotienten-Kriteriums zeigen:  
+Folgenglieder $|a_n|$ wichtig, denn es lässt sich folgende Verschärfung des
+Wurzel-Kriteriums zeigen:  
 Ist $\folge{a_n}$ eine Folge, $q\in\mathbb{R}$ und $K \in \mathbb{R}$, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1920,7 +1921,7 @@ als \emph{formale Potenz-Reihe}.  Wichtig ist hier, dass $x$ keine feste Zahl is
 eine Variable, für die wir später reelle (oder auch komplexe) Zahlen einsetzen.  Wenn wir
 in einer Potenz-Reihe für $x$ eine feste Zahl einsetzen, wird aus der Potenz-Reihe eine
 gewöhnliche Reihe.  Der Begriff der Potenz-Reihen kann als eine Verallgemeinerung des
-Begriffs des   Polynoms aufgefaßt werden. 
+Begriffs des   Polynoms aufgefasst werden. 
 \vspace*{0.3cm}
 \pagebreak
 
@@ -1982,7 +1983,7 @@ $|u| < |v|$ ist.
 
 \noindent
 \textbf{Beweis}:  Würde die Reihe $\sum_{n=0}^\infty a_n\cdot v^n$ konvergieren,
-dann müßte nach Satz \ref{satz:konvergenz-radius} auch die Reihe 
+dann müsste nach Satz \ref{satz:konvergenz-radius} auch die Reihe 
 $\sum_{n=0}^\infty a_n\cdot u^n$ konvergieren. \hspace*{\fill} $\Box$
 \vspace*{0.3cm}
 
@@ -2039,7 +2040,7 @@ Es sei $u \in \mathbb{C}$ mit $|u| < R$.  In diesem Fall müssen wir zeigen, dass
 \hspace*{1.3cm}
 $\sum\limits_{n=0}^\infty a_n\cdot u^n$
 \\[0.2cm]
- konvergiert.  Wir werden diesen Nachweis mit Hilfe
+ konvergiert.  Wir werden diesen Nachweis mit Hilfe des
 Quotienten-Kriteriums erbringen.  Wir setzen
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -2116,7 +2117,7 @@ Der obige Satz bleibt auch richtig, wenn
       \hspace*{1.3cm}      
       $\lim\limits_{n\rightarrow\infty} \left|\bruch{a_n}{\;a_{n+1}\;}\right| = \infty$
       \\[0.2cm]
-ist, denn dann ist die Potenz-Reihe $\sum_{n=0}^\infty a_n\cdot x^n$ für alle $u\in\mathbb{C}$
+ist, denn dann ist die Potenz-Reihe $\sum_{n=0}^\infty a_n\cdot u^n$ für alle $u\in\mathbb{C}$
 konvergent.
 \vspace*{0.3cm}
 
