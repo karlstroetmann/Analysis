@@ -1093,15 +1093,38 @@ Also haben wir folgende Abschätzung
 $|\cos(x) - \cos(y)| = \sin(\zeta) \cdot  |x - y| \leq 0.85 \cdot  |x - y|$ \quad für alle $x,y\in[0,1]$.
 \eox
 
-Das letzte Beispiel können wir sofort verallgemeinern.  Ist die Funktion 
-$f:[a,b] \rightarrow [a,b]$ in dem Intervall $[a,b]$ differenzierbar und gibt es eine Zahl
+Das letzte Beispiel verallgemeinern wir zu einem Satz.
+
+\begin{Satz}
+Ist die Funktion $f:[a,b] \rightarrow [a,b]$ in dem Intervall $[a,b]$ differenzierbar und gibt es eine Zahl
 $q < 1$, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
 $\forall t \in [a,b]: |f'(t)| \leq q$
 \\[0.2cm]
 gilt, dann ist die Abbildung $f$ kontrahierend mit dem Kontraktions-Koeffizienten $q$.
+\end{Satz}
 
+\proof
+Es seien $x, y \in [a,b]$.
+Nach dem Mittelwert-Satz der Differenzial-Rechnung gibt es dann ein $\zeta\in[x,y]$ mit 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\frac{f(x) - f(y)}{x - y} = f'(\zeta)$.
+\\[0.2cm]
+Nehmen wir auf beiden Seiten dieser Ungleichung den Betrag, so erhalten wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\frac{|f(x) - f(y)|}{|x - y|} = |f'(\zeta)| \leq q$,
+\\[0.2cm]
+denn wir hatten ja vorausgesetzt, dass die Ungleichung $|f'(t)| < q$ für alle
+$t \in [a,b]$ gilt.  Multiplizieren wir diese Ungleichung mit $|x - y|$, so erhalten wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds |f(x) - f(y)| \leq q \cdot |x  - y|$
+\\[0.2cm]
+und nach Definition einer kontrahierenden Abbildung ist das die Behauptung.
+\qed
 
 \begin{Satz}
   Ist $f:[a,b] \rightarrow [a,b]$ eine kontrahierende Abbildung, so ist $f$ auch stetig.
@@ -1129,8 +1152,8 @@ so gilt $f(\bar{x}) = \bar{x}$ und darüber hinaus gilt die Abschätzung
 $\ds |x_n - \bar{x}| \leq \frac{q^n}{1- q} \cdot  |x_1 - x_0|$.
 \end{Satz}
 
-\noindent
-\textbf{Beweis}:  Wir starten den Beweis mit einer im
+\proof
+Wir starten den Beweis mit einer im
 ersten Moment skurril anmutenden Formel: 
 \\[0.2cm]
 \hspace*{0.8cm}

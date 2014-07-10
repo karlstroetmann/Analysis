@@ -78,5 +78,5 @@ interactive := procedure() {
     print(x);
 };
 
-//interactive();
-x := newton(parse("x ** 3 - 2"), 1, 8);
+interactive();
+// x := newton(parse("x ** 3 - 2"), 1, 8);
