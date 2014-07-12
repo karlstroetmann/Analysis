@@ -1,19 +1,317 @@
-\chapter{Die Definition der reellen Zahlen$^*$}
+\chapter{Die reellen Zahlen}
 Bevor wir mit der eigentlichen Analysis beginnen müssen wir klären, was genau reelle Zahlen
 überhaupt sind.  Anschaulich werden reelle Zahlen zur Angabe von Längen benötigt, denn in der Geometrie
 reicht es nicht, mit den rationalen Zahlen zu arbeiten.  Das liegt daran, dass die Diagonale eines
 Quadrats der Seitenlänge 1 nach dem 
 \href{http://de.wikipedia.org/wiki/Satz_des_Pythagoras}{Satz des Pythagoras} die Länge $\sqrt{2}$ hat.
-Wir hatten im letzten Semester aber gesehen, dass es keine rationale Zahl $r$ gibt,
+Wir hatten im ersten Semester aber gesehen, dass es keine rationale Zahl $r$ gibt,
 so dass $r^2 = 2$ ist.  Folglich reichen die rationalen Zahlen nicht aus, alle in der Geometrie
-möglichen Längen anzugeben. 
+möglichen Längen anzugeben.  Es gibt mehrere Wege, die Menge $\mathbb{R}$ der reellen Zahlen so zu
+konstruieren, so dass die Gleichung 
+\\[0.2cm]
+\hspace*{1.3cm}
+$r^2 = 2$
+\\[0.2cm]
+in $\mathbb{R}$ eine Lösung hat.  Bevor wir mit dieser Konstruktion beginnen, wollen wir die Menge
+der reellen Zahlen axiomatisch charakterisieren.  Dazu definieren wir den Begriff des
+\\[0.2cm]
+\hspace*{1.3cm}
+\colorbox{orange}{\emph{vollständig geordneten Körpers}.}
+\\[0.2cm]
+Hierbei handelt es sich um ein System von Axiomen, aus dem
+sich alle weiteren Eigenschaften der reellen Zahlen ableiten lassen.  Es lässt sich sogar zeigen,
+dass diese Axiomatisierung in dem folgenden Sinne vollständig ist:
+Ist $\mathbb{K}$ ein vollständig angeordneter Körper, so ist $\mathbb{K}$ \emph{isomorph} zu
+$\mathbb{R}$: Im Klartext heisst dies, dass es eine Abbildung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\varphi:\mathbb{K} \rightarrow \mathbb{R}$
+\\[0.2cm]
+gibt, die jedem Element $\alpha \in \mathbb{K}$ genau ein Element $\varphi(\alpha) \in \mathbb{R}$
+zuordnet und die mit der Addition und der Multiplikation verträglich ist, für alle $x,y \in
+\mathbb{K}$ gilt also 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\varphi(x + y) = \varphi(x) + \varphi(y)$ \quad und \quad $\varphi(x \cdot y) = \varphi(x) \cdot \varphi(y)$.
+\\[0.2cm]
+Die rein axiomatische Charakterisierung der
+reellen Zahlen ist philosophisch unbefriedigend, denn dabei bleiben zwei Fragen offen:
+\begin{enumerate}
+\item Gibt es überhaupt eine Struktur $\mathbb{K}$, die den Axiomen eines vollständig geordneten
+      Körpers genügt?
 
-\section{Dedekind-Schnitte}
-Bis jetzt haben wir so getan, als wüssten wir schon, was reelle Zahlen sind.  Aus der Schule bringen  
-Sie gewiss eine anschauliche Vorstellung der reellen Zahlen mit, aber diese Vorstellung gilt es  
-nun zu formalisieren, denn sonst können wir den Nachweis der \emph{Vollständigkeit} der reellen  
-Zahlen nicht führen.   Unter der Vollständigkeit der reellen Zahlen verstehen wir anschaulich die Eigenschaft, 
-dass es auf  der reellen Zahlengeraden keine \emph{Lücken} gibt.  
+      Solange wir nicht sicher sind, dass diese Frage mit ``Ja'' beantwortet wird, steht unsere
+      gesamte Theorie auf wackeligen Füßen, denn es könnte dann sein, dass es sich um die Theorie
+      der leeren Menge handelt. 
+\item Was genau sind reelle Zahlen?
+
+      Diese Frage hat zwar zunächst einen philosophischen Charakter, aber es zeigt sich, dass wir diese
+      Frage zuerst beantworten müssen, bevor wir die erste Frage in Angriff nehmen können.
+\end{enumerate}
+Wir werden im zweiten Abschnitt zeigen, wie sich die reellen Zahlen aus den rationalen Zahlen mit
+Hilfe von sogenannten \emph{Dedekind-Schnitten} erzeugen lassen.  Da diese Konstruktion jedoch
+technisch nicht ganz einfach ist, werden wir diesen Abschnitt im Rahmen der Vorlesung nicht
+besprechen.   Die in diesem Abschnitt präsentierten Details sind zwar eine gute Übung zur
+Mengenlehre,  werden aber für den weiteren Verlauf der Vorlesung nicht benötigt.  Der Abschnitt ist
+daher zum Selbststudium für die Studenten gedacht, die an den Grundlagen der Mathematik interessiert sind.
+
+
+\section{Axiomatische Charakterisierung der reellen Zahlen}
+Wir erinnern zunächst an die im ersten Semester gegebene Definition eines Körpers. 
+\begin{Definition}[Körper]
+Eine Struktur $\mathcal{K} = \langle K, 0, 1, +, \cdot \rangle$ ist ein \emph{Körper}, falls gilt:
+\begin{enumerate}
+\item $K$ ist eine Menge.
+\item $0 \in K$ und $1 \in K$.
+\item $+$ und $\cdot$ sind binäre Operatoren auf $K$, wir haben
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $+: K \times K \rightarrow K$ \quad und \quad $\cdot: K \times K \rightarrow K$.      
+\item $\langle K, 0, + \rangle$ ist eine kommutative Gruppe.
+      
+      Im Detail heißt dies, dass die folgenden Axiome gelten:
+      \begin{enumerate}
+        \item $(x + y) + z = x + (y + z)$,
+        \item $x + y = y + x$,
+        \item $0 + x = x$,
+        \item $\exists y \in K: x + y = 0$.
+
+              Dasjenige $y \in K$, für welches $x + y = 0$ gilt, ist dann eindeutig
+              bestimmt und wird mit $-x$ bezeichnet.
+        \end{enumerate}
+\item $\langle K \backslash \{ 0 \}, 1, \cdot \rangle$ ist ebenfalls eine kommutative Gruppe,
+
+      Im Detail sind also die folgenden Axiome erfüllt:
+      \begin{enumerate}
+      \item $(x \cdot y) \cdot z = x \cdot (y \cdot z)$,
+      \item $x \cdot y = y \cdot x$,
+      \item $1 \cdot x = x$,
+      \item $x \not= 0 \Rightarrow \exists y \in K: x \cdot y = 1$.
+      \end{enumerate}
+\item Es gilt das Distributiv-Gesetz: Für alle $x, y,z \in K$ haben wir
+      \\[0.2cm]
+      \hspace*{1.3cm} 
+      $x \cdot (y + z) = x \cdot y + x \cdot z$.  \edx
+\end{enumerate}
+\end{Definition}
+
+\noindent
+Weiter benötigen wir die Definition einer linearen Ordnung, die wir ebenfalls wiederholen.
+
+\begin{Definition}[Lineare Ordnung]
+  Ein Paar $\langle M, \leq \rangle$ ist eine \emph{lineare Ordnung}, falls gilt:
+  \begin{enumerate}
+  \item $M$ ist eine Menge,
+  \item $\leq$ ist eine binäre Relation auf $M$, es gilt also
+        \\[0.2cm]
+        \hspace*{1.3cm}
+        $\leq\; \subseteq M \times M$.
+  \item Zusätzlich gelten die folgenden Axiome:
+        \begin{enumerate}
+        \item $x \leq x$,
+        \item $x \leq y \wedge y \leq x \rightarrow x = y$,
+        \item $x \leq y \wedge y \leq z \rightarrow x \leq z$,
+        \item $x \leq y \vee y \leq x$.  \edx
+        \end{enumerate}
+  \end{enumerate} 
+\end{Definition} 
+
+Die nächste Definition kombiniert die algebraischen Eigenschaften eines Körpers mit den
+Anordnungs-Axiomen einer linearen Ordnung.
+
+\begin{Definition}[Geordneter Körper]  \hspace*{\fill} \linebreak
+  Eine Struktur $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ist ein 
+  \emph{geordneter Körper}, falls 
+  \begin{enumerate}
+  \item $\langle K, 0, 1, +, \cdot, \rangle$ ein Körper und
+  \item $\langle K, \leq \rangle$
+  \end{enumerate}
+  eine lineare Ordnung ist.  \edx
+\end{Definition}
+
+\remark
+Die Struktur $\langle \mathbb{Q}, 0, 1, +, \cdot, \leq \rangle$ ist ein geordneter Körper, wenn wir
+die Operationen $+$, $\cdot$ und $\leq$ wie im ersten Semester vorgeführt auf den rationalen Zahlen
+definieren.  Diese Struktur ist allerdings für die Zwecke der Analysis noch nicht ausreichend,
+da sie in einer noch näher zu spezifizierenden Weise unvollständig ist.  Zur Präzisierung dieser Aussage
+benötigen wir den Begriff einer \emph{vollständigen Ordnung}, die ihrerseits
+auf dem Begriff des \emph{Supremums} basiert, den wir jetzt einführen.
+
+\begin{Definition}[Supremum]
+Es sei $\langle M, \leq \rangle$ eine lineare Ordnung.
+Eine Menge $A \subseteq M$ ist \emph{nach oben beschränkt}, falls es ein
+ $y \in M$ gibt, so dass gilt:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall x \in A:  x \leq y$.
+\\[0.2cm]
+Dieses $y$ bezeichnen wir dann als eine \emph{obere Schranke} der Menge $A$.
+Ein Element $s \in M$ ist das \emph{Supremum} der Menge $A$, wenn $s$ die kleinste
+obere Schranke von $A$ ist, wenn also 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall x \in A: x \leq s$ \quad \mbox{und} \quad
+$\forall y \in M: \Bigl(\bigl(\forall x \in A: x \leq y \bigr)\Rightarrow s \leq y \Bigr)$
+\\[0.2cm]
+gilt.  In diesem Fall schreiben wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$s = \sup(A)$.
+\edx
+\end{Definition}
+
+\begin{Definition}[Vollständige Ordnung]
+  Ein Paar $\pair(M, \leq)$ bestehend aus einer Menge $M$ und einer Relation $\leq\; \subseteq M \times M$ 
+  ist eine \emph{vollständige} Ordnung genau denn, wenn folgendes gilt:
+  \begin{enumerate}
+  \item Das Paar $\pair(M, \leq)$ ist eine lineare Ordnung.
+  \item Zu jeder nicht-leeren und nach oben beschränkten Menge $A \subseteq M$ existiert ein
+        Supremum in $M$. \edx
+  \end{enumerate}
+\end{Definition}
+\vspace*{-0.2cm}
+
+
+\noindent
+\textbf{Bemerkung}:
+Das Paar $\langle \mathbb{Q}, \leq \rangle$ ist keine vollständige Ordnung, denn wenn wir die Menge
+$A$ als
+\\[0.2cm]
+\hspace*{1.3cm}
+$A := \{ r \in \mathbb{Q} \mid r^2 \leq 2 \}$
+\\[0.2cm]
+definieren, so ist die Menge $A$ nach oben beschränkt, weil die Zahl $2$ eine obere
+Schranke von $A$ ist.  Die Menge $A$ hat aber keine kleinste obere Schranke.  Anschaulich liegt das
+daran, dass die kleinste obere Schranke von $A$ die Zahl $\sqrt{2}$ ist, aber aus dem ersten
+Semester wissen wir, dass $\sqrt{2}$ keine rationale Zahl ist.  \eox
+
+
+\noindent
+Analog zum Begriff des Supremums können wir auch den Begriff des Infimums definieren.
+
+\begin{Definition}[Infimum]
+Es sei $\pair(M, \leq)$ eine lineare Ordnung. 
+Eine Menge $B \subseteq M$ ist \emph{nach unten beschränkt}, falls es ein
+ $y \in M$ gibt, so dass 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall x \in B:  y \leq x$
+\\[0.2cm]
+gilt.  Ein solches $y$ bezeichnen wir als \emph{untere Schranke}  von $B$.
+Ein Element $i \in M$ ist das \emph{Infimum} einer Menge $B$, wenn $i$ die größte
+untere Schranke von $B$ ist, wenn also 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall x \in B: i \leq x$ \quad \mbox{und} \quad
+$\forall y \in M: \Bigl(\bigl(\forall x \in B: y \leq x \bigr)\rightarrow y \leq i \Bigr)$
+\\[0.2cm]
+gilt.  In diesem Fall schreiben wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$i = \inf(B)$.
+\edx
+\end{Definition}
+
+
+\exercise
+Es sei $\pair(M, \leq)$ eine vollständige lineare Ordnung.  Zeigen Sie, dass für jede Teilmenge
+$B \subseteq M$, die nicht-leer und nach unten beschränkt ist, ein Infimum existiert.
+\vspace*{0.2cm}
+
+\noindent
+\textbf{Hinweis}: Betrachten Sie die Menge
+\\[0.2cm]
+\hspace*{1.3cm}
+$A := \{ x \in M \mid \forall y \in B: x \leq y \}$
+\\[0.2cm]
+der unteren Schranken von $B$.  Diese Menge ist nicht leer, denn nach Voraussetzung ist $B$ nach
+unten beschränkt.  Außerdem ist $A$ nach oben beschränkt, denn jedes Element aus der Menge $B$ ist
+eine obere Schranke von $A$.  Da nach Voraussetzung das Paar $\pair(M, \leq)$ eine vollständige
+lineare Ordnung ist, besitzt $A$ also ein Supremum.  Zeigen Sie, dass dieses Supremum auch das
+Infimum von $B$ ist. \eox
+
+Wir kommen nun zur zentralen Definition dieses Abschnitts.
+\begin{Definition}[Vollständig angeordneter Körper]
+  Eine Struktur  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$  ist ein 
+  \emph{vollständig angeordneter Körper} genau dann, wenn die Struktur $\mathcal{K}$
+  ein geordneter Körper ist und zusätzlich das Paar $\langle K, \leq \rangle$ eine vollständige
+  Ordnung ist. \edx
+\end{Definition}
+
+\begin{Theorem}
+  Die Struktur $\langle \mathbb{R}, 0, 1, +, \cdot, \leq \rangle$ der reellen Zahlen ist ein  vollständig geordneter Körper.   \edx
+\end{Theorem}
+
+Einen Beweis diese Behauptung können wir jetzt noch nicht erbringen, denn wir haben bisher nicht
+definiert, wie die Menge $\mathbb{R}$ der reellen Zahlen konstruiert wird.
+Diese Konstruktion werden wir im nächsten Abschnitt mit Hilfe der sogenannten
+\emph{Dedekind-Schnitte} liefern.  Für praktische Rechnungen ist diese 
+viel zu schwerfällig.  Wir geben daher zum Abschluss dieses
+Abschnitts noch eine Konstruktion der reellen Zahlen als unendliche Dezimalbrüche an.  Dazu
+betrachten wir eine positive reelle Zahl $x \in \mathbb{R}$ abstrakt als gegeben und untersuchen, wie wir $x$
+in der Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds x = m + \sum\limits_{k=1}^\infty b_k \cdot \frac{1}{10^k}$
+\\[0.2cm]
+so darstellen können, dass folgendes gilt:
+\begin{enumerate}
+\item $m \in \mathbb{N}$ \quad und
+\item $b_k \in \{0,\cdots,9\}$.
+\end{enumerate}
+Die Zahl $b_k$ kann damit als die $k$-te Stelle von $x$ hinter dem Komma interpretiert werden.
+Die Berechnung der Zahlen $m$ und $b_k$ verläuft für ein gegebenes positives $x \in \mathbb{R}$ wie folgt:
+\begin{enumerate}
+\item $m := \max(\{ n \in \mathbb{N} \mid n \leq x \})$.
+
+      $m$ ist also die größte ganze Zahl, die noch kleiner oder gleich $x$ ist.
+\item Die Zahlen $b_k$ werden für alle $k \in \mathbb{N}$ induktiv definiert.
+      \begin{enumerate}
+      \item[I.A.:] $k=1$.  Wir setzen
+                   \\[0.2cm]
+                   \hspace*{1.3cm}
+                   $\ds b_1 := \max\Bigl(\Bigl\{ z \in \{ 0, 1, \cdots, 9 \} \mid m + z \cdot \frac{1}{10} \leq x\Bigr\}\Bigr)$.
+      \item[I.A.:] $k \mapsto k+1$.  Nach Induktions-Voraussetzung sind die Zahlen $b_1$, $\cdots$, $b_k$
+                   bereits definiert.  Daher können wir $b_{k+1}$ als
+                   \\[0.2cm]
+                   \hspace*{1.3cm}
+                   $\ds b_{k+1} := \max\Bigl(\Bigl\{ z \in \{ 0, 1, \cdots, 9 \} \mid m + \sum\limits_{i=1}^{k} b_i \cdot \frac{1}{10^i} + z \cdot \frac{1}{10^{k+1}}\leq x\Bigr\}\Bigr)$.
+                   \\[0.2cm]
+                   definieren.
+      \end{enumerate}
+\end{enumerate}
+Insgesamt gilt mit dieser Konstruktion
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds x = m + \sum\limits_{k=1}^{\infty} b_k \cdot \frac{1}{10^{k}}$.
+\\[0.2cm]
+Diese Behauptung können wir allerdings noch nicht beweisen, denn wir haben ja noch gar nicht formal
+definiert, welchen Wert wir einer unendlichen Reihe der Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds \sum\limits_{k=1}^{\infty} b_k \cdot \frac{1}{10^{k}}$
+\\[0.2cm]
+zuordnen.  Statt dessen können wir sagen, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds x = \sup\Bigl(\Bigl\{ m + \sum\limits_{i=1}^{k} b_i \cdot \frac{1}{10^{i}} \mid k \in \mathbb{N} \Bigr\}\Bigr)$
+\\[0.2cm]
+gilt, denn die Menge
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds \Bigl\{ m + \sum\limits_{i=1}^{k} b_i \cdot \frac{1}{10^{i}} \mid k \in \mathbb{N} \Bigr\}$
+\\[0.2cm]
+ist offenbar durch $x$ nach oben beschränkt und es lässt sich zeigen, dass es keine 
+obere Schranke $y$ für diese Menge gibt, die echt kleiner als $x$ ist.  Für den Rest der Vorlesung
+reicht es aus, wenn Sie sich die reellen Zahlen wie oben skizziert als unendliche Dezimalbrüche vorstellen.
+
+
+
+\section{Die formale Konstruktion der reellen Zahlen$^*$}
+Bis jetzt haben wir so getan, als wüssten wir schon, was reelle Zahlen sind und haben Ihre
+Eigenschaften in Form von Axiomen angegeben.  Was noch fehlt ist nun die Konstruktion der reellen
+Zahlen mit Hilfe der Mengenlehre.
+
 
 Die zentrale Idee bei der Konstruktion der reellen Zahlen ist die Beobachtung, dass eine reelle
 Zahl $x$ durch die Menge $M_1$ aller rationalen Zahlen kleiner als $x$ und die Menge $M_2$ der
@@ -25,9 +323,9 @@ $M_1 := \{ q \in \mathbb{Q} \mid q < x \}$ \quad und \quad
 $M_2 := \{ q \in \mathbb{Q} \mid x \leq q \}$,
 \\[0.2cm]
 so liegt $x$ gerade zwischen $M_1$ und $M_2$.  Falls die Menge $M_2$ kein Minimum hat, so haben die
-rationalen Zahlen  zwischen $M_1$ und $M_2$ eine Lücke.  Die Idee ist nun, die reellen Zahlen als
-die Lücken der rationalen Zahlen zu definieren um dadurch sicherzustellen, dass es bei den
-reellen Zahlen keine Lücken mehr gibt.  
+rationalen Zahlen  zwischen $M_1$ und $M_2$ eine Lücke.  Die Idee ist nun, die reellen Zahlen gerade
+als diese Lücken zu definieren um dadurch sicherzustellen, dass es bei den
+reellen Zahlen selber keine Lücken mehr gibt.  
 Versuchen wir den Begriff eines \emph{Lücke} zu präzisieren, so kommen wir zur nun folgende Definition eines
 Dedekind'schen-Schnittes.
 
@@ -54,11 +352,12 @@ falls folgendes gilt:
       gilt, dann darf $y$ eben kein Element von $M_1$ sein.  Als Formel schreibt sich das als
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\forall y \in Q: \bigl((\forall x \in M_1: x \leq y) \rightarrow y \not\in M_1\bigr)$. \eod
+      $\forall y \in Q: \bigl((\forall x \in M_1: x \leq y) \rightarrow y \not\in M_1\bigr)$. \edx
 \end{enumerate}
 \end{Definition}
 
-\example Definieren wir
+\example 
+Definieren wir
 \\[0.2cm]
 \hspace*{1.3cm} 
 $M_1 := \{ x \in \mathbb{Q} \mid x \leq 0 \vee x^2 \leq 2 \}$ \quad und \quad
@@ -80,9 +379,9 @@ $\mathbb{R} := \bigl\{ \pair(M_1,M_2) \in 2^\mathbb{Q} \times 2^\mathbb{Q} \mid 
 \\[0.2cm]
 Nach dieser Definition müssen wir nun zeigen, wie sich auf der so definierten Menge der reellen
 Zahlen die arithmetischen Operationen Addition, Subtraktion, Multiplikation und Division definieren
-lassen und wie die Relation $\leq$ für zwei Dedekind-Schnitte definiert
-werden kann.  Zusätzlich müssen wir nachweisen, dass unsere Definitionen die Eigenschaften haben,
-die wir von diesen Operationen erwarten.
+lassen und wie die Relation $\leq$ für zwei Dedekind-Schnitte festgelegt
+werden kann.  Zusätzlich müssen wir nachweisen, dass wir mit diesen Definitionen einen vollständig
+angeordneten Körper konstruieren.
 
 Bei einem Dedekind-Schnitt $\pair(M_1,M_2)$ ist die Menge $M_2$ durch die Angabe von
 $M_1$ bereits vollständig festgelegt, denn aus der Gleichung $M_1 \cup M_2 = \mathbb{Q}$ folgt
@@ -158,10 +457,11 @@ $\mathcal{D}$ als die Menge aller rationalen Dedekind-Mengen, wir setzen also
 \\[0.2cm]
 \hspace*{1.3cm}
 \colorbox{orange}{
-$\mathcal{D} := \bigl\{ M \in 2^{\mathbb{Q}} \mid \mbox{$M$ is Dedekind-Menge} \bigr\}$}
+$\mathcal{D} := \bigl\{ M \in 2^{\mathbb{Q}} \mid \mbox{$M$ is Dedekind-Menge} \bigr\}$.}
 \\[0.2cm]
-und identifizieren $\mathcal{D}$ mit der Menge $\mathbb{R}$.  Die nächste Aufgabe zeigt, wie wir auf
-der Menge $\mathcal{D}$ eine lineare Ordnung definieren können. 
+Wir werden später die Menge $\mathbb{R}$ der reellen Zahlen als diese Menge
+$\mathcal{D}$ definieren.  Die nächste Aufgabe zeigt, wie wir auf
+der Menge $\mathcal{D}$ eine lineare Ordnung erzielen können. 
 
 \exercise
 Auf der Menge $\mathcal{D}$ definieren wir eine binäre Relation $\leq$ durch die Festsetzung
@@ -212,275 +512,25 @@ daher an, dass $A \not= B$ ist.  Dann gibt es zwei Möglichkeiten:
 \end{enumerate}
 
 
-\begin{Definition}[Infimum]
-Eine Menge $\mathcal{M} \subseteq \mathcal{D}$ ist \emph{in $\mathcal{D}$ nach unten beschränkt}, falls es ein
- $U \in \mathcal{D}$ gibt, so dass gilt:
-\\[0.2cm]
-\hspace*{1.3cm}
-$\forall A \in \mathcal{M}:  U \leq A$.
-\\[0.2cm]
-Eine Menge $I \in \mathcal{D}$ ist das \emph{Infimum} einer Menge $\mathcal{M}$, wenn $I$ die größte
-untere Schranke von $\mathcal{M}$ ist, wenn also 
-\\[0.2cm]
-\hspace*{1.3cm}
-$\forall A \in \mathcal{M}: I \leq A$ \quad \mbox{und} \quad
-$\forall T \in \mathcal{D}: \Bigl(\bigl(\forall A \in \mathcal{M}: T \leq A \bigr)\rightarrow T \leq I \Bigr)$
-\\[0.2cm]
-gilt.  In diesem Fall schreiben wir
-\\[0.2cm]
-\hspace*{1.3cm}
-$S = \inf( \mathcal{M} )$.
-\eod
-\end{Definition}
-
-\begin{Definition}[Vollständige Ordnung]
-  Ein Paar $\pair(M, \leq)$ bestehend aus einer Menge $M$ und einer Relation $\leq \subseteq M \times M$ 
-  ist eine \emph{vollständige} Ordnung genau denn, wenn folgendes gilt:
-  \begin{enumerate}
-  \item Die Relation $\leq$ ist reflexiv auf $M$, es gilt 
-        \\[0.2cm]
-        \hspace*{1.3cm}
-        $\forall x \in M: x \leq x$.
-  \item Die Relation $\leq$ ist anti-symmetrisch, es gilt
-        \\[0.2cm]
-        \hspace*{1.3cm}
-        $\forall x, y \in M: x \leq y \wedge y \leq x \rightarrow x = y$.
-  \item Die Relation $\leq$ ist transitiv, es gilt
-        \\[0.2cm]
-        \hspace*{1.3cm}
-        $\forall x, y, z \in M: x \leq y \wedge y \leq z \rightarrow x \leq z$.
-  \item Die Relation $\leq$ ist linear, es gilt
-        \\[0.2cm]
-        \hspace*{1.3cm}
-        $\forall x, y \in M: x \leq y \vee y \leq x$.
-  \item Zu jeder nicht-leeren und nach unten beschränkte Menge $X \subseteq M$ exxistiert ein
-        Infimum in $M$. \eod
-  \end{enumerate}
-\end{Definition}
-Die ersten drei Eigenschaften der Definition einer vollständigen Ordnung fordern, dass 
-$\pair(M, \leq)$ eine partielle Ordnung auf $M$ ist, die ersten vier Eigenschaften fordern, dass 
-$\pair(M, \leq)$ eine lineare Ordnung auf $M$ ist und die fünfte Eigenschaft fordert schließlich die
-Vollständigkeit der Ordnung.
-
-
-\remark
-Die Menge der rationalen Zahlen zusammen mit der üblichen $\leq$-Relation ist
-\underline{nicht} vollständig, denn beispielsweise ist die Menge
-\\[0.2cm]
-\hspace*{1.3cm}
-$M := \{ x \in \mathbb{Q} \mid x \geq 0 \wedge x^2 \geq 2 \}$
-\\[0.2cm]
-nach unten beschränkt, aber innerhalb der rationalen Zahlen hat die Menge $M$ kein Infimum, denn
-$\sqrt{2}$ ist keine rationale Zahl.  
-In der nächsten Aufgabe werden wir sehen,  dass die reellen Zahlen zusammen mit
-der oben definierten Ordnung $\leq$ vollständig sind.
-
 \exercise
-Zeigen Sie, dass jede nicht-leere und in $\mathcal{D}$ nach unten beschränkte Menge
-$\mathcal{M} \subseteq \mathcal{D}$ ein Infimum $I \in \mathcal{D}$ hat.  \eox
-
-
-\solution
-Bevor wir das gesuchte Infimum konstruieren, gilt es eine technische Schwierigkeit zu überwinden,
-die aus der Forderung entsteht, dass Dedekind-Mengen kein Maximum besitzen.  Wir
-definieren für eine beliebige Teilmenge $A \subseteq \mathbb{Q}$
-die Menge $A^-$, die in dem Falle, dass die Menge $A$ kein Maximum hat, mit der Menge $A$ identisch ist.
-Andernfalls wird bei der Definition von $A^-$ das Maximum aus der Menge $A$ entfernt:
-\\[0.2cm]
-\hspace*{1.3cm}
-$A^- := \left\{
-\begin{array}[c]{ll}
-  A \backslash \{ \max(A) \} & \mbox{falls die Menge $A$ ein Maximum hat}; \\
-  A                          & \mbox{sonst}.
-\end{array}
-\right.$
-\\[0.2cm]
-Nun definieren wir zu der gegebenen Menge $\mathcal{M} \subseteq \mathcal{D}$ eine Menge $J$ als
-\\[0.2cm]
-\hspace*{1.3cm}
-$J := \{ q \in \mathbb{Q} \mid \forall A \in \mathcal{M}: q \in A \} = \bigcap \mathcal{M}$ 
-\quad und setzen $I := J^-$. 
-\\[0.2cm]
-Wir zeigen, dass die so definierte Menge $I$ eine Dedekind-Menge ist.
-\begin{enumerate}
-\item Wir zeigen $I \not= \{\}$.
-
-      Nach Voraussetzung ist die Menge $\mathcal{M}$ nach unten beschränkt.  Also gibt es eine Dedekind-Menge 
-      $U \in \mathcal{D}$, so dass
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $U \subseteq A$ \quad für alle $A \in \mathcal{M}$
-      \\[0.2cm]
-      gilt.  Wegen $J = \bigcap \mathcal{M}$ folgt dann $U \subseteq J$.  Nun gibt es zwei
-      Möglichkeiten:
-      \begin{enumerate}
-      \item $I = J$.
-
-            Damit gilt auch $U \subseteq I$  und da $U$ als Dedekind-Menge nicht leer
-            ist, folgt $I \not= \{\}$.
-      \item $I = J \backslash \{ \max(J) \}$, die Menge $J$ hat also ein Maximum.
-            Wegen $U \subseteq J$ ist $\max(J)$ dann sicher auch eine obere Schranke
-            von $U$.  Wäre $\max(J) \in U$, dann wäre $\max(J)$ auch das Maximum von $U$,
-            was nicht sein kann, da $U$ als Dedekind-Menge kein Maximum hat.
-            Folglich gilt $\max(J) \not\in U$ und damit folgt, dass
-            \\[0.2cm]
-            \hspace*{1.3cm}
-            $U \subseteq J \backslash \{ \max(J) \} = I$
-            \\[0.2cm]
-            gilt.  Da $U \not= \emptyset$ ist, folgt auch $I \not= \emptyset$.
-      \end{enumerate}
-\item Wir zeigen $I \not= \mathbb{Q}$.
-
-      Nach Voraussetzung ist die Menge $\mathcal{M}$ nicht leer.  Sei $A \in \mathcal{M}$. Nach
-      Definition von $J$ gilt $J \subseteq A$ und wegen $I \subseteq J$ folgt  $I \subseteq A$.
-      Da $A$ eine Dedekind-Menge ist, gilt $A \not= \mathbb{Q}$.  Wegen $I \subseteq A$ folgt daraus sofort
-      $I \not= \mathbb{Q}$.
-\item Wir zeigen, dass $I$ nach unten abgeschlossen ist.
-
-      Es sei also $x \in I$ und $y < x$.  Dann gilt natürlich auch $x \in J$ und damit haben wir
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $x \in A$ \quad für alle $A \in \mathcal{M}$.
-      \\[0.2cm]
-      Nun sind die Mengen $A \in \mathcal{M}$ alle Dedekind-Mengen und damit nach unten abgeschlossen.
-      Damit folgt aus $x \in A$ und $y < x$ also
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $y \in A$ \quad für alle $A \in \mathcal{M}$.      
-      \\[0.2cm]
-      Nach Definition der Menge $J$ folgt daraus 
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $y \in J$.
-      \\[0.2cm]
-      Aus $x \in J$ und $y < x$ folgt, dass $y$ sicher nicht das Maximum der Menge $J$ ist.  Damit gilt
-      dann auch
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $y \in I$
-      \\[0.2cm]
-      und das war zu zeigen.
-\item Wir zeigen, dass die Menge $I$ kein Maximum hat.
-      Wir führen dazu eine Fallunterscheidung nach der Definition von $I = J^-$ durch.
-      \begin{enumerate}
-      \item Fall: $I = J$.
-
-            Dann hat die Menge $J$ kein Maximum und damit hat auch $I$ kein Maximum.
-      \item Fall: $I = J \backslash \{ a \}$ mit $a = \max(J)$.
-            
-            Wir führen den Nachweis indirekt und nehmen an, dass es ein $b \in I$ mit $b = \max(I)$ gibt.
-            Aus $b \in J$,  und $a = \max(J)$ folgt dann $b < a$, denn der Fall $b = a$ scheidet
-            wegen $a \not\in I$ aus.  Das arithmetische Mittel von $a$ und $b$ liegt zwischen $a$ und
-            $b$, wir haben also
-            \\[0.2cm]
-            \hspace*{1.3cm}
-            $b < \bruch{1}{2} \cdot (a + b) < a$.
-            \\[0.2cm]
-            Da die Menge $J$ nach unten abgeschlossen ist und $a \in J$ ist, folgt dann
-            \\[0.2cm]
-            \hspace*{1.3cm}
-            $\bruch{1}{2} \cdot (a + b) \in J$
-            \\[0.2cm]
-            und wegen $\bruch{1}{2} \cdot (a + b) \not= a$ muss dann auch
-            \\[0.2cm]
-            \hspace*{1.3cm}
-            $\bruch{1}{2} \cdot (a + b) \in I$
-            \\[0.2cm]
-            gelten, denn die Mengen $I$ und $J$ stimmen ja bis auf das Element $a$ überein.  Wegen
-            \\[0.2cm]
-            \hspace*{1.3cm}
-            $b < \bruch{1}{2} \cdot (a + b)$.
-            \\[0.2cm]
-            steht dies aber im Widerspruch zu $b = \max(I)$, so dass die Annahme, dass 
-            es ein $b \in I$ mit $b = \max(I)$ gibt, widerlegt ist.  
-      \end{enumerate}
-\end{enumerate}
-Um den Beweis abzuschließen zeigen wir nun, dass $I$ tatsächlich die größte untere Schranke der Menge
-$\mathcal{M}$ ist.  Aus der Definition
-\\[0.2cm]
-\hspace*{1.3cm}
-$J := \bigcap \mathcal{M}$
-\\[0.2cm]
-folgt zunächst $J \subseteq A$ für alle $A \in M$.  Wegen $I \subseteq J$ haben wir dann
-\\[0.2cm]
-\hspace*{1.3cm}
-$I \subseteq A$ \quad für alle $A \in \mathcal{M}$
-\\[0.2cm]
-und damit ist gezeigt, dass $I$ eine untere Schranke der Menge $\mathcal{M}$ ist.  Es bleibt zu zeigen,
-dass $I$ die größte untere Schranke der Menge $\mathcal{M}$ ist.  Sei also $U \in \mathcal{D}$ eine
-weitere untere Schranke von $\mathcal{M}$. Wir müssen zeigen, dass dann $U \subseteq I$ gilt.  Die
-Aussage, dass $U$ eine untere Schranke der Menge $\mathcal{M}$ bedeutet, dass
-\\[0.2cm]
-\hspace*{1.3cm}
-$U \subseteq A$ \quad für alle $A \in \mathcal{M}$ gilt.
-\\[0.2cm]
-Sei nun $x \in U$.  Dann gilt also auch
-\\[0.2cm]
-\hspace*{1.3cm}
-$x \in A$ \quad für alle $A \in \mathcal{M}$.
-\\[0.2cm]
-und aus der Definition $J = \bigcap \mathcal{M}$ folgt $x \in J$.  Damit haben wir schon mal 
-\\[0.2cm]
-\hspace*{1.3cm}
-$U \subseteq J$
-\\[0.2cm]
-gezeigt.  Um auch die Ungleichung $U \subseteq I$ zu zeigen,  nehmen wir an, dass zusätzlich zu $x \in U$
-auch $x = \max(J)$ gilt.  Aus $U \subseteq J$ folgt dann auch $x = \max(U)$,  was aber nicht sein kann,
-denn $U$ ist eine Dedekind-Menge und enthält daher kein Maximum.  Daher wird $x$ beim Übergang von $J$ zu
-$I = J^-$ nicht aus der Menge $J$ entfernt und es gilt auch $x \in I$.   Insgesamt haben wir damit
-$U \subseteq I$
-gezeigt und damit ist $I$ tatsächlich die größte untere Schranke der Menge $\mathcal{M}$.
-\qed
-
-
-
-\begin{Definition}[Supremum]
-Eine Menge $\mathcal{M} \subseteq \mathcal{D}$ ist \emph{in $\mathcal{D}$ nach oben beschränkt}, falls es ein
- $O \in \mathcal{D}$ gibt, so dass gilt:
-\\[0.2cm]
-\hspace*{1.3cm}
-$\forall A \in \mathcal{M}:  A \leq O$.
-\\[0.2cm]
-Eine Menge $S \in \mathcal{D}$ ist das \emph{Supremum} einer Menge $\mathcal{M}$, wenn $S$ die kleinste
-obere Schranke von $\mathcal{M}$ ist, wenn also 
-\\[0.2cm]
-\hspace*{1.3cm}
-$\forall A \in \mathcal{M}: A \leq S$ \quad \mbox{und} \quad
-$\forall T \in \mathcal{D}: \Bigl(\bigl(\forall A \in \mathcal{M}: A \leq T \bigr)\rightarrow S \leq T \Bigr)$
-\\[0.2cm]
-gilt.  In diesem Fall schreiben wir
-\\[0.2cm]
-\hspace*{1.3cm}
-$S = \sup( \mathcal{M} )$.
-\eod
-\end{Definition}
-
-
-\exercise
-Zeigen Sie, dass jede nicht-leere und in $\mathcal{D}$ oben beschränkte Menge
-$\mathcal{M} \subseteq \mathcal{D}$ ein Supremum $S \in \mathcal{D}$ hat.
+Zeigen Sie, dass jede nicht-leere und in $\mathcal{D}$ nach oben beschränkte Menge
+$\mathcal{M} \subseteq \mathcal{D}$ ein Supremum $S \in \mathcal{D}$ hat.  
 \vspace*{0.2cm}
 
 \noindent
-\textbf{Hinweis}:  Es gibt zwei Möglichkeiten, diesen Nachweis zu führen.
-\begin{enumerate}
-\item Wir definieren $S := \bigcup \mathcal{M}$.  Es lässt sich zeigen, dass die so definierte Menge
-      $S$ bereits eine Dedekind-Menge ist und damit insbesondere kein Maximum enthält.  
-      Weiter können Sie dann nachweisen, dass tatsächlich $S = \sup(\mathcal{M})$ gilt.  
-\item Alternativ können Sie auch versuchen auszunutzen, dass wir bereits gezeigt haben, dass für
-      eine nach unten beschränkte nicht-leere Menge $\mathcal{M} \subseteq \mathcal{D}$
-      das Infimum existiert.
+\textbf{Hinweis}: Sie können das Supremum von $\mathcal{M}$ als die Vereinigung aller Mengen aus
+$\mathcal{M}$ definieren.  Es gilt also
+\\[0.2cm]
+\hspace*{1.3cm}
+$\sup(\mathcal{M}) = \bigcup \mathcal{M} := \{ x \in \mathbb{Q} \mid \exists A \in \mathcal{M}: x \in A \}$.
+\eox
 
-      Diese zweite Alternative ist deutlich einfacher als die erste, aber die erste Alternative hat den
-      Vorteil, dass Sie damit einen unabhängigen Beweis der Vollständigkeit der reellen Zahlen erbringen.
-      \eox 
-\end{enumerate}
 
 \begin{Definition}[Addition von Dedekind-Mengen]
 Es seien $A$ und $B$ Dedekind-Mengen.  Dann definieren wir die Summe $A + B$ wie folgt:
 \\[0.2cm]
 \hspace*{1.3cm}
-$A + B := \{ x + y \mid x \in A \wedge y \in B \}$. \eod
+$A + B := \{ x + y \mid x \in A \wedge y \in B \}$. \edx
 \end{Definition}
 
 \exercise
@@ -899,128 +949,17 @@ solchen Fall ist $-\!A$ positiv.  Falls $A$ oder $B$ negativ ist, lautet die Def
 \end{enumerate}
 Nun müssten wir noch nachweisen, dass für die so definierte Multiplikation zusammen mit der oben definierten
 Addition die Körper-Axiome gelten.  Aus Zeitgründen verzichten wir darauf.
-
-
-\exercise
-Es sei $r \in \mathbb{Q}$ mit $r > 0$.  Beweisen Sie, dass es eine natürliche Zahl $n$ gibt, so dass
-$r < n$ ist. \eox
 \vspace*{0.3cm}
 
-\noindent
-In der nun folgenden Definition stellen wir die Eigenschaften der reellen Zahlen noch einmal in
-axiomatischer Form zusammen.
-\pagebreak
-
-\begin{Definition}[Angeordneter Körper]
-  Ein \emph{angeordneter Körper} ist ein 6-Tupel 
-  \\[0.2cm]
-  \hspace*{1.3cm}
-  $\langle \mathbb{K}, 0, 1, +, \cdot, \leq \rangle$
-  \\[0.2cm]
-  für das Folgendes gilt:
-  \begin{enumerate}
-  \item $\mathbb{K}$ ist eine Menge, 
-  \item $0 \in \mathbb{K}$, $1 \in \mathbb{K}$ und $0 \not= 1$,
-  \item $+: \mathbb{K} \times \mathbb{K} \rightarrow \mathbb{K}$
-
-        ist eine binäre Operation auf $\mathbb{K}$, so dass $\langle \mathbb{K}, 0, + \rangle$
-        eine kommutatve Gruppe ist, für alle $x,y,z \in \mathbb{K}$ gilt also:
-        \begin{enumerate}
-        \item $(x + y) + z = x + (y + z)$,
-        \item $x + y = y + x$,
-        \item $0 + x = x$,
-        \item $\exists y \in \mathbb{K}: x + y = 0$.
-
-              Dasjenige $y \in \mathbb{K}$, für welches $x + y = 0$ gilt, ist dann eindeutig bestimmt und wird mit
-              $-x$ bezeichnet.
-        \end{enumerate}
-  \item $\cdot: \mathbb{K} \times \mathbb{K} \rightarrow \mathbb{K}$
-
-        ist eine binäre Operation auf $\mathbb{K}$, so dass $\langle \mathbb{K}\backslash\{0\}, 1, \cdot \rangle$
-        eine kommutative Gruppe ist, für alle $x,y,z \in \mathbb{K} \backslash\{0\}$ gilt also:
-        \begin{enumerate}
-        \item $(x \cdot y) \cdot z = x \cdot (y \cdot z)$,
-        \item $x \cdot y = y \cdot x$,
-        \item $1 \cdot x = x$,
-        \item $\exists y \in \mathbb{K}: x \cdot y = 1$.
-
-              Das eindeutig bestimmte $y \in \mathbb{K}$, für das $x \cdot y = 1$ gilt, wird mit $\frac{1}{x}$ bezeichnet.
-        \end{enumerate}
-  \item Die Operationen $+$ und $\cdot$ genügen dem Distributiv-Gesetz
-        \\[0.2cm]
-        \hspace*{1.3cm}
-        $x \cdot (y + z) = x \cdot y + x \cdot z$.
-  \item $\leq: \mathbb{K} \times \mathbb{K} \rightarrow \mathbb{B}$
-    
-        ist eine binäre Relation auf $\mathbb{K}$, so dass das Paar $\langle \mathbb{K}, \leq
-       \rangle$ eine lineare Ordnung ist.  Für alle
-        $x,y,z \in \mathbb{K}$ gilt also
-        \begin{enumerate}
-        \item $x \leq x$,
-        \item $x \leq y \wedge y \leq x \rightarrow x = y$,
-        \item $x \leq y \wedge y \leq z \rightarrow x \leq z$,
-        \item $x \leq y \vee y \leq x$.
-        \end{enumerate}
-  \item Definieren wir die binäre Relation $<: \mathbb{K} \times \mathbb{K} \rightarrow \mathbb{B}$
-        für alle $x,y \in \mathbb{K}$ durch die Festlegung
-        \\[0.2cm]
-        \hspace*{1.3cm}
-        $x < y \stackrel{\mathrm{def}}{\Longleftrightarrow} x \leq y \wedge x \not= y$
-        \\[0.2cm]
-        so sind die Operationen $+$ und $\cdot$ mit der Relation $<$ in folgender Weise verträglich:
-        \begin{enumerate}
-        \item $0 < x \wedge 0 < y \rightarrow 0 < x + y$,
-        \item $0 < x \wedge 0 < y \rightarrow 0 < x \cdot y$,
-        \end{enumerate}
-\end{enumerate}
-Falls die Ordnung $\langle \mathbb{K}, \leq \rangle$ zusätzlich eine vollständige Ordnung ist, wenn
-also zu jeder nicht-leeren nach unten beschränkten Menge $M \subseteq \mathbb{K}$ ein Infimum
-existiert, dann ist die Struktur  $\langle \mathbb{K}, 0, 1, +, \cdot, \leq \rangle$ ein vollständig
-angeordneter Körper.  \eod
-\end{Definition}
 
 
-\examples
-\begin{enumerate}
-\item Die Struktur
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $\mathcal{Q} := \langle \mathbb{Q}, 0, 1, +, \cdot, \leq \rangle$ 
-      \\[0.2cm]
-      ist ein angeordneter Körper,  aber wir hatten früher bereits gesehen, dass die Ordnung $\langle \mathbb{Q}, \leq \rangle$
-      keine vollständige Ordnung ist und daher ist $\mathcal{Q}$ kein vollständig angeordneter Körper.
-\item Die Struktur 
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $\mathcal{R} := \langle \mathbb{R}, 0, 1, +, \cdot, \leq \rangle$ 
-      \\[0.2cm]
-      ist ein vollständig angeordneter Körper.  Es lässt sich zeigen, dass diese Struktur bis auf
-      Isomorphie der einzige vollständig angeordnete Körper ist.  Wenn also
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $\mathcal{K} := \langle \mathbb{K}, \widehat{0}, \widehat{1}, \widehat{+}, \hat{\cdot}, \widehat{\leq} \rangle$ 
-      \\[0.2cm]
-      ein weiterer vollständig angeordneter Körper ist, dann gibt es eine bijektive Funktion
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $f: \mathbb{R} \rightarrow \mathbb{K}$
-      \\[0.2cm]
-      die mit den Operationen $+$, $\cdot$ und $\leq$ verträglich ist, es gilt dann also
-      \begin{enumerate}
-      \item $f(x + y) = f(x) \;\widehat{+}\; f(y)$,
-      \item $f(x \cdot y) = f(x) \;\hat{\cdot}\; f(y)$,
-      \item $x \leq y  \leftrightarrow f(x) \;\widehat{\leq}\; f(y)$.
-      \end{enumerate}
-      Damit stimmen die Strukturen $\mathcal{R}$ und $\mathcal{K}$ dann bis auf die Benennung der
-      Elemente überein. \eox
-\end{enumerate}
 
 \noindent
 \textbf{Literatur-Hinweise} \\
 In dem Buch ``\emph{Grundlagen der Analysis}'' von Edmund Landau \cite{landau:1930} wird die oben skizzierte
-Konstruktion der reellen Zahlen im Detail beschrieben.   Auch das Buch ``\emph{Principles of
-  Mathematical Analysis}'' von Walter Rudin \cite{rudin:1976} diskutiert die Konstruktion der reellen
-Zahlen mit Hilfe von Dedekind-Mengen ausführlich. 
+Konstruktion der reellen Zahlen im Detail beschrieben.   
+Auch das Buch ``\emph{Principles of  Mathematical Analysis}'' von Walter Rudin \cite{rudin:1976}
+diskutiert die Konstruktion der reellen Zahlen mit Hilfe von Dedekind-Mengen ausführlich. 
 
 
 
@@ -1032,7 +971,7 @@ Zahlen mit Hilfe von Schnitten geht auf Richard Dedekind zurück, der die nach ih
 \href{http://books.google.de/books?id=n-43AAAAMAAJ&printsec=frontcover&source=gbs_ge_summary_r&cad=0#v=onepage&q&f=false}{Stetigkeit und irrationale Zahlen} 
 \cite{dedekind:1872}, das im Jahre 1872 erschienen ist, beschrieben hat.  Damit war erstmals eine
 formale Definition des Begriffs der reellen Zahlen gefunden worden.  Diese Definition war eine der wichtigsten
-Fortschritte im Bereich der mathematischen Grundlagenforschung des 19ten Jahrhunderts, denn sie
+Fortschritte im Bereich der mathematischen Grundlagenforschung des 19.~Jahrhunderts, denn sie
 ermöglichte es, die Analysis auf ein solides Fundament zu stellen.
 
 %%% Local Variables: 
