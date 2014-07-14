@@ -1057,7 +1057,82 @@ Fixpunkt-Satz nur für den Spezialfall der reellen Zahlen formulieren und beweise
 In der Mathematik wird dieser Satz in einem abstrakteren Rahmen verwendet, die Menge der
 reellen Zahlen wird dann durch einen \emph{vollständigen}
 \href{http://de.wikipedia.org/wiki/Metrischer_Raum}{\emph{metrischen Raum}} ersetzt.
-  
+
+Bevor wir den Banach'schen Fixpunkt-Satz formulieren und beweisen, wollen wir das damit verbundene
+Fixpunkt-Verfahren motivieren.  Wir haben bereits einmal ein solches angewendet:  In dem Kapitel
+\ref{chapter:folgen-und-reihen} über Folgen und Reihen hatten wir die Gleichung 
+\\[0.2cm]
+\hspace*{1.3cm}
+$x = \cos(x)$
+\\[0.2cm]
+mit Hilfe eines Fixpunkt-Verfahrens gelöst.  Wir hatten damals induktiv eine Folge $\folge{x_n}$
+definiert, indem wir $x_1 := 0$ und $x_{n+1} := \cos(x_n)$ definiert hatten.  Das in Abbildung
+\ref{fig:solve.stlx} auf Seite \pageref{fig:solve.stlx}
+gezeigte Programm berechnet die Folge $\folge{x_n}$ und wir hatten gesehen,
+dass diese Folge gegen einen Grenzwert 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds \bar{x} := \lim\limits_{n\rightarrow\infty} x_n$ 
+\\[0.2cm]
+konvergiert,  der wegen
+\\[0.2cm]
+\hspace*{1.3cm}
+$\cos(\bar{x}) = \cos\left(\lim\limits_{n\rightarrow\infty} x_n\right) = 
+\lim\limits_{n\rightarrow\infty} \cos(x_n) = \lim\limits_{n\rightarrow\infty} x_{n+1} = \bar{x}
+$
+\\[0.2cm]
+auch eine Lösung der Fixpunkt-Gleichung $x = \cos(x)$ ist.  Wir wollen dieses Verfahren nun
+verallgemeinern.  Wir nehmen dazu an, dass eine stetige Funktion $f$ gegeben ist und wir eine Lösung
+der Fixpunkt-Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$x = f(x)$ 
+\\[0.2cm]
+iterativ bestimmen wollen, indem wir induktiv eine Folge $\folge{x_n}$ definieren, wobei 
+$x_{n+1} = f(x_n)$ gelten soll.  Den Startwert $x_1$ werden wir dabei weitgehend willkürlich
+wählen.  Zunächst ist Folgendes klar:  Sollte die Folge $\folge{x_n}$ gegen einen Grenzwert
+$\bar{x}$ konvergieren, so ist dieser Grenzwert eine Lösung der Fixpunkt-Gleichung $x = f(x)$, denn
+es gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds f(\bar{x}) = f\left(\lim\limits_{n\rightarrow\infty} x_n\right) = 
+\lim\limits_{n\rightarrow\infty} f(x_n) = \lim\limits_{n\rightarrow\infty} x_{n+1} = \bar{x}
+$.
+\\[0.2cm]
+Dabei haben wir bei der Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$ f\left(\lim\limits_{n\rightarrow\infty} x_n\right) = \lim\limits_{n\rightarrow\infty} f(x_n)$
+\\[0.2cm]
+die Stetigkeit von $f$ ausgenutzt.  Weniger klar ist die Antwort auf die Frage, wann die durch
+$x_{n+1} = f(x_n)$ definierte Folge konvergiert.  Die entscheidende Antwort auf diese Frage hat
+Stefan Banach gegeben:  Wenn die Funktionswerte von $f$ näher beieinander liegen als die Argumente,
+dann konvergiert die Folge.  Bevor wir das im Detail formal untersuchen, wollen wir die dahinter
+liegende Anschauung verstehen.  Nehmen wir an, dass die Fixpunkt-Gleichung $f(x) = x$ eine Lösung
+$\bar{x}$ hat und nehmen wir weiter an, dass eine (nicht besonders gute) Näherung $x_1$ für
+$\bar{x}$ gegeben ist.  Wenn nun die Funktionswerte von $f$ näher beieinander liegen als die
+Argumente, dann können wir die Näherung $x_1$ zu einer Näherung $x_2$ verbessern, indem wir 
+\\[0.2cm]
+\hspace*{1.3cm}
+$x_2 := f(x)$
+\\[0.2cm]
+definieren.  Warum ist $x_2$ besser als $x_1$?  Um diese Frage zu beantworten, betrachten wir den
+Abstand von  $x_2$ und $\bar{x}$.  Es gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}{cll}
+   & |x_2 - \bar{x}|  \\[0.2cm]
+ = & |f(x_1) - f(\bar{x})| & \mbox{denn $x_2 = f(x_1)$ und $\bar{x} = f(\bar{x})$}  \\[0.2cm]
+ < & |x_1 - \bar{x}|,
+\end{array}
+$
+\\[0.2cm]
+wobei wir bei der letzten Ungleichung benutzt haben, dass die Funktionswerte von $f$ näher
+beieinander liegen als die Argumente.  Um diese Argumentation wasserdicht zu machen, definieren wir
+zunächst formal unter welchen Umständen die Funktionswerte einer Funktion näher beieinander liegen
+als die Argumente.  Die nun folgende Definition ist etwas schärfer, als Sie es vielleicht im ersten
+Moment vermuten würden.  Das werden wir später noch diskutieren.
 
 \begin{Definition}[kontrahierend] 
 Eine Funktion $f:[a,b] \rightarrow [a,b]$ ist eine \emph{kontrahierende Abbildung} wenn es eine
@@ -1071,7 +1146,11 @@ gilt.  Wir bezeichnen die Zahl $q$ als den \emph{Kontraktions-Koeffizienten}.
 \end{Definition}
 
 \noindent
-\textbf{Beispiel}: Die Funktion $\cos:[0,1] \rightarrow [0,1]$
+\textbf{Beispiel}: Die Funktion
+\\[0.2cm]
+\hspace*{1.3cm}
+$\cos:[0,1] \rightarrow [0,1]$
+\\[0.2cm]
 ist eine kontrahierende Abbildung.  
 Zunächst müssen wir uns davon überzeugen, dass diese Funktion wohldefiniert ist.
 Dazu muss aus $x\in[0,1]$ folgen, dass auch $\cos(x) \in [0,1]$ gilt.  Dies folgt aus  $\cos(0) = 1$, 
@@ -1093,6 +1172,7 @@ Also haben wir folgende Abschätzung
 $|\cos(x) - \cos(y)| = \sin(\zeta) \cdot  |x - y| \leq 0.85 \cdot  |x - y|$ \quad für alle $x,y\in[0,1]$.
 \eox
 
+\noindent
 Das letzte Beispiel verallgemeinern wir zu einem Satz.
 
 \begin{Satz}
@@ -1288,14 +1368,77 @@ diesem Intervall monoton wächst, haben wir den Kontraktions-Koeffizient als
 $\sin(1) \approx 0.85$ berechnet.  Für die  Lösung $\bar{x}$ der Fixpunkt-Gleichung gilt
 aber $\sin(\bar{x}) \approx 0.67$, so dass der Kontraktions-Koeffizient kleiner wird, je
 mehr wir uns der Lösung annähern.
-\vspace*{0.3cm}
+\pagebreak
+
 
 \exercise
 Lösen Sie für $y=10^6$ und $y=10^{-6}$ die Gleichung $x\cdot \exp(x) = y$ 
 durch eine einfache Fixpunkt-Iteration.  Berechnen Sie die Lösung $x$ jeweils auf eine
-Genauigkeit von $10^{-7}$. \eox
+Genauigkeit von $10^{-7}$. 
+\vspace*{0.2cm}
 
-\vspace*{0.3cm}
+\noindent
+\textbf{Hinweis}:  Diese Aufgabe ist in erster Linie als Programmier-Aufgabe gedacht.
+\eox
+
+
+Bei der Definition einer kontrahierenden Abbildung haben Sie sich vielleicht gewundert, warum es
+nicht reicht zu fordern, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$|f(x) - f(y)| < |x - y|$
+\\[0.2cm]
+gilt.  Eine Funktion, die nur diese schwächere Bedingung erfüllt, wollen wir als eine 
+\emph{schwach kontrahierende Abbildung} bezeichnen.  In der Tat kann gezeigt werden, dass auch für
+eine schwach kontrahierende Abbildung $f$ die Folge $x_{n+1} := f(x_n)$ für beliebige Startwerte
+gegen eine Lösung der Fixpunkt-Gleichung $x = f(x)$ konvergiert.  Allerdings ist die Konvergenz unter Umständen
+nur sehr langsam.  Als Beispiel betrachten wir die Funktion $x \mapsto \sin(x)$.  Offenbar hat die Gleichung
+$x = \sin(x)$ bei $\bar{x}=0$ einen Fixpunkt.  Setzen wir $x_1 := 1$ und berechnen wir die Folge
+$x_n$ numerisch, so erhalten wir die in Tabelle \ref{tab:sinXisX} gezeigten Ergebnisse.  Selbst nach
+$10^8$ Iterationen haben wir die Lösung der Gleichung $x = \sin(x)$ erst auf drei Stellen genau
+berechnet.  Der Grund dafür ist, dass die Ableitung der Sinus-Funktion der Cosinus ist, und dieser hat
+an der Stelle $x = 0$ den Betrag $1$.  Es ist zwar so, dass die Funktion $x \mapsto \sin(x)$
+schwach kontrahierend ist, aber es gibt kein $q < 1$, so dass für alle $x,y \in \mathbb{R}$ die Ungleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$| \sin(x) - \sin(y) | \leq q \cdot |x - y|$
+\\[0.2cm]
+erfüllt ist.  Das ist der Grund für die äußerst langsame Konvergenz der Folge $\folge{x_n}$.
+
+\begin{table}
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+    n  &  $x_n$ \\
+    \hline
+    \hline
+        1 & 0.8414709848078965 \\
+  \hline
+       10 & 0.48132935526234627 \\
+  \hline
+      100 & 0.1696653247073242  \\
+  \hline
+     1000 & 0.05462012602579727   \\
+  \hline
+    10000 & 0.017314486231827124 \\
+  \hline
+   100000 & 0.005476997236720512 \\
+  \hline
+  1000000 &  0.0017320423900648602 \\
+  \hline
+ 10000000 & 5.477222534834344E-4  \\
+  \hline 
+100000000 & 1.7320506994644328E-4 \\
+  \hline
+  \end{tabular}
+  \caption{Werte der durch $x_{n+1} = \sin(x_n)$ definierten Folge $\folge{x_n}$.}
+  \label{tab:sinXisX}
+\end{table}
+
+
+
+
+\subsection{Beschleunigung der Fixpunkt-Iteration}
 Auch mit 36 Iterationen ist die Fixpunkt-Iteration bei der Lösung der Gleichung $x = \cos(x)$
  dem Bisektions-Verfahren unterlegen.
 Wir stellen uns daher die Frage, ob wir die Konvergenz der Fixpunkt-Iteration
@@ -2196,8 +2339,8 @@ nach 35 Schritten gefunden.
   \caption{Konvergenz des Jacobi-Verfahrens.}
   \label{tab:jacobi}
 \end{table}
-\vspace*{\fill}
-\pagebreak
+
+
 
 
 \subsubsection{Das Gauß-Seidel-Verfahren}

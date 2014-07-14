@@ -1,0 +1,18 @@
+// compute the sequence (x_n)_n defined inductively as follows:
+//  1. x_1     := 1.0,
+//  2. x_{n+1} := sin(x_n)
+solve := procedure(k) {
+    n := 1;
+    x := 1; 
+    powers := { 10 ** i : i in [0 .. k] };
+    while (n <= 10 ** k) {
+        n += 1;
+        x := sin(x);
+        if (n in powers) {
+            print("x_{$n$} = $x$");
+        }
+    }
+};
+
+solve(9);
+
