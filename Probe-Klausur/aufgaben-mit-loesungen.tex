@@ -1,0 +1,569 @@
+\documentclass{article}
+\usepackage{german}
+\usepackage{fancyvrb}
+\usepackage[latin1]{inputenc}
+
+\usepackage{fancyhdr}
+\usepackage{lastpage} 
+
+\pagestyle{fancy}
+
+\fancyfoot[C]{--- \thepage/\pageref{LastPage}\ ---}
+
+\fancypagestyle{plain}{%
+\fancyhf{}
+\fancyfoot[C]{--- \thepage/\pageref{LastPage}\ ---}
+\renewcommand{\headrulewidth}{0pt}
+}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{\arabic{enumii}.}
+
+\usepackage{a4wide}
+\usepackage{amssymb}
+\usepackage{epsfig}
+
+\setlength{\textwidth}{15cm}
+
+\newcounter{aufgabe}
+\newcommand{\exercise}{\vspace*{0.3cm}
+\stepcounter{aufgabe}
+
+\noindent
+\textbf{Aufgabe \arabic{aufgabe}}: }
+
+\newcommand{\bruch}[2]{\displaystyle\frac{#1}{#2}}
+\newcommand{\folge}[1]{\bigl(#1\bigr)_{n\in\mathbb{N}}}
+\newcommand{\df}{\displaystyle\frac{d\;}{dx}}
+\def\pair(#1,#2){\langle #1, #2 \rangle}
+\newcommand{\punkte}[1]{\hspace*{\fill} \mbox{(#1 Punkte)}}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{\arabic{enumii}.}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\qed}{\hspace*{\fill} $\Box$}
+
+\newcommand{\solution}{\vspace*{0.2cm}
+
+\noindent
+\textbf{Lösung}: }
+
+\begin{document}
+
+\noindent
+{\large  Musterklausur mit Lösung zur Vorlesung  ``{\sl Analysis}''}
+\vspace{0.5cm}
+
+\exercise
+\begin{enumerate}
+\item Wie lautet die Definition des Grenzwerts einer Folge? 
+      \punkte{2}
+\item Beweisen Sie unter Rückgriff auf die Definition des Grenzwerts einer Folge, dass 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds \lim\limits_{n \rightarrow \infty} \frac{1}{n^2} = 0$
+      \\[0.2cm]
+      gilt.  
+      \punkte{8}
+\end{enumerate}
+
+\solution 
+\begin{enumerate}
+\item Es gilt $\lim\limits_{n \rightarrow \infty} a_n = g$ genau dann wenn
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\forall \varepsilon \in \mathbb{R}_+: \exists K \in \mathbb{R}: \forall n \in \mathbb{N}: n \geq K \rightarrow |a_n - g| < \varepsilon
+      $
+      \\[0.2cm]
+      erfüllt ist.
+\item Sei $ \varepsilon >  0$  gegeben.  Wir definieren $K := \bruch{1}{\varepsilon} + 1$.  
+      Sei weiter $n \in \mathbb{N}$ mit $n \geq K$ gegeben.  Dann gilt:
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}{cll}
+                  & n \geq \bruch{1}{\varepsilon} + 1      \\[0.3cm] 
+      \Rightarrow & n > \bruch{1}{\varepsilon} & \mid \cdot \;\varepsilon \\[0.3cm]
+      \Rightarrow & n \cdot \varepsilon > 1       & \mid \cdot \;\bruch{1}{n} \\[0.3cm]
+      \Rightarrow & \varepsilon > \bruch{1}{n}   & \\[0.4cm]
+      \Rightarrow & \varepsilon > \bruch{1}{n^2} & \mbox{denn $\ds \frac{1}{n^2} < \frac{1}{n}$}
+      \end{array}
+      $
+       \\[0.2cm]
+       Da andererseits  $0 < \bruch{1}{n^2}$ gilt, haben wir insgesamt für alle $n > K$
+       \\[0.2cm]
+       \hspace*{1.3cm}
+       $
+       \begin{array}{cl}
+                     & 0 < \bruch{1}{n^2} < \varepsilon              \\[0.4cm]
+         \Rightarrow & \left|\bruch{1}{n^2}\right| < \varepsilon     \\[0.4cm]
+         \Rightarrow & \left|\bruch{1}{n^2}-0\right| < \varepsilon
+       \end{array}
+       $
+       \\[0.2cm]
+       gezeigt. \qed
+\end{enumerate}
+\pagebreak
+
+\exercise
+Es seien  $(a_n)_{n\in\mathbb{N}}$ und $(b_n)_{n\in\mathbb{N}}$ zwei konvergente Folgen.  Außerdem gelte
+\\[0.2cm]
+\hspace*{1.3cm}
+$a_n < b_n$  \quad für alle $n \in \mathbb{N}$.
+\begin{enumerate}
+\item Beweisen oder widerlegen Sie, dass dann die Ungleichung
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\lim\limits_{n \rightarrow \infty} a_n \leq \lim\limits_{n \rightarrow \infty} b_n$
+      \\[0.2cm]
+      richtig ist.  
+      \punkte{12}
+\item Beweisen oder widerlegen Sie, dass zusätzlich auch die Ungleichung
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\lim\limits_{n \rightarrow \infty} a_n < \lim\limits_{n \rightarrow \infty} b_n$
+      \\[0.2cm]
+      erfüllt ist.  
+      \punkte{4}
+\end{enumerate}
+
+\solution 
+\begin{enumerate}
+\item \textbf{Beweis}:  Wir definieren 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $a := \lim\limits_{n \rightarrow \infty} a_n$ \quad und \quad
+      $b := \lim\limits_{n \rightarrow \infty} b_n$.
+      \\[0.2cm]
+      Wir führen den Beweis indirekt und nehmen an, dass $b < a$ gilt.  Wir definieren 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds\varepsilon := \frac{1}{2} \cdot (a - b)$.
+      \\[0.2cm]
+      Aufgrund der Annahme $b < a$ gilt $\varepsilon > 0$.  Nach der Definition des Grenzwerts einer
+      Folge finden wir $K_1 \in \mathbb{R}_+$ und $K_2 \in \mathbb{R}_+$, so dass für alle
+      $n\in\mathbb{N}$ 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $n \geq K_1 \rightarrow |a_n - a| < \varepsilon$ \quad und \quad
+      $n \geq K_2 \rightarrow |b_n - b| < \varepsilon$
+      \\[0.2cm]
+      gilt.  Wir setzen $K := \max(K_1,K_2)$.  Ist nun $n$ eine Zahl, die größer als $K$ ist, so gilt einerseits
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds b_n < b + \varepsilon = b + \frac{1}{2} \cdot (a - b) = \frac{1}{2} \cdot (a + b)$
+      \\[0.2cm]
+      und andererseits 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds a_n > a - \varepsilon = a - \frac{1}{2} \cdot (a - b) = \frac{1}{2} \cdot (a + b)$.
+      \\[0.2cm]
+      Fassen wir diese beiden Ungleichungen zusammen, so haben wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds b_n < \frac{1}{2} \cdot (a + b) < a_n$, \quad also \quad $b_n < a_n$.
+      \\[0.2cm]
+      Das ist ein Widerspruch zur Voraussetzung $a_n < b_n$. 
+      \qed
+\item Die Ungleichung
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\lim\limits_{n \rightarrow \infty} a_n < \lim\limits_{n \rightarrow \infty} b_n$
+      \\[0.2cm]
+      ist im Allgemeneinen falsch.  Als Gegenbeispiel definieren wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+       $\ds a_n := \frac{1}{n^2}$ \quad und \quad $\ds b_n := \frac{1}{n}$.
+      \\[0.2cm]
+      Mit dieser Definition gilt sicher $a_n < b_n$ für alle $n \in \mathbb{N}$, aber wir haben
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds\lim\limits_{n \rightarrow \infty} \frac{1}{n^2} = 0$ \quad und \quad
+      $\ds\lim\limits_{n \rightarrow \infty} \frac{1}{n} = 0$
+      \\[0.2cm]
+      und somit gilt in diesem Fall $\ds\lim\limits_{n \rightarrow \infty} a_n = \lim\limits_{n
+        \rightarrow \infty} b_n$. 
+      \qed
+ \end{enumerate}
+\pagebreak
+
+\exercise
+Berechnen Sie die Konvergenz-Radien der folgenden Potenz-Reihen: 
+\begin{enumerate}
+\item $\ds\sum\limits_{n=1}^\infty \bruch{x^n}{n^2}$. \punkte{5}
+\item $\ds\sum\limits_{n=1}^\infty \sqrt{n} \cdot x^n$. \punkte{5}
+\end{enumerate}
+\vspace{0.2cm}
+
+\solution
+Wir berechnen den Konvergenz-Radius $R$ in beiden Fällen nach der Formel
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds R = \lim\limits_{n \rightarrow \infty} \left|\frac{a_n}{a_{n+1}}\right|$.
+\\[0.2cm]
+Hierbei bezeichnet $a_n$ den Koeffizienten des Terms $x^n$.  Da in den beiden Teilaufgaben die
+Koeffizienten $a_n$ jedesmal positiv sind, können wir die Betragsstriche weglassen.
+\begin{enumerate}
+\item Es gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+     $
+      \begin{array}[t]{lcl}
+      R & = & \ds \lim\limits_{n \rightarrow \infty} \frac{\frac{1}{n^2}}{\frac{1}{(n+1)^2}}  \\[0.6cm]
+        & = & \ds \lim\limits_{n \rightarrow \infty} \frac{(n+1)^2}{n^2}                      \\[0.4cm]
+        & = & \ds \lim\limits_{n \rightarrow \infty} \left(1+\frac{1}{n}\right)^2             \\[0.4cm]
+        & = & 1.
+      \end{array}
+      $
+\item Es gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{lcl}
+      R & = & \ds \lim\limits_{n \rightarrow \infty} \frac{\sqrt{n}}{\sqrt{n+1}}     \\[0.6cm]
+        & = & \ds \lim\limits_{n \rightarrow \infty} \frac{1}{\sqrt{1+\frac{1}{n}}}  \\[0.6cm]
+        & = & \ds \frac{1}{\sqrt{1+ \lim\limits_{n \rightarrow \infty}\frac{1}{n}}}  \\[0.6cm]
+        & = & \ds \lim\limits_{n \rightarrow \infty} \frac{1}{\sqrt{1+0}}            \\[0.4cm]
+        & = & 1.
+      \end{array}
+      $
+\end{enumerate}
+\textbf{Bemerkung}:
+Bei der Anwendung der obigen Formel für den Konvergenz-Radius ist zu beachten, dass die Formel nur
+angewendet werden darf, wenn der Grenzwert tatsächlich existiert.
+\pagebreak
+
+\exercise
+Die Fixpunkt-Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds x = \frac{1}{2} \cdot \cos(x^2)$  
+\\[0.2cm]
+soll  durch  die Fixpunkt-Iteration 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds x_{n+1} = \frac{1}{2} \cdot \cos(x_n^2)$ 
+\\[0.1cm]
+gelöst werden.  Lösen Sie in diesem Zusammenhang die folgenden Teilaufgaben.
+\begin{enumerate}
+\item Zeigen Sie, dass die Abbildung $f:\bigl[0,\frac{1}{2}\bigr] \rightarrow
+  \bigl[0,\frac{1}{2}\bigr]$ mit
+      \\[0.2cm]
+      \hspace*{1.3cm}
+       $f(x) = \frac{1}{2}\cdot\cos(x^2)$ 
+      \\[0.2cm]
+      kontrahierend ist und bestimmen Sie den Kontraktions-Koeffizienten.
+      \punkte{8}
+\item Bestimmen Sie, wie viele Iterations-Schritte ausgehend von dem Startwert $x_0 = 0$
+      höchstens durchgeführt werden müssen um die Lösung mit einer Genauigkeit von $10^{-6}$
+      zu berechnen.
+      \punkte{8}
+\item Lösen Sie die Gleichung $x = \frac{1}{2}\cdot\cos\bigl(x^2\bigr)$ mit
+      dem \textbf{Newton'schen Verfahren} in dem Sie ausgehend von dem Startwert $x_1 = 0$ 
+      drei Iterations-Schritte des Newton'schen Verfahrens durchführen.
+      Geben Sie zunächst die Iterations-Vorschrift an und führen Sie dann die Rechnung aus.
+      Sie müssen mit einer Genauigkeit von mindestens 7 Stellen hinter dem Komma rechnen!
+      \punkte{10}
+\end{enumerate}
+
+\solution
+\begin{enumerate}
+\item Es gilt $f'(x) = - x \cdot\sin\bigl(x^2)$.  In dem Intervall $\bigl[0, \frac{1}{2}\bigr]$
+      ist die Funktion $x \mapsto x^2$ monoton steigen.  Diese Funktion bildet das Intervall  
+      $\bigl[0, \frac{1}{2}\bigr]$ auf das Intervall $\bigl[0, \frac{1}{4}\bigr]$ ab.  In diesem
+      Intervall ist die Funktion $x \mapsto \sin(x)$ ebenfalls monoton steigend.  Damit ist auch die
+      zusammengesetzte Funktion $x \mapsto \sin\bigl(x^2)$ in dem Intervall $\bigl[0, \frac{1}{2}\bigr]$
+      monoton steigend.   Da die Funktion $x \mapsto x$ offenbar ebenfalls monoton steigend ist,
+      ist auch das Produkt dieser Funktionen in dem Intervall $\bigl[0, \frac{1}{2}\bigr]$ 
+      monoton steigend.  Dieses Produkt ist aber gerade $|f'(x)|$.  Damit gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $|f'(x)| \leq |f'\bigl(\frac{1}{2}\bigr)| \leq \frac{1}{2} \cdot\sin\bigl(\frac{1}{4}\bigr) = 0.12370197962726147$
+      \\[0.2cm]
+      Also ist die Abbildung $f$ kontrahierend mit dem Kontraktions-Koeffizienten
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $q = 0.12370197962726147$.
+\pagebreak
+
+\item Bezeichnen wir die Lösung der Fixpunkt-Gleichung $x = f(x)$ mit $\bar{x}$, so gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds |x_n - \bar{x}| \leq \frac{q^n}{1- q} \cdot  |x_1 - x_0|$.
+      \\[0.2cm]
+      Wir suchen daher ein $n$, so dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds \frac{q^n}{1- q} \cdot  |x_1 - x_0| \leq \varepsilon$
+      \\[0.2cm]
+      gilt, wobei $\varepsilon = 10^{-6}$ ist.  Es gilt $x_1 = f(x_0) = f(0) = \frac{1}{2}$.
+      Also rechnen wir wie folgt:
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{lcl}
+                        & \ds \frac{q^n}{1- q} \cdot  \Bigl|\frac{1}{2} - 0\Bigr| \leq \varepsilon \\[0.5cm]
+        \Leftrightarrow & \ds \frac{q^n}{1- q} \leq 2 \cdot \varepsilon \\[0.3cm]
+        \Leftrightarrow & \ds n \cdot  \ln(q) - \ln(1 - q) \leq \ln(2) + \ln(\varepsilon) \\[0.3cm]
+        \Leftrightarrow & \ds n \cdot  \ln(q) \leq \ln(2) + \ln(\varepsilon) + \ln(1 - q) \\[0.3cm]
+        \Leftrightarrow & \ds n \geq \frac{\ln(2) + \ln(\varepsilon) + \ln(1 - q)}{\ln(q)} \\[0.5cm]
+        \Leftrightarrow & \ds n \geq \frac{\ln(2) + \ln(10^{-6}) + \ln(1 - q)}{\ln(q)} \\[0.5cm]
+        \Leftrightarrow & \ds n \geq 6.34
+      \end{array} 
+      $
+      \\[0.2cm]
+      Also benötigen wir $7$ Iterationen um auf die gewünschte Genauigkeit zu kommen.
+\item Wir definieren 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds g(x) := \frac{1}{2} \cdot \cos\bigl(x^2\bigr) - x$.
+      \\[0.2cm]
+      Dann gilt $g(\bar{x}) = 0 \Leftrightarrow f(\bar{x}) = x$.  Für das Newton'sche Verfahren
+      benötigen wir die Ableitung der Funktion $g$.  Es gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds g'(x) = x \cdot \sin\bigl(x^2) - 1$.
+      \\[0.2cm]
+      Die Newton'sche Iterations-Formel lautet damit:
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds x_{n+1} = x_n - \frac{g(x_n)}{g'(x_n)} = x_n - \frac{\frac{1}{2} \cdot \cos\bigl(x_n^2\bigr) - x_n}{x_n \cdot \sin\bigl(x_n^2) - 1}$.
+      \\[0.2cm]
+      Damit finden wir:
+      \begin{enumerate}
+      \item $x_1 = 0$,
+      \item $x_2 = 0.5$,
+      \item $x_3 \approx 0.48616733847008653$,
+      \item $x_4 \approx 0.4861055737087093$.
+      \end{enumerate}
+      \textbf{Bemerkung}: Der Wert $x_4$ ist bereits auf 8 Stellen hinter dem Komma genau.
+\end{enumerate}
+\pagebreak
+
+\exercise
+\begin{enumerate}
+\item Berechnen Sie den Grenzwert $\ds\lim\limits_{x\rightarrow 0 \atop x > 0} x^x$.
+      \punkte{10}
+
+      \noindent
+      \textbf{Hinweis}: Formen Sie den Ausdruck $x^x$ so um, dass er sich in der Form
+      $x^x = \exp(\cdots)$ schreiben lässt.  Für die Pünktchen in dieser Formel müssen Sie einen 
+      geeigneten Ausdruck suchen.
+\item Berechnen Sie die Ableitung der Funktion $\ds x \mapsto x^{\sqrt{x}}$.  
+      \punkte{8} 
+\end{enumerate}
+
+\solution
+\begin{enumerate}
+\item Es gilt:
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}{cll}
+        & \ds \lim\limits_{x\rightarrow 0 \atop x > 0} x^x = 1                            \\[0.4cm]
+      = & \ds \lim\limits_{x\rightarrow 0 \atop x > 0} \exp\bigl(\ln\bigl(x^x\bigr)\Bigr) \\[0.4cm]
+      = & \ds \lim\limits_{x\rightarrow 0 \atop x > 0} \exp\bigl(x \cdot \ln(x)\bigr)     \\[0.4cm]
+      = & \ds \exp\left(\lim\limits_{x\rightarrow 0 \atop x > 0} x \cdot \ln(x)\right)     \\[0.4cm]
+      = & \ds \exp\left(\lim\limits_{x\rightarrow 0 \atop x > 0} \frac{\ln(x)}{\,\frac{1}{x}\,}\right)     
+          \\[0.4cm]
+      = & \ds \exp\left(\lim\limits_{x\rightarrow 0 \atop x > 0} \frac{\frac{1}{x}}{\,-\frac{1}{x^2}\,}\right) &
+          \mbox{nach l'Hôpital}\\[0.4cm]
+      = & \ds \exp\left(\lim\limits_{x\rightarrow 0 \atop x > 0} -x\right) 
+          \\[0.4cm]
+      = & \exp(0) \\[0.2cm]
+      = & 1    
+      \end{array}
+      $
+
+\item Es gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x^{\sqrt{x}} = \exp\Bigl(\ln\bigl(x^{\sqrt{x}}\bigr)\Bigr) = \exp\bigl(\sqrt{x} \cdot \ln(x)\bigr)$.
+      \\[0.2cm]
+      Bezeichnen wir diese Funktion als $f(x)$, so gilt also
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{lcl} 
+      f'(x) & = & \ds \left(\frac{1}{2\cdot\sqrt{x}} \cdot \ln(x) + \frac{\sqrt{x}}{x}\right) \cdot \exp\bigl(\sqrt{x} \cdot \ln(x)\bigr) 
+                  \\[0.4cm]
+            & = & \ds \left(\frac{1}{2\cdot\sqrt{x}} \cdot \ln(x) + \frac{1}{\sqrt{x}}\right) \cdot x^{\sqrt{x}}
+                  \\[0.4cm]
+            & = & \ds \left(\frac{1}{2\cdot\sqrt{x}} \cdot \ln(x) + \frac{1}{\sqrt{x}}\right) \cdot x^{\sqrt{x}}
+                  \\[0.4cm]
+            & = & \ds \left(\frac{1}{2} \cdot \ln(x) + 1\right) \cdot x^{-\frac{1}{2}} \cdot x^{\sqrt{x}}
+                  \\[0.4cm]
+            & = & \ds \frac{1}{2}\cdot\bigl(\ln(x) + 2\bigr)  \cdot  x^{\sqrt{x}- \frac{1}{2}}
+                  \\[0.2cm]
+      \end{array}
+      $
+      \\[0.2cm]
+
+\end{enumerate}
+\pagebreak
+
+\exercise
+\begin{enumerate}
+\item Berechnen Sie die Koeffizienten $a_0$, $a_1$, $a_2$ und $a_3$ der Taylor-Reihe
+      $\sum\limits_{n=0}^\infty a_n \cdot x^n$   für die 
+      Funktion $f(x) = \bruch{1}{\sqrt{1 + x}}$.
+      \hspace*{\fill} (12 Punkte)
+\item Schätzen Sie % mit Hilfe des Lagrange'schen Restglieds
+      den Fehler ab, der entsteht, wenn
+      Sie die Funktion 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $f(x) = \bruch{1}{\sqrt{1 + x}}$ 
+      \\[0.2cm]
+      an der Stelle $x=1$ durch die Reihe
+      $\sum\limits_{n=0}^3 a_n \cdot x^n$ mit den oben bestimmen Koeffizienten $a_i$ approximieren.
+      \punkte{8}
+\end{enumerate}
+
+\solution
+\begin{enumerate}
+\item Es gilt:
+      \begin{enumerate}
+      \item $\ds f(x) = (1+x)^{-\frac{1}{2}}$, also $f(0) = 1$. 
+      \item $\ds f'(x) = -\frac{1}{2} \cdot (1+x)^{-\frac{3}{2}}$, also $\ds f'(0) = -\frac{1}{2}$. 
+      \item $\ds f''(x) = \frac{3}{4} \cdot (1+x)^{-\frac{5}{2}}$, also $\ds f''(0) = \frac{3}{4}$. 
+      \item $\ds f^{(3)}(x) = -\frac{15}{8} \cdot (1+x)^{-\frac{7}{2}}$, also $\ds f^{(3)}(0) = -\frac{15}{8}$. 
+      \end{enumerate}
+      Für die Koeffizienten $a_k$ der Taylor-Reihe gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds a_k = \frac{f^{(k)}(0)}{k!}$.
+      \\[0.2cm]
+      Damit haben wir also
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds a_0 = 1$, \quad 
+      $\ds a_1 = -\frac{1}{2}$, \quad 
+      $\ds a_2 = \frac{3}{8}$ \quad und \quad
+      $\ds a_3 = -\frac{5}{16}$.
+\item Um den Fehler abschätzen zu können, benötigen wir das Lagrange'sche Restglied.  Danach ist der
+      Abbruchfehler durch den Ausdruck
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds \frac{1}{4!} \cdot f^{(4)}(\xi) \cdot x^4$
+      \\[0.2cm]
+      gegeben, wenn wir die Taylor-Reihe nach dem Glied $a_3 \cdot x^3$ abbrechen.  Dabei gilt $\xi \in [0,x]$.
+      Für die vierte Ableitung finden wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds f^{(4)}(x) = \frac{105}{16} \cdot (1+x)^{-\frac{9}{2}} \leq \frac{105}{16}$. 
+      \\[0.2cm]
+      Nach der Formel von Lagrange können wir den Abbruch-Fehler an der Stelle $x=1$ durch den Ausdruck
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds \frac{1}{4!} \cdot f^{(4)}(\xi) \cdot 1^4 \leq \frac{1}{24} \cdot \frac{105}{16} =
+      \frac{35}{128} = 0.2734375$ 
+      \\[0.2cm]
+      abschätzen. Hier haben wir benutzt, dass die Funktion $x \mapsto f^{(4)}(x)$ ihr Maximum an
+      der Stelle $x = 0$ annimmt.
+      \pagebreak
+
+      \noindent
+      \textbf{Bemerkung}:  Berechnen wir die Taylor-Reihe
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds 1 - \frac{1}{2} \cdot x^1 + \frac{3}{8} \cdot x^2 - \frac{5}{16} \cdot x^3$
+      \\[0.2cm]
+      an der Stelle $x = 1$, so erhalten wir den Wert
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds \frac{9}{16}$, 
+      \\[0.2cm]
+      der sich  von dem exakten Wert
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds\frac{1}{\sqrt{2}}$ 
+      \\[0.2cm]
+      um etwa $0.14461$ unterscheidet.  Falls die Werte von $x$ in der Nähe von $1$ liegen,
+      werden also wesentlich mehr als nur die ersten vier Glieder der Taylor-Reihe benötigt,
+      wenn die Funktion $f(x)$ mit einer Taylor-Reihe berechnet werden soll.  Das ist auch nicht
+      weiter verwunderlich, denn die Taylor-Reihe hat den Konvergenz-Radius $R = 1$ und konvergiert
+      für Werte von $x$, die größer als $1$ sind, gar nicht mehr.  Für $x=1$ konvergiert die Reihe
+      gerade noch, aber wie das Beispiel zeigt, nur sehr langsam.
+\end{enumerate}
+\pagebreak
+
+\exercise
+Berechnen Sie die folgenden Integrale.
+\begin{enumerate}
+\item $\ds\int_{0}^{\pi} x \cdot \sin(x) \; dx$.
+
+      \punkte{6}
+\item $\ds\int_{0}^{\pi} x \cdot \sin\bigl(x^2 \bigr) \; dx$.
+
+      \punkte{6}
+\item $\ds\int_{0}^{1} x^2 \cdot \exp(x) \; dx$.
+
+      \punkte{8}
+\end{enumerate}
+
+\solution
+\begin{enumerate}
+\item Wir berechnen das Integral mit partieller Integration und setzen $g(x) = x$, also $g'(x) = 1$
+      und $f(x) = -\cos(x)$, also $f'(x) = \sin(x)$.  Dann gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{cl}
+         & \ds \int_{0}^{\pi} x \cdot \sin(x) \; dx                         \\[0.4cm]
+       = & \ds \bigl[-x \cdot \cos(x)\bigr]_0^\pi + \int_0^\pi \cos(x)\; dx \\[0.4cm]
+       = & \ds -\pi \cdot \cos(\pi) + \bigl[\sin(x)\bigr]_0^\pi            \\[0.4cm]
+       = & \pi,
+      \end{array}
+      $
+      \\[0.2cm]
+      denn $\sin(\pi) = \sin(0) = 0$ und $\cos(\pi) = - 1$.
+\item Dieses Integral berechnen wir mit der Substitution $y = x^2$.  Wegen $dy = 2 \cdot x \;dx$ gilt dann
+      \\[0.2cm]
+      \hspace*{1.3cm}   
+      $
+      \begin{array}[t]{cl}
+         & \ds \int_{0}^{\pi} x \cdot \sin\bigl(x^2 \bigr) \; dx \\[0.3cm]
+       = & \ds \frac{1}{2} \cdot \int_0^{\pi^2} \sin(y)\; dy     \\[0.3cm]  
+       = & \ds \frac{1}{2} \cdot \bigl[-\cos(y)\bigr]_0^{\pi^2}  \\[0.3cm]
+       = & \ds \frac{1}{2} \cdot \bigl(1 - \cos(\pi^2)\bigr)    \\[0.3cm]
+       \approx & 0.9513426809665357
+      \end{array}
+      $
+      \pagebreak
+
+\item Wir berechnen das Integral mittels zweimaliger partieller Integration.  
+      Bei der ersten Anwendung der partiellen Integration gilt dann
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $g(x) = x^2$, $g'(x) = 2 \cdot x$, \quad $f'(x) = e^x$, $f(x) = e^x$.
+      \\[0.2cm]
+      Bei der zweiten Anwendung der partiellen Integration haben wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $g(x) = x$, $g'(x) = 1$, \quad $f'(x) = e^x$, $f(x) = e^x$.
+      \\[0.2cm]
+      Es gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{cl}
+        & \ds \int_{0}^{1} x^2 \cdot e^x \; dx                                   \\[0.3cm]
+      = & \ds \Bigl[x^2 \cdot e^x\Bigr]_0^1 - 2 \cdot \int_{0}^{1} x \cdot e^x \; dx   \\[0.3cm]
+      = & \ds e - 2 \cdot \int_{0}^{1} x \cdot e^x \; dx                          \\[0.3cm]
+      = & \ds e - 2 \cdot \Bigl[x \cdot e^x\Bigr]_0^1 + 2 \cdot \int_{0}^{1} e^x \; dx  \\[0.3cm]
+      = & \ds e - 2 \cdot e + 2 \cdot \int_{0}^{1} e^x \; dx                      \\[0.3cm]
+      = & \ds -e + 2 \cdot \Bigl[ e^x \Bigr]_0^1                             \\[0.3cm]
+      = & \ds -e + 2 \cdot (e - 1)                              \\[0.3cm]
+      = & e - 2.        
+      \end{array}
+      $
+\end{enumerate}
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
