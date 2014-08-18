@@ -163,6 +163,7 @@ stability of the system.
 \begin{enumerate}
 \item perform symbolic differentiation and integration,
 \item compute limits,
+\item compute the Taylor series of a given function,
 \item compute closed expressions for both finite sums and infinite  series,
 \item solve ordinary equations, recurrence equations, and differential equations.
 \end{enumerate}
@@ -343,6 +344,50 @@ shows that
 \\[0.2cm]
 \hspace*{1.3cm}
 $\lim\limits_{x \rightarrow 0} \bruch{\sin(x)}{x} = 0$.
+
+\section{Taylor Series}
+Many interesting functions can be approximated via a Taylor series.  If $f(x)$ can be written
+as
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds f(x) = \sum\limits_{n=0}^\infty a_n \cdot x^n$,
+\\[0.2cm]
+then the coefficients $a_n$ are given as
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds a_n = \frac{f^{(n)}(x)}{n!}$
+\\[0.2cm]
+where $f^{(n)}(x)$ denotes the $n$-th derivative of $f$.  For example, the exponential function can
+be written as
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\exp(x) = \sum\limits_{n=0}^\infty \frac{1}{n!} \cdot x^n$
+\\[0.2cm]
+\textsl{SymPy} can compute the Taylor series of a given function up to a given value of $n$.  For
+example, to compute the 
+Taylor series of the exponential function we can declare $x$ to be a variable and then use the command
+\\[0.2cm]
+\hspace*{1.3cm}
+\texttt{series(exp(x), x)}.
+\\[0.2cm]
+In this case, \textsl{SymPy} returns
+\\[0.2cm]
+\hspace*{1.3cm}
+\texttt{1 + x + x**2/2 + x**3/6 + x**4/24 + x**5/120 + O(x**6)},
+\\[0.2cm]
+showing the first 6 terms of the Taylor series.  In order to compute the terms up to and including
+the term containing $x^{10}$ we have to use the command
+\\[0.2cm]
+\hspace*{1.3cm}
+\texttt{series(exp(x), x, n = 11)}
+\\[0.2cm]
+In this case, \textsl{SymPy} returns the result
+\\[0.2cm]
+\hspace*{1.3cm}
+\texttt{1 + x + x**2/2 + x**3/6 + x**4/24 + x**5/120 + x**6/720 + x**7/5040 +} \\
+\hspace*{1.3cm}
+\texttt{x**8/40320 + x**9/362880 + x**10/3628800 + O(x**11)}.
+
 
 \section{Finite Sums and Infinite Series}
 In order to compute an analytical expression for the sum
