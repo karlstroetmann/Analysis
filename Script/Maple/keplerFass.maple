@@ -1,4 +1,4 @@
-# Die Kepler'sche Faﬂregel
+# Die Kepler'sche Fassregel
 restart;
 intKepler := 1/6 * (f(a) + 4 * f((a+b)/2) + f(b)) * (b - a);
 
