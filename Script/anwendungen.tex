@@ -38,7 +38,7 @@ Setzen wir in dieser Gleichung $x=0$, so finden wir
 \end{equation}
 Allgemein können wir den Koeffizienten $a_k$ dadurch bestimmen, dass wir Gleichung
 (\ref{eq:taylor}) $k$-mal nach $x$ differenzieren und anschließend $x = 0$ setzen.
-Wir beweisen zunächst durch Induktion über $k$, dass für alle $k\in\mathbb{N}$ 
+Wir beweisen zunächst durch Induktion über $k$, dass für alle $k\in\mathbb{N}_0$ 
 \begin{equation}
   \label{eq:taylorDiff}
   \begin{array}[t]{lcl}    
@@ -126,7 +126,7 @@ die Werte sämtlicher Ableitungen an der Stelle $x = 0$ verschwinden.   Damit gil
 \subsection{Der Abbruch-Fehler bei der Taylor-Reihe}
 Um zu untersuchen, wann die Taylor-Reihe $\textsl{taylor}(f,x)$ gegen $f(x)$
 konvergiert, definieren wir zu einer gegebenen Funktion $f$ und einer natürlichen Zahl
-$n\in \mathbb{N}$ den \emph{Abbruch-Fehler vom Grad $n$} als
+$n\in \mathbb{N}_0$ den \emph{Abbruch-Fehler vom Grad $n$} als
 \\[0.3cm]
 \hspace*{1.3cm}
 $\textsl{error}_n(x) := f(x) - \displaystyle\sum\limits_{i=0}^n \bruch{f^{(i)}(0)}{i!} \cdot  x^i$.
@@ -1825,7 +1825,7 @@ $\forall x \in (\xi,b]: f(x) > 0$.
 Wir zeigen zunächst durch Induktion über $n$, dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$f(x_n) \geq 0$ \quad für alle $n \in \mathbb{N}$ gilt.  
+$f(x_n) \geq 0$ \quad für alle $n \in \mathbb{N}_0$ gilt.  
 \begin{enumerate}
 \item[I.A.] $n=0$.  
 
