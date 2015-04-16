@@ -45,15 +45,14 @@ reellen Zahlen ist philosophisch unbefriedigend, denn dabei bleiben zwei Fragen 
       der leeren Menge handelt. 
 \item Was genau sind reelle Zahlen?
 
-      Diese Frage hat zwar zunächst einen philosophischen Charakter, aber es zeigt sich, dass wir diese
-      Frage zuerst beantworten müssen, bevor wir die erste Frage in Angriff nehmen können.
+      Es zeigt sich, dass wir die zweite Frage zuerst beantworten müssen, bevor wir die Beantwortung
+      der ersten Frage in Angriff nehmen können. 
 \end{enumerate}
 Wir werden im zweiten Abschnitt zeigen, wie sich die reellen Zahlen aus den rationalen Zahlen mit
 Hilfe von sogenannten \emph{Dedekind-Schnitten} erzeugen lassen.  Da diese Konstruktion jedoch
-technisch nicht ganz einfach ist, werden wir diesen Abschnitt im Rahmen der Vorlesung nicht
-besprechen.   Die in diesem Abschnitt präsentierten Details sind zwar eine gute Übung zur
-Mengenlehre,  werden aber für den weiteren Verlauf der Vorlesung nicht benötigt.  Der Abschnitt ist
-daher zum Selbststudium für die Studenten gedacht, die an den Grundlagen der Mathematik interessiert sind.
+technisch nicht ganz einfach ist, werden wir diesen Abschnitt im Rahmen der Vorlesung aus
+Zeitgründen nicht in voller Länge diskutieren.  Die in diesem Abschnitt präsentierten Details sind zwar eine gute Übung zur
+Mengenlehre,  werden aber für den weiteren Verlauf der Vorlesung nicht benötigt.  
 
 
 \section{Axiomatische Charakterisierung der reellen Zahlen}
@@ -74,10 +73,11 @@ Eine Struktur $\mathcal{K} = \langle K, 0, 1, +, \cdot \rangle$ ist ein \emph{Kö
         \item $(x + y) + z = x + (y + z)$,
         \item $x + y = y + x$,
         \item $0 + x = x$,
-        \item $\exists y \in K: x + y = 0$.
+        \item $\exists y \in K: y + x = 0$.
 
-              Dasjenige $y \in K$, für welches $x + y = 0$ gilt, ist dann eindeutig
-              bestimmt und wird mit $-x$ bezeichnet.
+              Dasjenige $y \in K$, für welches $y + x = 0$ gilt, wird als das \emph{additive Inverse} von $x$ 
+              bezeichnet und ist, wie wir in der Vorlesung zur linearen Algebra gesehen haben,
+              eindeutig bestimmt.  Wir schreiben das additive Inverse als $-x$. 
         \end{enumerate}
 \item $\langle K \backslash \{ 0 \}, 1, \cdot \rangle$ ist ebenfalls eine kommutative Gruppe,
 
@@ -86,7 +86,12 @@ Eine Struktur $\mathcal{K} = \langle K, 0, 1, +, \cdot \rangle$ ist ein \emph{Kö
       \item $(x \cdot y) \cdot z = x \cdot (y \cdot z)$,
       \item $x \cdot y = y \cdot x$,
       \item $1 \cdot x = x$,
-      \item $x \not= 0 \Rightarrow \exists y \in K: x \cdot y = 1$.
+      \item $x \not= 0 \Rightarrow \exists y \in K: y \cdot x = 1$.
+
+            Falls $x \not= 0$ ist, so ist das $y \in K$, für welches $y \cdot x = 1$ gilt, eindeutig
+            bestimmt.  Es wird als das \emph{multiplikative Inverse} von $x$   
+            bezeichnet.  Wir schreiben das multiplikative Inverse als $x^{-1}$. 
+            
       \end{enumerate}
 \item Es gilt das Distributiv-Gesetz: Für alle $x, y,z \in K$ haben wir
       \\[0.2cm]
@@ -101,17 +106,16 @@ Weiter benötigen wir die Definition einer linearen Ordnung, die wir ebenfalls wi
 \begin{Definition}[Lineare Ordnung]
   Ein Paar $\langle M, \leq \rangle$ ist eine \emph{lineare Ordnung}, falls gilt:
   \begin{enumerate}
-  \item $M$ ist eine Menge,
-  \item $\leq$ ist eine binäre Relation auf $M$, es gilt also
+  \item $M$ ist eine Menge und $\leq$ ist eine binäre Relation auf $M$, es gilt also
         \\[0.2cm]
         \hspace*{1.3cm}
         $\leq\; \subseteq M \times M$.
   \item Zusätzlich gelten die folgenden Axiome:
         \begin{enumerate}
-        \item $x \leq x$,
-        \item $x \leq y \wedge y \leq x \rightarrow x = y$,
-        \item $x \leq y \wedge y \leq z \rightarrow x \leq z$,
-        \item $x \leq y \vee y \leq x$.  \edx
+        \item $x \leq x$,                 \hspace*{\fill} (Reflexivität)
+        \item $x \leq y \wedge y \leq x \rightarrow x = y$,  \hspace*{\fill} (Anti-Symmetrie)
+        \item $x \leq y \wedge y \leq z \rightarrow x \leq z$,  \hspace*{\fill} (Transitivität)
+        \item $x \leq y \vee y \leq x$. \quad  $\diamond$   \hspace*{\fill} (Linearität)
         \end{enumerate}
   \end{enumerate} 
 \end{Definition} 
@@ -133,7 +137,7 @@ Anordnungs-Axiomen einer linearen Ordnung.
 Die Struktur $\langle \mathbb{Q}, 0, 1, +, \cdot, \leq \rangle$ ist ein geordneter Körper, wenn wir
 die Operationen $+$, $\cdot$ und $\leq$ wie im ersten Semester vorgeführt auf den rationalen Zahlen
 definieren.  Diese Struktur ist allerdings für die Zwecke der Analysis noch nicht ausreichend,
-da sie in einer noch näher zu spezifizierenden Weise unvollständig ist.  Zur Präzisierung dieser Aussage
+da sie in einer noch näher zu spezifizierenden Weise \emph{unvollständig} ist.  Zur Präzisierung dieser Aussage
 benötigen wir den Begriff einer \emph{vollständigen Ordnung}, die ihrerseits
 auf dem Begriff des \emph{Supremums} basiert, den wir jetzt einführen.
 
@@ -147,7 +151,7 @@ $\forall x \in A:  x \leq y$.
 \\[0.2cm]
 Dieses $y$ bezeichnen wir dann als eine \emph{obere Schranke} der Menge $A$.
 Ein Element $s \in M$ ist das \emph{Supremum} der Menge $A$, wenn $s$ die kleinste
-obere Schranke von $A$ ist, wenn also 
+obere Schranke von der Menge $A$ ist, wenn also 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\forall x \in A: x \leq s$ \quad \mbox{und} \quad
@@ -182,7 +186,7 @@ $A := \{ r \in \mathbb{Q} \mid r^2 \leq 2 \}$
 \\[0.2cm]
 definieren, so ist die Menge $A$ nach oben beschränkt, weil die Zahl $2$ eine obere
 Schranke von $A$ ist.  Die Menge $A$ hat aber keine kleinste obere Schranke.  Anschaulich liegt das
-daran, dass die kleinste obere Schranke von $A$ die Zahl $\sqrt{2}$ ist, aber aus dem ersten
+daran, dass die kleinste obere Schranke  der Menge $A$ die Zahl $\sqrt{2}$ ist, aber aus dem ersten
 Semester wissen wir, dass $\sqrt{2}$ keine rationale Zahl ist.  \eox
 
 
@@ -231,7 +235,7 @@ lineare Ordnung ist, besitzt $A$ also ein Supremum.  Zeigen Sie, dass dieses Sup
 Infimum von $B$ ist. \eox
 
 Wir kommen nun zur zentralen Definition dieses Abschnitts.
-\begin{Definition}[Vollständig angeordneter Körper]
+\begin{Definition}[Vollständig angeordneter Körper] \hspace*{\fill} \linebreak
   Eine Struktur  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$  ist ein 
   \emph{vollständig angeordneter Körper} genau dann, wenn die Struktur $\mathcal{K}$
   ein geordneter Körper ist und zusätzlich das Paar $\langle K, \leq \rangle$ eine vollständige
@@ -246,8 +250,8 @@ Einen Beweis diese Behauptung können wir jetzt noch nicht erbringen, denn wir ha
 definiert, wie die Menge $\mathbb{R}$ der reellen Zahlen konstruiert wird.
 Diese Konstruktion werden wir im nächsten Abschnitt mit Hilfe der sogenannten
 \emph{Dedekind-Schnitte} liefern.  Für praktische Rechnungen ist diese 
-viel zu schwerfällig.  Wir geben daher zum Abschluss dieses
-Abschnitts noch eine Konstruktion der reellen Zahlen als unendliche Dezimalbrüche an.  Dazu
+Konstruktion viel zu schwerfällig.  Wir skizzieren  daher zum Abschluss dieses
+Abschnitts noch eine andere Konstruktion der reellen Zahlen als \emph{unendliche Dezimalbrüche}.  Dazu
 betrachten wir eine positive reelle Zahl $x \in \mathbb{R}$ abstrakt als gegeben und untersuchen, wie wir $x$
 in der Form
 \\[0.2cm]
@@ -271,7 +275,7 @@ Die Berechnung der Zahlen $m$ und $b_k$ verläuft für ein gegebenes positives $x 
                    \\[0.2cm]
                    \hspace*{1.3cm}
                    $\ds b_1 := \max\Bigl(\Bigl\{ z \in \{ 0, 1, \cdots, 9 \} \mid m + z \cdot \frac{1}{10} \leq x\Bigr\}\Bigr)$.
-      \item[I.A.:] $k \mapsto k+1$.  Nach Induktions-Voraussetzung sind die Zahlen $b_1$, $\cdots$, $b_k$
+      \item[I.S.:] $k \mapsto k+1$.  Nach Induktions-Voraussetzung sind die Zahlen $b_1$, $\cdots$, $b_k$
                    bereits definiert.  Daher können wir $b_{k+1}$ als
                    \\[0.2cm]
                    \hspace*{1.3cm}
@@ -307,7 +311,7 @@ reicht es aus, wenn Sie sich die reellen Zahlen wie oben skizziert als unendlich
 
 
 
-\section{Die formale Konstruktion der reellen Zahlen$^*$}
+\section{Die formale Konstruktion der reellen Zahlen}
 Bis jetzt haben wir so getan, als wüssten wir schon, was reelle Zahlen sind und haben Ihre
 Eigenschaften in Form von Axiomen angegeben.  Was noch fehlt ist nun die Konstruktion der reellen
 Zahlen mit Hilfe der Mengenlehre.
@@ -352,7 +356,7 @@ falls folgendes gilt:
       gilt, dann darf $y$ eben kein Element von $M_1$ sein.  Als Formel schreibt sich das als
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\forall y \in Q: \bigl((\forall x \in M_1: x \leq y) \rightarrow y \not\in M_1\bigr)$. \edx
+      $\forall y \in \mathbb{Q}: \bigl((\forall x \in M_1: x \leq y) \rightarrow y \not\in M_1\bigr)$. \edx
 \end{enumerate}
 \end{Definition}
 
@@ -479,7 +483,7 @@ Es ist zu zeigen, dass die Relation $\leq$ reflexiv, anti-symmetrisch und transi
 gilt.  Die Reflexivität, Anti-Symmetrie und Transitivität der Relation $\leq$ folgen sofort aus der Reflexivität,
 Anti-Symmetrie und Transitivität der Teilmengen-Relation $\subseteq$.  Es bleibt, den Nachweis der
 Linearitäts-Eigenschaft zu führen.  Seien also $A,B \in \mathcal{D}$ gegeben.  Falls $A = B$ ist, gilt sowohl
-$A \subseteq B$ als auch $B \subseteq A$, woraus sofort $A \leq B$ und $B \leq B$ folgt.  Wir nehmen
+$A \subseteq B$ als auch $B \subseteq A$, woraus sofort $A \leq B$ und $B \leq A$ folgt.  Wir nehmen
 daher an, dass $A \not= B$ ist.  Dann gibt es zwei Möglichkeiten:
 \begin{enumerate}
 \item Fall: Es existiert ein $x \in \mathbb{Q}$ mit $x \in A$ und $x \not\in B$.
@@ -651,12 +655,12 @@ Dedekind-Menge nach.
       \hspace*{1.3cm}
       $\bruch{1}{2} \cdot m \in O$.
       \\[0.2cm]
-      Da andererseits aber
+      Da $m < 0$ ist gilt andererseits aber
       \\[0.2cm]
       \hspace*{1.3cm}
       $m < \bruch{1}{2} \cdot m$
       \\[0.2cm]
-      ist, kann dann $m$ nicht das Maximum der Menge $O$ sein.   Folglich hat die Menge $O$ kein Maximum.
+      und dann kann $m$ nicht das Maximum der Menge $O$ sein.   Folglich hat die Menge $O$ kein Maximum.
 \end{enumerate}
 \renewcommand{\labelenumi}{\arabic{enumi}.}
 Als nächstes zeigen wir, dass die Menge $O$ das links-neutrale Element bezüglich der Addition von
@@ -685,7 +689,7 @@ gilt.  Wir spalten den Nachweis dieser Mengen-Gleichheit in den Nachweis zweier 
       $a < b$.
       \\[0.2cm]
       Wir definieren $u := a - b$.  Aus $a < b$ folgt dann $u < 0$ und damit gilt $u \in O$.
-      Damit haben wir
+      Also haben wir
       \\[0.2cm]
       \hspace*{1.3cm}
       $u + b \in O + A$.

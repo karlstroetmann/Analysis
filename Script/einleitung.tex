@@ -1,7 +1,6 @@
 \chapter{Einleitung}
-Der vorliegende Text ist ein Fragment eines Vorlesungs-Skriptes für die Analysis-Vorlesung für
-Informatiker.  Ich habe mich bei der Ausarbeitung dieser Vorlesung im wesentlichen auf die folgenden
-Quellen gestützt:
+Der vorliegende Text ist das Skript zu meiner Analysis-Vorlesung für Informatiker.  Ich habe mich
+bei der Ausarbeitung dieser Vorlesung im wesentlichen auf die folgenden Lehrbücher gestützt:
 \begin{enumerate}
 \item \emph{Analysis} \texttt{I} von Otto Forster \cite{forster:2011}.
 \item \emph{Differential- und Integralrechnung \texttt{I}} von Hans Grauert und Ingo Lieb \cite{grauert:1967}.
@@ -24,30 +23,71 @@ Aufgaben und bietet sich daher besonders zum Üben an.
 \section{Überblick über die Vorlesung}
 Im Rahmen der Vorlesung werden die folgenden Gebiete behandelt:
 \begin{enumerate}
-\item Im zweiten Kapitel werden die reellen Zahlen mit Hilfe von Dedekind-Schnitten definiert.
-\item Das dritte Kapitel führt den Begriff des Grenzwerts für Folgen und Reihen ein.
-\item Das vierte Kapitel diskutiert die Begriffe Stetigkeit und Differenzierbarkeit.
+\item Da sich die Analysis mit den reellen Zahlen beschäftigt, beginnen wir damit, dass wir die
+      Menge $\mathbb{R}$ der reellen Zahlen zunächst axiomatisch als vollständig geordneten Körper
+      charakterisieren und dann die Menge $\mathbb{R}$ mit Hilfe von   
+      \href{http://de.wikipedia.org/wiki/Dedekindscher_Schnitt}{\emph{Dedekindschen-Schnitten}}
+      definieren.
+\item Darauf aufbauend  führen den für den Rest der Vorlesung grundlegenden  Begriffe des 
+      \href{http://de.wikipedia.org/wiki/Grenzwert_(Folge)}{\emph{Grenzwerts}} einer
+      \href{http://de.wikipedia.org/wiki/Folge_(Mathematik)}{\emph{Folge}} ein. 
+      
+      Wir werden beispielsweise sehen, dass die Folge $(b_1,b_2, b_3, \cdots)$, die induktiv durch
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $b_1 := 1$ \quad und \quad $\ds b_{n+1} := \frac{1}{2} \cdot \left(b_n + \frac{2}{b_n}\right)$ für alle $n \in \mathbb{N}$
+      \\[0.2cm]
+      definiert ist, gegen $\sqrt{2}$ \emph{konvergiert}.
+\item Das vierte Kapitel diskutiert die Begriffe 
+      \href{http://de.wikipedia.org/wiki/Stetigkeit}{\emph{Stetigkeit}} und 
+      \href{http://de.wikipedia.org/wiki/Differenzierbarkeit}{\emph{Differenzierbarkeit}}.
 \item Das fünfte Kapitel zeigt verschiedene Anwendungen der bis dahin dargestellten Theorie.
-      Insbesondere werden \emph{Taylor-Reihen} diskutiert. Diese können beispielsweise zur
-      Berechnung der trigonometrischen Funktionen verwendet werden.  Außerdem diskutieren wir in
-      diesem Kapitel Verfahren zur numerischen Lösung von Gleichungen.
-\item Das sechste Kapitel beschäftigt sich mit der Integralrechnung.
-\item Im siebten Kapitel zeigen wir, dass  $\pi$ und $e$ keine rationalen Zahlen sind.
-\item Im letzten Kapitel diskutieren wir Fourier-Reihen.
+      Insbesondere werden 
+      \href{http://de.wikipedia.org/wiki/Taylorreihe}{\emph{Taylor-Reihen}} diskutiert. Diese können beispielsweise zur
+      Berechnung der trigonometrischen Funktionen verwendet werden.  So werden wir beispielsweise
+      sehen, dass wir für eine reelle Zahl $x$ den Wert $\sin(x)$ durch den Ausdruck
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds \sum\limits_{n=0}^{\infty} (-1)^n \cdot \frac{x^{2 \cdot n + 1}}{(2 \cdot n + 1)!} = x - \frac{1}{6} \cdot x^3 + \frac{1}{120} \cdot x^5 \mp \cdots$
+      \\[0.2cm]
+      berechnen können.  Außerdem diskutieren wir in diesem Kapitel Verfahren zur numerischen Lösung
+      von Gleichungen.  Beispielsweise zeigen wir, wie wir die Gleichung
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\cos(x) = x$ 
+      \\[0.2cm]
+      numerisch mit Hilfe einer Fixpunkt-Iteration lösen können.
+\item Das sechste Kapitel beschäftigt sich mit der
+      \href{http://de.wikipedia.org/wiki/Integralrechnung}{\emph{Integralrechnung}}. 
+\item Im siebten Kapitel zeigen wir, dass die Kreiszahl  \href{http://de.wikipedia.org/wiki/Kreiszahl}{$\pi$} 
+      und die eulersche Zahl \href{http://de.wikipedia.org/wiki/Eulersche_Zahl}{$e$} keine rationalen Zahlen sind.
+\item Im achten Kapitel diskutieren wir \href{http://de.wikipedia.org/wiki/Fourierreihe}{\emph{Fourier-Reihen}}.
+      Unter anderem werden wir zeigen, dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds \sum\limits_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}$
+      \\[0.2cm] 
+      gilt.  Fourierreihen sind eine der Grundlage der Theorie der
+      \href{http://de.wikipedia.org/wiki/Digitale_Signalverarbeitung}{\emph{digitalen Signalverarbeitung}}.
+\item Das letzte Kapitel gibt einen kurzen Ausblick auf
+      \href{http://de.wikipedia.org/wiki/Rundungsfehler}{\emph{Rundungs-Fehler}}. 
 \end{enumerate}
+Aus Zeitgründen werden wir im Laufe der Vorlesung das Skript nicht vollständig abdecken können.
+Daher wird der Stoff des siebten Kapitels im Rahmen der Vorlesung vermutlich nur oberflächlich
+behandelt werden. 
 
 \section{Ziel der Vorlesung}
 Wir werden im Rahmen der Vorlesung nicht die Zeit haben, alle Aspekte der Analysis zu besprechen.
 Insbesondere werden wir viele interessante Anwendungen der Analysis in der Informatik nicht
 diskutieren können.  Das ist aber auch gar nicht das Ziel dieser Vorlesung:  Mir geht es vor allem
 darum, Ihnen die Fähigkeit zu vermitteln, sich 
-selbstständig in mathematische Fachliteratur hineinarbeiten zu können.  Dazu müssen Sie in der Lage
+selbstständig in mathematische Fachliteratur einarbeiten zu können.  Dazu müssen Sie in der Lage
 sein, mathematische Beweise sowohl zu verstehen als auch selber entwickeln zu können.   Dies ist ein
-wesentlicher Unterschied zu der Mathematik, an die sich viele von Ihnen auf der Schule gewöhnthaben:
+wesentlicher Unterschied zu der Mathematik, an die sich viele von Ihnen auf der Schule gewöhnt haben:
 Dort werden primär Verfahren vermitteln, mit denen sich spezielle Probleme lösen lassen.  Die Kenntnis
-solcher Verfahren ist allerdings in der Praxis nicht mehr wichtig, denn heutzutage werden solche 
-Verfahren programmiert und daher besteht kein Bedarf mehr dafür, solche Verfahren von Hand
-anzuwenden.  Aus diesem Grund wird in dieser Vorlesung der mathematische Beweis-Begriff im
+solcher Verfahren ist allerdings in der Praxis nicht mehr so wichtig wie früher, denn heutzutage
+werden solche Verfahren als Programme implementiert und daher besteht kein Bedarf mehr dafür, diese Verfahren von Hand
+anzuwenden.  Daher wird in dieser Vorlesung der mathematische Beweis-Begriff im
 Vordergrund stehen.  Die Analysis dient uns dabei als ein Beispiel einer mathematischen Theorie, an
 Hand derer wir das mathematische Denken üben können. 
 
@@ -57,20 +97,26 @@ In diesem Skript definieren wir die Menge der natürlichen Zahlen $\mathbb{N}$ üb
 \hspace*{1.3cm}
 $\mathbb{N} := \{ 1, 2, 3, \cdots \}$.
 \\[0.2cm]
-Im Gegensatz zu der Vorlesung über Lineare Algebra im letzten Semester wird die Zahl $0$ in diesem
-Skript also \underline{nicht} als natürliche Zahl aufgefasst.  Weiter definieren wir
+Weiter definieren wir
 \\[0.2cm]
 \hspace*{1.3cm}
 $\mathbb{N}_0 := \{ 0 \} \cup \mathbb{N}$.
-
+\\[0.2cm]
+Im Übrigen schließt dieses Skript an mein
+\href{https://github.com/karlstroetmann/Lineare-Algebra/blob/master/Script/lineare-algebra.pdf}{Skript zur linearen Algebra} 
+an und verwendet die selben Notationen.
+\pagebreak
 
 \section{Eine Bitte}
-Dieses Skript enthält noch eine Menge Tipp-Fehler.  Sollte Ihnen ein Fehler auffallen, so bitte ich
+Dieses Skript enthält sicher noch den einen oder anderen Fehler.  Sollte Ihnen ein Fehler auffallen, so bitte ich
 um einen Hinweis unter der Adresse
 \\[0.2cm]
 \hspace*{1.3cm}
 \href{mailto:karl.stroetmann@dhbw-mannheim.de}{karl.stroetmann@dhbw-mannheim.de}.
 \\[0.2cm]
+Es bringt mir wenig, wenn Sie mich innerhalb meiner Vorlesung auf einen Tipp- oder
+Rechtschreibfehler hinweisen, denn bis ich dazu komme, einen solchen Fehler zu korrigieren, habe ich
+ihn meistens schon wieder vergessen.  Daher die Bitte mir solche Fehler per Email mitzuteilen.
 Wenn Sie mit \href{http://github.com}{\texttt{github}} vertraut sind, können Sie mir auch gerne einen
 \href{https://help.github.com/articles/using-pull-requests}{\textsl{Pull Request}} schicken.
 
