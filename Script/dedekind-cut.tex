@@ -313,25 +313,19 @@ reicht es aus, wenn Sie sich die reellen Zahlen wie oben skizziert als unendlich
 
 \section{Die formale Konstruktion der reellen Zahlen}
 Bis jetzt haben wir so getan, als wüssten wir schon, was reelle Zahlen sind und haben Ihre
-Eigenschaften in Form von Axiomen angegeben.  Was noch fehlt ist nun die Konstruktion der reellen
-Zahlen mit Hilfe der Mengenlehre.
-
-
-Die zentrale Idee bei der Konstruktion der reellen Zahlen ist die Beobachtung, dass eine reelle
-Zahl $x$ durch die Menge $M_1$ aller rationalen Zahlen kleiner als $x$ und die Menge $M_2$ der
-rationalen Zahlen größer-gleich $x$ bereits vollständig festgelegt wird.  Definieren wir für eine
-reelle Zahl $x$
+Eigenschaften in Form von Axiomen angegeben.  Wir wissen  aber noch gar nicht, ob es tatsächlich
+eine Struktur gibt, die diesen Axiomen genügt.  Diesen Nachweis werden wir jetzt mit Hilfe der
+Mengenlehre erbringen.  Dabei gehen wir von folgendem Beispiel aus:  Wir wissen, dass $\sqrt{2}$
+kein Element der rationalen Zahlen ist.  Wir können aber $\sqrt{2}$ durch zwei Mengen rationaler
+Zahlen beschreiben, wenn wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$M_1 := \{ q \in \mathbb{Q} \mid q < x \}$ \quad und \quad 
-$M_2 := \{ q \in \mathbb{Q} \mid x \leq q \}$,
+$M_1 := \{ q \in \mathbb{Q} \mid q \leq 0 \vee q^2 < 2 \}$ \quad und \quad 
+$M_2 := \{ q \in \mathbb{Q} \mid q \geq 0 \wedge 2 < q^2 \}$,
 \\[0.2cm]
-so liegt $x$ gerade zwischen $M_1$ und $M_2$.  Falls die Menge $M_2$ kein Minimum hat, so haben die
-rationalen Zahlen  zwischen $M_1$ und $M_2$ eine Lücke.  Die Idee ist nun, die reellen Zahlen gerade
-als diese Lücken zu definieren um dadurch sicherzustellen, dass es bei den
-reellen Zahlen selber keine Lücken mehr gibt.  
-Versuchen wir den Begriff eines \emph{Lücke} zu präzisieren, so kommen wir zur nun folgende Definition eines
-Dedekind'schen-Schnittes.
+definieren, denn dann liegt $\sqrt{2}$ gerade zwischen $M_1$ und $M_2$.  
+Versuchen wir die diesem Beispiel zugrunde liegende Idee zu präzisieren, so kommen wir zur nun
+folgende Definition eines \emph{Dedekind'schen-Schnittes}.
 
 \begin{Definition}[Dedekind-Schnitt] \lb
 Ein Paar $\pair(M_1,M_2)$ heißt \href{http://de.wikipedia.org/wiki/Dedekindscher_Schnitt}{\emph{Dedekind-Schnitt}}
@@ -364,7 +358,7 @@ falls folgendes gilt:
 Definieren wir
 \\[0.2cm]
 \hspace*{1.3cm} 
-$M_1 := \{ x \in \mathbb{Q} \mid x \leq 0 \vee x^2 \leq 2 \}$ \quad und \quad
+$M_1 := \{ x \in \mathbb{Q} \mid x \leq 0 \vee x^2 < 2 \}$ \quad und \quad
 $M_2 := \{ x \in \mathbb{Q} \mid x > 0 \wedge x^2 > 2 \}$,
 \\[0.2cm]
 so enthält $M_1$ alle die Zahlen, die kleiner oder gleich $\sqrt{2}$ sind, während
@@ -372,20 +366,7 @@ $M_2$ alle Zahlen enthält, die größer als $\sqrt{2}$ sind. Das Paar $\pair(M_1,M
 Dedekind-Schnitt.  Intuitiv spezifiziert dieser Dedekind-Schnitt die Zahl $\sqrt{2}$.
 \eox
 
-Das Beispiel legt nahe, die Menge der reellen Zahlen formal als die Menge aller Dedekind-Schnitte zu
-definieren
-\\[0.2cm]
-\hspace*{1.3cm}
-\colorbox{orange}{
-\framebox{
-\framebox{
-$\mathbb{R} := \bigl\{ \pair(M_1,M_2) \in 2^\mathbb{Q} \times 2^\mathbb{Q} \mid \mbox{$\pair(M_1,M_2)$ ist ein Dedekind-Schnitt}\bigr\}$.}}}
-\\[0.2cm]
-Nach dieser Definition müssen wir nun zeigen, wie sich auf der so definierten Menge der reellen
-Zahlen die arithmetischen Operationen Addition, Subtraktion, Multiplikation und Division definieren
-lassen und wie die Relation $\leq$ für zwei Dedekind-Schnitte festgelegt
-werden kann.  Zusätzlich müssen wir nachweisen, dass wir mit diesen Definitionen einen vollständig
-angeordneten Körper konstruieren.
+
 
 Bei einem Dedekind-Schnitt $\pair(M_1,M_2)$ ist die Menge $M_2$ durch die Angabe von
 $M_1$ bereits vollständig festgelegt, denn aus der Gleichung $M_1 \cup M_2 = \mathbb{Q}$ folgt
@@ -463,9 +444,12 @@ $\mathcal{D}$ als die Menge aller rationalen Dedekind-Mengen, wir setzen also
 \colorbox{orange}{
 $\mathcal{D} := \bigl\{ M \in 2^{\mathbb{Q}} \mid \mbox{$M$ is Dedekind-Menge} \bigr\}$.}
 \\[0.2cm]
-Wir werden später die Menge $\mathbb{R}$ der reellen Zahlen als diese Menge
-$\mathcal{D}$ definieren.  Die nächste Aufgabe zeigt, wie wir auf
-der Menge $\mathcal{D}$ eine lineare Ordnung erzielen können. 
+Wir wollen zeigen, dass wir die Menge $\mathbb{R}$ der reellen Zahlen als die Menge $\mathcal{D}$
+definieren können.  Dazu müssen wir nun zeigen, wie sich auf der Menge $\mathcal{D}$ die
+arithmetischen Operationen Addition, Subtraktion, Multiplikation und Division definieren 
+lassen und wie die Relation $\leq$ für zwei Dedekind-Schnitte festgelegt
+werden kann.  Zusätzlich müssen wir nachweisen, dass wir mit diesen Definitionen einen vollständig
+angeordneten Körper konstruieren.  Wir beginnen mit der Definition der Relation $\leq$.
 
 \exercise
 Auf der Menge $\mathcal{D}$ definieren wir eine binäre Relation $\leq$ durch die Festsetzung
@@ -529,8 +513,11 @@ $\mathcal{M}$ definieren.  Es gilt also
 $\sup(\mathcal{M}) = \bigcup \mathcal{M} := \{ x \in \mathbb{Q} \mid \exists A \in \mathcal{M}: x \in A \}$.
 \eox
 
+\noindent
+Als nächstes definieren wir eine Addition auf Dedekind-Mengen.
+\pagebreak
 
-\begin{Definition}[Addition von Dedekind-Mengen]
+\begin{Definition}[Addition von Dedekind-Mengen] \hspace*{\fill} \linebreak
 Es seien $A$ und $B$ Dedekind-Mengen.  Dann definieren wir die Summe $A + B$ wie folgt:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -633,13 +620,12 @@ Zeigen Sie, dass die Menge
 \hspace*{1.3cm}
 $O := \{ x \in \mathbb{Q} \mid x < 0 \}$
 \\[0.2cm]
-eine Dedekind-Menge ist und zeigen Sie weiter, dass die Struktur $\langle \mathcal{D}, 0, + \rangle$
-eine kommutative Gruppe ist.
+eine Dedekind-Menge ist.
 \eox
 
 \solution
-Wir zeigen zunächst, dass $O$ eine Dedekind-Menge ist und weisen dazu die einzelnen Eigenschaften einer
-Dedekind-Menge nach. 
+Wir zeigen, dass $O$ eine Dedekind-Menge ist indem wir die einzelnen Eigenschaften einer
+Dedekind-Menge nachweisen. 
 \begin{enumerate}
 \item $O \not= \{\}$, denn es gilt $-1 \in O$.
 \item $O \not= \mathbb{Q}$, denn es gilt $1 \not\in O$.
@@ -661,10 +647,16 @@ Dedekind-Menge nach.
       $m < \bruch{1}{2} \cdot m$
       \\[0.2cm]
       und dann kann $m$ nicht das Maximum der Menge $O$ sein.   Folglich hat die Menge $O$ kein Maximum.
+      \qed
 \end{enumerate}
 \renewcommand{\labelenumi}{\arabic{enumi}.}
-Als nächstes zeigen wir, dass die Menge $O$ das links-neutrale Element bezüglich der Addition von
-Dedekind-Mengen ist, wir zeigen also, dass
+
+
+\exercise Zeigen Sie, dass die Menge $O$ das links-neutrale Element bezüglich der Addition von
+Dedekind-Mengen ist.  \eox
+
+\solution
+Wir zeigen, dass
 \\[0.2cm]
 \hspace*{1.3cm}
 $O + A = A$
@@ -699,110 +691,209 @@ gilt.  Wir spalten den Nachweis dieser Mengen-Gleichheit in den Nachweis zweier 
       \hspace*{1.3cm}
       $u + b = (a - b) + b = a$,
       \\[0.2cm]
-      so dass wir insgesamt $a \in O + A$ gezeigt haben.
+      so dass wir insgesamt $a \in O + A$ gezeigt haben. \qed
 \end{enumerate}
-Die Tatsache, dass für die Addition von Dedekind-Mengen sowohl das Kommutativ-Gesetz als auch das
-Assoziativ-Gesetz gilt, folgt unmittelbar aus der Kommutativität und der Assoziativität der Addition
-rationaler Zahlen.
 
-Als nächstes geben wir für eine Dedekind-Menge $A$ das additive Inverse $-\!A$ an:  
+\exercise
+Zeigen Sie, dass für die Addition von Dedekind-Mengen sowohl das Kommutativ-Gesetz als auch das
+Assoziativ-Gesetz gilt. \eox
+
+Als nächstes überlegen wir, wie wir für eine Dedekind-Menge $A$ das additive Inverse $-\!A$ 
+definieren können.  Ist $A \in \mathcal{D}$ eine Dedekind-Menge, die wir als die reelle Zahl $x$
+interpretieren wollen, so gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$-\!A := \{ x \in \mathbb{Q} \mid \exists r \in \mathbb{Q}: r > 0 \wedge -x - r \not\in A \}$.
+$A = \{ q \in \mathbb{Q} \mid q < x \}$.
 \\[0.2cm]
-Die Menge $-\!A$ enthält also die rationalen Zahlen $x$ für die $-x$ so groß ist, dass für ein
-geeignetes $r > 0$ die Zahl  $-x - r$ kein Element von $A$ mehr ist.  Als erstes zeigen wir, dass 
-$-\!A$ eine Dedekind-Menge ist.
+Daher liegt es nahe zu fordern, dass 
+\\[0.2cm]
+\hspace*{1.3cm}
+$-A = \{ q \in \mathbb{Q} \mid q < -x \}$
+\\[0.2cm]
+gilt.  Wir betrachten zunächst den Fall, dass $x \not\in \mathbb{Q}$ ist.
+Dann gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}{lcll}
+q < -x & \Leftrightarrow & \neg (-x \leq q)                                              \\
+       & \Leftrightarrow & \neg (-x < q \vee -x = q)                                     \\
+       & \Leftrightarrow & \neg (-x < q)             & \mbox{denn $x \not\in\mathbb{Q}$} \\
+       & \Leftrightarrow & \neg (x > -q)                                                 \\
+       & \Leftrightarrow & \neg (-q < x)                                                 \\
+       & \Leftrightarrow & \neg (-q \in A)                                               \\
+       & \Leftrightarrow & -q \not\in A.
+\end{array}
+$
+\\[0.2cm]
+In diesem Fall können wir daher $-A$ als
+\\[0.2cm]
+\hspace*{1.3cm}
+$-A := \{ q \in \mathbb{Q} \mid -q \not\in A \}$
+\\[0.2cm]
+definieren.  Leider funktioniert diese Definition dann nicht mehr, wenn die Menge 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\{ q \in \mathbb{Q} \mid -q \not\in A \}$
+\\[0.2cm]
+ihr Maximum enthält.  Dieser Fall würde beispielsweise eintreten, wenn wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$A := \{ q \in \mathbb{Q} \mid q < 1 \}$
+\\[0.2cm]  
+hätten, denn die Bedingung 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\neg (-q < 1)$ \quad ist zu  \quad $q \leq -1$
+\\[0.2cm]
+äquivalent und die Menge
+\\[0.2cm]
+\hspace*{1.3cm}
+$\{ q \in \mathbb{Q} \mid q \leq -1 \}$
+\\[0.2cm]
+ist keine Dedekind-Menge, da das Maximum dieser Menge ist $-1$ und diese Zahl ist selber ein Element
+dieser Menge.  Daher definieren wir zunächst für eine beliebige Menge $A \subseteq \mathbb{Q}$ die
+Menge $A^*$, die aus $A$ dadurch entsteht, dass wir das Maximum der Menge $A$ aus $A$ entfernen,
+wenn es erstens existiert und zweitens ein Element der Menge $A$ ist.
+\\[0.2cm]
+\hspace*{1.3cm}
+$A^* := \left\{
+\begin{array}{ll}
+ A - \{ \min(A) \} & \mbox{falls $\min(A)$ existiert und $\min(A) \in A$ ist,} \\
+ A                 & \mbox{sonst}.
+\end{array}\right.
+$
+\\[0.2cm]
+Damit können wir nun $-A$ durch die Festlegung
+\\[0.2cm]
+\hspace*{1.3cm}
+$-\!A := \{ q \in \mathbb{Q} \mid -q \not\in A \}^*$
+\\[0.2cm]
+definieren.
+
+
+\begin{Satz}
+  Die Menge $-\!A$ ist eine Dedekind-Menge.  \eox
+\end{Satz}
+
+\proof
+Wir zeigen zunächst, dass die Menge
+\\[0.2cm]
+\hspace*{1.3cm}
+ $B := \{ q \in \mathbb{Q} \mid -q \not\in A \}$ 
+\\[0.2cm]
+nach unten abgeschlossen ist.  Sei also $x \in B$ und $y < x$.  Wir führen den Nachweis indirekt und
+nehmen $y \not\in B$ an.  Aus $y \not\in B$ folgt
+\\[0.2cm]
+\hspace*{1.3cm}
+$-y \in A$.
+\\[0.2cm]
+Aus $x \in B$ folgt
+\\[0.2cm]
+\hspace*{1.3cm}
+$-x \not\in A$.
+\\[0.2cm]
+Aus $y < x$ folgt 
+\\[0.2cm]
+\hspace*{1.3cm}
+$-x < -y$
+\\[0.2cm]
+Da $A$ nach unten abgeschlossen ist, folgt aus $-y \in A$ und $-x < -y$ 
+\\[0.2cm]
+\hspace*{1.3cm}
+$-x \in A$, 
+\\[0.2cm]
+was im Widerspruch zu $x \not\in A$ steht.  Also muss $y \in B$ gelten und wir haben gezeigt, das die Menge $B$
+tatsächlich nach unten abgeschlossen ist.
 \begin{enumerate}
 \item Wir zeigen $-\!A \not= \emptyset$.
 
       Da $A$ eine Dedekind-Menge ist, ist $A \not= \mathbb{Q}$.  Daher gibt es ein $y \in \mathbb{Q}$ 
-      mit $y \not\in A$.  Wir definieren 
+      mit $y \not\in A$.  Definieren wir $x := -y$, so gilt
       \\[0.2cm]
       \hspace*{1.3cm}
-      $x := -(y +1)$ \quad und \quad $r := 1$.
+      $x \in \{ q \in \mathbb{Q} \mid -q \not\in A \} = B$.
       \\[0.2cm]
-      Dann gilt offenbar 
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $-x - r = y + 1 - 1 = y \not\in A$
-      \\[0.2cm]
-      und nach Definition der Menge $-\!A$ folgt $x \in -\!A$.  Also haben wir $-\!A \not= \emptyset$ gezeigt.
+      Falls $\max(B) \not\in B$ ist, haben wir $-A = B$ und $x \in -A$.
+
+      Sollte $-A = B \backslash \{ \max(B) \}$ und außerdem $x = \max(B)$ gelten, so gilt $x-1 < x$ und da die Menge $B$ nach unten
+      abgeschlossen ist, ist dann auch $x-1 \in B$.  Außerdem ist dann  $x - 1 < \max(B)$ und damit
+      gilt $x-1 \in -A$.
 \item Wir zeigen $-\!A \not= \mathbb{Q}$.
 
       Da $A$ eine Dedekind-Menge ist, gilt $A \not= \emptyset$.  Also gibt es ein $y \in A$.
       Wir definieren
       \\[0.2cm]
       \hspace*{1.3cm}
-      $x := -y$.
+      $q := -y$.
       \\[0.2cm]
-      Für beliebige $r \in \mathbb{Q}$ mit $r > 0$ gilt dann
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $-x - r = y - r < y$
-      \\[0.2cm]
-      und das $y \in A$ ist und $A$ als Dedekind-Menge nach unten abgeschlossen ist, folgt daraus
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $-x - r \in A$  \quad für alle $r \in \mathbb{Q}$ mit $r > 0$.
-      \\[0.2cm]
-      Nach der Definition von $-\!A$ folgt nun, dass $x$ kein Element von $-\!A$ ist.
-      Also gilt $-\!A \not= \mathbb{Q}$.
+      Nach der Definition von $B$ folgt nun, dass $q$ kein Element von $B$ ist.
+      Da $-A \subseteq B$ ist, ist $q$ dann sicher auch kein Element von $-A$ und damit 
+      gilt $-\!A \not= \mathbb{Q}$.
 \item Wir zeigen, dass die Menge $-\!A$ nach unten abgeschlossen ist.
-
-      Sei als $x \in -\!A$ und $y < x$.  Wir müssen zeigen, dass dann auch $y \in -\!A$ ist.
-      Aus der Voraussetzung  $x \in -\!A$ folgt, dass es ein $r \in \mathbb{Q}$ mit $r>0$ gibt,
-      so dass 
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $-x - r \not\in A$ 
-      \\[0.2cm]
-      ist.  Aus  $y < x$ folgt $-y > -x$ und damit gilt auch
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $-x - r < -y - r$.
-      \\[0.2cm]
-      Wir zeigen, dass $-y - r \not\in A$ ist und führen diesen Nachweis indirekt:  Wäre 
-      $-y - r \in A$, so folgt aus der Ungleichung $-x - r < -y - r$ und der Tatsache, dass $A$ als
-      Dedekind-Menge nach unten abgeschlossen ist, dass $-x - r \in A$ wäre, was falsch ist.
-      Also folgt $-y - r \not\in A$ und nach Definition von $-\!A$ folgern wir $y \in -\!A$.
-      Damit haben wir gezeigt, dass $-\!A$ nach unten abgeschlossen ist.
+  
+      Sei $x \in -A$ und $y < x$.  Wegen $-A \subseteq B$ folgt $x \in B$.
+      Wir haben oben schon gesehen, dass die Menge $B$ nach unten abgeschlossen ist.
+      Also gilt dann auch $y \in B$ und da $y$ sicher nicht das Maximum von $B$ ist, folgt 
+      $y \in -A$.
 \item Wir zeigen, dass $-\!A$ kein Maximum hat.
 
-      Wir führen diesen Nachweis indirekt und nehmen an, dass $x = \max(-\!A)$ ist.
-      Insbesondere ist $x$ dann ein Element von $-\!A$ und daher gibt es dann ein $r \in \mathbb{Q}$
-      mit $r>0$ und $-x - r \not\in A$.  Die letzte Formel können wir auch als
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $-x - \frac{1}{2} \cdot r - \frac{1}{2} \cdot r \not\in A$
-      \\[0.2cm]
-      schreiben, woraus wir folgern können, dass
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $x + \frac{1}{2} \cdot r \in -\!A$
-      \\[0.2cm]
-      ist.  Da andererseits $x < x + \frac{1}{2} \cdot r$ ist, kann dann aber $x$ nicht das Maximum
-      von $-\!A$ sein.  Dieser Widerspruch zeigt, dass die Menge $-\!A$ kein Maximum hat.
+      Hier gibt es zwei Fälle zu unterscheiden.
+      \begin{enumerate}
+      \item Die Menge $B$ hat kein Maximum.  Dann gilt $-A = B$ und damit hat $-A$ sicher auch kein
+            Maximum. 
+      \item Es sei $m := \max(B)$ und es gelte $m \in B$.  Dann haben wir $-A := B \backslash \{ m \}$
+            und müssen zeigen, dass auch $-A$ kein Maximum besitzt.   Sei dazu $x \in -A$.
+            Dann folgt 
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $x \in B$ \quad und \quad $x < m$, 
+            \\[0.2cm]
+            denn $m$ ist ja das Maximum vom $B$.  Für das arithmetische Mittel von $x$ und $m$ gilt
+            dann
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $x < \frac{1}{2} \cdot (x + m) < m$
+            \\[0.2cm]
+            und da $B$ nach unten abgeschlossen ist und $m \in B$ ist, folgt zunächst $\frac{1}{2} \cdot (x + m) \in
+            B$ und dann auch
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $\frac{1}{2} \cdot (x + m) \in -A$,
+            \\[0.2cm]  
+            denn die Mengen $-A$ und $B$ unterscheiden sich ja nur um $m$.  Insgesamt haben wir
+            jetzt zu beliebigem $x \in -A$ ein $y := \frac{1}{2} \cdot (x + m)$ gefunden, für das 
+            $x < y$ und $y \in -A$ gilt.  Damit kann die Menge $-A$ kein Maximum haben. \qed
+      \end{enumerate}
+
 \end{enumerate}
-Als nächstes zeigen wir, dass für jede Dedekind-Menge $A$ die Gleichung
-\\[0.2cm]
-\hspace*{1.3cm}
-$(-\!A) + A = O$ 
-\\[0.2cm]
-gilt.  Wir spalten den Nachweis dieser Mengengleicheit in zwei Teile auf.
-\begin{enumerate}
-\item ``$\subseteq$'':  Es sei $x + y \in -\!A + A$, also $x \in -\!A$ und $y \in A$.
-      Wir haben zu zeigen, dass $x + y \in O$ ist.
 
-      Wegen $x \in -\!A$ gibt es nach Definition der Menge $-\!A$ ein $r \in \mathbb{Q}$ mit $r > 0$, so dass 
-      $-x - r \not\in A$ ist.  Da $y \in A$ ist, muss $y < -x - r$ gelten.  Daraus folgt
+\begin{Satz}
+  Für jede Dedekind-Menge $A$ gilt die Gleichung
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $A + (-A) = O$. \eox
+\end{Satz}
+
+\proof
+  Wir spalten den Nachweis dieser Mengengleicheit in zwei Teile auf.
+\begin{enumerate}
+\item ``$\subseteq$'':  Es sei $x + y \in A + -\!A$, also $x \in A$ und $y \in -A$.
+      Wir haben zu zeigen, dass $x + y \in O$ ist und das ist gleichbedeutend mit $x + y < 0$.
+
+      Wegen $y \in -\!A$ gilt nach Definition der Menge $-\!A$
       \\[0.2cm]
       \hspace*{1.3cm}
-      $x + y < -r < 0$
+      $-y \not \in A$.
       \\[0.2cm]
-      und damit gilt $x + y \in O$.
-
-\item ``$\supseteq$'': Es sei nun $o \in O$, also $o < 0$.  Wir müssen ein $x \in -\!A$ und ein $y \in A$
+      Wäre $-y \leq x$, so würde aus der Tatsache, dass $A$ nach unten abgeschlossen und $x \in A$
+      ist, sofort $-y \in A$ folgen, was nicht sein kann.  Also gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $-y > x$
+      \\[0.2cm]
+      und daraus folgt $0 > x + y$, was zu zeigen war.
+\item ``$\supseteq$'': Es sei nun $o \in O$, also $o < 0$.  Wir müssen ein $x \in A$ und ein $y \in -A$
       finden, so dass $o = x + y$ gilt.
 
       Wir definieren 
@@ -839,7 +930,9 @@ gilt.  Wir spalten den Nachweis dieser Mengengleicheit in zwei Teile auf.
       \hspace*{1.3cm}
       $-y - r = (\widehat{n} + 2) \cdot r - r = (\widehat{n} + 1) \cdot r \not\in A$,
       \\[0.2cm]
-      so dass $y \in -\!A$ ist.  Außerdem gilt
+      so dass $y + r\in B := \{ q \in \mathbb{Q} \mid -q \not\in A \}$ ist.  
+      Wegen $-A := B^*$ folgt daraus $y \in -A$.  Also haben wir $x + y \in A + -A$.
+      Außerdem gilt
       \\[0.2cm]
       \hspace*{1.3cm}
       $x + y = \widehat{n} \cdot r - (\widehat{n} + 2) \cdot r = - 2 \cdot r = o$.
@@ -848,14 +941,9 @@ gilt.  Wir spalten den Nachweis dieser Mengengleicheit in zwei Teile auf.
       \qed
 \end{enumerate}
 
-
-\exercise
-Überlegen Sie, wie sich auf der Menge $\mathcal{D}$ eine Multiplikation definieren lässt,
+Wir überlegen uns nun, wie sich auf der Menge $\mathcal{D}$ eine Multiplikation so definieren lässt,
 so dass $\mathcal{D}$ mit dieser Multiplikation und der oben definierten Addition ein Körper wird.
-
-
-\solution
-Wir nennen eine Dedekind-Menge $A$ positiv, wenn $0 \in A$ gilt.  Für zwei positive Dedekind-Mengen $A$
+Dazu nennen wir eine Dedekind-Menge $A$ positiv, wenn $0 \in A$ gilt.  Für zwei positive Dedekind-Mengen $A$
 und $B$ lässt sich die Multiplikation $A \cdot B$ als
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -952,7 +1040,8 @@ solchen Fall ist $-\!A$ positiv.  Falls $A$ oder $B$ negativ ist, lautet die Def
           $A \cdot B := (-\!A) \cdot (-\!B)$.
 \end{enumerate}
 Nun müssten wir noch nachweisen, dass für die so definierte Multiplikation zusammen mit der oben definierten
-Addition die Körper-Axiome gelten.  Aus Zeitgründen verzichten wir darauf.
+Addition die Körper-Axiome gelten.  Aus Zeitgründen verzichten wir darauf und verweisen statt dessen
+auf die unten angegebene Literatur.
 \vspace*{0.3cm}
 
 
@@ -960,13 +1049,12 @@ Addition die Körper-Axiome gelten.  Aus Zeitgründen verzichten wir darauf.
 
 \noindent
 \textbf{Literatur-Hinweise} \\
-In dem Buch ``\emph{Grundlagen der Analysis}'' von Edmund Landau \cite{landau:1930} wird die oben skizzierte
-Konstruktion der reellen Zahlen im Detail beschrieben.   
+In dem Buch
+``\href{http://www.fernuni-hagen.de/imperia/md/content/ausstellung/juedischemathematiker/landau.pdf}{\emph{Grundlagen der Analysis}}'' 
+von Edmund Landau \cite{landau:1930} wird die oben skizzierte Konstruktion der reellen Zahlen im Detail beschrieben.   
 Auch das Buch ``\emph{Principles of  Mathematical Analysis}'' von Walter Rudin \cite{rudin:1976}
-diskutiert die Konstruktion der reellen Zahlen mit Hilfe von Dedekind-Mengen ausführlich. 
-
-
-
+diskutiert die Konstruktion der reellen Zahlen mit Hilfe von Dedekind-Mengen ausführlich als dies in
+dem zeitlichen Rahmen meiner Vorlesung möglich ist.
 
 
 \section{Geschichte}
