@@ -130,7 +130,12 @@ Anordnungs-Axiomen einer linearen Ordnung.
   \item $\langle K, 0, 1, +, \cdot, \rangle$ ein Körper und
   \item $\langle K, \leq \rangle$
   \end{enumerate}
-  eine lineare Ordnung ist.  \edx
+  eine lineare Ordnung ist, die mit den arithmetischen Operationen $+$ und $\cdot$ 
+  \emph{verträglich} ist.  Dazu müssen die beiden folgenden Bedingungen erfüllt sein:
+  \begin{enumerate}
+  \item $\forall x,y,z \in K: \bigl(x \leq y \rightarrow x + z \leq y + z\bigr)$,
+  \item $\forall x,y \in K:\bigl(0 \leq x \wedge 0 \leq y \rightarrow 0 \leq x \cdot y\bigr)$. \edx
+  \end{enumerate}
 \end{Definition}
 
 \remark
@@ -515,7 +520,7 @@ $\sup(\mathcal{M}) = \bigcup \mathcal{M} := \{ x \in \mathbb{Q} \mid \exists A \
 
 \noindent
 Als nächstes definieren wir eine Addition auf Dedekind-Mengen.
-\pagebreak
+
 
 \begin{Definition}[Addition von Dedekind-Mengen] \hspace*{\fill} \linebreak
 Es seien $A$ und $B$ Dedekind-Mengen.  Dann definieren wir die Summe $A + B$ wie folgt:
@@ -652,8 +657,10 @@ Dedekind-Menge nachweisen.
 \renewcommand{\labelenumi}{\arabic{enumi}.}
 
 
-\exercise Zeigen Sie, dass die Menge $O$ das links-neutrale Element bezüglich der Addition von
+\exercise 
+Zeigen Sie, dass die Menge $O$ das links-neutrale Element bezüglich der Addition von
 Dedekind-Mengen ist.  \eox
+\pagebreak
 
 \solution
 Wir zeigen, dass
@@ -1049,8 +1056,7 @@ auf die unten angegebene Literatur.
 
 \noindent
 \textbf{Literatur-Hinweise} \\
-In dem Buch
-``\href{http://www.fernuni-hagen.de/imperia/md/content/ausstellung/juedischemathematiker/landau.pdf}{\emph{Grundlagen der Analysis}}'' 
+In dem Buch ``\emph{Grundlagen der Analysis}'' 
 von Edmund Landau \cite{landau:1930} wird die oben skizzierte Konstruktion der reellen Zahlen im Detail beschrieben.   
 Auch das Buch ``\emph{Principles of  Mathematical Analysis}'' von Walter Rudin \cite{rudin:1976}
 diskutiert die Konstruktion der reellen Zahlen mit Hilfe von Dedekind-Mengen ausführlich als dies in
