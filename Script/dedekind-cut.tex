@@ -133,10 +133,254 @@ Anordnungs-Axiomen einer linearen Ordnung.
   eine lineare Ordnung ist, die mit den arithmetischen Operationen $+$ und $\cdot$ 
   \emph{verträglich} ist.  Dazu müssen die beiden folgenden Bedingungen erfüllt sein:
   \begin{enumerate}
-  \item $\forall x,y,z \in K: \bigl(x \leq y \rightarrow x + z \leq y + z\bigr)$,
-  \item $\forall x,y \in K:\bigl(0 \leq x \wedge 0 \leq y \rightarrow 0 \leq x \cdot y\bigr)$. \edx
+  \item $\forall x,y,z \in K: \bigl(x \leq y \rightarrow x + z \leq y + z\bigr)$,  \hspace*{\fill} (A1)
+  \item $\forall x,y \in K:\bigl(0 \leq x \wedge 0 \leq y \rightarrow 0 \leq x \cdot y\bigr)$.  \hspace*{\fill} (A2)
   \end{enumerate}
 \end{Definition}
+
+Bevor wir ein Beispiel eines geordneten Körpers präsentieren, geben wir einige Eigenschaften an, die
+aus den Axiomen eines geordneten Körpers gefolgert werden können.  Das folgende Lemma zeigt, dass
+sich eine Ungleichung bei Multiplikation mit $-1$ umdreht.
+
+\begin{Lemma} \label{lemma:l4}
+  Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter Körper}.
+  Dann gilt
+  \\[0.2cm]
+  \hspace*{1.3cm} $x \leq y \Rightarrow -y \leq -x$  \quad für alle $x,y \in K$.
+\end{Lemma}
+
+\proof
+Wir gehen davon aus, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$x \leq y$
+\\[0.2cm]
+gilt und zeigen, dass daraus $-y \leq -x$ folgt.  Addieren wir auf beiden Seiten der Ungleichung 
+$x \leq y$ den Wert $-y$, was nach dem Axiom (A1) erlaubt ist, so erhalten wir die Ungleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$x - y \leq 0$.
+\\[0.2cm]
+Addieren wir auf beiden Seiten dieser Ungleichung den Wert $-x$, so erhalten wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$-y \leq -x$
+\\[0.2cm]
+und das ist die Behauptung.  \qed
+
+Das nächste Lemma zeigt, dass in einem geordneten Körper die Addition mit der Relation $\leq$
+verträglich ist.
+
+\begin{Lemma}
+  Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter Körper}.
+  Dann gilt
+  \\[0.2cm]
+  \hspace*{1.3cm} $x_1 \leq y_1 \wedge x_2 \leq y_2 \Rightarrow x_1 + x_2 \leq y_1 + y_2$  \quad für alle $x_1,x_2,y_1,y_2 \in K$.
+\end{Lemma}
+
+\proof
+Wir setzen voraus, dass sowohl $x_1 \leq y_1$ als auch $x_2 \leq y_2$ gilt und zeigen, dass daraus
+$x_1 + x_2 \leq y_1 + y_2$ folgt.  Addieren wir auf beiden Seiten der Ungleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$x_1 \leq y_1$
+\\[0.2cm]
+den Wert $x_2$, so erhalten wir die Ungleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$x_1 + x_2 \leq y_1 + x_2$.  \hspace*{\fill} (1)
+\\[0.2cm]
+Addieren wir auf beiden Seiten der Ungleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$x_2 \leq y_2$
+\\[0.2cm]
+den Wert $y_1$, so erhalten wir die Ungleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$y_1 + x_2 \leq y_1 + y_2$.  \hspace*{\fill} (2)
+\\[0.2cm]
+Setzen wir die Ungleichungen (1) und (2) zusammen, so folgt aus der Transitivität der Relation
+$\leq$, dass 
+\\[0.2cm]
+\hspace*{1.3cm}
+$x_1 + x_2 \leq y_1 + y_2$
+\\[0.2cm]
+gilt und das war zu zeigen.  \qed
+
+Das nächste Lemma zeigt, dass die Relation $\leq$ mit der Multiplikation nicht-negativer Zahlen
+verträglich ist. 
+
+\begin{Lemma}
+  Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter Körper}.
+  Dann gilt
+  \\[0.2cm]
+  \hspace*{1.3cm} $x \leq y \wedge 0 \leq z \Rightarrow x \cdot z \leq y \cdot z$  \quad für alle $x,y,z \in K$.
+\end{Lemma}
+
+\proof
+Wir setzen voraus, dass  $x \leq y$ und $0 \leq z$ gilt und zeigen, dass in einem geordneten
+Körper dann auch $x \cdot z \leq y \cdot z$ gelten muss.  Subtrahieren wir auf beiden Seiten der Ungleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$x \leq y$
+\\[0.2cm]
+den Wert $x$, so erhalten wir die Ungleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$0 \leq y - x$.
+\\[0.2cm]
+Zusammen mit der Ungleichung $0 \leq z$ zeigt das Axiom (A2) nun, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$0 \leq (y - x) \cdot z$
+\\[0.2cm]
+gilt, was zu
+\\[0.2cm]
+\hspace*{1.3cm}
+$0 \leq y \cdot z - x \cdot z$
+\\[0.2cm]
+äquivalent ist.  Addieren wir auf beiden Seiten dieser Ungleichung den Wert $x \cdot z$, so erhalten wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$x \cdot z \leq y \cdot z$.  \qed
+
+\begin{Lemma} \label{lemma:l6}
+  Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter Körper}.
+  Dann gilt
+  \\[0.2cm]
+  \hspace*{1.3cm} $0 \leq x_1 \leq y_1 \wedge 0 \leq x_2 \leq y_2 \Rightarrow x_1 \cdot x_2 \leq y_1 \cdot y_2$  
+  \quad für alle $x_1,x_2,y_1,y_2 \in K$.
+\end{Lemma}
+
+\proof
+Wir setzen voraus, dass $0 \leq x_1 \leq y_1$ und $0 \leq x_2 \leq y_2$ gilt und zeigen, dass daraus 
+$x_1 \cdot x_2 \leq y_1 \cdot y_2$ folgt.  Multiplizieren wir die Ungleichung $x_1 \leq y_1$ mit
+$x_2$, so sehen wir unter Anwendung des gerade bewiesenen Lemmas, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$x_1 \cdot x_2 \leq y_1 \cdot x_2$  \hspace*{\fill} (1)
+\\[0.2cm]
+gilt.  Multiplizieren wir statt dessen die Ungleichung $x_2 \leq y_2$ mit $y_1$, so erhalten wir die
+Ungleichung 
+\\[0.2cm]
+\hspace*{1.3cm}
+$y_1 \cdot x_2 \leq y_1 \cdot y_2$. \hspace*{\fill} (2)
+\\[0.2cm]
+Aus den beiden Ungleichungen (1) und (2) folgt mit der Transitivität der Relation $\leq$ nun
+\\[0.2cm]
+\hspace*{1.3cm}
+$x_1 \cdot x_2 \leq y_1 \cdot y_2$
+\\[0.2cm]
+und das ist die Behauptung.  \qed
+
+Das nächste Lemma zeigt, dass sich Ungleichungen bei Multiplikation mit nicht positiven Zahlen
+umdrehen. 
+
+\begin{Lemma} 
+  Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter Körper}.
+  Dann gilt
+  \\[0.2cm]
+  \hspace*{1.3cm} $x \leq y \wedge z \leq 0 \Rightarrow y \cdot z \leq x \cdot z$  
+  \quad für alle $x,y,z \in K$.
+\end{Lemma}
+
+\proof
+Aus der Voraussetzung $z \leq 0$ folgt mit Lemma \ref{lemma:l4}
+\\[0.2cm]
+\hspace*{1.3cm}
+$-0 \leq -z$, \quad also $0 \leq -z$.
+\\[0.2cm]
+Mit Lemma \ref{lemma:l6} folgt aus $x \leq y$ und $0 \leq -z$ die Ungleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$x \cdot (-z) \leq y \cdot (-z)$,
+\\[0.2cm]
+was wir auch als
+\\[0.2cm]
+\hspace*{1.3cm}
+$-x \cdot z \leq -y \cdot z$
+\\[0.2cm]
+schreiben können.  Daraus folgt mit Lemma \ref{lemma:l4} die Ungleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$y \cdot z \leq x \cdot z$. \qed
+
+Nun zeigen wir, dass ein Quadrat nie negativ ist.
+
+\begin{Lemma} 
+  Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter Körper}.
+  Dann gilt
+  \\[0.2cm]
+  \hspace*{1.3cm} $0 \leq x \cdot x$  
+  \quad für alle $x \in K$.
+\end{Lemma}
+
+\proof
+Da $\leq$ eine lineare Ordnung ist, haben wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$0 \leq x \vee x \leq 0$.
+\\[0.2cm] 
+Wir führen eine Fallunterscheidung durch.
+\begin{enumerate}
+\item Fall: $0 \leq x$.
+
+      Multiplizieren wir die Ungleichung $0 \leq x$ mit der Ungleichung $0 \leq x$, 
+      so folgt aus dem Axiom (A2) sofort die Behauptung
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $0 \leq x \cdot x$.
+\item Fall: $x \leq 0$.
+
+      Nach Lemma \ref{lemma:l4} folgt dann
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $0 \leq -x$.
+      \\[0.2cm]
+      Multiplizieren wir diese Ungleichung mit sich selbst, so folgt aus dem Axiom (A2)
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $0 \leq (-x) \cdot (-x)$
+      \\[0.2cm]
+      und wegen $(-x) \cdot (-x) = x \cdot x$ ist das die Behauptung.  \qed
+\end{enumerate}
+
+Das nächste Lemma zeigt, in welcher Weise die Relation $\leq$ mit dem multiplikativen Inversen
+verträglich ist.
+
+\begin{Lemma} 
+  Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter Körper}.
+  Dann gilt
+  \\[0.2cm]
+  \hspace*{1.3cm} $0 \leq x \wedge x \not= 0 \Rightarrow 0 \leq x^{-1}$
+  \quad für alle $x \in K$.
+\end{Lemma}
+
+\proof
+Es gelte $0 \leq x$.  Aus der Tatsache, dass $x \not= 0$ ist, folgt, dass $x^{-1}$ definiert ist.
+Nach dem letzten Lemma gilt daher
+\\[0.2cm]
+\hspace*{1.3cm}
+$0 \leq x^{-1} \cdot x^{-1}$ 
+\\[0.2cm]
+Multiplizieren wir diese Ungleichung mit $x$, so zeigt Lemma \ref{lemma:l6}, dass dann auch
+\\[0.2cm]
+\hspace*{1.3cm}
+$0 \cdot x \leq x^{-1} \cdot x^{-1} \cdot x$
+\\[0.2cm]
+gilt und diese Aussage ist offenbar äquivalent zu der Behauptung. \qed
+
+\begin{Lemma} 
+  Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter Körper}.
+  Dann gilt
+  \\[0.2cm]
+  \hspace*{1.3cm} $0 \leq x \leq y \wedge x \not= 0 \Rightarrow y^{-1} \leq x^{-1}$
+  \quad für alle $x, y \in K$.  
+\end{Lemma}
+
+\exercise
+Beweisen Sie diese Behauptung.  \eox
 
 \remark
 Die Struktur $\langle \mathbb{Q}, 0, 1, +, \cdot, \leq \rangle$ ist ein geordneter Körper, wenn wir
@@ -256,7 +500,8 @@ definiert, wie die Menge $\mathbb{R}$ der reellen Zahlen konstruiert wird.
 Diese Konstruktion werden wir im nächsten Abschnitt mit Hilfe der sogenannten
 \emph{Dedekind-Schnitte} liefern.  Für praktische Rechnungen ist diese 
 Konstruktion viel zu schwerfällig.  Wir skizzieren  daher zum Abschluss dieses
-Abschnitts noch eine andere Konstruktion der reellen Zahlen als \emph{unendliche Dezimalbrüche}.  Dazu
+Abschnitts noch eine andere Konstruktion der reellen Zahlen als \emph{unendliche Dezimalbrüche}, die
+auf \href{http://en.wikipedia.org/wiki/Simon_Stevin}{Simon Stevin} (1548-1620) zurück geht.  Dazu
 betrachten wir eine positive reelle Zahl $x \in \mathbb{R}$ abstrakt als gegeben und untersuchen, wie wir $x$
 in der Form
 \\[0.2cm]
@@ -660,7 +905,7 @@ Dedekind-Menge nachweisen.
 \exercise 
 Zeigen Sie, dass die Menge $O$ das links-neutrale Element bezüglich der Addition von
 Dedekind-Mengen ist.  \eox
-\pagebreak
+
 
 \solution
 Wir zeigen, dass
