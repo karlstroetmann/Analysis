@@ -4,6 +4,16 @@ Grundlage, auf der die Analysis aufgebaut ist.  Da Reihen nichts anderes sind al
 spezielle Folgen, beginnen wir unsere Diskussion mit den Folgen.
 
 \section{Folgen}
+Anschaulich können wir uns Folgen als unendlich lange Listen vorstellen.  Ein Beispiel für eine
+solche Folge wäre die Liste
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds \Bigl[\frac{1}{1},\frac{1}{2},\frac{1}{3}, \cdots, \frac{1}{n}, \frac{1}{n+1}, \cdots\Bigr]$.
+\\[0.2cm]
+Diese Notation ist zwar suggestiv, aber für komplexere Beispiele nicht adäquat.
+Formal definieren wir Folgen daher als Funktionen, die auf den natürlichen Zahlen definiert sind. 
+
+
 \begin{Definition}[Folge]
   Eine Funktion $f: \mathbb{N} \rightarrow \mathbb{R}$ bezeichnen wir als eine  \emph{reellwertige Folge}. 
   Eine Funktion $f: \mathbb{N} \rightarrow \mathbb{C}$ bezeichnen wir als eine  \emph{komplexwertige
@@ -116,7 +126,7 @@ bezeichnen wir  die Menge der positiven reellen Zahlen mit $\mathbb{R}_+$, es gi
 Eine Folge $\folge{a_n}$ \emph{konvergiert} gegen den \emph{Grenzwert} $g$, falls gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall \varepsilon \in\mathbb{R}_+: \exists K \in \mathbb{R} : \forall n \in \mathbb{N} : n \geq K \rightarrow |a_n - g| < \varepsilon$. 
+$\forall \varepsilon \in\mathbb{R}_+: \exists K \in \mathbb{R}: \forall n \in \mathbb{N}:\bigl( n \geq K \rightarrow |a_n - g| < \varepsilon\bigr)$. 
 \\[0.2cm]
 In diesem Fall schreiben wir
 \\[0.2cm]
@@ -133,10 +143,10 @@ und beweisen, dass
 $\lim\limits_{n\rightarrow\infty} \bruch{1}{n} = 0$
 \\[0.2cm]
 gilt. 
-\vspace*{0.2cm}
+\pagebreak
 
-\noindent
-\textbf{Beweis}:  Für jedes  $\varepsilon > 0$ müssen wir eine Zahl $K$ angeben, so
+\proof
+Für jedes  $\varepsilon > 0$ müssen wir eine Zahl $K$ angeben, so
 dass für alle natürlichen Zahlen $n$, die größer-gleich $K$ sind, die Abschätzung
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -196,24 +206,28 @@ Konvergiert die Folge $\folge{a_n}$ sowohl gegen den Grenzwert $g_1$ als auch ge
 Grenzwert $g_2$, so gilt $g_1 = g_2$.
 \end{Satz}
 \textbf{Beweis}:  Wir führen den Beweis indirekt und nehmen an, dass $g_1 \not= g_2$ ist.
-Dann definieren wir $\varepsilon = \bruch{1}{2}\cdot|g_2 - g_1|$ und aus der Annahme $g_1 \not= g_2$ folgt
-$\varepsilon > 0$.  Aus der Voraussetzung, dass $\folge{a_n}$ gegen $g_1$ konvergiert
-folgt, dass es ein $K_1$ gibt, so dass gilt:
+Dann definieren wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \forall n \in \mathbb{N}: n \geq K_1 \rightarrow | a_n - g_1 | < \varepsilon $
+ $\varepsilon = \bruch{1}{2}\cdot|g_2 - g_1|$ 
 \\[0.2cm]
-Analog folgt  aus der Voraussetzung, dass $\folge{a_n}$ gegen $g_2$ konvergiert,
-dass es ein $K_2$ gibt, so dass gilt:
+und aus der Annahme $g_1 \not= g_2$ folgt
+$\varepsilon > 0$.  Aus der Voraussetzung, dass $\folge{a_n}$ gegen $g_1$ konvergiert,
+folgt, dass es ein $K_1$ gibt, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \forall n \in \mathbb{N}: n \geq K_2 \rightarrow | a_n - g_2 | < \varepsilon $
+$\forall n \in \mathbb{N}:\bigl( n \geq K_1 \rightarrow | a_n - g_1 | < \varepsilon\bigr)$
 \\[0.2cm]
-Wir setzen $K := \max(K_1, K_2)$.  Alle $n\in\mathbb{N}$, die größer-gleich $K$ sind,
+gilt.  Analog folgt  aus der Voraussetzung, dass $\folge{a_n}$ gegen $g_2$ konvergiert,
+dass es ein $K_2$ gibt, so dass 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall n \in \mathbb{N}:\bigl( n \geq K_2 \rightarrow | a_n - g_2 | < \varepsilon\bigr)$
+\\[0.2cm]
+gilt.  Wir setzen $K := \max(K_1, K_2)$.  Alle $n\in\mathbb{N}$, die größer-gleich $K$ sind,
 sind dann sowohl größer-gleich $K_1$ als auch größer-gleich $K_2$. Unter Benutzung der 
 \emph{Dreiecksungleichung}\footnote{
-Sind $a, b\in \mathbb{R}$, so gilt $|a+b| \leq |a| + |b|$.  Diese Ungleichung trägt den
-Namen \emph{Dreiecksungleichung.}}
+Sind $a, b\in \mathbb{R}$, so gilt $|a+b| \leq |a| + |b|$.}
 erhalten wir für alle $n \geq K$ die folgende Kette von Ungleichungen:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -228,29 +242,26 @@ $
 \end{array}
 $
 \\[0.2cm]
-Aus dieser Ungleichungs-Kette würde aber $2\cdot \varepsilon < 2\cdot \varepsilon$ folgen und dass
+Aus dieser Ungleichungs-Kette würde aber $2\cdot \varepsilon < 2\cdot \varepsilon$ folgen und das
 ist ein Widerspruch.  Somit ist die Annahme $g_1 \not= g_2$ falsch und es muss $g_1 = g_2$
 gelten.  
 \hspace*{\fill} $\Box$
-\vspace*{0.3cm}
 
-\noindent
-\textbf{Bemerkung}:  Die Schreibweise $\lim\limits_{n\rightarrow\infty} a_n = g$
+\remark
+Die Schreibweise $\lim\limits_{n\rightarrow\infty} a_n = g$
 wird durch den letzten Satz im Nachhinein gerechtfertigt.
-\vspace*{0.3cm}
 
 \exercise
 Zeigen Sie, dass die Folge $\folge{(-1)^n}$ nicht konvergent ist. \eox
-\vspace*{0.3cm}
 
 \noindent 
 \textbf{Lösung}: Wir führen den Beweis indirekt und nehmen an, dass die Folge
 $\folge{(-1)^n}$ konvergiert.  Bezeichnen wir diesen Grenzwert mit $s$, so gilt also
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \forall \varepsilon \in \mathbb{R}_+: \exists K \in \mathbb{R} : \forall n \in \mathbb{N} : n \geq K \rightarrow \bigl|(-1)^n - s\bigr| < \varepsilon $
+$\forall \varepsilon \in \mathbb{R}_+: \exists K \in \mathbb{R}: \forall n \in \mathbb{N}: \bigl( n \geq K \rightarrow \bigl|(-1)^n - s\bigr| < \varepsilon\bigr)$
 \\[0.2cm]
-Daher gibt es für  $\varepsilon = 1$ eine Zahl $K$, so dass 
+Daher gibt es für $\varepsilon = 1$ eine Zahl $K$, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
 $ \forall n \in \mathbb{N} : n \geq K \rightarrow \bigl|(-1)^n - s\bigr| < 1 $
@@ -271,11 +282,12 @@ Wegen $(-1)^{2\cdot n} = 1$ und $(-1)^{2\cdot n + 1} = -1$ haben wir also
   \bigl| -1 - s\bigr| < 1.
 \end{equation}
 Wegen $-1 - s = (-1) \cdot (1 + s)$ und $|a \cdot b| = |a|\cdot|b|$ können wir die letzte Ungleichung
-noch vereinfachen zu 
+noch zu  
 \begin{equation}
   \label{eq:ineq0a}
-  \bigl| 1 + s\bigr| < 1.
+  \bigl| 1 + s\bigr| < 1
 \end{equation}
+vereinfachen.
 Aus den beiden Ungleichungen $|1-s|<1$ und $|1+s|<1$  erhalten wir nun einen Widerspruch:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -294,7 +306,7 @@ Ungleichung $2<2$ abgeleitet.
 Damit haben wir aus der Annahme, dass die Folge gegen den Grenzwert $s$ konvergiert, einen
 Widerspruch hergeleitet. \hspace*{\fill} $\Box$
 
-\begin{Definition}[beschränkte Folgen]
+\begin{Definition}[Beschränkte Folge]
 Eine Folge $\folge{a_n}$ ist \emph{beschränkt}, falls es eine \emph{Schranke} $S$ gibt, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -302,15 +314,17 @@ $ \forall n \in \mathbb{N}: \bigl|a_n\bigr| \leq S$
 \\[0.2cm]
 gilt.  \eod
 \end{Definition}
-Die Folge $\folge{(-1)^n}$ ist durch die Schranke $S=1$ beschränkt, denn offenbar gilt
-\\[0.2cm]
-\hspace*{1.3cm}
-$ \bigl|(-1)^n\bigr| = 1 \leq 1, $
-\\[0.2cm]
-aber die Folge $\folge{n}$ ist nicht beschränkt, denn sonst gäbe es eine Zahl $S$, so dass
-für alle natürlichen Zahlen $n$ die Ungleichung $n \leq S$ gilt.  Da es beliebig große
-natürliche Zahlen gibt, kann dies nicht sein.
 
+\examples
+\begin{enumerate}
+\item Die Folge $\folge{(-1)^n}$ ist durch die Schranke $S=1$ beschränkt, denn offenbar gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $ \bigl|(-1)^n\bigr| = 1 \leq 1$.
+\item  Die Folge $\folge{n}$ ist nicht beschränkt, denn sonst gäbe es eine Zahl $S$, so dass
+       für alle natürlichen Zahlen $n$ die Ungleichung $n \leq S$ gilt.  Da es beliebig große
+       natürliche Zahlen gibt, kann dies nicht sein. \eox
+\end{enumerate}
 
 \begin{Satz}[Beschränktheit konvergenter Folgen]
 Jede konvergente Folge  ist beschränkt.
@@ -323,12 +337,12 @@ $ \lim\limits_{n\rightarrow\infty} a_n = g. $
 Dann gibt es für beliebige $\varepsilon > 0$ ein $K$, so dass gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \forall n \in \mathbb{N}: n \geq K \rightarrow \bigl| a_n - g \bigr| < \varepsilon. $
+$\forall n \in \mathbb{N}: \bigl(n \geq K \rightarrow \bigl| a_n - g \bigr| < \varepsilon\bigr)$.
 \\[0.2cm]
 Wir können also für $\varepsilon = 1$ ein $K$ finden, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \forall n \in \mathbb{N}: n \geq K \rightarrow \bigl| a_n - g \bigr| < 1 $
+$\forall n \in \mathbb{N}:\bigl(n \geq K \rightarrow \bigl| a_n - g \bigr| < 1\bigr)$
 \\[0.2cm]
 gilt.  Wir können ohne Einschränkung der Allgemeinheit davon ausgehen, dass
 $K$ eine natürliche Zahl ist, denn wenn $K$ keine natürliche Zahl ist, können wir $K$
@@ -339,11 +353,12 @@ Dann definieren wir
 $ S := \max\bigl\{ |a_0|, |a_1|, \cdots, |a_K|, 1 + |g| \bigr\}.  $
 \\[0.2cm]
 Wir behaupten, dass $S$ eine Schranke für die Folge $\folge{a_n}$ ist, wir zeigen also,
-dass für alle $n \in \mathbb{N}$ gilt:
+dass für alle $n \in \mathbb{N}$ 
 \\[0.2cm]
 \hspace*{1.3cm}
 $ |a_n| \leq S $
 \\[0.2cm] 
+gilt.
 Um diese Ungleichung nachzuweisen, führen wir eine Fall-Unterscheidung durch:
 \begin{enumerate}
 \item Fall: $n \leq K$.  Dann gilt offenbar 
@@ -368,8 +383,10 @@ $
       \end{array} \hspace*{\fill} \Box
       $
 \end{enumerate}
-Aus den letzten beiden Sätzen folgt nun sofort, dass die Folge $\folge{n}$ nicht
-konvergiert, denn diese Folge ist noch nicht einmal beschränkt.
+
+\example
+Aus dem letzten Satz folgt sofort, dass die Folge $\folge{n}$ nicht
+konvergiert, denn diese Folge ist noch nicht einmal beschränkt.  \eox
 
 
 \begin{Satz}[Summe konvergenter Folgen]
@@ -391,25 +408,24 @@ $
 Es sei $\varepsilon > 0$ \underline{fest} vorgegeben.  Wir suchen ein $K$, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \forall n \in \mathbb{N} : n \geq K \rightarrow \bigl| \bigl(a_n + b_n\bigr) - (a + b)\bigr| < \varepsilon $
+$\forall n \in \mathbb{N}:\bigl( n \geq K \rightarrow \bigl| \bigl(a_n + b_n\bigr) - (a + b)\bigr| < \varepsilon \bigr)$
 \\[0.2cm]
 gilt.  Nach Voraussetzung gibt es für \underline{beliebi}g\underline{e} $\varepsilon' > 0$ ein $K_1$ und ein $K_2$, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$  \forall n \in \mathbb{N} : n \geq K_1 \rightarrow \bigl| a_n - a \bigr| < \varepsilon' 
-   \quad \mbox{und} \quad
-   \forall n \in \mathbb{N} : n \geq K_2 \rightarrow \bigl| b_n - b \bigr| < \varepsilon' 
-$
+$\forall n \in \mathbb{N}:\bigl(n \geq K_1 \rightarrow \bigl| a_n - a \bigr| < \varepsilon'\bigr)$ 
+\quad \mbox{und} \quad
+$\forall n \in \mathbb{N}:\bigl( n \geq K_2 \rightarrow \bigl| b_n - b \bigr| < \varepsilon'\bigr)$
 \\[0.2cm]
 gilt.  Wir setzen nun $\varepsilon' := \bruch{1}{2} \cdot \varepsilon$.  Dann gibt es also $K_1$ und
 $K_2$, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$ 
-   \forall n \in \mathbb{N} : n \geq K_1 \rightarrow \bigl| a_n - a \bigr| < \bruch{1}{2}\cdot\varepsilon 
+$\forall n \in \mathbb{N}:\bigl(n \geq K_1 \rightarrow \bigl| a_n - a \bigr| < \bruch{1}{2}\cdot\varepsilon\bigr)$ 
    \quad \mbox{und} \quad
-   \forall n \in \mathbb{N} : n \geq K_2 \rightarrow \bigl| b_n - b \bigr| < \bruch{1}{2}\cdot\varepsilon 
-$
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall n \in \mathbb{N}:\bigl(n \geq K_2 \rightarrow \bigl| b_n - b \bigr| < \bruch{1}{2}\cdot\varepsilon\bigr)$
 \\[0.2cm]
 gilt.  Wir definieren $K := \max(K_1,K_2)$.  Damit gilt dann für alle $n \geq K$:
 \\[0.2cm]
@@ -458,12 +474,11 @@ Zeichen:
 $ \lim\limits_{n\rightarrow\infty} \bigl(a_n \cdot b_n\bigr) = 
    \Bigl(\lim\limits_{n\rightarrow\infty} a_n\Bigr) \cdot\Bigl(\lim\limits_{n\rightarrow\infty} b_n\Bigr).
 $
-\\[0.2cm]  
 \end{Satz}
 \textbf{Beweis}:  Es sei $\varepsilon > 0$ \underline{fest} vorgegeben.  Wir suchen ein $K$, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \forall n \in \mathbb{N} : n \geq K \rightarrow \bigl| \bigl(a_n \cdot b_n\bigr) - (a \cdot b)\bigr| < \varepsilon $
+$\forall n \in \mathbb{N}:\bigl(n \geq K \rightarrow \bigl|a_n \cdot b_n - a \cdot b\bigr| < \varepsilon\bigr)$
 \\[0.2cm]
 gilt.  Da die Folge $\folge{a_n}$ konvergent ist, ist diese Folge auch beschränkt, es gibt
 also eine Zahl $S$, so dass  
@@ -476,23 +491,20 @@ Nach Voraussetzung gibt es für beliebige $\varepsilon_1 > 0$ ein
 $K_1$ und für beliebige $\varepsilon_2 >0$ ein $K_2$, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$ 
-   \forall n \in \mathbb{N} : n \geq K_1 \rightarrow \bigl| a_n - a \bigr| < \varepsilon_1
+$\forall n \in \mathbb{N}:\bigl(n \geq K_1 \rightarrow \bigl| a_n - a \bigr| < \varepsilon_1\bigr)$
    \quad \mbox{und} \quad
-   \forall n \in \mathbb{N} : n \geq K_2 \rightarrow \bigl| b_n - b \bigr| < \varepsilon_2
-$
+$\forall n \in \mathbb{N}:\bigl(n \geq K_2 \rightarrow \bigl| b_n - b \bigr| < \varepsilon_2\bigr)$
 \\[0.2cm]
 gilt.  Wir setzen nun $\varepsilon_1 := \bruch{\varepsilon}{2\cdot(|b| + 1)}$ und
 $\varepsilon_2 := \bruch{\varepsilon}{2\cdot S}$.  Dann gibt es also $K_1$ und
 $K_2$, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$ 
-   \forall n \in \mathbb{N} : n \geq K_1 \rightarrow \bigl| a_n - a \bigr| < \bruch{\varepsilon}{2\cdot(|b| + 1)}
-   \quad \mbox{und} \quad
-   \forall n \in \mathbb{N} : n \geq K_2 \rightarrow \bigl| b_n - b \bigr| <
-   \bruch{\varepsilon}{2\cdot  S}
-$
+$\forall n \in \mathbb{N}:\Bigl(n \geq K_1 \rightarrow \bigl| a_n - a \bigr| < \bruch{\varepsilon}{2\cdot(|b| + 1)}\Bigr)$
+\quad \mbox{und} \quad
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall n \in \mathbb{N}:\Bigl(n \geq K_2 \rightarrow \bigl| b_n - b \bigr| < \bruch{\varepsilon}{2\cdot S}\Bigr)$
 \\[0.2cm]
 gilt.  Wir definieren $K := \max(K_1,K_2)$.  Damit gilt dann für alle $n \geq K$:
 \\[0.2cm]
@@ -551,8 +563,8 @@ Bei unserer Suche nach einem Beweis starten wir damit, dass wir die Behauptung n
 hinschreiben:
 \begin{equation}
   \label{eq:ab0}  
-\forall \varepsilon \in \mathbb{R}_+: \exists K \in \mathbb{R}:\forall n \in \mathbb{N}: 
-   n \geq K \rightarrow \left| \bruch{1}{b_n} - \bruch{1}{b} \right| < \varepsilon
+\forall \varepsilon \in \mathbb{R}_+: \exists K \in \mathbb{R}:\forall n \in \mathbb{N}: \Bigl(
+   n \geq K \rightarrow \left| \bruch{1}{b_n} - \bruch{1}{b} \right| < \varepsilon\Bigr)
 \end{equation}
 Wir müssen also für alle $\varepsilon>0$ ein $K$ finden, so dass für alle natürlichen
 Zahlen  $n>K$ die Ungleichung
@@ -564,8 +576,8 @@ gilt.  Irgendwie müssen wir die Voraussetzung, dass die Folge $\folge{b_n}$ gege
 $b$ konvergiert, ausnutzen.  Diese Voraussetzung lautet ausgeschrieben
 \begin{equation}
   \label{eq:ab2}
-  \forall \varepsilon' \in \mathbb{R}_+: \exists K' \in \mathbb{R}:\forall n \in \mathbb{N}: 
-   n \geq K' \rightarrow \bigl| b_n - b \bigr| < \varepsilon' 
+  \forall \varepsilon' \in \mathbb{R}_+: \exists K' \in \mathbb{R}:\forall n \in \mathbb{N}: \Bigl(
+   n \geq K' \rightarrow \bigl| b_n - b \bigr| < \varepsilon' \Bigr)
 \end{equation}
 Wir zeigen zunächst eine Abschätzung für die Beträge $|b_n|$, die wir später brauchen.
 Hier hilft uns die Voraussetzung, dass $b \not= 0$ ist.  Setzen wir in Ungleichung 
@@ -590,10 +602,10 @@ $
 Damit wissen wir also, dass für alle $n>K_1$ die Ungleichung
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \bruch{1}{2}\cdot |b| < |b_n| $
+$\ds \frac{1}{|b_n|} < \frac{2}{|b|}$
 \\[0.2cm]
 gilt.  Um nun für ein gegebenes $\varepsilon > 0$ die Ungleichung (\ref{eq:ab1}) zu zeigen,  setzen wir
-in der Voraussetzung (\ref{eq:ab2})   $\varepsilon' = \bruch{1}{2}\cdot |b|^2 \cdot  \varepsilon$ 
+in der Voraussetzung (\ref{eq:ab2})   $\varepsilon' := \bruch{1}{2}\cdot |b|^2 \cdot  \varepsilon$ 
 und erhalten ein $K_2$, so dass für alle $n>K_2$ die Ungleichung
 \begin{equation}
   \label{eq:ab3}
@@ -620,9 +632,8 @@ $
 Damit haben wir für $n \geq K$ die Ungleichung
 $\left| \bruch{1}{b_n} - \bruch{1}{b} \right| < \varepsilon$
 hergeleitet und der Beweis ist abgeschlossen. \hspace*{\fill} $\Box$
-\vspace*{0.3cm}
 
-\noindent
+\remark
 Die bisher bewiesenen Sätzen können wir benutzen um die Grenzwerte 
 von Folgen zu berechnen.  Wir geben ein Beispiel:
 \\[0.2cm]
@@ -750,25 +761,15 @@ $\lim\limits_{n\rightarrow\infty} a_n$
 existiert.  \eox
 
 
-\exercise 
-Es seien $a,b \in \mathbb{R}$ und es gelte $a < b$.  Zeigen Sie, dass dann auch
-\\[0.2cm]
-\hspace*{1.3cm} 
-$a < \bruch{1}{2} \cdot (a + b)$ \quad und \quad 
-$\bruch{1}{2} \cdot (a + b) < b$ 
-\\[0.2cm]
-gilt.  \eox
-
-
-
 \begin{Definition}[Cauchy-Folge] \lb
-Eine Folge $\folge{a_n}$ heißt \emph{Cauchy-Folge} (\href{http://de.wikipedia.org/wiki/Augustin-Louis_Cauchy}{\textrm{Augustin-Louis Cauchy}}, 1789-1857), falls gilt:
+Eine Folge $\folge{a_n}$ heißt \emph{Cauchy-Folge} 
+(\href{http://de.wikipedia.org/wiki/Augustin-Louis_Cauchy}{\textrm{Augustin-Louis Cauchy}}, 1789-1857), 
+falls gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \forall \varepsilon \in \mathbb{R}_+: \exists K \in \mathbb{R}: \forall m,n \in \mathbb{N}: 
-   m \geq K \wedge n \geq K \rightarrow \bigl| a_m - a_n \bigr| < \varepsilon.
-$
-\eod
+$\forall \varepsilon \in \mathbb{R}_+: \exists K \in \mathbb{R}: \forall m,n \in \mathbb{N}: \bigl(
+  m \geq K \wedge n \geq K \rightarrow \bigl| a_m - a_n \bigr| < \varepsilon\bigr)
+$. \eod
 \end{Definition}
 
 In einer Cauchy-Folge $\folge{a_n}$ liegen also die einzelnen Folgenglieder $a_n$ mit wachsendem $n$
@@ -787,7 +788,7 @@ Sei $\varepsilon > 0$ gegeben.  Aufgrund der Konvergenz der Folge $\folge{a_n}$ 
 dann ein $K$, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \forall n \in \mathbb{N}: n \geq K \rightarrow \bigl|a_n-a\bigr| < \bruch{\varepsilon}{2} $
+$\forall n \in \mathbb{N}:\bigl( n \geq K \rightarrow \bigl|a_n-a\bigr| < \bruch{\varepsilon}{2}\bigr)$
 \\[0.2cm]
 gilt.  Damit gilt für alle $m,n\in\mathbb{N}$ mit $m \geq K$ und $n \geq K$ die folgende Abschätzung:
 \\[0.2cm]
@@ -871,7 +872,7 @@ beschränkte Folge konvergent ist und zerfällt in zwei Teile:
 Wir definieren die Menge $M$ wie folgt:
 \\[0.2cm]
 \hspace*{1.3cm}
-$M := \bigl\{ x \in \mathbb{R} \mid \exists K \in \mathbb{N}: \forall n \in \mathbb{N}: n \geq K \rightarrow x \leq a_n \bigr\}$.
+$M := \bigl\{ x \in \mathbb{R} \mid \exists K \in \mathbb{N}: \forall n \in \mathbb{N}:\bigl( n \geq K \rightarrow x \leq a_n\bigr) \bigr\}$.
 \\[0.2cm]
 Anschaulich ist $M$ die Menge aller unteren Grenzen für die Mehrheit der
 Folgenglieder:  Ist $x \in M$, so müssen von einem bestimmten Index $K$ an
@@ -1146,7 +1147,7 @@ berechnet.
   \caption{Berechnung der Quadrat-Wurzel mit Hilfe der Folge $b_{n+1} = \bruch{1}{2}\cdot(b_n + \bruch{a}{b_n})$.}
   \label{fig:sqrt-output}
 \end{figure}
-\pagebreak
+
 
 \exercise
 \begin{enumerate}
@@ -1236,7 +1237,6 @@ Fall die Partial-Summen $s_n$ durch
 $ s_n = \sum\limits_{i=k}^n a_i, $
 \\[0.2cm] 
 wobei wir vereinbaren, dass $\sum_{i=k}^n a_i = 0$ ist, falls $k > n$ ist.
-\vspace*{0.3cm}
 
 \begin{Satz}[Bernoullische Ungleichung]
 Es sei $x \in \mathbb{R}$, $n \in \mathbb{N}_0$ und es gelte $x \geq -1$.   Dann gilt 
@@ -1470,7 +1470,7 @@ Die Folge $\folge{a_n}$ ist eine \emph{Null-Folge} wenn gilt:
 \hspace*{1.3cm}
 $ \lim\limits_{n\rightarrow\infty} a_n = 0. $ \eod
 \end{Definition}
-\pagebreak
+
 
 \begin{Satz}[Leibniz-Kriterium, (\href{http://de.wikipedia.org/wiki/Leibniz}{Gottfried Wilhelm Leibniz}, 1646-1716)] \lb
 Wenn die Folge $\folge{a_n}$ eine monoton fallende Null-Folge ist, dann 
@@ -1595,8 +1595,6 @@ $ \begin{array}{lcl}
        denn aus $n=2\cdot m+1$ und $n \geq K$ folgt $m \geq K_1$ und $n \geq K_2$.
 \end{enumerate}
 Damit ist der Beweis abgeschlossen. \hspace*{\fill} $\Box$ 
-\vspace*{0.3cm}
-
 
 \begin{Satz}[Cauchy'sches Konvergenz-Kriterium für Reihen] \lb
 Die Reihe $\folge{\sum_{i=0}^{n} a_i}$ ist genau dann konvergent, wenn es für alle 
@@ -1664,9 +1662,8 @@ $\forall \varepsilon \in \mathbb{R}_+:\exists K \in \mathbb{R}:\forall n \in \ma
 \\[0.2cm]
 Diese Formel drückt aus, dass $\folge{a_n}$ eine Null-Folge ist.
 \hspace*{\fill} $\Box$ 
-\vspace*{0.3cm}
 
-\noindent
+\remark
 Mit Hilfe des letzten Satzes können wir zeigen, dass die \emph{harmonische Reihe}
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1687,7 +1684,7 @@ $
  = n \cdot  \bruch{1}{2 \cdot n} = \bruch{1}{2} 
 $
 \\[0.2cm]
-Damit erfüllt die harmonische Reihe das Cauchy'sche Konvergenz-Kriterium nicht.
+Damit erfüllt die harmonische Reihe das Cauchy'sche Konvergenz-Kriterium nicht. \eox
 
 \begin{Satz}[Majoranten-Kriterium]
 Für die Folgen $\folge{a_n}$  und  $\folge{b_n}$  gelte:
@@ -1708,8 +1705,6 @@ $ \sum\limits_{i=1}^n a_i \leq \sum\limits_{i=1}^n b_i \leq \sum\limits_{i=1}^\i
 Also ist die Folge $\Folge{\sum\limits_{i=1}^{n} a_i}$ monoton wachsend und beschränkt und
 damit konvergent.
 \hspace*{\fill} $\Box$
-\vspace*{0.3cm}
-\pagebreak
 
 \remark
 Oft wird im Majoranten-Kriterium die Voraussetzung
@@ -1729,8 +1724,6 @@ Glieder einer Reihe für die Frage, ob eine Reihe konvergent ist, unbedeutend ist
 \exercise
 Zeigen Sie mit dem Majoranten-Kriterium, dass die Reihe 
 $\Folge{\sum\limits_{i=1}^{n} \bruch{1}{i^2}}$ konvergiert.
-\vspace*{0.3cm}
-
 
 \noindent
 \textbf{Lösung}:  Es gilt
@@ -1751,13 +1744,13 @@ eine konvergente Majorante der Reihe $\Folge{\sum\limits_{i=1}^{n}\bruch{1}{(i+1
 $ \sum\limits_{i=1}^{\infty} \bruch{1}{i^2} = \bruch{1}{1^2} + \sum\limits_{i=1}^{\infty} \bruch{1}{(i+1)^2} $
 \\[0.2cm]
 folgt die Konvergenz aus dem Majoranten-Kriterium.
-\vspace*{0.3cm}
 
-\noindent
-\textbf{Bemerkung}: Wir werden später zeigen, dass 
+
+\remark
+Wir werden später zeigen, dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \sum\limits_{i=1}^{\infty} \bruch{1}{i^2} = \bruch{\;\pi^2}{6\;} \quad\mbox{gilt.} $
+$ \sum\limits_{i=1}^{\infty} \bruch{1}{i^2} = \bruch{\;\pi^2}{6\;} \quad\mbox{gilt.} $ \eox
 
 
 
@@ -1776,17 +1769,16 @@ $\sum\limits_{i=1}^\infty b_i$
 existiert.  Nach dem Majoranten-Kriterium müsste dann auch der Grenzwert
 $\sum\limits_{i=1}^\infty a_i$
 existieren und dass steht im Widerspruch zur Voraussetzung. \hspace*{\fill} $\Box$
-\vspace*{0.3cm}
 
 \exercise
 Zeigen Sie, dass die Reihe 
 \\[0.2cm]
 \hspace*{1.3cm} $\Reihe{\bruch{1}{\sqrt{i\,}}}$ \\[0.2cm]
 nicht konvergiert.
-\vspace*{0.3cm}
 
-\noindent
-\textbf{Lösung}:  Wir benutzen das Minoranten-Kriterium und zeigen, dass die
+
+\solution
+Wir benutzen das Minoranten-Kriterium und zeigen, dass die
 Reihe $\Reihe{\bruch{1}{i}}$ eine divergente Minorante der Reihe
   $\Reihe{\bruch{1}{\sqrt{i}}}$ ist:
 \\[0.2cm]
@@ -1835,10 +1827,9 @@ $\forall n \in \mathbb{N}: a_{n} \leq a_1 \cdot q^{n-1}$
               \end{array}
       $
 \end{enumerate}
-\vspace*{0.3cm}
 
-\noindent
-\textbf{Bemerkung}:  Beim Quotienten-Kriterium sind eigentlich nur die Beträge der
+\remark
+Beim Quotienten-Kriterium sind eigentlich nur die Beträge der
 Folgenglieder $|a_n|$ wichtig, denn es lässt sich folgende Verschärfung des
 Quotienten-Kriteriums zeigen:  
 Ist $\folge{a_n}$ eine Folge, $q\in\mathbb{R}$ und $K \in \mathbb{R}$, so dass 
@@ -1847,7 +1838,7 @@ Ist $\folge{a_n}$ eine Folge, $q\in\mathbb{R}$ und $K \in \mathbb{R}$, so dass
 $ 0 \leq q < 1 \quad \wedge \quad \forall n \in \mathbb{N}: n \geq K \rightarrow \left|\bruch{a_{n+1}}{a_n}\right| \leq q  $
 \\[0.2cm]
 gilt.  Dann konvergiert die Reihe $\Reihe{a_i}$.
-\pagebreak
+
 
 \example
 Wir zeigen mit Hilfe des Quotienten-Kriteriums, dass die Reihe
@@ -1882,10 +1873,9 @@ $n>0$ gilt
 \\[0.2cm]
 \hspace*{1.3cm} $a_n \leq q^n \;\Leftrightarrow\; \sqrt[n]{a_n} \leq q$.
 \hspace*{\fill} $\Box$
-\vspace*{0.3cm}
 
-\noindent
-\textbf{Bemerkung}:  Beim Wurzel-Kriterium sind eigentlich nur die Beträge der
+\remark
+Beim Wurzel-Kriterium sind eigentlich nur die Beträge der
 Folgenglieder $|a_n|$ wichtig, denn es lässt sich folgende Verschärfung des
 Wurzel-Kriteriums zeigen:  
 Ist $\folge{a_n}$ eine Folge, $q\in\mathbb{R}$ und $K \in \mathbb{R}$, so dass 
@@ -1922,11 +1912,9 @@ eine Variable, für die wir später reelle (oder auch komplexe) Zahlen einsetzen. 
 in einer Potenz-Reihe für $x$ eine feste Zahl einsetzen, wird aus der Potenz-Reihe eine
 gewöhnliche Reihe.  Der Begriff der Potenz-Reihen kann als eine Verallgemeinerung des
 Begriffs des   Polynoms aufgefasst werden. 
-\vspace*{0.3cm}
-\pagebreak
 
-\noindent
-\textbf{Beispiele}:
+
+\examples
 \begin{enumerate}
 \item $\sum\limits_{n=0}^\infty \bruch{x^n}{n!}$ ist eine formale Potenz-Reihe.  
       Wir haben oben mit Hilfe des Quotienten-Kriteriums gezeigt, dass diese Reihe für
@@ -1934,8 +1922,9 @@ Begriffs des   Polynoms aufgefasst werden.
 \item $\sum\limits_{n=1}^\infty \bruch{x^n}{n}$ ist eine formale Potenz-Reihe.  
       Setzen wir für $x$ den Wert $1$ ein, so erhalten wir die divergente harmonische
       Reihe.  Für $x=-1$ erhalten wir eine alternierende Reihe, die nach dem Leibniz-Kriterium
-      konvergent ist.
+      konvergent ist. \eox
 \end{enumerate}
+
 In der Theorie der Potenz-Reihen ist die Frage entscheidend, welche Zahlen wir für die
 Variable $x$ einsetzen können, so dass die Reihe konvergiert.  Diese Frage wird durch die
 folgenden Sätze beantwortet.
@@ -1985,7 +1974,6 @@ $|u| < |v|$ ist.
 \textbf{Beweis}:  Würde die Reihe $\sum_{n=0}^\infty a_n\cdot v^n$ konvergieren,
 dann müsste nach Satz \ref{satz:konvergenz-radius} auch die Reihe 
 $\sum_{n=0}^\infty a_n\cdot u^n$ konvergieren. \hspace*{\fill} $\Box$
-\vspace*{0.3cm}
 
 \noindent
 Die letzten beiden Sätze ermöglichen es nun, den Begriff \emph{Konvergenz-Radius} zu
@@ -2108,10 +2096,8 @@ divergiert wenn  $R < |u|$ ist.   Dies folgt aus der Tatsache, dass die Folge
 $\folge{a_n\cdot u^n}$ für $|u|>R$ keine Null-Folge ist.  Die Details bleiben dem Leser
 überlassen. 
 \hspace*{\fill} $\Box$ 
-\vspace*{0.3cm}
 
-\noindent
-\textbf{Bemerkung}:
+\remark
 Der obige Satz bleibt auch richtig, wenn
       \\[0.2cm]
       \hspace*{1.3cm}      
@@ -2119,10 +2105,8 @@ Der obige Satz bleibt auch richtig, wenn
       \\[0.2cm]
 ist, denn dann ist die Potenz-Reihe $\sum_{n=0}^\infty a_n\cdot u^n$ für alle $u\in\mathbb{C}$
 konvergent.
-\vspace*{0.3cm}
 
-\noindent
-\textbf{Beispiel}:
+\remark
 Die Potenz-Reihe $\sum_{n=1}^\infty \bruch{x^n}{n}$ hat den Konvergenz-Radius $R=1$, denn
 es gilt 
 \\[0.2cm]
@@ -2143,27 +2127,24 @@ $\Folge{\sqrt[n]{|a_n|}}$ konvergiere.   Dann gilt
       $\displaystyle\bruch{1}{R} = \lim\limits_{n\rightarrow\infty} \sqrt[n]{|a_n|}$.  
 \end{Satz}
 
-\noindent
-\textbf{Bemerkung}:
+\remark
 Setzen wir $\bruch{1}{\infty} = 0$, so  bleibt die Formel 
       \\[0.2cm]
       \hspace*{1.3cm}      
       $\bruch{1}{R} = \lim\limits_{n\rightarrow\infty} \sqrt[n]{|a_n|}$.  
       \\[0.2cm]
 auch in dem Fall
-$\lim\limits_{n\rightarrow\infty} \sqrt[n]{|a_n|} = 0$ richtig, denn dann gilt $R = \infty$.
+$\lim\limits_{n\rightarrow\infty} \sqrt[n]{|a_n|} = 0$ richtig, denn dann gilt $R = \infty$. \eox
 
-\vspace*{0.3cm}
 
-\noindent
-\textbf{Beispiel}:
+\example
 Die Potenz-Reihe $\sum_{n=1}^\infty \bruch{x^n}{n^n}$ hat den Konvergenz-Radius $R=\infty$, denn
 es gilt 
 \\[0.2cm]
 \hspace*{1.3cm}
 $ \lim\limits_{n\rightarrow\infty} \sqrt[n]{\bruch{1}{n^n}} =  
    \lim\limits_{n\rightarrow\infty} \bruch{1}{n} = 0.
-$
+$ \eox
 
 
 

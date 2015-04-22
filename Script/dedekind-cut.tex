@@ -1207,7 +1207,7 @@ Dazu weisen wir die einzelnen Eigenschaften getrennt nach.
 \begin{enumerate}
 \item Wir zeigen $A \cdot B \not= \{\}$.
 
-      Nach Definition von $A \cdot B$ gilt $0 \in A \cdot B$.   Daraus folgt sofort $A \cdot B \not= \{\}$.
+      Nach Definition von $A \cdot B$ gilt $0 = 0 \cdot 0 \in A \cdot B$.   Daraus folgt sofort $A \cdot B \not= \{\}$.
 \item Wir zeigen $A \cdot B \not= \mathbb{Q}$.
 
       Da $A$ und $B$ als Dedekind-Mengen von der Menge $\mathbb{Q}$ verschieden sind, gibt es 
@@ -1221,7 +1221,7 @@ Dazu weisen wir die einzelnen Eigenschaften getrennt nach.
       \hspace*{1.3cm}
       $x \cdot y < w \cdot w$
       \\[0.2cm]
-      gilt.  Das heißt aber $w^2 \not\in A \cdot B$.
+      gilt.  Das heißt aber $w^2 \not\in A \cdot B$ und damit ist $A \cdot B \not= \mathbb{Q}$.
 \item Wir zeigen, dass $A \cdot B$ nach unten abgeschlossen ist.
 
       Es sei $x \cdot y \in A \cdot B$ und $z \in \mathbb{Q}$ mit $z < x \cdot y$.  
@@ -1253,12 +1253,12 @@ Dazu weisen wir die einzelnen Eigenschaften getrennt nach.
       $c \in A \cdot B$ \quad und \quad $\forall z \in A \cdot B: z \leq c$.
       \\[0.2cm]
       Nach Definition von $A \cdot B$ gibt es dann ein $a \in A$ und ein $b \in B$ mit $c = a \cdot b$.
-      Wir zeigen, dass dann $a$ das Maximum der Menge $A$ ist.  Sei also $u \in A$.  Dann gilt
+      Wir zeigen, dass $a$ das Maximum der Menge $A$ ist.  Sei also $u \in A$.  Dann gilt
       \\[0.2cm]
       \hspace*{1.3cm}
       $u \cdot b \in A \cdot B$ \quad und folglich gilt \quad $u \cdot b \leq c = a \cdot b$.
       \\[0.2cm]
-      Teilen wir die letzte Ungleichung durch $b$ so folgt
+      Teilen wir die letzte Ungleichung durch $b$, so folgt
       \\[0.2cm]
       \hspace*{1.3cm}
       $u \leq a$
@@ -1268,10 +1268,10 @@ Dazu weisen wir die einzelnen Eigenschaften getrennt nach.
 \end{enumerate}
 \renewcommand{\labelenumi}{\arabic{enumi}.}
 Bisher haben wir das Produkt $A \cdot B$ nur für den Fall definiert, dass $A$ und $B$ beide positiv
-sind.  Falls $A$ oder $B$ gleich $O$ ist, definieren wir das Produkt als $O$:
+sind.  Falls $A$ oder $B$ gleich $O$ ist, definieren wir das Produkt wie folgt:
 \\[0.2cm]
 \hspace*{1.3cm}
-$A \cdot O := O \cdot B := O$
+$A \cdot O := O \cdot B := O$.
 \\[0.2cm]
 Falls $A$ weder positiv noch gleich $O$ ist, sagen wir, dass $A$  \emph{negativ} ist.  In einem
 solchen Fall ist $-\!A$ positiv.  Falls $A$ oder $B$ negativ ist, lautet die Definition wie folgt:
@@ -1292,19 +1292,17 @@ solchen Fall ist $-\!A$ positiv.  Falls $A$ oder $B$ negativ ist, lautet die Def
           $A \cdot B := (-\!A) \cdot (-\!B)$.
 \end{enumerate}
 Nun müssten wir noch nachweisen, dass für die so definierte Multiplikation zusammen mit der oben definierten
-Addition die Körper-Axiome gelten.  Aus Zeitgründen verzichten wir darauf und verweisen statt dessen
+Addition die Körper-Axiome gelten.  Bei diesen Beweisen tauchen keine Ideen auf, die wir nicht schon gesehen haben.
+Daher verzichten wir aus Zeitgründen darauf, diese Beweise im Detail auszuführen und verweisen statt dessen
 auf die unten angegebene Literatur.
 \vspace*{0.3cm}
-
-
-
 
 \noindent
 \textbf{Literatur-Hinweise} \\
 In dem Buch ``\emph{Grundlagen der Analysis}'' 
 von Edmund Landau \cite{landau:1930} wird die oben skizzierte Konstruktion der reellen Zahlen im Detail beschrieben.   
 Auch das Buch ``\emph{Principles of  Mathematical Analysis}'' von Walter Rudin \cite{rudin:1976}
-diskutiert die Konstruktion der reellen Zahlen mit Hilfe von Dedekind-Mengen ausführlich als dies in
+diskutiert die Konstruktion der reellen Zahlen mit Hilfe von Dedekind-Mengen ausführlicher als dies in
 dem zeitlichen Rahmen meiner Vorlesung möglich ist.
 
 
