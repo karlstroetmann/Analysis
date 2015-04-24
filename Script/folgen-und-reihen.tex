@@ -23,7 +23,7 @@ Formal definieren wir Folgen daher als Funktionen, die auf den natürlichen Zahle
 \noindent
 Ist die Funktion $f$ ein Folge, so schreiben wir dies kürzer als 
 $\bigl(f(n)\bigr)_{n\in\mathbb{N}}$ oder $\bigl(f_n\bigr)_{n\in\mathbb{N}}$ oder noch kürzer als $\bigl(f_n\bigr)_n$.
-\vspace*{0.3cm}
+
 
 \noindent
 \textbf{Beispiele}:
@@ -122,7 +122,8 @@ bezeichnen wir  die Menge der positiven reellen Zahlen mit $\mathbb{R}_+$, es gi
   \label{tab:x-cos-x}
 \end{table}
 
-\begin{Definition}[Grenzwert]
+\begin{Definition}[Grenzwert, \href{http://en.wikipedia.org/wiki/Bernard_Bolzano}{Bernard Bolzano} (1781--1848)]
+\hspace*{\fill} \\
 Eine Folge $\folge{a_n}$ \emph{konvergiert} gegen den \emph{Grenzwert} $g$, falls gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -178,7 +179,6 @@ $
 $
 \\[0.2cm]
 gezeigt und damit ist der Beweis abgeschlossen. \hspace*{\fill} $\Box$
-\vspace*{0.3cm}
 
 \exercise
 \renewcommand{\labelenumi}{(\alph{enumi})}
@@ -196,7 +196,6 @@ $\lim\limits_{n\rightarrow\infty} \bruch{1}{\sqrt{n}} = 0$
 gilt.  \eox
 \end{enumerate} 
 \renewcommand{\labelenumi}{\arabic{enumi}.}
-\vspace*{0.3cm}
 
 
 \noindent
@@ -276,18 +275,16 @@ $
 $
 \\[0.2cm]
 Wegen $(-1)^{2\cdot n} = 1$ und $(-1)^{2\cdot n + 1} = -1$ haben wir also 
-\begin{equation}
-  \label{eq:ineq0}
-  \bigl|  1 - s\bigr| < 1 \quad \mbox{und} \quad
-  \bigl| -1 - s\bigr| < 1.
-\end{equation}
+\\[0.2cm]
+\hspace*{1.3cm}
+$\bigl|  1 - s\bigr| < 1$ \quad und \quad $\bigl| -1 - s\bigr| < 1$.
+\\[0.2cm]
 Wegen $-1 - s = (-1) \cdot (1 + s)$ und $|a \cdot b| = |a|\cdot|b|$ können wir die letzte Ungleichung
-noch zu  
-\begin{equation}
-  \label{eq:ineq0a}
-  \bigl| 1 + s\bigr| < 1
-\end{equation}
-vereinfachen.
+\\[0.2cm]
+\hspace*{1.3cm}
+$\bigl| 1 + s\bigr| < 1$
+\\[0.2cm]
+noch zu  vereinfachen.
 Aus den beiden Ungleichungen $|1-s|<1$ und $|1+s|<1$  erhalten wir nun einen Widerspruch:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -296,7 +293,7 @@ $
   2 & = & \bigl| 1 + 1 \bigr| \\[0.2cm]
     & = & \bigl| (1 - s) + (s + 1) \bigr| \\[0.2cm]
     & \leq & \bigl|1 - s\bigr| + \bigl|1+s \bigr| & \quad \mbox{(Dreiecksungleichung)} \\[0.2cm]
-    & <    & 1 + 1 & \quad \mbox{wegen der Ungleichungen (\ref{eq:ineq0}) und (\ref{eq:ineq0a})} \\[0.2cm]
+    & <    & 1 + 1                         \\[0.2cm]
     & =    & 2 & 
 \end{array}
 $
@@ -304,7 +301,8 @@ $
 Fassen wir diese Ungleichungs-Kette zusammen, so haben die (offensichtlich falsche)
 Ungleichung $2<2$ abgeleitet.
 Damit haben wir aus der Annahme, dass die Folge gegen den Grenzwert $s$ konvergiert, einen
-Widerspruch hergeleitet. \hspace*{\fill} $\Box$
+Widerspruch hergeleitet. \qed
+\pagebreak
 
 \begin{Definition}[Beschränkte Folge]
 Eine Folge $\folge{a_n}$ ist \emph{beschränkt}, falls es eine \emph{Schranke} $S$ gibt, so dass 
@@ -443,7 +441,6 @@ $
 $
 \\[0.2cm]
 Damit ist die Behauptung gezeigt. \hspace*{\fill} $\Box$
-\vspace*{0.3cm}
 
 \exercise
 Zeigen Sie:
@@ -524,7 +521,7 @@ $
 $
 \\[0.2cm]
 Damit ist die Behauptung gezeigt. \hspace*{\fill} $\Box$
-\vspace*{0.3cm}
+
 
 \exercise
 Zeigen Sie:
@@ -567,7 +564,7 @@ hinschreiben:
    n \geq K \rightarrow \left| \bruch{1}{b_n} - \bruch{1}{b} \right| < \varepsilon\Bigr)
 \end{equation}
 Wir müssen also für alle $\varepsilon>0$ ein $K$ finden, so dass für alle natürlichen
-Zahlen  $n>K$ die Ungleichung
+Zahlen  $n \geq K$ die Ungleichung
 \begin{equation}
   \label{eq:ab1}
   \left| \bruch{1}{b_n} - \bruch{1}{b} \right| < \varepsilon 
@@ -697,7 +694,7 @@ $
 \begin{Satz} \label{satz:monoton}
 Ist die Folge $\folge{a_n}$ monoton fallend und beschränkt, so ist die Folge auch konvergent.
 \end{Satz}
-\textbf{Beweis}:  Wir definieren zunächst die Menge $M$ als als die Menge aller unteren Schranken der Folge $\folge{a_n}$
+\textbf{Beweis}:  Wir definieren zunächst die Menge $M$ als die Menge aller unteren Schranken der Folge $\folge{a_n}$
 \\[0.2cm]
 \hspace*{1.3cm}      
 $M := \bigl\{ x \in \mathbb{Q} \mid \forall n \in \mathbb{N}: x \leq a_n \bigr\}$.
@@ -720,13 +717,14 @@ gilt.  Sei also $\varepsilon > 0$ gegeben.  Da
 $s + \varepsilon > s$
 \\[0.2cm]
 ist und $s$ als das Supremum der Menge $M$ definiert ist, können wir folgern, dass 
-$s + \varepsilon \not\in M$  ist.  Nach Definition der Menge $M$ gibt es dann eine Zahl $\widehat{n} \in \mathbb{N}$,
-so dass 
+$s + \varepsilon \not\in M$ ist.  Nach Definition der Menge $M$ als Menge der unteren Schranken der
+Folge $\folge{a_n}$ ist $s + \varepsilon$ dann keine untere Schranke der Folge $\folge{a_n}$.  Also
+ gibt es eine Zahl $\widehat{n} \in \mathbb{N}$, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$a_{\widehat{n}} < s + \varepsilon$ ist.
+$a_{\widehat{n}} < s + \varepsilon$ 
 \\[0.2cm]
-Da die Folge monoton fallend ist, gilt dann auch
+ist.  Da die Folge monoton fallend ist, gilt dann auch
 \\[0.2cm]
 \hspace*{1.3cm}
 $a_n < s + \varepsilon$ \quad für alle $n \geq \widehat{n}$.
@@ -890,12 +888,19 @@ denn wenn $x$ eine untere Schranke der Mehrheit aller Folgenglieder ist, dann is
 $y$ die kleiner als $x$ ist, ebenfalls eine untere Schranke der Mehrheit der Folgenglieder. 
 Wir werden diese Eigenschaft später benötigen. 
 
-Außerdem ist die Menge $M$ nach oben 
-beschränkt, denn die Folge $(a_n)_{n\in\mathbb{N}}$ ist durch $S$ nach oben beschränkt.       
-Die Beschränktheit der Cauchy-Folge impliziert, dass die Menge $M$ nicht leer ist,
+Da die Folge $\folge{a_n}$ eine Cauchy-Folge ist, gibt es ein $S$, so dass die Folge durch $S$
+beschränkt ist, genauer gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall n \in \mathbb{N}: |a_n| \leq S$.
+\\[0.2cm]
+Daher ist die Menge $M$ nach oben durch $S$ beschränkt, denn eine untere Grenze für die Mehrheit
+aller Folgenglieder kann sicher nicht größer als $S$ sein.
+Weiter impliziert die Beschränktheit der Cauchy-Folge, dass die Menge $M$ nicht leer ist,
 denn wenn für alle $n \in \mathbb{N}$ die Ungleichung $|a_n| \leq S$ gilt,  dann gilt insbesondere
 $-S \leq a_n$ und daraus folgt sofort $-S \in M$.  Als nicht-leere und nach oben
-beschränkte Menge hat $M$ ein Supremum.  Wir definieren 
+beschränkte Menge hat $M$ ein Supremum, denn die Menge der reellen Zahlen ist eine vollständige
+Ordnung.  Wir definieren  
 \\[0.2cm]
 \hspace*{1.3cm}
 $s := \sup(M)$
@@ -984,7 +989,6 @@ Wir definieren eine Folge $b_n$ induktiv wie folgt:
       \\[0.2cm]
 \hspace*{1.3cm}
 $ b_{n+1} := \bruch{1}{2}\cdot  \left(b_n + \bruch{a}{b_n}\right). $
-\\[0.2cm]
 \end{enumerate}
 Um diese Definition zu verstehen, nehmen wir zunächst an, dass der Grenzwert dieser Folge
 existiert und den Wert $b \not= 0$ hat.  Dann gilt
@@ -1015,7 +1019,7 @@ $
 $
 \\[0.2cm]
 Falls die oben definierte Folge $\folge{b_n}$ einen Grenzwert hat, dann ist dieser
-Grenzwert also die Wurzel der Zahl $a$.  Wir werden die Konvergenz der Folge nachweisen
+Grenzwert also die Wurzel der Zahl $a$.  Wir werden die Konvergenz der Folge nachweisen,
 indem wir zeigen, dass die Folge $\folge{b}$ einerseits monoton fallend und andererseits 
 nach unten beschränkt ist.  Dazu betrachten wir zunächst die Differenz $b_{n+1}^2 - a$:
 \\[0.2cm]
@@ -1048,7 +1052,7 @@ den ersten Wert $n=1$, so dass wir also insgesamt die Ungleichung
 $b_n^2 \geq a$ \quad und \quad $b_n \geq \sqrt{a}$ \quad für alle $n \in \mathbb{N}$
 \\[0.2cm]
 gezeigt haben.   Daraus folgt, dass $\sqrt{a}$ eine untere Schranke der Folge $\folge{b_n}$
-ist.  Dividieren wir die erste Ungleichung durch $b_{n}$, so folgt
+ist.  Dividieren wir die Ungleichung $b_n^2 \geq a$ durch $b_{n}$, so folgt
 \\[0.2cm]
 \hspace*{1.3cm}
 $ b_{n} \geq \bruch{a}{b_{n}}.  $
@@ -1170,7 +1174,7 @@ berechnet.
            $a_n = c_1 \cdot \lambda_1^n + c_2 \cdot \lambda_2^n$
            \\[0.2cm]
            linear kombinieren müssen.  Die Koeffizienten $c_1$ und $c_2$ können Sie aus den Gleichungen für
-           $a_1$ und $a_2$ bestimmen.  
+           die Anfangswerte $a_1$ und $a_2$ bestimmen.  
 \item[(b)] Es seien $a,b \in \mathbb{R}$ und zusätzlich gelte $a > 0$ und $b > 0$.  
            Die Folge $(a_n)_{n\in\mathbb{N}}$ werde durch Induktion wie folgt definiert:
            \begin{enumerate}
