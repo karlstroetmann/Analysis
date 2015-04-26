@@ -44,7 +44,7 @@ können wir eine Folge $(x_n)_{n\in\mathbb{N}}$ induktiv wie folgt definieren:
 \item Induktions-Anfang: $n = 1$.  Wir setzen
       \\[0.2cm]
       \hspace*{1.3cm}
-      $x_1 := 0$.
+      $x_1 := 1$.
 \item Induktions-Schritt: $n \mapsto n+1$.  Nach Induktions-Voraussetzung ist $x_n$ bereits
       definiert.  Wir definieren $x_{n+1}$ als
       \\[0.2cm]
@@ -75,16 +75,16 @@ bezeichnen wir  die Menge der positiven reellen Zahlen mit $\mathbb{R}_+$, es gi
                   xrightmargin  = 1.3cm,
                 ]
     solve := procedure(k) {
-        x    := [];  // x[n+1] stores x_{n}
-        x[1] := 0.0;
+        x    := []; 
+        x[1] := 1.0;
         for (n in [1 .. k]) {
             x[n+1] := cos(x[n]);
-            print("x_{$n$} = $x[n+1]$");
+            print("x_{$n$} = $x[n]$");
         }
     };
 \end{Verbatim}
 \vspace*{-0.3cm}
-  \caption{Berechnung der durch  $x_0 = 0$ und $x_{n+1} = \cos(x_n)$ definierten Folge.}
+  \caption{Berechnung der durch  $x_1 = 1$ und $x_{n+1} = \cos(x_n)$ definierten Folge.}
   \label{fig:solve.stlx}
 \end{figure} %\$
 
@@ -96,7 +96,7 @@ bezeichnen wir  die Menge der positiven reellen Zahlen mit $\mathbb{R}_+$, es gi
    $n$ & $x_n$ & $n$ & $x_n$ & $n$ & $x_n$ & $n$ & $x_n$ \\
 \hline
 \hline
-0 & 0.000000 & 10 & 0.731404 & 20 & 0.738938 & 30 & 0.739082 \\
+  &          & 10 & 0.731404 & 20 & 0.738938 & 30 & 0.739082 \\
 \hline
 1 & 1.000000 & 11 & 0.744237 & 21 & 0.739184 & 31 & 0.739087 \\
 \hline
@@ -120,7 +120,7 @@ bezeichnen wir  die Menge der positiven reellen Zahlen mit $\mathbb{R}_+$, es gi
   \caption{Die ersten 40 Glieder der durch $x_0 = 0$ und $x_{n+1} = \cos(x_n)$ definierten
     Folge.}
   \label{tab:x-cos-x}
-\end{table}
+\end{table} 
 
 \begin{Definition}[Grenzwert, \href{http://en.wikipedia.org/wiki/Bernard_Bolzano}{Bernard Bolzano} (1781--1848)]
 \hspace*{\fill} \\
@@ -348,7 +348,7 @@ einfach durch die erste natürliche Zahl ersetzen, die größer als $K$ ist.
 Dann definieren wir 
 \\[0.2cm]
 \hspace*{1.3cm}
-$ S := \max\bigl\{ |a_0|, |a_1|, \cdots, |a_K|, 1 + |g| \bigr\}.  $
+$ S := \max\bigl\{ |a_1|, \cdots, |a_K|, 1 + |g| \bigr\}.  $
 \\[0.2cm]
 Wir behaupten, dass $S$ eine Schranke für die Folge $\folge{a_n}$ ist, wir zeigen also,
 dass für alle $n \in \mathbb{N}$ 
@@ -362,12 +362,12 @@ Um diese Ungleichung nachzuweisen, führen wir eine Fall-Unterscheidung durch:
 \item Fall: $n \leq K$.  Dann gilt offenbar 
       \\[0.2cm]
       \hspace*{1.3cm}      
-      $|a_n| \in \bigl\{ |a_0|, |a_1|, \cdots, |a_K|, 1 + |g| \bigr\}$.
+      $|a_n| \in \bigl\{ |a_1|, \cdots, |a_K|, 1 + |g| \bigr\}$.
       \\[0.2cm]
       und daraus folgt sofort
       \\[0.2cm]
       \hspace*{1.3cm}      
-      $|a_n| \leq \max\bigl\{ |a_0|, |a_1|, \cdots, |a_K|, 1 + |g| \bigr\} = S$.
+      $|a_n| \leq \max\bigl\{ |a_1|, \cdots, |a_K|, 1 + |g| \bigr\} = S$.
 \item Fall: $n > K$.  Dann haben wir
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -885,7 +885,7 @@ Es ist klar, dass $M$ nach unten abgeschlossen ist, es gilt
 $y < x \wedge x \in M \rightarrow y \in M$,
 \\[0.2cm]
 denn wenn $x$ eine untere Schranke der Mehrheit aller Folgenglieder ist, dann ist sicher jede Zahl 
-$y$ die kleiner als $x$ ist, ebenfalls eine untere Schranke der Mehrheit der Folgenglieder. 
+$y$, die kleiner als $x$ ist, ebenfalls eine untere Schranke der Mehrheit der Folgenglieder. 
 Wir werden diese Eigenschaft später benötigen. 
 
 Da die Folge $\folge{a_n}$ eine Cauchy-Folge ist, gibt es ein $S$, so dass die Folge durch $S$
@@ -905,7 +905,7 @@ Ordnung.  Wir definieren
 \hspace*{1.3cm}
 $s := \sup(M)$
 \\[0.2cm]
-und zeigen, dass
+und zeigen, dass mit dieser Definition
 \\[0.2cm]
 \hspace*{1.3cm}
 $ \lim\limits_{n\rightarrow\infty} a_n = s $
@@ -1020,7 +1020,7 @@ $
 \\[0.2cm]
 Falls die oben definierte Folge $\folge{b_n}$ einen Grenzwert hat, dann ist dieser
 Grenzwert also die Wurzel der Zahl $a$.  Wir werden die Konvergenz der Folge nachweisen,
-indem wir zeigen, dass die Folge $\folge{b}$ einerseits monoton fallend und andererseits 
+indem wir zeigen, dass die Folge $\folge{b_n}$ einerseits monoton fallend und andererseits 
 nach unten beschränkt ist.  Dazu betrachten wir zunächst die Differenz $b_{n+1}^2 - a$:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1191,7 +1191,14 @@ berechnet.
            \hspace*{1.3cm}
            $c := \sqrt{a \cdot b\;}$
            \\[0.2cm]
-           gilt, als das \href{http://de.wikipedia.org/wiki/Geometrisches_Mittel}{\emph{geometrische Mittel}} von $a$ und $b$ bezeichnet.
+           gilt, als das \href{http://de.wikipedia.org/wiki/Geometrisches_Mittel}{\emph{geometrische Mittel}} 
+           von $a$ und $b$ bezeichnet. 
+
+           \textbf{Hinweis}: Sie können diese Teilaufgabe durch eine geeignete Transformation der
+           Form 
+           $x_n := f(a_n)$ in die Rekurrenz-Gleichung überführen, die Sie in Teil (a) dieser Aufgabe
+           bereits gelöst haben.  
+
 \item[(c)] Es seien $a,b \in \mathbb{R}$ und zusätzlich gelte $a > 0$ und $b > 0$.  
            Die Folge $(a_n)_{n\in\mathbb{N}}$ werde durch Induktion wie folgt definiert:
            \begin{enumerate}
@@ -1365,7 +1372,8 @@ gültig ist und damit ist die Behauptung bewiesen.  \qed
 Wir präsentieren nun einige Beispiele für konvergente Reihen:
 \begin{enumerate}
 \item Wir betrachten die Folge $\left(\bruch{1}{n\cdot (n+1)}\right)_{n\in\mathbb{N}}$.
-      Für die Partial-Summen zeigen wir durch Induktion über $n$, dass 
+
+v      Für die Partial-Summen zeigen wir durch Induktion über $n$, dass 
       \begin{equation}
         \label{eq:seq0}        
       \sum\limits_{i=1}^n \bruch{1}{i\cdot (i+1)} = 1 - \bruch{1}{n+1}
@@ -1406,27 +1414,27 @@ Wir präsentieren nun einige Beispiele für konvergente Reihen:
       Für die Partial-Summen gilt
       \\[0.2cm]
       \hspace*{1.3cm}      
-      $s_n = \sum\limits_{i=0}^n q^i$.
+      $\ds s_n = \sum\limits_{i=0}^n q^i$.
       \\[0.2cm]
       Wir betrachten den Ausdruck $(1-q) \cdot  s_n$: 
       \\[0.2cm]
       \hspace*{1.3cm}      
       $
       \begin{array}{lcl}
-       (1-q) \cdot  s_n & = & (1 - q) \cdot  \sum\limits_{i=0}^n q^i \\[0.3cm]
-                   & = & \sum\limits_{i=0}^n q^i \;-\; q \cdot  \sum\limits_{i=0}^n q^i \\[0.3cm]
-                   & = & \sum\limits_{i=0}^n q^i \;-\; \sum\limits_{i=0}^n q^{i+1} \\[0.3cm]
-                   & = & \sum\limits_{i=0}^n q^i \;-\; \sum\limits_{i=1}^{n+1} q^{i} \\[0.3cm]
-                   & = & \left(q^0 + \sum\limits_{i=1}^n q^i\right) \;-\; \left(\sum\limits_{i=1}^{n} q^{i} + q^{n+1}\right) \\[0.3cm]
-                   & = & q^0 - q^{n+1} \\[0.3cm]
-                   & = & 1 - q^{n+1} 
+       (1-q) \cdot s_n & = & \ds(1 - q) \cdot  \sum\limits_{i=0}^n q^i \\[0.4cm]
+                   & = & \ds\sum\limits_{i=0}^n q^i \;-\; q \cdot  \sum\limits_{i=0}^n q^i \\[0.4cm]
+                   & = & \ds\sum\limits_{i=0}^n q^i \;-\; \sum\limits_{i=0}^n q^{i+1} \\[0.4cm]
+                   & = & \ds\sum\limits_{i=0}^n q^i \;-\; \sum\limits_{i=1}^{n+1} q^{i} \\[0.5cm]
+                   & = & \ds\left(q^0 + \sum\limits_{i=1}^n q^i\right) \;-\; \left(\sum\limits_{i=1}^{n} q^{i} + q^{n+1}\right) \\[0.5cm]
+                   & = & \ds q^0 - q^{n+1} \\[0.3cm]
+                   & = & \ds 1 - q^{n+1} 
       \end{array}
       $
       \\[0.2cm]
       Es gilt also 
       \\[0.2cm]
       \hspace*{1.3cm}      
-      $(1-q) \cdot  \sum\limits_{i=0}^{n} q^i = 1 - q^{n+1}$
+      $\ds (1-q) \cdot  \sum\limits_{i=0}^{n} q^i = 1 - q^{n+1}$
       \\[0.2cm]
       Dividieren wir diese Gleichung durch $(1-q)$, so erhalten wir für die Partial-Summen
       den Ausdruck
@@ -1437,10 +1445,17 @@ Wir präsentieren nun einige Beispiele für konvergente Reihen:
       Falls $|q| < 1$ ist, konvergiert die Folge $\folge{q^n}$ gegen $0$.  Damit gilt
       für $|q| < 1$
       \\[0.2cm]
-      \hspace*{1.3cm} $\sum\limits_{i=0}^{\infty} q^i = \bruch{1}{1-q}$.
+      \hspace*{1.3cm} $\ds\sum\limits_{i=0}^{\infty} q^i = \bruch{1}{1-q}$.
       \\[0.2cm]
-      Die Reihe $\left(\sum\limits_{i=0}^{n} q^i\right)_{n\in\mathbb{N}}$ wird als
-      \emph{geometrische Reihe} bezeichnet. \eox
+      Die Reihe
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds\left(\sum\limits_{i=0}^{n} q^i\right)_{n\in\mathbb{N}}$ 
+      \\[0.2cm]
+      wird als die
+      \href{http://de.wikipedia.org/wiki/Geometrische_Reihe}{\emph{geometrische Reihe}} bezeichnet.
+      Diese Reihe ist mit Abstand die wichtigste Reihe, die Ihnen in der Informatik begegnen wird.
+      \eox
 \end{enumerate}
 
 
@@ -1453,9 +1468,11 @@ $ \Folge{\sum\limits_{i=1}^{n}  (-1)^i \cdot  a_i} $
 und gilt entweder
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \forall i \in \mathbb{N}: a_i \geq 0 \quad \mbox{oder} \quad \forall i \in \mathbb{N}: a_i \leq 0 $
+$ \forall i \in \mathbb{N}: a_i \geq 0 \quad \mbox{oder} \quad \forall i \in \mathbb{N}: a_i \leq 0 $,
 \\[0.2cm]
-so sprechen wir von einer \emph{alternierenden Reihe}.  \eod
+so haben aufeinander folgende Glieder der Reihe ein unterschiedliches Vorzeichen (es sei denn, dass
+die Glieder den Wert $0$ haben).  In diesem Fall sprechen wir daher von einer \emph{alternierenden Reihe}.  
+\eod
 \end{Definition}
 
 \noindent
@@ -1605,9 +1622,7 @@ Die Reihe $\folge{\sum_{i=0}^{n} a_i}$ ist genau dann konvergent, wenn es für al
 $\varepsilon>0$ eine Zahl $K$ gibt, so dass gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \forall n,l \in \mathbb{N}: n \geq K \rightarrow \left|\sum\limits_{i=n+1}^{n+l} a_i \right| < \varepsilon.$
-\\[0.2cm]
-  
+$\ds \forall n,l \in \mathbb{N}: n \geq K \rightarrow \left|\sum\limits_{i=n+1}^{n+l} a_i \right| < \varepsilon.$
 \end{Satz}
 
 \noindent
@@ -1727,7 +1742,7 @@ Glieder einer Reihe für die Frage, ob eine Reihe konvergent ist, unbedeutend ist
 
 \exercise
 Zeigen Sie mit dem Majoranten-Kriterium, dass die Reihe 
-$\Folge{\sum\limits_{i=1}^{n} \bruch{1}{i^2}}$ konvergiert.
+$\ds\Folge{\sum\limits_{i=1}^{n} \bruch{1}{i^2}}$ konvergiert.
 
 \noindent
 \textbf{Lösung}:  Es gilt
@@ -1777,7 +1792,8 @@ existieren und dass steht im Widerspruch zur Voraussetzung. \hspace*{\fill} $\Bo
 \exercise
 Zeigen Sie, dass die Reihe 
 \\[0.2cm]
-\hspace*{1.3cm} $\Reihe{\bruch{1}{\sqrt{i\,}}}$ \\[0.2cm]
+\hspace*{1.3cm}
+ $\ds\Reihe{\bruch{1}{\sqrt{i\,}}}$ \\[0.2cm]
 nicht konvergiert.
 
 
