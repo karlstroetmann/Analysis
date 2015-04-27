@@ -1228,7 +1228,7 @@ Ist $\folge{a_n}$ eine Folge, so definieren wir die Folge der \emph{Partial-Summ
 durch die Festsetzung
 \\[0.2cm]
 \hspace*{1.3cm}
-$ s_n := \sum\limits_{i=1}^n a_i. $
+$\ds s_n := \sum\limits_{i=1}^n a_i. $
 \\[0.2cm]
 Diese Folge bezeichnen wir auch als unendliche  \emph{Reihe}.  Die Folge $\folge{a_n}$
 bezeichnen wir als die 
@@ -1236,7 +1236,7 @@ der Reihe $\folge{\sum_{i=0}^n a_i}$ \emph{zugrunde liegende Folge}.
 Falls die Folge der Partial-Summen konvergiert, so schreiben wir den Grenzwert als
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \sum\limits_{i=1}^\infty a_i := \lim\limits_{n\rightarrow\infty} \sum\limits_{i=1}^n a_i. $
+$\ds \sum\limits_{i=1}^\infty a_i := \lim\limits_{n\rightarrow\infty} \sum\limits_{i=1}^n a_i. $
 \eod
 \end{Definition}
 
@@ -1247,9 +1247,9 @@ Um auch aus solchen Folge bequem Reihen bilden zu können, definieren wir in eine
 Fall die Partial-Summen $s_n$ durch
 \\[0.2cm]
 \hspace*{1.3cm}
-$ s_n = \sum\limits_{i=k}^n a_i, $
-\\[0.2cm] 
-wobei wir vereinbaren, dass $\sum_{i=k}^n a_i = 0$ ist, falls $k > n$ ist.
+$\ds s_n = \sum\limits_{i=k}^n a_i, $
+\\ 
+wobei wir vereinbaren, dass $\ds\sum_{i=k}^n a_i = 0$ ist, falls $k > n$ ist.
 
 \begin{Satz}[Bernoullische Ungleichung]
 Es sei $x \in \mathbb{R}$, $n \in \mathbb{N}_0$ und es gelte $x \geq -1$.   Dann gilt 
@@ -1272,7 +1272,7 @@ Wir beweisen die Ungleichung durch vollständige Induktion für alle $n \in \mathb
 \item[I.S.:] $n \mapsto n + 1$.   Nach Induktions-Voraussetzung gilt
              \begin{equation}
                \label{eq:Bernoulli}
-             (1 + x)^n \geq 1 + n \cdot x
+             (1 + x)^n \geq 1 + n \cdot x.
              \end{equation}
              Da $x \geq -1$ ist, folgt $1 + x \geq 0$, so dass wir die Ungleichung
              \ref{eq:Bernoulli} mit $1 + x$ multiplizieren können.  Dann erhalten wir die 
@@ -1299,7 +1299,7 @@ Wir beweisen die Ungleichung durch vollständige Induktion für alle $n \in \mathb
 Es sei $q \in \mathbb{R}$ mit $|q| < 1$.  Dann gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\lim\limits_{n\rightarrow\infty} q^n = 0$.
+$\ds\lim\limits_{n\rightarrow\infty} q^n = 0$.
 \end{Satz}
 
 \proof
@@ -1375,7 +1375,7 @@ Wir präsentieren nun einige Beispiele für konvergente Reihen:
 \begin{enumerate}
 \item Wir betrachten die Folge $\left(\bruch{1}{n\cdot (n+1)}\right)_{n\in\mathbb{N}}$.
 
-v      Für die Partial-Summen zeigen wir durch Induktion über $n$, dass 
+      Für die Partial-Summen zeigen wir durch Induktion über $n$, dass 
       \begin{equation}
         \label{eq:seq0}        
       \sum\limits_{i=1}^n \bruch{1}{i\cdot (i+1)} = 1 - \bruch{1}{n+1}
@@ -1385,7 +1385,7 @@ v      Für die Partial-Summen zeigen wir durch Induktion über $n$, dass
       \item (Induktions-Anfang) $n=1$: Einerseits haben wir für $n=1$
            \\[0.2cm]
            \hspace*{1.3cm}      
-           $\sum\limits_{i=1}^n \bruch{1}{i\cdot (i+1)} = \sum\limits_{i=1}^1 \bruch{1}{i\cdot (i+1)}
+           $\ds\sum\limits_{i=1}^n \bruch{1}{i\cdot (i+1)} = \sum\limits_{i=1}^1 \bruch{1}{i\cdot (i+1)}
             = \bruch{1}{1\cdot (1+1)} = \bruch{1}{2}$,
            \\[0.2cm]
            andererseits gilt
@@ -1397,8 +1397,8 @@ v      Für die Partial-Summen zeigen wir durch Induktion über $n$, dass
             \hspace*{1.3cm}      
             $
             \begin{array}{lcl}
-              \sum\limits_{i=1}^{n+1} \bruch{1}{i\cdot (i+1)} 
-              &               =  & \sum\limits_{i=1}^{n} \bruch{1}{i\cdot (i+1)} + \bruch{1}{(n+1)\cdot (n+2)} \\[0.3cm]
+              \ds\sum\limits_{i=1}^{n+1} \bruch{1}{i\cdot (i+1)} 
+              &               =  & \ds\sum\limits_{i=1}^{n} \bruch{1}{i\cdot (i+1)} + \bruch{1}{(n+1)\cdot (n+2)} \\[0.3cm]
               & \stackrel{IV}{=} & 1 - \bruch{1}{(n+1)} + \bruch{1}{(n+1)\cdot (n+2)}                     \\[0.3cm]
               &               =  & 1 - \bruch{n+2 -1}{(n+1)\cdot (n+2)}                                  \\[0.3cm]
               &               =  & 1 - \bruch{n+1}{(n+1)\cdot (n+2)}                                     \\[0.3cm]
@@ -1442,12 +1442,13 @@ v      Für die Partial-Summen zeigen wir durch Induktion über $n$, dass
       den Ausdruck
       \\[0.2cm]
       \hspace*{1.3cm}      
-      $\displaystyle \sum\limits_{i=0}^{n} q^i = \bruch{1 - q^{n+1}}{1-q}$.
+      \colorbox{orange}{$\displaystyle \sum\limits_{i=0}^{n} q^i = \bruch{1 - q^{n+1}}{1-q}$}.
       \\[0.2cm]
       Falls $|q| < 1$ ist, konvergiert die Folge $\folge{q^n}$ gegen $0$.  Damit gilt
       für $|q| < 1$
       \\[0.2cm]
-      \hspace*{1.3cm} $\ds\sum\limits_{i=0}^{\infty} q^i = \bruch{1}{1-q}$.
+      \hspace*{1.3cm}
+      \colorbox{orange}{$\ds\sum\limits_{i=0}^{\infty} q^i = \bruch{1}{1-q}$}.
       \\[0.2cm]
       Die Reihe
       \\[0.2cm]
@@ -1465,7 +1466,7 @@ v      Für die Partial-Summen zeigen wir durch Induktion über $n$, dass
 Hat eine Reihe die Form 
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \Folge{\sum\limits_{i=1}^{n}  (-1)^i \cdot  a_i} $
+$\ds\Folge{\sum\limits_{i=1}^{n}  (-1)^i \cdot  a_i} $
 \\[0.2cm]
 und gilt entweder
 \\[0.2cm]
@@ -1481,9 +1482,14 @@ die Glieder den Wert $0$ haben).  In diesem Fall sprechen wir daher von einer \e
 \textbf{Beispiel}: Die Reihe
 \\[0.2cm]
 \hspace*{1.3cm}
-$\Folge{\sum\limits_{i=1}^{n} \bruch{(-1)^i}{i}}$
+$\ds\Folge{\sum\limits_{i=1}^{n} \bruch{(-1)^{i+1}}{i}}$
 \\[0.2cm]
-ist eine alternierende Reihe.  Wir werden später sehen, dass diese Reihe gegen den Wert $-\ln(2)$ konvergiert.
+ist eine alternierende Reihe, denn die Vorzeichen aufeinander folgender Reihenglieder sind alternierend positiv und negativ:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\Folge{\sum\limits_{i=1}^{\infty} \bruch{(-1)^{i+1}}{i}} = \frac{1}{1} - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} \pm \cdots$.
+\\[0.2cm]
+Wir werden später sehen, dass diese Reihe gegen den Wert $\ln(2)$ konvergiert.
 \eox
 
 
@@ -1500,14 +1506,14 @@ Wenn die Folge $\folge{a_n}$ eine monoton fallende Null-Folge ist, dann
 konvergiert die alternierende Reihe
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \left(\sum\limits_{i=1}^{n} (-1)^i \cdot  a_i\right)_{n\in\mathbb{N}.} $
+$\ds \left(\sum\limits_{i=1}^{n} (-1)^i \cdot  a_i\right)_{n\in\mathbb{N}.} $
 \end{Satz}
   
 \noindent
 \textbf{Beweis}:  Die  Partial-Summen $s_n$ sind durch
 \\[0.2cm]
 \hspace*{1.3cm}
-$ s_n = \sum\limits_{i=1}^{n} (-1)^i \cdot  a_i $
+$\ds s_n = \sum\limits_{i=1}^{n} (-1)^i \cdot  a_i $
 \\[0.2cm]
 definiert.  Wir betrachten zunächst die Folge der Partial-Summen mit geraden Indizes, wir
 betrachten also die Folge $\folge{s_{2 \cdot n}}$ und zeigen, dass diese Folge monoton fallend
@@ -1571,14 +1577,13 @@ Der Grenzwert dieser Folge sei $s$:
 $ s := \lim\limits_{n\rightarrow\infty} s_{2 \cdot n}. $
 \\[0.2cm]
 Dann konvergiert auch die Folge $\folge{s_{n}}$ gegen $s$. Dies sehen wir wie folgt:
-Sei $\varepsilon > 0$ gegeben.  Weil   $\folge{s_{2 \cdot n}}$ gegen $s$ konvergiert gibt es eine
-Zahl
-$K_1$, so dass für alle $n \geq K_1$ die Ungleichung
+Sei $\varepsilon > 0$ gegeben.  Weil   $\folge{s_{2 \cdot n}}$ gegen $s$ konvergiert, gibt es eine
+Zahl $K_1$, so dass für alle $n \geq K_1$ die Ungleichung
 \begin{equation}
   \label{eq:seq2}
   \bigl| s_{2 \cdot n} - s \bigr| < \bruch{1}{2}\cdot\varepsilon
 \end{equation}
-erfüllt ist.  Weil $\folge{a_{n}}$ eine Null-Folge ist gibt es außerdem eine Zahl $K_2$,
+erfüllt ist.  Weil $\folge{a_{n}}$ eine Null-Folge ist, gibt es außerdem eine Zahl $K_2$,
 so dass für alle $n \geq K_2$ die Ungleichung
 \begin{equation}
   \label{eq:seq3}
@@ -1619,12 +1624,14 @@ $ \begin{array}{lcl}
 \end{enumerate}
 Damit ist der Beweis abgeschlossen. \hspace*{\fill} $\Box$ 
 
-\begin{Satz}[Cauchy'sches Konvergenz-Kriterium für Reihen] \lb
-Die Reihe $\folge{\sum_{i=0}^{n} a_i}$ ist genau dann konvergent, wenn es für alle 
-$\varepsilon>0$ eine Zahl $K$ gibt, so dass gilt:
+\begin{Satz}[Cauchy'sches Konvergenz-Kriterium für Reihen] 
+Die Reihe $\ds\folge{\sum_{i=0}^{n} a_i}$ ist genau dann konvergent, wenn es für alle 
+$\varepsilon>0$ eine Zahl $K$ gibt, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds \forall n,l \in \mathbb{N}: n \geq K \rightarrow \left|\sum\limits_{i=n+1}^{n+l} a_i \right| < \varepsilon.$
+$\ds \forall n,l \in \mathbb{N}: n \geq K \rightarrow \left|\sum\limits_{i=n+1}^{n+l} a_i \right| < \varepsilon$ 
+\\[0.2cm]
+gilt.
 \end{Satz}
 
 \noindent
@@ -1632,7 +1639,7 @@ $\ds \forall n,l \in \mathbb{N}: n \geq K \rightarrow \left|\sum\limits_{i=n+1}^
 $\folge{s_n}$ der durch
 \\[0.2cm]
 \hspace*{1.3cm}
-$ s_n = \sum\limits_{i=0}^{n} a_i $
+$\ds s_n = \sum\limits_{i=0}^{n} a_i $
 \\[0.2cm]
 definierten Partial-Summen genau dann konvergent, wenn $\folge{s_n}$ eine Cauchy-Folge
 ist, wenn also gilt:
@@ -1649,32 +1656,32 @@ die Definition der Partial-Summen ein, so erhalten wir
 \hspace*{1.3cm}
 $ \begin{array}{lcl}
    \left| s_{m} - s_n \right| & = & \left| s_{n+l} - s_n \right| \\[0.2cm]
-                              & = & \left| \sum\limits_{i=1}^{n+l} a_i - \sum\limits_{i=1}^n a_i \right| \\[0.4cm]
-                              & = & \left| \sum\limits_{i=n+1}^{n+l} a_i \right| \\[0.2cm]
+                              & = & \ds \left| \sum\limits_{i=1}^{n+l} a_i - \sum\limits_{i=1}^n a_i \right| \\[0.4cm]
+                              & = & \ds \left| \sum\limits_{i=n+1}^{n+l} a_i \right| \\[0.2cm]
    \end{array}
 $
 \\[0.2cm]
 und damit ist klar, dass die Ungleichung des Satzes äquivalent dazu ist,
 dass die Folge der Partial-Summen eine Cauchy-Folge ist.
-\hspace*{\fill} $\Box$
+\qed
 
 \begin{Korollar} \lb
-Wenn die Reihe $\Reihe{a_i}$ konvergent ist, dann ist die Folge $\folge{a_n}$ eine Null-Folge.  
+Wenn die Reihe $\ds\Reihe{a_i}$ konvergent ist, dann ist die Folge $\folge{a_n}$ eine Null-Folge.  
 \end{Korollar}
 
 \noindent
 \textbf{Beweis}: Nach dem Cauchy'schen Konvergenz-Kriterium gilt \\[0.2cm]
 \hspace*{1.3cm}      
-$\forall \varepsilon \in \mathbb{R}_+:\exists K \in \mathbb{R}:\forall n,l \in \mathbb{N}: n \geq K \rightarrow \left|\sum\limits_{i=n+1}^{n+l} a_i \right| < \varepsilon$.
+$\ds\forall \varepsilon \in \mathbb{R}_+:\exists K \in \mathbb{R}:\forall n,l \in \mathbb{N}: n \geq K \rightarrow \left|\sum\limits_{i=n+1}^{n+l} a_i \right| < \varepsilon$.
 \\[0.2cm]
 Setzen wir hier $l=1$ so haben wir insbesondere
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall \varepsilon \in \mathbb{R}_+:\exists K \in \mathbb{R}:\forall n \in \mathbb{N}: n \geq K \rightarrow \left|\sum\limits_{i=n+1}^{n+1} a_i \right| < \varepsilon$. 
+$\ds\forall \varepsilon \in \mathbb{R}_+:\exists K \in \mathbb{R}:\forall n \in \mathbb{N}: n \geq K \rightarrow \left|\sum\limits_{i=n+1}^{n+1} a_i \right| < \varepsilon$. 
 \\[0.2cm]
 Wegen \\[0.2cm]
       \hspace*{1.3cm}      
-      $\left|\sum\limits_{i=n+1}^{n+1} a_i \right| = |a_{n+1}|$
+      $\ds\left|\sum\limits_{i=n+1}^{n+1} a_i \right| = |a_{n+1}|$
       \\[0.2cm]
 folgt also 
 \\[0.2cm]
@@ -1682,28 +1689,26 @@ folgt also
 $\forall \varepsilon \in \mathbb{R}_+:\exists K \in \mathbb{R}:\forall n \in \mathbb{N}: n \geq K \rightarrow |a_{n+1}| < \varepsilon$.      
 \\[0.2cm]
 Diese Formel drückt aus, dass $\folge{a_n}$ eine Null-Folge ist.
-\hspace*{\fill} $\Box$ 
+\qed
 
 \remark
-Mit Hilfe des letzten Satzes können wir zeigen, dass die \emph{harmonische Reihe}
+Mit Hilfe des letzten Satzes können wir zeigen, dass die 
+\href{http://de.wikipedia.org/wiki/Harmonische_Reihe}{\emph{harmonische Reihe}}
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \Folge{\sum\limits_{i=1}^{n} \bruch{1}{i}} $
+$\ds\Folge{\sum\limits_{i=1}^{n} \bruch{1}{i}} $
 \\[0.2cm]
 divergiert.  Wäre diese Reihe konvergent, so gäbe es nach dem Cauchy'schen
 Konvergenz-Kriterium eine Zahl $K$, so dass für alle $n \geq K$ und alle $l$ die Ungleichung
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \sum\limits_{i=n+1}^{n+l} \bruch{1}{i} < \bruch{1}{2} $
+$\ds \sum\limits_{i=n+1}^{n+l} \bruch{1}{i} < \bruch{1}{2} $
 \\[0.2cm]
 gilt.  Insbesondere würde diese Ungleichung dann für $l=n$ gelten. 
 Für beliebige $n$ gilt aber die folgende Abschätzung:
 \\[0.2cm]
 \hspace*{1.3cm}
-$
-  \sum\limits_{i=n+1}^{n+n} \bruch{1}{i}  \geq  \sum\limits_{i=n+1}^{2 \cdot n} \bruch{1}{2 \cdot n} 
- = n \cdot  \bruch{1}{2 \cdot n} = \bruch{1}{2} 
-$
+$\ds\sum\limits_{i=n+1}^{n+n} \frac{1}{i}  \geq  \sum\limits_{i=n+1}^{2 \cdot n} \frac{1}{2 \cdot n} = n \cdot  \frac{1}{2 \cdot n} = \frac{1}{2}$
 \\[0.2cm]
 Damit erfüllt die harmonische Reihe das Cauchy'sche Konvergenz-Kriterium nicht. \eox
 
@@ -1711,9 +1716,9 @@ Damit erfüllt die harmonische Reihe das Cauchy'sche Konvergenz-Kriterium nicht. 
 Für die Folgen $\folge{a_n}$  und  $\folge{b_n}$  gelte:
 \begin{enumerate}
 \item $\forall n \in \mathbb{N}: 0 \leq a_n \leq b_n$.
-\item Der Grenzwert $\sum\limits_{i=1}^\infty b_i$ existiert.
+\item Der Grenzwert $\ds\sum\limits_{i=1}^\infty b_i$ existiert.
 \end{enumerate}
-Dann existiert auch der Grenzwert $\sum\limits_{i=1}^\infty a_i$.
+Dann existiert auch der Grenzwert $\ds\sum\limits_{i=1}^\infty a_i$.
 \end{Satz}
 
 
@@ -1721,7 +1726,7 @@ Dann existiert auch der Grenzwert $\sum\limits_{i=1}^\infty a_i$.
 \textbf{Beweis}:  Es gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \sum\limits_{i=1}^n a_i \leq \sum\limits_{i=1}^n b_i \leq \sum\limits_{i=1}^\infty b_i. $
+$\ds \sum\limits_{i=1}^n a_i \leq \sum\limits_{i=1}^n b_i \leq \sum\limits_{i=1}^\infty b_i. $
 \\[0.2cm]
 Also ist die Folge $\Folge{\sum\limits_{i=1}^{n} a_i}$ monoton wachsend und beschränkt und
 damit konvergent.
@@ -1744,7 +1749,7 @@ Glieder einer Reihe für die Frage, ob eine Reihe konvergent ist, unbedeutend ist
 
 \exercise
 Zeigen Sie mit dem Majoranten-Kriterium, dass die Reihe 
-$\ds\Folge{\sum\limits_{i=1}^{n} \bruch{1}{i^2}}$ konvergiert.
+$\ds\Folge{\sum\limits_{i=1}^{n} \frac{1}{i^2}}$ konvergiert.
 
 \noindent
 \textbf{Lösung}:  Es gilt
@@ -1758,38 +1763,43 @@ $
 \end{array}
 $
 \\[0.2cm]
-Damit ist die Reihe $\Folge{\sum\limits_{i=1}^{n}\bruch{1}{i\cdot (i+1)}}$
-eine konvergente Majorante der Reihe $\Folge{\sum\limits_{i=1}^{n}\bruch{1}{(i+1)^2}}$.  Wegen
+Damit ist die Reihe $\ds\Folge{\sum\limits_{i=1}^{n}\bruch{1}{i\cdot (i+1)}}$
+eine konvergente Majorante der Reihe $\ds\Folge{\sum\limits_{i=1}^{n}\bruch{1}{(i+1)^2}}$.  Wegen
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \sum\limits_{i=1}^{\infty} \bruch{1}{i^2} = \bruch{1}{1^2} + \sum\limits_{i=1}^{\infty} \bruch{1}{(i+1)^2} $
+$\ds \sum\limits_{i=1}^{\infty} \bruch{1}{i^2} = \bruch{1}{1^2} + \sum\limits_{i=1}^{\infty} \bruch{1}{(i+1)^2} $
 \\[0.2cm]
 folgt die Konvergenz aus dem Majoranten-Kriterium.
 
 
 \remark
-Wir werden später zeigen, dass 
+Wir werden später in dem Kapitel über Fourier-Reihen zeigen, dass 
 \\[0.2cm]
 \hspace*{1.3cm}
 $ \sum\limits_{i=1}^{\infty} \bruch{1}{i^2} = \bruch{\;\pi^2}{6\;} \quad\mbox{gilt.} $ \eox
-
-
 
 \begin{Satz}[Minoranten-Kriterium]
 Für die Folgen $\folge{a_n}$  und  $\folge{b_n}$  gelte:
 \begin{enumerate}
 \item $\forall n \in \mathbb{N}: 0 \leq a_n \leq b_n$.
-\item Der Grenzwert $\sum\limits_{i=1}^\infty a_i$ existiert nicht.
+\item Der Grenzwert $\ds\sum\limits_{i=1}^\infty a_i$ existiert nicht.
 \end{enumerate}
-Dann existiert auch der Grenzwert $\sum\limits_{i=1}^\infty b_i$ nicht.
+Dann existiert auch der Grenzwert $\ds\sum\limits_{i=1}^\infty b_i$ nicht.
 \end{Satz}
 
 \noindent
 \textbf{Beweis}:  Wir führen den Beweis indirekt und nehmen an, dass 
-$\sum\limits_{i=1}^\infty b_i$
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\sum\limits_{i=1}^\infty b_i$
+\\[0.2cm]
 existiert.  Nach dem Majoranten-Kriterium müsste dann auch der Grenzwert
-$\sum\limits_{i=1}^\infty a_i$
-existieren und dass steht im Widerspruch zur Voraussetzung. \hspace*{\fill} $\Box$
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\sum\limits_{i=1}^\infty a_i$
+\\[0.2cm]
+existieren und dass steht im Widerspruch zur Voraussetzung. 
+\qed
 
 \exercise
 Zeigen Sie, dass die Reihe 
@@ -1801,8 +1811,17 @@ nicht konvergiert.
 
 \solution
 Wir benutzen das Minoranten-Kriterium und zeigen, dass die
-Reihe $\Reihe{\bruch{1}{i}}$ eine divergente Minorante der Reihe
-  $\Reihe{\bruch{1}{\sqrt{i}}}$ ist:
+Reihe
+\\[0.2cm]
+\hspace*{1.3cm}
+ $\ds\Reihe{\bruch{1}{i}}$ 
+\\[0.2cm]
+eine divergente Minorante der Reihe
+\\[0.2cm]
+\hspace*{1.3cm}
+  $\ds\Reihe{\bruch{1}{\sqrt{i}}}$ 
+\\[0.2cm]
+ist, denn es gilt: 
 \\[0.2cm]
 \hspace*{1.3cm}
 $
@@ -1815,8 +1834,7 @@ $
 $
 \\[0.2cm]
 Da die letzte Ungleichung offenbar für alle $n\in \mathbb{N}$ wahr ist, ist der Beweis abgeschlossen.
-\hspace*{\fill} $\Box$
-
+\qed
 
 \begin{Satz}[Quotienten-Kriterium]
 Es sei $\folge{a_n}$ eine Folge und $q\in\mathbb{R}$ eine Zahl, so dass gilt:
@@ -1825,12 +1843,21 @@ Es sei $\folge{a_n}$ eine Folge und $q\in\mathbb{R}$ eine Zahl, so dass gilt:
 \item $\forall n \in \mathbb{N}: 0 \leq a_n$
 \item $\forall n \in \mathbb{N}: a_{n+1} \leq q \cdot  a_n$
 \end{enumerate}
-Dann konvergiert die Reihe $\Reihe{a_i}$.
+Dann konvergiert die Reihe $\ds\Reihe{a_i}$.
 \end{Satz}
 
 \noindent 
-\textbf{Beweis}:  Wir zeigen, dass die geometrische Reihe $\Reihe{a_0\cdot q^i}$ eine konvergente Majorante der
-Reihe $\Reihe{a_i}$ ist.  Dazu zeigen wir durch Induktion über $n$, dass folgendes gilt:
+\textbf{Beweis}:  Wir zeigen, dass die geometrische Reihe
+\\[0.2cm]
+\hspace*{1.3cm}
+ $\Reihe{a_0\cdot q^i}$ 
+\\[0.2cm]
+eine konvergente Majorante der Reihe
+\\[0.2cm]
+\hspace*{1.3cm}
+ $\Reihe{a_i}$ 
+\\[0.2cm]
+ist.  Dazu zeigen wir durch Induktion über $n$, dass folgendes gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
 $\forall n \in \mathbb{N}: a_{n} \leq a_1 \cdot q^{n-1}$
@@ -1859,12 +1886,16 @@ Ist $\folge{a_n}$ eine Folge, $q\in\mathbb{R}$ und $K \in \mathbb{R}$, so dass
 \hspace*{1.3cm}
 $ 0 \leq q < 1 \quad \wedge \quad \forall n \in \mathbb{N}: n \geq K \rightarrow \left|\bruch{a_{n+1}}{a_n}\right| \leq q  $
 \\[0.2cm]
-gilt.  Dann konvergiert die Reihe $\Reihe{a_i}$.
+gilt.  Dann konvergiert die Reihe $\ds\Reihe{a_i}$.
 
 
 \example
 Wir zeigen mit Hilfe des Quotienten-Kriteriums, dass die Reihe
-$\Reihe{\bruch{z^i}{i!}}$ für alle $z \in \mathbb{C}$ konvergiert.  Für $z=0$ ist die Konvergenz der
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\Reihe{\bruch{z^i}{i!}}$ 
+\\[0.2cm]
+für alle $z \in \mathbb{C}$ konvergiert.  Für $z=0$ ist die Konvergenz der
 Reihe trivial und sonst betrachten wir
 den Quotienten $a_{n+1}/a_n$ für diese Reihe, setzen $K = 2\cdot |z|$ und $q = \bruch{1}{2}$
 und zeigen, dass das Quotienten-Kriterium erfüllt ist, denn für alle $n\geq K$ gilt:
@@ -1878,14 +1909,23 @@ $\left|\bruch{a_{n+1}}{a_n}\right| =  \bruch{\;\bruch{|z^{n+1}|}{\;(n+1)!\;}\;}{
                             =  \bruch{\;1\;}{\;2\;} 
 $.
 
+\remark
+Wir werden später zeigen, dass die in dem letzten Beispiel präsentierte Reihe im Wesentlichen die
+Exponentialfunktion berechnet, denn es gilt  
+\\[0.2cm]
+\hspace*{1.3cm}
+\colorbox{orange}{$\ds e^z = \sum\limits_{n=0}^{\infty} \bruch{z^n}{n!}$} \quad für alle $z \in \mathbb{C}$.
+\eox
+
+
 \begin{Satz}[Wurzel-Kriterium]
 Es sei $\folge{a_n}$ eine Folge und $q\in\mathbb{R}$ eine Zahl, so dass 
 \begin{enumerate}
 \item $0 \leq q < 1$
 \item $\forall n \in \mathbb{N}: 0 \leq a_n$
-\item $\forall n \in \mathbb{N}: n > 0 \rightarrow \sqrt[n]{a_n} \leq q$
+\item $\ds\forall n \in \mathbb{N}: n > 0 \rightarrow \sqrt[n]{a_n} \leq q$
 \end{enumerate}
-gilt.  Dann konvergiert die Reihe $\Reihe{a_i}$.
+gilt.  Dann konvergiert die Reihe $\ds\Reihe{a_i}$.
 \end{Satz}
 
 \noindent 
@@ -1903,14 +1943,14 @@ Wurzel-Kriteriums zeigen:
 Ist $\folge{a_n}$ eine Folge, $q\in\mathbb{R}$ und $K \in \mathbb{R}$, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$ 0 \leq q < 1 \quad \wedge \quad \forall n \in \mathbb{N}: n \geq K \rightarrow \sqrt[n]{|a_n|} \leq q  $
+$\ds 0 \leq q < 1 \quad \wedge \quad \forall n \in \mathbb{N}: n \geq K \rightarrow \sqrt[n]{|a_n|} \leq q  $
 \\[0.2cm]
-gilt.  Dann konvergiert die Reihe $\Reihe{a_i}$.
+gilt.  Dann konvergiert die Reihe $\ds\Reihe{a_i}$.
 
 
 \noindent
 \textbf{Beispiel}: Wir zeigen mit dem Wurzel-Kriterium, dass die Reihe
-$\Reihe{\bruch{1}{i!}}$konvergiert.  Wir setzen
+$\ds\Reihe{\bruch{1}{i!}}$konvergiert.  Wir setzen
 $K = 4$ und $q = \bruch{1}{2}$.  Zunächst können Sie mit vollständiger Induktion
 leicht zeigen, dass für alle natürlichen Zahlen $n\geq 4$ die Ungleichung
 $n! \geq 2^n$ gilt.  Damit haben wir für $n\geq 4$:
