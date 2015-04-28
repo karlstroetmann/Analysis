@@ -1487,7 +1487,7 @@ $\ds\Folge{\sum\limits_{i=1}^{n} \bruch{(-1)^{i+1}}{i}}$
 ist eine alternierende Reihe, denn die Vorzeichen aufeinander folgender Reihenglieder sind alternierend positiv und negativ:
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\Folge{\sum\limits_{i=1}^{\infty} \bruch{(-1)^{i+1}}{i}} = \frac{1}{1} - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} \pm \cdots$.
+$\ds\sum\limits_{i=1}^{\infty} \bruch{(-1)^{i+1}}{i} = \frac{1}{1} - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} \pm \cdots$.
 \\[0.2cm]
 Wir werden sp‰ter sehen, dass diese Reihe gegen den Wert $\ln(2)$ konvergiert.
 \eox
@@ -1629,7 +1629,7 @@ Die Reihe $\ds\folge{\sum_{i=0}^{n} a_i}$ ist genau dann konvergent, wenn es f¸r
 $\varepsilon>0$ eine Zahl $K$ gibt, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds \forall n,l \in \mathbb{N}: n \geq K \rightarrow \left|\sum\limits_{i=n+1}^{n+l} a_i \right| < \varepsilon$ 
+$\ds \forall n,l \in \mathbb{N}:\bigl( n \geq K \rightarrow \left|\sum\limits_{i=n+1}^{n+l} a_i \right| < \varepsilon\bigr)$ 
 \\[0.2cm]
 gilt.
 \end{Satz}
@@ -1646,7 +1646,7 @@ ist, wenn also gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
 $ \forall \varepsilon \in \mathbb{R}_+: \exists K \in \mathbb{R}: \forall m,n \in \mathbb{N}: 
-   m \geq K \wedge n \geq K \rightarrow \bigl| s_m - s_n \bigr| < \varepsilon.
+   \bigl(m \geq K \wedge n \geq K \rightarrow \bigl| s_m - s_n \bigr| < \varepsilon\bigr).
 $
 \\[0.2cm]
 In der letzten Formel kˆnnen wir ohne Einschr‰nkung der Allgemeinheit annehmen,
@@ -1672,12 +1672,12 @@ Wenn die Reihe $\ds\Reihe{a_i}$ konvergent ist, dann ist die Folge $\folge{a_n}$
 \noindent
 \textbf{Beweis}: Nach dem Cauchy'schen Konvergenz-Kriterium gilt \\[0.2cm]
 \hspace*{1.3cm}      
-$\ds\forall \varepsilon \in \mathbb{R}_+:\exists K \in \mathbb{R}:\forall n,l \in \mathbb{N}: n \geq K \rightarrow \left|\sum\limits_{i=n+1}^{n+l} a_i \right| < \varepsilon$.
+$\ds\forall \varepsilon \in \mathbb{R}_+:\exists K \in \mathbb{R}:\forall n,l \in \mathbb{N}: \Bigl(n \geq K \rightarrow \left|\sum\limits_{i=n+1}^{n+l} a_i \right| < \varepsilon\Bigr)$.
 \\[0.2cm]
 Setzen wir hier $l=1$ so haben wir insbesondere
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\forall \varepsilon \in \mathbb{R}_+:\exists K \in \mathbb{R}:\forall n \in \mathbb{N}: n \geq K \rightarrow \left|\sum\limits_{i=n+1}^{n+1} a_i \right| < \varepsilon$. 
+$\ds\forall \varepsilon \in \mathbb{R}_+:\exists K \in \mathbb{R}:\forall n \in \mathbb{N}: \Bigl(n \geq K \rightarrow \left|\sum\limits_{i=n+1}^{n+1} a_i \right| < \varepsilon\Bigr)$. 
 \\[0.2cm]
 Wegen \\[0.2cm]
       \hspace*{1.3cm}      
@@ -1686,7 +1686,7 @@ Wegen \\[0.2cm]
 folgt also 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall \varepsilon \in \mathbb{R}_+:\exists K \in \mathbb{R}:\forall n \in \mathbb{N}: n \geq K \rightarrow |a_{n+1}| < \varepsilon$.      
+$\forall \varepsilon \in \mathbb{R}_+:\exists K \in \mathbb{R}:\forall n \in \mathbb{N}: \bigl(n \geq K \rightarrow |a_{n+1}| < \varepsilon\bigr)$.      
 \\[0.2cm]
 Diese Formel dr¸ckt aus, dass $\folge{a_n}$ eine Null-Folge ist.
 \qed
@@ -1741,7 +1741,7 @@ $\forall n \in \mathbb{N}: 0 \leq a_n \leq b_n$
 abgeschw‰cht zu 
 \\[0.2cm]
 \hspace*{1.3cm}      
-$\forall n \in \mathbb{N}: n \geq K \rightarrow 0 \leq a_n \leq b_n$.
+$\forall n \in \mathbb{N}: \bigl(n \geq K \rightarrow 0 \leq a_n \leq b_n\bigr)$.
 \\[0.2cm]
 Hierbei ist $K$ dann eine geeignet gew‰hlte Schranke.  Die G¸ltigkeit dieser Form des
 Majoranten-Kriteriums folgt aus der Tatsache, dass das Ab‰ndern endlich vieler
@@ -1884,7 +1884,7 @@ Quotienten-Kriteriums zeigen:
 Ist $\folge{a_n}$ eine Folge, $q\in\mathbb{R}$ und $K \in \mathbb{R}$, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$ 0 \leq q < 1 \quad \wedge \quad \forall n \in \mathbb{N}: n \geq K \rightarrow \left|\bruch{a_{n+1}}{a_n}\right| \leq q  $
+$ 0 \leq q < 1 \quad \wedge \quad \forall n \in \mathbb{N}: \Bigl(n \geq K \rightarrow \left|\bruch{a_{n+1}}{a_n}\right| \leq q\Bigr)$
 \\[0.2cm]
 gilt.  Dann konvergiert die Reihe $\ds\Reihe{a_i}$.
 
@@ -1923,7 +1923,7 @@ Es sei $\folge{a_n}$ eine Folge und $q\in\mathbb{R}$ eine Zahl, so dass
 \begin{enumerate}
 \item $0 \leq q < 1$
 \item $\forall n \in \mathbb{N}: 0 \leq a_n$
-\item $\ds\forall n \in \mathbb{N}: n > 0 \rightarrow \sqrt[n]{a_n} \leq q$
+\item $\ds\forall n \in \mathbb{N}:\bigl( n > 0 \rightarrow \sqrt[n]{a_n} \leq q\bigr)$
 \end{enumerate}
 gilt.  Dann konvergiert die Reihe $\ds\Reihe{a_i}$.
 \end{Satz}
@@ -1943,7 +1943,7 @@ Wurzel-Kriteriums zeigen:
 Ist $\folge{a_n}$ eine Folge, $q\in\mathbb{R}$ und $K \in \mathbb{R}$, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds 0 \leq q < 1 \quad \wedge \quad \forall n \in \mathbb{N}: n \geq K \rightarrow \sqrt[n]{|a_n|} \leq q  $
+$\ds 0 \leq q < 1 \quad \wedge \quad \forall n \in \mathbb{N}: \bigl(n \geq K \rightarrow \sqrt[n]{|a_n|} \leq q\bigr)$
 \\[0.2cm]
 gilt.  Dann konvergiert die Reihe $\ds\Reihe{a_i}$.
 
@@ -2057,8 +2057,8 @@ $.
 \\[0.2cm]
 Aus den letzten beiden S‰tzen folgt dann:
 \begin{enumerate}
-\item $\forall z \in \mathbb{C}: |z| < R \rightarrow \sum\limits_{n=0}^\infty a_n\cdot z^n$ konvergiert. 
-\item $\forall z \in \mathbb{C}: |z| > R \rightarrow \sum\limits_{n=0}^\infty a_n\cdot z^n$ divergiert. 
+\item $\forall z \in \mathbb{C}:\Bigl( |z| < R \rightarrow \sum\limits_{n=0}^\infty a_n\cdot z^n\Bigr)$ konvergiert. 
+\item $\forall z \in \mathbb{C}:\Bigl( |z| > R \rightarrow \sum\limits_{n=0}^\infty a_n\cdot z^n\Bigr)$ divergiert. 
 \end{enumerate}
 In der Gauﬂ'schen Zahlen-Ebene ist die Menge 
 $\bigl\{ z \in \mathbb{C} \;\big|\; |z| < R \bigr\}$ das Innere eines Kreises mit dem
