@@ -15,9 +15,8 @@ Formal definieren wir Folgen daher als Funktionen, die auf den natürlichen Zahle
 
 
 \begin{Definition}[Folge]
-  Eine Funktion $f: \mathbb{N} \rightarrow \mathbb{R}$ bezeichnen wir als eine  \emph{reellwertige Folge}. 
-  Eine Funktion $f: \mathbb{N} \rightarrow \mathbb{C}$ bezeichnen wir als eine  \emph{komplexwertige
-    Folge}. \eod
+  Eine Funktion $f\!:\! \mathbb{N} \rightarrow \mathbb{R}$ bezeichnen wir als eine  \emph{reellwertige Folge}. 
+  Eine Funktion $f\!:\! \mathbb{N} \rightarrow \mathbb{C}$ bezeichnen wir als eine  \emph{komplexwertige Folge}. \eod
 \end{Definition}
 
 \noindent
@@ -25,12 +24,11 @@ Ist die Funktion $f$ ein Folge, so schreiben wir dies kürzer als
 $\bigl(f(n)\bigr)_{n\in\mathbb{N}}$ oder $\bigl(f_n\bigr)_{n\in\mathbb{N}}$ oder noch kürzer als $\bigl(f_n\bigr)_n$.
 
 
-\noindent
-\textbf{Beispiele}:
+\examples
 \begin{enumerate}
 \item Die Funktion $a:\mathbb{N} \rightarrow \mathbb{R}$, die durch  
-      $a(n) = \bruch{1}{n}$ definiert ist, schreiben wir als die Folge
-      $\Bigl(\bruch{1}{n}\Bigr)_{n\in\mathbb{N}}$.
+      $a(n) = \frac{1}{n}$ definiert ist, schreiben wir als die Folge
+      $\Bigl(\frac{1}{n}\Bigr)_{n\in\mathbb{N}}$.
 \item Die Funktion $a:\mathbb{N} \rightarrow \mathbb{R}$, die durch  
       $a(n) = (-1)^n$ definiert ist, schreiben wir als die Folge
       $\bigl((-1)^n\bigr)_{n\in\mathbb{N}}$.
@@ -140,7 +138,7 @@ in einem späteren Kapitel antreten.  Wir betrachten statt dessen ein einfacheres
 und beweisen, dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\lim\limits_{n\rightarrow\infty} \bruch{1}{n} = 0$
+$\ds\lim\limits_{n\rightarrow\infty} \frac{1}{n} = 0$
 \\[0.2cm]
 gilt. 
 \pagebreak
@@ -150,34 +148,34 @@ Für jedes  $\varepsilon > 0$ müssen wir eine Zahl $K$ angeben, so
 dass für alle natürlichen Zahlen $n$, die größer-gleich $K$ sind, die Abschätzung
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \left| \bruch{1}{n} - 0 \right| < \varepsilon $
+$\ds \left| \frac{1}{n} - 0 \right| < \varepsilon $
 \\[0.2cm]
-gilt.  Wir definieren $K := \bruch{1}{\varepsilon} + 1$.  Damit ist $K$ wohldefiniert,
+gilt.  Wir definieren $K := \frac{1}{\varepsilon} + 1$.  Damit ist $K$ wohldefiniert,
 denn da $\varepsilon$ positiv ist, gilt sicher auch $\varepsilon \not= 0$.  Nun benutzen
-wir die Voraussetzung $n \geq K$ für $K = \bruch{1}{\varepsilon} + 1$:
+wir die Voraussetzung $n \geq K$ für $K = \frac{1}{\varepsilon} + 1$:
 \\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}{cll}
-            & n \geq \bruch{1}{\varepsilon} + 1      \\[0.3cm] 
-\Rightarrow & n > \bruch{1}{\varepsilon} & \mid \cdot \;\varepsilon \\[0.3cm]
-\Rightarrow & n \cdot \varepsilon > 1       & \mid \cdot \;\bruch{1}{n} \\[0.3cm]
-\Rightarrow & \varepsilon > \bruch{1}{n} & 
+            & \ds n \geq \frac{1}{\varepsilon} + 1      \\[0.4cm] 
+\Rightarrow & \ds n > \frac{1}{\varepsilon} & \mid \cdot \;\varepsilon \\[0.2cm]
+\Rightarrow & n \cdot \varepsilon > 1        & \ds\mid \cdot \;\frac{1}{n} \\[0.2cm]
+\Rightarrow & \ds \varepsilon > \frac{1}{n} & 
 \end{array}
 $
 \\[0.2cm]
-Da andererseits  $0 < \bruch{1}{n}$ gilt, haben wir insgesamt für alle $n > K$
+Da andererseits  $0 < \frac{1}{n}$ gilt, haben wir insgesamt für alle $n > K$
 \\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}{cl}
-            & 0 < \bruch{1}{n} < \varepsilon              \\[0.3cm]
-\Rightarrow & \left|\bruch{1}{n}\right| < \varepsilon     \\[0.3cm]
-\Rightarrow & \left|\bruch{1}{n}-0\right| < \varepsilon
+            & \ds 0 < \frac{1}{n} < \varepsilon              \\[0.3cm]
+\Rightarrow & \ds \left|\frac{1}{n}\right| < \varepsilon     \\[0.4cm]
+\Rightarrow & \ds \left|\frac{1}{n}-0\right| < \varepsilon
 \end{array}
 $
 \\[0.2cm]
-gezeigt und damit ist der Beweis abgeschlossen. \hspace*{\fill} $\Box$
+gezeigt und damit ist der Beweis abgeschlossen. \qed
 
 \exercise
 \renewcommand{\labelenumi}{(\alph{enumi})}
@@ -185,12 +183,12 @@ gezeigt und damit ist der Beweis abgeschlossen. \hspace*{\fill} $\Box$
 \item Beweisen Sie unter Rückgriff auf die Definition des Grenzwert-Begriffs, dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$\lim\limits_{n\rightarrow\infty} \bruch{1}{2^n} = 0$ 
+$\ds\lim\limits_{n\rightarrow\infty} \frac{1}{2^n} = 0$ 
 \\[0.2cm] gilt.
 \item Beweisen Sie unter Rückgriff auf die Definition des Grenzwert-Begriffs, dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$\lim\limits_{n\rightarrow\infty} \bruch{1}{\sqrt{n}} = 0$ 
+$\ds\lim\limits_{n\rightarrow\infty} \frac{1}{\sqrt{n}} = 0$ 
 \\[0.2cm] 
 gilt.  \eox
 \end{enumerate} 
@@ -207,7 +205,7 @@ Grenzwert $g_2$, so gilt $g_1 = g_2$.
 Dann definieren wir
 \\[0.2cm]
 \hspace*{1.3cm}
- $\varepsilon = \bruch{1}{2}\cdot|g_2 - g_1|$ 
+ $\ds\varepsilon = \frac{1}{2}\cdot|g_2 - g_1|$ 
 \\[0.2cm]
 und aus der Annahme $g_1 \not= g_2$ folgt
 $\varepsilon > 0$.  Aus der Voraussetzung, dass $\folge{a_n}$ gegen $g_1$ konvergiert,
@@ -243,7 +241,7 @@ $
 Aus dieser Ungleichungs-Kette würde aber $2\cdot \varepsilon < 2\cdot \varepsilon$ folgen und das
 ist ein Widerspruch.  Somit ist die Annahme $g_1 \not= g_2$ falsch und es muss $g_1 = g_2$
 gelten.  
-\hspace*{\fill} $\Box$
+\qed
 
 \remark
 Die Schreibweise $\lim\limits_{n\rightarrow\infty} a_n = g$
@@ -252,8 +250,8 @@ wird durch den letzten Satz im Nachhinein gerechtfertigt.
 \exercise
 Zeigen Sie, dass die Folge $\folge{(-1)^n}$ nicht konvergent ist. \eox
 
-\noindent 
-\textbf{Lösung}: Wir führen den Beweis indirekt und nehmen an, dass die Folge
+\solution
+Wir führen den Beweis indirekt und nehmen an, dass die Folge
 $\folge{(-1)^n}$ konvergiert.  Bezeichnen wir diesen Grenzwert mit $s$, so gilt also
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -384,7 +382,7 @@ $
 \example
 Aus dem letzten Satz folgt sofort, dass die Folge $\folge{n}$ nicht
 konvergiert, denn diese Folge ist noch nicht einmal beschränkt.  \eox
-
+\pagebreak
 
 \begin{Satz}[Summe konvergenter Folgen]
 Sind $\folge{a_n}$ und $\folge{b_n}$ zwei Folgen, so dass
@@ -414,15 +412,15 @@ $\forall n \in \mathbb{N}:\bigl(n \geq K_1 \rightarrow \bigl| a_n - a \bigr| < \
 \quad \mbox{und} \quad
 $\forall n \in \mathbb{N}:\bigl( n \geq K_2 \rightarrow \bigl| b_n - b \bigr| < \varepsilon'\bigr)$
 \\[0.2cm]
-gilt.  Wir setzen nun $\varepsilon' := \bruch{1}{2} \cdot \varepsilon$.  Dann gibt es also $K_1$ und
+gilt.  Wir setzen nun $\varepsilon' := \frac{1}{2} \cdot \varepsilon$.  Dann gibt es also $K_1$ und
 $K_2$, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall n \in \mathbb{N}:\bigl(n \geq K_1 \rightarrow \bigl| a_n - a \bigr| < \bruch{1}{2}\cdot\varepsilon\bigr)$ 
+$\ds\forall n \in \mathbb{N}:\bigl(n \geq K_1 \rightarrow \bigl| a_n - a \bigr| < \frac{1}{2}\cdot\varepsilon\bigr)$ 
    \quad \mbox{und} \quad
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall n \in \mathbb{N}:\bigl(n \geq K_2 \rightarrow \bigl| b_n - b \bigr| < \bruch{1}{2}\cdot\varepsilon\bigr)$
+$\ds\forall n \in \mathbb{N}:\bigl(n \geq K_2 \rightarrow \bigl| b_n - b \bigr| < \frac{1}{2}\cdot\varepsilon\bigr)$
 \\[0.2cm]
 gilt.  Wir definieren $K := \max(K_1,K_2)$.  Damit gilt dann für alle $n \geq K$:
 \\[0.2cm]
@@ -434,12 +432,12 @@ $
  & = & \bigl| \bigl(a_n - a\bigr) +  \bigl(b_n - b\bigr) \bigr| \\[0.3cm]
  & \leq & \bigl| \bigl(a_n - a\bigr) \bigr| +  \bigl|\bigl(b_n - b\bigr) \bigr| 
         & \mbox{(Dreiecksungleichung)} \\[0.3cm]
- & < & \bruch{1}{2}\cdot \varepsilon + \bruch{1}{2} \cdot \varepsilon \\[0.3cm]
+ & < & \ds\frac{1}{2}\cdot \varepsilon + \frac{1}{2} \cdot \varepsilon \\[0.3cm]
  & = &  \varepsilon. 
 \end{array}
 $
 \\[0.2cm]
-Damit ist die Behauptung gezeigt. \hspace*{\fill} $\Box$
+Damit ist die Behauptung gezeigt. \qed
 
 \exercise
 Zeigen Sie:
@@ -491,16 +489,16 @@ $\forall n \in \mathbb{N}:\bigl(n \geq K_1 \rightarrow \bigl| a_n - a \bigr| < \
    \quad \mbox{und} \quad
 $\forall n \in \mathbb{N}:\bigl(n \geq K_2 \rightarrow \bigl| b_n - b \bigr| < \varepsilon_2\bigr)$
 \\[0.2cm]
-gilt.  Wir setzen nun $\varepsilon_1 := \bruch{\varepsilon}{2\cdot(|b| + 1)}$ und
-$\varepsilon_2 := \bruch{\varepsilon}{2\cdot S}$.  Dann gibt es also $K_1$ und
+gilt.  Wir setzen nun $\varepsilon_1 := \frac{\varepsilon}{2\cdot(|b| + 1)}$ und
+$\varepsilon_2 := \frac{\varepsilon}{2\cdot S}$.  Dann gibt es also $K_1$ und
 $K_2$, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall n \in \mathbb{N}:\Bigl(n \geq K_1 \rightarrow \bigl| a_n - a \bigr| < \bruch{\varepsilon}{2\cdot(|b| + 1)}\Bigr)$
+$\ds\forall n \in \mathbb{N}:\Bigl(n \geq K_1 \rightarrow \bigl| a_n - a \bigr| < \frac{\varepsilon}{2\cdot(|b| + 1)}\Bigr)$
 \quad \mbox{und} \quad
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall n \in \mathbb{N}:\Bigl(n \geq K_2 \rightarrow \bigl| b_n - b \bigr| < \bruch{\varepsilon}{2\cdot S}\Bigr)$
+$\ds\forall n \in \mathbb{N}:\Bigl(n \geq K_2 \rightarrow \bigl| b_n - b \bigr| < \frac{\varepsilon}{2\cdot S}\Bigr)$
 \\[0.2cm]
 gilt.  Wir definieren $K := \max(K_1,K_2)$.  Damit gilt dann für alle $n \geq K$:
 \\[0.2cm]
@@ -513,13 +511,13 @@ $
         & \mbox{(Dreiecksungleichung)}  \\[0.3cm]
  & =    & \bigl|a_n\bigr| \cdot  \bigl| b_n - b \bigr| + \bigl| a_n - a \bigr| \cdot  |b| \\[0.3cm]
  & \leq & S \cdot  \bigl| b_n - b \bigr| + \bigl| a_n - a \bigr| \cdot  (|b| + 1) \\[0.3cm]
- & <    & S \cdot  \bruch{\varepsilon}{2\cdot S} + \bruch{\varepsilon}{2\cdot (|b| + 1)} \cdot  (|b| + 1)  \\[0.3cm]
- & \leq & \bruch{\;\varepsilon\;}{2} + \bruch{\;\varepsilon\;}{2}  \\[0.3cm]
+ & <    & \ds S \cdot  \frac{\varepsilon}{2\cdot S} + \frac{\varepsilon}{2\cdot (|b| + 1)} \cdot  (|b| + 1)  \\[0.3cm]
+ & \leq & \ds\frac{\;\varepsilon\;}{2} + \frac{\;\varepsilon\;}{2}  \\[0.3cm]
  & =    & \varepsilon. 
 \end{array}
 $
 \\[0.2cm]
-Damit ist die Behauptung gezeigt. \hspace*{\fill} $\Box$
+Damit ist die Behauptung gezeigt. \qed
 
 
 \exercise
@@ -535,24 +533,24 @@ so konvergiert die Folge $\folge{a_n/b_n}$ gegen den Grenzwert $a/b$, in
 Zeichen:}
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \lim\limits_{n\rightarrow\infty} \bruch{a_n}{b_n} = 
-   \bruch{\Bigl(\lim\limits_{n\rightarrow\infty}
+$\ds \lim\limits_{n\rightarrow\infty} \frac{a_n}{b_n} = 
+   \frac{\Bigl(\lim\limits_{n\rightarrow\infty}
      a_n\Bigr)}{\Bigl(\lim\limits_{n\rightarrow\infty} b_n\Bigr)} =
-   \bruch{a}{b}.
+   \frac{a}{b}.
 $
 \eox
 
-\noindent
-\textbf{Lösung}:  Zunächst können wir das Problem vereinfachen, wenn wir die Folge
+\solution  
+Zunächst können wir das Problem vereinfachen, wenn wir die Folge
 $\folge{a_n/b_n}$ als Folge von Produkten schreiben:
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \Folge{\bruch{a_n}{b_n}} = \folge{a_n} \cdot  \Folge{\bruch{1}{b_n}} $
+$\ds \Folge{\frac{a_n}{b_n}} = \folge{a_n} \cdot  \Folge{\frac{1}{b_n}} $
 \\[0.2cm]
 Falls wir zeigen können, dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \lim\limits_{n\rightarrow\infty} \bruch{1}{b_n} = \bruch{1}{b} $
+$\ds \lim\limits_{n\rightarrow\infty} \frac{1}{b_n} = \frac{1}{b} $
 \\[0.2cm]
 gilt, dann folgt die Behauptung aus dem Satz über das Produkt konvergenter Folgen.
 Bei unserer Suche nach einem Beweis starten wir damit, dass wir die Behauptung noch einmal
@@ -560,13 +558,13 @@ hinschreiben:
 \begin{equation}
   \label{eq:ab0}  
 \forall \varepsilon \in \mathbb{R}_+: \exists K \in \mathbb{R}:\forall n \in \mathbb{N}: \Bigl(
-   n \geq K \rightarrow \left| \bruch{1}{b_n} - \bruch{1}{b} \right| < \varepsilon\Bigr)
+   n \geq K \rightarrow \left| \frac{1}{b_n} - \frac{1}{b} \right| < \varepsilon\Bigr)
 \end{equation}
 Wir müssen also für alle $\varepsilon>0$ ein $K$ finden, so dass für alle natürlichen
 Zahlen  $n \geq K$ die Ungleichung
 \begin{equation}
   \label{eq:ab1}
-  \left| \bruch{1}{b_n} - \bruch{1}{b} \right| < \varepsilon 
+  \left| \frac{1}{b_n} - \frac{1}{b} \right| < \varepsilon 
 \end{equation}
 gilt.  Irgendwie müssen wir die Voraussetzung, dass die Folge $\folge{b_n}$ gegen
 $b$ konvergiert, ausnutzen.  Diese Voraussetzung lautet ausgeschrieben
@@ -577,11 +575,11 @@ $b$ konvergiert, ausnutzen.  Diese Voraussetzung lautet ausgeschrieben
 \end{equation}
 Wir zeigen zunächst eine Abschätzung für die Beträge $|b_n|$, die wir später brauchen.
 Hier hilft uns die Voraussetzung, dass $b \not= 0$ ist.  Setzen wir in Ungleichung 
-(\ref{eq:ab2}) für $\varepsilon'$ den Wert $\bruch{1}{2} \cdot |b|$ ein, so erhalten wir eine Zahl
+(\ref{eq:ab2}) für $\varepsilon'$ den Wert $\frac{1}{2} \cdot |b|$ ein, so erhalten wir eine Zahl
 $K_1$, so dass für alle natürlichen Zahlen $n \geq K_1$
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \bigl| b_n - b \bigr| < \bruch{1}{2}\cdot |b| $
+$\ds \bigl| b_n - b \bigr| < \frac{1}{2}\cdot |b| $
 \\[0.2cm]
 gilt.  Damit folgt:
 \\[0.2cm]
@@ -589,9 +587,9 @@ gilt.  Damit folgt:
 $\begin{array}{lrcl}
                 & \bigl| b \bigr| & =    & \bigl| b - b_n + b_n \bigr|                   \\[0.2cm]
     \Rightarrow & \bigl| b \bigr| & \leq & \bigl| b - b_n \bigr| + \bigl| b_n \bigr|     \\[0.2cm]
-    \Rightarrow & \bigl| b \bigr| & <    & \bruch{1}{2} \cdot \bigl|b\bigr| + \bigl| b_n \bigr| \\[0.2cm]
-    \Rightarrow & \bruch{1}{2} \cdot \bigl|b\bigr| & < & \bigl| b_n \bigr| \\[0.3cm]
-    \Rightarrow & \bruch{2}{\bigl|b\bigr|} & > & \bruch{1}{\bigl| b_n \bigr|}
+    \Rightarrow & \bigl| b \bigr| & <    & \ds\frac{1}{2} \cdot \bigl|b\bigr| + \bigl| b_n \bigr| \\[0.2cm]
+    \Rightarrow & \ds\frac{1}{2} \cdot \bigl|b\bigr| & < & \bigl| b_n \bigr| \\[0.3cm]
+    \Rightarrow & \ds\frac{2}{\bigl|b\bigr|} & > & \ds\frac{1}{\bigl| b_n \bigr|}
   \end{array}
 $
 \\[0.2cm]
@@ -601,11 +599,11 @@ Damit wissen wir also, dass für alle $n>K_1$ die Ungleichung
 $\ds \frac{1}{|b_n|} < \frac{2}{|b|}$
 \\[0.2cm]
 gilt.  Um nun für ein gegebenes $\varepsilon > 0$ die Ungleichung (\ref{eq:ab1}) zu zeigen,  setzen wir
-in der Voraussetzung (\ref{eq:ab2})   $\varepsilon' := \bruch{1}{2}\cdot |b|^2 \cdot  \varepsilon$ 
+in der Voraussetzung (\ref{eq:ab2})   $\varepsilon' := \frac{1}{2}\cdot |b|^2 \cdot  \varepsilon$ 
 und erhalten ein $K_2$, so dass für alle $n>K_2$ die Ungleichung
 \begin{equation}
   \label{eq:ab3}
-  \bigl|b - b_n\bigr| < \bruch{1}{2} \cdot  |b|^2 \cdot  \varepsilon
+  \bigl|b - b_n\bigr| < \frac{1}{2} \cdot  |b|^2 \cdot  \varepsilon
 \end{equation}
 gilt.  Setzen wir $K := \max(K_1,K_2)$, so erhalten wir für alle $n>K$  die folgende
 Ungleichungs-Kette: 
@@ -613,34 +611,35 @@ Ungleichungs-Kette:
 \hspace*{1.3cm}
 $
 \begin{array}{lcll}
-       \left| \bruch{1}{b_n} - \bruch{1}{b} \right| 
- & = & \left| \bruch{b-b_n}{b\cdot b_n} \right| \\[0.5cm]
- & = & \bruch{1}{|b|\cdot |b_n|} \cdot  \left| b-b_n\right| \\[0.5cm]
- & < & \bruch{2}{|b|\cdot |b|} \cdot  \left| b-b_n\right| 
-     & \mbox{wegen $\bruch{2}{\bigl|b\bigr|} > \bruch{1}{\bigl| b_n \bigr|}$} 
+       \ds\left| \frac{1}{b_n} - \frac{1}{b} \right| 
+ & = & \ds\left| \frac{b-b_n}{b\cdot b_n} \right| \\[0.5cm]
+ & = & \ds\frac{1}{|b|\cdot |b_n|} \cdot  \left| b-b_n\right| \\[0.5cm]
+ & < & \ds\frac{2}{|b|\cdot |b|} \cdot  \left| b-b_n\right| 
+     & \mbox{wegen $\ds\frac{2}{\bigl|b\bigr|} > \frac{1}{\bigl| b_n \bigr|}$} 
        \\[0.5cm]
- & < & \bruch{2}{|b|\cdot |b|} \cdot  \bruch{1}{2}\cdot |b|^2 \cdot  \varepsilon 
+ & < & \ds\frac{2}{|b|\cdot |b|} \cdot  \frac{1}{2}\cdot |b|^2 \cdot  \varepsilon 
      & \mbox{wegen (\ref{eq:ab3})} \\[0.5cm]
  & = & \varepsilon \\[0.3cm]
 \end{array}
 $
 \\[0.2cm]
 Damit haben wir für $n \geq K$ die Ungleichung
-$\left| \bruch{1}{b_n} - \bruch{1}{b} \right| < \varepsilon$
-hergeleitet und der Beweis ist abgeschlossen. \hspace*{\fill} $\Box$
+$\ds\left| \frac{1}{b_n} - \frac{1}{b} \right| < \varepsilon$
+hergeleitet und der Beweis ist abgeschlossen. \qed
 
 \remark
-Die bisher bewiesenen Sätzen können wir benutzen um die Grenzwerte 
-von Folgen zu berechnen.  Wir geben ein Beispiel:
+Die bis hierhin bewiesenen Sätze zeigen, dass bei konvergenten Folgen die Berechnung von Grenzwerten mit den
+arithmetischen Operationen vertauscht werden kann.  Damit ermöglichen uns diese Sätze die Berechnung
+von Grenzwerten.  Wir geben ein Beispiel:
 \\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}[b]{lcl}  
-       \lim\limits_{n\rightarrow\infty} \bruch{n}{n+1}                                 
-& = &  \lim\limits_{n\rightarrow\infty} \bruch{1}{1+\bruch{1}{n}}                                 \\[0.8cm]
-& = &  \bruch{\lim\limits_{n\rightarrow\infty} 1}{\lim\limits_{n\rightarrow\infty}1 +\bruch{1}{n}} \\[0.8cm]
-& = &  \bruch{1}{\lim\limits_{n\rightarrow\infty}1 + \lim\limits_{n\rightarrow\infty} \bruch{1}{n}} \\[0.8cm]
-& = &  \bruch{1}{1 + 0}                                                                             \\[0.3cm]
+      \ds \lim\limits_{n\rightarrow\infty} \frac{n}{n+1}                                 
+& = & \ds \lim\limits_{n\rightarrow\infty} \frac{1}{1+\frac{1}{n}}                                 \\[0.8cm]
+& = & \ds \frac{\lim\limits_{n\rightarrow\infty} 1}{\lim\limits_{n\rightarrow\infty}1 +\frac{1}{n}} \\[0.8cm]
+& = & \ds \frac{1}{\lim\limits_{n\rightarrow\infty}1 + \lim\limits_{n\rightarrow\infty} \frac{1}{n}} \\[0.8cm]
+& = & \ds \frac{1}{1 + 0}                                                                             \\[0.3cm]
 & = &  1
 \end{array}
 $
@@ -677,15 +676,15 @@ gilt.  Analog heißt eine Folge \emph{monoton fallend} falls
 $ \forall n \in \mathbb{N}: a_n \geq a_{n+1}. $
 \eod
 \end{Definition}
-Ein Beispiel für eine monoton fallende Folge ist die Folge $\Folge{\bruch{1}{n}}$, denn es
+Ein Beispiel für eine monoton fallende Folge ist die Folge $\Folge{\frac{1}{n}}$, denn es
 gilt
 \\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}{crcll}
-            &  n+1          & \geq & n             & \mid \cdot  \bruch{1}{n} \\[0.3cm]
-\Rightarrow & \bruch{n+1}{n} & \geq & 1             & \mid \cdot  \bruch{1}{n+1}\\[0.3cm]
-\Rightarrow & \bruch{1}{n}   & \geq & \bruch{1}{n+1} \\[0.3cm]
+            &  n+1          & \geq & n             & \ds\mid \cdot  \frac{1}{n} \\[0.3cm]
+\Rightarrow & \ds\frac{n+1}{n} & \geq & 1             & \ds\mid \cdot  \frac{1}{n+1}\\[0.3cm]
+\Rightarrow & \ds\frac{1}{n}   & \geq & \ds\frac{1}{n+1} \\[0.3cm]
 \end{array}
 $
 
@@ -772,7 +771,7 @@ $. \eod
 
 In einer Cauchy-Folge $\folge{a_n}$ liegen also die einzelnen Folgenglieder $a_n$ mit wachsendem $n$
 immer dichter zusammen.  Wir werden sehen, dass eine Folge genau dann konvergent ist, wenn die Folge
-eine Cauchy-Folge ist.
+eine Cauchy-Folge ist.  Den Nachweis dieser Behauptung spalten wir in mehrere Sätze auf.
 
 
 \begin{Satz}
@@ -786,7 +785,7 @@ Sei $\varepsilon > 0$ gegeben.  Aufgrund der Konvergenz der Folge $\folge{a_n}$ 
 dann ein $K$, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall n \in \mathbb{N}:\bigl( n \geq K \rightarrow \bigl|a_n-a\bigr| < \bruch{\varepsilon}{2}\bigr)$
+$\ds\forall n \in \mathbb{N}:\bigl( n \geq K \rightarrow \bigl|a_n-a\bigr| < \frac{\varepsilon}{2}\bigr)$
 \\[0.2cm]
 gilt.  Damit gilt für alle $m,n\in\mathbb{N}$ mit $m \geq K$ und $n \geq K$ die folgende Abschätzung:
 \\[0.2cm]
@@ -795,12 +794,12 @@ $
    \begin{array}{lcl}
      |a_m - a_n| &   =  & \bigl|(a_m - a) + (a - a_n)\bigr| \\[0.2cm]
                  & \leq & \bigl|a_m - a\bigr| \;+\; \bigr|a - a_n\bigr| \\[0.2cm]
-                 &   <  & \bruch{\varepsilon}{2} + \bruch{\varepsilon}{2} \\[0.2cm]
+                 &   <  & \ds\frac{\varepsilon}{2} + \frac{\varepsilon}{2} \\[0.2cm]
                  &   =  & \varepsilon     
    \end{array}
 $
 \\[0.2cm]
-Damit ist gezeigt, dass $\folge{a_n}$ eine Cauchy-Folge ist. \hspace*{\fill} $\Box$
+Damit ist gezeigt, dass $\folge{a_n}$ eine Cauchy-Folge ist. \qed
 
 \begin{Satz}
   Jede Cauchy-Folge ist beschränkt.
@@ -836,7 +835,7 @@ $
 \end{array}
 $
 \\[0.2cm]
-Damit ist der Beweis abgeschlossen. \hspace*{\fill} $\Box$ 
+Damit ist der Beweis abgeschlossen. \qed 
 
 \exercise
 In dem gleich folgenden Beweis der Tatsache, dass jede Cauchy-Folge konvergent ist, werden wir zwei
@@ -918,42 +917,42 @@ natürlichen Zahlen $n \geq K$ die Ungleichung
 \hspace*{1.3cm}
 $ \bigl|a_n - s \bigr| < \varepsilon $
 \\[0.2cm]
-gilt.  Wir betrachten zunächst die Zahl $s-\bruch{\varepsilon}{2}$.  Wegen
-$s-\bruch{\varepsilon}{2} < s$ und $s = \sup(M)$ folgt $s-\bruch{\varepsilon}{2} \in M$, denn $M$
+gilt.  Wir betrachten zunächst die Zahl $s-\frac{\varepsilon}{2}$.  Wegen
+$s-\frac{\varepsilon}{2} < s$ und $s = \sup(M)$ folgt $s-\frac{\varepsilon}{2} \in M$, denn $M$
 ist nach unten abgeschlossen.  Damit existiert
 dann nach Definition der Menge $M$ als Menge der unteren Majoritäts-Schranken
 eine Zahl $K_1$, so dass für alle $n\in\mathbb{N}$ mit $n\geq K_1$ die Ungleichung
 \begin{equation}
   \label{eq:ineq3}
-  s-\bruch{\varepsilon}{2} \leq a_n
+  s-\frac{\varepsilon}{2} \leq a_n
 \end{equation}
 gilt.  
 Da die Folge $\folge{a_n}$ eine Cauchy-Folge ist, gibt es eine Zahl $K_2$, so dass
 für alle $m,n\in\mathbb{N}$ mit $m>K_2$ und $n>K_2$ die Ungleichung
 \begin{equation}
   \label{eq:ineq4}
-  \bigl| a_n - a_m \bigr| < \bruch{\varepsilon}{2}
+  \bigl| a_n - a_m \bigr| < \frac{\varepsilon}{2}
 \end{equation}
 gilt.  Wir setzen nun $K = \max(K_1,K_2)$ und betrachten die Zahl
-$s+\bruch{\varepsilon}{2}$, die wegen 
-$s < s+\bruch{\varepsilon}{2}$ sicher kein Element von $M$ mehr ist, denn sonst wäre $s$ nicht das
+$s+\frac{\varepsilon}{2}$, die wegen 
+$s < s+\frac{\varepsilon}{2}$ sicher kein Element von $M$ mehr ist, denn sonst wäre $s$ nicht das
 Supremum von $M$.
 Nach Definition von $M$ finden wir
 dann eine natürliche Zahl $m$, die größer als $K$ ist, so dass
 \begin{equation}
   \label{eq:ineq5}
-  a_m < s + \bruch{\varepsilon}{2} 
+  a_m < s + \frac{\varepsilon}{2} 
 \end{equation}
 gilt.  Für diese Zahl $m$ gilt sicher auch die Ungleichung (\ref{eq:ineq3}), so dass wir
 insgesamt
 \\[0.2cm]
 \hspace*{1.3cm}
-$ s - \bruch{\varepsilon}{2} \leq a_m < s + \bruch{\varepsilon}{2} $
+$\ds s - \frac{\varepsilon}{2} \leq a_m < s + \frac{\varepsilon}{2} $
 \\[0.2cm]
 haben.  Daraus folgt sofort
 \begin{equation}
   \label{eq:ineq6}
- \bigl| a_m - s \bigr| \leq \bruch{\varepsilon}{2}.  
+ \bigl| a_m - s \bigr| \leq \frac{\varepsilon}{2}.  
 \end{equation}
 Aufgrund der Ungleichung (\ref{eq:ineq4}) haben wir jetzt für alle natürlichen Zahlen
 $n>K$ die folgende Kette von Ungleichungen:
@@ -963,12 +962,12 @@ $
 \begin{array}{lcl}
   \bigl| a_n - s \bigr| &   =  & \bigl| (a_n - a_m) + (a_m - s) \bigr| \\[0.2cm] 
                         & \leq & \bigl| (a_n - a_m) \bigr| + \bigl| (a_m - s) \bigr| \\[0.2cm] 
-                        &  <   & \bruch{\varepsilon}{2} + \bruch{\varepsilon}{2}  \\[0.2cm] 
+                        &  <   & \ds\frac{\varepsilon}{2} + \frac{\varepsilon}{2}  \\[0.2cm] 
                         &  =   & \varepsilon  
 \end{array}
 $
 \\[0.2cm]
-Damit ist der Beweis abgeschlossen. \hspace*{\fill} $\Box$ 
+Damit ist der Beweis abgeschlossen. \qed 
 
 
 
@@ -990,7 +989,7 @@ Wir definieren eine Folge $b_n$ induktiv wie folgt:
 \item[I.S.:] $n \mapsto n+1$.
       \\[0.2cm]
 \hspace*{1.3cm}
-$ b_{n+1} := \bruch{1}{2}\cdot  \left(b_n + \bruch{a}{b_n}\right). $
+$\ds b_{n+1} := \frac{1}{2}\cdot  \left(b_n + \frac{a}{b_n}\right). $
 \end{enumerate}
 Um diese Definition zu verstehen, nehmen wir zunächst an, dass der Grenzwert dieser Folge
 existiert und den Wert $b \not= 0$ hat.  Dann gilt
@@ -999,22 +998,22 @@ existiert und den Wert $b \not= 0$ hat.  Dann gilt
 $ \begin{array}{lcl}
    b & = &  \lim\limits_{n\rightarrow\infty} b_n     \\[0.3cm]
      & = &\lim\limits_{n\rightarrow\infty} b_{n+1}   \\[0.3cm]
-     & = &\lim\limits_{n\rightarrow\infty} \bruch{1}{2}\cdot  \left(b_n + \bruch{a}{b_n}\right) \\[0.3cm]
-     & = & \bruch{1}{2}\cdot  \Bigl(\lim\limits_{n\rightarrow\infty} b_n + \bruch{a}{\lim\limits_{n\rightarrow\infty}b_n}\Bigr) \\[0.3cm]
-     & = & \bruch{1}{2}\cdot  \left(b + \bruch{a}{b}\right) \\[0.3cm]
+     & = & \ds\lim\limits_{n\rightarrow\infty} \frac{1}{2}\cdot  \left(b_n + \frac{a}{b_n}\right) \\[0.3cm]
+     & = & \ds\frac{1}{2}\cdot  \Bigl(\lim\limits_{n\rightarrow\infty} b_n + \frac{a}{\lim\limits_{n\rightarrow\infty}b_n}\Bigr) \\[0.3cm]
+     & = & \ds\frac{1}{2}\cdot  \left(b + \frac{a}{b}\right) \\[0.3cm]
 \end{array}
 $
 \\[0.2cm]
 Damit ist $b$ also eine Lösung der Gleichung 
-$b = \bruch{1}{2}\cdot  \left(b + \bruch{a}{b}\right)$.  
+$b = \frac{1}{2}\cdot  \left(b + \frac{a}{b}\right)$.  
 Wir formen diese Gleichung um:
 \\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}{lcll}
-                & b     = \bruch{1}{2}\cdot  \left(b + \bruch{a}{b}\right) & \mid \cdot  2 \\[0.4cm]
-\Leftrightarrow & 2 \cdot  b = b + \bruch{a}{b}                           & \mid - b  \\[0.3cm]
-\Leftrightarrow & b = \bruch{a}{b}                                   & \mid \cdot  b  \\[0.3cm]
+                & \ds b     = \frac{1}{2}\cdot  \left(b + \frac{a}{b}\right) & \mid \cdot  2 \\[0.4cm]
+\Leftrightarrow & \ds 2 \cdot  b = b + \frac{a}{b}                           & \mid - b  \\[0.3cm]
+\Leftrightarrow & \ds b = \frac{a}{b}                                   & \mid \cdot  b  \\[0.3cm]
 \Leftrightarrow & b^2 = a                                            & \mid \sqrt{\;\;}  \\[0.2cm]
 \Leftrightarrow & b  = \sqrt{a}                                      & 
 \end{array}
@@ -1028,10 +1027,10 @@ nach unten beschränkt ist.  Dazu betrachten wir zunächst die Differenz $b_{n+1}^
 \hspace*{1.3cm}
 $
 \begin{array}{lcl}
-  b_{n+1}^2 - a & =    & \bruch{1}{4} \cdot  \left(b_n + \bruch{a}{b_n}\right)^2 - a \\[0.4cm]
-                & =    & \bruch{1}{4} \cdot  \left(b_n^2 + 2\cdot a + \bruch{a^2}{b_n^2}\right) - a \\[0.4cm]
-                & =    & \bruch{1}{4} \cdot  \left(b_n^2 - 2\cdot a + \bruch{a^2}{b_n^2}\right) \\[0.4cm]
-                & =    & \bruch{1}{4} \cdot  \left(b_n - \bruch{a}{b_n}\right)^2 \\[0.4cm]
+  b_{n+1}^2 - a & =    & \ds\frac{1}{4} \cdot  \left(b_n + \frac{a}{b_n}\right)^2 - a \\[0.4cm]
+                & =    & \ds\frac{1}{4} \cdot  \left(b_n^2 + 2\cdot a + \frac{a^2}{b_n^2}\right) - a \\[0.4cm]
+                & =    & \ds\frac{1}{4} \cdot  \left(b_n^2 - 2\cdot a + \frac{a^2}{b_n^2}\right) \\[0.4cm]
+                & =    & \ds\frac{1}{4} \cdot  \left(b_n - \frac{a}{b_n}\right)^2 \\[0.4cm]
                 & \geq & 0, 
 \end{array}
 $
@@ -1057,19 +1056,19 @@ gezeigt haben.   Daraus folgt, dass $\sqrt{a}$ eine untere Schranke der Folge $\
 ist.  Dividieren wir die Ungleichung $b_n^2 \geq a$ durch $b_{n}$, so folgt
 \\[0.2cm]
 \hspace*{1.3cm}
-$ b_{n} \geq \bruch{a}{b_{n}}.  $
+$\ds b_{n} \geq \frac{a}{b_{n}}.  $
 \\[0.2cm]
-Die Zahl $\bruch{1}{2}\cdot \left(b_n + \bruch{a}{b_n}\right)$ ist der arithmetische
-Mittelwert der Zahlen $b_n$ und $\bruch{a}{b_n}$ und muss daher zwischen diesen beiden
+Die Zahl $\frac{1}{2}\cdot \left(b_n + \frac{a}{b_n}\right)$ ist der arithmetische
+Mittelwert der Zahlen $b_n$ und $\frac{a}{b_n}$ und muss daher zwischen diesen beiden
 Zahlen liegen:
 \\[0.2cm]
 \hspace*{1.3cm}
-$ b_{n} \geq \bruch{1}{2}\cdot \left(b_n + \bruch{a}{b_n}\right) \geq \bruch{a}{b_n}. $
+$\ds b_{n} \geq \frac{1}{2}\cdot \left(b_n + \frac{a}{b_n}\right) \geq \frac{a}{b_n}. $
 \\[0.2cm]
 Dieser Mittelwert ist aber gerade $b_{n+1}$, es gilt also
 \\[0.2cm]
 \hspace*{1.3cm}
-$ b_{n} \geq b_{n+1} \geq \bruch{a}{b_n}. $
+$\ds b_{n} \geq b_{n+1} \geq \frac{a}{b_n}. $
 \\[0.2cm]
 Dies zeigt, dass die Folge $\folge{b_n}$ monoton fallend ist und da wir oben gesehen haben, dass die
 Folge durch $\sqrt{a}$ nach unten beschränkt ist, konvergiert die Folge.
@@ -1096,7 +1095,10 @@ In modernen Mikroprozessoren wird übrigens eine verfeinerte Version des in diese
 Abschnitt beschriebenen Verfahrens eingesetzt.  Die Verfeinerung besteht im wesentlichen
 darin, dass zunächst ein guter Startwert $b_1$ in einer Tabelle nachgeschlagen wird, die
 restlichen Folgeglieder werden dann in der Tat über die Rekursionsformel 
-      $b_{n+1} = \bruch{1}{2}\cdot  \left(b_n + \bruch{a}{b_n}\right)$
+\\[0.2cm]
+\hspace*{1.3cm}
+      $\ds b_{n+1} = \frac{1}{2}\cdot  \left(b_n + \frac{a}{b_n}\right)$
+\\[0.2cm]
 berechnet.
 
 \begin{figure}[!ht]
@@ -1150,7 +1152,7 @@ berechnet.
 \end{Verbatim}
 }
 \vspace*{-0.3cm}
-  \caption{Berechnung der Quadrat-Wurzel mit Hilfe der Folge $b_{n+1} = \bruch{1}{2}\cdot(b_n + \bruch{a}{b_n})$.}
+  \caption{Berechnung der Quadrat-Wurzel mit Hilfe der Folge $b_{n+1} = \frac{1}{2}\cdot(b_n + \frac{a}{b_n})$.}
   \label{fig:sqrt-output}
 \end{figure}
 
@@ -1206,7 +1208,7 @@ berechnet.
            \begin{enumerate}
            \item $a_1 := a$,
            \item $a_2 := b$,
-           \item $\bruch{1}{a_{n+2}} := \bruch{1}{2} \cdot \left(\bruch{1}{a_n} + \bruch{1}{a_{n+1}}\right)$.
+           \item $\ds\frac{1}{a_{n+2}} := \frac{1}{2} \cdot \left(\frac{1}{a_n} + \frac{1}{a_{n+1}}\right)$.
            \end{enumerate}
            Zeigen Sie, dass die Folge $(a_n)_{n\in\mathbb{N}}$ konvergiert und berechnen Sie den Grenzwert
            $\lim\limits_{n\rightarrow\infty} a_n$ in  Abhängigkeit von den Startwerten $a$ und $b$. \eox
@@ -1215,7 +1217,7 @@ berechnet.
            \textbf{Bemerkung}: Für zwei positive Zahlen $a$ und $b$ wird die Zahl $c$ für die 
            \\[0.2cm]
            \hspace*{1.3cm}
-           $\bruch{1}{c} := \bruch{1}{2} \cdot \left(\bruch{1}{a} + \bruch{1}{b}\right)$
+           $\ds\frac{1}{c} := \frac{1}{2} \cdot \left(\frac{1}{a} + \frac{1}{b}\right)$
            \\[0.2cm]
            gilt, als das \href{http://de.wikipedia.org/wiki/Harmonisches_Mittel}{\emph{harmonische Mittel}} von $a$ und $b$ bezeichnet.
 \end{enumerate}
@@ -1306,20 +1308,20 @@ $\ds\lim\limits_{n\rightarrow\infty} q^n = 0$.
 Wir nehmen zunächst an, dass $q$ positiv ist. Aus $q < 1$ folgt dann 
 \\[0.2cm]
 \hspace*{1.3cm}
-$1 < \bruch{1}{q}$ \quad und damit \quad $0 < \bruch{1}{q} - 1$. 
+$\ds 1 < \frac{1}{q}$ \quad und damit \quad $\ds 0 < \frac{1}{q} - 1$. 
 \\[0.2cm]
 Wir definieren nun
 \\[0.2cm]
 \hspace*{1.3cm}
-$x := \bruch{1}{q} - 1$. 
+$\ds x := \frac{1}{q} - 1$. 
 \\[0.2cm]
 Mit Hilfe der Bernoullischen Ungleichung sehen wir nun, dass Folgendes gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}[t]{lcl}
-  \bruch{1}{q^n} & =    & \left(1 + \left(\bruch{1}{q} - 1\right)\right)^n  \\[0.4cm]
-                 & \geq & 1 + n \cdot \left(\bruch{1}{q} - 1\right)         \\[0.4cm]
+  \ds\bruch{1}{q^n} & =    & \ds\left(1 + \left(\bruch{1}{q} - 1\right)\right)^n  \\[0.4cm]
+                 & \geq & \ds 1 + n \cdot \left(\bruch{1}{q} - 1\right)         \\[0.4cm]
                  & =    & 1 + n \cdot x.
 \end{array}
 $
@@ -1327,30 +1329,30 @@ $
 Durch Invertierung dieser Ungleichung erhalten wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$q^n \leq \bruch{1}{1 + n \cdot x}$
+$\ds q^n \leq \frac{1}{1 + n \cdot x}$
 \\[0.2cm]
 Ist nun ein $\varepsilon > 0$ gegeben, so definieren wir 
 \\[0.2cm]
 \hspace*{1.3cm}
-$K := \left(\bruch{1}{\varepsilon} - 1\right) \cdot \bruch{1}{x} + 1$.
+$\ds K := \left(\frac{1}{\varepsilon} - 1\right) \cdot \frac{1}{x} + 1$.
 \\[0.2cm]
 Dann gilt für alle $n \geq K$:
 \\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}[t]{lrcl}
-            & \left(\bruch{1}{\varepsilon} - 1\right) \cdot \bruch{1}{x} + 1 & \leq & n             \\[0.4cm]
-\Rightarrow & \left(\bruch{1}{\varepsilon} - 1\right) \cdot \bruch{1}{x} & < & n             \\[0.4cm]
-\Rightarrow & \left(\bruch{1}{\varepsilon} - 1\right)                    & < & n \cdot x     \\[0.4cm]
-\Rightarrow & \bruch{1}{\varepsilon}                                     & < & 1 + n \cdot x \\[0.4cm]
-\Rightarrow & \bruch{1}{1 + n \cdot x} & < & \varepsilon
+            & \ds\left(\frac{1}{\varepsilon} - 1\right) \cdot \frac{1}{x} + 1 & \leq & n             \\[0.4cm]
+\Rightarrow & \ds\left(\frac{1}{\varepsilon} - 1\right) \cdot \frac{1}{x} & < & n             \\[0.4cm]
+\Rightarrow & \ds\left(\frac{1}{\varepsilon} - 1\right)                    & < & n \cdot x     \\[0.4cm]
+\Rightarrow & \ds\frac{1}{\varepsilon}                                     & < & 1 + n \cdot x \\[0.4cm]
+\Rightarrow & \ds\frac{1}{1 + n \cdot x} & < & \varepsilon
 \end{array}
 $
 \\[0.2cm]
 Insgesamt haben wir nun für alle $n \geq K$ gezeigt, dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$0 < q^n \leq \bruch{1}{1 + n \cdot x} < \varepsilon$
+$\ds 0 < q^n \leq \frac{1}{1 + n \cdot x} < \varepsilon$
 \\[0.2cm]
 gilt, also haben wir für $n \geq K$
 \\[0.2cm]
@@ -1373,36 +1375,38 @@ gültig ist und damit ist die Behauptung bewiesen.  \qed
 \noindent
 Wir präsentieren nun einige Beispiele für konvergente Reihen:
 \begin{enumerate}
-\item Wir betrachten die Folge $\left(\bruch{1}{n\cdot (n+1)}\right)_{n\in\mathbb{N}}$.
+\item Wir betrachten die Folge $\left(\frac{1}{n\cdot (n+1)}\right)_{n\in\mathbb{N}}$.
 
       Für die Partial-Summen zeigen wir durch Induktion über $n$, dass 
       \begin{equation}
         \label{eq:seq0}        
-      \sum\limits_{i=1}^n \bruch{1}{i\cdot (i+1)} = 1 - \bruch{1}{n+1}
+      \sum\limits_{i=1}^n \frac{1}{i\cdot (i+1)} = 1 - \frac{1}{n+1}
       \end{equation}
       gilt.
       \begin{enumerate}
       \item (Induktions-Anfang) $n=1$: Einerseits haben wir für $n=1$
            \\[0.2cm]
            \hspace*{1.3cm}      
-           $\ds\sum\limits_{i=1}^n \bruch{1}{i\cdot (i+1)} = \sum\limits_{i=1}^1 \bruch{1}{i\cdot (i+1)}
-            = \bruch{1}{1\cdot (1+1)} = \bruch{1}{2}$,
+           $\ds\sum\limits_{i=1}^n \frac{1}{i\cdot (i+1)} = \sum\limits_{i=1}^1 \frac{1}{i\cdot (i+1)}
+            = \frac{1}{1\cdot (1+1)} = \frac{1}{2}$,
            \\[0.2cm]
            andererseits gilt
            \\[0.2cm]
            \hspace*{1.3cm}      
-           $1 - \bruch{1}{n+1} = 1 - \bruch{1}{1+1} = 1 - \bruch{1}{2} = \bruch{1}{2}$. $\checkmark$
+           $\ds 1 - \frac{1}{n+1} = 1 - \frac{1}{1+1} = 1 - \frac{1}{2} = \frac{1}{2}$. $\checkmark$
+           \pagebreak
+
       \item (Induktions-Schritt) $n \mapsto n+1$:  
             \\[0.2cm]
             \hspace*{1.3cm}      
             $
             \begin{array}{lcl}
-              \ds\sum\limits_{i=1}^{n+1} \bruch{1}{i\cdot (i+1)} 
-              &               =  & \ds\sum\limits_{i=1}^{n} \bruch{1}{i\cdot (i+1)} + \bruch{1}{(n+1)\cdot (n+2)} \\[0.3cm]
-              & \stackrel{IV}{=} & 1 - \bruch{1}{(n+1)} + \bruch{1}{(n+1)\cdot (n+2)}                     \\[0.3cm]
-              &               =  & 1 - \bruch{n+2 -1}{(n+1)\cdot (n+2)}                                  \\[0.3cm]
-              &               =  & 1 - \bruch{n+1}{(n+1)\cdot (n+2)}                                     \\[0.3cm]
-              &               =  & 1 - \bruch{1}{n+2}\quad \checkmark                                               
+              \ds\sum\limits_{i=1}^{n+1} \frac{1}{i\cdot (i+1)} 
+              &               =  & \ds\sum\limits_{i=1}^{n} \frac{1}{i\cdot (i+1)} + \frac{1}{(n+1)\cdot (n+2)} \\[0.3cm]
+              & \stackrel{IV}{=} & \ds 1 - \frac{1}{(n+1)} + \frac{1}{(n+1)\cdot (n+2)}                     \\[0.3cm]
+              &               =  & \ds 1 - \frac{n+2 -1}{(n+1)\cdot (n+2)}                                  \\[0.3cm]
+              &               =  & \ds 1 - \frac{n+1}{(n+1)\cdot (n+2)}                                     \\[0.3cm]
+              &               =  & \ds 1 - \frac{1}{n+2}\quad \checkmark                                               
             \end{array}
             $
       \end{enumerate}
@@ -1410,8 +1414,8 @@ Wir präsentieren nun einige Beispiele für konvergente Reihen:
       Aus Gleichung (\ref{eq:seq0}) folgt nun 
       \\[0.2cm]
       \hspace*{1.3cm}      
-      $\displaystyle\sum\limits_{i=1}^\infty \bruch{1}{i\cdot (i+1)} = \lim\limits_{n\rightarrow\infty} \sum\limits_{i=1}^n \bruch{1}{i\cdot (i+1)} = 
-       \lim\limits_{n\rightarrow\infty} \Bigl(1 - \bruch{1}{n+1} \Bigr) = 1$.
+      $\ds\sum\limits_{i=1}^\infty \frac{1}{i\cdot (i+1)} = \lim\limits_{n\rightarrow\infty} \sum\limits_{i=1}^n \frac{1}{i\cdot (i+1)} = 
+       \lim\limits_{n\rightarrow\infty} \Bigl(1 - \frac{1}{n+1} \Bigr) = 1$.
 \item Wir betrachten die Folge $\folge{q^n}$ für eine Zahl $q \in \mathbb{R}$.
       Für die Partial-Summen gilt
       \\[0.2cm]
@@ -1442,13 +1446,13 @@ Wir präsentieren nun einige Beispiele für konvergente Reihen:
       den Ausdruck
       \\[0.2cm]
       \hspace*{1.3cm}      
-      \colorbox{orange}{$\displaystyle \sum\limits_{i=0}^{n} q^i = \bruch{1 - q^{n+1}}{1-q}$}.
+      \colorbox{orange}{$\ds \sum\limits_{i=0}^{n} q^i = \frac{1 - q^{n+1}}{1-q}$}.
       \\[0.2cm]
       Falls $|q| < 1$ ist, konvergiert die Folge $\folge{q^n}$ gegen $0$.  Damit gilt
       für $|q| < 1$
       \\[0.2cm]
       \hspace*{1.3cm}
-      \colorbox{orange}{$\ds\sum\limits_{i=0}^{\infty} q^i = \bruch{1}{1-q}$}.
+      \colorbox{orange}{$\ds\sum\limits_{i=0}^{\infty} q^i = \frac{1}{1-q}$}.
       \\[0.2cm]
       Die Reihe
       \\[0.2cm]
@@ -1482,12 +1486,12 @@ die Glieder den Wert $0$ haben).  In diesem Fall sprechen wir daher von einer \e
 \textbf{Beispiel}: Die Reihe
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\Folge{\sum\limits_{i=1}^{n} \bruch{(-1)^{i+1}}{i}}$
+$\ds\Folge{\sum\limits_{i=1}^{n} \frac{(-1)^{i+1}}{i}}$
 \\[0.2cm]
 ist eine alternierende Reihe, denn die Vorzeichen aufeinander folgender Reihenglieder sind alternierend positiv und negativ:
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\sum\limits_{i=1}^{\infty} \bruch{(-1)^{i+1}}{i} = \frac{1}{1} - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} \pm \cdots$.
+$\ds\sum\limits_{i=1}^{\infty} \frac{(-1)^{i+1}}{i} = \frac{1}{1} - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} \pm \cdots$.
 \\[0.2cm]
 Wir werden später sehen, dass diese Reihe gegen den Wert $\ln(2)$ konvergiert.
 \eox
@@ -1581,13 +1585,13 @@ Sei $\varepsilon > 0$ gegeben.  Weil   $\folge{s_{2 \cdot n}}$ gegen $s$ konverg
 Zahl $K_1$, so dass für alle $n \geq K_1$ die Ungleichung
 \begin{equation}
   \label{eq:seq2}
-  \bigl| s_{2 \cdot n} - s \bigr| < \bruch{1}{2}\cdot\varepsilon
+  \bigl| s_{2 \cdot n} - s \bigr| < \frac{1}{2}\cdot\varepsilon
 \end{equation}
 erfüllt ist.  Weil $\folge{a_{n}}$ eine Null-Folge ist, gibt es außerdem eine Zahl $K_2$,
 so dass für alle $n \geq K_2$ die Ungleichung
 \begin{equation}
   \label{eq:seq3}
-  \bigl| a_n - 0 \bigr| < \bruch{1}{2} \cdot \varepsilon
+  \bigl| a_n - 0 \bigr| < \frac{1}{2} \cdot \varepsilon
 \end{equation}
 gilt.  Wir setzen $K:= \max(2 \cdot K_1 + 1,K_2)$ und zeigen, dass für alle $n \geq K$ die Ungleichung
 \\[0.2cm]
@@ -1601,7 +1605,7 @@ gilt.  Wir erbringen diesen Nachweis über eine Fall-Unterscheidung:
 \hspace*{1.3cm}
 $ \begin{array}{lcl}
         \bigl| s_n - s \bigr| & = & \bigl| s_{2 \cdot m} - s \bigr| \\[0.2cm]
-                              & < & \bruch{1}{2}\cdot\varepsilon \\[0.2cm]
+                              & < & \ds\frac{1}{2}\cdot\varepsilon \\[0.2cm]
                               & < & \varepsilon,
          \end{array}
       $
@@ -1614,15 +1618,15 @@ $ \begin{array}{lcl}
         \bigl| s_n - s \bigr| & = & \bigl| s_{2 \cdot m+1} - s \bigr| \\[0.2cm]
                               & = & \bigl| s_{2 \cdot m+1} - s_{2 \cdot m} + s_{2 \cdot m} - s \bigr| \\[0.2cm]
                               & \leq & \bigl| s_{2 \cdot m+1} - s_{2 \cdot m} \bigr| + \bigl| s_{2 \cdot m} - s \bigr| \\[0.2cm]
-                              & < & \bigl| a_{2 \cdot m+1} \bigr| + \bruch{1}{2}\cdot\varepsilon \\[0.2cm]
-                              & < & \bruch{1}{2}\cdot\varepsilon + \bruch{1}{2}\cdot\varepsilon \\[0.2cm]
+                              & < & \ds\bigl| a_{2 \cdot m+1} \bigr| + \frac{1}{2}\cdot\varepsilon \\[0.2cm]
+                              & < & \ds\frac{1}{2}\cdot\varepsilon + \frac{1}{2}\cdot\varepsilon \\[0.2cm]
                               & = & \varepsilon,
          \end{array}
        $
 \\[0.2cm]
        denn aus $n=2\cdot m+1$ und $n \geq K$ folgt $m \geq K_1$ und $n \geq K_2$.
 \end{enumerate}
-Damit ist der Beweis abgeschlossen. \hspace*{\fill} $\Box$ 
+Damit ist der Beweis abgeschlossen. \qed 
 
 \begin{Satz}[Cauchy'sches Konvergenz-Kriterium für Reihen] 
 Die Reihe $\ds\folge{\sum_{i=0}^{n} a_i}$ ist genau dann konvergent, wenn es für alle 
@@ -1696,13 +1700,13 @@ Mit Hilfe des letzten Satzes können wir zeigen, dass die
 \href{http://de.wikipedia.org/wiki/Harmonische_Reihe}{\emph{harmonische Reihe}}
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\Folge{\sum\limits_{i=1}^{n} \bruch{1}{i}} $
+$\ds\Folge{\sum\limits_{i=1}^{n} \frac{1}{i}} $
 \\[0.2cm]
 divergiert.  Wäre diese Reihe konvergent, so gäbe es nach dem Cauchy'schen
 Konvergenz-Kriterium eine Zahl $K$, so dass für alle $n \geq K$ und alle $l$ die Ungleichung
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds \sum\limits_{i=n+1}^{n+l} \bruch{1}{i} < \bruch{1}{2} $
+$\ds \sum\limits_{i=n+1}^{n+l} \frac{1}{i} < \frac{1}{2} $
 \\[0.2cm]
 gilt.  Insbesondere würde diese Ungleichung dann für $l=n$ gelten. 
 Für beliebige $n$ gilt aber die folgende Abschätzung:
@@ -1730,7 +1734,7 @@ $\ds \sum\limits_{i=1}^n a_i \leq \sum\limits_{i=1}^n b_i \leq \sum\limits_{i=1}
 \\[0.2cm]
 Also ist die Folge $\Folge{\sum\limits_{i=1}^{n} a_i}$ monoton wachsend und beschränkt und
 damit konvergent.
-\hspace*{\fill} $\Box$
+\qed
 
 \remark
 Oft wird im Majoranten-Kriterium die Voraussetzung
@@ -1751,23 +1755,22 @@ Glieder einer Reihe für die Frage, ob eine Reihe konvergent ist, unbedeutend ist
 Zeigen Sie mit dem Majoranten-Kriterium, dass die Reihe 
 $\ds\Folge{\sum\limits_{i=1}^{n} \frac{1}{i^2}}$ konvergiert.
 
-\noindent
-\textbf{Lösung}:  Es gilt
+\solution  Es gilt
 \\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}{lcl}
             & i + 1\geq i & \mid\; \cdot  (i+1) \\[0.2cm]
-\Rightarrow & (i+1)^2 \geq i\cdot (i + 1) & \mid \bruch{1}{\cdot} \\[0.2cm]
-\Rightarrow & \bruch{1}{(i+1)^2} \leq \bruch{1}{i\cdot (i + 1)} 
+\Rightarrow & \ds (i+1)^2 \geq i\cdot (i + 1) & \mid \frac{1}{\cdot} \\[0.2cm]
+\Rightarrow & \ds \frac{1}{(i+1)^2} \leq \frac{1}{i\cdot (i + 1)} 
 \end{array}
 $
 \\[0.2cm]
-Damit ist die Reihe $\ds\Folge{\sum\limits_{i=1}^{n}\bruch{1}{i\cdot (i+1)}}$
-eine konvergente Majorante der Reihe $\ds\Folge{\sum\limits_{i=1}^{n}\bruch{1}{(i+1)^2}}$.  Wegen
+Damit ist die Reihe $\ds\Folge{\sum\limits_{i=1}^{n}\frac{1}{i\cdot (i+1)}}$
+eine konvergente Majorante der Reihe $\ds\Folge{\sum\limits_{i=1}^{n}\frac{1}{(i+1)^2}}$.  Wegen
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds \sum\limits_{i=1}^{\infty} \bruch{1}{i^2} = \bruch{1}{1^2} + \sum\limits_{i=1}^{\infty} \bruch{1}{(i+1)^2} $
+$\ds \sum\limits_{i=1}^{\infty} \frac{1}{i^2} = \frac{1}{1^2} + \sum\limits_{i=1}^{\infty} \frac{1}{(i+1)^2} $
 \\[0.2cm]
 folgt die Konvergenz aus dem Majoranten-Kriterium.
 
@@ -1776,7 +1779,7 @@ folgt die Konvergenz aus dem Majoranten-Kriterium.
 Wir werden später in dem Kapitel über Fourier-Reihen zeigen, dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \sum\limits_{i=1}^{\infty} \bruch{1}{i^2} = \bruch{\;\pi^2}{6\;} \quad\mbox{gilt.} $ \eox
+$\ds\sum\limits_{i=1}^{\infty} \frac{1}{i^2} = \frac{\;\pi^2}{6\;} \quad\mbox{gilt.} $ \eox
 
 \begin{Satz}[Minoranten-Kriterium]
 Für die Folgen $\folge{a_n}$  und  $\folge{b_n}$  gelte:
@@ -1805,7 +1808,7 @@ existieren und dass steht im Widerspruch zur Voraussetzung.
 Zeigen Sie, dass die Reihe 
 \\[0.2cm]
 \hspace*{1.3cm}
- $\ds\Reihe{\bruch{1}{\sqrt{i\,}}}$ \\[0.2cm]
+ $\ds\Reihe{\frac{1}{\sqrt{i\,}}}$ \\[0.2cm]
 nicht konvergiert.
 
 
@@ -1814,21 +1817,21 @@ Wir benutzen das Minoranten-Kriterium und zeigen, dass die
 Reihe
 \\[0.2cm]
 \hspace*{1.3cm}
- $\ds\Reihe{\bruch{1}{i}}$ 
+ $\ds\Reihe{\frac{1}{i}}$ 
 \\[0.2cm]
 eine divergente Minorante der Reihe
 \\[0.2cm]
 \hspace*{1.3cm}
-  $\ds\Reihe{\bruch{1}{\sqrt{i}}}$ 
+  $\ds\Reihe{\frac{1}{\sqrt{i}}}$ 
 \\[0.2cm]
 ist, denn es gilt: 
 \\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}{llcll}
-                 & \bruch{1}{i}   & \leq & \bruch{1}{\sqrt{i}}  & \mid \; \bruch{1}{\cdot}\\[0.3cm]
+                 & \ds\frac{1}{i}   & \leq & \frac{1}{\sqrt{i}}  & \ds\mid \; \frac{1}{\cdot}\\[0.3cm]
 \Leftrightarrow  & i              & \geq & \sqrt{i}             & \mid \;\cdot^2  \\[0.3cm]
-\Leftrightarrow  & i^2            & \geq & i                    & \mid \; \cdot \bruch{1}{i}  \\[0.3cm]
+\Leftrightarrow  & i^2            & \geq & i                    & \ds\mid \; \cdot \frac{1}{i}  \\[0.3cm]
 \Leftrightarrow  & i              & \geq & 1                    & \mid \; 
 \end{array}
 $
@@ -1850,12 +1853,12 @@ Dann konvergiert die Reihe $\ds\Reihe{a_i}$.
 \textbf{Beweis}:  Wir zeigen, dass die geometrische Reihe
 \\[0.2cm]
 \hspace*{1.3cm}
- $\Reihe{a_0\cdot q^i}$ 
+ $\ds\Reihe{a_0\cdot q^i}$ 
 \\[0.2cm]
 eine konvergente Majorante der Reihe
 \\[0.2cm]
 \hspace*{1.3cm}
- $\Reihe{a_i}$ 
+ $\ds\Reihe{a_i}$ 
 \\[0.2cm]
 ist.  Dazu zeigen wir durch Induktion über $n$, dass folgendes gilt:
 \\[0.2cm]
@@ -1884,29 +1887,29 @@ Quotienten-Kriteriums zeigen:
 Ist $\folge{a_n}$ eine Folge, $q\in\mathbb{R}$ und $K \in \mathbb{R}$, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$ 0 \leq q < 1 \quad \wedge \quad \forall n \in \mathbb{N}: \Bigl(n \geq K \rightarrow \left|\bruch{a_{n+1}}{a_n}\right| \leq q\Bigr)$
+$0 \leq q < 1$ \quad und \quad $\ds\forall n \in \mathbb{N}: \Bigl(n \geq K \rightarrow \left|\frac{a_{n+1}}{a_n}\right| \leq q\Bigr)$
 \\[0.2cm]
-gilt.  Dann konvergiert die Reihe $\ds\Reihe{a_i}$.
+gilt.  Dann konvergiert die Reihe $\Reihe{a_i}$.
 
 
 \example
 Wir zeigen mit Hilfe des Quotienten-Kriteriums, dass die Reihe
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\Reihe{\bruch{z^i}{i!}}$ 
+$\ds\Reihe{\frac{z^i}{i!}}$ 
 \\[0.2cm]
 für alle $z \in \mathbb{C}$ konvergiert.  Für $z=0$ ist die Konvergenz der
 Reihe trivial und sonst betrachten wir
-den Quotienten $a_{n+1}/a_n$ für diese Reihe, setzen $K = 2\cdot |z|$ und $q = \bruch{1}{2}$
+den Quotienten $a_{n+1}/a_n$ für diese Reihe, setzen $K = 2\cdot |z|$ und $\ds q = \frac{1}{2}$
 und zeigen, dass das Quotienten-Kriterium erfüllt ist, denn für alle $n\geq K$ gilt:
 \\[0.2cm]
 \hspace*{1.3cm}      
-$\left|\bruch{a_{n+1}}{a_n}\right| =  \bruch{\;\bruch{|z^{n+1}|}{\;(n+1)!\;}\;}{\bruch{\;|z^{n}|\;}{n!}} 
-                            =  \bruch{\;|z^{n+1}| \cdot  n!\;}{\;|z^{n}| \cdot  (n+1)!\;} 
-                            =  \bruch{\;|z|\;}{\;n+1\;} 
-                            \leq  \bruch{\;|z|\;}{\;K\;} 
-                            = \bruch{\;|z|\;}{\;2\cdot |z|\;} 
-                            =  \bruch{\;1\;}{\;2\;} 
+$\ds\left|\frac{a_{n+1}}{a_n}\right| =  \frac{\;\frac{|z^{n+1}|}{\;(n+1)!\;}\;}{\frac{\;|z^{n}|\;}{n!}} 
+                            =  \frac{\;|z^{n+1}| \cdot  n!\;}{\;|z^{n}| \cdot  (n+1)!\;} 
+                            =  \frac{\;|z|\;}{\;n+1\;} 
+                            \leq  \frac{\;|z|\;}{\;K\;} 
+                            = \frac{\;|z|\;}{\;2\cdot |z|\;} 
+                            =  \frac{\;1\;}{\;2\;} 
 $.
 
 \remark
@@ -1914,7 +1917,7 @@ Wir werden später zeigen, dass die in dem letzten Beispiel präsentierte Reihe im
 Exponentialfunktion berechnet, denn es gilt  
 \\[0.2cm]
 \hspace*{1.3cm}
-\colorbox{orange}{$\ds e^z = \sum\limits_{n=0}^{\infty} \bruch{z^n}{n!}$} \quad für alle $z \in \mathbb{C}$.
+\colorbox{orange}{$\ds e^z = \sum\limits_{n=0}^{\infty} \frac{z^n}{n!}$} \quad für alle $z \in \mathbb{C}$.
 \eox
 
 
@@ -1934,7 +1937,7 @@ zeigen, dass die geometrische Reihe $\Reihe{q^i}$ eine konvergente Majorante ist
 $n>0$ gilt
 \\[0.2cm]
 \hspace*{1.3cm} $a_n \leq q^n \;\Leftrightarrow\; \sqrt[n]{a_n} \leq q$.
-\hspace*{\fill} $\Box$
+\qed
 
 \remark
 Beim Wurzel-Kriterium sind eigentlich nur die Beträge der
@@ -1945,19 +1948,19 @@ Ist $\folge{a_n}$ eine Folge, $q\in\mathbb{R}$ und $K \in \mathbb{R}$, so dass
 \hspace*{1.3cm}
 $\ds 0 \leq q < 1 \quad \wedge \quad \forall n \in \mathbb{N}: \bigl(n \geq K \rightarrow \sqrt[n]{|a_n|} \leq q\bigr)$
 \\[0.2cm]
-gilt.  Dann konvergiert die Reihe $\ds\Reihe{a_i}$.
+gilt.  Dann konvergiert die Reihe $\Reihe{a_i}$.
 
 
 \noindent
 \textbf{Beispiel}: Wir zeigen mit dem Wurzel-Kriterium, dass die Reihe
-$\ds\Reihe{\bruch{1}{i!}}$konvergiert.  Wir setzen
-$K = 4$ und $q = \bruch{1}{2}$.  Zunächst können Sie mit vollständiger Induktion
+$\ds\Reihe{\frac{1}{i!}}$konvergiert.  Wir setzen
+$K = 4$ und $q = \frac{1}{2}$.  Zunächst können Sie mit vollständiger Induktion
 leicht zeigen, dass für alle natürlichen Zahlen $n\geq 4$ die Ungleichung
 $n! \geq 2^n$ gilt.  Damit haben wir für $n\geq 4$:
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \sqrt[n]{\bruch{1}{n!}} \leq \bruch{1}{2}     \quad \Leftrightarrow \quad
-   \bruch{1}{n!} \leq \left(\bruch{1}{2}\right)^n  \quad \Leftrightarrow \quad
+$\ds \sqrt[n]{\frac{1}{n!}} \leq \frac{1}{2}     \quad \Leftrightarrow \quad
+   \frac{1}{n!} \leq \left(\frac{1}{2}\right)^n  \quad \Leftrightarrow \quad
    n! \geq 2^n. 
 $
 
@@ -1967,7 +1970,8 @@ $
 Es bezeichne $x$ eine Variable und $\folge{a_n}$ sei eine Folge von Zahlen.  Dann
 bezeichnen wir den Ausdruck
       \\[0.2cm]
-      \hspace*{1.3cm} $\sum\limits_{n=0}^\infty a_n \cdot  x^n$      
+      \hspace*{1.3cm}
+      $\ds\sum\limits_{n=0}^\infty a_n \cdot  x^n$      
       \\[0.2cm]
 als \emph{formale Potenz-Reihe}.  Wichtig ist hier, dass $x$ keine feste Zahl ist, sondern
 eine Variable, für die wir später reelle (oder auch komplexe) Zahlen einsetzen.  Wenn wir
@@ -1978,10 +1982,10 @@ Begriffs des   Polynoms aufgefasst werden.
 
 \examples
 \begin{enumerate}
-\item $\sum\limits_{n=0}^\infty \bruch{x^n}{n!}$ ist eine formale Potenz-Reihe.  
+\item $\ds\sum\limits_{n=0}^\infty \frac{x^n}{n!}$ ist eine formale Potenz-Reihe.  
       Wir haben oben mit Hilfe des Quotienten-Kriteriums gezeigt, dass diese Reihe für
       beliebige reelle Zahlen konvergiert.
-\item $\sum\limits_{n=1}^\infty \bruch{x^n}{n}$ ist eine formale Potenz-Reihe.  
+\item $\ds\sum\limits_{n=1}^\infty \frac{x^n}{n}$ ist eine formale Potenz-Reihe.  
       Setzen wir für $x$ den Wert $1$ ein, so erhalten wir die divergente harmonische
       Reihe.  Für $x=-1$ erhalten wir eine alternierende Reihe, die nach dem Leibniz-Kriterium
       konvergent ist. \eox
@@ -2012,19 +2016,19 @@ $\left|a_n\cdot u^n\right| \leq 1$
 gilt.  Wir definieren 
 \\[0.2cm]
 \hspace*{1.3cm}
-$q := \left|\bruch{v}{u}\right|$. 
+$\ds q := \left|\frac{v}{u}\right|$. 
 \\[0.2cm]
  Aus $|v| < |u|$ folgt $q < 1$.
 Dann haben wir für alle $n \geq K$ die folgende Abschätzung:
       \\[0.2cm]
       \hspace*{1.3cm}      
-      $\left|a_n\cdot v^n\right| = 
-      \left|a_n\cdot u^n\right| \cdot  \left|\bruch{v^n}{u^n}\right| =
+      $\ds\left|a_n\cdot v^n\right| = 
+      \left|a_n\cdot u^n\right| \cdot  \left|\frac{v^n}{u^n}\right| =
       \left|a_n\cdot u^n\right| \cdot  q^n \leq q^n$.
       \\[0.2cm]
 Diese Abschätzung zeigt, dass die geometrische Reihe eine konvergente Majorante der Reihe
 $a_n\cdot v^n$ ist.  Damit folgt die Konvergenz der Reihe $\sum_{n=0}^\infty a_n\cdot v^n$  aus dem
-Majoranten-Kriterium. \hspace*{\fill} $\Box$ 
+Majoranten-Kriterium. \qed 
 
 \begin{Satz}
 Wenn die Potenz-Reihe $\sum_{n=0}^\infty a_n\cdot x^n$ für einen Wert $u \in \mathbb{C}$
@@ -2035,14 +2039,14 @@ $|u| < |v|$ ist.
 \noindent
 \textbf{Beweis}:  Würde die Reihe $\sum_{n=0}^\infty a_n\cdot v^n$ konvergieren,
 dann müsste nach Satz \ref{satz:konvergenz-radius} auch die Reihe 
-$\sum_{n=0}^\infty a_n\cdot u^n$ konvergieren. \hspace*{\fill} $\Box$
+$\sum_{n=0}^\infty a_n\cdot u^n$ konvergieren. \qed
 
 \noindent
 Die letzten beiden Sätze ermöglichen es nun, den Begriff \emph{Konvergenz-Radius} zu
 definieren.  Es sei 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\sum\limits_{n=0}^\infty a_n\cdot x^n$ 
+$\ds\sum\limits_{n=0}^\infty a_n\cdot x^n$ 
 \\[0.2cm]
 eine formale Potenz-Reihe.
 Wenn diese Reihe für alle $x\in\mathbb{C}$ konvergiert, dann sagen wir, dass der
@@ -2051,14 +2055,14 @@ als
 \\[0.2cm]
 \hspace*{1.3cm}      
 $R := \sup \left\{ |u| \;\Big|\; u \in \mathbb{C} \wedge
-                   \sum\limits_{n=0}^\infty a_n\cdot u^n \;\mathrm{konvergiert} 
+                   \ds\sum\limits_{n=0}^\infty a_n\cdot u^n \;\mathrm{konvergiert} 
          \right\}
 $.
 \\[0.2cm]
 Aus den letzten beiden Sätzen folgt dann:
 \begin{enumerate}
-\item $\forall z \in \mathbb{C}:\Bigl( |z| < R \rightarrow \sum\limits_{n=0}^\infty a_n\cdot z^n\Bigr)$ konvergiert. 
-\item $\forall z \in \mathbb{C}:\Bigl( |z| > R \rightarrow \sum\limits_{n=0}^\infty a_n\cdot z^n\Bigr)$ divergiert. 
+\item $\forall z \in \mathbb{C}:\Bigl( |z| < R \rightarrow \ds\sum\limits_{n=0}^\infty a_n\cdot z^n\Bigr)$ konvergiert. 
+\item $\forall z \in \mathbb{C}:\Bigl( |z| > R \rightarrow \ds\sum\limits_{n=0}^\infty a_n\cdot z^n\Bigr)$ divergiert. 
 \end{enumerate}
 In der Gauß'schen Zahlen-Ebene ist die Menge 
 $\bigl\{ z \in \mathbb{C} \;\big|\; |z| < R \bigr\}$ das Innere eines Kreises mit dem
@@ -2069,18 +2073,18 @@ Der folgende Satz gibt uns eine effektive Möglichkeit, den Konvergenz-Radius zu 
 Es sei 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\sum\limits_{n=0}^\infty a_n\cdot z^n$ 
+$\ds\sum\limits_{n=0}^\infty a_n\cdot z^n$ 
 \\[0.2cm]
 eine formale Potenz-Reihe und die Folge
 \\[0.2cm]
 \hspace*{1.3cm}
-$\Folge{\bruch{|a_n|}{|a_{n+1}|}}$
+$\ds\Folge{\frac{|a_n|}{|a_{n+1}|}}$
 \\[0.2cm]
  konvergiere.   Dann ist der Konvergenz-Radius $R$ durch
 folgende Formel gegeben:
       \\[0.2cm]
       \hspace*{1.3cm}      
-      $R = \lim\limits_{n\rightarrow\infty} \left|\bruch{a_n}{\;a_{n+1}\;}\right|$.  
+      $\ds R = \lim\limits_{n\rightarrow\infty} \left|\frac{a_n}{\;a_{n+1}\;}\right|$.  
 \end{Satz}
 
 \noindent
@@ -2088,13 +2092,13 @@ folgende Formel gegeben:
 Es sei $u \in \mathbb{C}$ mit $|u| < R$.  In diesem Fall müssen wir zeigen, dass die Reihe
 \\[0.2cm]
 \hspace*{1.3cm}
-$\sum\limits_{n=0}^\infty a_n\cdot u^n$
+$\ds\sum\limits_{n=0}^\infty a_n\cdot u^n$
 \\[0.2cm]
  konvergiert.  Wir werden diesen Nachweis mit Hilfe des
 Quotienten-Kriteriums erbringen.  Wir setzen
 \\[0.2cm]
 \hspace*{1.3cm}
- $q := \bruch{|u|}{\frac{1}{2} \cdot (R + |u|)}$ 
+ $\ds q := \frac{|u|}{\frac{1}{2} \cdot (R + |u|)}$ 
 \\[0.2cm] 
 und zeigen, dass $q < 1$ ist:
 \\[0.2cm]
@@ -2102,7 +2106,7 @@ und zeigen, dass $q < 1$ ist:
 $
 \begin{array}[t]{cl}
                 & q < 1 \\[0.2cm]
-\Leftrightarrow & \bruch{|u|}{\frac{1}{2} \cdot (R + |u|)} < 1  \\[0.8cm] 
+\Leftrightarrow &\ds \frac{|u|}{\frac{1}{2} \cdot (R + |u|)} < 1  \\[0.8cm] 
 \Leftrightarrow & 2 \cdot |u| < R + |u|                        \\[0.2cm]  
 \Leftrightarrow & |u| < R                         
 \end{array}
@@ -2113,33 +2117,33 @@ haben, ist damit auch die Formel $q < 1$ wahr.  Wir zeigen weiter,  dass für
 alle hinreichend großen $n$ die Ungleichung 
       \\[0.2cm]
       \hspace*{1.3cm}      
-      $\bruch{|a_{n+1}\cdot u^{n+1}|}{|a_{n}\cdot u^{n}|} \leq q$
+      $\ds\frac{|a_{n+1}\cdot u^{n+1}|}{|a_{n}\cdot u^{n}|} \leq q$
       \\[0.2cm]
 erfüllt ist.  Um diesen Beweis zu führen, müssen wir etwas ausholen.  Zunächst folgt aus 
       \\[0.2cm]
       \hspace*{1.3cm}      
-       $R = \lim\limits_{n\rightarrow\infty} \left|\bruch{a_n}{\;a_{n+1}\;}\right|$,
+       $\ds R = \lim\limits_{n\rightarrow\infty} \left|\frac{a_n}{\;a_{n+1}\;}\right|$,
       \\[0.2cm]
 dass es für beliebige $\varepsilon >0$ eine Zahl $K$ gibt, so dass für alle $n \geq K$
 die Ungleichung
-      \\[0.2cm]
-      \hspace*{1.3cm}      
-      $\left| \Bigl|\bruch{a_{n}}{a_{n+1}}\Bigr| - R \right| < \varepsilon$
-      \\[0.2cm]
-gilt.  Wir setzen $\varepsilon := \bruch{1}{2}(R - |u|)$. Wir zeigen, dass dann für alle 
+\\[0.2cm]
+\hspace*{1.3cm}      
+$\ds\left| \Bigl|\frac{a_{n}}{a_{n+1}}\Bigr| - R \right| < \varepsilon$
+\\[0.2cm]
+gilt.  Wir setzen $\varepsilon := \frac{1}{2}\cdot(R - |u|)$. Wir zeigen, dass dann für alle 
 $n \geq K$ die Ungleichung
 \\
- $ \left|\bruch{a_{n}}{a_{n+1}}\right| > \bruch{1}{2}(R + |u|)$ gilt:
+ $\ds \left|\frac{a_{n}}{a_{n+1}}\right| > \frac{1}{2}(R + |u|)$ gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}{cl}
- & \left|\;\bigl|\bruch{a_{n}}{a_{n+1}}\bigr| + \bigl(R - \bigl|\bruch{a_{n}}{a_{n+1}}\bigr|\bigr)\;\right| = |R| = R  \\[0.5cm]
-\Rightarrow     & \bigl|\bruch{a_{n}}{a_{n+1}}\bigr| + \bigl|\; \bigl(R - \bigl|\bruch{a_{n}}{a_{n+1}}\bigr|\bigr)\;\bigr| \geq R  \\[0.5cm]
-\Rightarrow     & \bigl|\bruch{a_{n}}{a_{n+1}}\bigr| + \varepsilon > R  \\[0.5cm]
-\Rightarrow     & \bigl|\bruch{a_{n}}{a_{n+1}}\bigr| + \bruch{1}{2}(R - |u|) > R  \\[0.5cm]
-\Rightarrow     & \bigl|\bruch{a_{n}}{a_{n+1}}\bigr|   > R - \bruch{1}{2}(R - |u|)  \\[0.5cm]
-\Rightarrow     & \bigl|\bruch{a_{n}}{a_{n+1}}\bigr|   > \bruch{1}{2}(R + |u|).  \\[0.5cm]
+ &\ds \left|\;\bigl|\frac{a_{n}}{a_{n+1}}\bigr| + \bigl(R - \bigl|\frac{a_{n}}{a_{n+1}}\bigr|\bigr)\;\right| = |R| = R  \\[0.5cm]
+\Rightarrow     & \ds\bigl|\frac{a_{n}}{a_{n+1}}\bigr| + \bigl|\; \bigl(R - \bigl|\frac{a_{n}}{a_{n+1}}\bigr|\bigr)\;\bigr| \geq R  \\[0.5cm]
+\Rightarrow     & \ds\bigl|\frac{a_{n}}{a_{n+1}}\bigr| + \varepsilon > R  \\[0.5cm]
+\Rightarrow     & \ds\bigl|\frac{a_{n}}{a_{n+1}}\bigr| + \frac{1}{2}(R - |u|) > R  \\[0.5cm]
+\Rightarrow     & \ds\bigl|\frac{a_{n}}{a_{n+1}}\bigr|   > R - \frac{1}{2}(R - |u|)  \\[0.5cm]
+\Rightarrow     & \ds\bigl|\frac{a_{n}}{a_{n+1}}\bigr|   > \frac{1}{2}(R + |u|).  \\[0.5cm]
 \end{array}
 $
 \\[0.2cm]
@@ -2147,36 +2151,36 @@ Jetzt können wir zeigen, dass die Reihe $\sum_{n=0}^\infty a_n\cdot u^n$ das
 Quotienten-Kriterium erfüllt, denn für alle $n \geq K$ gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \left|\bruch{a_{n+1}\cdot u^{n+1}}{a_n\cdot u^n}\right| = 
-   \left|\bruch{a_{n+1}}{a_n}\right| \cdot  |u| = 
-   \bruch{|u|}{\left|\bruch{a_{n}}{a_{n+1}}\right|} < 
-   \bruch{|u|}{\bruch{1}{2}(R + |u|)} = q
+$\ds \left|\frac{a_{n+1}\cdot u^{n+1}}{a_n\cdot u^n}\right| = 
+   \left|\frac{a_{n+1}}{a_n}\right| \cdot  |u| = 
+   \frac{|u|}{\left|\frac{a_{n}}{a_{n+1}}\right|} < 
+   \frac{|u|}{\frac{1}{2}\cdot(R + |u|)} = q
 $
 \\[0.2cm]
 Um den Beweis abzuschließen müssen wir noch zeigen, die Reihe $\sum_{n=0}^\infty a_n\cdot u^n$
 divergiert wenn  $R < |u|$ ist.   Dies folgt aus der Tatsache, dass die Folge
 $\folge{a_n\cdot u^n}$ für $|u|>R$ keine Null-Folge ist.  Die Details bleiben dem Leser
 überlassen. 
-\hspace*{\fill} $\Box$ 
+\qed 
 
 \remark
 Der obige Satz bleibt auch richtig, wenn
       \\[0.2cm]
       \hspace*{1.3cm}      
-      $\lim\limits_{n\rightarrow\infty} \left|\bruch{a_n}{\;a_{n+1}\;}\right| = \infty$
+      $\ds\lim\limits_{n\rightarrow\infty} \left|\frac{a_n}{\;a_{n+1}\;}\right| = \infty$
       \\[0.2cm]
 ist, denn dann ist die Potenz-Reihe $\sum_{n=0}^\infty a_n\cdot u^n$ für alle $u\in\mathbb{C}$
 konvergent.
 
 \remark
-Die Potenz-Reihe $\sum_{n=1}^\infty \bruch{x^n}{n}$ hat den Konvergenz-Radius $R=1$, denn
+Die Potenz-Reihe $\ds\sum_{n=1}^\infty \frac{x^n}{n}$ hat den Konvergenz-Radius $R=1$, denn
 es gilt 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\displaystyle
+$\ds
       \lim\limits_{n\rightarrow\infty} \left|\frac{\frac{1}{n}}{\;\frac{1}{n+1}\;}\right| = 
-       \lim\limits_{n\rightarrow\infty} \bruch{n+1}{n} = 
-       1 + \lim\limits_{n\rightarrow\infty}  \bruch{1}{n} = 1 + 0 = 1.
+       \lim\limits_{n\rightarrow\infty} \frac{n+1}{n} = 
+       1 + \lim\limits_{n\rightarrow\infty}  \frac{1}{n} = 1 + 0 = 1.
 $  \eox
 
 
@@ -2186,26 +2190,31 @@ Es sei $\sum_{n=0}^\infty a_n\cdot x^n$ eine Potenz-Reihe und die Folge
 $\Folge{\sqrt[n]{|a_n|}}$ konvergiere.   Dann gilt 
       \\[0.2cm]
       \hspace*{1.3cm}      
-      $\displaystyle\bruch{1}{R} = \lim\limits_{n\rightarrow\infty} \sqrt[n]{|a_n|}$.  
+      $\ds\frac{1}{R} = \lim\limits_{n\rightarrow\infty} \sqrt[n]{|a_n|}$.  
 \end{Satz}
 
 \remark
-Setzen wir $\bruch{1}{\infty} = 0$, so  bleibt die Formel 
+Setzen wir $\frac{1}{\infty} = 0$, so  bleibt die Formel 
       \\[0.2cm]
       \hspace*{1.3cm}      
-      $\bruch{1}{R} = \lim\limits_{n\rightarrow\infty} \sqrt[n]{|a_n|}$.  
+      $\frac{1}{R} = \lim\limits_{n\rightarrow\infty} \sqrt[n]{|a_n|}$.  
       \\[0.2cm]
 auch in dem Fall
 $\lim\limits_{n\rightarrow\infty} \sqrt[n]{|a_n|} = 0$ richtig, denn dann gilt $R = \infty$. \eox
 
 
 \example
-Die Potenz-Reihe $\sum_{n=1}^\infty \bruch{x^n}{n^n}$ hat den Konvergenz-Radius $R=\infty$, denn
+Die Potenz-Reihe
+\\[0.2cm]
+\hspace*{1.3cm}
+ $\ds\sum\limits_{n=1}^\infty \frac{x^n}{n^n}$ 
+\\[0.2cm]
+hat den Konvergenz-Radius $R=\infty$, denn
 es gilt 
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \lim\limits_{n\rightarrow\infty} \sqrt[n]{\bruch{1}{n^n}} =  
-   \lim\limits_{n\rightarrow\infty} \bruch{1}{n} = 0.
+$\ds \lim\limits_{n\rightarrow\infty} \sqrt[n]{\frac{1}{n^n}} =  
+   \lim\limits_{n\rightarrow\infty} \frac{1}{n} = 0.
 $ \eox
 
 
