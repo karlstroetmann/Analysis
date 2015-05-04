@@ -1149,7 +1149,7 @@ tatsächlich nach unten abgeschlossen ist.
       \\[0.2cm]
       und daraus folgt $0 > x + y$, was zu zeigen war.
 \item ``$\supseteq$'': Es sei nun $o \in O$, also $o < 0$.  Wir müssen ein $x \in A$ und ein $y \in -A$
-      finden, so dass $o = x + y$ gilt.
+      finden, so dass $o = x + y$ gilt, denn dann haben wir $o \in A + (-A)$ gezeigt.
 
       Wir definieren 
       \\[0.2cm]
@@ -1164,7 +1164,9 @@ tatsächlich nach unten abgeschlossen ist.
       \\[0.2cm]
       Da $A \not= \mathbb{Q}$ ist, gibt es ein $z \in \mathbb{Q}$ so dass $z \not\in A$ ist.
       Für die Zahlen $n \in \mathbb{Z}$, für die $n \cdot r > z$ ist, folgt dann $n \not\in M$.
-      Folglich ist die Menge $M$ nach oben beschränkt und hat daher ein Maximum.  Wir definieren
+      Folglich ist die Menge $M$ nach oben beschränkt.
+      Da die Menge $A$ nach unten abgeschlossen ist, ist $M$ sicher nicht leer.
+      Als beschränkte und nicht-leere Menge von natürlichen Zahlen hat $M$ ein Maximum.  Wir definieren 
       \\[0.2cm]
       \hspace*{1.3cm}
       $\widehat{n} := \max(M)$.
@@ -1186,11 +1188,13 @@ tatsächlich nach unten abgeschlossen ist.
       $-y - r = (\widehat{n} + 2) \cdot r - r = (\widehat{n} + 1) \cdot r \not\in A$,
       \\[0.2cm]
       so dass $y + r\in B := \{ q \in \mathbb{Q} \mid -q \not\in A \}$ ist.  
-      Wegen $-A := B^*$ folgt daraus $y \in -A$.  Also haben wir $x + y \in A + -A$.
+      Wegen $-A := B^*$ könnte es sein, dass $y+r \not\in -A$ ist.  Dies wäre dann der Fall,
+      wenn $y+r = \max(B)$ wäre.  Da $B$ nach unten abgeschlossen, gilt aber sicher $y \in B$
+      und da $y < y + r$ ist, haben wir $y \not= \max(B)$.  Also gilt  $y \in -A$.  Damit haben wir $x + y \in A + (-A)$.
       Außerdem gilt
       \\[0.2cm]
       \hspace*{1.3cm}
-      $x + y = \widehat{n} \cdot r - (\widehat{n} + 2) \cdot r = - 2 \cdot r = o$.
+      $x + y = \widehat{n} \cdot r - (\widehat{n} + 2) \cdot r = - 2 \cdot r = o$, \quad also \quad $o \in A + (-A)$.
       \\[0.2cm]
       Damit haben wir $O \subseteq A + -\!A$ gezeigt. 
       \qed
