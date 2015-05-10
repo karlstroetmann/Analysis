@@ -2021,7 +2021,7 @@ $a_n \geq a_{n+1} \geq 0$ \quad für alle $n \in \mathbb{N}$.
 \item Untersuchen Sie die Konvergenz der Reihe
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\ds\sum\limits_{n=1}^{\infty} \frac{1}{n \cdot \bigl(\log_2(n)\bigr)^2}$.
+      $\ds\sum\limits_{n=1}^{\infty} \frac{1}{n \cdot \bigl(\log_2(n)\bigr)^2}$. \eox
 \end{enumerate}
 
 \section{Potenz-Reihen}
@@ -2280,7 +2280,42 @@ $\ds \lim\limits_{n\rightarrow\infty} \sqrt[n]{\frac{1}{n^n}} =
    \lim\limits_{n\rightarrow\infty} \frac{1}{n} = 0.
 $ \eox
 
-
+\exercise
+\begin{enumerate}[(a)]
+\item Der \href{http://de.wikipedia.org/wiki/Binomialkoeffizient}{\emph{Binomial-Koeffizient}} $n \choose k$
+      ist durch die Festlegung
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds {n \choose k} = \frac{n!}{k! \cdot (n-k)!}$
+      \\[0.2cm]
+      definiert.  Beweisen Sie die Gleichung \quad
+      $\ds {n+1 \choose k+1} = {n \choose k} + {n \choose k-1}$.
+\item Zeigen Sie durch vollständige Induktion, dass für alle natürlichen Zahlen $n$ die Formel
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds (a + b)^n =\sum\limits_{k=0}^n {n \choose k} \cdot a^k \cdot n^{n-k}$
+      \\[0.2cm]
+      gilt.  Diese Gleichung wird als der 
+      \href{http://de.wikipedia.org/wiki/Binomischer_Lehrsatz}{\emph{binomischer Lehrsatz}}
+      bezeichnet.
+\item Überlegen Sie sich, wie Sie für zwei Potenz-Reihen 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds f(x) := \sum\limits_{n=0}^\infty a_n \cdot x^n$ \quad und \quad
+      $\ds g(x) := \sum\limits_{n=0}^\infty b_n \cdot x^n$ 
+      \\[0.2cm]
+      das Produkt $f(x) \cdot g(x)$ als Potenz-Reihe darstellen können.  Wir suchen also eine
+      Potenz-Reihe $\sum\limits_{n=0}^\infty c_n \cdot x^n$, so dass die Formel
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds f(x) \cdot g(x) = \sum\limits_{n=0}^\infty c_n \cdot x^n$ \quad gültig ist.
+\item Für alle $x \in \mathbb{C}$ ist die Exponentialfunktion als
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds \exp(x) := \sum\limits_{n=0}^\infty \frac{x^n}{n!}$
+      \\[0.2cm]
+      definiert.  Zeigen Sie, dass $\exp(x) \cdot \exp(x) = \exp(2 \cdot x)$ gilt. \eox
+\end{enumerate}
 
 %%% Local Variables: 
 %%% mode: latex
