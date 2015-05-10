@@ -4,12 +4,12 @@ mySqrt := procedure(a) {
     } else {
         b := a; 
     }     
-    for (n in [1 .. 9]) {
+    for (n in [1 .. 12]) {
         b := 1/2 * (b + a/b);
-        print("$n$: $nDecimalPlaces(b, 100)$");
+        print("$n$: $nDecimalPlaces(b, 80)$");
     }
     return b;
 };
 
-mySqrt(2);
+mySqrt(10);
 

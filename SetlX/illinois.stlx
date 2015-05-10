@@ -38,15 +38,15 @@ f := procedure(x) {
     return x ** 4 - 1;
 };
 
-// x := illinois(f, 0.0, 10.0, 25);
-// print("solution to x ** 4 - 1 = 0 is $x$\n");
+x := illinois(f, 0.0, 10.0, 25);
+print("solution to x ** 4 - 1 = 0 is $x$\n");
 
 g := procedure(x) {
     return x ** 2 - 2;
 };
 
-// x := illinois(g, 1, 2, 13);
-// print("solution to x ** 2 = 2 is $nDecimalPlaces(x, 41)$\n");
+x := illinois(g, 1, 2, 13);
+print("solution to x ** 2 = 2 is $nDecimalPlaces(x, 41)$\n");
 
 strange := procedure(x) {
     return 1 - 2 / (x * x + 1);

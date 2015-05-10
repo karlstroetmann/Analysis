@@ -1853,7 +1853,7 @@ Dann konvergiert die Reihe $\ds\Reihe{a_i}$.
 \textbf{Beweis}:  Wir zeigen, dass die geometrische Reihe
 \\[0.2cm]
 \hspace*{1.3cm}
- $\ds\Reihe{a_0\cdot q^i}$ 
+ $\ds\Reihe{a_1\cdot q^i}$ 
 \\[0.2cm]
 eine konvergente Majorante der Reihe
 \\[0.2cm]
@@ -1965,14 +1965,72 @@ $\ds \sqrt[n]{\frac{1}{n!}} \leq \frac{1}{2}     \quad \Leftrightarrow \quad
 $
 
 
+\exercise
+Im Folgenden sei $\folge{a_n}$ eine monoton fallende Folge nicht-negativer Zahlen, es gelte also
+\\
+\hspace*{1.3cm}
+$a_n \geq a_{n+1} \geq 0$ \quad für alle $n \in \mathbb{N}$.
+\begin{enumerate}[(a)]
+\item Nehmen Sie an, das die Reihe
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\sum\limits_{n=0}^\infty 2^n \cdot a_{2^n}$ 
+      \\[0.2cm]
+      konvergiert.  Zeigen Sie, dass dann auch die Reihe
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds\sum\limits_{n=1}^\infty a_n$
+      \\[0.2cm]
+      konvergiert.
+
+      \textbf{Hinweis}:  Zeigen Sie zunächst, dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds\sum\limits_{i=1}^{2^n} a_i \leq \sum\limits_{i=0}^n 2^i \cdot a_{2^i}$       
+      \\[0.2cm]
+      gilt.  Der Nachweis dieser Ungleichung funktioniert ähnlich wie der Nachweis der Divergenz der
+      harmonischen Reihe.
+\item Nehmen Sie an, das die Reihe
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds\sum\limits_{n=1}^\infty a_n$
+      \\[0.2cm]
+      konvergiert.  Zeigen Sie, dass dann auch die Reihe
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds\sum\limits_{n=0}^\infty 2^n \cdot a_{2^n}$ 
+      \\[0.2cm]
+      konvergiert.
+
+      \textbf{Hinweis}:  Zeigen Sie die Ungleichung
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds\sum\limits_{i=0}^n 2^i \cdot a_{2^i} \leq 2 \cdot \sum\limits_{i=1}^{2^n} a_i $.
+      
+      \textbf{Bemerkung}:  Die in (a) und (b) bewiesenen Aussagen können wir zu dem
+      \href{http://de.wikipedia.org/wiki/Cauchysches_Verdichtungskriterium}{\emph{Kondensations-Kriterium von Cauchy}} 
+      zusammenfassen:  Die Reihe 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds\sum\limits_{n=1}^\infty a_n$ \quad konvergiert genau dann, wenn die Reihe \quad
+      $\ds\sum\limits_{n=0}^\infty 2^n \cdot a_{2^n}$ \quad konvergiert.
+\item Untersuchen Sie die Konvergenz der Reihe
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds\sum\limits_{n=1}^{\infty} \frac{1}{n \cdot \log_2(n)}$.
+\item Untersuchen Sie die Konvergenz der Reihe
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds\sum\limits_{n=1}^{\infty} \frac{1}{n \cdot \bigl(\log_2(n)\bigr)^2}$.
+\end{enumerate}
 
 \section{Potenz-Reihen}
 Es bezeichne $x$ eine Variable und $\folge{a_n}$ sei eine Folge von Zahlen.  Dann
 bezeichnen wir den Ausdruck
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $\ds\sum\limits_{n=0}^\infty a_n \cdot  x^n$      
-      \\[0.2cm]
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\sum\limits_{n=0}^\infty a_n \cdot  x^n$      
+\\[0.2cm]
 als \emph{formale Potenz-Reihe}.  Wichtig ist hier, dass $x$ keine feste Zahl ist, sondern
 eine Variable, für die wir später reelle (oder auch komplexe) Zahlen einsetzen.  Wenn wir
 in einer Potenz-Reihe für $x$ eine feste Zahl einsetzen, wird aus der Potenz-Reihe eine
@@ -1984,7 +2042,7 @@ Begriffs des   Polynoms aufgefasst werden.
 \begin{enumerate}
 \item $\ds\sum\limits_{n=0}^\infty \frac{x^n}{n!}$ ist eine formale Potenz-Reihe.  
       Wir haben oben mit Hilfe des Quotienten-Kriteriums gezeigt, dass diese Reihe für
-      beliebige reelle Zahlen konvergiert.
+      beliebige reelle und komplexe Zahlen konvergiert.
 \item $\ds\sum\limits_{n=1}^\infty \frac{x^n}{n}$ ist eine formale Potenz-Reihe.  
       Setzen wir für $x$ den Wert $1$ ein, so erhalten wir die divergente harmonische
       Reihe.  Für $x=-1$ erhalten wir eine alternierende Reihe, die nach dem Leibniz-Kriterium
@@ -2006,8 +2064,13 @@ für einen Wert $u \in \mathbb{C}$ konvergiert, dann konvergiert die Reihe auch f
 \end{Satz}
 
 \noindent 
-\textbf{Beweis}:  Da die Reihe $\sum_{n=0}^\infty a_n\cdot u^n$ konvergiert, folgt aus dem
-Korollar zum Cauchy'schen Kon\-vergenz-Kriterium, dass die Folge $\folge{a_n\cdot u^n}$ eine
+\textbf{Beweis}:  Da die Reihe
+\\[0.2cm]
+\hspace*{1.3cm}
+ $\ds\sum\limits_{n=0}^\infty a_n\cdot u^n$ 
+\\[0.2cm]
+konvergiert, folgt aus dem
+Korollar zum Cauchy'schen Kon\-vergenz-Kriterium, dass die Folge \\ $\folge{a_n\cdot u^n}$ eine
 Null-Folge ist.  Also gibt es eine Zahl $K$, so dass für alle $n \geq K$ die Ungleichung 
 \\[0.2cm]
 \hspace*{1.3cm}      
@@ -2027,7 +2090,7 @@ Dann haben wir für alle $n \geq K$ die folgende Abschätzung:
       \left|a_n\cdot u^n\right| \cdot  q^n \leq q^n$.
       \\[0.2cm]
 Diese Abschätzung zeigt, dass die geometrische Reihe eine konvergente Majorante der Reihe
-$a_n\cdot v^n$ ist.  Damit folgt die Konvergenz der Reihe $\sum_{n=0}^\infty a_n\cdot v^n$  aus dem
+$\sum_{n=1}^\infty a_n\cdot v^n$ ist.  Damit folgt die Konvergenz der Reihe $\sum_{n=0}^\infty a_n\cdot v^n$  aus dem
 Majoranten-Kriterium. \qed 
 
 \begin{Satz}
@@ -2147,7 +2210,7 @@ $
 \end{array}
 $
 \\[0.2cm]
-Jetzt können wir zeigen, dass die Reihe $\sum_{n=0}^\infty a_n\cdot u^n$ das
+Jetzt können wir zeigen, dass die Reihe $\sum\limits_{n=0}^\infty a_n\cdot u^n$ das
 Quotienten-Kriterium erfüllt, denn für alle $n \geq K$ gilt:
 \\[0.2cm]
 \hspace*{1.3cm}

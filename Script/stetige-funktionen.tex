@@ -64,7 +64,7 @@ Es sei $\folge{x_n}$ eine Folge und $D\subseteq \mathbb{R}$.  Wir sagen, dass
 
 \noindent
 \textbf{Bemerkung}:  In der obigen Definition ist nicht gefordert,
-dass $\widehat{x}$ ein Element des Definitions-bereichs  $D$ ist.  In vielen interessanten Fällen
+dass $\widehat{x}$ ein Element des Definitions-Bereichs  $D$ ist.  In vielen interessanten Fällen
 ist dies auch nicht der Fall, beispielsweise werden wir später zeigen, dass 
 \\[0.2cm]
 \hspace*{1.3cm}      
@@ -195,8 +195,7 @@ $\lim\limits_{n\rightarrow\infty} x_n = \infty$
 wenn gilt:
 \\[0.2cm]
 \hspace*{1.3cm}      
-$\forall c \in \mathbb{R}: \exists K \in \mathbb{N}: \forall n \in \mathbb{N}: 
-       n > K \rightarrow x_n > c$.
+$\forall c \in \mathbb{R}: \exists K \in \mathbb{N}: \forall n \in \mathbb{N}: \bigl(n > K \rightarrow x_n > c\bigr)$.
 \eod
 \end{Definition}
 
@@ -237,7 +236,7 @@ $\lim\limits_{n\rightarrow\infty} x_n = \infty$
 gilt.   Nach Definition der uneigentlichen Konvergenz gegen $\infty$ gilt dann
 \begin{equation}
   \label{eq:stetig0}  
-  \forall c \in \mathbb{R}: \exists K \in \mathbb{N}: \forall n \in \mathbb{N}: n > K \rightarrow x_n > c
+  \forall c \in \mathbb{R}: \exists K \in \mathbb{N}:\bigl(\forall n \in \mathbb{N}: n > K \rightarrow x_n > c\bigr)
 \end{equation}
 Wir müssen zeigen, dass gilt:
 \\[0.2cm]
@@ -248,7 +247,7 @@ Dies ist nach der Definition des Grenzwerts einer Folge äquivalent zu der Formel
 \begin{equation}
   \label{eq:stetig1}
   \forall \varepsilon \in\mathbb{R}_+: \exists K \in \mathbb{R} : \forall n \in \mathbb{N}
-  : n > K \rightarrow \left|\frac{1}{x_n}\right| < \varepsilon
+  :\bigl(n > K \rightarrow \left|\frac{1}{x_n}\right| < \varepsilon\bigr)
 \end{equation}
 Um diese Formel nachzuweisen, nehmen wir an, dass eine Zahl $\varepsilon>0$
 gegeben ist.  Wir müssen dann ein $K$ finden, so dass für alle natürlichen Zahlen $n$, die
@@ -287,7 +286,7 @@ und Funktionen, die nach dieser Definition stetig sind, heißen $\varepsilon$-$\d
   \\[0.2cm]
   \hspace*{1.3cm}
   $\forall \varepsilon \in \mathbb{R}_+: \exists \delta \in \mathbb{R}_+: \forall x \in \mathbb{R}: 
-   |x - \widehat{x}| < \delta \rightarrow |f(x) - f(\widehat{x})| < \varepsilon$.
+   \bigl(|x - \widehat{x}| < \delta \rightarrow |f(x) - f(\widehat{x})| < \varepsilon\bigr)$.
   \eod
 \end{Definition}
 
@@ -325,7 +324,7 @@ $f: D \rightarrow \mathbb{R}$
 an der Stelle $\bar{x}$ den Grenzwert $\lambda$ hat, wenn
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall \varepsilon\in\mathbb{R}_+: \exists\delta\in\mathbb{R}_+: \forall x\in D: |x-\bar{x}|<\delta \rightarrow |f(x) - \lambda| < \varepsilon$
+$\forall \varepsilon\in\mathbb{R}_+: \exists\delta\in\mathbb{R}_+: \forall x\in D:\bigl(|x-\bar{x}|<\delta \rightarrow |f(x) - \lambda| < \varepsilon\bigr)$
 \\[0.2cm]
 gilt.  Genau wie die $\varepsilon$-$\delta$ Definition der Stetigkeit äquivalent ist zu dem
 Stetigkeits-Begriff, den wir mit Hilfe von Folgen definiert haben, ist auch die
@@ -344,14 +343,14 @@ eine reellwertige Funktion.  Beweisen Sie die beiden folgenden Behauptungen:
 \item Falls die Formel
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\forall \varepsilon\in\mathbb{R}_+: \exists\delta\in\mathbb{R}_+: \forall x\in D: |x-\bar{x}|<\delta \rightarrow |f(x) - \lambda| < \varepsilon$
+      $\forall \varepsilon\in\mathbb{R}_+: \exists\delta\in\mathbb{R}_+: \forall x\in D:\bigl(|x-\bar{x}|<\delta \rightarrow |f(x) - \lambda| < \varepsilon\bigr)$
       \\[0.2cm]
       richtig ist, dann gilt
       $\ds \lim\limits_{x\rightarrow\bar{x}} f(x) = \lambda$.
 \item Falls  $\ds \lim\limits_{x\rightarrow\bar{x}} f(x) = \lambda$ gilt, dann gilt auch
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\forall \varepsilon\in\mathbb{R}_+: \exists\delta\in\mathbb{R}_+: \forall x\in D: |x-\bar{x}|<\delta \rightarrow |f(x) - \lambda| < \varepsilon$.
+      $\forall \varepsilon\in\mathbb{R}_+: \exists\delta\in\mathbb{R}_+: \forall x\in D:\bigl(|x-\bar{x}|<\delta \rightarrow |f(x) - \lambda| < \varepsilon\bigr)$.
       \eox
 \end{enumerate}
 
@@ -1000,7 +999,12 @@ $b_n$ konstant ist, es gilt $b_n = 10$.
 \subsection{Das Sekanten-Verfahren}
 Ein Problem bei der Regula Falsi scheint darin zu liegen, dass häufig eine
 Intervall-Grenze während der gesamten Iteration fest bleibt.  Dies war schon bei der
-Bestimmung der Nullstelle der Funktion $x \mapsto x - \cos(x)$ der Fall.  Eine
+Bestimmung der Nullstelle der Funktion
+\\[0.2cm]
+\hspace*{1.3cm}
+$x \mapsto x - \cos(x)$ 
+\\[0.2cm]
+der Fall.  Eine
 Möglichkeit, dieses Problem zu umgehen besteht darin, dass wir anstatt eine Folge von
 Intervallen $\folge{[a_n, b_n]}$ zu bilden, einfach nur eine Folge von Punkten
 $\folge{x_n}$ konstruieren.  Den Punkt $x_{n+1}$ bestimmen wir, indem wir durch die Punkte
@@ -1124,7 +1128,12 @@ gezeigten Werte.
 \subsection{Das Illinois-Verfahren}
 Von den bisher vorgestellten Verfahren ist nur das Bisektions-Verfahren wirklich robust.
 Bei der Regula-Falsi ist das Problem, dass eine Intervall-Grenze stehen bleiben kann. Am
-Beispiel der Funktion $x \mapsto x^4 - 1$ haben wir gesehen, dass dies zu einer sehr
+Beispiel der Funktion
+\\[0.2cm]
+\hspace*{1.3cm}
+ $x \mapsto x^4 - 1$ 
+\\[0.2cm]
+haben wir gesehen, dass dies zu einer sehr
 langsamen Konvergenz führen kann.  Beim Sekanten-Verfahren hatten wir dieses Problem
 behoben, aber dort kann es in ungünstigen Fällen passieren, dass das Verfahren überhaupt nicht mehr
 konvergiert.  Das \emph{Illinois-Verfahren} \cite{dowell:1971} versucht die Konvergenz der Regula Falsi
