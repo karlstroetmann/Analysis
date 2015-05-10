@@ -2317,6 +2317,122 @@ $ \eox
       definiert.  Zeigen Sie, dass $\exp(x) \cdot \exp(x) = \exp(2 \cdot x)$ gilt. \eox
 \end{enumerate}
 
+\section{Berechnung der Fibonacci-Zahlen}
+Die Folge $\folge{a_n}$ der
+\href{http://de.wikipedia.org/wiki/Fibonacci-Folge}{\emph{Fibonacci-Zahlen}} wird induktiv durch die
+Festlegung  
+\\[0.2cm]
+\hspace*{1.3cm}
+$a_0 := 0$, \quad $a_1 := 1$ \quad und \quad $a_{n+2} := a_{n+1} + a_n$ für alle $n \in \mathbb{N}_0$
+\\[0.2cm]
+definiert.  Wir hatten bereits im ersten Semester eine explizite Formel für $a_n$ hergeleitet.  In
+diesem Abschnitt zeigen wir einen anderen Weg auf, mit dem die selbe Formel hergeleitet werden kann.
+Dazu definieren wir zunächst die der Folge $\folge{a_n}$ zugeordnete 
+\href{http://de.wikipedia.org/wiki/Erzeugende_Funktion}{\emph{erzeugende Funktion}} $f(x)$ als die Potenz-Reihe
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds f(x) := \sum\limits_{n=0}^\infty a_n \cdot x^n = 0 \cdot x^0 + 1 \cdot x + 1 \cdot x^2 + 2 \cdot x^3 + 3 \cdot x^4 + 5 \cdot x^5 + \cdots$.
+\\[0.2cm]
+Die Gleichung $a_{n+2} = a_{n+1} + a_n$ motiviert uns dazu, den Ausdruck
+ $x \cdot f(x) + x^2 \cdot f(x)$ zu berechnen.
+Zunächst gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds x \cdot f(x) = \sum\limits_{n=0}^\infty a_n \cdot x^{n+1} = \sum\limits_{n=1}^\infty a_{n-1}
+\cdot x^n$.  \hspace*{\fill} (1)
+\\[0.2cm]
+Multiplizieren wir diese Gleichung ein weiteres Mal mit $x$, so erhalten wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds x^2 \cdot f(x) = \sum\limits_{n=1}^\infty a_{n-1} \cdot x^{n+1} = \sum\limits_{n=2}^\infty
+a_{n-2} \cdot x^n$.  \hspace*{\fill} (2)
+\\[0.2cm]
+Addieren wir die Gleichungen (1) und (2), so erhalten wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$(x + x^2) \cdot f(x) = a_0 \cdot x^0 + \sum\limits_{n=2}^\infty \bigl(a_{n-1} + a_{n-2}\bigr) \cdot x^n$.
+\\[0.2cm]
+An dieser Stelle können Sie sehen, warum wir $f(x)$ mit $x + x^2$ multipliziert haben, denn wenn wir
+nun berücksichtigen, dass $a_{n-1} + a_{n-2} = a_n$ gilt, so können wir die obige Gleichungen zu
+\\[0.2cm]
+\hspace*{1.3cm}
+$(x + x^2) \cdot f(x) = \sum\limits_{n=0}^\infty a_{n} \cdot x^n - a_1 \cdot x$ 
+\\[0.2cm]
+vereinfachen.  Die Summe, die hier auftritt, ist aber gerade die erzeugende Funktion $f(x)$.
+Da $a_1 = 1$ ist, haben wir die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$(x + x^2) \cdot f(x) = f(x) - x$ 
+\\[0.2cm]
+gefunden, die wir zu
+\\[0.2cm]
+\hspace*{1.3cm}
+$x = (1 - x - x^2) \cdot f(x)$ 
+\\[0.2cm]
+umschreiben.  Teilen wir hier noch durch $(1-x-x^2)$, so haben wir für die erzeugende Funktion
+$f(x)$ die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds f(x) = \frac{x}{1 - x - x^2}$
+\\[0.2cm]
+gefunden.  Der Trick besteht nun darin, eine 
+\href{http://de.wikipedia.org/wiki/Partialbruchzerlegung}{\emph{Partialbruch-Zerlegung}} 
+der rechten Seite zu finden.  Indem Sie die Nullstellen des Polynoms $1 - x - x^2$ bestimmen, können
+sie den obigen Bruch nach einer kurzen Rechnung in der Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds \frac{x}{1 - x - x^2} = \frac{1}{\sqrt{5}} \cdot \left(\frac{1}{1 - x \cdot \varphi} - \frac{1}{1 - x \cdot \overline{\varphi}}\right)$
+\\[0.2cm]
+\hspace*{1.3cm}
+mit $\varphi = \frac{1}{2} \cdot (1 + \sqrt{5})$ \quad und \quad  $\overline{\varphi} = 1
+-\varphi = \frac{1}{2} \cdot (1 - \sqrt{5})$
+\\[0.2cm]
+darstellen.  Ersetzen wir die Brüche auf der rechten Seite dieser Gleichung durch geometrische
+Reihen, so erhalten wir die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds f(x) = \frac{1}{\sqrt{5}} \cdot \left(\sum\limits_{n=0}^\infty (x \cdot \varphi)^n - \sum\limits_{n=0}^\infty (x \cdot \overline{\varphi})^n \right)$.
+\\[0.2cm]
+Setzen wir nun für $f(x)$ die Reihe $\sum\limits_{n=0}^\infty a_n \cdot x^n$ ein und fassen die die
+beiden Summen auf der rechten Seite zusammen, so erhalten wir die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds \sum\limits_{n=0}^\infty a_n \cdot x^n = \sum\limits_{n=0}^\infty \frac{1}{\sqrt{5}} \cdot \bigl(\varphi^n - \overline{\varphi}^n\bigr) \cdot x^n$.
+\\[0.2cm]
+Da diese Gleichungen für alle $x$ gelten soll, für die diese Reihen konvergieren, müssen die
+Koeffizienten der Potenzen von  $x^n$ auf beiden Seiten dieser Gleichung übereinstimmen.  Damit
+haben wir für die Fibonacci-Zahlen die explizite Formel
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds a_n = \frac{1}{\sqrt{5}} \cdot \bigl(\varphi^n - \overline{\varphi}^n\bigr)$ 
+\quad mit $\varphi= \frac{1}{2} \cdot (1 + \sqrt{5})$ 
+\quad und \quad  $\overline{\varphi} = 1 -\varphi = \frac{1}{2} \cdot (1 - \sqrt{5})$
+\\[0.2cm]
+gefunden.
+
+\exercise
+\begin{enumerate}[(a)]
+\item Lösen Sie die Rekurrenz-Gleichung
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $a_0 = 0$, $a_1 = 1$, $a_{n+2} = 3 \cdot a_{n+1} - 2 \cdot a_n$
+      \\[0.2cm]
+      mit dem in diesem Abschnitt vorgestellten Verfahren.
+\item Lösen Sie die Rekurrenz-Gleichung
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $a_0 = 0$, $a_1 = 1$, $a_{n+2} = 2 \cdot a_{n+1} - 1 \cdot a_n$
+      \\[0.2cm]
+      mit dem in diesem Abschnitt vorgestellten Verfahren.
+
+      \textbf{Hinweis}:  Stellen Sie das Produkt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\biggl(\sum\limits_{n=0}^\infty x^n\biggr) \cdot \biggl(\sum\limits_{n=0}^\infty x^n\biggr)$
+      \\[0.2cm]
+      als Potenz-Reihe dar.  \eox
+\end{enumerate}
+
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "analysis"
