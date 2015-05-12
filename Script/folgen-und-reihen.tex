@@ -1466,7 +1466,7 @@ Wir präsentieren nun einige Beispiele für konvergente Reihen:
 \end{enumerate}
 
 \exercise
-Berechnen Sie den Wert der Reihe $\ds\sum\limits_{n=0}^\infty \frac{3}{m^2 + 3 \cdot m + 2}$. \eox
+Berechnen Sie den Wert der Reihe $\ds\sum\limits_{n=0}^\infty \frac{3}{n^2 + 3 \cdot n + 2}$. \eox
 
 \begin{Definition}[Alternierende Reihe] 
 Hat eine Reihe die Form 
@@ -2020,6 +2020,87 @@ $a_n \geq a_{n+1} \geq 0$ \quad für alle $n \in \mathbb{N}$.
       \hspace*{1.3cm}
       $\ds\sum\limits_{n=1}^{\infty} \frac{1}{n \cdot \bigl(\log_2(n)\bigr)^2}$. \eox
 \end{enumerate}
+
+\subsection{Absolute Konvergenz}
+\begin{Definition}[Absolute Konvergenz]
+Eine Reihe
+\\[0.2cm]
+\hspace*{1.3cm}
+ $\ds\Reihe{a_i}$ 
+\\[0.2cm]
+heißt \emph{absolut konvergent} genau dann, wenn die Reihe der Absolutbeträge
+\\[0.2cm]
+\hspace*{1.3cm}
+ $\ds\Reihe{|a_i|}$ 
+\\[0.2cm]
+konvergiert.  Falls die Reihe
+ $\Reihe{a_i}$
+konvergiert, aber die Reihe der Absolutbeträge
+$\Reihe{|a_i|}$ 
+divergent ist,  dann sagen wir, dass die Reihe
+ $\Reihe{a_i}$ 
+\emph{bedingt konvergent} ist.  \eod
+\end{Definition}
+
+\examples
+\begin{enumerate}[(a)]
+\item Die Reihe
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds\Reihe{\frac{(-1)^{i+1}}{i}}$
+      \\[0.2cm]
+      ist nach dem Leibniz-Kriterium bedingt konvergent, aber nicht absolut konvergent, denn die Reihe der Absolutbeträge ist
+      die harmonische Reihe und die harmonische Reihe ist divergent.
+\item Die Reihe
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds\Reihe{\frac{(-1)^i}{i^2}}$
+      \\[0.2cm]
+      ist absolut konvergent, denn der Grenzwert $\ds\sum\limits_{n=1}^\infty \frac{1}{n^2}$ existiert. \eox
+\end{enumerate}
+
+\begin{Satz}
+  Falls die Reihe $\Reihe{a_i}$ absolut konvergent ist, dann ist sie auch konvergent.
+\end{Satz}
+
+\proof
+Nach Voraussetzung wissen wir, dass der Grenzwert
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds s := \lim\limits_{n\rightarrow\infty} \sum\limits_{i=1}^{n} |a_i|$
+\\[0.2cm]
+existiert.  An der Konvergenz ändert sich auch nichts, wenn wir die Reihe mit $2$ multiplizieren.
+Weiter gilt für jedes $i \in \mathbb{N}$ die Ungleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$0 \leq a_i + |a_i| \leq 2 \cdot |a_i|$,
+\\[0.2cm]
+denn wenn $a_i$ positiv ist, gilt $a_i + |a_i| = 2 \cdot |a_i|$ und wenn $a_i$ negativ ist, dann
+gilt $a_i + |a_i| = 0$.  Also ist die Reihe 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds \sum\limits_{i=1}^{n} 2 \cdot |a_i|$ \quad eine konvergente Majorante der Reihe \quad
+$\ds \sum\limits_{i=1}^{n} \bigl(a_i + |a_i|\bigr)$
+\\[0.2cm]
+und folglich konvergiert die Reihe $\sum\limits_{i=1}^{n} \bigl(a_i + |a_i|\bigr)$ nach dem Majoranten-Kriterium.
+Nun gilt aber
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds \lim\limits_{n\rightarrow\infty} \sum\limits_{i=1}^{n} a_i =
+     \lim\limits_{n\rightarrow\infty}\sum\limits_{i=1}^{n} \bigl(a_i + |a_i|\bigr) 
+   - \lim\limits_{n\rightarrow\infty} \sum\limits_{i=1}^{n} |a_i|$
+\\[0.2cm]
+und da die Grenzwerte auf der rechten Seite dieser Gleichung existieren, existiert auch der
+Grenzwert auf der linken Seite dieser Gleichung.  \qed
+
+\exercise
+Zeigen Sie, dass der Grenzwert
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\sum\limits_{n=1}^{\infty} \frac{\;1 + 2 \cdot \sin(3 \cdot n + 4)\;}{n^2}$
+\\[0.2cm]
+existiert.  \qed
+
 
 \section{Potenz-Reihen}
 Es bezeichne $x$ eine Variable und $\folge{a_n}$ sei eine Folge von Zahlen.  Dann
