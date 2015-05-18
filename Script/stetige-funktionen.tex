@@ -1,5 +1,5 @@
-\chapter{Stetige und differenzierbare Funktionen}
-\section{Stetige Funktionen}
+\chapter{Stetige  Funktionen}
+\section{Motivation und Definition der Stetigkeit}
 Wir wollen in diesem Abschnitt präzisieren, wann eine Funktion so \emph{glatt} ist, dass
 wir sie zeichnen können, ohne dabei den Stift absetzen zu müssen.  Für eine glatte Funktion soll außerdem der
 \emph{Zwischenwert-Satz} gelten.  Der Zwischenwert-Satz besagt, dass für eine glatte Funktion
@@ -43,7 +43,6 @@ bedarf es einer Reihe von zusätzlichen Definitionen, die nun folgen.
 Es sei $\folge{x_n}$ eine Folge und $D\subseteq \mathbb{R}$.  Wir sagen, dass 
 \emph{die Folge $\folge{x_n}$ in $D$ liegt}, wenn für alle $n \in \mathbb{N}$ das Folgenglied $x_n
 \in D$ ist.
-\pagebreak
 
 \begin{Definition}[Grenzwert]
   Es sei $D\subseteq \mathbb{R}$ und $f:D \rightarrow \mathbb{R}$.
@@ -527,13 +526,12 @@ Nullstelle von $f$ in dem Intervall $[a,b]$ gefunden.
     findZero := procedure(f, a, b, n) {
         assert(a < b, "a has to be less than b");   
         assert(f(a) < 0 && 0 < f(b), "we need f($a$) < 0 and f($b$) > 0");
-        [ fa, fb ] := [ f(a), f(b) ]; 
         for (k in [1 .. n]) {
             c := 1/2 * (a + b); fc := f(c); 
             if (fc < 0) {
-                a := c; fa := fc; 
+                a := c; 
             } else {
-                b := c; fb := fc; 
+                b := c; 
             }
         }
         return 1/2 * (a + b);
@@ -562,11 +560,7 @@ die Voraussetzungen des Zwischenwert-Satzes nicht erfüllt und das Bisektions-Ver
 Die Implementierung setzt den oben skizzierten Algorithmus unmittelbar um.  Da wir immer nur die
 beiden letzten Werte der Folgen $(a_n)_n$ und $(b_n)_n$ benötigen, ist es nicht notwendig, die
 Folgen zu speichern.  Es reicht, die Werte $a_n$ und $b_n$ in den Variablen \texttt{a} und
-\texttt{b} abzulegen.  Wir haben bei der Implementierung außerdem geachtet, dass die Funktion
-\texttt{f} nicht an derselben Stelle mehrfach berechnet wird.  Wir erreichen dies, indem wir den Funktionswert,
-den die Funktion \texttt{f} an der Stelle \texttt{a} annimmt, in der Variablen \texttt{fa}
-abspeichern.  Genauso wird der Funktionswert der Funktion \texttt{f} an der Stelle \texttt{b}
-in der Variablen \texttt{fb} abgelegt.
+\texttt{b} abzulegen. 
 
 Wenn wir dieses Verfahren einsetzen
 wollen um in einem vorgegeben Intervall nach einer Nullstelle zu suchen, so können wir im
@@ -575,19 +569,19 @@ benötigt werden:  Soll die Nullstelle mit einer Genauigkeit von $\varepsilon$ be
 werden, so muss die Zahl $n$ der Iterationen so gewählt werden, dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\left(\bruch{1}{2}\right)^n \cdot \;(b - a) \leq \varepsilon$
+$\left(\bruch{1}{2}\right)^{n-1} \cdot \;(b - a) \leq \varepsilon$
 \\[0.2cm]
 gilt.  Um $n$ zu bestimmen, logarithmieren wir diese Ungleichung und erhalten:
 \\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}[t]{ll} 
-                &\ds n \cdot \ln\Bigl(\frac{1}{2}\Bigr) + \ln(b - a) \leq \ln(\varepsilon) \\[0.4cm]
-\Leftrightarrow &\ds n \cdot \ln\Bigl(\frac{1}{2}\Bigr) \leq \ln(\varepsilon) - \ln(b - a) \\[0.4cm]
-\Leftrightarrow &\ds n \cdot \ln\Bigl(\frac{1}{2}\Bigr) \leq \ln\left(\bruch{\varepsilon}{b - a}\right) \\[0.4cm]
-\Leftrightarrow &\ds - n \cdot \ln(2) \leq \ln\left(\bruch{\varepsilon}{b - a}\right) \\[0.4cm]
-\Leftrightarrow &\ds n \geq - \frac{1}{\ln(2)} \cdot \ln\Bigl(\bruch{\varepsilon}{b - a}\Bigr) \\[0.4cm]
-\Leftrightarrow &\ds n \geq \frac{1}{\ln(2)} \cdot \ln\Bigl(\bruch{b - a}{\varepsilon}\Bigr)
+                &\ds (n-1) \cdot \ln\Bigl(\frac{1}{2}\Bigr) + \ln(b - a) \leq \ln(\varepsilon) \\[0.4cm]
+\Leftrightarrow &\ds (n-1) \cdot \ln\Bigl(\frac{1}{2}\Bigr) \leq \ln(\varepsilon) - \ln(b - a) \\[0.4cm]
+\Leftrightarrow &\ds (n-1) \cdot \ln\Bigl(\frac{1}{2}\Bigr) \leq \ln\left(\bruch{\varepsilon}{b - a}\right) \\[0.4cm]
+\Leftrightarrow &\ds - (n-1) \cdot \ln(2) \leq \ln\left(\bruch{\varepsilon}{b - a}\right) \\[0.4cm]
+\Leftrightarrow &\ds (n-1) \geq - \frac{1}{\ln(2)} \cdot \ln\Bigl(\bruch{\varepsilon}{b - a}\Bigr) \\[0.4cm]
+\Leftrightarrow &\ds n \geq \frac{1}{\ln(2)} \cdot \ln\Bigl(\bruch{b - a}{\varepsilon}\Bigr) + 1
 \end{array}
 $
 \\[0.4cm]

@@ -5,13 +5,12 @@
 findZero := procedure(f, a, b, n) {
     assert(a < b, "a has to be less than b");   
     assert(f(a) < 0 && 0 < f(b), "we need f($a$) < 0 and f($b$) > 0");
-    [ fa, fb ] := [ f(a), f(b) ]; 
     for (k in [1 .. n]) {
         c := 1/2 * (a + b); fc := f(c); 
         if (fc < 0) {
-            a := c; fa := fc; 
+            a := c; 
         } else {
-            b := c; fb := fc; 
+            b := c; 
         }
         if (isRational(a) && isRational(b)) {
             print("a = $nDecimalPlaces(a, 40)$, b = $nDecimalPlaces(b, 40)$");
@@ -43,6 +42,9 @@ print("\n\n\n");
 cosXEqualsX := procedure(x) {
     return x - cos(x);
 };
+
+x := findZero(cosXEqualsX, 0.0, 1.0, 40);
+print("solution of x = cos(x), $x$");
 
 x := findZero(x |-> -cos(x), 1.0, 2.0, 40);
 pi := mathConst("pi");
