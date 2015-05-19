@@ -454,8 +454,9 @@ ist am wenigsten offensichtlich.
 Aus den Behauptungen 3., 4., und 5.~folgt, dass die Folge $\folge{b_n}$ durch $a$ nach unten
 beschränkt ist, denn es gilt
 \\[0.2cm]
-\hspace*{1.3cm} $a = a_1 \leq \cdots \leq a_{n-1} \leq a_n \leq b_n$, 
-                also gilt $a \leq b_n$ für alle $n\in\mathbb{N}$ \\[0.2cm]
+\hspace*{1.3cm} $a = a_1 \leq \cdots \leq a_{n-1} \leq a_n \leq b_n$, \quad
+                also gilt $a \leq b_n$ für alle $n\in\mathbb{N}$.
+ \\[0.2cm]
 Da die Folge $\folge{b_n}$ monoton fallend und nach unten beschränkt ist, muss diese Folge
 nach Satz \ref{satz:monoton} auch konvergent sein.  Wir definieren
 \\[0.2cm]
@@ -510,8 +511,20 @@ $f\bigl(\widehat{a}\bigr) \leq 0$ \quad als auch \quad $f\bigl(\widehat{a}\bigr)
 \\[0.2cm]
 und das funktioniert nur, wenn $f\bigl(\widehat{a}\bigr) = 0$ ist.  Damit haben wir eine
 Nullstelle von $f$ in dem Intervall $[a,b]$ gefunden.
-\hspace*{\fill} $\Box$
-\vspace*{0.3cm}
+\qed
+\pagebreak
+
+\exercise
+\begin{enumerate}[(a)]
+\item Die Funktion $f:[0,1] \rightarrow [0,1]$ sei stetig.  Zeigen Sie, dass die Funktion $f$ dann
+      einen Fixpunkt hat, zeigen Sie also, dass es ein $x_0 \in [0,1]$ gibt, so dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $f(x_0) = x_0$ \quad gilt.
+\item Zeigen Sie, dass die Funktion $f: \mathbb{R} \rightarrow \mathbb{R}$, die durch $f(x) := \cos(x)$
+      definiert ist, einen Fixpunkt hat.  \eox
+\end{enumerate}
+
 
 \begin{figure}[!ht]
   \centering
@@ -1117,7 +1130,7 @@ gezeigten Werte.
 
 
 
-\pagebreak
+
 
 \subsection{Das Illinois-Verfahren}
 Von den bisher vorgestellten Verfahren ist nur das Bisektions-Verfahren wirklich robust.
