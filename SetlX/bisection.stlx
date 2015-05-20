@@ -6,8 +6,8 @@ findZero := procedure(f, a, b, n) {
     assert(a < b, "a has to be less than b");   
     assert(f(a) < 0 && 0 < f(b), "we need f($a$) < 0 and f($b$) > 0");
     for (k in [1 .. n]) {
-        c := 1/2 * (a + b); fc := f(c); 
-        if (fc < 0) {
+        c := 1/2 * (a + b); 
+        if (f(c) < 0) {
             a := c; 
         } else {
             b := c; 

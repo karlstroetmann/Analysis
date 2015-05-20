@@ -576,8 +576,8 @@ eine Tageszeit $t$ gibt, an welcher der Mönch beim Abstieg am selben Ort ist wie
         assert(a < b, "a has to be less than b");   
         assert(f(a) < 0 && 0 < f(b), "we need f($a$) < 0 and f($b$) > 0");
         for (k in [1 .. n]) {
-            c := 1/2 * (a + b); fc := f(c); 
-            if (fc < 0) {
+            c := 1/2 * (a + b); 
+            if (f(c) < 0) {
                 a := c; 
             } else {
                 b := c; 
@@ -1196,7 +1196,7 @@ Definition der Folgen $\folge{a_n}$ und $\folge{b_n}$:
              \hspace*{1.3cm}
              $a_1 := a$, \quad $b_1 := b$, \quad $\alpha_1 := 1$, \quad und \quad $\beta_1 := 1$.
              \\[0.2cm]
-             Die Werte $\alpha_n$ und $\beta_n$ sind dabei Gewichtungs-Faktoren, die wir später benötigen.
+             Die Werte $\alpha_1$ und $\beta_1$ sind dabei Gewichtungs-Faktoren, die wir später benötigen.
 \item[I.S.:] $n \mapsto n+1$.  Wir definieren ähnlich wie bei der Regula Falsi den Wert $c_n$ als \\[0.2cm]
       \hspace*{1.3cm} 
       $c_n := \bruch{\beta_n \cdot f(b_n) \cdot a_n - \alpha_n \cdot f(a_n) \cdot b_n}{
@@ -1222,14 +1222,14 @@ Definition der Folgen $\folge{a_n}$ und $\folge{b_n}$:
       schwächer gewichten und setzen deshalb in diesem Fall
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\beta_{n+1} = \bruch{1}{2} \cdot \beta_n$ \quad und \quad $\alpha_{n+1} := 1$.
+      $\beta_{n+1} := \bruch{1}{2} \cdot \beta_n$ \quad und \quad $\alpha_{n+1} := 1$.
       \\[0.2cm]
       Ist umgekehrt $a_{n+1} = a_{n-1}$, so hat sich der Wert der linken
       Intervall-Grenze nicht geändert.  Wir gewichten daher die linke Intervall-Grenze beim nächsten
       Iterations-Schritt schwächer und setzen 
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\beta_{n+1} = 1$ \quad und \quad $\alpha_{n+1} := \bruch{1}{2} \cdot \alpha_n$.
+      $\beta_{n+1} := 1$ \quad und \quad $\alpha_{n+1} := \bruch{1}{2} \cdot \alpha_n$.
 \end{enumerate}
 Die Umsetzung dieses Verfahrens sehen Sie in Abbildung \ref{fig:illinois.stlx}.  In den Variablen
 \texttt{oldA1} und \texttt{oldB1} speichern wir die Werte von $a_{n-1}$ und $b_{n-1}$, in den
