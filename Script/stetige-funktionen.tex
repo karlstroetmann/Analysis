@@ -219,7 +219,6 @@ dann schreiben wir
 $\lim\limits_{x\rightarrow\infty} f(x) = \lambda$.
 \eod
 \end{Definition}
-\pagebreak
 
 \example 
 Es gilt
@@ -331,6 +330,7 @@ $\varepsilon$-$\delta$-Definition des Grenzwerts äquivalent zu der Definition de
 \href{http://de.wikipedia.org/wiki/Grenzwert_(Funktion)}{Grenzwerts}, die wir 
 früher mit Hilfe von Folgen gegeben haben.  Der Beweis dieser Behauptung ist Gegenstand der 
 folgenden Aufgabe.
+\pagebreak
 
 \exercise
 Es sei \\[0.2cm]
@@ -377,8 +377,6 @@ Verfahren als
 bezeichnet.
 Beim Bisektions-Verfahren definieren wir induktiv zwei Folgen $\folge{a_n}$ und
 $\folge{b_n}$ wie folgt:
-\pagebreak
-
 \begin{enumerate}
 \item[I.A.:] $n=1$.
 
@@ -512,7 +510,36 @@ $f\bigl(\widehat{a}\bigr) \leq 0$ \quad als auch \quad $f\bigl(\widehat{a}\bigr)
 und das funktioniert nur, wenn $f\bigl(\widehat{a}\bigr) = 0$ ist.  Damit haben wir eine
 Nullstelle von $f$ in dem Intervall $[a,b]$ gefunden.
 \qed
-\pagebreak
+
+\remark
+In der Literatur finden Sie eine etwas allgemeinere Version des Zwischenwert-Satzes: Falls
+\\[0.2cm]
+\hspace*{1.3cm}
+$f:[a,b] \rightarrow \mathbb{R}$
+\\[0.2cm]  
+eine stetige Funktion ist, so nimmt die Funktion jeden Wert zwischen den Werten $f(a)$ und $f(b)$ an.
+Ist beispielsweise $f(a) < f(b)$, so gilt also
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall c \in [f(a), f(b)]: \exists \bar{x} \in [a,b]: f(\bar{x}) = c$.
+\\[0.2cm]
+Dieser Satz lässt sich beweisen, indem wir die Funktion $g$ als
+\\[0.2cm]
+\hspace*{1.3cm}
+$g := \bigl(x \mapsto f(x) - c\bigr)$
+\\[0.2cm]
+definieren.  Dann haben wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$g(a) = f(a) - c \leq 0$ \quad und \quad $g(b) = f(b) - c \geq 0$
+\\[0.2cm]
+und wir können auf die Funktion $g$ den von uns bewiesen Zwischenwert-Satz anwenden.  Damit finden
+eine Zahl $\bar{x} \in [a,b]$, für die $g(\bar{x}) = 0$ gilt.  Also haben wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$f(\bar{x}) -c = 0$
+\\[0.2cm]
+und daraus folgt $f(\bar{x}) = c$.  \eox
 
 \exercise
 \begin{enumerate}[(a)]
@@ -525,6 +552,15 @@ Nullstelle von $f$ in dem Intervall $[a,b]$ gefunden.
       definiert ist, einen Fixpunkt hat.  \eox
 \end{enumerate}
 
+\exercise
+Es war einmal ein buddhistischer Mönch, der einmal im Jahr zur Meditation auf einen Berg stieg.
+Er begann seinen Weg um 6:00 Uhr morgens und erreichte den Gipfel um 18:00 Uhr abends.  Nachdem er
+die ganze Nacht meditiert hatte, begann er am nächsten Morgen um 6:00 mit dem Abstieg, der bis 18:00
+abends dauerte.  Beim Abstieg nahm der Mönch den selben Weg wie beim Aufstieg.  Zeigen Sie, dass es
+eine Tageszeit $t$ gibt, an welcher der Mönch beim Abstieg am selben Ort ist wie beim Aufstieg. 
+\eox
+ 
+\subsection{Implementierung des Intervall-Halbierungs-Verfahrens}
 
 \begin{figure}[!ht]
   \centering
