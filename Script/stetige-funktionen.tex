@@ -283,7 +283,7 @@ und Funktionen, die nach dieser Definition stetig sind, heiﬂen $\varepsilon$-$\d
   $\widehat{x}$, wenn gilt: 
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\forall \varepsilon \in \mathbb{R}_+: \exists \delta \in \mathbb{R}_+: \forall x \in \mathbb{R}: 
+  $\forall \varepsilon \in \mathbb{R}_+: \exists \delta \in \mathbb{R}_+: \forall x \in D: 
    \bigl(|x - \widehat{x}| < \delta \rightarrow |f(x) - f(\widehat{x})| < \varepsilon\bigr)$.
   \eod
 \end{Definition}
@@ -638,9 +638,9 @@ Wollen wir beispielsweise die Nullstelle der Funktion $x \mapsto x - \cos(x)$ im
 $[0,1]$ auf eine Genauigkeit von $\varepsilon = 10^{-9}$ bestimmen, so finden wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$n \geq \bruch{\ln\bigl(10^{9}\bigr)}{\ln(2)} = 9 \cdot \bruch{\ln(10)}{\ln(2)} \approx 29.89735286$,
+$n \geq \bruch{\ln\bigl(10^{9}\bigr)}{\ln(2)} + 1 = 9 \cdot \bruch{\ln(10)}{\ln(2)} + 1 \approx 30.89735286$,
 \\[0.2cm]
-Damit ist klar, dass wir 30 Iterationen des Verfahrens benˆtigen um die geforderte
+Damit ist klar, dass wir 31 Iterationen des Verfahrens benˆtigen um die geforderte
 Genauigkeit zu erreichen.  Tabelle \ref{tab:bisection} zeigt die Werte, die $a_n$ und
 $b_n$ bei der Lˆsung der Gleichung $x - \cos(x) = 0$ beim Intervall-Halbierungs-Verfahren
 annehmen. Nach 30 Iterationen weichen die Intervall-Grenzen $a_n$ und $b_n$ um weniger als
