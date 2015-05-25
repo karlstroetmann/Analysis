@@ -30,10 +30,10 @@ sqrt := procedure(x) {
     return x * x - 2;
 };
 
-r2 := regulaFalsi(sqrt, 0, 2, 60);
+// r2 := regulaFalsi(sqrt, 0, 2, 60);
 
-print("2 ** (1/2) = $nDecimalPlaces(r2, 42)$");
-print("\n\n\n");
+// print("2 ** (1/2) = $nDecimalPlaces(r2, 42)$");
+// print("\n\n\n");
 
 cosXEqualsX := procedure(x) {
     return x - cos(x);
@@ -45,7 +45,7 @@ cosXEqualsX := procedure(x) {
 
 f4 := x |-> x ** 4 - 1;
 
-x := regulaFalsi(f4, 0.0, 10.0, 100);
+x := regulaFalsi(f4, 0.0, 10.0, 10000);
 
 
 

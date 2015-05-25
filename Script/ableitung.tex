@@ -506,32 +506,30 @@ Zeigen Sie
 
 
 \exercise
-Berechnen Sie die Ableitung der Funktion $x \mapsto \sqrt{x}$.  
-\vspace*{0.3cm}
+\begin{enumerate}[(a)]
+\item Berechnen Sie die Ableitung der Funktion $x \mapsto \sqrt{x}$.  
 
-\noindent
-\textbf{Hinweis}: Verwenden Sie die Produkt-Regel. \eox
+      \textbf{Hinweis}: Verwenden Sie die Produkt-Regel. 
+\item Es sei $p \in \mathbb{Z}$ und $q \in \mathbb{N}$.  Überlegen Sie, was die Ableitung der Funktion
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds x \mapsto x^{\normalsize\frac{p}{q}}$
+      \\[0.2cm]
+      ist und beweisen Sie Ihre Behauptung.
 
-\exercise
-Es sei $p \in \mathbb{Z}$ und $q \in \mathbb{N}$.  Überlegen Sie, was die Ableitung der Funktion
-\\[0.2cm]
-\hspace*{1.3cm}
-$\ds x \mapsto x^{\frac{p}{q}}$
-\\[0.2cm]
-ist und beweisen Sie Ihre Behauptung.
-\vspace*{0.3cm}
-
-\noindent
-\textbf{Hinweis}: Betrachten Sie zunächst den Fall $p = 1$.  \eox
-
+      \textbf{Hinweis}: Betrachten Sie zunächst den Fall $p = 1$.  \eox
+\end{enumerate}
 
 \section{Mittelwert-Sätze}
-\begin{Definition}[lokales Maximum]
-  Eine Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ hat im Punkt $\bar{x}\in \mathbb{R}$ ein \emph{lokales Maximum}, wenn gilt:
+\begin{Definition}[lokales Maximum] \lb
+  Eine Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ hat im Punkt $\bar{x}\in \mathbb{R}$ genau dann ein \emph{lokales Maximum}, wenn 
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\exists \varepsilon \in \mathbb{R}_+: \forall x \in \mathbb{R}: |x - \bar{x}| < \varepsilon
-  \rightarrow f(x) \leq f(\bar{x})$.
+  $\exists \varepsilon \in \mathbb{R}_+:\forall x \in \mathbb{R}: 
+    \bigl(|x - \bar{x}| < \varepsilon \rightarrow f(x) \leq f(\bar{x})\bigr)
+   $
+  \\[0.2cm]
+  gilt.
   \eod
 \end{Definition}
 
@@ -552,7 +550,7 @@ gilt.  Natürlich ist jedes globale Maximum auch ein lokales Maximum, aber die Um
 gilt im allgemeinen nicht.  Der nächste Satz liefert ein notwendiges Kriterium für das
 Auftreten eines lokalen Maximums.
 
-\begin{Satz}[\href{http://en.wikipedia.org/wiki/Fermat}{Pierre de Fermat}, 160?--1665]
+\begin{Satz}[\href{http://en.wikipedia.org/wiki/Fermat}{Pierre de Fermat}, 160?--1665] \lb
 Hat die Funktion $f: D \rightarrow \mathbb{R}$ im Punkt $\bar{x}$ ein lokales
 Maximum, ist $U_\varepsilon(\bar{x}) \subseteq D$ und ist die Funktion $f$ zusätzlich im Punkt $\bar{x}$ differenzierbar, so gilt 
 \\[0.3cm]
@@ -565,7 +563,7 @@ Wir betrachten zunächst die Folge $\folge{\bar{x} + \frac{1}{n}}$.
 O.B.d.A. sei $\varepsilon$ so klein gewählt, dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall x \in \mathbb{R} : |x - \bar{x}| < \varepsilon \rightarrow f(x) \leq f(\bar{x})$
+$\forall x \in \mathbb{R}:\bigl( |x - \bar{x}| < \varepsilon \rightarrow f(x) \leq f(\bar{x})\bigr)$
 \\[0.2cm]
 gilt.  Wenn $n>\frac{1}{\varepsilon}$ ist, liegt  $\bar{x} + \frac{1}{n}$ in der
 $\varepsilon$-Umgebung von $\bar{x}$.  Daher gilt für alle $n > \frac{1}{\varepsilon}$
@@ -589,7 +587,7 @@ Wir betrachten nun die Folge $\folge{\bar{x} - \frac{1}{n}}$.
 Wieder sei $\varepsilon$ so gewählt, dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall x \in \mathbb{R} : |x - \bar{x}| < \varepsilon \rightarrow f(x) \leq f(\bar{x})$
+$\forall x \in \mathbb{R}:\bigl(|x - \bar{x}| < \varepsilon \rightarrow f(x) \leq f(\bar{x})\bigr)$
 \\[0.2cm]
 gilt.  Wenn $n>\frac{1}{\varepsilon}$ liegt daher  $\bar{x} - \frac{1}{n}$ in der
 $\varepsilon$-Umgebung von $\bar{x}$.  Daher gilt für alle $n > \frac{1}{\varepsilon}$
@@ -613,12 +611,14 @@ Wir haben jetzt also die beiden Ungleichungen
 \hspace*{1.3cm}
 $\df{f}(\bar{x}) \leq 0$ \quad und \quad $\df{f}(\bar{x}) \geq 0$ 
 \\[0.3cm]
-gezeigt.  Daraus folgt sofort $\df{f}(\bar{x}) = 0$. \hspace*{\fill} $\Box$
-\vspace*{0.3cm}
+gezeigt.  Daraus folgt sofort $\df{f}(\bar{x}) = 0$. \qed
 
-\noindent
+\remark
 Analog zur Definition eines lokalen Maximums kann auch der Begriff eines \emph{lokalen Minimums}
-definiert werden.  Auch in einem lokalen Minimum hat die Ableitung den Wert 0.
+definiert werden.  Auch in einem lokalen Minimum $\bar{x}$ einer Funktion $f$ hat die Ableitung den Wert 0.  
+Um dies einzusehen, können wir die Funktion
+$g := \bigl(x \mapsto -f(x)\bigr)$ betrachten, denn die Funktion hat genau dann an der Stelle $\bar{x}$ ein
+lokales Maximum, wenn die Funktion $f$ dort ein lokales Minimum hat. \eox
 
 \begin{Satz}
  Ist die Funktion $f:[a,b] \rightarrow \mathbb{R}$ stetig, so nimmt $f$ auf dem Intervall
@@ -630,6 +630,9 @@ definiert werden.  Auch in einem lokalen Minimum hat die Ableitung den Wert 0.
 \eox
 \end{Satz}
 
+Ein Beweis dieses Satzes lässt sich mit Hilfe des Verfahrens der Intervall-Halbierung führen und
+verläuft ähnlich wie der Beweis des Zwischenwert-Satzes.  Aus Zeitgründen verzichten wir darauf, den
+Beweis auszuführen.
 
 \begin{Satz}[\href{http://en.wikipedia.org/wiki/Michel_Rolle}{Michel Rolle}, \label{satz:rolle} 1652 -- 1719]
   Ist die Funktion \mbox{$f:[a,b]\rightarrow \mathbb{R}$} differenzierbar und gilt außer\-dem $f(a) = f(b)$, dann gibt es ein
@@ -679,6 +682,7 @@ Aus dem Satz von Rolle folgern wir später zwei wichtige Mittelwert-Sätze und den
 \textsl{L'H\^opital} (Guillaume Fran\c{c}ois Antoine, Marquis de L'H\^opital, 1661--1704).
 
 \begin{Satz}[Mittelwert-Satz der Differential-Rechnung, \href{http://de.wikipedia.org/wiki/Augustin-Louis_Cauchy}{Augustin-Louis Cauchy}, 1789--1857]
+  \hspace*{\fill} \\
   Ist die Funktion $f:[a,b] \rightarrow \mathbb{R}$ für alle $x\in[a,b]$ differenzierbar, 
   so gilt: 
   \\[0.3cm]
@@ -795,7 +799,7 @@ Der folgende Satz ist für die praktische Berechnung von Grenzwerten unentbehrlic
 
 \begin{Satz}[Guillaume Fran\c{c}ois Antoine, Marquis de L'H\^opital, 1661 --1704] \lb 
   Die Funktionen $f,g: (a,b) \rightarrow \mathbb{R}$ seien
-  differenzierbar , es sei $c \in (a,b)$ und es gelte
+  differenzierbar, es sei $c \in (a,b)$ und es gelte
   \begin{enumerate}
   \item $f(c) = g(c) = 0$ \quad und
   \item $\forall x \in (a,b):  g'(x) \not= 0$.
@@ -833,13 +837,24 @@ $
 \example
 Mit dem Satz von L'H\^opital können wir nun den Grenzwert
 $\ds\lim\limits_{x \rightarrow 0} \frac{\sin(x)}{x}$ noch einmal berechnen: 
-\\[0.3cm]
+\\[0.1cm]
 \hspace*{1.3cm} $\ds\lim\limits_{x \rightarrow 0} \frac{\sin(x)}{x} = \lim\limits_{x \rightarrow 0}
 \frac{\cos(x)}{1} = \cos(0) = 1$.
+\\[0.2cm]
+Sie sollten allerdings sehen, dass wir bei dieser Berechnung ausgenutzt haben, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$\df{}\sin(x) = \cos(x)$
+\\[0.2cm]
+gilt und diese Gleichung konnten wir nur beweisen, weil wir vorher gezeigt hatten, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\lim\limits_{x \rightarrow 0} \frac{\sin(x)}{x} = 1$
+\\[0.2cm]
+ist.
 \eox
-\vspace*{0.3cm}
 
-\noindent
+\remark
 Der Satz von L'H\^opital behält seine Gültigkeit, wenn $x$ gegen Unendlich strebt.  Sind 
 $f,g:\mathbb{R} \rightarrow \mathbb{R}$ differenzierbare Funktionen, so dass der Grenzwert
 \\[0.3cm]
@@ -862,11 +877,12 @@ Wir geben ein Beispiel.  Es gilt
 \hspace*{1.3cm}
 $\ds\lim\limits_{x \rightarrow \infty} \frac{x}{\exp(x)} = \lim\limits_{x \rightarrow \infty} \frac{1}{\exp(x)} = 0$.
 \\[0.3cm]
-Der Satz von L'H\^opital lässt sich iteriert anwenden.  Beispielsweise gilt
+Der Satz von L'H\^opital lässt sich auch iteriert anwenden.  Beispielsweise gilt
 \\[0.3cm]
 \hspace*{1.3cm}
-$\ds\lim\limits_{x \rightarrow \infty} \frac{x^2}{\exp(x)} = \lim\limits_{x \rightarrow \infty} \frac{2\cdot x}{\exp(x)} =\lim\limits_{x \rightarrow \infty} \frac{2}{\exp(x)} = 0$.
-\vspace*{0.3cm}
+$\ds\lim\limits_{x \rightarrow \infty} \frac{x^2}{\exp(x)} = \lim\limits_{x \rightarrow \infty}
+\frac{2\cdot x}{\exp(x)} =\lim\limits_{x \rightarrow \infty} \frac{2}{\exp(x)} = 0$. \eox
+
 
 \begin{Definition}[Schnelleres Wachstum]
   Wir sagen, dass die Funktion $x \mapsto f(x)$ für $x \rightarrow \infty$ \emph{schneller als} die
@@ -887,7 +903,7 @@ Damit sehen wir, dass die Exponential-Funktion schneller wächst als jede Potenz.
 \eox
 
 \exercise
-\begin{enumerate}
+\begin{enumerate}[(a)]
 \item Zeigen Sie, dass die Funktion $\ds x \mapsto e^{\ln(x) \cdot \ln(x)}$ für alle $n \in \mathbb{N}$ schneller
       als die Funktion $x \mapsto x^n$ wächst.
 \item Zeigen Sie, dass die Funktion $\ds x \mapsto e^x$ schneller wächst als die Funktion
@@ -895,17 +911,11 @@ Damit sehen wir, dass die Exponential-Funktion schneller wächst als jede Potenz.
 \end{enumerate} 
 
 \exercise
-Berechnen Sie den Grenzwert
-\\[0.2cm]
-\hspace*{1.3cm}
-$\ds\lim\limits_{x \rightarrow 0} x \cdot \ln(x)$.  \eox
-
-\exercise
-Berechnen Sie den Grenzwert
-\\[0.2cm]
-\hspace*{1.3cm}
-$\ds\lim\limits_{x \rightarrow \infty} \sqrt{x + \sqrt{x\;}\;} - \sqrt{x\;}$.  \eox
-
+Berechnen Sie die folgenden Grenzwerte:
+\begin{enumerate}[(a)]
+\item $\ds\lim\limits_{x \rightarrow 0} x \cdot \ln(x)$,
+\item $\ds\lim\limits_{x \rightarrow \infty} \sqrt{x + \sqrt{x\;}\;} - \sqrt{x\;}$.  \eox
+\end{enumerate}
 
 \section{Monotonie und Konvexität}
 Im Folgenden bezeichnet $D$ entweder ein
@@ -931,22 +941,22 @@ oder die Menge $\mathbb{R}$ der reellen Zahlen.
   Eine Funktion $f: D \rightarrow \mathbb{R}$ ist \emph{monoton steigend} g.d.w.
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\forall x,y \in D: x < y \rightarrow f(x) \leq f(y)$
+  $\forall x,y \in D:\bigl(x < y \rightarrow f(x) \leq f(y)\bigr)$
   \\[0.2cm]
   gilt.  Die Funktion $f$ ist \emph{streng monoton steigend}, wenn die schärfere Bedingung
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\forall x,y \in D: x < y \rightarrow f(x) < f(y)$
+  $\forall x,y \in D:\bigl(x < y \rightarrow f(x) < f(y)\bigr)$
   \\[0.2cm]
   erfüllt ist.  Weiter heißt  $f$ \emph{monoton fallend}, wenn
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\forall x,y \in D: x < y \rightarrow f(x) \geq f(y)$
+  $\forall x,y \in D:\bigl(x < y \rightarrow f(x) \geq f(y)\bigr)$
   \\[0.2cm]
   gilt.  Analog ist $f$ \emph{streng monoton fallend}, falls die folgende Bedingung gilt:
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\forall x,y \in D: x < y \rightarrow f(x) > f(y)$.
+  $\forall x,y \in D:\bigl(x < y \rightarrow f(x) > f(y)\bigr)$.
   \eod
 \end{Definition}
 
@@ -957,6 +967,7 @@ oder die Menge $\mathbb{R}$ der reellen Zahlen.
   \hspace*{1.3cm} $\forall x \in D: f'(x) \geq 0$.
   \eod
 \end{Satz}
+\pagebreak
 
 \noindent
 \textbf{Beweis}: Da es sich bei diesem Beweis um eine "genau-dann-wenn"-Aussage handelt, spalten wir
@@ -1027,14 +1038,15 @@ Zeigen Sie, dass die Funktion $f$ dann \underline{stren}g monoton steigend ist.
 Die Funktion $x \mapsto x^3$ ist streng monoton steigend, aber an der Stelle $x=0$
 verschwindet die Ableitung dieser Funktion.  Dies zeigt, dass sich die Aussage des letzten
 Satzes nicht umkehren lässt.
+\pagebreak
 
 \begin{Definition}[strenges lokales Minimum] \lb
   Eine Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ hat im Punkt $\bar{x}\in \mathbb{R}$
   ein \emph{strenges lokales Minimum}, wenn gilt:
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\exists \varepsilon \in \mathbb{R}_+: \forall x \in \mathbb{R}: 
-  |x - \bar{x}| < \varepsilon \wedge\ x \not= \bar{x} \rightarrow f(x) > f(\bar{x})$.
+  $\exists \varepsilon \in \mathbb{R}_+: \forall x \in \mathbb{R}:\bigl( 
+  |x - \bar{x}| < \varepsilon \wedge\ x \not= \bar{x} \rightarrow f(x) > f(\bar{x})\bigr)$.
 \eod
 \end{Definition}
 
@@ -1055,8 +1067,10 @@ Satzes nicht umkehren lässt.
 \proof Da die zweite Ableitung $f''(x)$ stetig ist, können wir $\varepsilon := f''(x_0) > 0$
 setzen und finden dann ein $\delta > 0$, so dass
 \\[0.2cm]
-\hspace*{1.3cm} $\forall x \in \mathbb{R}: |x - x_0| < \delta \rightarrow |f''(x) - f''(x_0)|
-< \varepsilon = f''(x_0)$.
+\hspace*{1.3cm}
+ $\forall x \in \mathbb{R}:\bigl(
+    |x - x_0| < \delta \rightarrow |f''(x) - f''(x_0)| < \varepsilon = f''(x_0)\bigr)
+$.
 \\[0.2cm]
 gilt.  Subtrahieren wir $|f''(x) - f''(x_0)|$ auf beiden Seiten dieser Gleichung, so folgt, dass für
 alle $x \in \mathbb{R}$ mit $|x - x_0| < \delta$ die Ungleichung
@@ -1109,13 +1123,15 @@ $x_0$ haben. \qed
 $f'(x_0) = 0 \wedge f''(x_0) < 0$.
 \\[0.2cm]
 erfüllt ist, dann hat die Funktion an der Stelle $x_0$ ein strenges lokales Maximum. \eox
+\pagebreak
 
 \begin{Definition}[konvex, konkav]
 Eine Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ heißt \emph{konvex} genau dann, wenn 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall x_1,x_2 \in \mathbb{R}:\forall t\in [0,1]: 
+$\forall x_1,x_2 \in \mathbb{R}:\forall t\in [0,1]: \bigl(
   f\bigl(t \cdot x_1 + (1-t)\cdot x_2\bigr) \leq t \cdot f(x_1) + (1 - t) \cdot f(x_2)
+  \bigr)
 $
 \\[0.2cm]
 gilt.  Geometrisch bedeutet dies, dass die Funktionswerte der Funktion $f$  unterhalb

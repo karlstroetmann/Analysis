@@ -17,10 +17,10 @@ f := procedure(x) {
     return x ** 2 - 2;
 };
 
-x := secant(f, 1, 2, 12);
+// x := secant(f, 1, 2, 12);
 
-print("x = $nDecimalPlaces(x, 80)$");
-print("\n\n\n");
+// print("x = $nDecimalPlaces(x, 80)$");
+// print("\n\n\n");
 
 
 strange := procedure(x) {
