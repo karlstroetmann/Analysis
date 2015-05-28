@@ -681,6 +681,28 @@ Fälle:
 Aus dem Satz von Rolle folgern wir später zwei wichtige Mittelwert-Sätze und den Satz von 
 \textsl{L'H\^opital} (Guillaume Fran\c{c}ois Antoine, Marquis de L'H\^opital, 1661--1704).
 
+\exercise
+Eine Konservendose ist ein Zylinder, dessen Volumen $V$ durch die Formel
+\\[0.2cm]
+\hspace*{1.3cm}
+$V = \pi \cdot r^2 \cdot h$
+\\[0.2cm]
+gegeben ist.  Hier bezeichnet $r$ den Radius des Kreises der Grundfläche der Konservendose, während
+$h$ die Höhe der Konservendose bezeichnet.  Die Oberfläche der Konservendose ist durch die Formel
+\\[0.2cm]
+\hspace*{1.3cm}
+$O = 2 \cdot \pi \cdot r^2 + 2 \cdot \pi \cdot r \cdot h$
+\\[0.2cm]
+gegeben.  Nehmen Sie an, dass Sie eine Konservendose so konstruieren sollen, dass die Oberfläche
+dieser Konservendose bei einem fest vorgegebenem Volumen $V_0$  minimal wird.  Berechnen Sie das
+Verhältnis
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\frac{\;h\;}{r}$,
+\\[0.2cm]
+von der Höhe $h$ zum Radius $r$ für eine solche Dose.  \eox
+\eox
+
 \begin{Satz}[Mittelwert-Satz der Differential-Rechnung, \href{http://de.wikipedia.org/wiki/Augustin-Louis_Cauchy}{Augustin-Louis Cauchy}, 1789--1857]
   \hspace*{\fill} \\
   Ist die Funktion $f:[a,b] \rightarrow \mathbb{R}$ für alle $x\in[a,b]$ differenzierbar, 
@@ -756,6 +778,7 @@ Beweisen Sie den erweiterten Mittelwert-Satz.  Betrachten Sie dazu die Funktion
 $h(x) := \alpha \cdot f(x) - \beta \cdot g(x)$
 \\[0.2cm]
 und bestimmen Sie $\alpha$ und $\beta$ so, dass Sie auf die Funktion $h$ den Satz von Rolle anwenden können. \eox
+\vspace*{0.3cm}
 
 % \solution
 % Nach dem Mittelwert-Satz der Differential-Rechnung gibt es ein $c \in [a,b]$, so dass
@@ -859,7 +882,7 @@ Der Satz von L'H\^opital behält seine Gültigkeit, wenn $x$ gegen Unendlich streb
 $f,g:\mathbb{R} \rightarrow \mathbb{R}$ differenzierbare Funktionen, so dass der Grenzwert
 \\[0.3cm]
 \hspace*{1.3cm}
-$\lim\limits_{x \rightarrow \infty} \frac{f'(x)}{g'(x)}$ 
+$\ds\lim\limits_{x \rightarrow \infty} \frac{f'(x)}{g'(x)}$ 
 \\[0.3cm]
 existiert, und gilt entweder 
 \\[0.3cm]
@@ -967,7 +990,7 @@ oder die Menge $\mathbb{R}$ der reellen Zahlen.
   \hspace*{1.3cm} $\forall x \in D: f'(x) \geq 0$.
   \eod
 \end{Satz}
-\pagebreak
+
 
 \noindent
 \textbf{Beweis}: Da es sich bei diesem Beweis um eine "genau-dann-wenn"-Aussage handelt, spalten wir
@@ -1038,7 +1061,7 @@ Zeigen Sie, dass die Funktion $f$ dann \underline{stren}g monoton steigend ist.
 Die Funktion $x \mapsto x^3$ ist streng monoton steigend, aber an der Stelle $x=0$
 verschwindet die Ableitung dieser Funktion.  Dies zeigt, dass sich die Aussage des letzten
 Satzes nicht umkehren lässt.
-\pagebreak
+
 
 \begin{Definition}[strenges lokales Minimum] \lb
   Eine Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ hat im Punkt $\bar{x}\in \mathbb{R}$
@@ -1123,7 +1146,7 @@ $x_0$ haben. \qed
 $f'(x_0) = 0 \wedge f''(x_0) < 0$.
 \\[0.2cm]
 erfüllt ist, dann hat die Funktion an der Stelle $x_0$ ein strenges lokales Maximum. \eox
-\pagebreak
+
 
 \begin{Definition}[konvex, konkav]
 Eine Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ heißt \emph{konvex} genau dann, wenn 
@@ -1252,7 +1275,7 @@ $f$  konvex \quad $\Leftrightarrow$ \quad $\forall x \in \mathbb{R}: f''(x) \geq
   t \cdot g(x_1) + (1 - t) \cdot g(x_2) \geq g\bigl(t \cdot x_1 + (1-t) \cdot x_2\bigr)    
   \end{equation}
   Nun gilt 
-  \\[0.2cm]
+  \\[-0.2cm]
   \hspace*{1.3cm}
   $\ds t \cdot x_1 + (1-t) \cdot x_2 = 
    \frac{1}{2} \cdot x_0 - \frac{1}{2} \cdot\frac{\delta_2}{2} + 
@@ -1297,7 +1320,7 @@ $f$  konvex \quad $\Leftrightarrow$ \quad $\forall x \in \mathbb{R}: f''(x) \geq
     \bruch{f(x_0) - f(x_1)}{x_0 - x_1} \leq \bruch{f(x_2) - f(x_0)}{x_2 - x_0}.    
   \end{equation}
   Es gilt
-  \\[0.2cm]
+  \\[-0.2cm]
   \hspace*{1.3cm}
   $x_0 - x_1 = t \cdot x_1 + (1 - t) \cdot x_2 - x_1 = (1-t) \cdot (x_2 - x_1)$
   \\[0.2cm]
@@ -1321,7 +1344,7 @@ $f$  konvex \quad $\Leftrightarrow$ \quad $\forall x \in \mathbb{R}: f''(x) \geq
   \\[0.2cm]
   Das ist aber gerade die Konvexität der Funktion $f$. \qed
 \end{enumerate}
-
+\pagebreak
 
 \section{Die Exponential-Funktion}
 Wir wollen in diesem Abschnitt zeigen, dass für die früher definierte
@@ -1498,8 +1521,6 @@ so erhalten wir
 \\[0.2cm]
 \hspace*{1.3cm}
 $\exp(x+y) = \exp(y) \cdot \exp(x)$. \qed
-\vspace*{0.3cm}
-
 
 \remark
 Mit Hilfe der Funktional-Gleichung der Exponential-Funktion können wir nun für beliebige $\lambda \in \mathbb{R}_0$
