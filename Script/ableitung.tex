@@ -33,7 +33,7 @@ Beachten Sie, dass wir in der obigen Definition den Ausdruck
 \\[0.3cm]
 \hspace*{1.3cm} $\bruch{f(\widehat{x} + h) - f(\widehat{x})}{h}$ \\[0.3cm]
 als Funktion von $h$ auffassen.  Dieser Ausdruck wird auch als \emph{Differential-Quotient}
-bezeichnet.  Er gibt die Steigung einer Sekante an, die die Funktion $x \mapsto f(x)$
+bezeichnet.  Er gibt die Steigung einer Sekante an, welche die Funktion $x \mapsto f(x)$
 in den Punkten $\widehat{x}$ und $\widehat{x} + h$ schneidet.  Definieren wir 
 \\[0.3cm]
 \hspace*{1.3cm}
@@ -51,8 +51,8 @@ und andererseits haben wir
 \hspace*{1.3cm}
 $f(\widehat{x} + h) = f(\widehat{x}) + h \cdot \df{f}(\widehat{x}) + r(h)$.
 \\[0.3cm]
-Die Funktion $r(h)$ ist also der Fehler, der bei der linearen Approximation
-entsteht.  \eox
+Die Funktion $r(h)$ ist also der Fehler, der entsteht, wenn wir die Funktion $f(x)$ durch ihre
+Tangente im Punkt $\bigl\langle\widehat{x}, f(\widehat{x})\bigr\rangle$ approximieren.  \eox
 
 
 \remark
@@ -302,11 +302,49 @@ mit $|x| < R$ differenzierbar und es gilt
 \hspace*{1.3cm} $f'(x) = \sum\limits_{n=1}^\infty n \cdot a_n \cdot x^{n-1}$.
 \end{Satz}
 
-\noindent
+\remark
 Der letzte Satz besagt, dass Potenzreihen innerhalb ihres Konvergenz-Radius gliedweise
 differenziert werden können.   Ein Beweis dieses Satzes ist mit den uns zur Verfügung
-stehenden Hilfsmitteln nicht möglich. \eox
+stehenden Hilfsmitteln nicht möglich.  Wir geben statt dessen ein Beispiel, welches zeigt, dass
+Grenzwertprozesse im Allgemeinen nicht ohne weitere Voraussetzungen vertauscht werden dürfen.
+Dazu definieren wir für alle $n \in \mathbb{N}$ die Funktion $f_n:\mathbb{R} \rightarrow \mathbb{R}$ als
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds f_n(x) := \frac{\;\sin(n \cdot x)\;}{n}$.
+\\[0.2cm]
+Aus der Tatsache, dass $|\sin(x)| \leq 1$ ist für alle $x\in \mathbb{R}$ folgt
+\\[0.2cm]
+\hspace*{1.3cm}
+$g(x) := \ds\lim\limits_{n\rightarrow\infty} f_n(x) = \lim\limits_{n\rightarrow\infty} \frac{\;\sin(n \cdot x)\;}{n} = 0$. 
+\\[0.2cm]
+Wir definieren für alle $n\in\mathbb{N}$ die Funktion $g_n(x)$ als die Ableitung der Funktion $f_n(x)$:
+\\[0.2cm]
+\hspace*{1.3cm}
+$g_n(x) := f_n'(x) = \cos(n \cdot x)$.
+\\[0.2cm]
+Wenn wir den Limes $n \rightarrow \infty$ mit dem Differenzieren vertauschen dürften, dann
+würden wir erwarten, dass 
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lcl}
+g(x) & = & \ds \df{} \lim\limits_{n\rightarrow\infty} \frac{\;\sin(n \cdot x)\;}{n} \\[0.2cm]
+     & = & \lim\limits_{n\rightarrow\infty} \df{} \frac{\;\sin(n \cdot x)\;}{n} \\[0.2cm]
+     & = & \ds \lim\limits_{n\rightarrow\infty} \cos(n \cdot x) \\[0.2cm]
+\end{array}
+$
+\\[0.2cm]
+gelten würde.  
+Für $x = 0$ gilt aber
+\\[0.2cm]
+\hspace*{1.3cm}
+$\lim\limits_{n\rightarrow\infty} \;\cos(n \cdot 0) = \cos(0) = 1 \not= 0 = g(0)$.
+\\[0.2cm]
+Dieses Beispiel zeigt, dass Grenzwertprozesse im Allgemeinen \underline{nicht} vertauscht werden
+dürfen. 
+\eox
 
+\examples
 Wir berechnen als nächstes die Ableitung einiger wichtiger Funktionen.  
 \begin{enumerate}
 \item Die Exponential-Funktion $\exp(x)$ ist definiert als 
@@ -347,8 +385,8 @@ Wir berechnen als nächstes die Ableitung einiger wichtiger Funktionen.
         \label{fig:circle}
       \end{figure}
 \item Um die Ableitung der Funktion $x \mapsto \sin(x)$ berechnen zu können, 
-      betrachten wir die Definition von  Sinus und Tangens am Einheitskreis.
-      Aus der Definition von Sinus und Tangens folgt die Ungleichung 
+      betrachten wir in Abbildung \ref{fig:circle} auf Seite \pageref{fig:circle} die Definition von
+      Sinus und Tangens am Einheitskreis.  Aus der Definition von Sinus und Tangens folgt die Ungleichung 
       \\[0.3cm]
       \hspace*{1.3cm}
       $\sin(\varphi) \leq \varphi \leq \tan(\varphi) = \bruch{\sin(\varphi)}{\cos(\varphi)}$
@@ -368,8 +406,8 @@ Wir berechnen als nächstes die Ableitung einiger wichtiger Funktionen.
       \hspace*{1.3cm}
       $1 \geq \lim\limits_{\varphi \rightarrow 0} \bruch{\sin(\varphi)}{\varphi} \geq \lim\limits_{\varphi \rightarrow 0}\cos(\varphi)$
       \\[0.3cm]
-      Wegen $\lim_{\varphi \rightarrow 0} \cos(\varphi) = \cos(0) = 1$ folgt daraus
-      \\[0.3cm]
+      Wegen $\lim\limits_{\varphi \rightarrow 0} \cos(\varphi) = \cos(0) = 1$ folgt daraus
+      \\[0.1cm]
       \hspace*{1.3cm}
       $\lim\limits_{\varphi \rightarrow 0} \bruch{\sin(\varphi)}{\varphi} = 1$.
       \\[0.3cm]
@@ -447,7 +485,7 @@ Wir berechnen als nächstes die Ableitung einiger wichtiger Funktionen.
       & = & \bruch{\Bigl(\frac{d\;}{dx} \sin(x)\Bigr) \cdot \cos(x) - \sin(x) \cdot \Bigl(\frac{d\;}{dx} \cos(x)\Bigr)}{\cos^2(x)} \\[0.5cm]
       & = & \bruch{\cos(x) \cdot \cos(x) - \sin(x) \cdot \bigr(-\sin(x)\bigr)}{\cos^2(x)} \\[0.5cm]
       & = & \bruch{\cos^2(x) + \sin^2(x)}{\cos^2(x)} \\[0.5cm]
-      & = & \bruch{1}{\cos^2(x)} \\[0.5cm]
+      & = & \bruch{1}{\cos^2(x)} = \sec^2(x) 
       \end{array}
       $
 \item Die Ableitung der Arcus-Tangens-Funktion kann nun mit dem selben Trick berechnet werden,
@@ -499,11 +537,35 @@ Wir berechnen als nächstes die Ableitung einiger wichtiger Funktionen.
 \end{enumerate}
 
 \exercise
-Zeigen Sie 
-\\[0.3cm]
-\hspace*{1.3cm} $\ds\frac{d\;}{dx} \arcsin(x) = \bruch{1}{\sqrt{1 - x^2}}$.  \eox
+\begin{enumerate}
+\item Zeigen Sie 
+      \\[0.3cm]
+      \hspace*{1.3cm} 
+      $\ds\frac{d\;}{dx} \arcsin(x) = \bruch{1}{\sqrt{1 - x^2}}$.  
+\item Zeigen Sie 
+      \\[0.3cm]
+      \hspace*{1.3cm} 
+      $\ds\frac{d\;}{dx} \arccos(x) = -\bruch{1}{\sqrt{1 - x^2}}$.   \eox
+\end{enumerate}
 
 
+\exercise
+Der Sekans eines Winkels $\varphi$ ist als
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds \sec(\varphi) := \frac{1}{\cos(\varphi)}$
+\\[0.2cm]
+definiert.  Entsprechend ist der Kosekans eines Winkels $\varphi$ als
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds \csc(\varphi) := \frac{1}{\sin(\varphi)}$
+\\[0.2cm]
+definiert.  Beweisen Sie die Gleichungen
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds \df{} \sec(x) = \sec(x) \cdot \tan(x)$ \quad und \quad
+$\ds \df{} \csc(x) = -\csc(x) \cdot \cot(x)$. \eox
+\pagebreak
 
 \exercise
 \begin{enumerate}[(a)]
@@ -630,9 +692,9 @@ lokales Maximum, wenn die Funktion $f$ dort ein lokales Minimum hat. \eox
 \eox
 \end{Satz}
 
-Ein Beweis dieses Satzes lässt sich mit Hilfe des Verfahrens der Intervall-Halbierung führen und
-verläuft ähnlich wie der Beweis des Zwischenwert-Satzes.  Aus Zeitgründen verzichten wir darauf, den
-Beweis auszuführen.
+Die wesentliche Idee des Beweises besteht darin zu zeigen, dass die Funktion $f$ ein Supremum hat.
+Im nächsten Schritt wird dann gezeigt, dass dieses Supremum auch tatsächlich als Funktionswert auftritt.
+Aus Zeitgründen müssen wir darauf verzichten, den Beweis auszuführen.
 
 \begin{Satz}[\href{http://en.wikipedia.org/wiki/Michel_Rolle}{Michel Rolle}, \label{satz:rolle} 1652 -- 1719]
   Ist die Funktion \mbox{$f:[a,b]\rightarrow \mathbb{R}$} differenzierbar und gilt außer\-dem $f(a) = f(b)$, dann gibt es ein
@@ -679,7 +741,7 @@ Fälle:
       \hspace*{\fill} $\Box$
 \end{enumerate}
 Aus dem Satz von Rolle folgern wir später zwei wichtige Mittelwert-Sätze und den Satz von 
-\textsl{L'H\^opital} (Guillaume Fran\c{c}ois Antoine, Marquis de L'H\^opital, 1661--1704).
+\textsl{L'H\^opital}.
 
 \exercise
 Eine Konservendose ist ein Zylinder, dessen Volumen $V$ durch die Formel
@@ -701,7 +763,7 @@ Verhältnis
 $\ds\frac{\;h\;}{r}$,
 \\[0.2cm]
 von der Höhe $h$ zum Radius $r$ für eine solche Dose.  \eox
-\eox
+
 
 \begin{Satz}[Mittelwert-Satz der Differential-Rechnung, \href{http://de.wikipedia.org/wiki/Augustin-Louis_Cauchy}{Augustin-Louis Cauchy}, 1789--1857]
   \hspace*{\fill} \\
@@ -820,7 +882,7 @@ und bestimmen Sie $\alpha$ und $\beta$ so, dass Sie auf die Funktion $h$ den Sat
 
 Der folgende Satz ist für die praktische Berechnung von Grenzwerten unentbehrlich.
 
-\begin{Satz}[Guillaume Fran\c{c}ois Antoine, Marquis de L'H\^opital, 1661 --1704] \lb 
+\begin{Satz}[Guillaume Fran\c{c}ois Antoine, Marquis de L'H\^opital, 1661--1704] \lb 
   Die Funktionen $f,g: (a,b) \rightarrow \mathbb{R}$ seien
   differenzierbar, es sei $c \in (a,b)$ und es gelte
   \begin{enumerate}
@@ -906,8 +968,11 @@ Der Satz von L'H\^opital lässt sich auch iteriert anwenden.  Beispielsweise gilt
 $\ds\lim\limits_{x \rightarrow \infty} \frac{x^2}{\exp(x)} = \lim\limits_{x \rightarrow \infty}
 \frac{2\cdot x}{\exp(x)} =\lim\limits_{x \rightarrow \infty} \frac{2}{\exp(x)} = 0$. \eox
 
+\exercise
+Berechnen Sie den Grenzwert \quad $\ds\lim\limits_{x \rightarrow 0} \frac{\cos(x) - 1}{x^2}$. \eox
 
-\begin{Definition}[Schnelleres Wachstum]
+
+\begin{Definition}[Schnelleres Wachstum] \lb
   Wir sagen, dass die Funktion $x \mapsto f(x)$ für $x \rightarrow \infty$ \emph{schneller als} die
   Funktion $x \mapsto g(x)$ \emph{wächst}, falls 
   \\[0.2cm]
@@ -1060,7 +1125,7 @@ Zeigen Sie, dass die Funktion $f$ dann \underline{stren}g monoton steigend ist.
 \textbf{Bemerkung:}
 Die Funktion $x \mapsto x^3$ ist streng monoton steigend, aber an der Stelle $x=0$
 verschwindet die Ableitung dieser Funktion.  Dies zeigt, dass sich die Aussage des letzten
-Satzes nicht umkehren lässt.
+Satzes nicht umkehren lässt. \eox
 
 
 \begin{Definition}[strenges lokales Minimum] \lb
@@ -1212,17 +1277,17 @@ Sekante liegen.
 
 \begin{Lemma}[Invarianz der Konvexität unter linearen Transformationen]
   \label{lemma:konvex_invarianz} \lb
-  Die Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ sei konvex und es sei $\alpha \in \mathbb{R}$.
+  Die Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ sei konvex und es seien $\alpha, \beta \in \mathbb{R}$.
   Definieren wir die Funktion $g:\mathbb{R} \rightarrow \mathbb{R}$ als
   \\[0.2cm]
   \hspace*{1.3cm}
-  $g(x) := f(x) + \alpha \cdot x$,
+  $g(x) := f(x) + \alpha \cdot x + \beta$,
   \\[0.2cm]
   so ist auch die Funktion $g$ konvex.  Eine entsprechende Aussage gilt auch für konkave Funktionen.
 \end{Lemma}
 
 \exercise
-Beweisen Sie das vorangehende Lemma.
+Beweisen Sie das vorangehende Lemma. \eox
 
 \begin{Satz}
 Die Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ sei zweimal differenzierbar und die Funktion 
@@ -1272,7 +1337,7 @@ $f$  konvex \quad $\Leftrightarrow$ \quad $\forall x \in \mathbb{R}: f''(x) \geq
   so folgt also
   \begin{equation}
     \label{eq:konvex1}
-  t \cdot g(x_1) + (1 - t) \cdot g(x_2) \geq g\bigl(t \cdot x_1 + (1-t) \cdot x_2\bigr)    
+  t \cdot g(x_1) + (1 - t) \cdot g(x_2) \geq g\bigl(t \cdot x_1 + (1-t) \cdot x_2\bigr).
   \end{equation}
   Nun gilt 
   \\[-0.2cm]
@@ -1347,8 +1412,7 @@ $f$  konvex \quad $\Leftrightarrow$ \quad $\forall x \in \mathbb{R}: f''(x) \geq
 \pagebreak
 
 \section{Die Exponential-Funktion}
-Wir wollen in diesem Abschnitt zeigen, dass für die früher definierte
-Exponential-Funktion, die wir als
+Wir wollen in diesem Abschnitt zeigen, dass für die Exponential-Funktion, die wir als
 \\[0.2cm]
 \hspace*{1.3cm}
 $\exp(x) := \sum\limits_{n=0}^\infty \bruch{1}{n!} \cdot x^{n}$ 
@@ -1381,13 +1445,17 @@ $f(x) = c$ \quad für alle $x \in \mathbb{R}$ ist.
 \end{Lemma}
 
 \proof
-Wir führen den Beweis indirekt und nehmen an, dass die Funktion $f$ nicht konstant ist.
-Es gibt dann also zwei Zahlen $x_1, x_2\in \mathbb{R}$, so dass 
+Wir betrachten zwei beliebige Zahlen $x_1, x_2\in \mathbb{R}$, für die
 \\[0.2cm]
 \hspace*{1.3cm}
-$x_1 \not= x_2$ \quad und \quad $f(x_1) \not= f(x_2)$
+$x_1 \not= x_2$ 
 \\[0.2cm]
-gilt.  O.B.d.A. sei $x_1 < x_2$.  Nach dem Mittelwert-Satz gibt es nun ein $c \in [x_1,x_2]$, so dass
+gilt.  O.B.d.A. sei $x_1 < x_2$.  Wir zeigen, dass dann 
+\\[0.2cm]
+\hspace*{1.3cm}
+$f(x_1) = f(x_2)$
+\\[0.2cm]
+gilt.  Nach dem Mittelwert-Satz gibt es ein $c \in [x_1,x_2]$, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
 $f'(c) = \bruch{f(x_2) - f(x_1)}{x_2 - x_1}$ 
@@ -1402,7 +1470,8 @@ Multiplikation dieser Gleichung mit $x_2 - x_1$ liefert die Gleichung
 \hspace*{1.3cm}
 $0 = f(x_2) - f(x_1)$
 \\[0.2cm]
-und daraus folgt sofort $f(x_1) = f(x_2)$.  Damit ist die Annahme $f(x_1) \not= f(x_2)$ widerlegt. \qed
+und daraus folgt sofort $f(x_1) = f(x_2)$.  Damit ist gezeigt, dass die Funktion $f$ für alle
+Argumente den selben Wert liefert und also konstant ist. \qed
 
 \exercise
 Zeigen Sie: Ist die Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ zweimal differenzierbar und gilt
