@@ -42,11 +42,11 @@ Wir beweisen zunächst durch Induktion über $k$, dass für alle $k\in\mathbb{N}_0$
 \begin{equation}
   \label{eq:taylorDiff}
   \begin{array}[t]{lcl}    
-  f^{(k)}(x) & = & \sum\limits_{n=k}^\infty a_n \cdot  n \cdot  (n-1) \cdot  \cdots \cdot  \bigl(n-(k-1)\bigr) \cdot  x^{n-k} \\[0.3cm]
-             & = & \sum\limits_{n=k}^\infty 
+  f^{(k)}(x) & = & \ds\sum\limits_{n=k}^\infty a_n \cdot  n \cdot  (n-1) \cdot  \cdots \cdot  \bigl(n-(k-1)\bigr) \cdot  x^{n-k} \\[0.3cm]
+             & = & \ds\sum\limits_{n=k}^\infty 
                    a_n \cdot \left( \prod\limits_{i=0}^{k-1} (n-i)\right) \cdot x^{n-k}
                    \\[0.4cm]
-             & = & \sum\limits_{n=k}^\infty \bruch{n!}{(n-k)!} \cdot a_n \cdot x^{n-k}
+             & = & \ds\sum\limits_{n=k}^\infty \bruch{n!}{(n-k)!} \cdot a_n \cdot x^{n-k}
   \end{array}
 \end{equation}
 gilt.  Hierbei bezeichnet $f^{(k)}(x)$ die $k$-te Ableitung der Funktion $f$ an der Stelle
@@ -57,8 +57,8 @@ $x$.
               $
               \begin{array}[t]{lcl}              
               f^{(0)}(x) & = & f(x) \\[0.3cm]
-                         & = & \sum\limits_{n=0}^\infty a_n \cdot x^{n} \\[0.5cm]
-                         & = & \sum\limits_{n=k}^\infty \bruch{n!}{(n-0)!} \cdot a_n \cdot x^{n-k}.
+                         & = & \ds\sum\limits_{n=0}^\infty a_n \cdot x^{n} \\[0.5cm]
+                         & = & \ds\sum\limits_{n=k}^\infty \bruch{n!}{(n-0)!} \cdot a_n \cdot x^{n-k}.
               \end{array}
               $ 
 \item[I.S.:] $k \mapsto k + 1$.  \quad Es gilt 
@@ -223,7 +223,7 @@ Setzen wir in der Gleichung
   \label{eq:taylorErrna}
 \bruch{\erri{\chi_n}{n}}{(n+1)!\cdot \chi_n} = \bruch{\textsl{error}_n(x)}{x^{n+1}}
 \end{equation}
-gezeigt. Wir wenden nun den erweiterten Mittelwert-Satz auf die Funktionen $\erri{x}{n}$
+gezeigt. Wir wenden den erweiterten Mittelwert-Satz auf die Funktionen $\erri{x}{n}$
 und $x \mapsto (n+1)!\cdot x$ an.  Dann erhalten wir ein $\chi \in [0,\chi_n] \subseteq [0,x]$, so dass
 \begin{equation}
   \label{eq:taylorErrn}
@@ -324,15 +324,17 @@ Für den Abbruch-Fehler haben wir also
 \\[0.2cm]
 \hspace*{1.3cm} $\textsl{error}_n(x) = (-1)^n \cdot \bruch{1}{(1+\chi)^{n+1}}\cdot \bruch{x^{n+1}}{n+1}$
 \\[0.2cm]
-mit $\chi \in[0,x]$ und für $x \in (-1, 1]$ geht dieser Wert für $n \rightarrow \infty$ gegen $0$.
+mit $\chi \in[0,x]$ und für $x \in [0, 1]$ geht dieser Wert für $n \rightarrow \infty$ gegen $0$.
 Damit haben wir insgesamt $\textsl{taylor}\bigl(x \mapsto \ln(1+x), x \bigr) = \ln(1+x)$ für $x \in (-1, 1]$ gezeigt und folglich können
 wir
 \\[0.2cm]
 \hspace*{1.3cm}
 \colorbox{orange}{\framebox{$\ds\ln(1+x) = \sum\limits_{k=1}^{\infty} (-1)^{k+1}\cdot \frac{x^k}{k}$}}
 \\[0.2cm]
-schreiben.\footnote{Die Formel gilt auch für für negative $x$, deren Betrag kleiner als 1 ist, aber das können
-wir mit unseren Mitteln nicht beweisen.}
+schreiben.\footnote{
+  Die Formel gilt auch für für negative $x$, deren Betrag kleiner als 1 ist, aber das 
+  ist etwas schwieriger zu beweisen.
+}
  Setzen wir hier für $x$ den Wert 1 ein, so haben wir die Formel
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -459,14 +461,15 @@ berechnen, wobei $\ln(r)$ mit Hilfe der Formel (\ref{eq:Ln}) gefunden wird.
 
 \exercise
  Berechnen Sie die Taylor-Reihen für die Funktionen $x \mapsto \sin(x)$ und $x \mapsto \cos(x)$ geben Sie eine
-Abschätzung für den Abbruch-Fehler an.  Folgern Sie außerdem die auf 
-\href{http://en.wikipedia.org/wiki/Leonard_Euler}{Leonard Euler} (1707 --- 1783) zurück gehende 
+Abschätzung für den Abbruch-Fehler an.  Folgern Sie außerdem die
 \href{http://de.wikipedia.org/wiki/Eulersche_Formel}{Eulersche Formel}
 \\[0.2cm]
 \hspace*{1.3cm}
 \colorbox{orange}{\framebox{$\ds e^{i \cdot x} = \cos(x) + i \cdot \sin(x)$}},
 \\[0.2cm]
-bei der $i$ die imaginäre Einheit bezeichnet, es gilt also $i\cdot i = -1$. \eox
+die auf 
+\href{http://en.wikipedia.org/wiki/Leonard_Euler}{Leonard Euler} (1707 --- 1783) zurück geht.
+\eox
 
 
 \subsection{Berechnung des Arcus-Tangens}

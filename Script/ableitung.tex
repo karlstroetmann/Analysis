@@ -1233,15 +1233,43 @@ $\langle x_1, f(x_1)\rangle$ und $\langle x_2, f(x_2)\rangle$ geht.  Die Gleichu
 ist 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds g(t) = \frac{t-x_1}{x_2-x_1}\cdot f(x_2) + \frac{t-x_2}{x_1-x_2}\cdot f(x_1)$.
+$\ds g(x) = \frac{x-x_1}{x_2-x_1}\cdot f(x_2) + \frac{x-x_2}{x_1-x_2}\cdot f(x_1)$.
 \\[0.2cm]
-Sie können dies sofort verifizieren, denn offenbar ist $g(t)$ in der Variablen $t$ linear und
+Sie können dies sofort verifizieren, denn offenbar ist $g(x)$ in der Variablen $x$ linear und
 andererseits gilt
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds g(x_1) = \frac{x_1-x_1}{x_2-x_1}\cdot f(x_2)+\frac{x_1-x_2}{x_1-x_2}\cdot f(x_1) = f(x_1)$
 \\[0.2cm]
-und analog sehen wir, dass auch $g(x_2) = f(x_2)$ ist.
+und analog sehen wir, dass auch $g(x_2) = f(x_2)$ ist.  Die Tatsache, dass $f(x)$ für $x \in [x_1,x_2]$
+unterhalb der Geraden $g(x)$ liegt, bedeutet, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$f(x) \leq g(x)$  \quad für alle $x \in [x_1,x_2]$
+\\[0.2cm]
+gilt.  Jedes $x \in [x_1,x_2]$ lässt sich in der Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$x = t \cdot x_1 + (1-t) \cdot x_2$
+\\[0.2cm]
+schreiben.  Setzen wir diesen Wert in die Ungleichung $f(x) \leq g(x)$ ein, so erhalten wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{cl}
+      &  f\bigl(t \cdot x_1 + (1-t) \cdot x_2)\bigr) \\[0.2cm]
+ \leq & g\bigl(t \cdot x_1 + (1-t) \cdot x_2)\bigr)  \\[0.2cm]
+  =   & \ds \frac{\bigl(t \cdot x_1 + (1-t) \cdot x_2\bigr) - x_1}{x_2-x_1} \cdot f(x_2) + 
+            \frac{\bigl(t \cdot x_1 + (1-t) \cdot x_2\bigr) - x_2}{x_1-x_1} \cdot f(x_1) 
+        \\[0.4cm]
+  =   & \ds \frac{(1-t) \cdot x_2 - (1-t) \cdot x_1}{x_2-x_1} \cdot f(x_2) + 
+            \frac{t \cdot x_1 - t \cdot x_2}{x_1-x_1} \cdot f(x_1) 
+        \\[0.4cm]
+  =   & \ds (1-t) \cdot f(x_2) + t \cdot f(x_1) 
+\end{array}
+$
+\\[0.2cm]
+und das ist genau die Definition der Konvexität.
 \vspace*{0.2cm}
 
 Eine Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ heißt \emph{konkav} genau dann, wenn 
@@ -1256,8 +1284,7 @@ der Sekante durch die Punkte
 $\bigl\langle x_1, f(x_1) \bigl\rangle$ und $\bigl\langle x_2, f(x_2) \bigl\rangle$.
 \\[0.2cm]
 Abbildung \ref{fig:concav.eps} auf Seite \pageref{fig:concav.eps} zeigt eine konkave Funktion $f$
-zusammen mit einer Sekante $g$.  Es ist deutlich zu sehen, dass hier die Funktionswerte oberhalb der
-Sekante liegen.
+zusammen mit einer Sekante $g$.  
 \eod
 \end{Definition}
 
@@ -1290,6 +1317,10 @@ Sekante liegen.
 
 \exercise
 Beweisen Sie das vorangehende Lemma. \eox
+\pagebreak
+
+\vspace*{\fill}
+\pagebreak
 
 \begin{Satz}
 Die Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ sei zweimal differenzierbar und die Funktion 
@@ -1414,24 +1445,26 @@ $f$  konvex \quad $\Leftrightarrow$ \quad $\forall x \in \mathbb{R}: f''(x) \geq
 \pagebreak
 
 \section{Die Exponential-Funktion}
-Wir wollen in diesem Abschnitt zeigen, dass für die Exponential-Funktion, die wir als
+Wir haben die Exponential-Funktion als die Potenzreihe
 \\[0.2cm]
 \hspace*{1.3cm}
 $\exp(x) := \sum\limits_{n=0}^\infty \bruch{1}{n!} \cdot x^{n}$ 
 \\[0.2cm]
-definiert haben, die Gleichung 
+definiert und gesehen, dass diese Potenzreihe für alle $x \in \mathbb{R}$ konvergiert.
+Wir definieren nun die Eulersche Zahl $e$ (\href{http://de.wikipedia.org/wiki/Leonhard_Euler}{Leonhard Euler},
+1707--1783) mit Hilfe der Exponential-Funktion als
 \\[0.2cm]
 \hspace*{1.3cm}
-$\exp(x) = e^x$ \quad mit $e := \sum\limits_{n=0}^\infty \bruch{1}{n!}$
+$e := \exp(1) = \sum\limits_{n=0}^\infty \bruch{1}{n!} = 
+  2.718\,281\,828\,459\,045\,235\,360\,287\,471\,352\,662\,497\,757\,247\,093\,\cdots
+$.
 \\[0.2cm]
-gilt.  Die oben definierte Zahl $e$ hat den Wert
+Wir wollen in diesem Abschnitt zeigen, dass für die Exponential-Funktion die Gleichung 
 \\[0.2cm]
-\hspace*{0.3cm}
-$e = 2.718\,281\,828\,459\,045\,235\,360\,287\,471\,352\,662\,497\,757\,247\,093\,699\,959\,574\,966\,967\,627\,724\,\cdots$
+\hspace*{1.3cm}
+$\exp(x) = e^x$ \quad 
 \\[0.2cm]
-und wird als Eulersche Zahl (\href{http://de.wikipedia.org/wiki/Leonhard_Euler}{Leonhard Euler},
-1707--1783) bezeichnet.  Zum Nachweis der 
-oben behaupteten Gleichung benötigen wir das folgende Lemma.
+gilt.  Zum Nachweis der oben behaupteten Gleichung benötigen wir das folgende Lemma.
 
 \begin{Lemma} \label{lemma:0_ableitung}
 Ist die Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ für alle $x \in \mathbb{R}$
@@ -1488,7 +1521,7 @@ Funktionen $f:\mathbb{R} \rightarrow \mathbb{R}$ gilt, für deren $n$-te Ableitun
 \\[0.2cm]
 \hspace*{1.3cm}
 $f^{(n)}(x) = 0$ \quad für alle $x \in \mathbb{R}$ ist.  \eox
-
+\pagebreak
 
 \exercise
 Zeigen Sie, dass für alle $x\in \mathbb{R}$
