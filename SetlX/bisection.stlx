@@ -9,10 +9,12 @@ findZero := procedure(f, a, b, n) {
         c := 1/2 * (a + b); 
         if (f(c) < 0) {
             a := c; 
-        } else {
+        } else if (f(c) > 0) {
             b := c; 
-        }
-        if (isRational(a) && isRational(b)) {
+        } else {
+            return c;
+	}
+	if (isRational(a) && isRational(b)) {
             print("a = $nDecimalPlaces(a, 40)$, b = $nDecimalPlaces(b, 40)$");
         } else {
             print("a = $a$, b = $b$");
