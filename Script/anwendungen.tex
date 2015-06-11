@@ -485,6 +485,7 @@ ersten fünf Ableitungen wie folgt:
       \right)^{4}}}$.
 \item $\arctan^{(5)}(x) = \displaystyle 24 \cdot{\frac {1+5\cdot{x}^{4}-10\cdot{x}^{2}}{ \left( 1+{x}^{2} \right)^{5}}}$.
 \end{enumerate}
+
 \exercise
 Versuchen Sie, eine allgemeine Formel für die $n$-te Ableitung der Funktion \\
 $x \mapsto \arctan(x)$ 
@@ -497,7 +498,7 @@ zu finden.  Beweisen Sie die Richtigkeit Ihrer Formel.
 \hspace*{1.3cm}
 $\ds\frac{1}{1 + x^2} = \frac{1}{2} \cdot \left(\frac{1}{1 + i \cdot x} + \frac{1}{1 - i \cdot x}\right)$.
 \eox
-
+\vspace*{0.2cm}
 
 Wir gehen in der Vorlesung einen anderen Weg um die Taylor-Reihe der Arkustangens-Funktion
 zu berechnen.  Dazu  stellen wir
@@ -695,7 +696,7 @@ Arcus-Tangens her und berechnen Sie damit $\pi$ auf eine Genauigkeit von $10^{-9
 \hspace*{1.3cm}
 $\bruch{\pi}{4} =  2 \cdot  \arctan\Bigl(\frac{1}{2}\Bigr) -\arctan\Bigl(\frac{1}{7}\Bigr) $.
 
-\section{Polynom-Interpolation}
+\section{Polynom-Interpolation$^*$}
 Nach dem wir uns im letzten Abschnitt damit beschäftigt haben für eine gegebene Funktion
 $f$ eine Folge von Polynomen zu konstruieren, deren Ableitungen im Punkt $0$ mit der
 Funktion $f$ übereinstimmen, zeigen wir jetzt, wie sich Polynome konstruieren lassen, die
@@ -925,7 +926,7 @@ gilt, wird also durch das Polynom
 \colorbox{orange}{\framebox{$\ds p(x) \; = \; \sum\limits_{k=0}^n [x_0,x_1,\cdots,x_k]_{\mathrm{dd}} \cdot  \prod\limits_{i=0}^{k-1}(x-x_i)$}}   
 \end{equation}
 gelöst.
-\subsection{Der Interpolations-Fehler}
+\subsection{Der Interpolations-Fehler$^*$}
 Wir untersuchen als nächstes, wie groß der Fehler bei der Polynom-Interpolation werden
 kann.  Dazu beweisen wir zunächst den folgenden Hilfs-Satz.  Dieser Satz ist eine Verallgemeinerung
 des Satzes von Rolle (Satz \ref{satz:rolle}). 
@@ -1062,7 +1063,7 @@ reellen Zahlen wird dann durch einen \emph{vollständigen}
 \href{http://de.wikipedia.org/wiki/Metrischer_Raum}{\emph{metrischen Raum}} ersetzt.
 
 Bevor wir den Banach'schen Fixpunkt-Satz formulieren und beweisen, wollen wir das damit verbundene
-Fixpunkt-Verfahren motivieren.  Wir haben bereits einmal ein solches angewendet:  In dem Kapitel
+Fixpunkt-Verfahren motivieren.  Wir haben bereits einmal ein solches Verfahren angewendet:  In dem Kapitel
 \ref{chapter:folgen-und-reihen} über Folgen und Reihen hatten wir die Gleichung 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1174,6 +1175,7 @@ Also haben wir folgende Abschätzung
 \hspace*{1.3cm}
 $|\cos(x) - \cos(y)| = \sin(\zeta) \cdot  |x - y| \leq 0.85 \cdot  |x - y|$ \quad für alle $x,y\in[0,1]$.
 \eox
+\vspace*{0.2cm}
 
 \noindent
 Das letzte Beispiel verallgemeinern wir zu einem Satz.
@@ -1215,14 +1217,17 @@ und nach Definition einer kontrahierenden Abbildung ist das die Behauptung.
 
 \exercise
 Beweisen Sie den letzten Satz.
+
+\hint
+Verwenden Sie die $\varepsilon$-$\delta$-Definition der Stetigkeit.
 \eox
 
-\begin{Satz}[Banach'scher Fixpunkt-Satz]
+\begin{Satz}[Banach'scher Fixpunkt-Satz] \lb
 Es sei $f:[a,b] \rightarrow [a,b]$ eine kontrahierende Abbildung mit dem
-Kontraktions-Koeffizienten $q$ und $x_0$ sei eine Zahl aus dem Intervall.  
+Kontraktions-Koeffizienten $q$ und $x_0$ sei eine Zahl aus dem Intervall $[a,b]$.  
 Definieren wir die Folge $\folge{x_n}$ induktiv durch
 \\[0.2cm]
-\hspace*{1.3cm} $x_{n+1} = f(x_n)$,
+\hspace*{1.3cm} $x_{n+1} := f(x_n)$,
 \\[0.2cm]
 so konvergiert diese Folge.  Setzen wir 
 \\[0.2cm]
@@ -1371,17 +1376,15 @@ diesem Intervall monoton wächst, haben wir den Kontraktions-Koeffizient als
 $\sin(1) \approx 0.85$ berechnet.  Für die  Lösung $\bar{x}$ der Fixpunkt-Gleichung gilt
 aber $\sin(\bar{x}) \approx 0.67$, so dass der Kontraktions-Koeffizient kleiner wird, je
 mehr wir uns der Lösung annähern.
-\pagebreak
 
 
 \exercise
 Lösen Sie für $y=10^6$ und $y=10^{-6}$ die Gleichung $x\cdot \exp(x) = y$ 
 durch eine einfache Fixpunkt-Iteration.  Berechnen Sie die Lösung $x$ jeweils auf eine
 Genauigkeit von $10^{-7}$. 
-\vspace*{0.2cm}
 
-\noindent
-\textbf{Hinweis}:  Diese Aufgabe ist in erster Linie als Programmier-Aufgabe gedacht.
+\hint
+Diese Aufgabe ist in erster Linie als Programmier-Aufgabe gedacht.
 \eox
 
 
@@ -1554,7 +1557,7 @@ noch eine Nach-Iteration mit der Gleichung $x_{n+1} = \cos(x_n)$ durch.
 Tabelle \ref{tab:solution-smart} zeigt die von diesem Programm berechneten Werte.  Diesmal
 ist die Genauigkeit von $10^{-6}$ bereits nach 4 Schritten erreicht, de facto ist der im
 vierten Schritt berechnete Wert sogar auf 9 Stellen hinter dem Komma genau.
-Weiter sehen Sie, dass durch die Nach-Iteration die letzte angezeigte Stelle verändert wird.
+
 
 \begin{figure}[!ht]
   \centering
@@ -1586,22 +1589,22 @@ Weiter sehen Sie, dass durch die Nach-Iteration die letzte angezeigte Stelle ver
 \begin{table}[!h]
   \centering
 \framebox{
-  \begin{tabular}{|l|l|l|l|}
+  \begin{tabular}{|l|l|}
 \hline
-   $n$ & $x_n$ & $n$ & $x_n$  \\
+   $n$ & $x_n$  \\
 \hline
 \hline
-$1$ & 1.0                &  $7$ & 0.7390851332151608 \\
+$1$ & 1.0                \\
 \hline
-$2$ & 0.7503638678402440 &  $8$ & 0.7390851332151606 \\
+$2$ & 0.7503638678402439 \\
 \hline
-$3$ & 0.7391128909113617 &  $9$ & 0.7390851332151607 \\
+$3$ & 0.7391128909113617 \\
 \hline
-$4$ & 0.7390851333852842 &  $10$ & 0.7390851332151607\\
+$4$ & 0.7390851333852839 \\
 \hline
-$5$ & 0.7390851332151604 &  $11$ & 0.7390851332151607\\
+$5$ & 0.7390851332151607 \\
 \hline
-$6$ & 0.7390851332151608 &\\
+$6$ & 0.7390851332151607 \\
 \hline
   \end{tabular}}
   \caption{Ausgabe des in Abbildung \ref{fig:cosXisX-newton.stlx} gezeigten Programms.}
@@ -1647,8 +1650,8 @@ $x$-Achse im Punkt
 $\ds x_n - \frac{g(x_n)}{g'(x_n)}$.
 \\[0.2cm]
 Der neue Wert $x_{n+1}$ ist also die Näherung, die wir erhalten, wenn wir die Funktion $g$ durch die
-Tangente im Punkt $\langle x_n, g(x_n) \rangle$ ersetzen and dann die Nullstelle berechnen, die diese
-Tangente hat.
+Tangente im Punkt $\langle x_n, g(x_n) \rangle$ ersetzen und dann die Nullstelle  dieser
+Tangente berechnen.
 
 \exercise
 Beweisen Sie diese Behauptung. \eox

@@ -1,10 +1,8 @@
 x := 0; 
 n := 7;
-for (i in [1 .. 7]) {
+for (i in [1 .. 5]) {
 x := (cos(x) + sin(x) * x) / (1 + sin(x));
     print("$i$: $x$");
 }
-for (i in [n+1 .. n+4]) {
-    x := cos(x);
-    print("$i$: $x$");
-}
+x := cos(x);
+print("x: $x$");
