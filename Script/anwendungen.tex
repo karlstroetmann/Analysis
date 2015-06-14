@@ -1074,7 +1074,7 @@ definiert, indem wir $x_1 := 0$ und $x_{n+1} := \cos(x_n)$ definiert hatten.  Da
 \ref{fig:solve.stlx} auf Seite \pageref{fig:solve.stlx}
 gezeigte Programm berechnet die Folge $\folge{x_n}$ und wir hatten gesehen,
 dass diese Folge gegen einen Grenzwert 
-\\[0.2cm]
+\\[0.0cm]
 \hspace*{1.3cm}
 $\ds \bar{x} := \lim\limits_{n\rightarrow\infty} x_n$ 
 \\[0.2cm]
@@ -1092,11 +1092,15 @@ der Fixpunkt-Gleichung
 \hspace*{1.3cm}
 $x = f(x)$ 
 \\[0.2cm]
-iterativ bestimmen wollen, indem wir induktiv eine Folge $\folge{x_n}$ definieren, wobei 
-$x_{n+1} = f(x_n)$ gelten soll.  Den Startwert $x_1$ werden wir dabei weitgehend willkürlich
-wählen.  Zunächst ist Folgendes klar:  Sollte die Folge $\folge{x_n}$ gegen einen Grenzwert
-$\bar{x}$ konvergieren, so ist dieser Grenzwert eine Lösung der Fixpunkt-Gleichung $x = f(x)$, denn
-es gilt
+iterativ bestimmen wollen, indem wir induktiv eine Folge $\folge{x_n}$ definieren, wobei wir
+ausgehend von einem gewählten Startwert $x_1$ die übrigen Folgenglieder $x_{n}$ induktiv durch die
+Festlegung 
+\\[0.2cm]
+\hspace*{1.3cm}
+$x_{n+1} = f(x_n)$ 
+\\[0.2cm]
+definieren.  Sollte die Folge $\folge{x_n}$ gegen einen Grenzwert $\bar{x}$ konvergieren, so ist
+dieser Grenzwert eine Lösung der Fixpunkt-Gleichung $x = f(x)$, denn es gilt
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds f(\bar{x}) = f\left(\lim\limits_{n\rightarrow\infty} x_n\right) = 
@@ -1108,12 +1112,13 @@ Dabei haben wir bei der Gleichung
 \hspace*{1.3cm}
 $ f\left(\lim\limits_{n\rightarrow\infty} x_n\right) = \lim\limits_{n\rightarrow\infty} f(x_n)$
 \\[0.2cm]
-die Stetigkeit von $f$ ausgenutzt.  Weniger klar ist die Antwort auf die Frage, wann die durch
-$x_{n+1} = f(x_n)$ definierte Folge konvergiert.  Die entscheidende Antwort auf diese Frage hat
-Stefan Banach gegeben:  Wenn die Funktionswerte von $f$ näher beieinander liegen als die Argumente,
+die Stetigkeit von $f$ ausgenutzt.  Weniger klar ist die Antwort auf die Frage, wann diese
+ Folge $\folge{x_n}$ konvergiert.  Die entscheidende Antwort auf diese Frage hat
+\href{http://de.wikipedia.org/wiki/Stefan_Banach}{Stefan Banach} gegeben:  Wenn die Funktionswerte
+von $f$ näher beieinander liegen als die Argumente, 
 dann konvergiert die Folge.  Bevor wir das im Detail formal untersuchen, wollen wir die dahinter
 liegende Anschauung verstehen.  Nehmen wir an, dass die Fixpunkt-Gleichung $f(x) = x$ eine Lösung
-$\bar{x}$ hat und nehmen wir weiter an, dass eine (nicht besonders gute) Näherung $x_1$ für
+$\bar{x}$ hat und nehmen wir weiter an, dass eine Näherung $x_1$ für 
 $\bar{x}$ gegeben ist.  Wenn nun die Funktionswerte von $f$ näher beieinander liegen als die
 Argumente, dann können wir die Näherung $x_1$ zu einer Näherung $x_2$ verbessern, indem wir 
 \\[0.2cm]
@@ -1138,9 +1143,9 @@ zunächst formal unter welchen Umständen die Funktionswerte einer Funktion näher 
 als die Argumente.  Die nun folgende Definition ist etwas schärfer, als Sie es vielleicht im ersten
 Moment vermuten würden.  Das werden wir später noch diskutieren.
 
-\begin{Definition}[kontrahierend] 
+\begin{Definition}[kontrahierend] \lb
 Eine Funktion $f:[a,b] \rightarrow [a,b]$ ist eine \emph{kontrahierende Abbildung} wenn es eine
-Zahl $q < 1$ gibt, so dass 
+Zahl reelle Zahl $q$ mit $q < 1$ gibt, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\forall x,y \in [a,b]: |f(x) - f(y)| \leq q \cdot  |x - y|$.  
@@ -1157,10 +1162,18 @@ $\cos:[0,1] \rightarrow [0,1]$
 \\[0.2cm]
 ist eine kontrahierende Abbildung.  
 Zunächst müssen wir uns davon überzeugen, dass diese Funktion wohldefiniert ist.
-Dazu muss aus $x\in[0,1]$ folgen, dass auch $\cos(x) \in [0,1]$ gilt.  Dies folgt aus  $\cos(0) = 1$, 
-$\cos(1) \approx 0.54$ und der Tatsache, dass die Kosinus-Funktion in dem Intervall
-$[0,1]$ monoton fallend ist, denn $\dfo \cos(x) = -\sin(x)$  und für alle $x \in \bigl[0,\pi\bigr]$
-gilt $\sin(x) \geq 0$.
+Dazu muss aus $x\in[0,1]$ folgen, dass auch $\cos(x) \in [0,1]$ gilt.  Dies folgt aus den
+Gleichungen
+\\[0.2cm]
+\hspace*{1.3cm}
+$\cos(0) = 1$ \quad und \quad $\cos(1) \approx 0.54$ 
+\\[0.2cm]
+zusammen mit und der Tatsache, dass die Kosinus-Funktion in dem Intervall
+$[0,1]$ monoton fallend ist, denn es gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+ $\dfo \cos(x) = -\sin(x)$  \quad und für alle $x \in \bigl[0,\pi\bigr]$ gilt $\sin(x) \geq 0$.
+\\[0.2cm]
  Seien nun Zahlen $x,y\in[0,1]$ gegeben. 
 Nach dem Mittelwert-Satz der Differenzial-Rechnung gibt es dann ein $\zeta\in[x,y]$ mit 
 \\[0.2cm]
@@ -1179,6 +1192,7 @@ $|\cos(x) - \cos(y)| = \sin(\zeta) \cdot  |x - y| \leq 0.85 \cdot  |x - y|$ \qua
 
 \noindent
 Das letzte Beispiel verallgemeinern wir zu einem Satz.
+\pagebreak
 
 \begin{Satz}
 Ist die Funktion $f:[a,b] \rightarrow [a,b]$ in dem Intervall $[a,b]$ differenzierbar und gibt es eine Zahl
@@ -1260,19 +1274,19 @@ $\ds\lim\limits_{n\rightarrow\infty} x_n = x_0 + \sum\limits_{i=1}^\infty (x_i -
 \\[0.2cm]
 wenn wir noch zeigen können, dass
 die auf der rechten Seite dieser Formel auftretende Reihe konvergiert.  Dazu zeigen wir, dass die geometrische Reihe eine Majorante dieser Reihe ist.
-Konkret zeigen wir durch Induktion, dass für alle $i\in\mathbb{N}$
+Konkret zeigen wir durch vollständige Induktion, dass für alle $i\in\mathbb{N}$ die Ungleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds|x_{i+1} - x_i| \leq q^i \cdot |x_1 - x_0|$
 \\[0.2cm]
 gilt.  Der Induktions-Anfang ist trivial.  Im Induktions-Schritt haben wir
-\\[0.3cm]
+\\[0.2cm]
 \hspace*{0.8cm}
 $\ds|x_{i+2} - x_{i+1}| = |f(x_{i+1}) - f(x_i)| \leq q \cdot  |x_{i+1} - x_i| \stackrel{\mbox{\scriptsize IV}}{\leq}
 q \cdot  q^i \cdot  |x_1 - x_0| = q^{i+1} \cdot  |x_1 - x_0|$.
 \\[0.3cm]
 Nachdem wir jetzt wissen, dass die Folge $\folge{x_n}$ konvergiert, zeigen wir, dass der
-Grenzwert $\bar{x}$ ein Fixpunkt der Funktion $f$ ist.  Da $f$ als kontrahierende
+Grenzwert $\bar{x}$ dieser Folge ein Fixpunkt der Funktion $f$ ist.  Da $f$ als kontrahierende
 Abbildung auch stetig ist, können wir die Anwendung der Funktion $f$ mit der Grenzwert-Bildung
 vertauschen.  Also haben wir 
 \\[0.2cm]
@@ -1281,11 +1295,9 @@ $\ds f(\bar{x}) = f\Bigl(\lim\limits_{n\rightarrow\infty} x_n\Bigr) =
 \lim\limits_{n\rightarrow\infty} f(x_n) = \lim\limits_{n\rightarrow\infty} x_{n+1} =
 \lim\limits_{n\rightarrow\infty} x_{n} = \bar{x}$
 \\[0.2cm]
-und dies zeigt, dass $\bar{x}$ ein Fixpunkt der Funktion $f$ ist.
-
-Den Abstand zwischen $\bar{x}$ und $x_n$ können wir abschätzen, wenn wir 
-$\bar{x}$ als unendliche Reihe schreiben und gleichzeitig $x_n$ durch eine Teleskop-Summe
-ausdrücken. 
+und dies zeigt, dass $\bar{x}$ ein Fixpunkt der Funktion $f$ ist.  Den Abstand zwischen $\bar{x}$
+und $x_n$ können wir abschätzen, wenn wir $\bar{x}$ als unendliche Reihe schreiben und gleichzeitig
+$x_n$ als Teleskop-Summe darstellen: 
 \\[0.2cm]
 \hspace*{1.3cm}
 $
@@ -1315,17 +1327,16 @@ $|\bar{x} - x_1| \leq \bruch{q}{1 - q} \cdot |x_1 - x_0|$.
 Wenn wir in dieser Ungleichung $x_1$ durch $x_{m}$ und $x_0$ durch $x_{m-1}$ ersetzen,
 behält die Ungleichung ihre Gültigkeit, denn wir können $x_{m-1}$  ja als den
 Startwert einer neuen Folge $\folge{y_n}$ ansehen, für die wir $y_0 = x_{m-1}$ und 
-$y_1 = f(y_0) = f(x_{m_1}) = x_{m}$ setzen.  Wir haben dann also 
+$y_1 = f(y_0) = f(x_{m-1}) = x_{m}$ setzen.  Wir haben dann also 
 \\[0.2cm]
 \hspace*{1.3cm}
 $|\bar{x} - x_{m}| \leq \bruch{q}{1 - q} \cdot  |x_m - x_{m-1}|$.
 \\[0.2cm]
 Wenn wir $q$ kennen, können wir damit die Güte der bisher erreichten Approximation
 abschätzen.
-\vspace*{0.3cm}
 
-\noindent
-\textbf{Beispiel}: Wir haben oben gesehen, dass die Abbildung 
+\example
+ Wir haben oben gesehen, dass die Abbildung 
 $\cos: [0,1] \rightarrow [0,1]$ kontrahierend ist mit einem Kontraktions-Koeffizienten 
 $q\leq 0.85$.  Wollen wir den Fixpunkt dieser Abbildung auf eine Genauigkeit von $\varepsilon$
 berechnen, so müssen wir folglich solange iterieren, bis 
@@ -1387,7 +1398,7 @@ Genauigkeit von $10^{-7}$.
 Diese Aufgabe ist in erster Linie als Programmier-Aufgabe gedacht.
 \eox
 
-
+\remark
 Bei der Definition einer kontrahierenden Abbildung haben Sie sich vielleicht gewundert, warum es
 nicht reicht zu fordern, dass
 \\[0.2cm]
@@ -1410,6 +1421,7 @@ schwach kontrahierend ist, aber es gibt kein $q < 1$, so dass für alle $x,y \in 
 $| \sin(x) - \sin(y) | \leq q \cdot |x - y|$
 \\[0.2cm]
 erfüllt ist.  Das ist der Grund für die äußerst langsame Konvergenz der Folge $\folge{x_n}$.
+\eox 
 
 \begin{table}
   \centering
@@ -1552,7 +1564,7 @@ $\ds x_{n+1} := \frac{cos(x) + \sin(x) \cdot x}{1 + \sin(x)}$
 \\[0.2cm]
 annimmt.  Da diese Gleichung aber komplexer als die ursprüngliche Gleichung
 $x_{n+1} = \cos(x_n)$ ist, müssen wir damit rechnen, dass die Rundungfehler höher sind als bei der
-Iteration.  Zur  Eliminierung dieser Rundungfehler führen wir daher in den Zeilen 8 -- 11
+Iteration.  Zur  Eliminierung dieser Rundungfehler führen wir daher in Zeile 8
 noch eine Nach-Iteration mit der Gleichung $x_{n+1} = \cos(x_n)$ durch.
 Tabelle \ref{tab:solution-smart} zeigt die von diesem Programm berechneten Werte.  Diesmal
 ist die Genauigkeit von $10^{-6}$ bereits nach 4 Schritten erreicht, de facto ist der im
@@ -1576,10 +1588,7 @@ vierten Schritt berechnete Wert sogar auf 9 Stellen hinter dem Komma genau.
         x := (cos(x) - alpha * x) / (1 - alpha);
         print("$i$: $x$");
     }
-    for (i in [n+1 .. n+4]) {
-        x := cos(x);
-        print("$i$: $x$");
-    }
+    x := cos(x);
 \end{Verbatim}
 \vspace*{-0.3cm}
   \caption{Berechnung der durch $x_{n+1} = \frac{\cos(x_n) + \sin(x_n) \cdot  x}{1 + \sin(x_n)}$ definierten Folge.}
@@ -1768,8 +1777,8 @@ Zum Beweis der Ungleichung $g(x) \leq f(x)$ definieren wir die Funktion $h:[a-x_
 \hspace*{1.3cm}
 $h(x) := f(x + x_0)$.
 \\[0.2cm]
-Nach Gleichung (\ref{eq:taylorLagrange}) gilt für die Funktion $h$
-die Gleichung
+Brechen wir die Taylor-Entwicklung der Funktion $h$ nach dem linearen Glied ab, so erhalten wir nach
+der Formel (\ref{eq:taylorLagrange}) die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $h(x) = h(0) + h'(0) \cdot x  + \frac{1}{2} \cdot h^{(2)}(\chi) \cdot x^{2}$, 
@@ -1805,7 +1814,7 @@ $f^{(2)}(\varphi) \geq 0$
 \\[0.2cm]
 und das Quadrat $(x-x_0)^{2}$ ist sicher immer größer oder gleich $0$.  \qed
 
-\begin{Satz}
+\begin{Satz}[Konvergenz des Newtonschen Verfahrens für monotone und konvexe Funktionen] \lb
   Die Funktion $f:[a,b] \rightarrow \mathbb{R}$ sei zweimal differenzierbar und konvex, es gelte
   $f(a) < 0$, $f(b) > 0$ und 
   \\[0.2cm]
