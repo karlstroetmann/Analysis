@@ -490,23 +490,23 @@ Sie können sich die Substitutions-Regel mit Hilfe der folgenden suggestiven Pseu
 leicht merken.  Wir gehen aus von dem unbestimmten Integral 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\int g(y)\, dy$.
+$\ds\int g(y)\, \dr y$.
 \\[0.2cm]
 Hier führen wir die Variablen-Transformation $y = f(x)$ durch. Dann gilt 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds \frac{dy}{\dr x} = f'(x)$
+$\ds \frac{\dr y}{\dr x} = f'(x)$
 \\[0.2cm]
-Wir rechnen nun mit dem Ausdruck $\ds\frac{dy}{\dr x}$ so, als ob es ein gewöhnlicher Bruch wäre und stellen die
-letzte Gleichung nach $dy$ um.  Dann haben wir 
-\\[0.2cm]
-\hspace*{1.3cm}
-$dy = f'(x)\cdot \dr x$
-\\[0.2cm]
-Ersetzen wir in dem ursprünglichen Integral $dy$ durch diesen Ausdruck, so haben wir 
+Wir rechnen nun mit dem Ausdruck $\ds\frac{\dr y}{\dr x}$ so, als ob es ein gewöhnlicher Bruch wäre und stellen die
+letzte Gleichung nach $\dr y$ um.  Dann haben wir 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\int g(y)\, dy = \int g\bigl(f(x)\bigr)\cdot f'(x)\, \dr x$
+$\dr y = f'(x)\cdot \dr x$
+\\[0.2cm]
+Ersetzen wir in dem ursprünglichen Integral $\dr y$ durch diesen Ausdruck, so haben wir 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\int g(y)\, \dr y = \int g\bigl(f(x)\bigr)\cdot f'(x)\, \dr x$
 \\[0.2cm]
 Das ist aber genau die Substitutions-Regel für unbestimmte Integrale.
 
@@ -522,7 +522,7 @@ $
        \dint{0}{x} \tan(t) \, \dr t 
  & = & \dint{0}{x} \;\frac{\sin(t)}{\cos(t)}\, \dr t \\[0.3cm]
  & = & - \dint{0}{x} \;\bigl(- \sin(t)\bigr)\cdot \frac{1}{\cos(t)}\, \dr t \\[0.6cm]
- & = & - \dint{\cos(0)}{\cos(x)} \;\frac{1}{y}\, dy \\[0.6cm]
+ & = & - \dint{\cos(0)}{\cos(x)} \;\frac{1}{y}\, \dr y \\[0.6cm]
  & = & - \Bigl( \ln\bigl(|\cos(x)|\bigr) - \ln\bigl(|\cos(0)|\bigr) \Bigr) \\[0.3cm]
  & = & \ln\bigl(|\cos(0)|\bigr) - \ln\bigl(|\cos(x)|\bigr) \\[0.3cm]
  & = & \ln(1) - \ln\bigl(|\cos(x)|\bigr) \\[0.2cm]
@@ -610,6 +610,7 @@ $
 
 \exercise
 Berechnen Sie die Stamm-Funktion $\ds\int \arctan(x)\,\dr x$.  \eox
+\pagebreak
 
 \subsection{Das Integral von Umkehr-Funktionen$^*$}
 Wir zeigen noch einen anderen Weg, mit dem das Integral der Umkehr-Funktion einer Funktion
@@ -643,7 +644,7 @@ sind.
 \item Die horizontal schraffierte Fläche ist die Fläche unter der Kurve $g(y)$ der
       Umkehr-Funktion   und ist daher gegeben durch 
       \\[0.2cm]
-      \hspace*{1.3cm} $\ds \int_{f(a)}^{f(b)} g(y)\, dy$.
+      \hspace*{1.3cm} $\ds \int_{f(a)}^{f(b)} g(y)\, \dr y$.
 \end{enumerate}
 Natürlich ist die gesamte Fläche des Rechtecks die Summe aller drei Teile, es gilt also
 \begin{equation}
@@ -762,13 +763,13 @@ $f(x+h) - f(x) \approx f'(x) h$.
 Setzen wir diesen Wert in der obigen Formel für ein, so erhalten wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds ds \approx \sqrt{h^2 + \bigl(f'(x) \cdot h\bigr)^2\,} = \sqrt{1 + \Bigl(\frac{d\/f}{\dr x}\Bigr)^2\,}\cdot h$.
+$\ds ds \approx \sqrt{h^2 + \bigl(f'(x) \cdot h\bigr)^2\,} = h \cdot \sqrt{1 + \Bigl(\frac{d\/f}{\dr x}\Bigr)^2\,}$.
 \\[0.2cm]
 Die Länge $l$ des gesamten Funktions-Graphen erhalten wir, wenn wir diesen Ausdruck von $a$ bis $b$
 aufintegrieren: 
 \\[0.2cm]
 \hspace*{1.3cm}
-\colorbox{orange}{\framebox{$\ds l = \dint{a}{b} \sqrt{1 + \Bigl(\frac{df}{\dr x}\Bigr)^2\,} \dr x$}}.
+\colorbox{orange}{\framebox{$\ds l = \dint{a}{b} \sqrt{1 + \Bigl(\frac{\dr f}{\dr x}\Bigr)^2\,} \dr x$}}.
 
 \example
 Wir berechnen die Länge $l$ des Kreisbogens, der durch die Funktion $f:[0,1] \rightarrow\mathbb{R}$ mit
@@ -819,7 +820,7 @@ l & = & \dint{0}{\pi/2} \cos(x) \cdot \frac{1}{\sqrt{1 - \sin^2(x)}}\, \dr x  \\
   & = & \dint{0}{\pi/2} \cos(x) \cdot \frac{1}{\cos(x)}\, \dr x  \\[0.6cm]
   & = & \dint{0}{\pi/2} 1\, \dr x  \\[0.6cm]
   & = &  x \Bigl|_0^{\pi/2}  \\[0.4cm]
-  & = &  \frac{\pi}{2}  
+  & = & \ds \frac{\pi}{2}  
 \end{array}
 $
 \\[0.2cm]
