@@ -102,7 +102,7 @@ im Punkt $\widehat{x}$ stetig ist. \qed
       \\[0.3cm]
       ist, müsste nach Definition des Grenzwerts dann gelten: \\[0.3cm]
       \hspace*{1.3cm}
-      $a = \displaystyle \lim\limits_{h \rightarrow 0} \bruch{\textsl{abs}(h) - \textsl{abs}(0)}{h} = 
+      $a = \ds \lim\limits_{h \rightarrow 0} \bruch{\textsl{abs}(h) - \textsl{abs}(0)}{h} = 
        \lim\limits_{n\rightarrow\infty} \frac{\textsl{abs}(\frac{1}{n})}{\frac{1}{n}} = 
        \lim\limits_{n\rightarrow\infty} \frac{\;\frac{1}{n}\;}{\frac{1}{n}} = 1 $.
       \\[0.3cm]
@@ -110,7 +110,7 @@ im Punkt $\widehat{x}$ stetig ist. \qed
       dass diese Folge ebenfalls gegen 0 konvergiert, so erhalten wir
       \\[0.3cm]
       \hspace*{1.3cm}
-      $a = \displaystyle \lim\limits_{h \rightarrow 0} \bruch{\textsl{abs}(h) - \textsl{abs}(0)}{h} = 
+      $a = \ds \lim\limits_{h \rightarrow 0} \bruch{\textsl{abs}(h) - \textsl{abs}(0)}{h} = 
        \lim\limits_{n\rightarrow\infty} \frac{\textsl{abs}(-\frac{1}{n})}{-\frac{1}{n}} = 
        \lim\limits_{n\rightarrow\infty} \frac{\;\frac{1}{n}\;}{-\frac{1}{n}} = -1$.
       \\[0.3cm]
@@ -288,7 +288,7 @@ konvergieren. \hspace*{\fill} $\Box$
  Zeigen Sie, dass für alle natürlichen Zahlen $n$ gilt: 
 \\[0.3cm]
 \hspace*{1.3cm}
-$\displaystyle\frac{d\,x^n}{dx} = n \cdot x^{n-1}$.
+$\ds\frac{d\,x^n}{dx} = n \cdot x^{n-1}$.
 
 
 \begin{Satz}[Ableitung von Potenzreihen]
@@ -355,7 +355,7 @@ Wir berechnen als nächstes die Ableitung einiger wichtiger Funktionen.
       Nach dem letzten Satz gilt für die Ableitung der Exponential-Funktion 
       \\[0.3cm]
       \hspace*{1.3cm}
-      $\displaystyle
+      $\ds
          \frac{d\;}{dx}\exp(x) = \sum\limits_{n=1}^\infty \bruch{n}{n!} \cdot x^{n-1}
                              = \sum\limits_{n=1}^\infty \bruch{1}{(n-1)!} \cdot x^{n-1}
                              = \sum\limits_{n=0}^\infty \bruch{1}{n!} \cdot x^{n} = \exp(x)$,
@@ -369,14 +369,14 @@ Wir berechnen als nächstes die Ableitung einiger wichtiger Funktionen.
       Differenzieren wir beide Seiten dieser Gleichung nach $x$, so erhalten wir nach der Ketten-Regel
       \\[0.3cm]
       \hspace*{1.3cm}
-      $\displaystyle\ln'\bigl(\exp(x)\bigr)\cdot \exp(x) = 1$,
+      $\ds\ln'\bigl(\exp(x)\bigr)\cdot \exp(x) = 1$,
       \\[0.3cm]
       denn die Ableitung der Exponential-Funktion ergibt ja wieder die
       Exponential-Funktion.  Setzen wir hier $y:= \exp(x)$, so haben wir 
       \\[0.3cm]
       \hspace*{1.3cm}
-      $\displaystyle\ln'(y) \cdot y = 1$, \quad also \quad
-      $\displaystyle\frac{d\;}{dy}\ln(y) = \frac{1}{y}$.
+      $\ds\ln'(y) \cdot y = 1$, \quad also \quad
+      $\ds\frac{d\;}{dy}\ln(y) = \frac{1}{y}$.
 
       \begin{figure}[!h]
         \centering
@@ -479,7 +479,7 @@ Wir berechnen als nächstes die Ableitung einiger wichtiger Funktionen.
       werden: 
       \\[0.3cm]
       \hspace*{1.3cm}
-      $\displaystyle
+      $\ds
       \begin{array}[t]{lcl}
       \ds \frac{d\;}{dx} \tan(x) & = & \ds\frac{d\;}{dx} \left(\bruch{\sin(x)}{\cos(x)}\right) \\[0.3cm]
       & = & \bruch{\Bigl(\frac{d\;}{dx} \sin(x)\Bigr) \cdot \cos(x) - \sin(x) \cdot \Bigl(\frac{d\;}{dx} \cos(x)\Bigr)}{\cos^2(x)} \\[0.5cm]
@@ -533,7 +533,7 @@ Wir berechnen als nächstes die Ableitung einiger wichtiger Funktionen.
       Setzen wir jetzt $y = \tan(x)$, so erhalten wir 
       \\[0.3cm]
       \hspace*{1.3cm}
-      $\displaystyle\frac{d\;}{dy} \arctan(y) = \bruch{1}{y^2 + 1}$.
+      $\ds\frac{d\;}{dy} \arctan(y) = \bruch{1}{y^2 + 1}$.
 \end{enumerate}
 
 \exercise
@@ -1660,7 +1660,7 @@ $\ds e^p = \exp(p)$.
 Ziehen wir hier die $q$-te Wurzel, so haben wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$\displaystyle e^{\bruchs{p}{q}} = \sqrt[\textstyle q]{\exp(p)} = \exp\left(\bruch{p}{q}\right)$,
+$\ds e^{\bruchs{p}{q}} = \sqrt[\textstyle q]{\exp(p)} = \exp\left(\bruch{p}{q}\right)$,
 \\[0.2cm]
 gezeigt, denn es gilt
 \\[0.2cm]

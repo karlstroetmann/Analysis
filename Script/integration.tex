@@ -565,12 +565,21 @@ offensichtlich intuitiver als die formale Anwendung der Substitutions-Regel.  \q
 
 
 \exercise
-Berechnen Sie das Integral
-\\[0.2cm]
-\hspace*{1.3cm}
-$\bint\frac{x}{1 + x^2} \, \dr x$
-\\[0.2cm]
-mit  Hilfe der Substitutions-Regel.  \eox
+\begin{enumerate}[(a)]
+\item Berechnen Sie das Integral
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\bint\frac{x}{1 + x^2} \, \dr x$.
+\item Berechnen Sie das Integral
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\bint\frac{x}{\sqrt{1 + x^2}} \, \dr x$.
+\item Berechnen Sie das Integral
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds\int_0^1 (x-1)^4 \cdot (x+1) \, \dr x$.
+      \eox
+\end{enumerate}
 
 
 \subsection{Partielle Integration}
@@ -611,7 +620,15 @@ $
 
 \exercise
 Berechnen Sie die Stamm-Funktion $\ds\int \arctan(x)\,\dr x$.  \eox
-\pagebreak
+
+\exercise
+Berechnen Sie die folgenden Integrale:
+\begin{enumerate}[(a)]
+\item $\ds \int x \cdot e^x\,\dr x$,
+\item $\ds \int x^2 \cdot e^x\,\dr x$,
+\item $\ds \int x^3 \cdot e^x\,\dr x$,
+\item $\ds \int x^n \cdot e^x\,\dr x$ \quad für beliebige $n \in \mathbb{N}$.
+\end{enumerate}
 
 \subsection{Das Integral von Umkehr-Funktionen$^*$}
 Wir zeigen noch einen anderen Weg, mit dem das Integral der Umkehr-Funktion einer Funktion
@@ -829,7 +846,49 @@ und das ist genau der Umfang eines Viertel-Kreises. \eod
 
 \exercise
 Berechnen Sie die Bogenlänge der Parabel $x \mapsto x^2$ im Intervall $[0,1]$. 
-\eod 
+
+\hint
+Diese Aufgabe ist zwar etwas anspruchsvoller, aber dafür ist die Lösung um so lehrreicher.  Es ist
+sinnvoll, die Lösung in die folgenden Schritte aufzuteilen:
+\begin{enumerate}[(a)]
+\item Zunächst definieren wir die beiden Funktionen $\sinh(x)$ (lese: \emph{Sinus Hyperbolicus}) und
+      $\cosh(x)$ (lese: \emph{Cosinus Hyperbolicus}) wie folgt:
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds\sinh(x) = \frac{1}{2} \cdot \bigl(e^x - e^{-x}\bigr)$ \quad und \quad
+      $\ds\cosh(x) = \frac{1}{2} \cdot \bigl(e^x + e^{-x}\bigr)$. 
+\item Die Umkehrfunktion der Funktion $x \mapsto \sinh(x)$ können Sie auf den natürlichen
+      Logarithmus zurück führen, indem Sie die Gleichung
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $y = \frac{1}{2} \cdot \bigl(e^x + e^{-x}\bigr)$
+      \\[0.2cm]
+      nach $x$ auflösen.  Setzen Sie zunächst $\alpha := e^x$, so erhalten Sie eine quadratische
+      Gleichung für $\alpha$.  Anschließend finden Sie $x$ nach der Formel $x = \ln(\alpha)$.
+
+      Die Umkehrfunktion, die wir auf diesem Weg berechnet haben, ist als 
+      \emph{Areasinus Hyperbolicus} bekannt und wird $\mathtt{arsinh}(x)$ geschrieben.
+\item Dann zeigen wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\df\; \sinh(x) = \cosh(x)$ \quad und \quad $\df\; \cosh(x) = \sinh(x)$.
+\item Weiter zeigen wir, dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $1 + \sinh^2(x) = \cosh^2(x)$
+      \\[0.2cm]
+      für alle $x\in \mathbb{R}$ gilt.
+\item Nun berechnen wir das Integral
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds I(x) := \int_0^x \cosh^2(t)\, \dr t$
+      \\[0.2cm]
+      mit Hilfe einer partiellen Integration, wobei wir im Verlaufe der Rechnung an geeigneter
+      Stelle berücksichtigen, dass $\cosh^2(x) = 1 + \sinh^2(x)$ gilt. 
+\item Das bei der Berechnung der Bogenlänge der Parabel auftretende Integral kann nun mit einer
+      geeigneten Substitution auf das Integral $I(x)$ zurück geführt werden. \eod 
+\end{enumerate}
+
 
 \section{Uneigentliche Integrale}
 Ist bei dem Ausdruck $\int_a^b f(x)\,\dr x$ die Funktion $f$ an einer der Intervall-Grenzen
