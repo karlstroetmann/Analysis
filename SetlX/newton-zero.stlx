@@ -1,6 +1,6 @@
 newton := procedure(t, x, n) {
     ts := diff(t, "x");
-    for (i in [0 .. n ]) {
+    for (i in [0 .. n]) {
         x -= evalTerm(t) / evalTerm(ts);
         print("i = $i$:");
         myPrint(x);
@@ -75,8 +75,8 @@ interactive := procedure() {
     x := read("enter start value: ");
     n := read("enter number of iterations: ");
     x := newton(t, x, n);
-    print(x);
+    myPrint(x);
 };
 
 interactive();
-// x := newton(parse("x ** 3 - 2"), 1, 8);
+

@@ -4,14 +4,14 @@ Bei der Fourier-Analyse
 zerlegen wir eine 
 periodische Funktion in Sinus-Schwingungen verschiedener Frequenzen.  Dieses Verfahren
 wird in der Praxis zur Ton- und Bild-Verarbeitung eingesetzt.  Außerdem ist die
-Fourier-Analyse ein wichtiges Hilfsmittel zur Lösung von Differenzial-Gleichungen.
+Fourier-Analyse ein wichtiges Hilfsmittel zur Lösung von Differential-Gleichungen.
 Im Rahmen dieser Vorlesung werden wir die Fourier-Analyse allerdings nur zur Berechnung
 unendlichen Reihen einsetzen, denn für die anderen Anwendungen reicht die Zeit 
 nicht aus.
 
 Bei der Fourier-Analyse gehen wir davon aus, dass eine Funktion 
 $f:\mathbb{R} \rightarrow \mathbb{R}$ gegeben ist, die \emph{periodisch} mit der
-Periode $2\cdot\pi$ ist, d.~h.~ es gilt
+Periode $2\cdot\pi$ ist, d.~h.~es gilt
 \\[0.1cm]
 \hspace*{1.3cm}
 $\forall x \in\mathbb{R}: f(x+2\cdot\pi) = f(x)$.
@@ -68,10 +68,10 @@ so können wir den Koeffizienten $a_0$ dadurch gewinnen, dass wir die Funktion $f
 dem Intervall $[0,2\cdot\pi]$ integrieren.  Wir erhalten dann
 \\[0.3cm]
 \hspace*{0.8cm}
-$\displaystyle \int_0^{2\cdot\pi}f(x)\,dx \; = \; 
-    \frac{1}{2}\cdot a_0 \cdot \int_0^{2\cdot\pi} 1\,dx \;+\; 
-    \int_0^{2\cdot\pi} \sum\limits_{k=1}^\infty a_k\cdot \cos(k\!\cdot\!x) \,dx \;+\;
-    \int_0^{2\cdot\pi} \sum\limits_{k=1}^\infty b_k\cdot \sin(k\!\cdot\!x) \,dx 
+$\displaystyle \int_0^{2\cdot\pi}f(x)\,\dr x \; = \; 
+    \frac{1}{2}\cdot a_0 \cdot \int_0^{2\cdot\pi} 1\,\dr x \;+\; 
+    \int_0^{2\cdot\pi} \sum\limits_{k=1}^\infty a_k\cdot \cos(k\!\cdot\!x) \,\dr x \;+\;
+    \int_0^{2\cdot\pi} \sum\limits_{k=1}^\infty b_k\cdot \sin(k\!\cdot\!x) \,\dr x 
 $
 \\[0.3cm]
 Das erste Integral auf der rechten Seite können wir ausführen, die anderen Integrale
@@ -81,26 +81,26 @@ Das liefert
 \begin{equation}
   \label{eq:fourierEq1}
 \hspace*{-0.8cm}  
-\int_0^{2\cdot\pi}\!\!f(x)\,dx \; = \; 
+\int_0^{2\cdot\pi}\!\!f(x)\,\dr x \; = \; 
     \bruch{1}{2}\cdot a_0 \cdot 2\cdot\pi \;+\; 
-                          \sum\limits_{k=1}^\infty a_k\cdot \int_0^{2\cdot\pi} \!\! \cos(k\!\cdot\!x) \,dx \;+\;
-                          \sum\limits_{k=1}^\infty b_k\cdot \int_0^{2\cdot\pi} \!\! \sin(k\!\cdot\!x) \,dx 
+                          \sum\limits_{k=1}^\infty a_k\cdot \int_0^{2\cdot\pi} \!\! \cos(k\!\cdot\!x) \,\dr x \;+\;
+                          \sum\limits_{k=1}^\infty b_k\cdot \int_0^{2\cdot\pi} \!\! \sin(k\!\cdot\!x) \,\dr x 
 \end{equation}
 Nun gilt für alle $k\in\mathbb{N}$ mit $k\geq 1$
 \begin{equation}
   \label{eq:intSin}
   \begin{array}[t]{lcl}    
-  \displaystyle \int_0^{2\cdot\pi} \sin(k\!\cdot\!x)\,dx & = &
- \bruch{-1}{k}\cdot\cos(k\!\cdot\!x) \bigg|_0^{2\cdot\pi} \\[0.3cm]
+  \displaystyle \int_0^{2\cdot\pi} \sin(k\!\cdot\!x)\,\dr x & = &
+ -\bruch{1}{k}\cdot\cos(k\!\cdot\!x) \bigg|_0^{2\cdot\pi} \\[0.3cm]
 & = &
- \bruch{-1}{k}\cdot\bigl(\cos(k\!\cdot\!2\!\cdot\!\pi) - \cos(0)\bigr) = 
- \bruch{-1}{k}\cdot(1 - 1) = 0,
+ -\bruch{1}{k}\cdot\bigl(\cos(k\!\cdot\!2\!\cdot\!\pi) - \cos(0)\bigr) = 
+ -\bruch{1}{k}\cdot(1 - 1) = 0,
   \end{array}
 \end{equation}
 denn $\cos(k\!\cdot\!2\!\cdot\!\pi) = \cos(0) = 1$. Genauso sehen wir für alle $k\geq 1$
 \begin{equation}
   \label{eq:intCos}
-  \int_0^{2\cdot\pi} \cos(k\!\cdot\!x)\,dx = 
+  \int_0^{2\cdot\pi} \cos(k\!\cdot\!x)\,\dr x = 
  \bruch{1}{k}\cdot\sin(k\!\cdot\!x) \bigg|_0^{2\cdot\pi} = 
  \bruch{1}{k}\cdot\bigl(\sin(k\!\cdot\!2\!\cdot\!\pi) - \sin(0)\bigr) = 0,
 \end{equation}
@@ -109,7 +109,7 @@ Setzen wir die Gleichungen (\ref{eq:intCos}) und (\ref{eq:intSin}) in Gleichung
 (\ref{eq:fourierEq}) ein, so erhalten wir die Gleichung
 \begin{equation}
   \label{eq:fourierA0}
-\int_0^{2\cdot\pi}\!\!f(x)\,dx \; = \; \pi\cdot a_0 \quad \mbox{bzw.}\quad a_0 = \bruch{1}{\pi}\int_0^{2\cdot\pi}\!\!f(x)\,dx
+\int_0^{2\cdot\pi}\!\!f(x)\,\dr x \; = \; \pi\cdot a_0 \quad \mbox{bzw.}\quad a_0 = \bruch{1}{\pi}\int_0^{2\cdot\pi}\!\!f(x)\,\dr x
 \end{equation}
 Damit haben wir  den Koeffizienten $a_0$ bestimmt.  Um die Koeffizienten 
 $a_k$ für $k\geq 0$ zu bestimmen, 
@@ -120,10 +120,10 @@ Intervall $[0,2\!\cdot\!\pi]$.  Dann haben wir
 \hspace*{0.8cm}
 $
 \begin{array}[t]{lcl}
-\displaystyle \int_0^{2\cdot\pi}f(x)\cdot\cos(n\!\cdot\!x)\,dx 
-& = & \displaystyle \bruch{1}{2}\cdot a_0  \int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\,dx  \\[0.5cm]
-& + & \displaystyle \int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\sum\limits_{k=1}^\infty a_k\cdot \cos(k\!\cdot\!x) \,dx \\[0.5cm]
-& + & \displaystyle \int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\sum\limits_{k=1}^\infty b_k\cdot \sin(k\!\cdot\!x) \,dx 
+\displaystyle \int_0^{2\cdot\pi}f(x)\cdot\cos(n\!\cdot\!x)\,\dr x 
+& = & \displaystyle \bruch{1}{2}\cdot a_0  \int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\,\dr x  \\[0.5cm]
+& + & \displaystyle \int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\sum\limits_{k=1}^\infty a_k\cdot \cos(k\!\cdot\!x) \,\dr x \\[0.5cm]
+& + & \displaystyle \int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\sum\limits_{k=1}^\infty b_k\cdot \sin(k\!\cdot\!x) \,\dr x 
 \end{array}
 $
 \\[0.3cm]
@@ -131,10 +131,10 @@ Vertauschen wir Integration und Summation, so erhalten wir
 \begin{equation}
   \label{eq:fourierAk1}
 \begin{array}[b]{lcl}
-\displaystyle \int_0^{2\cdot\pi}f(x)\cdot\cos(n\!\cdot\!x)\,dx 
-& = & \displaystyle \bruch{1}{2}\cdot a_0  \int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\,dx  \\[0.5cm]
-& + & \displaystyle \sum\limits_{k=1}^\infty a_k\cdot \int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\cos(k\!\cdot\!x) \,dx \\[0.5cm]
-& + & \displaystyle \sum\limits_{k=1}^\infty b_k\cdot \int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\sin(k\!\cdot\!x) \,dx 
+\displaystyle \int_0^{2\cdot\pi}f(x)\cdot\cos(n\!\cdot\!x)\,\dr x 
+& = & \displaystyle \bruch{1}{2}\cdot a_0  \int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\,\dr x  \\[0.5cm]
+& + & \displaystyle \sum\limits_{k=1}^\infty a_k\cdot \int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\cos(k\!\cdot\!x) \,\dr x \\[0.5cm]
+& + & \displaystyle \sum\limits_{k=1}^\infty b_k\cdot \int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\sin(k\!\cdot\!x) \,\dr x 
 \end{array}  
 \end{equation}
 Wir berechnen als nächstes die Integrale, die in dieser Formel auftreten.
@@ -142,19 +142,19 @@ Das erste Integral hat nach Gleichung (\ref{eq:intCos}) den Wert 0.
 Zur Berechnung der anderen Integrale definieren wir
 \\[0.3cm]
 \hspace*{1.3cm}
-$I_{n,k} := \displaystyle\int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\cos(k\!\cdot\!x)\, dx$
+$I_{n,k} := \displaystyle\int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\cos(k\!\cdot\!x)\, \dr x$
 \quad und \quad
-$J_{n,k} := \displaystyle\int_0^{2\cdot\pi} \sin(n\!\cdot\!x)\cdot\sin(k\!\cdot\!x)\, dx$
+$J_{n,k} := \displaystyle\int_0^{2\cdot\pi} \sin(n\!\cdot\!x)\cdot\sin(k\!\cdot\!x)\, \dr x$
 \\[0.3cm]
 Wir berechnen $I_{n,k}$ durch partielle Integration. Für $n\not=0$  gilt
 \\[0.3cm]
 \hspace*{1.3cm}
 $
 \begin{array}[t]{lcl}
-I_{n,k} & = & \displaystyle\int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\cos(k\!\cdot\!x)\, dx \\[0.3cm]
+I_{n,k} & = & \displaystyle\int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\cos(k\!\cdot\!x)\, \dr x \\[0.3cm]
 & = & \displaystyle 
       \bruch{1}{n}\cdot\sin(n\!\cdot\!x)\cdot\cos(k\!\cdot\!x)\, \bigg|_0^{2\cdot\pi} + 
-       \bruch{k}{n} \cdot \int_0^{2\cdot\pi} \sin(n\!\cdot\!x)\cdot\sin(k\!\cdot\!x)\, dx \\[0.5cm]
+       \bruch{k}{n} \cdot \int_0^{2\cdot\pi} \sin(n\!\cdot\!x)\cdot\sin(k\!\cdot\!x)\, \dr x \\[0.5cm]
 & = & \displaystyle 
       \bruch{k}{n} \cdot J_{n,k}.
 \end{array}
@@ -166,10 +166,10 @@ durch partielle Integration.  Für $n\not=0$ gilt
 \hspace*{1.3cm}
 $
 \begin{array}[t]{lcl}
-  J_{n,k}  & = & \displaystyle\int_0^{2\cdot\pi} \sin(n\!\cdot\!x)\cdot\sin(k\!\cdot\!x)\, dx \\[0.3cm]
+  J_{n,k}  & = & \displaystyle\int_0^{2\cdot\pi} \sin(n\!\cdot\!x)\cdot\sin(k\!\cdot\!x)\, \dr x \\[0.3cm]
 & = & \displaystyle 
-   \bruch{-1}{n}\cdot\cos(n\!\cdot\!x)\cdot\sin(k\!\cdot\!x)\, \bigg|_0^{2\cdot\pi} + 
-   \bruch{k}{n} \cdot \int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\cos(k\!\cdot\!x)\, dx \\[0.5cm]
+   -\bruch{1}{n}\cdot\cos(n\!\cdot\!x)\cdot\sin(k\!\cdot\!x)\, \bigg|_0^{2\cdot\pi} + 
+   \bruch{k}{n} \cdot \int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\cos(k\!\cdot\!x)\, \dr x \\[0.5cm]
 & = & \displaystyle
    \bruch{k}{n} \cdot\ I_{n,k}
 \end{array}
@@ -199,12 +199,12 @@ $
 \begin{array}[t]{lcl}
   2 \cdot I_{n,n} & = & I_{n,n} + J_{n,n} \\[0.1cm]
               & = & \displaystyle
-                    \int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\cos(n\!\cdot\!x)\, dx \;+\;
-                    \int_0^{2\cdot\pi} \sin(n\!\cdot\!x)\cdot\sin(n\!\cdot\!x)\, dx  \\[0.5cm]
+                    \int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\cos(n\!\cdot\!x)\, \dr x \;+\;
+                    \int_0^{2\cdot\pi} \sin(n\!\cdot\!x)\cdot\sin(n\!\cdot\!x)\, \dr x  \\[0.5cm]
               & = & \displaystyle
-                    \int_0^{2\cdot\pi} \cos^2(n\!\cdot\!x) + \sin^2(n\!\cdot\!x)\, dx  \\[0.5cm]
+                    \int_0^{2\cdot\pi} \bigl(\cos^2(n\!\cdot\!x) + \sin^2(n\!\cdot\!x)\bigr)\, \dr x  \\[0.5cm]
               & = & \displaystyle
-                    \int_0^{2\cdot\pi} 1\, dx  \\[0.5cm]
+                    \int_0^{2\cdot\pi} 1\, \dr x  \\[0.5cm]
               & = & \displaystyle 2\cdot\pi 
 \end{array}
 $
@@ -212,28 +212,38 @@ $
 Teilen wir beide Seiten der Gleichung durch 2, so erhalten wir als Ergebnis
 \\[0.3cm]
 \hspace*{1.3cm}
-$I_{n,n} = \displaystyle \int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\cos(n\!\cdot\!x)\, dx \;=\; \pi$.
+$I_{n,n} = \displaystyle \int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\cos(n\!\cdot\!x)\, \dr x \;=\; \pi$.
 \\[0.3cm] 
 Wegen $J_{n,n} = I_{n,n}$ gilt auch 
 \\[0.3cm]
 \hspace*{1.3cm}
-$J_{n,n} = \displaystyle \int_0^{2\cdot\pi} \sin(n\!\cdot\!x)\cdot\sin(n\!\cdot\!x)\, dx \;=\; \pi$.
+$J_{n,n} = \displaystyle \int_0^{2\cdot\pi} \sin(n\!\cdot\!x)\cdot\sin(n\!\cdot\!x)\, \dr x \;=\; \pi$.
 \\[0.3cm] 
 Insgesamt haben wir also 
 \\[0.1cm]
 \hspace*{1.3cm}
 $I_{n,k} = J_{n,k} = \pi\cdot\delta_{n,k}$, 
 \\[0.1cm]
-wobei $\delta_{n,k}$ das früher definierte Kronecker-Delta bezeichnet.
-Um die Gleichung \ref{eq:fourierAk1} nach den Koeffizienten $a_k$ auflösen zu können, müssen wir noch die 
+wobei $\delta_{n,k}$ das früher definierte Kronecker-Delta bezeichnet, für das die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\delta_{n,k} = \left\{
+\begin{array}{ll}
+  1 & \mbox{falls $n = k$ ist,} \\
+  0 & \mbox{falls $n \not= k$ ist}
+\end{array}
+\right.
+$
+\\[0.2cm]
+gilt.  Um die Gleichung \ref{eq:fourierAk1} nach den Koeffizienten $a_k$ auflösen zu können, müssen wir noch die 
 Integrale 
 \\[0.3cm]
 \hspace*{1.3cm}
-$H_{n,k} := \displaystyle\int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\sin(k\!\cdot\!x)\, dx$
+$H_{n,k} := \displaystyle\int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\sin(k\!\cdot\!x)\, \dr x$
 \\[0.3cm]
 berechnen.  Wir könnten dieses Integral auf dieselbe Art berechnen, mit der wir oben die Integrale
-$\int_0^{2\cdot\pi}\!\!\cos(n\!\cdot\!x)\cdot\cos(k\!\cdot\!x)\, dx$  und
-$\int_0^{2\cdot\pi}\!\!\sin(n\!\cdot\!x)\cdot\sin(k\!\cdot\!x)\, dx$  berechnet haben.
+$\int_0^{2\cdot\pi}\!\!\cos(n\!\cdot\!x)\cdot\cos(k\!\cdot\!x)\, \dr x$  und
+$\int_0^{2\cdot\pi}\!\!\sin(n\!\cdot\!x)\cdot\sin(k\!\cdot\!x)\, \dr x$  berechnet haben.
 Es gibt aber noch einen anderen Weg, den wir jetzt aufzeigen.
 Aus dem Additions-Theorem für die Sinus-Funktion 
 \\[0.1cm]
@@ -251,9 +261,9 @@ Damit gilt
 \hspace*{1.3cm}
 $
 \begin{array}[t]{lcl}
-  H_{n,k} & = &\displaystyle\int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\sin(k\!\cdot\!x)\, dx \\[0.5cm]
-& = &\displaystyle \bruch{1}{2}\cdot\int_0^{2\cdot\pi} \sin\bigl((k+n)\!\cdot\!x\bigr) \,dx \;+\;
-                   \bruch{1}{2}\cdot\int_0^{2\cdot\pi} \sin\bigl((k-n)\!\cdot\!x\bigr) \,dx  \\[0.5cm]
+  H_{n,k} & = &\displaystyle\int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\sin(k\!\cdot\!x)\, \dr x \\[0.5cm]
+& = &\displaystyle \bruch{1}{2}\cdot\int_0^{2\cdot\pi} \sin\bigl((k+n)\!\cdot\!x\bigr) \,\dr x \;+\;
+                   \bruch{1}{2}\cdot\int_0^{2\cdot\pi} \sin\bigl((k-n)\!\cdot\!x\bigr) \,\dr x  \\[0.5cm]
 & = & 0
 \end{array}
 $
@@ -264,10 +274,10 @@ Für $n>0$ schreibt sich damit die Formel \ref{eq:fourierAk1} wie folgt
 \hspace*{1.3cm}
 $
 \begin{array}[t]{lcl}
-      \displaystyle \int_0^{2\cdot\pi}f(x)\cdot\cos(n\!\cdot\!x)\,dx 
-& = & \displaystyle \bruch{1}{2}\cdot a_0  \int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\,dx  \\[0.5cm]
-& + & \displaystyle \sum\limits_{k=1}^\infty a_k\cdot \int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\cos(k\!\cdot\!x) \,dx \\[0.5cm]
-& + & \displaystyle \sum\limits_{k=1}^\infty b_k\cdot \int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\sin(k\!\cdot\!x) \,dx \\[0.5cm]
+      \displaystyle \int_0^{2\cdot\pi}f(x)\cdot\cos(n\!\cdot\!x)\,\dr x 
+& = & \displaystyle \bruch{1}{2}\cdot a_0  \int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\,\dr x  \\[0.5cm]
+& + & \displaystyle \sum\limits_{k=1}^\infty a_k\cdot \int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\cos(k\!\cdot\!x) \,\dr x \\[0.5cm]
+& + & \displaystyle \sum\limits_{k=1}^\infty b_k\cdot \int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\sin(k\!\cdot\!x) \,\dr x \\[0.5cm]
 & = & \displaystyle 0 \;+\; \sum\limits_{k=1}^\infty a_k\cdot I_{n,k} \;+\; \sum\limits_{k=1}^\infty b_k\cdot H_{n,k} \\[0.5cm]
 & = & \displaystyle \sum\limits_{k=1}^\infty a_k\cdot \pi\cdot \delta_{n,k} \;+\; \sum\limits_{k=1}^\infty b_k\cdot 0 \\[0.5cm]
 & = & \displaystyle a_n\cdot \pi \\[0.3cm]
@@ -277,7 +287,7 @@ $
 Damit haben wir für den Fourier-Koeffizienten $a_n$ die Formel 
 \begin{equation}
   \label{eq:fourierAk}
- a_n = \bruch{1}{\pi} \cdot\int_0^{2\cdot\pi}f(x)\cdot\cos(n\!\cdot\!x)\,dx   
+ a_n = \bruch{1}{\pi} \cdot\int_0^{2\cdot\pi}f(x)\cdot\cos(n\!\cdot\!x)\,\dr x   
 \end{equation}
 gefunden.  Vergleichen wir diese Formel mit der Formel \ref{eq:fourierA0}, so sehen wir, dass diese Gleichung
 auch für $n=0$ richtig ist.
@@ -287,10 +297,10 @@ nach einer Rechnung, die ganz analog zur Berechnung der Koeffizienten $a_k$ verl
 
 \begin{equation}
   \label{eq:fourierBk}
- b_n = \bruch{1}{\pi} \int_0^{2\cdot\pi}f(x)\cdot\sin(n\!\cdot\!x)\,dx.   
+ b_n = \bruch{1}{\pi} \int_0^{2\cdot\pi}f(x)\cdot\sin(n\!\cdot\!x)\,\dr x.   
 \end{equation}
 
-\section{Konvergenz}
+\section{Konvergenz$^*$}
 Wir müssen noch die Frage beantworten, für welche Funktionen $f$ die mit Hilfe der Gleichungen (\ref{eq:fourierAk})
 (\ref{eq:fourierBk}) und (\ref{eq:fourier})  aufgestellte Fourier-Reihe gegen $f$ konvergiert. 
 Wir wollen uns mit einem Satz begnügen, der im wesentlichen auf Dirichlet 
@@ -333,8 +343,8 @@ und $-\pi$ Sprünge auf.
   \begin{enumerate}
   \item $f:\mathbb{R} \rightarrow \mathbb{R}$ ist  stetig mit der Periode $2\cdot\pi$,
   \item $f\!\upharpoonright_{[0,2\!\cdot\!\pi]}$ ist  stückweise stetig differenzierbar,
-  \item $a_k = \bruch{1}{\pi} \cdot\int\limits_0^{2\cdot\pi}f(x)\cdot\cos(k\!\cdot\!x)\,dx$ \quad und 
-        \quad  $b_k = \bruch{1}{\pi}\cdot\int\limits_0^{2\cdot\pi}f(x)\cdot\sin(k\!\cdot\!x)\,dx$,  
+  \item $a_k = \bruch{1}{\pi} \cdot\int\limits_0^{2\cdot\pi}f(x)\cdot\cos(k\!\cdot\!x)\,\dr x$ \quad und 
+        \quad  $b_k = \bruch{1}{\pi}\cdot\int\limits_0^{2\cdot\pi}f(x)\cdot\sin(k\!\cdot\!x)\,\dr x$,  
   \end{enumerate}
   dann gilt \\[0.1cm]
   \hspace*{1.3cm}
@@ -358,7 +368,7 @@ Ist die Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ ungerade und ist $f$ inte
 so gilt für beliebige Zahlen $a$ 
 \begin{equation}
   \label{eq:intUngerade}
- \int_{-a}^a f(x)\,dx = 0.  
+ \int_{-a}^a f(x)\,\dr x = 0.  
 \end{equation}
 \vspace*{0.3cm}
 
@@ -366,57 +376,58 @@ so gilt für beliebige Zahlen $a$
 \textbf{Beweis:} Es gilt 
 \\[0.3cm]
 \hspace*{1.3cm}
-$\displaystyle \int_{-a}^a f(x)\,dx = \int_{-a}^0 f(x)\,dx + \int_{0}^a f(x)\,dx$.
+$\displaystyle \int_{-a}^a f(x)\,\dr x = \int_{-a}^0 f(x)\,\dr x + \int_{0}^a f(x)\,\dr x$.
 \\[0.3cm]
 In dem Integral über das Intervall $[-a,0]$ führen wir die Variablen-Transformation $y =
--x$ durch.  Dann gilt $dy = - dx$, und $y(-a) = a$, $y(0) = 0$.  Damit gilt
+-x$ durch.  Dann gilt $\dr y = - \dr x$, und $y(-a) = a$, $y(0) = 0$.  Damit gilt
 \\[0.3cm]
 \hspace*{1.3cm}
 $
-\displaystyle \int_{-a}^0 f(x)\,dx =  -\int_{a}^0 f(-y)\,dy  
-  = \int_{0}^a f(-y)\,dy  
-  = - \int_{0}^a f(y)\,dy  
-  = - \int_{0}^a f(x)\,dx  
+\displaystyle \int_{-a}^0 f(x)\,\dr x =  -\int_{a}^0 f(-y)\,\dr y  
+  = \int_{0}^a f(-y)\,\dr y  
+  = - \int_{0}^a f(y)\,\dr y  
+  = - \int_{0}^a f(x)\,\dr x  
 $
 \\[0.3cm]
 Also haben wir insgesamt
 \\[0.3cm]
 \hspace*{1.3cm}
-$\displaystyle \int_{-a}^a f(x)\,dx = \int_{-a}^0 f(x)\,dx + \int_{0}^a f(x)\,dx
- = -\int_{0}^a f(x)\,dx + \int_{0}^a f(x)\,dx = 0$. \hspace*{\fill} $\Box$
+$\displaystyle \int_{-a}^a f(x)\,\dr x = \int_{-a}^0 f(x)\,\dr x + \int_{0}^a f(x)\,\dr x
+ = -\int_{0}^a f(x)\,\dr x + \int_{0}^a f(x)\,\dr x = 0$. \hspace*{\fill} $\Box$
 \\[0.3cm]
 Ist die Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ gerade, so kann ein Integral über
 ein zum Punkt $x=0$ symmetrisches Intervall wie folgt vereinfacht werden: 
 \begin{equation}
   \label{eq:intGerade}
- \int_{-a}^a f(x)\,dx = 2 \cdot \int_{0}^a f(x)\,dx.  
+ \int_{-a}^a f(x)\,\dr x = 2 \cdot \int_{0}^a f(x)\,\dr x.  
 \end{equation}
 \vspace*{0.3cm}
 
 \exercise
- Beweisen Sie die Gleichung \ref{eq:intGerade}.
+ Beweisen Sie die Gleichung \ref{eq:intGerade}.  \eox
 
 \begin{Satz}
   Ist die Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ periodisch mit der Periode
   $2\cdot\pi$, so gilt 
   \begin{equation}
     \label{eq:intPeriodic}
-    \int_0^{2\cdot\pi}f(x)\,dx = \int_{-\pi}^{\pi}f(x)\,dx
+    \int_0^{2\cdot\pi}f(x)\,\dr x = \int_{-\pi}^{\pi}f(x)\,\dr x
   \end{equation}
 \end{Satz}
 \vspace*{0.3cm} 
 
 \exercise
-Beweisen Sie den letzten Satz.
+Beweisen Sie den letzten Satz.  \eox
 \vspace*{0.3cm}
 
+\noindent
 Die letzten beiden Gleichungen können wir zusammenfassen.
 \begin{Korollar}
   Ist die Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ einerseits periodisch mit der Periode
   $2\cdot\pi$ und andererseits ungerade, so gilt 
   \begin{equation}
     \label{eq:intPeriodicUngerade}
-    \int_{0}^{2\cdot\pi} f(x)\, dx = 0
+    \int_{0}^{2\cdot\pi} f(x)\, \dr x = 0
   \end{equation}
 \end{Korollar}
 \vspace*{0.3cm}
@@ -425,14 +436,14 @@ Die letzten beiden Gleichungen können wir zusammenfassen.
 \textbf{Beweis}: Es gilt 
 \\[0.3cm]
 \hspace*{1.3cm}
-$\displaystyle \int_{0}^{2\cdot\pi} f(x)\, dx = \int_{-\pi}^{\pi} f(x)\, dx = 0$.
+$\displaystyle \int_{0}^{2\cdot\pi} f(x)\, \dr x = \int_{-\pi}^{\pi} f(x)\, \dr x = 0$.
 
 \begin{Korollar}
   Ist die Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ einerseits periodisch mit der Periode
   $2\cdot\pi$ und andererseits gerade, so gilt 
   \begin{equation}
     \label{eq:intPeriodicUngerade}
-    \int_{0}^{2\cdot\pi} f(x)\, dx = 2\cdot\int_{0}^{\pi} f(x)\, dx
+    \int_{0}^{2\cdot\pi} f(x)\, \dr x = 2\cdot\int_{0}^{\pi} f(x)\, \dr x
   \end{equation}
 \end{Korollar}
 \vspace*{0.3cm}
@@ -441,7 +452,7 @@ $\displaystyle \int_{0}^{2\cdot\pi} f(x)\, dx = \int_{-\pi}^{\pi} f(x)\, dx = 0$
 \textbf{Beweis}: Es gilt 
 \\[0.3cm]
 \hspace*{1.3cm}
-$\displaystyle \int_{0}^{2\cdot\pi} f(x)\, dx = \int_{-\pi}^{\pi} f(x)\, dx = 2 \cdot \int_0^{\pi} f(x)\,dx$.
+$\displaystyle \int_{0}^{2\cdot\pi} f(x)\, \dr x = \int_{-\pi}^{\pi} f(x)\, \dr x = 2 \cdot \int_0^{\pi} f(x)\,\dr x$.
 
 \subsection{Fourier-Analyse der Sägezahn-Funktion}
 Wir berechnen als erstes die Fourier-Reihe für die \emph{Sägezahn}-Funktion $s:\mathbb{R} \rightarrow \mathbb{R}$,  
@@ -469,30 +480,30 @@ dieser Funktion.
       \\[0.3cm]
       \hspace*{0.5cm}
       $\displaystyle
-        a_n  =  \bruch{1}{\pi} \cdot\int_0^{2\cdot\pi} s(x) \cdot \cos(n\!\cdot\!x)\,dx 
-             =  \bruch{2}{\pi} \cdot\int_{0}^{\pi} s(x) \cdot \cos(n\!\cdot\!x)\,dx
-             =  \bruch{2}{\pi} \cdot\int_{0}^{\pi} x \cdot \cos(n\!\cdot\!x)\,dx, 
+        a_n  =  \bruch{1}{\pi} \cdot\int_0^{2\cdot\pi} s(x) \cdot \cos(n\!\cdot\!x)\,\dr x 
+             =  \bruch{2}{\pi} \cdot\int_{0}^{\pi} s(x) \cdot \cos(n\!\cdot\!x)\,\dr x
+             =  \bruch{2}{\pi} \cdot\int_{0}^{\pi} x \cdot \cos(n\!\cdot\!x)\,\dr x, 
       $
       \\[0.3cm]
-      denn die Funktion $x \mapsto s(x) \cdot \cos(n\!\cdot\!x)\,dx$ ist einerseits
+      denn die Funktion $x \mapsto s(x) \cdot \cos(n\!\cdot\!x)\,\dr x$ ist einerseits
       periodisch mit der Periode $2\cdot\pi$ und andererseits gerade.
       Im Falle $n=0$ haben wir 
       \\[0.1cm]
       \hspace*{1.3cm}
-        $\displaystyle a_0 = \bruch{2}{\pi} \cdot\int_{0}^{\pi} x \cdot \cos(0\!\cdot\!x)\,dx =
-          \bruch{2}{\pi} \cdot\int_{0}^{\pi} x \,dx = 
+        $\displaystyle a_0 = \bruch{2}{\pi} \cdot\int_{0}^{\pi} x \cdot \cos(0\!\cdot\!x)\,\dr x =
+          \bruch{2}{\pi} \cdot\int_{0}^{\pi} x \,\dr x = 
           \bruch{2}{\pi} \cdot \bruch{x^2}{2} \,\bigg|_0^\pi = \bruch{2}{\pi} \cdot \bruch{\pi^2}{2} =\pi$.
       \\[0.1cm]
       Andernfalls berechnen wir das Integral  mit Hilfe partieller Integration.  Wir setzen
-      $v'(x) = \cos(n\!\cdot\!x)$ und $u(x) = x$.  Dann gilt
-      $v(x) = \frac{1}{n}\cdot \sin(n\!\cdot\!x)$ und $u'(x) = 1$, also haben wir für 
+      $f'(x) = \cos(n\!\cdot\!x)$ und $g(x) = x$.  Dann gilt
+      $f(x) = \frac{1}{n}\cdot \sin(n\!\cdot\!x)$ und $g'(x) = 1$, also haben wir für 
       $n \geq 1$
       \\[0.3cm]
       \hspace*{1.3cm}
       $
       \begin{array}[t]{lcl}
          a_n &= &\displaystyle \bruch{2}{\pi} \cdot\left( x \cdot \bruch{1}{n}\sin(n\!\cdot\!x) \bigg|_0^{\pi} - 
-               \bruch{1}{n}\cdot \int_0^{\pi} \sin(n\!\cdot\!x)\,dx\right) \\[0.5cm]
+               \bruch{1}{n}\cdot \int_0^{\pi} \sin(n\!\cdot\!x)\,\dr x\right) \\[0.5cm]
              &= &\displaystyle \bruch{2}{\pi} \cdot\left(0 - \bruch{1}{n^2} \cdot \cos(n\!\cdot\!x)\, \bigg|_0^\pi\right) \\[0.5cm]
              &= &\displaystyle \bruch{2}{\pi} \cdot\bruch{1}{n^2}\cdot \Bigl( (-1)^n - 1 \Bigr), 
       \end{array}
@@ -505,7 +516,7 @@ dieser Funktion.
 \item Die Koeffizienten $b_n$ ergeben sich als
       \\[0.3cm]
       \hspace*{1.3cm}
-      $b_n  = \displaystyle \bruch{1}{\pi} \cdot\int_0^{2\cdot\pi} s(x) \cdot \sin(n\!\cdot\!x)\,dx = 0$
+      $b_n  = \displaystyle \bruch{1}{\pi} \cdot\int_0^{2\cdot\pi} s(x) \cdot \sin(n\!\cdot\!x)\,\dr x = 0$
       \\[0.3cm]
       denn die Funktion $s(x) \cdot \sin(n\!\cdot\!x)$ ist sowohl periodisch mit der Periode $2\cdot\pi$ als auch ungerade.
 \end{enumerate}
@@ -565,12 +576,12 @@ $p(x) = x^2$.
 \\[0.1cm]
 Die Funktion werde so auf $\mathbb{R}$ fortgesetzt, dass die resultierende Funktion die Periode
 $2\!\cdot\!\pi$ hat.  
-\begin{enumerate}
+\begin{enumerate}[(a)]
 \item Berechnen Sie die Fourier-Reihe von $p$.
 \item Berechnen Sie mit Hilfe der Fourier-Reihe von $p$ einen Wert für die Reihe
       \\[0.3cm]
       \hspace*{1.3cm}
-      $\displaystyle \sum\limits_{n=1}^\infty \bruch{1}{n^2}$. 
+      $\displaystyle \sum\limits_{n=1}^\infty \bruch{1}{n^2}$. \eox
 \end{enumerate}
 
 

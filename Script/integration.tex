@@ -302,7 +302,7 @@ gilt.  In diesem Fall schreiben wir auch  $\ds F(x) = \int f(x) \, \dr x$.
 Der Ausdruck $\ds\int f(x) \, \dr x$ wird als \emph{unbestimmtes Integral} bezeichnet. \eod
 \end{Definition}
 
-Die Schreibweise $\ds F(x) = \int f(x) \, \dr x$ ist problematisch, denn die Stamm-Funktion einer
+Die Schreibweise $F(x) = \int f(x) \, \dr x$ ist problematisch, denn die Stamm-Funktion einer
 gegebenen Funktion ist nicht eindeutig.  Ist $F(x)$ eine Stamm-Funktion von $f(x)$ und
 definieren wir die Funktion $G$ durch $G(x) := F(x) + c$ für eine beliebige Konstante $c$,
 so ist natürlich auch $G(x)$ eine Stamm-Funktion von $f$, denn es gilt
@@ -323,7 +323,21 @@ Dann definieren wir die Funktion $H$ als $H(x) := F_1(x) - F_2(x)$.  Damit gilt
 $\df H(x) = \df{F_1}(x) - \df{F_2}(x) = f(x) - f(x) = 0$.
 \\[0.2cm]
 Nach Lemma \ref{lemma:0_ableitung} gibt es nun eine Konstante $c$, so dass $H(x) = c$ gilt.
-Wir kommen jetzt zu einem zentralen Ergebnis dieser Vorlesung.
+Daraus folgt dann
+\\[0.2cm]
+\hspace*{1.3cm}
+$F_1(x) - F_2(x) = c$, \quad also \quad $F_1(x) = F_2(x) + c$
+\\[0.2cm]
+und dass heißt gerade, dass sich die beiden Stamm-Funktionen $F_1$ und $F_2$ nur um eine Konstante
+unterscheiden.   
+
+Sie fragen sich vermutlich, warum wir bei einer Stamm-Funktion das Integral-Zeichen verwenden.
+Der Hauptsatz der Differential- und Integral-Rechnung gibt darauf eine Antwort.  Gleichzeitig ist
+dieser Satz das zentrale Ergebnis dieser Vorlesung.  Historisch wurde dieser Satz unabhängig sowohl
+von \href{https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz}{Gottfried Wilhelm Leibniz} als
+auch von \href{https://en.wikipedia.org/wiki/Isaac_Newton}{Issac Newton} gefunden.  Die Entdeckung
+dieses Satzes war für die Analysis von  fundamentaler Bedeutung, denn dieser Satz ermöglicht die
+Berechnung vieler Integrale.
 
 \begin{Satz}[Hauptsatz der Differential- und Integral-Rechnung] \hspace*{\fill} \\
  Die Funktion $f:[a,b] \rightarrow\mathbb{R}$ sei stetig, $F:[a,b] \rightarrow\mathbb{R}$
@@ -455,7 +469,7 @@ verifizieren, aber dabei bleibt die Frage offen, wie die Einträge dieser Tabelle
 wurden.  Wir stellen jetzt einige Sätze auf, mit deren Hilfe wir Stamm-Funktionen
 gegebener Funktionen berechnen können.  Wir erhalten diese Sätze indem wir die
 Regeln, die wir zur Differenzierung aufgestellt haben, umdrehen.  
-\pagebreak
+
 
 \subsection{Die Substitutions-Regel}
 Wir beginnen damit, dass wir die Ketten-Regel umstellen.
@@ -864,10 +878,13 @@ sinnvoll, die Lösung in die folgenden Schritte aufzuteilen:
       $y = \frac{1}{2} \cdot \bigl(e^x + e^{-x}\bigr)$
       \\[0.2cm]
       nach $x$ auflösen.  Setzen Sie zunächst $\alpha := e^x$, so erhalten Sie eine quadratische
-      Gleichung für $\alpha$.  Anschließend finden Sie $x$ nach der Formel $x = \ln(\alpha)$.
+      Gleichung für $\alpha$ in Abhängigkeit von $y$.  Wenn Sie aus dieser Gleichung $\alpha$
+      beechnet haben, dann finden Sie anschließend $x$ nach der Formel $x = \ln(\alpha)$.
 
       Die Umkehrfunktion, die wir auf diesem Weg berechnet haben, ist als 
-      \emph{Areasinus Hyperbolicus} bekannt und wird $\mathtt{arsinh}(x)$ geschrieben.
+      \href{https://de.wikipedia.org/wiki/Areasinus_Hyperbolicus_und_Areakosinus_Hyperbolicus}{\emph{Areasinus Hyperbolicus}}
+      bekannt und wird von uns als $\mathtt{arsinh}(x)$ geschrieben.  In der angelsächsischen
+      Literatur findet sich auch die Schreibweise $\sinh^{-1}(x)$ für diese Funktion.
 \item Dann zeigen wir
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -884,13 +901,13 @@ sinnvoll, die Lösung in die folgenden Schritte aufzuteilen:
       $\ds I(x) := \int_0^x \cosh^2(t)\, \dr t$
       \\[0.2cm]
       mit Hilfe einer partiellen Integration, wobei wir im Verlaufe der Rechnung an geeigneter
-      Stelle berücksichtigen, dass $\cosh^2(x) = 1 + \sinh^2(x)$ gilt. 
-\item Das bei der Berechnung der Bogenlänge der Parabel auftretende Integral kann nun mit einer
-      geeigneten Substitution auf das Integral $I(x)$ zurück geführt werden. \eod 
+      Stelle die Identität $\cosh^2(x) = 1 + \sinh^2(x)$ berücksichtigen. 
+\item Das bei der Berechnung der Bogenlänge der Parabel auftretende Integral kann nun vermittels einer
+      Substitution auf das Integral $I(x)$ zurück geführt werden. \eod 
 \end{enumerate}
 
 
-\section{Uneigentliche Integrale}
+\section{Uneigentliche Integrale$^*$}
 Ist bei dem Ausdruck $\int_a^b f(x)\,\dr x$ die Funktion $f$ an einer der Intervall-Grenzen
 nicht definiert, so bezeichnen wir den Ausdruck als uneigentliches Integral.  Wir
 betrachten nur den Fall, dass die Funktion $f$ nur in dem halboffenen Intervall $(a, b]$
