@@ -109,7 +109,7 @@ $q \geq 1$ und
 \hspace*{1.3cm}
 $e = \bruch{p}{q}$.
 \\[0.2cm]
-Wir betrachten den Ausdruck $q! \cdot r_q = q! \cdot (e - s_q)$ und setzten dort für $e$ den Wert $\frac{p}{q}$ ein:
+Wir betrachten den Ausdruck $q! \cdot r_q = q! \cdot (e - s_q)$ und setzten dort für $e$ den Wert $\ds\frac{p}{q}$ ein:
 \\[0.2cm]
 \hspace*{1.3cm}
 $q! \cdot r_q = q! \cdot \Bigl(\bruch{p}{q} - \sum\limits_{k=0}^q \bruch{1}{k!}\Bigr)  
@@ -127,7 +127,7 @@ $\bruch{q!}{k!} = \bruch{1 \cdot 2 \cdot {\dots} \cdot k \cdot (k + 1) \cdot (k 
 und das ist ebenfalls eine natürliche Zahl.  Damit haben wir aber einen Widerspruch, denn die Aussagen
 \\[0.2cm]
 \hspace*{1.3cm}
-$0 < q! \cdot r_q < \frac{1}{q}$  \quad und \quad $q! \cdot r_q \in \mathbb{Z}$ 
+$\ds 0 < q! \cdot r_q < \frac{1}{q}$  \quad und \quad $q! \cdot r_q \in \mathbb{Z}$ 
 \\[0.2cm]
 sind unvereinbar.  \qed
 
@@ -135,7 +135,8 @@ sind unvereinbar.  \qed
 \section{Die Kreiszahl $\pi$ ist irrational}
 Zur Vorbereitung des Beweises benötigen wir das folgende Lemma.
 \begin{Lemma}
-Für alle natürlichen Zahlen $n$ gilt:
+Die Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ sei beliebig oft differenzierbar. Dann gilt 
+für alle natürlichen Zahlen $n$
 \\[0.2cm]
 \hspace*{0.8cm}
 $\dint{0}{{\pi}} f(x) \cdot \sin(x)\, dx = 
@@ -153,7 +154,7 @@ $I := \dint{0}{{\pi}} f(x) \cdot \sin(x)\, dx$
 und 
 \\
 \hspace*{1.3cm}
-$S_n := \sum\limits_{k=0}^n (-1)^k \cdot \bigl(f^{(2k)}(\pi) + f^{(2k)}(0)\bigr) + 
+$\ds S_n := \sum\limits_{k=0}^n (-1)^k \cdot \bigl(f^{(2k)}(\pi) + f^{(2k)}(0)\bigr) + 
   (-1)^{n+1} \cdot \dint{0}{\pi} f^{(2n+2)}(x) \cdot \sin(x)\, dx
 $.
 \\[0.2cm]
@@ -186,7 +187,12 @@ im Induktions-Schritt zwei partielle Integrationen durchführen.
      \\[0.2cm]
      Um das verbleibende Integral zu berechnen führen wir eine erneute partielle Integration durch, bei
      der wir diesmal $u(x) = f'(x)$ und $v'(x) = \cos(x)$ setzen.  Dann gilt $u'(x) = f^{(2)}(x)$ und
-     $v(x) = \sin(x)$.  Damit finden wir für das Integral $I$ den Wert
+     $v(x) = \sin(x)$.  Wegen 
+     \\[0.2cm]
+     \hspace*{1.3cm}
+     $\sin(\pi) = \sin(0) = 0$
+     \\[0.2cm]
+     finden wir damit für das Integral $I$ den Wert
      \\[0.2cm]
      \hspace*{1.3cm}
      $I = f(\pi) + f(0) - \dint{0}{\pi} f^{(2)}(x) \cdot \sin(x)\, dx$.
@@ -196,7 +202,7 @@ im Induktions-Schritt zwei partielle Integrationen durchführen.
      \hspace*{1.3cm}
      $
      \begin{array}[t]{lcl}
-       S_0 & = & \sum\limits_{k=0}^0 (-1)^k \cdot \bigl(f^{(2k)}(\pi) + f^{(2k)}(0)\bigr) + 
+       S_0 & = & \ds \sum\limits_{k=0}^0 (-1)^k \cdot \bigl(f^{(2k)}(\pi) + f^{(2k)}(0)\bigr) + 
                   (-1)^{0+1} \cdot \dint{0}{\pi} f^{(2\cdot 0+2)}(x) \cdot \sin(x)\, dx           \\[0.5cm]
            & = & (-1)^0 \cdot \bigl(f^{(0)}(\pi) + f^{(0)}(0)\bigr)  
                   - \dint{0}{\pi} f^{(2)}(x) \cdot \sin(x)\, dx           \\[0.5cm]
@@ -253,15 +259,14 @@ im Induktions-Schritt zwei partielle Integrationen durchführen.
      \hspace*{0.0cm}
      $
      \begin{array}[t]{lcl}
-      I & \stackrel{IV}{=} & \sum\limits_{k=0}^n (-1)^k \cdot \bigl(f^{(2k)}(\pi) + f^{(2k)}(0)\bigr) + 
-                 (-1)^{n+1} \cdot J_n 
+      I & \stackrel{IV}{=} & \ds
+          \sum\limits_{k=0}^n (-1)^k \cdot \bigl(f^{(2k)}(\pi) + f^{(2k)}(0)\bigr) + (-1)^{n+1} \cdot J_n 
              \\[0.4cm]
-        & = & \sum\limits_{k=0}^n (-1)^k \cdot \bigl(f^{(2k)}(\pi) + f^{(2k)}(0)\bigr) 
-             + (-1)^{n+1} \cdot \Bigl( f^{(2n+2)}(\pi) + f^{(2n+2)}(0) - J_{n+1} \Bigr)
+        & = & \ds
+         \sum\limits_{k=0}^n (-1)^k \cdot \bigl(f^{(2k)}(\pi) + f^{(2k)}(0)\bigr) + (-1)^{n+1} \cdot \Bigl( f^{(2n+2)}(\pi) + f^{(2n+2)}(0) - J_{n+1} \Bigr)
             \\[0.4cm]
-        & = & \sum\limits_{k=0}^{n+1} (-1)^k \cdot \bigl(f^{(2k)}(\pi) + f^{(2k)}(0)\bigr) 
-             + (-1)^{n+2} \cdot J_{n+1} \; = \;S_{n+1} 
-            \\[0.4cm]
+        & = & \ds
+            \sum\limits_{k=0}^{n+1} (-1)^k \cdot \bigl(f^{(2k)}(\pi) + f^{(2k)}(0)\bigr) + (-1)^{n+2} \cdot J_{n+1} \; = \;S_{n+1} 
      \end{array}
      $
      \\[0.2cm]
