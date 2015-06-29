@@ -44,7 +44,7 @@ Die Auswirkungen von Rundungsfehlern werden oft unterschätzt.  Unter
 findet sich eine Liste der 20 spektakulärsten Software-Fehler, die Katastrophen ausgelöst haben.
 In mehreren Fällen waren Rundungsfehler ein Teil des Problems.  Um einen ersten Eindruck von der Wirkung
 von Rundungsfehlern zu bekommen, betrachten wir das in Abbildung \ref{fig:harmonic.stlx} gezeigte
-Programm zur Berechnung der harmonischen Reihe
+\textsl{Java}-Programm zur Berechnung der harmonischen Reihe
 \\[0.2cm]
 \hspace*{1.3cm}
 $\sum\limits_{n=1}^\infty \bruch{1}{n}$.
@@ -60,34 +60,32 @@ $\sum\limits_{n=1}^\infty \bruch{1}{n}$.
                   xleftmargin   = 0.8cm,
                   xrightmargin  = 0.8cm,
                 ]
-    harmonic := procedure() {
-        oldSum := 0.0;
-        sum := 1.0;
-        n := 1;
-        while (oldSum < sum) {
-            oldSum := sum;
-            n += 1;
-            sum += 1/n;
-        }
-        print("sum = $sum$, n = $n$");
-    };    
-    harmonic();
+    public static float harmonic() {
+	float oldSum = 0.0F;
+	float sum    = 1.0F;
+	int   n      = 1;
+	while (oldSum < sum) {
+	    oldSum = sum;
+	    n += 1;
+	    sum += 1.0/n;
+	    if (n % 100000 == 0) {
+		System.out.println("n = " + n + ", sum = " + sum);
+	    }
+	}
+	System.out.println("n = " + n + ", sum = " + sum);
+	return sum;
+    };
 \end{Verbatim}
 \vspace*{-0.3cm}
 \caption{Berechnung von $\sum\limits_{n=1}^\infty \bruch{1}{n}$.}
-\label{fig:harmonic.stlx}
+\label{fig:Harmonic.java}
 \end{figure}
 
 Sie erwarten jetzt vielleicht, dass diese Programm nie terminiert, aber wenn wir dieses Programm
-in einer Datei mit dem Namen ``\texttt{harmonic.stlx}'' speichern und es dann mit dem Befehl
+laufen lassen, dann erhalten wir nach wenigen Sekunden die Meldung:
 \\[0.2cm]
 \hspace*{1.3cm}
-\texttt{setlX --real32 harmonic.stlx}
-\\[0.2cm]
-starten, dann erhalten wir nach wenigen Sekunden die Meldung:
-\\[0.2cm]
-\hspace*{1.3cm}
-\texttt{sum = 13.05426, n = 200001}.
+\texttt{sum = 15.403683, n = 2097152}.
 \\[0.2cm]
 Da wir früher bewiesen haben, dass die Partialsummen
 \\[0.2cm]
@@ -95,12 +93,12 @@ Da wir früher bewiesen haben, dass die Partialsummen
 $\ds s_n := \sum\limits_{k=1}^n \bruch{1}{k}$ 
 \\[0.2cm]
 für wachsende Werte von $n$ beliebig groß werden, fragen wir uns, was bei der Rechnung schief gelaufen ist.
-Die Antwort ist, dass für $n= 200001$ der Wert $\frac{1}{n}$ so klein ist, dass die Summe
+Die Antwort ist, dass für $n = 2097152$ der Wert $\frac{1}{n}$ so klein ist, dass die Summe
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds 13.05426 + \frac{1}{n}$
+$\ds 15.403683 + \frac{1}{n}$
 \\[0.2cm]
-so nahe bei $13.05426$ liegt, dass sie auf den Wert $13.05426$ abgerundet wird.  Um diesen Effekt näher
+so nahe bei $15.403683$ liegt, dass sie auf den Wert $15.403683$ abgerundet wird.  Um diesen Effekt näher
 zu beschreiben, definiert man für einen vorgegebenen Rechner die sogenannte
 \emph{Maschinen-Konstante} \textsl{eps} als die kleinste positive Zahl, die, wenn sie auf diesem Rechner zu
 $1$ addiert wird, eine Ergebnis größer als 1 ergibt.  Die formale Definition lautet
@@ -109,23 +107,18 @@ $1$ addiert wird, eine Ergebnis größer als 1 ergibt.  Die formale Definition lau
 $\textsl{eps} := \min\bigl( \{ x \in \mathbb{R} \mid x > 0 \wedge 1 \oplus x > 1 \} \bigr)$.
 \\[0.2cm]
 Hier bezeichnet $\oplus$ die auf dem Rechner implementierte Addition.
-Abbildung \ref{fig:maschinen-konstante.stlx} zeigt ein einfaches Programm zur Berechnung der
-Maschinen-Konstante.  Bei der im \textsc{Ieee}-Standard 754 definierten 32-Bit-Architektur erhalten wir
-für $\textsl{eps}$ den Wert
+Abbildung \ref{fig:maschinen-konstante.stlx} zeigt ein zwei Funktionen zur Berechnung der
+Maschinen-Konstante bei einfacher und doppelter Genauigkeit.  Bei der im \textsc{Ieee}-Standard 754
+definierten 32-Bit-Architektur erhalten wir für $\textsl{eps}$ den Wert
 \\[0.2cm]
 \hspace*{1.3cm}
-$\textsl{eps}_{32} = 9.536745 \cdot 10^{-7}$,
+$\textsl{eps}_{32} = \texttt{1.1920929E-7}$,
 \\[0.2cm]
-bei einer 64-Bit-Architektur lautet das Ergebnis
-\\[0.2cm]
-\hspace*{1.3cm}
-$\textsl{eps}_{64} = 8.88178419700125 \cdot 10^{-16}$,
-\\[0.2cm]
-und wenn wir mit 128-Bit rechnen, haben wir
+Bei einer 64-Bit-Architektur lautet das Ergebnis
 \\[0.2cm]
 \hspace*{1.3cm}
-$\textsl{eps}_{128} = 7.703719777548943412223911770339695 \cdot 10^{-34}$.
-\vspace*{0.3cm}
+$\textsl{eps}_{64} = \texttt{2.220446049250313E-16}$,
+
 
 \begin{figure}[!ht]
 \centering
@@ -138,12 +131,21 @@ $\textsl{eps}_{128} = 7.703719777548943412223911770339695 \cdot 10^{-34}$.
                   xleftmargin   = 0.8cm,
                   xrightmargin  = 0.8cm,
                 ]
-    maschinenKonstante := procedure() {
-        eps := 1.0;
-        old := eps;
+    public static float singlePrecisionEps() {
+	float eps = 1.0F;
+        float old = eps;
+        while (1.0F + eps > 1.0F) {
+            old  = eps;
+            eps *= 0.5F;
+        }
+        return old;
+    };
+    public static double doublePrecisionEps() {
+	double eps = 1.0;
+        double old = eps;
         while (1.0 + eps > 1.0) {
-            old := eps;
-            eps /= 2;
+            old  = eps;
+            eps *= 0.5;
         }
         return old;
     };
