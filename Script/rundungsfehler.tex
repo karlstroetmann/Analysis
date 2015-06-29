@@ -11,19 +11,19 @@ Verfahren ist gemeinsam, dass zwei verschiedene Arten von Fehlern auftreten:
       berechnen können.  Wollen wir beispielsweise die Euler'sche Zahl $e$ nach der Formel
       \\[0.2cm]
       \hspace*{1.3cm}
-      $e = \sum\limits_{k=0}^\infty \bruch{1}{k!}$
+      $\ds e = \sum\limits_{k=0}^\infty \bruch{1}{k!}$
       \\[0.2cm]
       berechnen, so können wir auf dem Rechner diese Summe nicht gegen unendlich laufen
       lassen, sondern müssen die Summe nach endlich vielen Gliedern abbrechen, wir berechnen
       also als Approximation für $e$ eine Reihe der Form
       \\[0.2cm]
       \hspace*{1.3cm}
-      $e_n := \sum\limits_{k=0}^n \bruch{1}{k!}$ 
+      $\ds e_n := \sum\limits_{k=0}^n \bruch{1}{k!}$ 
       \\[0.2cm]
       und müssen dann $n$ so groß wählen, dass der Abbruch-Fehler
       \\[0.2cm]
       \hspace*{1.3cm}
-      $e - e_n = \sum\limits_{k=n+1}^\infty \bruch{1}{k!}$ 
+      $\ds e - e_n = \sum\limits_{k=n+1}^\infty \bruch{1}{k!}$ 
       \\[0.2cm]
       unterhalb einer vorgegeben Schranke bleibt.
 \item Zusätzlich zum Approximations-Fehler gibt es noch die Rundungsfehler, die im Laufe der Rechnung 
@@ -44,7 +44,7 @@ Die Auswirkungen von Rundungsfehlern werden oft unterschätzt.  Unter
 findet sich eine Liste der 20 spektakulärsten Software-Fehler, die Katastrophen ausgelöst haben.
 In mehreren Fällen waren Rundungsfehler ein Teil des Problems.  Um einen ersten Eindruck von der Wirkung
 von Rundungsfehlern zu bekommen, betrachten wir das in Abbildung \ref{fig:harmonic.stlx} gezeigte
-Programm zur Berechnung der Reihe
+Programm zur Berechnung der harmonischen Reihe
 \\[0.2cm]
 \hspace*{1.3cm}
 $\sum\limits_{n=1}^\infty \bruch{1}{n}$.
@@ -89,12 +89,16 @@ starten, dann erhalten wir nach wenigen Sekunden die Meldung:
 \hspace*{1.3cm}
 \texttt{sum = 13.05426, n = 200001}.
 \\[0.2cm]
-Da wir früher bewiesen haben, dass die Partialsummen $\sum\limits_{k=1}^n \bruch{1}{k}$ für wachsende Werte
-von $n$ beliebig groß werden, fragen wir uns, was bei der Rechnung schief gelaufen ist.
+Da wir früher bewiesen haben, dass die Partialsummen
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds s_n := \sum\limits_{k=1}^n \bruch{1}{k}$ 
+\\[0.2cm]
+für wachsende Werte von $n$ beliebig groß werden, fragen wir uns, was bei der Rechnung schief gelaufen ist.
 Die Antwort ist, dass für $n= 200001$ der Wert $\frac{1}{n}$ so klein ist, dass die Summe
 \\[0.2cm]
 \hspace*{1.3cm}
-$13.05426 + \frac{1}{n}$
+$\ds 13.05426 + \frac{1}{n}$
 \\[0.2cm]
 so nahe bei $13.05426$ liegt, dass sie auf den Wert $13.05426$ abgerundet wird.  Um diesen Effekt näher
 zu beschreiben, definiert man für einen vorgegebenen Rechner die sogenannte
