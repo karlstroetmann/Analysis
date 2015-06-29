@@ -271,6 +271,23 @@ and thereby shows that
 \\[0.2cm]
 \hspace*{1.3cm}
 $x^2 - 8 \cdot x + 15 = (x - 5) \cdot (x - 3)$.
+\\[0.2cm]
+We can also compute the \emph{partial fraction decomposition} of an expression.  For example, the
+command  
+\\[0.2cm]
+\hspace*{1.3cm}
+\texttt{apart(x/(x**2 -8*x + 15))}
+\\[0.2cm]
+yields the result
+\\[0.2cm]
+\hspace*{1.3cm}
+\texttt{-3/(2*(x - 3)) + 5/(2*(x - 5))}
+\\[0.2cm]
+thereby showing that
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds \frac{x}{x^2 - 8 \cdot x + 15} = \frac{5}{2} \cdot \frac{1}{x-5} - \frac{3}{2} \cdot \frac{1}{x-3}$.
+
 
 \section{Differentiation and Integration}
 In order to compute the derivative of
@@ -323,7 +340,7 @@ This show that
 \hspace*{1.3cm}
 $\displaystyle\int_{-\infty}^{+\infty} e^{-x^2} \; dx = \sqrt{\pi}$.
 \\[0.2cm]
-Note the $\infty$ is represented as the variable \texttt{oo} in the module \texttt{sympy}.  
+Note that $\infty$ is represented as the variable \texttt{oo} in the module \texttt{sympy}.  
 
 \section{Computation of Limits}
 \textsl{SymPy} supports the computation of limits.  In order to verify that 
