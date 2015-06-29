@@ -66,8 +66,8 @@ $\sum\limits_{n=1}^\infty \bruch{1}{n}$.
 	int   n      = 1;
 	while (oldSum < sum) {
 	    oldSum = sum;
-	    n += 1;
-	    sum += 1.0/n;
+	    sum   += 1.0F/n;
+	    n     += 1;
 	    if (n % 100000 == 0) {
 		System.out.println("n = " + n + ", sum = " + sum);
 	    }
@@ -85,7 +85,7 @@ Sie erwarten jetzt vielleicht, dass diese Programm nie terminiert, aber wenn wir
 laufen lassen, dann erhalten wir nach wenigen Sekunden die Meldung:
 \\[0.2cm]
 \hspace*{1.3cm}
-\texttt{sum = 15.403683, n = 2097152}.
+\texttt{sum = 16.0, n = 1673864}.
 \\[0.2cm]
 Da wir früher bewiesen haben, dass die Partialsummen
 \\[0.2cm]
@@ -93,12 +93,12 @@ Da wir früher bewiesen haben, dass die Partialsummen
 $\ds s_n := \sum\limits_{k=1}^n \bruch{1}{k}$ 
 \\[0.2cm]
 für wachsende Werte von $n$ beliebig groß werden, fragen wir uns, was bei der Rechnung schief gelaufen ist.
-Die Antwort ist, dass für $n = 2097152$ der Wert $\frac{1}{n}$ so klein ist, dass die Summe
+Die Antwort ist, dass für $n = 1673864$ der Wert $\frac{1}{n}$ so klein ist, dass die Summe
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds 15.403683 + \frac{1}{n}$
+$\ds 16.0 + \frac{1}{n}$
 \\[0.2cm]
-so nahe bei $15.403683$ liegt, dass sie auf den Wert $15.403683$ abgerundet wird.  Um diesen Effekt näher
+so nahe bei $16$ liegt, dass sie auf den Wert $16$ abgerundet wird.  Um diesen Effekt näher
 zu beschreiben, definiert man für einen vorgegebenen Rechner die sogenannte
 \emph{Maschinen-Konstante} \textsl{eps} als die kleinste positive Zahl, die, wenn sie auf diesem Rechner zu
 $1$ addiert wird, eine Ergebnis größer als 1 ergibt.  Die formale Definition lautet

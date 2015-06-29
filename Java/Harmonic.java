@@ -11,8 +11,8 @@ public class Harmonic {
 	int   n      = 1;
 	while (oldSum < sum) {
 	    oldSum = sum;
-	    n += 1;
-	    sum += 1.0/n;
+	    sum   += 1.0F/n;
+	    n     += 1;
 	    if (n % 100000 == 0) {
 		System.out.println("n = " + n + ", sum = " + sum);
 	    }
