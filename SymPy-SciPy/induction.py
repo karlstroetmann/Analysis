@@ -25,7 +25,6 @@ def test(s, e, i, n):
         
 s = n * (n + 1) / 2
 test(s, i, i, n)
-
 s = n * (2 * n + 1) * (n + 1) / 6
 test(s, i*i, i, n)
 
