@@ -44,7 +44,7 @@ periodische Funktion als unendliche Linear-Kombination der oben vorgestellten Fu
 darstellen lässt.  Genauer definieren wir folgendes: 
 
 \begin{Definition}[Fourier-Reihe]
-  Es seien $\folge{a_n}$ und $\folgea{b_n}$ Folgen reeller Zahlen.  Dann bezeichnen
+  Es seien $\bigl(a_n)_{n\in\mathbb{N}_0}$ und $\folgea{b_n}$ Folgen reeller Zahlen.  Dann bezeichnen
   wir den Ausdruck
   \begin{equation}
     \label{eq:fourier}
@@ -113,7 +113,7 @@ Setzen wir die Gleichungen (\ref{eq:intCos}) und (\ref{eq:intSin}) in Gleichung
 Damit haben wir  den Koeffizienten $a_0$ bestimmt.  Um die Koeffizienten 
 $a_k$ für $k\geq 0$ zu bestimmen, 
 multplizieren wir die Gleichung (\ref{eq:fourierEq}) mit $\cos(n\!\cdot\!x)$, wobei
-$n\in\mathbb{N}$ mit $n\geq 1$ ist.  Anschließend integrieren wir  über das
+$n\in\mathbb{N}$ ist.  Anschließend integrieren wir  über das
 Intervall $[0,2\!\cdot\!\pi]$.  Dann haben wir
 \\[0.3cm]
 \hspace*{0.8cm}
@@ -342,10 +342,10 @@ und $-\pi$ Sprünge auf.
   \begin{enumerate}
   \item $f:\mathbb{R} \rightarrow \mathbb{R}$ ist  stetig mit der Periode $2\cdot\pi$,
   \item $f\!\upharpoonright_{[0,2\!\cdot\!\pi]}$ ist  stückweise stetig differenzierbar,
-  \item $a_k = \bruch{1}{\pi} \cdot\int\limits_0^{2\cdot\pi}f(x)\cdot\cos(k\!\cdot\!x)\,\dr x$ \quad und 
-        \quad  $b_k = \bruch{1}{\pi}\cdot\int\limits_0^{2\cdot\pi}f(x)\cdot\sin(k\!\cdot\!x)\,\dr x$,  
+  \item $a_k = \bruch{1}{\pi} \cdot\int\limits_0^{2\cdot\pi}f(x)\cdot\cos(k\!\cdot\!x)\,\dr x$ \quad für $k \in \mathbb{N}_0$,
+  \item $b_k = \bruch{1}{\pi}\cdot\int\limits_0^{2\cdot\pi}f(x)\cdot\sin(k\!\cdot\!x)\,\dr x$ \quad für $k \in \mathbb{N}$.  
   \end{enumerate}
-  dann gilt \\[0.1cm]
+  Dann gilt \\[0.1cm]
   \hspace*{1.3cm}
   $f(x) = \bruch{1}{2}\cdot a_0 \;+\; \sum\limits_{k=1}^\infty a_k\cdot \cos(k\!\cdot\!x) \;+\;
                                       \sum\limits_{k=1}^\infty b_k\cdot \sin(k\!\cdot\!x)$.
@@ -537,7 +537,7 @@ $
 Damit sind wir jetzt in der Lage, die Reihe 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\sigma := \sum\limits_{n=1}^\infty \bruch{1}{n^2}$
+$\ds \sigma := \sum\limits_{n=1}^\infty \frac{1}{n^2}$
 \\[0.2cm]
 zu berechnen.  Zunächst zerlegen wir die Reihe in einen Teil, der nur über die geraden Indices 
 läuft und einen Teil, der über die ungeraden Indices läuft: 
@@ -557,14 +557,13 @@ $
 \\[0.3cm]
 Damit haben wir also die Formel 
 \\[0.3cm]
-\hspace*{1.3cm} $\sum\limits_{n=1}^\infty \bruch{1}{n^2} = \bruch{\pi^2}{6}$
+\hspace*{1.3cm} $\ds\sum\limits_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6}$
 \\[0.3cm]
 gezeigt.  Die Frage nach dem Wert dieser Reihe war 1644 als \emph{Basel'sches Problem} von
 Pietro Mengoli gestellt worden. 
 Führende Mathematiker des 17-ten Jahrhunderts hatten sich erfolglos mit dieser Frage
 beschäftigt.
 Im Jahre 1735 gelang es Leonard Euler (1707 - 1783), dieses Problem zu lösen.
-\pagebreak
 
 \exercise
 Die Funktion $p$ sei auf dem Intervall $[-\pi,\pi]$ definiert durch
@@ -579,7 +578,7 @@ $2\!\cdot\!\pi$ hat.
 \item Berechnen Sie mit Hilfe der Fourier-Reihe von $p$ einen Wert für die Reihe
       \\[0.3cm]
       \hspace*{1.3cm}
-      $\displaystyle \sum\limits_{n=1}^\infty \bruch{1}{n^2}$. \eox
+      $\displaystyle \sum\limits_{n=1}^\infty \frac{1}{n^2}$. \eox
 \end{enumerate}
 
 
