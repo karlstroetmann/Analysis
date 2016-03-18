@@ -5,9 +5,8 @@ reicht es nicht, mit den rationalen Zahlen zu arbeiten.  Das liegt daran, dass d
 Quadrats der Seitenlänge 1 nach dem 
 \href{http://de.wikipedia.org/wiki/Satz_des_Pythagoras}{Satz des Pythagoras} die Länge $\sqrt{2}$ hat.
 Wir hatten im ersten Semester aber gesehen, dass es keine rationale Zahl $r$ gibt,
-so dass $r^2 = 2$ ist.  Folglich reichen die rationalen Zahlen nicht aus, alle in der Geometrie
-möglichen Längen anzugeben.  Es gibt mehrere Wege, die Menge $\mathbb{R}$ der reellen Zahlen so zu
-konstruieren, so dass die Gleichung 
+so dass $r^2 = 2$ ist, denn $\sqrt{2}$ ist irrational.  Folglich reichen die rationalen Zahlen für die Geometrie
+nicht aus.  Es gibt mehrere Wege, die Menge $\mathbb{R}$ der reellen Zahlen so zu konstruieren, so dass die Gleichung 
 \\[0.2cm]
 \hspace*{1.3cm}
 $r^2 = 2$
@@ -19,21 +18,22 @@ der reellen Zahlen axiomatisch charakterisieren.  Dazu definieren wir den Begrif
 \colorbox{orange}{\emph{vollständig geordneten Körpers}.}
 \\[0.2cm]
 Hierbei handelt es sich um ein System von Axiomen, aus dem
-sich alle weiteren Eigenschaften der reellen Zahlen ableiten lassen.  Es lässt sich sogar zeigen,
+sich \underline{alle} weiteren Eigenschaften der reellen Zahlen ableiten lassen.  Es lässt sich nämlich zeigen,
 dass diese Axiomatisierung in dem folgenden Sinne vollständig ist:
-Ist $\mathbb{K}$ ein vollständig angeordneter Körper, so ist $\mathbb{K}$ \emph{isomorph} zu
+Ist $\mathbb{K}$ ein vollständig angeordneter Körper, so ist $\mathbb{K}$ \colorbox{orange}{\emph{isomorph}} zu
 $\mathbb{R}$: Im Klartext heißt dies, dass es eine Abbildung
 \\[0.2cm]
 \hspace*{1.3cm}
 $\varphi:\mathbb{K} \rightarrow \mathbb{R}$
 \\[0.2cm]
 gibt, die jedem Element $\alpha \in \mathbb{K}$ genau ein Element $\varphi(\alpha) \in \mathbb{R}$
-zuordnet und die mit der Addition und der Multiplikation verträglich ist, für alle $x,y \in
+zuordnet und die mit der Addition, der Multiplikation und der Ordnungs-Relation verträglich ist, für alle $x,y \in
 \mathbb{K}$ gilt also 
-\\[0.2cm]
-\hspace*{1.3cm}
-$\varphi(x + y) = \varphi(x) + \varphi(y)$ \quad und \quad $\varphi(x \cdot y) = \varphi(x) \cdot \varphi(y)$.
-\\[0.2cm]
+\begin{enumerate}
+\item $\varphi(x + y) = \varphi(x) + \varphi(y)$,
+\item $\varphi(x \cdot y) = \varphi(x) \cdot \varphi(y)$,
+\item $\varphi(x) < \varphi(y) \;\leftrightarrow\; x < y$.
+\end{enumerate}
 Die rein axiomatische Charakterisierung der
 reellen Zahlen ist philosophisch unbefriedigend, denn dabei bleiben zwei Fragen offen:
 \begin{enumerate}
@@ -49,16 +49,17 @@ reellen Zahlen ist philosophisch unbefriedigend, denn dabei bleiben zwei Fragen 
       der ersten Frage in Angriff nehmen können. 
 \end{enumerate}
 Wir werden im zweiten Abschnitt zeigen, wie sich die reellen Zahlen aus den rationalen Zahlen mit
-Hilfe von sogenannten \emph{Dedekind-Schnitten} erzeugen lassen.  Da diese Konstruktion jedoch
-technisch nicht ganz einfach ist, werden wir diesen Abschnitt im Rahmen der Vorlesung aus
-Zeitgründen nicht in voller Länge diskutieren.  Die in diesem Abschnitt präsentierten Details sind zwar eine gute Übung zur
-Mengenlehre,  werden aber für den weiteren Verlauf der Vorlesung nicht benötigt.  
+Hilfe von \href{https://de.wikipedia.org/wiki/Dedekindscher_Schnitt}{\emph{Dedekind-Schnitten}}
+erzeugen lassen.  Da diese Konstruktion jedoch technisch aufwendig ist, werden wir diesen Abschnitt
+im Rahmen der Vorlesung aus Zeitgründen nicht in voller Länge diskutieren.  Die dort
+präsentierten Details sind zwar eine gute Übung zur Mengenlehre,  werden aber für den weiteren
+Verlauf der Vorlesung nicht mehr benötigt.
 
 
 \section{Axiomatische Charakterisierung der reellen Zahlen}
 Wir erinnern zunächst an die im ersten Semester gegebene Definition eines Körpers. 
 \begin{Definition}[Körper]
-Eine Struktur $\mathcal{K} = \langle K, 0, 1, +, \cdot \rangle$ ist ein \emph{Körper}, falls gilt:
+Eine Struktur $\mathcal{K} = \langle K, 0, 1, +, \cdot \rangle$ ist ein \colorbox{gold}{\emph{Körper}}, falls gilt:
 \begin{enumerate}
 \item $K$ ist eine Menge.
 \item $0 \in K$ und $1 \in K$.
@@ -86,7 +87,7 @@ Eine Struktur $\mathcal{K} = \langle K, 0, 1, +, \cdot \rangle$ ist ein \emph{Kö
       \item $(x \cdot y) \cdot z = x \cdot (y \cdot z)$,
       \item $x \cdot y = y \cdot x$,
       \item $1 \cdot x = x$,
-      \item $x \not= 0 \Rightarrow \exists y \in K: y \cdot x = 1$.
+      \item $x \not= 0 \rightarrow \exists y \in K: y \cdot x = 1$.
 
             Falls $x \not= 0$ ist, so ist das $y \in K$, für welches $y \cdot x = 1$ gilt, eindeutig
             bestimmt.  Es wird als das \emph{multiplikative Inverse} von $x$   
@@ -104,7 +105,7 @@ Eine Struktur $\mathcal{K} = \langle K, 0, 1, +, \cdot \rangle$ ist ein \emph{Kö
 Weiter benötigen wir die Definition einer linearen Ordnung, die wir ebenfalls wiederholen.
 
 \begin{Definition}[Lineare Ordnung]
-  Ein Paar $\langle M, \leq \rangle$ ist eine \emph{lineare Ordnung}, falls gilt:
+  Ein Paar $\langle M, \leq \rangle$ ist eine \colorbox{gold}{\emph{lineare Ordnung}}, falls gilt:
   \begin{enumerate}
   \item $M$ ist eine Menge und $\leq$ ist eine binäre Relation auf $M$, es gilt also
         \\[0.2cm]
@@ -125,7 +126,7 @@ Anordnungs-Axiomen einer linearen Ordnung.
 
 \begin{Definition}[Geordneter Körper]  \hspace*{\fill} \linebreak
   Eine Struktur $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ist ein 
-  \emph{geordneter Körper}, falls 
+  \colorbox{gold}{\emph{geordneter Körper}}, falls 
   \begin{enumerate}
   \item $\langle K, 0, 1, +, \cdot, \rangle$ ein Körper und
   \item $\langle K, \leq \rangle$
@@ -146,7 +147,7 @@ sich eine Ungleichung bei Multiplikation mit $-1$ umdreht.
   Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter Körper}.
   Dann gilt
   \\[0.2cm]
-  \hspace*{1.3cm} $x \leq y \Rightarrow -y \leq -x$  \quad für alle $x,y \in K$.
+  \hspace*{1.3cm} $x \leq y \rightarrow -y \leq -x$  \quad für alle $x,y \in K$.
 \end{Lemma}
 
 \proof
@@ -175,7 +176,7 @@ verträglich ist.
   Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter Körper}.
   Dann gilt
   \\[0.2cm]
-  \hspace*{1.3cm} $x_1 \leq y_1 \wedge x_2 \leq y_2 \Rightarrow x_1 + x_2 \leq y_1 + y_2$  \quad für alle $x_1,x_2,y_1,y_2 \in K$.
+  \hspace*{1.3cm} $x_1 \leq y_1 \wedge x_2 \leq y_2 \rightarrow x_1 + x_2 \leq y_1 + y_2$  \quad für alle $x_1,x_2,y_1,y_2 \in K$.
 \end{Lemma}
 
 \proof
@@ -215,17 +216,17 @@ verträglich ist.
   Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter Körper}.
   Dann gilt
   \\[0.2cm]
-  \hspace*{1.3cm} $x \leq y \wedge 0 \leq z \Rightarrow x \cdot z \leq y \cdot z$  \quad für alle $x,y,z \in K$.
+  \hspace*{1.3cm} $x \leq y \wedge 0 \leq z \rightarrow x \cdot z \leq y \cdot z$  \quad für alle $x,y,z \in K$.
 \end{Lemma}
 
 \proof
 Wir setzen voraus, dass  $x \leq y$ und $0 \leq z$ gilt und zeigen, dass in einem geordneten
-Körper dann auch $x \cdot z \leq y \cdot z$ gelten muss.  Subtrahieren wir auf beiden Seiten der Ungleichung
+Körper dann auch $x \cdot z \leq y \cdot z$ gelten muss.  Addieren wir auf beiden Seiten der Ungleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $x \leq y$
 \\[0.2cm]
-den Wert $x$, so erhalten wir die Ungleichung
+den Wert $-x$, so erhalten wir die Ungleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $0 \leq y - x$.
@@ -235,7 +236,7 @@ Zusammen mit der Ungleichung $0 \leq z$ zeigt das Axiom (A2) nun, dass
 \hspace*{1.3cm}
 $0 \leq (y - x) \cdot z$
 \\[0.2cm]
-gilt, was zu
+gilt, was wegen dem Distributiv-Gesetz zu
 \\[0.2cm]
 \hspace*{1.3cm}
 $0 \leq y \cdot z - x \cdot z$
@@ -249,7 +250,7 @@ $x \cdot z \leq y \cdot z$.  \qed
   Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter Körper}.
   Dann gilt
   \\[0.2cm]
-  \hspace*{1.3cm} $0 \leq x_1 \leq y_1 \wedge 0 \leq x_2 \leq y_2 \Rightarrow x_1 \cdot x_2 \leq y_1 \cdot y_2$  
+  \hspace*{1.3cm} $0 \leq x_1 \leq y_1 \wedge 0 \leq x_2 \leq y_2 \rightarrow x_1 \cdot x_2 \leq y_1 \cdot y_2$  
   \quad für alle $x_1,x_2,y_1,y_2 \in K$.
 \end{Lemma}
 
@@ -281,7 +282,7 @@ umdrehen.
   Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter Körper}.
   Dann gilt
   \\[0.2cm]
-  \hspace*{1.3cm} $x \leq y \wedge z \leq 0 \Rightarrow y \cdot z \leq x \cdot z$  
+  \hspace*{1.3cm} $x \leq y \wedge z \leq 0 \rightarrow y \cdot z \leq x \cdot z$  
   \quad für alle $x,y,z \in K$.
 \end{Lemma}
 
@@ -353,7 +354,7 @@ verträglich ist.
   Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter Körper}.
   Dann gilt
   \\[0.2cm]
-  \hspace*{1.3cm} $0 \leq x \wedge x \not= 0 \Rightarrow 0 \leq x^{-1}$
+  \hspace*{1.3cm} $0 \leq x \wedge x \not= 0 \rightarrow 0 \leq x^{-1}$
   \quad für alle $x \in K$.
 \end{Lemma}
 
@@ -369,42 +370,80 @@ Multiplizieren wir diese Ungleichung mit $x$, so zeigt Lemma \ref{lemma:l6}, das
 \hspace*{1.3cm}
 $0 \cdot x \leq x^{-1} \cdot x^{-1} \cdot x$
 \\[0.2cm]
-gilt und diese Aussage ist offenbar äquivalent zu der Behauptung. \qed
+gilt und wegen $0 \cdot x = 0$ und $x^{-1} \cdot x^{-1} \cdot x$ ist diese Aussage
+äquivalent zu der Behauptung. \qed
 
 \begin{Lemma} 
   Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter Körper}.
   Dann gilt
   \\[0.2cm]
-  \hspace*{1.3cm} $0 \leq x \leq y \wedge x \not= 0 \Rightarrow y^{-1} \leq x^{-1}$
+  \hspace*{1.3cm} $0 \leq x \leq y \wedge x \not= 0 \rightarrow y^{-1} \leq x^{-1}$
   \quad für alle $x, y \in K$.  
 \end{Lemma}
 
 \exercise
 Beweisen Sie diese Behauptung.  \eox
 
-\remark
+\example
 Die Struktur $\langle \mathbb{Q}, 0, 1, +, \cdot, \leq \rangle$ ist ein geordneter Körper, wenn wir
 die Operationen $+$, $\cdot$ und $\leq$ wie im ersten Semester vorgeführt auf den rationalen Zahlen
-definieren.  Diese Struktur ist allerdings für die Zwecke der Analysis noch nicht ausreichend,
+definieren.  
+\eox
+
+\exercise
+Zeigen Sie, dass es nicht möglich ist, auf der Menge $\mathbb{C}$ der komplexen Zahlen eine Relation
+$\leq$ so zu definieren, dass $\langle \mathbb{C}, 0, 1, +, \cdot, \leq \rangle$ ein geordneter
+Körper ist. \eox
+
+\begin{Definition}[Absolut-Betrag]
+  Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter Körper}.
+  Dann definieren wir den \colorbox{gold}{\emph{Absolut-Betrag}} $|x|$ eines Elements $x \in K$ wie folgt:
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $|x| := \left\{
+  \begin{array}{rl}
+     x & \mbox{falls $0 \leq x$};  \\[0.1cm]
+    -x & \mbox{sonst.}
+  \end{array}
+  \right.
+  $\eox
+\end{Definition}
+
+\exercise
+Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter Körper}.
+Weisen Sie die folgenden Eigenschaften des Absolut-Betrags nach:
+\begin{enumerate}[(a)]
+\item $0 \leq |x|$
+\item $x \leq |x|$ \quad und \quad $-x \leq |x|$
+\item $|-x| = |x|$
+\item $|x| = 0 \;\leftrightarrow\; x = 0$
+\item $|x \cdot y| = |x| \cdot |y|$
+\item $|x+y| \leq |x| + |y|$ \eox
+\end{enumerate}
+
+
+Die Struktur $\langle \mathbb{Q}, 0, 1, +, \cdot, \leq \rangle$ ist  für die Zwecke der Analysis nicht ausreichend,
 da sie in einer noch näher zu spezifizierenden Weise \emph{unvollständig} ist.  Zur Präzisierung dieser Aussage
 benötigen wir den Begriff einer \emph{vollständigen Ordnung}, die ihrerseits
 auf dem Begriff des \emph{Supremums} basiert, den wir jetzt einführen.
 
+
 \begin{Definition}[Supremum]
 Es sei $\langle M, \leq \rangle$ eine lineare Ordnung.
-Eine Menge $A \subseteq M$ ist \emph{nach oben beschränkt}, falls es ein
+Wir nennen die Menge $A \subseteq M$  \linebreak
+\colorbox{gold}{\emph{nach oben beschränkt}}, falls es ein
  $y \in M$ gibt, so dass gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
 $\forall x \in A:  x \leq y$.
 \\[0.2cm]
-Dieses $y$ bezeichnen wir dann als eine \emph{obere Schranke} der Menge $A$.
-Ein Element $s \in M$ ist das \emph{Supremum} der Menge $A$, wenn $s$ die kleinste
-obere Schranke von der Menge $A$ ist, wenn also 
+Dieses $y$ bezeichnen wir dann als eine \colorbox{gold}{\emph{obere Schranke}} der Menge $A$.
+Ein Element $s \in M$ ist das \colorbox{gold}{\emph{Supremum}} der Menge $A$, wenn $s$ die 
+\colorbox{gold}{\emph{kleinste obere Schranke}} der Menge $A$ ist, wenn also 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\forall x \in A: x \leq s$ \quad \mbox{und} \quad
-$\forall y \in M: \Bigl(\bigl(\forall x \in A: x \leq y \bigr)\Rightarrow s \leq y \Bigr)$
+$\forall y \in M: \Bigl(\bigl(\forall x \in A: x \leq y \bigr)\rightarrow s \leq y \Bigr)$
 \\[0.2cm]
 gilt.  In diesem Fall schreiben wir
 \\[0.2cm]
@@ -415,7 +454,7 @@ $s = \sup(A)$.
 
 \begin{Definition}[Vollständige Ordnung]
   Ein Paar $\pair(M, \leq)$ bestehend aus einer Menge $M$ und einer Relation $\leq\; \subseteq M \times M$ 
-  ist eine \emph{vollständige} Ordnung genau denn, wenn folgendes gilt:
+  ist eine \colorbox{gold}{\emph{vollständige}} Ordnung genau denn, wenn folgendes gilt:
   \begin{enumerate}
   \item Das Paar $\pair(M, \leq)$ ist eine lineare Ordnung.
   \item Zu jeder nicht-leeren und nach oben beschränkten Menge $A \subseteq M$ existiert ein
@@ -427,7 +466,7 @@ $s = \sup(A)$.
 
 \noindent
 \textbf{Bemerkung}:
-Das Paar $\langle \mathbb{Q}, \leq \rangle$ ist keine vollständige Ordnung, denn wenn wir die Menge
+Das Paar $\langle \mathbb{Q}, \leq \rangle$ ist \underline{keine} vollständige Ordnung, denn wenn wir die Menge
 $A$ als
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -443,15 +482,15 @@ Semester wissen wir, dass $\sqrt{2}$ keine rationale Zahl ist.  \eox
 Analog zum Begriff des Supremums können wir auch den Begriff des Infimums definieren.
 
 \begin{Definition}[Infimum]
-Es sei $\pair(M, \leq)$ eine lineare Ordnung. 
-Eine Menge $B \subseteq M$ ist \emph{nach unten beschränkt}, falls es ein
+Es sei $\pair(M, \leq)$ eine lineare Ordnung.  Wir nennen die Menge $B \subseteq M$ \linebreak
+\colorbox{gold}{\emph{nach unten beschränkt}}, falls es ein
  $y \in M$ gibt, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\forall x \in B:  y \leq x$
 \\[0.2cm]
-gilt.  Ein solches $y$ bezeichnen wir als \emph{untere Schranke}  von $B$.
-Ein Element $i \in M$ ist das \emph{Infimum} einer Menge $B$, wenn $i$ die größte
+gilt.  Ein solches $y$ bezeichnen wir als \colorbox{gold}{\emph{untere Schranke}}  von $B$.
+Ein Element $i \in M$ ist das \colorbox{gold}{\emph{Infimum}} einer Menge $B$, wenn $i$ die größte
 untere Schranke von $B$ ist, wenn also 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -486,7 +525,7 @@ Infimum von $B$ ist. \eox
 Wir kommen nun zur zentralen Definition dieses Abschnitts.
 \begin{Definition}[Vollständig angeordneter Körper] \hspace*{\fill} \linebreak
   Eine Struktur  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$  ist ein 
-  \emph{vollständig angeordneter Körper} genau dann, wenn die Struktur $\mathcal{K}$
+  \colorbox{gold}{\emph{vollständig angeordneter Körper}} genau dann, wenn die Struktur $\mathcal{K}$
   ein geordneter Körper ist und zusätzlich das Paar $\langle K, \leq \rangle$ eine vollständige
   Ordnung ist. \edx
 \end{Definition}
@@ -495,13 +534,15 @@ Wir kommen nun zur zentralen Definition dieses Abschnitts.
   Die Struktur $\langle \mathbb{R}, 0, 1, +, \cdot, \leq \rangle$ der reellen Zahlen ist ein  vollständig geordneter Körper.   \edx
 \end{Theorem}
 
-Einen Beweis diese Behauptung können wir jetzt noch nicht erbringen, denn wir haben bisher nicht
-definiert, wie die Menge $\mathbb{R}$ der reellen Zahlen konstruiert wird.
-Diese Konstruktion werden wir im nächsten Abschnitt mit Hilfe der sogenannten
-\emph{Dedekind-Schnitte} liefern.  Für praktische Rechnungen ist diese 
+Einen Beweis diese Behauptung können wir jetzt noch nicht erbringen, denn wir haben bisher noch gar nicht
+gesagt, wie die Menge $\mathbb{R}$ der reellen Zahlen formal definiert wird.
+Die Definition der reellen Zahlen werden wir im nächsten Abschnitt mit Hilfe der sogenannten
+\colorbox{gold}{\emph{Dedekind-Schnitte}} liefern.  Für praktische Rechnungen ist diese 
 Konstruktion viel zu schwerfällig.  Wir skizzieren  daher zum Abschluss dieses
-Abschnitts noch eine andere Konstruktion der reellen Zahlen als \emph{unendliche Dezimalbrüche}, die
-auf \href{http://en.wikipedia.org/wiki/Simon_Stevin}{Simon Stevin} (1548-1620) zurück geht.  Dazu
+Abschnitts noch eine andere Konstruktion der reellen Zahlen als 
+\colorbox{gold}{\emph{unendliche Dezimalbrüche}}, die
+auf \href{http://en.wikipedia.org/wiki/Simon_Stevin}{Simon Stevin} (1548-1620) zurück geht.  Um
+diese Konstruktion verstehen zu können,
 betrachten wir eine positive reelle Zahl $x \in \mathbb{R}$ abstrakt als gegeben und untersuchen, wie wir $x$
 in der Form
 \\[0.2cm]
@@ -510,7 +551,7 @@ $\ds x = m + \sum\limits_{k=1}^\infty b_k \cdot \frac{1}{10^k}$
 \\[0.2cm]
 so darstellen können, dass folgendes gilt:
 \begin{enumerate}
-\item $m \in \mathbb{N}$ \quad und
+\item $m \in \mathbb{N}_0$ \quad und
 \item $b_k \in \{0,\cdots,9\}$.
 \end{enumerate}
 Die Zahl $b_k$ kann damit als die $k$-te Stelle von $x$ hinter dem Komma interpretiert werden.
@@ -518,18 +559,18 @@ Die Berechnung der Zahlen $m$ und $b_k$ verläuft für ein gegebenes positives $x 
 \begin{enumerate}
 \item $m := \max(\{ n \in \mathbb{N} \mid n \leq x \})$.
 
-      $m$ ist also die größte ganze Zahl, die noch kleiner oder gleich $x$ ist.
+      $m$ ist also die größte ganze Zahl, die nicht größer als $x$ ist.
 \item Die Zahlen $b_k$ werden für alle $k \in \mathbb{N}$ induktiv definiert.
       \begin{enumerate}
       \item[I.A.:] $k=1$.  Wir setzen
                    \\[0.2cm]
                    \hspace*{1.3cm}
-                   $\ds b_1 := \max\Bigl(\Bigl\{ z \in \{ 0, 1, \cdots, 9 \} \mid m + z \cdot \frac{1}{10} \leq x\Bigr\}\Bigr)$.
+                   $\ds b_1 := \max\Bigl(\Bigl\{ z \in \{ 0, 1, \cdots, 9 \} \Bigm| m + z \cdot \frac{1}{10} \leq x\Bigr\}\Bigr)$.
       \item[I.S.:] $k \mapsto k+1$.  Nach Induktions-Voraussetzung sind die Zahlen $b_1$, $\cdots$, $b_k$
                    bereits definiert.  Daher können wir $b_{k+1}$ als
                    \\[0.2cm]
                    \hspace*{1.3cm}
-                   $\ds b_{k+1} := \max\Bigl(\Bigl\{ z \in \{ 0, 1, \cdots, 9 \} \mid m + \sum\limits_{i=1}^{k} b_i \cdot \frac{1}{10^i} + z \cdot \frac{1}{10^{k+1}}\leq x\Bigr\}\Bigr)$.
+                   $\ds b_{k+1} := \max\Bigl(\Bigl\{ z \in \{ 0, 1, \cdots, 9 \} \Bigm| m + \sum\limits_{i=1}^{k} b_i \cdot \frac{1}{10^i} + z \cdot \frac{1}{10^{k+1}}\leq x\Bigr\}\Bigr)$.
                    \\[0.2cm]
                    definieren.
       \end{enumerate}
@@ -539,7 +580,7 @@ Insgesamt gilt mit dieser Konstruktion
 \hspace*{1.3cm}
 $\ds x = m + \sum\limits_{k=1}^{\infty} b_k \cdot \frac{1}{10^{k}}$.
 \\[0.2cm]
-Diese Behauptung können wir allerdings noch nicht beweisen, denn wir haben ja noch gar nicht formal
+Diese Behauptung können wir allerdings zum jetzigen Zeitpunkt nicht beweisen, denn wir haben ja noch gar nicht formal
 definiert, welchen Wert wir einer unendlichen Reihe der Form
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -548,20 +589,20 @@ $\ds \sum\limits_{k=1}^{\infty} b_k \cdot \frac{1}{10^{k}}$
 zuordnen.  Statt dessen können wir sagen, dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds x = \sup\Bigl(\Bigl\{ m + \sum\limits_{i=1}^{k} b_i \cdot \frac{1}{10^{i}} \mid k \in \mathbb{N} \Bigr\}\Bigr)$
+$\ds x = \sup\Bigl(\Bigl\{ m + \sum\limits_{i=1}^{k} b_i \cdot \frac{1}{10^{i}} \Bigm| k \in \mathbb{N} \Bigr\}\Bigr)$
 \\[0.2cm]
 gilt, denn die Menge
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds \Bigl\{ m + \sum\limits_{i=1}^{k} b_i \cdot \frac{1}{10^{i}} \mid k \in \mathbb{N} \Bigr\}$
+$\ds \Bigl\{ m + \sum\limits_{i=1}^{k} b_i \cdot \frac{1}{10^{i}} \Bigm| k \in \mathbb{N} \Bigr\}$
 \\[0.2cm]
 ist offenbar durch $x$ nach oben beschränkt und es lässt sich zeigen, dass es keine 
-obere Schranke $y$ für diese Menge gibt, die echt kleiner als $x$ ist.  Für den Rest der Vorlesung
+obere Schranke $y$ für diese Menge gibt, die  kleiner als $x$ ist.  Für den Rest der Vorlesung
 reicht es aus, wenn Sie sich die reellen Zahlen wie oben skizziert als unendliche Dezimalbrüche vorstellen.
 
 
 
-\section{Die formale Konstruktion der reellen Zahlen}
+\section{Die formale Konstruktion der reellen Zahlen$^*$}
 Bis jetzt haben wir so getan, als wüssten wir schon, was reelle Zahlen sind und haben Ihre
 Eigenschaften in Form von Axiomen angegeben.  Wir wissen  aber noch gar nicht, ob es tatsächlich
 eine Struktur gibt, die diesen Axiomen genügt.  Diesen Nachweis werden wir jetzt mit Hilfe der
@@ -587,7 +628,7 @@ falls folgendes gilt:
 \item $\forall x_1 \in M_1: \forall x_2 \in M_2: x_1 < x_2$.
 
        Diese Bedingung besagt, dass alle Elemente aus $M_1$ kleiner als alle Elemente aus $M_2$
-       sind.  Diese Bedingung bezeichnen wir als die \emph{Trennungs-Eigenschaft}.
+       sind.  Diese Bedingung bezeichnen wir als die \colorbox{gold}{\emph{Trennungs-Eigenschaft}}.
 \item $M_1 \cup M_2 = \mathbb{Q}$.
 \item $M_1$ hat kein Maximum.
 
@@ -626,7 +667,7 @@ Die Antwort auf diese Frage wird in der nun folgenden Definition einer \emph{Ded
 
 
 \begin{Definition}[Dedekind-Menge]
-Eine Menge $M \subseteq \mathbb{Q}$ ist eine \emph{Dedekind-Menge} genau dann, wenn die
+Eine Menge $M \subseteq \mathbb{Q}$ ist eine \colorbox{gold}{\emph{Dedekind-Menge}} genau dann, wenn die
 folgenden Bedingungen erfüllt sind.
 \begin{enumerate}
 \item $M \not= \emptyset$,
@@ -1306,7 +1347,8 @@ auf die unten angegebene Literatur.
 
 \noindent
 \textbf{Literatur-Hinweise} \\
-In dem Buch ``\emph{Grundlagen der Analysis}'' 
+In dem Buch 
+\href{http://www.fernuni-hagen.de/imperia/md/content/ausstellung/juedischemathematiker/landau.pdf}{Grundlagen der Analysis} 
 von Edmund Landau \cite{landau:1930} wird die oben skizzierte Konstruktion der reellen Zahlen im Detail beschrieben.   
 Auch das Buch ``\emph{Principles of  Mathematical Analysis}'' von Walter Rudin \cite{rudin:1976}
 diskutiert die Konstruktion der reellen Zahlen mit Hilfe von Dedekind-Mengen ausführlicher als dies in
