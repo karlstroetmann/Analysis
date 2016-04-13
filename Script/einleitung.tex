@@ -1,6 +1,6 @@
 \chapter{Einleitung}
-Der vorliegende Text ist das Skript zu meiner Analysis-Vorlesung für Informatiker.  Ich habe mich
-bei der Ausarbeitung dieser Vorlesung im wesentlichen auf die folgenden Lehrbücher gestützt:
+Der vorliegende Text ist das Skript zu meiner Analysis-Vorlesung f\"ur Informatiker.  Ich habe mich
+bei der Ausarbeitung dieser Vorlesung im wesentlichen auf die folgenden Lehrb\"ucher gest\"utzt:
 \begin{enumerate}
 \item \emph{Analysis} \texttt{I} von Otto Forster \cite{forster:2011}.
 \item \emph{Differential- und Integralrechnung \texttt{I}} von Hans Grauert und Ingo Lieb \cite{grauert:1967}.
@@ -14,29 +14,29 @@ Copyright mittlerweile abgelaufen, so dass Sie es im Netz unter
 \hspace*{0.3cm}
 \href{https://archive.org/details/DifferentialIntegralCalculusVolI}{\texttt{https://archive.org/details/DifferentialIntegralCalculusVolI}}
 \\[0.2cm]
-finden können.  Schließlich enthält das Buch von Wrede und Spiegel eine Vielzahl gelöster
-Aufgaben und bietet sich daher besonders zum Üben an.
+finden k\"onnen.  Schlie\ss{}lich enth\"alt das Buch von Wrede und Spiegel eine Vielzahl gel\"oster
+Aufgaben und bietet sich daher besonders zum \"uben an.
 
-\section{Überblick über die Vorlesung}
+\section{\"Uberblick \"uber die Vorlesung}
 Im Rahmen der Vorlesung werden die folgenden Gebiete behandelt:
 \begin{enumerate}
-\item Da sich die Analysis mit den reellen Zahlen beschäftigt, beginnen wir damit, dass wir die
-      Menge $\mathbb{R}$ der reellen Zahlen zunächst axiomatisch als vollständig geordneten Körper
+\item Da sich die Analysis mit den reellen Zahlen besch\"aftigt, beginnen wir damit, dass wir die
+      Menge $\mathbb{R}$ der reellen Zahlen zun\"achst axiomatisch als vollst\"andig geordneten K\"orper
       charakterisieren und dann die Menge $\mathbb{R}$ mit Hilfe von   
       \href{http://de.wikipedia.org/wiki/Dedekindscher_Schnitt}{\emph{Dedekindschen-Schnitten}}
-      definieren.  Aus Zeitgründen werden wir die Diskussion der Dedekindschen-Schnitte allerdings
-      nur anreißen können.
-\item Anschließend führen wir den für den Rest der Vorlesung grundlegenden Begriff des 
+      definieren.  Aus Zeitgr\"unden werden wir die Diskussion der Dedekindschen-Schnitte allerdings
+      nur anrei\ss{}en k\"onnen.
+\item Anschlie\ss{}end f\"uhren wir den f\"ur den Rest der Vorlesung grundlegenden Begriff des 
       \href{http://de.wikipedia.org/wiki/Grenzwert_(Folge)}{\emph{Grenzwerts}} einer
       \href{http://de.wikipedia.org/wiki/Folge_(Mathematik)}{\emph{Folge}} ein. 
       Wir werden beispielsweise sehen, dass die Folge $(b_1,b_2, b_3, \cdots)$, die induktiv durch
       \\[0.2cm]
       \hspace*{1.3cm}
-      $b_1 := 1$ \quad und \quad $\ds b_{n+1} := \frac{1}{2} \cdot \left(b_n + \frac{2}{b_n}\right)$ für alle $n \in \mathbb{N}$
+      $b_1 := 1$ \quad und \quad $\ds b_{n+1} := \frac{1}{2} \cdot \left(b_n + \frac{2}{b_n}\right)$ f\"ur alle $n \in \mathbb{N}$
       \\[0.2cm]
       definiert ist, gegen die Zahl $\sqrt{2}$ \emph{konvergiert}.  Im Anschluss daran betrachten
       wir \href{https://de.wikipedia.org/wiki/Reihe_(Mathematik)}{\emph{Reihen}}.  Wir werden
-      beispielsweise sehen, dass für reelle Zahlen $q$, für die $|q| < 1$ ist, die Gleichung
+      beispielsweise sehen, dass f\"ur reelle Zahlen $q$, f\"ur die $|q| < 1$ ist, die Gleichung
       \\[0.2cm]
       \hspace*{1.3cm}
       $\ds\sum\limits_{n=0}^{\infty} q^n = \frac{1}{1 - q}$
@@ -45,24 +45,24 @@ Im Rahmen der Vorlesung werden die folgenden Gebiete behandelt:
 \item Das vierte Kapitel diskutiert die Begriffe 
       \href{http://de.wikipedia.org/wiki/Stetigkeit}{\emph{Stetigkeit}} und 
       \href{http://de.wikipedia.org/wiki/Differenzierbarkeit}{\emph{Differenzierbarkeit}}.
-\item Das fünfte Kapitel zeigt verschiedene Anwendungen der bis dahin dargestellten Theorie.
+\item Das f\"unfte Kapitel zeigt verschiedene Anwendungen der bis dahin dargestellten Theorie.
       Insbesondere werden 
-      \href{http://de.wikipedia.org/wiki/Taylorreihe}{\emph{Taylor-Reihen}} diskutiert. Diese können beispielsweise zur
+      \href{http://de.wikipedia.org/wiki/Taylorreihe}{\emph{Taylor-Reihen}} diskutiert. Diese k\"onnen beispielsweise zur
       Berechnung der trigonometrischen Funktionen verwendet werden.  So werden wir beispielsweise
-      sehen, dass wir für eine reelle Zahl $x$ den Wert $\sin(x)$ durch den Ausdruck
+      sehen, dass wir f\"ur eine reelle Zahl $x$ den Wert $\sin(x)$ durch den Ausdruck
       \\[0.2cm]
       \hspace*{1.3cm}
       $\ds \sum\limits_{n=0}^{\infty} (-1)^n \cdot \frac{x^{2 \cdot n + 1}}{(2 \cdot n + 1)!} = x - \frac{1}{3!} \cdot x^3 + \frac{1}{5!} \cdot x^5 \mp \cdots$
       \\[0.2cm]
-      berechnen können.  Außerdem diskutieren wir in diesem Kapitel Verfahren zur numerischen Lösung
+      berechnen k\"onnen.  Au\ss{}erdem diskutieren wir in diesem Kapitel Verfahren zur numerischen L\"osung
       von Gleichungen.  Beispielsweise zeigen wir, wie wir die Gleichung
       \\[0.2cm]
       \hspace*{1.3cm}
       $\cos(x) = x$ 
       \\[0.2cm]
       numerisch mit Hilfe einer
-      \href{https://de.wikipedia.org/wiki/Fixpunktiteration}{Fixpunkt-Iteration} lösen können. 
-\item Das sechste Kapitel beschäftigt sich mit der
+      \href{https://de.wikipedia.org/wiki/Fixpunktiteration}{Fixpunkt-Iteration} l\"osen k\"onnen. 
+\item Das sechste Kapitel besch\"aftigt sich mit der
       \href{http://de.wikipedia.org/wiki/Integralrechnung}{\emph{Integralrechnung}}. 
 \item Im siebten Kapitel zeigen wir, dass die Kreiszahl  \href{http://de.wikipedia.org/wiki/Kreiszahl}{$\pi$} 
       und die eulersche Zahl \href{http://de.wikipedia.org/wiki/Eulersche_Zahl}{$e$} keine rationalen Zahlen sind.
@@ -80,24 +80,24 @@ Im Rahmen der Vorlesung werden die folgenden Gebiete behandelt:
 
 
 \section{Ziel der Vorlesung}
-Es ist nicht möglich, im zeitlichen Rahmen der Vorlesung alle Aspekte der Analysis zu behandeln.
+Es ist nicht m\"oglich, im zeitlichen Rahmen der Vorlesung alle Aspekte der Analysis zu behandeln.
 Insbesondere werden wir viele interessante Anwendungen der Analysis in der Informatik nicht
-diskutieren können.  Eine vollständige Darstellung der Analysis ist aber auch gar nicht das Ziel,
-das ich mir für diese Vorlesung gesetzt habe:  Mir geht es vor allem  darum, Ihnen die Fähigkeit zu
-vermitteln, sich selbstständig in mathematische Fachliteratur einarbeiten zu können.  Dazu müssen
+diskutieren k\"onnen.  Eine vollst\"andige Darstellung der Analysis ist aber auch gar nicht das Ziel,
+das ich mir f\"ur diese Vorlesung gesetzt habe:  Mir geht es vor allem  darum, Ihnen die F\"ahigkeit zu
+vermitteln, sich selbstst\"andig in mathematische Fachliteratur einarbeiten zu k\"onnen.  Dazu m\"ussen
 Sie in der Lage 
-sein, mathematische Beweise sowohl zu verstehen als auch selber entwickeln zu können.   Dies ist ein
-wesentlicher Unterschied zu der Mathematik, an die sich viele von Ihnen auf der Schule gewöhnt haben:
-Dort werden primär Verfahren vermittelt, mit denen sich spezielle Probleme lösen lassen.  Die Kenntnis
-solcher Verfahren ist allerdings in der Praxis nicht mehr so wichtig wie früher, denn heutzutage
-werden solche Verfahren als Software-Pakete implementiert und daher besteht kaum mehr Bedarf dafür,
+sein, mathematische Beweise sowohl zu verstehen als auch selber entwickeln zu k\"onnen.   Dies ist ein
+wesentlicher Unterschied zu der Mathematik, an die sich viele von Ihnen auf der Schule gew\"ohnt haben:
+Dort werden prim\"ar Verfahren vermittelt, mit denen sich spezielle Probleme l\"osen lassen.  Die Kenntnis
+solcher Verfahren ist allerdings in der Praxis nicht mehr so wichtig wie fr\"uher, denn heutzutage
+werden solche Verfahren als Software-Pakete implementiert und daher besteht kaum mehr Bedarf daf\"ur,
 diese Verfahren von Hand anzuwenden.  Statt dessen wird in
 dieser Vorlesung der mathematische Beweis-Begriff im Vordergrund stehen.  Die Analysis dient uns
 daher vor allem als ein Beispiel einer mathematischen Theorie, an Hand derer wir das mathematische 
-Denken üben können. 
+Denken \"uben k\"onnen. 
 
 \section{Notation}
-In diesem Skript definieren wir die Menge der natürlichen Zahlen $\mathbb{N}$ über die Formel
+In diesem Skript definieren wir die Menge der nat\"urlichen Zahlen $\mathbb{N}$ \"uber die Formel
 \\[0.2cm]
 \hspace*{1.3cm}
 $\mathbb{N} := \{ 1, 2, 3, \cdots \}$.
@@ -107,13 +107,13 @@ Weiter definieren wir
 \hspace*{1.3cm}
 $\mathbb{N}_0 := \{ 0 \} \cup \mathbb{N}$.
 \\[0.2cm]
-Im Übrigen schließt dieses Skript an mein
+Im \"ubrigen schlie\ss{}t dieses Skript an mein
 \href{https://github.com/karlstroetmann/Lineare-Algebra/blob/master/Script/lineare-algebra.pdf}{Skript zur linearen Algebra} 
-an und verwendet die selben Notationen, die ich dort zur Definition von Mengen eingeführt habe.
+an und verwendet die selben Notationen, die ich dort zur Definition von Mengen eingef\"uhrt habe.
 \pagebreak
 
 \section{Eine Bitte}
-Dieses Skript enthält sicher noch den einen oder anderen Fehler.  Sollte Ihnen ein Fehler auffallen, so bitte ich
+Dieses Skript enth\"alt sicher noch den einen oder anderen Fehler.  Sollte Ihnen ein Fehler auffallen, so bitte ich
 um einen Hinweis unter der Adresse
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -122,7 +122,7 @@ um einen Hinweis unter der Adresse
 Es bringt mir wenig, wenn Sie mich innerhalb meiner Vorlesung auf einen Tipp- oder
 Rechtschreibfehler hinweisen, denn bis ich dazu komme, einen solchen Fehler zu korrigieren, habe ich
 ihn meistens schon wieder vergessen.  Daher habe ich die Bitte, dass Sie mir etwaige Fehler per Email mitteilen.
-Wenn Sie mit \href{http://github.com}{\texttt{github}} vertraut sind, können Sie mir auch gerne einen
+Wenn Sie mit \href{http://github.com}{\texttt{github}} vertraut sind, k\"Ã¶nnen Sie mir auch gerne einen
 \href{https://help.github.com/articles/using-pull-requests}{\textsl{Pull Request}} schicken.
 
 
