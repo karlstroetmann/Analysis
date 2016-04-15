@@ -1,7 +1,7 @@
 \chapter{Stetige  Funktionen}
 \section{Motivation und Definition der Stetigkeit}
 Wir wollen in diesem Abschnitt pr\"azisieren, wann eine Funktion so \emph{glatt} ist, dass
-wir sie zeichnen k\"onnen, ohne dabei den Stift absetzen zu m\"ussen.  F\"ur eine glatte Funktion soll au\3erdem der
+wir sie zeichnen k\"onnen, ohne dabei den Stift absetzen zu m\"ussen.  F\"ur eine glatte Funktion soll au{\ss}erdem der
 \emph{Zwischenwert-Satz} gelten.  Der Zwischenwert-Satz besagt, dass f\"ur eine glatte Funktion
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -46,7 +46,7 @@ Es sei $\folge{x_n}$ eine Folge und $D\subseteq \mathbb{R}$.  Wir sagen, dass
 
 \begin{Definition}[Grenzwert]
   Es sei $D\subseteq \mathbb{R}$ und $f:D \rightarrow \mathbb{R}$.
-  Weiter sei $\widehat{x} \in \mathbb{R}$ und  $\lambda\in \mathbb{R}$.  Au\3erdem gebe es
+  Weiter sei $\widehat{x} \in \mathbb{R}$ und  $\lambda\in \mathbb{R}$.  Au{\ss}erdem gebe es
   mindestens eine Folge $\folge{x_n}$, die gegen $\widehat{x}$ konvergiert.
   Dann ist $\lambda$ der \emph{Grenzwert} der Funktion $f$ \emph{im Punkt} $\widehat{x}$,
   wenn f\"ur jede in $D$ liegende Folge $\folge{x_n}$ gilt:
@@ -249,14 +249,14 @@ Dies ist nach der Definition des Grenzwerts einer Folge \"aquivalent zu der Form
 \end{equation}
 Um diese Formel nachzuweisen, nehmen wir an, dass eine Zahl $\varepsilon>0$
 gegeben ist.  Wir m\"ussen dann ein $K$ finden, so dass f\"ur alle nat\"urlichen Zahlen $n$, die
-gr\"o\3er als $K$ sind, die Ungleichung 
+gr\"o{\ss}er als $K$ sind, die Ungleichung 
 \\[0.2cm]
 \hspace*{1.3cm} $\left|\bruch{1}{x_n}\right| < \varepsilon$
 \\[0.2cm]
 gilt.  Dies gelingt uns mit Hilfe der Formel (\ref{eq:stetig0}), denn wenn wir in dieser Formel
 $\ds c := \frac{1}{\varepsilon}$ definieren, dann finden wir eine Zahl $K$, so dass f\"ur alle
 nat\"urlichen Zahlen $n$, die
-gr\"o\3er als $K$ sind, die Ungleichung  
+gr\"o{\ss}er als $K$ sind, die Ungleichung  
 \\[0.2cm] \hspace*{1.3cm} $\displaystyle x_n > c$, \quad also $\displaystyle x_n > \frac{1}{\varepsilon}$ \\[0.2cm]
 gilt.  Invertieren wir nun diese Ungleichung, so folgt
 \\[0.2cm]
@@ -276,7 +276,7 @@ f\"ur alle $n > K$ gezeigt. \hspace*{\fill} $\Box$
 Es gibt eine alternative Definition der Stetigkeit, die zu der oben gegebenen Definition
 \"aquivalent ist. Diese Definition tr\"agt den Namen 
 \href{http://de.wikipedia.org/wiki/Epsilon-Delta-Kriterium#Stetigkeit_reeller_Funktionen}{\emph{$\varepsilon$-$\delta$-Definition der Stetigkeit}} 
-und Funktionen, die nach dieser Definition stetig sind, hei\3en $\varepsilon$-$\delta$-stetig.
+und Funktionen, die nach dieser Definition stetig sind, hei{\ss}en $\varepsilon$-$\delta$-stetig.
 
 \begin{Definition}[$\varepsilon$-$\delta$-Stetigkeit] 
   Eine Funktion $f:D \rightarrow \mathbb{R}$ ist \emph{$\varepsilon$-$\delta$-stetig} im Punkt
@@ -299,7 +299,7 @@ und Funktionen, die nach dieser Definition stetig sind, hei\3en $\varepsilon$-$\
 
 
 \begin{Definition}[Allgemeine Stetigkeit] \lb
-Eine Funktion $f:D \rightarrow \mathbb{R}$ hei\3t \emph{stetig} genau dann, wenn
+Eine Funktion $f:D \rightarrow \mathbb{R}$ hei{\ss}t \emph{stetig} genau dann, wenn
 die Funktion $f$ f\"ur alle $\widehat{x} \in D$ stetig ist.
 \eod
 \end{Definition}
@@ -593,7 +593,7 @@ eine Tageszeit $t$ gibt, an welcher der M\"onch beim Abstieg am selben Ort ist w
 
 \noindent
 Das im Beweis des letzten Satzes beschriebene Intervall-Halbierungs-Verfahren l\"asst sich
-ohne gro\3e M\"uhe  implementieren.  Abbildung \ref{fig:bisection.setlx}
+ohne gro{\ss}e M\"uhe  implementieren.  Abbildung \ref{fig:bisection.setlx}
 zeigt eine solche Implementierung in der Sprache \textsc{SetlX}.  Die Funktion \texttt{findZero}
 erh\"alt vier Argumente:
 \begin{enumerate}
@@ -723,14 +723,14 @@ $10^{-9}$ voneinander ab.
 
 
 \subsection{Die Regula Falsi}
-Beim Bisektions-Verfahren wird das Interval in jedem Schritt in zwei gleich gro\3e Teile
+Beim Bisektions-Verfahren wird das Interval in jedem Schritt in zwei gleich gro{\ss}e Teile
 zerteilt, denn wir bestimmen den Mittelpunkt des Intervalls $[a, b]$ nach der Formel
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds c = \frac{1}{2} \cdot (a + b)$.
 \\[0.2cm]
 Bei dieser Formel werden die Betr\"age der Funktionswerte von $f$ an den Stellen $a$ und $b$ \"uberhaupt
-nicht ber\"ucksichtigt.  Es liegt nahe, die Betr\"age der Funktionswerte in die Formel mit einflie\3en zu
+nicht ber\"ucksichtigt.  Es liegt nahe, die Betr\"age der Funktionswerte in die Formel mit einflie{\ss}en zu
 lassen, denn wenn beispielsweise $|f(a)|$ wesentlich kleiner $|f(b)|$ ist, dann ist zu
 vermuten, dass die Nullstelle von $f$ n\"aher an $a$ als an $b$ liegt.
 
@@ -738,7 +738,7 @@ vermuten, dass die Nullstelle von $f$ n\"aher an $a$ als an $b$ liegt.
 in dem 24-ten Iterations-Schritt die Funktion $x \mapsto x - \cos(x)$ an der rechten
 Intervall-Grenze $b_n$ den Wert $\approx 7.7 \cdot 10^{-9}$ hat, w\"ahrend die Funktion an der
 linken Intervall-Grenze $a_n$ den Wert $-9.2 \cdot 10^{-8}$ hat.  Der Betrag dieses Wertes ist
-mehr als 10 mal so gro\3 wie der Wert an der rechten Intervall-Grenze.  Folglich liegt es
+mehr als 10 mal so gro{\ss} wie der Wert an der rechten Intervall-Grenze.  Folglich liegt es
 nahe zu vermuten, dass die Nullstelle n\"aher an der rechten Intervall-Grenze liegt als an
 der linken.  Die weitere Berechnung best\"atigt diese Vermutung auch, denn die rechte
 Intervall-Grenze \"andert sich bei den n\"achsten drei Iterationen nicht.  Wie k\"onnen wir
@@ -747,7 +747,7 @@ Punkte $a$ und $b$ unabh\"angig von den Funktionswerten gleich stark zu gewichte
 wir eine Intervall-Grenze dann st\"arker gewichten, wenn der Funktionswert dort kleiner ist,
 weil wir dann vermuten w\"urden, dass dieser Punkt schon n\"aher an der Nullstelle liegt.
 Eine naheliegende Idee ist daher, die Punkte $a$ und $b$ mit den Betr\"agen der reziproken
-Funktionswerte zu gewichten, denn die werden um so gr\"o\3er, je kleiner der Funktionswert
+Funktionswerte zu gewichten, denn die werden um so gr\"o{\ss}er, je kleiner der Funktionswert
 ist.  Dieser Ansatz f\"uhrt auf die Formel
 \\[0.2cm]
 \hspace*{1.3cm} $c = \bruch{\frac{1}{|f(a)|}\cdot a + \frac{1}{|f(b)|}\cdot b}{\frac{1}{|f(a)|} +
@@ -843,10 +843,10 @@ die oben abgeleitete Formel verwenden:
          \right.
       $
 \end{enumerate}
-Ähnlich wie beim Beweis des Zwischenwert-Satzes l\"asst sich zeigen, dass die Folge
+\"Ahnlich wie beim Beweis des Zwischenwert-Satzes l\"asst sich zeigen, dass die Folge
 $\folge{a_n}$ monoton steigend ist, w\"ahrend die Folge $\folge{b_n}$ monoton fallend ist.
 Da die Folgen \"uberdies beschr\"ankt sind, denn $a_n$ ist immer kleiner als $b$ und $b_n$ ist
-immer gr\"o\3er als $a$, konvergieren beide Folgen.  Allerdings ist nicht garantiert, dass
+immer gr\"o{\ss}er als $a$, konvergieren beide Folgen.  Allerdings ist nicht garantiert, dass
 $a_n$ und $b_n$ gegen den gleichen Grenzwert konvergieren!  Es l\"asst sich lediglich zeigen,
 dass entweder $a_n$ oder $b_n$ gegen eine Nullstelle der Funktion $f$ konvergiert.
 Um das Verfahren experimentell untersuchen zu k\"onnen, implementieren wir es.
@@ -989,7 +989,7 @@ $b_n$ konstant ist, es gilt $b_n = 10$.
 \item[I.S.:] $n \mapsto n + 1$.
 
       Die Funktion $f := (x \mapsto x^4 - 1)$ ist f\"ur nichtnegative Zahlen monoton steigend,
-      dass hei\3t aus $0 \leq u \leq v$ folgt auch $f(u) \leq f(v)$.  Es gilt 
+      dass hei{\ss}t aus $0 \leq u \leq v$ folgt auch $f(u) \leq f(v)$.  Es gilt 
       \\[0.2cm]
       \hspace*{1.3cm}
       $f(n \cdot 10^{-3}) = n^4 \cdot 10^{-12} - 1$ \quad und \quad $f(10) = 10^4 - 1$.
@@ -999,7 +999,7 @@ $b_n$ konstant ist, es gilt $b_n = 10$.
       absch\"atzen.
       Wenden wir daher f\"ur $a_n' = n \cdot 10^{-3}$ und $b_n=10$ die Regula Falsi an um eine
       N\"aherung $c_n'$ f\"ur die Nullstelle von $f$       zu berechnen, so wird
-      $c_n'$ gr\"o\3er sein als der wahre Wert von $c_n$, der in dem Algorithmus tats\"achlich auftritt.
+      $c_n'$ gr\"o{\ss}er sein als der wahre Wert von $c_n$, der in dem Algorithmus tats\"achlich auftritt.
       Es gilt:
       \\[0.2cm]
       \hspace*{1.3cm}
