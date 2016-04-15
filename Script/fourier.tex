@@ -3,10 +3,10 @@ Bei der Fourier-Analyse
 (\href{http://de.wikipedia.org/wiki/Joseph_Fourier}{Jean Baptiste Joseph Fourier}; 1768 - 1830) 
 zerlegen wir eine 
 periodische Funktion in Sinus-Schwingungen verschiedener Frequenzen.  Dieses Verfahren
-wird in der Praxis zur Ton- und Bild-Verarbeitung eingesetzt.  Außerdem ist die
-Fourier-Analyse ein wichtiges Hilfsmittel zur Lösung von Differential-Gleichungen.
+wird in der Praxis zur Ton- und Bild-Verarbeitung eingesetzt.  Au\3erdem ist die
+Fourier-Analyse ein wichtiges Hilfsmittel zur L\"osung von Differential-Gleichungen.
 Im Rahmen dieser Vorlesung werden wir die Fourier-Analyse allerdings nur zur Berechnung
-unendlichen Reihen einsetzen, denn für die anderen Anwendungen reicht die Zeit 
+unendlichen Reihen einsetzen, denn f\"ur die anderen Anwendungen reicht die Zeit 
 nicht aus.
 
 Bei der Fourier-Analyse gehen wir davon aus, dass eine Funktion 
@@ -16,23 +16,23 @@ Periode $2\cdot\pi$ ist, d.~h.~es gilt
 \hspace*{1.3cm}
 $\forall x \in\mathbb{R}: f(x+2\cdot\pi) = f(x)$.
 \\[0.1cm]
-Ein triviales Beispiel für eine periodische Funktion ist die konstante Funktion 
+Ein triviales Beispiel f\"ur eine periodische Funktion ist die konstante Funktion 
 $x \mapsto c$.
 Das typische Beispiel einer periodischen Funktion ist die Funktion
 $x \mapsto \sin(x)$, denn es gilt $\sin(x+2\cdot\pi) = \sin(x)$.  Genauso ist auch die
 Funktion $x \mapsto \cos(x)$ periodisch mit der Periode $2\cdot\pi$. 
-Weitere Beispiele für periodische Funktionen sind die Funktionen 
+Weitere Beispiele f\"ur periodische Funktionen sind die Funktionen 
 \\[0.1cm]
 \hspace*{1.3cm}
 $x \mapsto \sin(n\cdot x)$ \quad und \quad $x \mapsto \cos(n\cdot x)$ 
-\quad für $n\in\mathbb{N}$.
+\quad f\"ur $n\in\mathbb{N}$.
 \\[0.1cm]
 Aus diesen Funktionen lassen sich weitere periodische Funktionen durch Linear-Kombination
 erhalten, denn wenn $f$ und $g$ zwei periodische Funktionen mit der Periode $2\cdot\pi$
-sind, so ist natürlich auch die Funktion
+sind, so ist nat\"urlich auch die Funktion
 \\[0.1cm]
 \hspace*{1.3cm}
-$x \mapsto \alpha \cdot f(x) + \beta \cdot g(x)$ \quad für $\alpha,\beta\in\mathbb{R}$
+$x \mapsto \alpha \cdot f(x) + \beta \cdot g(x)$ \quad f\"ur $\alpha,\beta\in\mathbb{R}$
 \\[0.1cm] 
 eine periodische Funktion der Periode $2\cdot\pi$.  Die grundlegende Idee bei der
 Fourier-Analyse besteht nun darin, dass sich jede halbwegs normale\footnote{
@@ -41,7 +41,7 @@ lassen.  Diese Funktionen sind aber relativ exotisch, so dass wir uns damit nich
 befassen. 
 }
 periodische Funktion als unendliche Linear-Kombination der oben vorgestellten Funktionen
-darstellen lässt.  Genauer definieren wir folgendes: 
+darstellen l\"asst.  Genauer definieren wir folgendes: 
 
 \begin{Definition}[Fourier-Reihe]
   Es seien $\bigl(a_n)_{n\in\mathbb{N}_0}$ und $\folgea{b_n}$ Folgen reeller Zahlen.  Dann bezeichnen
@@ -55,7 +55,7 @@ darstellen lässt.  Genauer definieren wir folgendes:
 \end{Definition}
 
 \section{Berechnung der Fourier-Koeffizienten}
-Die zentrale Frage bei der \emph{Fourier-Analyse} ist es, für eine gegebene periodische Funktion
+Die zentrale Frage bei der \emph{Fourier-Analyse} ist es, f\"ur eine gegebene periodische Funktion
 $f$ die \emph{Fourier-Koeffizienten} $a_k$ und $b_k$ zu berechnen.   Ist $f$ eine
 periodische Funktion mit der Periode $2\cdot\pi$ und gilt 
 \begin{equation}
@@ -63,7 +63,7 @@ periodische Funktion mit der Periode $2\cdot\pi$ und gilt
     f(x) = \bruch{1}{2}\cdot a_0 \;+\; \sum\limits_{k=1}^\infty a_k\cdot \cos(k\!\cdot\!x) \;+\;
                                       \sum\limits_{k=1}^\infty b_k\cdot \sin(k\!\cdot\!x), 
 \end{equation}
-so können wir den Koeffizienten $a_0$ dadurch gewinnen, dass wir die Funktion $f(x)$ in
+so k\"onnen wir den Koeffizienten $a_0$ dadurch gewinnen, dass wir die Funktion $f(x)$ in
 dem Intervall $[0,2\cdot\pi]$ integrieren.  Wir erhalten dann
 \\[0.3cm]
 \hspace*{0.8cm}
@@ -73,9 +73,9 @@ $\displaystyle \int_0^{2\cdot\pi}f(x)\,\dr x \; = \;
     \int_0^{2\cdot\pi} \sum\limits_{k=1}^\infty b_k\cdot \sin(k\!\cdot\!x) \,\dr x 
 $
 \\[0.3cm]
-Das erste Integral auf der rechten Seite können wir ausführen, die anderen Integrale
+Das erste Integral auf der rechten Seite k\"onnen wir ausf\"uhren, die anderen Integrale
 vertauschen wir mit den unendlichen Reihen\footnote{
-Eine genaue Analyse, wann diese Vertauschung zulässig ist, geht über den Rahmen dieser Vorlesung hinaus.}.
+Eine genaue Analyse, wann diese Vertauschung zul\"assig ist, geht \"uber den Rahmen dieser Vorlesung hinaus.}.
 Das liefert
 \begin{equation}
   \label{eq:fourierEq1}
@@ -85,7 +85,7 @@ Das liefert
                           \sum\limits_{k=1}^\infty a_k\cdot \int_0^{2\cdot\pi} \!\! \cos(k\!\cdot\!x) \,\dr x \;+\;
                           \sum\limits_{k=1}^\infty b_k\cdot \int_0^{2\cdot\pi} \!\! \sin(k\!\cdot\!x) \,\dr x 
 \end{equation}
-Nun gilt für alle $k\in\mathbb{N}$ mit $k\geq 1$
+Nun gilt f\"ur alle $k\in\mathbb{N}$ mit $k\geq 1$
 \begin{equation}
   \label{eq:intSin}
   \begin{array}[t]{lcl}    
@@ -96,7 +96,7 @@ Nun gilt für alle $k\in\mathbb{N}$ mit $k\geq 1$
  -\bruch{1}{k}\cdot(1 - 1) = 0,
   \end{array}
 \end{equation}
-denn $\cos(k\!\cdot\!2\!\cdot\!\pi) = \cos(0) = 1$. Genauso sehen wir für alle $k\geq 1$
+denn $\cos(k\!\cdot\!2\!\cdot\!\pi) = \cos(0) = 1$. Genauso sehen wir f\"ur alle $k\geq 1$
 \begin{equation}
   \label{eq:intCos}
   \int_0^{2\cdot\pi} \cos(k\!\cdot\!x)\,\dr x = 
@@ -111,9 +111,9 @@ Setzen wir die Gleichungen (\ref{eq:intCos}) und (\ref{eq:intSin}) in Gleichung
 \int_0^{2\cdot\pi}\!\!f(x)\,\dr x \; = \; \pi\cdot a_0 \quad \mbox{bzw.}\quad a_0 = \bruch{1}{\pi}\int_0^{2\cdot\pi}\!\!f(x)\,\dr x
 \end{equation}
 Damit haben wir  den Koeffizienten $a_0$ bestimmt.  Um die Koeffizienten 
-$a_k$ für $k\geq 0$ zu bestimmen, 
+$a_k$ f\"ur $k\geq 0$ zu bestimmen, 
 multplizieren wir die Gleichung (\ref{eq:fourierEq}) mit $\cos(n\!\cdot\!x)$, wobei
-$n\in\mathbb{N}$ ist.  Anschließend integrieren wir  über das
+$n\in\mathbb{N}$ ist.  Anschlie\3end integrieren wir  \"uber das
 Intervall $[0,2\!\cdot\!\pi]$.  Dann haben wir
 \\[0.3cm]
 \hspace*{0.8cm}
@@ -136,7 +136,7 @@ Vertauschen wir Integration und Summation, so erhalten wir
 & + & \displaystyle \sum\limits_{k=1}^\infty b_k\cdot \int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\sin(k\!\cdot\!x) \,\dr x 
 \end{array}  
 \end{equation}
-Wir berechnen als nächstes die Integrale, die in dieser Formel auftreten.
+Wir berechnen als n\"achstes die Integrale, die in dieser Formel auftreten.
 Das erste Integral hat nach Gleichung (\ref{eq:intCos}) den Wert 0.
 Zur Berechnung der anderen Integrale definieren wir
 \\[0.3cm]
@@ -145,7 +145,7 @@ $I_{n,k} := \displaystyle\int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\cos(k\!\cdot\
 \quad und \quad
 $J_{n,k} := \displaystyle\int_0^{2\cdot\pi} \sin(n\!\cdot\!x)\cdot\sin(k\!\cdot\!x)\, \dr x$
 \\[0.3cm]
-Wir berechnen $I_{n,k}$ durch partielle Integration. Für $n\not=0$  gilt
+Wir berechnen $I_{n,k}$ durch partielle Integration. F\"ur $n\not=0$  gilt
 \\[0.3cm]
 \hspace*{1.3cm}
 $
@@ -159,8 +159,8 @@ I_{n,k} & = & \displaystyle\int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\cos(k\!\cdo
 \end{array}
 $
 \\[0.3cm]
-Damit haben wir $I_{n,k}$ auf $J_{n,k}$ zurück geführt.  Jetzt berechnen wir $J_{n,k}$
-durch partielle Integration.  Für $n\not=0$ gilt
+Damit haben wir $I_{n,k}$ auf $J_{n,k}$ zur\"uck gef\"uhrt.  Jetzt berechnen wir $J_{n,k}$
+durch partielle Integration.  F\"ur $n\not=0$ gilt
 \\[0.1cm]
 \hspace*{1.3cm}
 $
@@ -174,7 +174,7 @@ $
 \end{array}
 $
 \\[0.3cm]
-Damit haben wir die Berechnung von $J_{n,k}$ auf $I_{n,k}$ zurück geführt.
+Damit haben wir die Berechnung von $J_{n,k}$ auf $I_{n,k}$ zur\"uck gef\"uhrt.
 Insgesamt haben wir die Gleichungen 
 \\[0.3cm]
 \hspace*{1.3cm}
@@ -188,7 +188,7 @@ $I_{n,k} = \bruch{k^2}{n^2} \cdot I_{n,k}$ \quad also \quad $\left(1 - \bruch{k^
 Falls $k\not=n$ ist, folgt daraus sofort 
 \\[0.3cm]
 \hspace*{1.3cm}
-$I_{n,k} = 0$ \quad und \quad $J_{n,k} = 0$ \quad für $n\not=k$.
+$I_{n,k} = 0$ \quad und \quad $J_{n,k} = 0$ \quad f\"ur $n\not=k$.
 \\[0.3cm]
 In dem Fall $k=n$ hat die bisherige Rechnung uns nicht viel weiter gebracht.  In diesem Fall wissen wir lediglich,
 dass $I_{n,n} = J_{n,n}$ gilt.  Hier hilft uns eine Addition weiter:
@@ -223,7 +223,7 @@ Insgesamt haben wir also
 \hspace*{1.3cm}
 $I_{n,k} = J_{n,k} = \pi\cdot\delta_{n,k}$, 
 \\[0.1cm]
-wobei $\delta_{n,k}$ das früher definierte Kronecker-Delta bezeichnet, für das die Gleichung
+wobei $\delta_{n,k}$ das fr\"uher definierte Kronecker-Delta bezeichnet, f\"ur das die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $\delta_{n,k} = \left\{
@@ -234,17 +234,17 @@ $\delta_{n,k} = \left\{
 \right.
 $
 \\[0.2cm]
-gilt.  Um die Gleichung \ref{eq:fourierAk1} nach den Koeffizienten $a_k$ auflösen zu können, müssen wir noch die 
+gilt.  Um die Gleichung \ref{eq:fourierAk1} nach den Koeffizienten $a_k$ aufl\"osen zu k\"onnen, m\"ussen wir noch die 
 Integrale 
 \\[0.3cm]
 \hspace*{1.3cm}
 $H_{n,k} := \displaystyle\int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\sin(k\!\cdot\!x)\, \dr x$
 \\[0.3cm]
-berechnen.  Wir könnten dieses Integral auf dieselbe Art berechnen, mit der wir oben die Integrale
+berechnen.  Wir k\"onnten dieses Integral auf dieselbe Art berechnen, mit der wir oben die Integrale
 $\int_0^{2\cdot\pi}\!\!\cos(n\!\cdot\!x)\cdot\cos(k\!\cdot\!x)\, \dr x$  und
 $\int_0^{2\cdot\pi}\!\!\sin(n\!\cdot\!x)\cdot\sin(k\!\cdot\!x)\, \dr x$  berechnet haben.
 Es gibt aber noch einen anderen Weg, den wir jetzt aufzeigen.
-Aus dem Additions-Theorem für die Sinus-Funktion 
+Aus dem Additions-Theorem f\"ur die Sinus-Funktion 
 \\[0.1cm]
 \hspace*{1.3cm}
 $\sin(\alpha + \beta) = \sin(\alpha) \cdot \cos(\beta) + \cos(\alpha) \cdot \sin(\beta)$
@@ -268,7 +268,7 @@ $
 $
 \\[0.3cm]
 nach Gleichung (\ref{eq:intSin}).
-Für $n>0$ schreibt sich damit die Formel \ref{eq:fourierAk1} wie folgt
+F\"ur $n>0$ schreibt sich damit die Formel \ref{eq:fourierAk1} wie folgt
 \\[0.3cm]
 \hspace*{1.3cm}
 $
@@ -283,16 +283,16 @@ $
 \end{array}  
 $
 \\[0.1cm]
-Damit haben wir für den Fourier-Koeffizienten $a_n$ die Formel 
+Damit haben wir f\"ur den Fourier-Koeffizienten $a_n$ die Formel 
 \begin{equation}
   \label{eq:fourierAk}
  a_n = \bruch{1}{\pi} \cdot\int_0^{2\cdot\pi}f(x)\cdot\cos(n\!\cdot\!x)\,\dr x   
 \end{equation}
 gefunden.  Vergleichen wir diese Formel mit der Formel \ref{eq:fourierA0}, so sehen wir, dass diese Gleichung
-auch für $n=0$ richtig ist.
+auch f\"ur $n=0$ richtig ist.
 Um die Koeffizienten $b_n$ zu berechnen, multplizieren wir die Gleichung
-\ref{eq:fourier} mit $\sin(n\!\cdot\!x)$ und integrieren über das Intervall $[0,2\!\cdot\!\pi]$. Dann  erhalten wir
-nach einer Rechnung, die ganz analog zur Berechnung der Koeffizienten $a_k$ verläuft, das Ergebnis
+\ref{eq:fourier} mit $\sin(n\!\cdot\!x)$ und integrieren \"uber das Intervall $[0,2\!\cdot\!\pi]$. Dann  erhalten wir
+nach einer Rechnung, die ganz analog zur Berechnung der Koeffizienten $a_k$ verl\"auft, das Ergebnis
 
 \begin{equation}
   \label{eq:fourierBk}
@@ -300,50 +300,50 @@ nach einer Rechnung, die ganz analog zur Berechnung der Koeffizienten $a_k$ verl
 \end{equation}
 
 \section{Konvergenz$^*$}
-Wir müssen noch die Frage beantworten, für welche Funktionen $f$ die mit Hilfe der Gleichungen (\ref{eq:fourierAk})
+Wir m\"ussen noch die Frage beantworten, f\"ur welche Funktionen $f$ die mit Hilfe der Gleichungen (\ref{eq:fourierAk})
 (\ref{eq:fourierBk}) und (\ref{eq:fourier})  aufgestellte Fourier-Reihe gegen $f$ konvergiert. 
-Wir wollen uns mit einem Satz begnügen, der im wesentlichen auf Dirichlet 
-(Johann Peter Gustav Lejeune Dirichlet; 1805 - 1859) zurück geht.
-Zuvor benötigen wir noch zwei Definitionen.
+Wir wollen uns mit einem Satz begn\"ugen, der im wesentlichen auf Dirichlet 
+(Johann Peter Gustav Lejeune Dirichlet; 1805 - 1859) zur\"uck geht.
+Zuvor ben\"otigen wir noch zwei Definitionen.
 
-\begin{Definition}[Einschränkung einer Funktion]
+\begin{Definition}[Einschr\"ankung einer Funktion]
   Ist $f:\mathbb{R} \rightarrow \mathbb{R}$ eine Funktion und ist $[a,b]$ ein nicht-leeres
-  Intervall, so definieren wir die \emph{Einschränkung} von $f$ auf $[a,b]$ als die
+  Intervall, so definieren wir die \emph{Einschr\"ankung} von $f$ auf $[a,b]$ als die
   Funktion 
   \\[0.1cm]
   \hspace*{1.3cm}
-  $f\!\upharpoonright_{[a,b]} : [a,b] \rightarrow \mathbb{R}$ \quad mit $f\!\upharpoonright_{[a,b]}(x) = f(x)$ für alle $x \in [a,b]$.
+  $f\!\upharpoonright_{[a,b]} : [a,b] \rightarrow \mathbb{R}$ \quad mit $f\!\upharpoonright_{[a,b]}(x) = f(x)$ f\"ur alle $x \in [a,b]$.
 \end{Definition}
 
 \begin{Definition}[stetig differenzierbar]
   Eine Funktion $f:[a,b] \rightarrow \mathbb{R}$ ist \emph{stetig differenzierbar}
-  falls $f$ differenzierbar ist und außerdem die Ableitung $f':[a,b] \rightarrow
+  falls $f$ differenzierbar ist und au\3erdem die Ableitung $f':[a,b] \rightarrow
   \mathbb{R}$ stetig ist. 
 \end{Definition}
 
-\begin{Definition}[stückweise stetig differenzierbar]
-  Eine Funktion $f:[0,2\!\cdot\!\pi] \rightarrow \mathbb{R}$ ist \emph{stückweise stetig differenzierbar} 
+\begin{Definition}[st\"uckweise stetig differenzierbar]
+  Eine Funktion $f:[0,2\!\cdot\!\pi] \rightarrow \mathbb{R}$ ist \emph{st\"uckweise stetig differenzierbar} 
   falls es  Zahlen $x_0$, $x_1$, $\cdots$, $x_n$ gibt mit 
   \\[0.1cm]
   \hspace*{1.3cm}
   $0 = x_0\leq x_1 \leq x_2 \cdots \leq x_{n-1} \leq x_n = 2\!\cdot\!\pi$
   \\[0.1cm]
-  gibt, so dass für alle $i=1,\cdots,n$ gilt: 
+  gibt, so dass f\"ur alle $i=1,\cdots,n$ gilt: 
   \\[0.1cm]
   \hspace*{1.3cm}
   $f\!\upharpoonright_{[x_{i-1}, x_i]}$ ist stetig differenzierbar.  
 \end{Definition}
 
-Ein Beispiel für eine stückweise stetige Funktion sehen Sie in Abbildung
+Ein Beispiel f\"ur eine st\"uckweise stetige Funktion sehen Sie in Abbildung
 \ref{fig:saegezahn.eps}.  Die Ableitung dieser Funktion weist in den Punkten $0$, $\pi$
-und $-\pi$ Sprünge auf.
+und $-\pi$ Spr\"unge auf.
 
 \begin{Satz} Es gelte
   \begin{enumerate}
   \item $f:\mathbb{R} \rightarrow \mathbb{R}$ ist  stetig mit der Periode $2\cdot\pi$,
-  \item $f\!\upharpoonright_{[0,2\!\cdot\!\pi]}$ ist  stückweise stetig differenzierbar,
-  \item $a_k = \bruch{1}{\pi} \cdot\int\limits_0^{2\cdot\pi}f(x)\cdot\cos(k\!\cdot\!x)\,\dr x$ \quad für $k \in \mathbb{N}_0$,
-  \item $b_k = \bruch{1}{\pi}\cdot\int\limits_0^{2\cdot\pi}f(x)\cdot\sin(k\!\cdot\!x)\,\dr x$ \quad für $k \in \mathbb{N}$.  
+  \item $f\!\upharpoonright_{[0,2\!\cdot\!\pi]}$ ist  st\"uckweise stetig differenzierbar,
+  \item $a_k = \bruch{1}{\pi} \cdot\int\limits_0^{2\cdot\pi}f(x)\cdot\cos(k\!\cdot\!x)\,\dr x$ \quad f\"ur $k \in \mathbb{N}_0$,
+  \item $b_k = \bruch{1}{\pi}\cdot\int\limits_0^{2\cdot\pi}f(x)\cdot\sin(k\!\cdot\!x)\,\dr x$ \quad f\"ur $k \in \mathbb{N}$.  
   \end{enumerate}
   Dann gilt \\[0.1cm]
   \hspace*{1.3cm}
@@ -352,19 +352,19 @@ und $-\pi$ Sprünge auf.
 \end{Satz}
 
 \noindent
-Der Beweis dieses Satzes benötigt Hilfsmittel, die im Rahmen der Vorlesung
-nicht eingeführt werden können.
+Der Beweis dieses Satzes ben\"otigt Hilfsmittel, die im Rahmen der Vorlesung
+nicht eingef\"uhrt werden k\"onnen.
 
 \section{Beispiele}
 Um es gleich bei der Berechnung der Fourier-Koeffizienten einfacher zu haben, definieren
-wir für eine Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ die Begriffe \emph{gerade}
+wir f\"ur eine Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ die Begriffe \emph{gerade}
 und \emph{ungerade}: 
 \begin{enumerate}
 \item $f$ ist \emph{gerade}   g.d.w. $\forall x\in\mathbb{R}: f(-x) =  f(x)$ .
 \item $f$ ist \emph{ungerade} g.d.w. $\forall x\in\mathbb{R}: f(-x) = -f(x)$ .
 \end{enumerate}
 Ist die Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ ungerade und ist $f$ integrierbar,
-so gilt für beliebige Zahlen $a$ 
+so gilt f\"ur beliebige Zahlen $a$ 
 \begin{equation}
   \label{eq:intUngerade}
  \int_{-a}^a f(x)\,\dr x = 0.  
@@ -377,7 +377,7 @@ so gilt für beliebige Zahlen $a$
 \hspace*{1.3cm}
 $\displaystyle \int_{-a}^a f(x)\,\dr x = \int_{-a}^0 f(x)\,\dr x + \int_{0}^a f(x)\,\dr x$.
 \\[0.3cm]
-In dem Integral über das Intervall $[-a,0]$ führen wir die Variablen-Transformation $y =
+In dem Integral \"uber das Intervall $[-a,0]$ f\"uhren wir die Variablen-Transformation $y =
 -x$ durch.  Dann gilt $\dr y = - \dr x$, und $y(-a) = a$, $y(0) = 0$.  Damit gilt
 \\[0.3cm]
 \hspace*{1.3cm}
@@ -394,7 +394,7 @@ Also haben wir insgesamt
 $\displaystyle \int_{-a}^a f(x)\,\dr x = \int_{-a}^0 f(x)\,\dr x + \int_{0}^a f(x)\,\dr x
  = -\int_{0}^a f(x)\,\dr x + \int_{0}^a f(x)\,\dr x = 0$. \hspace*{\fill} $\Box$
 \\[0.3cm]
-Ist die Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ gerade, so kann ein Integral über
+Ist die Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ gerade, so kann ein Integral \"uber
 ein zum Punkt $x=0$ symmetrisches Intervall wie folgt vereinfacht werden: 
 \begin{equation}
   \label{eq:intGerade}
@@ -420,7 +420,7 @@ Beweisen Sie den letzten Satz.  \eox
 \vspace*{0.3cm}
 
 \noindent
-Die letzten beiden Gleichungen können wir zusammenfassen.
+Die letzten beiden Gleichungen k\"onnen wir zusammenfassen.
 \begin{Korollar}
   Ist die Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ einerseits periodisch mit der Periode
   $2\cdot\pi$ und andererseits ungerade, so gilt 
@@ -452,8 +452,8 @@ $\displaystyle \int_{0}^{2\cdot\pi} f(x)\, \dr x = \int_{-\pi}^{\pi} f(x)\, \dr 
 \hspace*{1.3cm}
 $\displaystyle \int_{0}^{2\cdot\pi} f(x)\, \dr x = \int_{-\pi}^{\pi} f(x)\, \dr x = 2 \cdot \int_0^{\pi} f(x)\,\dr x$.
 
-\subsection{Fourier-Analyse der Sägezahn-Funktion}
-Wir berechnen als erstes die Fourier-Reihe für die \emph{Sägezahn}-Funktion $s:\mathbb{R} \rightarrow \mathbb{R}$,  
+\subsection{Fourier-Analyse der S\"agezahn-Funktion}
+Wir berechnen als erstes die Fourier-Reihe f\"ur die \emph{S\"agezahn}-Funktion $s:\mathbb{R} \rightarrow \mathbb{R}$,  
 die im Intervall $[0,2\cdot\pi]$ wie folgt definiert ist:
 \\[0.1cm]
 \hspace*{1.3cm}
@@ -470,7 +470,7 @@ dieser Funktion.
 \begin{figure}[!h]
   \centering
    \epsfig{file=Figures/saegezahn.eps,scale=0.5}
-   \caption{Die Sägezahn-Funktion.}
+   \caption{Die S\"agezahn-Funktion.}
   \label{fig:saegezahn.eps}
 \end{figure}
 \begin{enumerate}
@@ -494,7 +494,7 @@ dieser Funktion.
       \\[0.1cm]
       Andernfalls berechnen wir das Integral  mit Hilfe partieller Integration.  Wir setzen
       $f'(x) = \cos(n\!\cdot\!x)$ und $g(x) = x$.  Dann gilt
-      $f(x) = \frac{1}{n}\cdot \sin(n\!\cdot\!x)$ und $g'(x) = 1$, also haben wir für 
+      $f(x) = \frac{1}{n}\cdot \sin(n\!\cdot\!x)$ und $g'(x) = 1$, also haben wir f\"ur 
       $n \geq 1$
       \\[0.3cm]
       \hspace*{1.3cm}
@@ -510,7 +510,7 @@ dieser Funktion.
       denn $\cos(n\cdot \pi) = (-1)^n$. Damit haben wir insgesamt
       \\[0.3cm]
       \hspace*{1.3cm}
-      $a_0 = \pi$, \quad $a_{2\cdot n+1} = \bruch{-4}{\pi\cdot n^2}$ \quad und \quad $a_{2\cdot(n+1)} = 0$ \quad für $n\in \mathbb{N}$.
+      $a_0 = \pi$, \quad $a_{2\cdot n+1} = \bruch{-4}{\pi\cdot n^2}$ \quad und \quad $a_{2\cdot(n+1)} = 0$ \quad f\"ur $n\in \mathbb{N}$.
 \item Die Koeffizienten $b_n$ ergeben sich als
       \\[0.3cm]
       \hspace*{1.3cm}
@@ -523,7 +523,7 @@ Insgesamt haben wir jetzt die Formel
 \hspace*{1.3cm}
 $\displaystyle s(x) = \bruch{\pi}{2} - \bruch{4}{\pi} \cdot\sum\limits_{k=0}^\infty \bruch{1}{(2\!\cdot\!k+1)^2} \cdot \cos\bigl((2\!\cdot\!k+1)\cdot x\bigr)$
 \\[0.3cm]
-gefunden.  Setzen wir hier für $x$ den Wert $\pi$ ein, so ergibt sich wegen $\cos\bigl((2\!\cdot\!k+1)\cdot \pi\bigr) = - 1$
+gefunden.  Setzen wir hier f\"ur $x$ den Wert $\pi$ ein, so ergibt sich wegen $\cos\bigl((2\!\cdot\!k+1)\cdot \pi\bigr) = - 1$
 \\[0.1cm]
 \hspace*{1.3cm}
 $
@@ -539,8 +539,8 @@ Damit sind wir jetzt in der Lage, die Reihe
 \hspace*{1.3cm}
 $\ds \sigma := \sum\limits_{n=1}^\infty \frac{1}{n^2}$
 \\[0.2cm]
-zu berechnen.  Zunächst zerlegen wir die Reihe in einen Teil, der nur über die geraden Indices 
-läuft und einen Teil, der über die ungeraden Indices läuft: 
+zu berechnen.  Zun\"achst zerlegen wir die Reihe in einen Teil, der nur \"uber die geraden Indices 
+l\"auft und einen Teil, der \"uber die ungeraden Indices l\"auft: 
 \\[0.3cm]
 \hspace*{1.3cm}
 $
@@ -561,9 +561,9 @@ Damit haben wir also die Formel
 \\[0.3cm]
 gezeigt.  Die Frage nach dem Wert dieser Reihe war 1644 als \emph{Basel'sches Problem} von
 Pietro Mengoli gestellt worden. 
-Führende Mathematiker des 17-ten Jahrhunderts hatten sich erfolglos mit dieser Frage
-beschäftigt.
-Im Jahre 1735 gelang es Leonard Euler (1707 - 1783), dieses Problem zu lösen.
+F\"uhrende Mathematiker des 17-ten Jahrhunderts hatten sich erfolglos mit dieser Frage
+besch\"aftigt.
+Im Jahre 1735 gelang es Leonard Euler (1707 - 1783), dieses Problem zu l\"osen.
 
 \exercise
 Die Funktion $p$ sei auf dem Intervall $[-\pi,\pi]$ definiert durch
@@ -575,7 +575,7 @@ Die Funktion werde so auf $\mathbb{R}$ fortgesetzt, dass die resultierende Funkt
 $2\!\cdot\!\pi$ hat.  
 \begin{enumerate}[(a)]
 \item Berechnen Sie die Fourier-Reihe von $p$.
-\item Berechnen Sie mit Hilfe der Fourier-Reihe von $p$ einen Wert für die Reihe
+\item Berechnen Sie mit Hilfe der Fourier-Reihe von $p$ einen Wert f\"ur die Reihe
       \\[0.3cm]
       \hspace*{1.3cm}
       $\displaystyle \sum\limits_{n=1}^\infty \frac{1}{n^2}$. \eox

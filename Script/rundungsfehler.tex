@@ -1,48 +1,48 @@
 \chapter{Rundungsfehler}
-Die meisten komplexen Probleme lassen sich nur mit numerischen Verfahren lösen.  Wir haben
+Die meisten komplexen Probleme lassen sich nur mit numerischen Verfahren l\"osen.  Wir haben
 bereits verschiedene numerische Verfahren kennengelernt, beispielsweise Verfahren zur
 Berechnung von Nullstellen sowie Verfahren zur numerischen Integration.  Allen diesen
 Verfahren ist gemeinsam, dass zwei verschiedene Arten von Fehlern auftreten:
 \begin{enumerate}
 \item Ein \emph{Approximations-Fehler} tritt auf, wenn wir einen Wert $\lambda$ berechnen
-      wollen, zu dessen Berechnung wir nur eine Näherungsformel existiert.  Oft ist der
+      wollen, zu dessen Berechnung wir nur eine N\"aherungsformel existiert.  Oft ist der
       Approximations-Fehler ein \emph{Abbruch-Fehler}, der seine
       Ursache darin hat, dass wir nur endlich viele Glieder einer unendlichen Reihe
-      berechnen können.  Wollen wir beispielsweise die Euler'sche Zahl $e$ nach der Formel
+      berechnen k\"onnen.  Wollen wir beispielsweise die Euler'sche Zahl $e$ nach der Formel
       \\[0.2cm]
       \hspace*{1.3cm}
       $\ds e = \sum\limits_{k=0}^\infty \bruch{1}{k!}$
       \\[0.2cm]
-      berechnen, so können wir auf dem Rechner diese Summe nicht gegen unendlich laufen
-      lassen, sondern müssen die Summe nach endlich vielen Gliedern abbrechen, wir berechnen
-      also als Approximation für $e$ eine Reihe der Form
+      berechnen, so k\"onnen wir auf dem Rechner diese Summe nicht gegen unendlich laufen
+      lassen, sondern m\"ussen die Summe nach endlich vielen Gliedern abbrechen, wir berechnen
+      also als Approximation f\"ur $e$ eine Reihe der Form
       \\[0.2cm]
       \hspace*{1.3cm}
       $\ds e_n := \sum\limits_{k=0}^n \bruch{1}{k!}$ 
       \\[0.2cm]
-      und müssen dann $n$ so groß wählen, dass der Abbruch-Fehler
+      und m\"ussen dann $n$ so gro\3 w\"ahlen, dass der Abbruch-Fehler
       \\[0.2cm]
       \hspace*{1.3cm}
       $\ds e - e_n = \sum\limits_{k=n+1}^\infty \bruch{1}{k!}$ 
       \\[0.2cm]
       unterhalb einer vorgegeben Schranke bleibt.
-\item Zusätzlich zum Approximations-Fehler gibt es noch die Rundungsfehler, die im Laufe der Rechnung 
-      entstehen.  Diese Rundungsfehler haben Ihre Ursache darin, dass Fließkomma-Zahlen auf dem Rechner 
+\item Zus\"atzlich zum Approximations-Fehler gibt es noch die Rundungsfehler, die im Laufe der Rechnung 
+      entstehen.  Diese Rundungsfehler haben Ihre Ursache darin, dass Flie\3komma-Zahlen auf dem Rechner 
       mit einer vorgegebenen Genauigkeit dargestellt werden.  Rechnen wir in der Sprache \textsl{Java}
-      mit einer Fließkomma-Zahl vom Typ \texttt{float}, so stehen zur Darstellung der Stellen hinter dem
-      Komma lediglich 23 Bits zur Verfügung.  Werden nun zwei solche Zahlen multipliziert, so könnten
-      bis zu 47 Bits notwendig sein, um alle Stellen hinter dem Komma korrekt wiedergeben zu können.
-      Da aber zum Abspeichern des Ergebnisses lediglich 23 Bits zur Verfügung stehen, um die Ziffern 
-      hinter dem Komma abzuspeichern, bleibt nichts anderes übrig, als das Ergebnis auf 23 Bits zu
+      mit einer Flie\3komma-Zahl vom Typ \texttt{float}, so stehen zur Darstellung der Stellen hinter dem
+      Komma lediglich 23 Bits zur Verf\"ugung.  Werden nun zwei solche Zahlen multipliziert, so k\"onnten
+      bis zu 47 Bits notwendig sein, um alle Stellen hinter dem Komma korrekt wiedergeben zu k\"onnen.
+      Da aber zum Abspeichern des Ergebnisses lediglich 23 Bits zur Verf\"ugung stehen, um die Ziffern 
+      hinter dem Komma abzuspeichern, bleibt nichts anderes \"ubrig, als das Ergebnis auf 23 Bits zu
       runden.  Der dadurch entstehende Fehler wird als Rundungsfehler bezeichnet.
 \end{enumerate}
-Die Auswirkungen von Rundungsfehlern werden oft unterschätzt.  Unter
+Die Auswirkungen von Rundungsfehlern werden oft untersch\"atzt.  Unter
 \\[0.2cm]
 \hspace*{1.3cm}
 \href{http://www.devtopics.com/20-famous-software-disasters-part-2/}{\texttt{http://www.devtopics.com/20-famous-software-disasters-part-2/}}
 \\[0.2cm]
-findet sich eine Liste der 20 spektakulärsten Software-Fehler, die Katastrophen ausgelöst haben.
-In mehreren Fällen waren Rundungsfehler ein Teil des Problems.  Um einen ersten Eindruck von der Wirkung
+findet sich eine Liste der 20 spektakul\"arsten Software-Fehler, die Katastrophen ausgel\"ost haben.
+In mehreren F\"allen waren Rundungsfehler ein Teil des Problems.  Um einen ersten Eindruck von der Wirkung
 von Rundungsfehlern zu bekommen, betrachten wir das in Abbildung \ref{fig:Harmonic.java} gezeigte
 \textsl{Java}-Programm zur Berechnung der harmonischen Reihe
 \\[0.2cm]
@@ -87,21 +87,21 @@ laufen lassen, dann erhalten wir nach wenigen Sekunden die Meldung:
 \hspace*{1.3cm}
 \texttt{sum = 16.0, n = 1673864}.
 \\[0.2cm]
-Da wir früher bewiesen haben, dass die Partialsummen
+Da wir fr\"uher bewiesen haben, dass die Partialsummen
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds s_n := \sum\limits_{k=1}^n \bruch{1}{k}$ 
 \\[0.2cm]
-für wachsende Werte von $n$ beliebig groß werden, fragen wir uns, was bei der Rechnung schief gelaufen ist.
-Die Antwort ist, dass für $n = 1673864$ der Wert $\frac{1}{n}$ so klein ist, dass die Summe
+f\"ur wachsende Werte von $n$ beliebig gro\3 werden, fragen wir uns, was bei der Rechnung schief gelaufen ist.
+Die Antwort ist, dass f\"ur $n = 1673864$ der Wert $\frac{1}{n}$ so klein ist, dass die Summe
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds 16.0 + \frac{1}{n}$
 \\[0.2cm]
-so nahe bei $16$ liegt, dass sie auf den Wert $16$ abgerundet wird.  Um diesen Effekt näher
-zu beschreiben, definiert man für einen vorgegebenen Rechner die sogenannte
+so nahe bei $16$ liegt, dass sie auf den Wert $16$ abgerundet wird.  Um diesen Effekt n\"aher
+zu beschreiben, definiert man f\"ur einen vorgegebenen Rechner die sogenannte
 \emph{Maschinen-Konstante} \textsl{eps} als die kleinste positive Zahl, die, wenn sie auf diesem Rechner zu
-$1$ addiert wird, eine Ergebnis größer als 1 ergibt.  Die formale Definition lautet
+$1$ addiert wird, eine Ergebnis gr\"o\3er als 1 ergibt.  Die formale Definition lautet
 \\[0.2cm]
 \hspace*{1.3cm}
 $\textsl{eps} := \min\bigl( \{ x \in \mathbb{R} \mid x > 0 \wedge 1 \oplus x > 1 \} \bigr)$.
@@ -109,7 +109,7 @@ $\textsl{eps} := \min\bigl( \{ x \in \mathbb{R} \mid x > 0 \wedge 1 \oplus x > 1
 Hier bezeichnet $\oplus$ die auf dem Rechner implementierte Addition.
 Abbildung \ref{fig:maschinen-konstante.stlx} zeigt ein zwei Funktionen zur Berechnung der
 Maschinen-Konstante bei einfacher und doppelter Genauigkeit.  Bei der im \textsc{Ieee}-Standard 754
-definierten 32-Bit-Architektur erhalten wir für $\textsl{eps}$ den Wert
+definierten 32-Bit-Architektur erhalten wir f\"ur $\textsl{eps}$ den Wert
 \\[0.2cm]
 \hspace*{1.3cm}
 $\textsl{eps}_{32} = \texttt{1.1920929E-7}$,
@@ -156,11 +156,11 @@ $\textsl{eps}_{64} = \texttt{2.220446049250313E-16}$,
 \end{figure}
 
 \noindent
-Bei modernen Rechnern, die den \textsc{Ieee}-Standard 754 implementieren, können wir davon ausgehen, dass
-der relative Rundungsfehler bei der Ausführung 
-einer  Grundrechenoperation durch die Maschinen-Konstante \textsl{eps} beschränkt ist.
+Bei modernen Rechnern, die den \textsc{Ieee}-Standard 754 implementieren, k\"onnen wir davon ausgehen, dass
+der relative Rundungsfehler bei der Ausf\"uhrung 
+einer  Grundrechenoperation durch die Maschinen-Konstante \textsl{eps} beschr\"ankt ist.
 
-Leider muss die Vorlesung aus Zeitgründen an dieser Stelle enden.  Der interessierten Leser sei daher
+Leider muss die Vorlesung aus Zeitgr\"unden an dieser Stelle enden.  Der interessierten Leser sei daher
 auf die Literatur, insbesondere den Artikel von Goldberg \cite{goldberg:91} verwiesen. 
 
 %%% Local Variables: 
