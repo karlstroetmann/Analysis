@@ -1,16 +1,16 @@
 \chapter{Stetige  Funktionen}
 \section{Motivation und Definition der Stetigkeit}
-Wir wollen in diesem Abschnitt präzisieren, wann eine Funktion so \emph{glatt} ist, dass
-wir sie zeichnen können, ohne dabei den Stift absetzen zu müssen.  Für eine glatte Funktion soll außerdem der
-\emph{Zwischenwert-Satz} gelten.  Der Zwischenwert-Satz besagt, dass für eine glatte Funktion
+Wir wollen in diesem Abschnitt pr\"azisieren, wann eine Funktion so \emph{glatt} ist, dass
+wir sie zeichnen k\"onnen, ohne dabei den Stift absetzen zu m\"ussen.  F\"ur eine glatte Funktion soll au\3erdem der
+\emph{Zwischenwert-Satz} gelten.  Der Zwischenwert-Satz besagt, dass f\"ur eine glatte Funktion
 \\[0.2cm]
 \hspace*{1.3cm}
 $f: \mathbb{R} \rightarrow \mathbb{R}$,
 \\[0.2cm]
-für die es $a,b \in \mathbb{R}$ gibt mit $f(a) < 0$ und $f(b) > 0$, auch ein $c \in \mathbb{R}$
+f\"ur die es $a,b \in \mathbb{R}$ gibt mit $f(a) < 0$ und $f(b) > 0$, auch ein $c \in \mathbb{R}$
 existiert, so dass $f(c) = 0$ ist.  Anschaulich ist dieser Satz klar:  Ist beispielsweise $a < b$ und
 zeichne ich die Funktion $f$ in dem Intervall $[a, b]$, so muss der Graph der Funktion an irgendeiner
-Stelle des Intervalls $[a,b]$ die $x$-Achse schneiden.  Voraussetzung dafür, dass dies tatsächlich so
+Stelle des Intervalls $[a,b]$ die $x$-Achse schneiden.  Voraussetzung daf\"ur, dass dies tats\"achlich so
 ist, ist aber die Forderung, dass die Funktion $f$ in einem gewissen Sinne \emph{glatt} ist, denn wenn wir
 beispielsweise die Funktion 
 \\[0.2cm]
@@ -29,27 +29,27 @@ $g(x) := \left\{
 $
 \\[0.2cm]
 definiert ist, so haben wir zwar  $g(-1) = -1$ und $g(1) = 1$, aber es gibt kein $x \in [-1,1]$, 
-für das $g(x) = 0$ wäre.   Das liegt daran, dass die Funktion eben nicht \emph{glatt} ist, denn die
-Funktion hat an der Stelle $x = 0$ einen Sprung.  Unser Ziel in diesem Abschnitt ist es, zunächst exakt zu
+f\"ur das $g(x) = 0$ w\"are.   Das liegt daran, dass die Funktion eben nicht \emph{glatt} ist, denn die
+Funktion hat an der Stelle $x = 0$ einen Sprung.  Unser Ziel in diesem Abschnitt ist es, zun\"achst exakt zu
 definieren, was wir unter einer glatten Funktion verstehen wollen.  In der Mathematik wird an Stelle des
 Attributs \emph{glatt} der Begriff der \emph{Stetigkeit} verwendet.\footnote{
 Gelegentlich wird eine Funktion  als \emph{glatt} bezeichnet, wenn die Funktion unendlich oft
-differenzierbar ist.  Das ist eine wesentlich schärfere Forderung als der Begriff der Stetigkeit.
+differenzierbar ist.  Das ist eine wesentlich sch\"arfere Forderung als der Begriff der Stetigkeit.
 In diesem Skript verwende ich den Begriff \emph{glatt} aber synonym mit dem Begriff \emph{stetig}.}
-Um diesen Begriff einführen zu können,
-bedarf es einer Reihe von zusätzlichen Definitionen, die nun folgen.
+Um diesen Begriff einf\"uhren zu k\"onnen,
+bedarf es einer Reihe von zus\"atzlichen Definitionen, die nun folgen.
 
 
 Es sei $\folge{x_n}$ eine Folge und $D\subseteq \mathbb{R}$.  Wir sagen, dass 
-\emph{die Folge $\folge{x_n}$ in $D$ liegt}, wenn für alle $n \in \mathbb{N}$ das Folgenglied $x_n
+\emph{die Folge $\folge{x_n}$ in $D$ liegt}, wenn f\"ur alle $n \in \mathbb{N}$ das Folgenglied $x_n
 \in D$ ist.
 
 \begin{Definition}[Grenzwert]
   Es sei $D\subseteq \mathbb{R}$ und $f:D \rightarrow \mathbb{R}$.
-  Weiter sei $\widehat{x} \in \mathbb{R}$ und  $\lambda\in \mathbb{R}$.  Außerdem gebe es
+  Weiter sei $\widehat{x} \in \mathbb{R}$ und  $\lambda\in \mathbb{R}$.  Au\3erdem gebe es
   mindestens eine Folge $\folge{x_n}$, die gegen $\widehat{x}$ konvergiert.
   Dann ist $\lambda$ der \emph{Grenzwert} der Funktion $f$ \emph{im Punkt} $\widehat{x}$,
-  wenn für jede in $D$ liegende Folge $\folge{x_n}$ gilt:
+  wenn f\"ur jede in $D$ liegende Folge $\folge{x_n}$ gilt:
       \\[0.2cm]
       \hspace*{1.3cm}      
       $\lim\limits_{n\rightarrow\infty} x_n = \widehat{x} \;\Rightarrow\; \lim\limits_{n\rightarrow\infty} f(x_n) = \lambda$.
@@ -63,13 +63,13 @@ Es sei $\folge{x_n}$ eine Folge und $D\subseteq \mathbb{R}$.  Wir sagen, dass
 
 \noindent
 \textbf{Bemerkung}:  In der obigen Definition ist nicht gefordert,
-dass $\widehat{x}$ ein Element des Definitions-Bereichs  $D$ ist.  In vielen interessanten Fällen
-ist dies auch nicht der Fall, beispielsweise werden wir später zeigen, dass 
+dass $\widehat{x}$ ein Element des Definitions-Bereichs  $D$ ist.  In vielen interessanten F\"allen
+ist dies auch nicht der Fall, beispielsweise werden wir sp\"ater zeigen, dass 
 \\[0.2cm]
 \hspace*{1.3cm}      
 $\lim\limits_{x \rightarrow 0} \bruch{\sin(x)}{x} = 1$
 \\[0.2cm]
-gilt. Die Funktion $x \mapsto \bruch{\sin(x)}{x}$ ist für $x=0$ nicht definiert, trotzdem
+gilt. Die Funktion $x \mapsto \bruch{\sin(x)}{x}$ ist f\"ur $x=0$ nicht definiert, trotzdem
 existiert der Grenzwert.
 \eox
 
@@ -85,7 +85,7 @@ existiert der Grenzwert.
 \noindent
 Aus den beiden letzten Definitionen folgt, dass
 eine stetige Funktion mit dem Prozess der Grenzwert-Bildung vertauschbar ist.  
-Für eine konvergente Folge $\folge{x_n}$ und eine stetige Funktion $f$ gilt 
+F\"ur eine konvergente Folge $\folge{x_n}$ und eine stetige Funktion $f$ gilt 
       \\[0.2cm]
       \hspace*{1.3cm}      
       $f\Bigl(\lim\limits_{n\rightarrow\infty} x_n\Bigr) = \lim\limits_{n\rightarrow\infty} f(x_n)$.
@@ -96,7 +96,7 @@ Für eine konvergente Folge $\folge{x_n}$ und eine stetige Funktion $f$ gilt
 \begin{enumerate}
 \item Es sei $c \in \mathbb{R}$.  Dann ist die konstante Funktion
       $f: \mathbb{R} \rightarrow \mathbb{R}$, die durch $f(x) := c$ definiert ist, in
-      jedem Punkt $\widehat{x}\in\mathbb{R}$ stetig, denn für jede beliebige Folge $\folge{x_n}$ gilt 
+      jedem Punkt $\widehat{x}\in\mathbb{R}$ stetig, denn f\"ur jede beliebige Folge $\folge{x_n}$ gilt 
       \\[0.2cm]
       \hspace*{1.3cm}      
       $\lim\limits_{n\rightarrow\infty} f(x_n) = \lim\limits_{n\rightarrow\infty} c = c$.
@@ -118,14 +118,14 @@ Für eine konvergente Folge $\folge{x_n}$ und eine stetige Funktion $f$ gilt
       \hspace*{1.3cm}      
       $\lim\limits_{n\rightarrow\infty} x_n = \widehat{x}$ 
       \\[0.2cm]
-      gilt, dann folgt nach dem Satz über den Grenzwert einer Folge von Produkten
+      gilt, dann folgt nach dem Satz \"uber den Grenzwert einer Folge von Produkten
       \\[0.2cm]
       \hspace*{1.3cm}      
       $\lim\limits_{n\rightarrow\infty} f(x_n) = 
        \lim\limits_{n\rightarrow\infty} x_n^2 = 
        \left(\lim\limits_{n\rightarrow\infty} x_n\right) \cdot\left(\lim\limits_{n\rightarrow\infty} x_n\right) =
        \widehat{x} \cdot \widehat{x} = \widehat{x}^2$.
-\item Das letzte Beispiel lässt sich verallgemeinern: Die Funktionen
+\item Das letzte Beispiel l\"asst sich verallgemeinern: Die Funktionen
       $f:\mathbb{R} \rightarrow \mathbb{R}$ und $g:\mathbb{R} \rightarrow \mathbb{R}$
       seien im Punkt $\widehat{x}$ stetig.  Dann ist auch die Funktion
       $h: \mathbb{R} \rightarrow \mathbb{R}$ die durch $h(x) := f(x) \cdot g(x)$
@@ -147,17 +147,17 @@ Für eine konvergente Folge $\folge{x_n}$ und eine stetige Funktion $f$ gilt
       \end{array}
       $
       
-\item Mit einer zum letzten Fall analogen Argumentation können wir leicht einsehen, dass alle Funktionen,
+\item Mit einer zum letzten Fall analogen Argumentation k\"onnen wir leicht einsehen, dass alle Funktionen,
       die ausgehend von den konstanten Funktionen $x \mapsto c$ und der identischen
       Funktion $x \mapsto x$ mit Hilfe der elementaren Rechen-Operationen 
-      ``$+$'', ``$-$'', ``$\cdot $'' und ``$/$'' gebildet werden können, stetig sind.  Solche
+      ``$+$'', ``$-$'', ``$\cdot $'' und ``$/$'' gebildet werden k\"onnen, stetig sind.  Solche
       Funktionen werden als \href{http://de.wikipedia.org/wiki/Rationale_Funktion}{\emph{rationale Funktionen}} bezeichnet.
-      Ein       Beispiel für eine solche Funktion ist 
+      Ein       Beispiel f\"ur eine solche Funktion ist 
       \\[0.2cm]
       \hspace*{1.3cm}      
       $x \mapsto \bruch{x^3 - 2\cdot x +1}{x^2 -1}$.
       \\[0.2cm]
-      Diese Funktion ist für alle $x\in\mathbb{R} \backslash \{1,-1\}$ definiert und ist
+      Diese Funktion ist f\"ur alle $x\in\mathbb{R} \backslash \{1,-1\}$ definiert und ist
       nach der obigen Argumentation stetig.
 
 
@@ -172,7 +172,7 @@ Für eine konvergente Folge $\folge{x_n}$ und eine stetige Funktion $f$ gilt
        \end{array}\right.
       $
       \\[0.2cm]
-      definiert. Diese Funktion ist im Punkt $0$ nicht stetig, denn für die Folge
+      definiert. Diese Funktion ist im Punkt $0$ nicht stetig, denn f\"ur die Folge
       $\folge{\frac{1}{n}}$ gilt
       \\[0.2cm]
       \hspace*{1.3cm}      
@@ -199,7 +199,7 @@ $\forall c \in \mathbb{R}: \exists K \in \mathbb{N}: \forall n \in \mathbb{N}: \
 \end{Definition}
 
 \example  
-Für die Folge $\folge{n}$ gilt offenbar 
+F\"ur die Folge $\folge{n}$ gilt offenbar 
 \\[0.2cm]
 \hspace*{1.3cm}      
 $\lim\limits_{n\rightarrow\infty} n = \infty$.
@@ -207,7 +207,7 @@ $\lim\limits_{n\rightarrow\infty} n = \infty$.
 
 \begin{Definition}
 Es sei $f:\mathbb{R} \rightarrow \mathbb{R}$ eine Funktion und $\lambda\in \mathbb{R}$.
-Gilt für jede Folge $\folge{x_n}$
+Gilt f\"ur jede Folge $\folge{x_n}$
 \\[0.2cm]
 \hspace*{1.3cm}      
 $\lim\limits_{n\rightarrow\infty} x_n = \infty \;\Rightarrow\;
@@ -236,27 +236,27 @@ gilt.   Nach Definition der uneigentlichen Konvergenz gegen $\infty$ gilt dann
   \label{eq:stetig0}  
   \forall c \in \mathbb{R}: \exists K \in \mathbb{N}:\bigl(\forall n \in \mathbb{N}: n > K \rightarrow x_n > c\bigr)
 \end{equation}
-Wir müssen zeigen, dass gilt:
+Wir m\"ussen zeigen, dass gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds \lim\limits_{n\rightarrow\infty} \bruch{1}{x_n} = 0$.
 \\[0.2cm]
-Dies ist nach der Definition des Grenzwerts einer Folge äquivalent zu der Formel
+Dies ist nach der Definition des Grenzwerts einer Folge \"aquivalent zu der Formel
 \begin{equation}
   \label{eq:stetig1}
   \forall \varepsilon \in\mathbb{R}_+: \exists K \in \mathbb{R} : \forall n \in \mathbb{N}
   :\bigl(n > K \rightarrow \left|\frac{1}{x_n}\right| < \varepsilon\bigr)
 \end{equation}
 Um diese Formel nachzuweisen, nehmen wir an, dass eine Zahl $\varepsilon>0$
-gegeben ist.  Wir müssen dann ein $K$ finden, so dass für alle natürlichen Zahlen $n$, die
-größer als $K$ sind, die Ungleichung 
+gegeben ist.  Wir m\"ussen dann ein $K$ finden, so dass f\"ur alle nat\"urlichen Zahlen $n$, die
+gr\"o\3er als $K$ sind, die Ungleichung 
 \\[0.2cm]
 \hspace*{1.3cm} $\left|\bruch{1}{x_n}\right| < \varepsilon$
 \\[0.2cm]
 gilt.  Dies gelingt uns mit Hilfe der Formel (\ref{eq:stetig0}), denn wenn wir in dieser Formel
-$\ds c := \frac{1}{\varepsilon}$ definieren, dann finden wir eine Zahl $K$, so dass für alle
-natürlichen Zahlen $n$, die
-größer als $K$ sind, die Ungleichung  
+$\ds c := \frac{1}{\varepsilon}$ definieren, dann finden wir eine Zahl $K$, so dass f\"ur alle
+nat\"urlichen Zahlen $n$, die
+gr\"o\3er als $K$ sind, die Ungleichung  
 \\[0.2cm] \hspace*{1.3cm} $\displaystyle x_n > c$, \quad also $\displaystyle x_n > \frac{1}{\varepsilon}$ \\[0.2cm]
 gilt.  Invertieren wir nun diese Ungleichung, so folgt
 \\[0.2cm]
@@ -269,14 +269,14 @@ und damit $\bruch{1}{x_n} > 0$ folgt, haben wir insgesamt
 \hspace*{1.3cm}
 $\left|\bruch{1}{x_n}\right| < \varepsilon$
 \\[0.2cm]
-für alle $n > K$ gezeigt. \hspace*{\fill} $\Box$
+f\"ur alle $n > K$ gezeigt. \hspace*{\fill} $\Box$
 \vspace*{0.3cm}
 
 \noindent
 Es gibt eine alternative Definition der Stetigkeit, die zu der oben gegebenen Definition
-äquivalent ist. Diese Definition trägt den Namen 
+\"aquivalent ist. Diese Definition tr\"agt den Namen 
 \href{http://de.wikipedia.org/wiki/Epsilon-Delta-Kriterium#Stetigkeit_reeller_Funktionen}{\emph{$\varepsilon$-$\delta$-Definition der Stetigkeit}} 
-und Funktionen, die nach dieser Definition stetig sind, heißen $\varepsilon$-$\delta$-stetig.
+und Funktionen, die nach dieser Definition stetig sind, hei\3en $\varepsilon$-$\delta$-stetig.
 
 \begin{Definition}[$\varepsilon$-$\delta$-Stetigkeit] 
   Eine Funktion $f:D \rightarrow \mathbb{R}$ ist \emph{$\varepsilon$-$\delta$-stetig} im Punkt
@@ -299,13 +299,13 @@ und Funktionen, die nach dieser Definition stetig sind, heißen $\varepsilon$-$\d
 
 
 \begin{Definition}[Allgemeine Stetigkeit] \lb
-Eine Funktion $f:D \rightarrow \mathbb{R}$ heißt \emph{stetig} genau dann, wenn
-die Funktion $f$ für alle $\widehat{x} \in D$ stetig ist.
+Eine Funktion $f:D \rightarrow \mathbb{R}$ hei\3t \emph{stetig} genau dann, wenn
+die Funktion $f$ f\"ur alle $\widehat{x} \in D$ stetig ist.
 \eod
 \end{Definition}
 
 \exercise
-Es sei $f: \mathbb{R} \rightarrow \mathbb{R}$.  Geben Sie eine sinnvolle Definition für 
+Es sei $f: \mathbb{R} \rightarrow \mathbb{R}$.  Geben Sie eine sinnvolle Definition f\"ur 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\lim\limits_{x\rightarrow\infty} f(x) = \infty$.
@@ -313,7 +313,7 @@ $\lim\limits_{x\rightarrow\infty} f(x) = \infty$.
 
 \remark
 Wir haben den Begriff des Grenzwerts einer Funktion mit Hilfe von Folgen definiert.  Es gibt eine
-dazu äquivalente $\varepsilon$-$\delta$-Definition des Grenzwerts.  Bei dieser Definition sagen wir,
+dazu \"aquivalente $\varepsilon$-$\delta$-Definition des Grenzwerts.  Bei dieser Definition sagen wir,
 dass eine Funktion
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -324,11 +324,11 @@ an der Stelle $\bar{x}$ den Grenzwert $\lambda$ hat, wenn
 \hspace*{1.3cm}
 $\forall \varepsilon\in\mathbb{R}_+: \exists\delta\in\mathbb{R}_+: \forall x\in D:\bigl(|x-\bar{x}|<\delta \rightarrow |f(x) - \lambda| < \varepsilon\bigr)$
 \\[0.2cm]
-gilt.  Genau wie die $\varepsilon$-$\delta$ Definition der Stetigkeit äquivalent ist zu dem
+gilt.  Genau wie die $\varepsilon$-$\delta$ Definition der Stetigkeit \"aquivalent ist zu dem
 Stetigkeits-Begriff, den wir mit Hilfe von Folgen definiert haben, ist auch die
-$\varepsilon$-$\delta$-Definition des Grenzwerts äquivalent zu der Definition des
+$\varepsilon$-$\delta$-Definition des Grenzwerts \"aquivalent zu der Definition des
 \href{http://de.wikipedia.org/wiki/Grenzwert_(Funktion)}{Grenzwerts}, die wir 
-früher mit Hilfe von Folgen gegeben haben.  Der Beweis dieser Behauptung ist Gegenstand der 
+fr\"uher mit Hilfe von Folgen gegeben haben.  Der Beweis dieser Behauptung ist Gegenstand der 
 folgenden Aufgabe.
 \pagebreak
 
@@ -356,8 +356,8 @@ eine reellwertige Funktion.  Beweisen Sie die beiden folgenden Behauptungen:
 
 
 \section{Bestimmung von Nullstellen}
-In der Praxis tritt häufig die Frage auf, ob eine Funktion in einem bestimmten Intervall
-eine Nullstelle hat.  Zusätzlich werden Verfahren benötigt, mit denen eine solche
+In der Praxis tritt h\"aufig die Frage auf, ob eine Funktion in einem bestimmten Intervall
+eine Nullstelle hat.  Zus\"atzlich werden Verfahren ben\"otigt, mit denen eine solche
 Nullstelle gegebenenfalls berechnet werden kann.
 
 \begin{Satz}[Zwischenwert-Satz] \label{satz:zws-stetig}
@@ -367,7 +367,7 @@ $f(b) \geq 0$.  Dann gibt es ein $x_0 \in [a,b]$, so dass $f(x_0) = 0$ ist.
 
 \noindent
 \textbf{Beweis}: Wir geben ein Verfahren an, mit dem eine Nullstelle berechnet werden kann
-und weisen dann nach, dass der von diesem Verfahren gelieferte Wert tatsächlich eine
+und weisen dann nach, dass der von diesem Verfahren gelieferte Wert tats\"achlich eine
 Nullstelle der Funktion ist.  Das Verfahren, dass wir vorstellen werden, wird in der
 Literatur als \emph{Verfahren der Intervall-Halbierung} oder auch als
 \href{http://en.wikipedia.org/wiki/Bisection_method}{\emph{Bisektions-Verfahren}} bezeichnet.  
@@ -383,7 +383,7 @@ $\folge{b_n}$ wie folgt:
       $a_1 := a$,  \quad $b_1 := b$.
 \item[I.S.:] $n \mapsto n+1$
 
-      Zunächst definieren wir $c_n$ als das arithmetische Mittel von $a_n$ und $b_n$:
+      Zun\"achst definieren wir $c_n$ als das arithmetische Mittel von $a_n$ und $b_n$:
       \\[0.2cm]
       \hspace*{1.3cm} $\ds c_n := \frac{1}{2} \cdot (a_n + b_n)$. \\[0.2cm]
       Dann definieren wir $a_{n+1}$ und $b_{n+1}$ simultan durch Fall-Unterscheidung:
@@ -396,7 +396,7 @@ $\folge{b_n}$ wie folgt:
                   \right.
       $
 \end{enumerate}
-Aus dieser Definition folgt sofort per Induktion, dass für alle $n\in\mathbb{N}$
+Aus dieser Definition folgt sofort per Induktion, dass f\"ur alle $n\in\mathbb{N}$
 gilt:
 \begin{enumerate}
 \item $f(a_n) \leq 0$.
@@ -408,7 +408,7 @@ gilt:
 \item $a_n \leq b_n$.
 \item $\displaystyle b_n - a_n = \left(\frac{1}{2}\right)^{n-1} \cdot (b - a)$.
 \end{enumerate}
-Wir führen hier nur den Nachweis der letzten Behauptung vor, denn diese Behauptung
+Wir f\"uhren hier nur den Nachweis der letzten Behauptung vor, denn diese Behauptung
 ist am wenigsten offensichtlich.
 \begin{enumerate}
 \item[I.A.:] $n = 1$. Es gilt 
@@ -417,7 +417,7 @@ ist am wenigsten offensichtlich.
       $\ds b_1 - a_1 = b - a = \left(\frac{1}{2}\right)^{1-1} \cdot (b-a)$.
 \item[I.S.:] $n \mapsto n+1$.  
 
-      Es ist $\ds c_n = \frac{1}{2} \cdot (a_n + b_n)$.   Wir führen eine 
+      Es ist $\ds c_n = \frac{1}{2} \cdot (a_n + b_n)$.   Wir f\"uhren eine 
       Fall-Unterscheidung nach dem Vorzeichen von $f(c_n)$ durch.
       \begin{enumerate}
       \item $f(c_n) > 0$.  Dann gilt $a_{n+1} = a_n$ und 
@@ -447,15 +447,15 @@ ist am wenigsten offensichtlich.
             \end{array}
             $ $\surd$
       \end{enumerate}
-      Damit ist die Behauptung in beiden Fällen bewiesen.
+      Damit ist die Behauptung in beiden F\"allen bewiesen.
 \end{enumerate}
 Aus den Behauptungen 3., 4., und 5.~folgt, dass die Folge $\folge{b_n}$ durch $a$ nach unten
-beschränkt ist, denn es gilt
+beschr\"ankt ist, denn es gilt
 \\[0.2cm]
 \hspace*{1.3cm} $a = a_1 \leq \cdots \leq a_{n-1} \leq a_n \leq b_n$, \quad
-                also gilt $a \leq b_n$ für alle $n\in\mathbb{N}$.
+                also gilt $a \leq b_n$ f\"ur alle $n\in\mathbb{N}$.
  \\[0.2cm]
-Da die Folge $\folge{b_n}$ monoton fallend und nach unten beschränkt ist, muss diese Folge
+Da die Folge $\folge{b_n}$ monoton fallend und nach unten beschr\"ankt ist, muss diese Folge
 nach Satz \ref{satz:monoton} auch konvergent sein.  Wir definieren
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -466,7 +466,7 @@ In analoger Weise sehen wir, dass die Folge $\folge{a_n}$ konvergent ist und def
 \hspace*{1.3cm}
 $\widehat{a} := \lim\limits_{n\rightarrow\infty} a_n$.
 \\[0.2cm]
-Als nächstes weisen wir nach, dass $\widehat{a} = \widehat{b}$ ist.  Dazu betrachten wir
+Als n\"achstes weisen wir nach, dass $\widehat{a} = \widehat{b}$ ist.  Dazu betrachten wir
 die Differenz der Grenzwerte: 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -485,7 +485,7 @@ Da die Funktion $f$ stetig ist, gilt
 \hspace*{1.3cm}
 $\lim\limits_{n\rightarrow\infty} f(a_n) = f\left(\lim\limits_{n\rightarrow\infty} a_n\right) = f(\widehat{a})$.
 \\[0.31cm]
-Weil $f(a_n) \leq 0$ ist für alle $n\in\mathbb{N}$ folgt dann sofort
+Weil $f(a_n) \leq 0$ ist f\"ur alle $n\in\mathbb{N}$ folgt dann sofort
 \\[0.2cm]
 \hspace*{1.3cm}
 $f(\widehat{a}) \leq 0$.
@@ -501,7 +501,7 @@ gilt.  Aus $\forall n\in\mathbb{N}: f(b_n) \geq 0$ folgt dann sofort
 \hspace*{1.3cm}
 $f(\widehat{b}) \geq 0$.
 \\[0.2cm]
-Da $\widehat{a} = \widehat{b}$ gilt, haben wir natürlich auch 
+Da $\widehat{a} = \widehat{b}$ gilt, haben wir nat\"urlich auch 
 $f\bigl(\widehat{a}\bigr) = f\bigl(\,\widehat{b}\,\bigr)$.  Dann haben wir aber sowohl
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -523,7 +523,7 @@ Ist beispielsweise $f(a) < f(b)$, so gilt also
 \hspace*{1.3cm}
 $\forall c \in [f(a), f(b)]: \exists \bar{x} \in [a,b]: f(\bar{x}) = c$.
 \\[0.2cm]
-Dieser Satz lässt sich beweisen, indem wir die Funktion $g$ als
+Dieser Satz l\"asst sich beweisen, indem wir die Funktion $g$ als
 \\[0.2cm]
 \hspace*{1.3cm}
 $g := \bigl(x \mapsto f(x) - c\bigr)$
@@ -533,8 +533,8 @@ definieren.  Dann haben wir
 \hspace*{1.3cm}
 $g(a) = f(a) - c \leq 0$ \quad und \quad $g(b) = f(b) - c \geq 0$
 \\[0.2cm]
-und wir können auf die Funktion $g$ den von uns bewiesen Zwischenwert-Satz anwenden.  Damit finden
-eine Zahl $\bar{x} \in [a,b]$, für die $g(\bar{x}) = 0$ gilt.  Also haben wir
+und wir k\"onnen auf die Funktion $g$ den von uns bewiesen Zwischenwert-Satz anwenden.  Damit finden
+eine Zahl $\bar{x} \in [a,b]$, f\"ur die $g(\bar{x}) = 0$ gilt.  Also haben wir
 \\[0.2cm]
 \hspace*{1.3cm}
 $f(\bar{x}) -c = 0$
@@ -553,11 +553,11 @@ und daraus folgt $f(\bar{x}) = c$.  \eox
 \end{enumerate}
 
 \exercise
-Es war einmal ein buddhistischer Mönch, der einmal im Jahr zur Meditation auf einen Berg stieg.
+Es war einmal ein buddhistischer M\"onch, der einmal im Jahr zur Meditation auf einen Berg stieg.
 Er begann seinen Weg um 6:00 Uhr morgens und erreichte den Gipfel um 18:00 Uhr abends.  Nachdem er
-die ganze Nacht meditiert hatte, begann er am nächsten Morgen um 6:00 mit dem Abstieg, der bis 18:00
-abends dauerte.  Beim Abstieg nahm der Mönch den selben Weg wie beim Aufstieg.  Zeigen Sie, dass es
-eine Tageszeit $t$ gibt, an welcher der Mönch beim Abstieg am selben Ort ist wie beim Aufstieg. 
+die ganze Nacht meditiert hatte, begann er am n\"achsten Morgen um 6:00 mit dem Abstieg, der bis 18:00
+abends dauerte.  Beim Abstieg nahm der M\"onch den selben Weg wie beim Aufstieg.  Zeigen Sie, dass es
+eine Tageszeit $t$ gibt, an welcher der M\"onch beim Abstieg am selben Ort ist wie beim Aufstieg. 
 \eox
  
 \subsection{Implementierung des Intervall-Halbierungs-Verfahrens}
@@ -592,30 +592,30 @@ eine Tageszeit $t$ gibt, an welcher der Mönch beim Abstieg am selben Ort ist wie
 \end{figure} %\$
 
 \noindent
-Das im Beweis des letzten Satzes beschriebene Intervall-Halbierungs-Verfahren lässt sich
-ohne große Mühe  implementieren.  Abbildung \ref{fig:bisection.setlx}
+Das im Beweis des letzten Satzes beschriebene Intervall-Halbierungs-Verfahren l\"asst sich
+ohne gro\3e M\"uhe  implementieren.  Abbildung \ref{fig:bisection.setlx}
 zeigt eine solche Implementierung in der Sprache \textsc{SetlX}.  Die Funktion \texttt{findZero}
-erhält vier Argumente:
+erh\"alt vier Argumente:
 \begin{enumerate}
 \item \texttt{f} ist die Funktion, deren Nullstelle bestimmt werden soll,
 \item \texttt{a} ist die linke Intervall-Grenze, 
 \item \texttt{b} ist die rechte Intervall-Grenze und
-\item \texttt{n} ist die Anzahl der Iterationen, die durchgeführt werden soll.
+\item \texttt{n} ist die Anzahl der Iterationen, die durchgef\"uhrt werden soll.
 \end{enumerate}
 Zu Beginn testen wir, ob erstens die linke Intervall-Grenze \texttt{a} kleiner als die rechte
 Intervall-Grenze \texttt{b} ist und zweitens ob $\mathtt{f(a)} < \mathtt{f(b)}$ ist, denn sonst sind
-die Voraussetzungen des Zwischenwert-Satzes nicht erfüllt und das Bisektions-Verfahren lässt sich nicht anwenden.
+die Voraussetzungen des Zwischenwert-Satzes nicht erf\"ullt und das Bisektions-Verfahren l\"asst sich nicht anwenden.
 
 Die Implementierung setzt den oben skizzierten Algorithmus unmittelbar um.  Da wir immer nur die
-beiden letzten Werte der Folgen $(a_n)_n$ und $(b_n)_n$ benötigen, ist es nicht notwendig, die
+beiden letzten Werte der Folgen $(a_n)_n$ und $(b_n)_n$ ben\"otigen, ist es nicht notwendig, die
 Folgen zu speichern.  Es reicht, die Werte $a_n$ und $b_n$ in den Variablen \texttt{a} und
 \texttt{b} abzulegen. 
 
 Wenn wir dieses Verfahren einsetzen
-wollen um in einem vorgegeben Intervall nach einer Nullstelle zu suchen, so können wir im
+wollen um in einem vorgegeben Intervall nach einer Nullstelle zu suchen, so k\"onnen wir im
 Voraus berechnen, wie viele Iterationen zur Erzielung einer geforderten Genauigkeit
-benötigt werden:  Soll die Nullstelle mit einer Genauigkeit von $\varepsilon$ bestimmt
-werden, so muss die Zahl $n$ der Iterationen so gewählt werden, dass 
+ben\"otigt werden:  Soll die Nullstelle mit einer Genauigkeit von $\varepsilon$ bestimmt
+werden, so muss die Zahl $n$ der Iterationen so gew\"ahlt werden, dass 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\left(\bruch{1}{2}\right)^{n-1} \cdot \;(b - a) \leq \varepsilon$
@@ -640,9 +640,9 @@ $[0,1]$ auf eine Genauigkeit von $\varepsilon = 10^{-9}$ bestimmen, so finden wi
 \hspace*{1.3cm}
 $n \geq \bruch{\ln\bigl(10^{9}\bigr)}{\ln(2)} + 1 = 9 \cdot \bruch{\ln(10)}{\ln(2)} + 1 \approx 30.89735286$,
 \\[0.2cm]
-Damit ist klar, dass wir 31 Iterationen des Verfahrens benötigen um die geforderte
+Damit ist klar, dass wir 31 Iterationen des Verfahrens ben\"otigen um die geforderte
 Genauigkeit zu erreichen.  Tabelle \ref{tab:bisection} zeigt die Werte, die $a_n$ und
-$b_n$ bei der Lösung der Gleichung $x - \cos(x) = 0$ beim Intervall-Halbierungs-Verfahren
+$b_n$ bei der L\"osung der Gleichung $x - \cos(x) = 0$ beim Intervall-Halbierungs-Verfahren
 annehmen. Nach 30 Iterationen weichen die Intervall-Grenzen $a_n$ und $b_n$ um weniger als
 $10^{-9}$ voneinander ab.
 
@@ -717,38 +717,38 @@ $10^{-9}$ voneinander ab.
  30: & 0.739085133 & 0.739085134 & -4.63386709e-11 & 1.51233399e-09 \\
 \hline
   \end{tabular}}
-  \caption{Die ersten 30 Schritte des Bisektions-Verfahrens zur Lösung von $x - \cos(x) = 0$.}
+  \caption{Die ersten 30 Schritte des Bisektions-Verfahrens zur L\"osung von $x - \cos(x) = 0$.}
   \label{tab:bisection}
 \end{table}
 
 
 \subsection{Die Regula Falsi}
-Beim Bisektions-Verfahren wird das Interval in jedem Schritt in zwei gleich große Teile
+Beim Bisektions-Verfahren wird das Interval in jedem Schritt in zwei gleich gro\3e Teile
 zerteilt, denn wir bestimmen den Mittelpunkt des Intervalls $[a, b]$ nach der Formel
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds c = \frac{1}{2} \cdot (a + b)$.
 \\[0.2cm]
-Bei dieser Formel werden die Beträge der Funktionswerte von $f$ an den Stellen $a$ und $b$ überhaupt
-nicht berücksichtigt.  Es liegt nahe, die Beträge der Funktionswerte in die Formel mit einfließen zu
+Bei dieser Formel werden die Betr\"age der Funktionswerte von $f$ an den Stellen $a$ und $b$ \"uberhaupt
+nicht ber\"ucksichtigt.  Es liegt nahe, die Betr\"age der Funktionswerte in die Formel mit einflie\3en zu
 lassen, denn wenn beispielsweise $|f(a)|$ wesentlich kleiner $|f(b)|$ ist, dann ist zu
-vermuten, dass die Nullstelle von $f$ näher an $a$ als an $b$ liegt.
+vermuten, dass die Nullstelle von $f$ n\"aher an $a$ als an $b$ liegt.
 
  Betrachten wir beispielsweise die Tabelle \ref{tab:bisection}, so sehen wir, dass
 in dem 24-ten Iterations-Schritt die Funktion $x \mapsto x - \cos(x)$ an der rechten
-Intervall-Grenze $b_n$ den Wert $\approx 7.7 \cdot 10^{-9}$ hat, während die Funktion an der
+Intervall-Grenze $b_n$ den Wert $\approx 7.7 \cdot 10^{-9}$ hat, w\"ahrend die Funktion an der
 linken Intervall-Grenze $a_n$ den Wert $-9.2 \cdot 10^{-8}$ hat.  Der Betrag dieses Wertes ist
-mehr als 10 mal so groß wie der Wert an der rechten Intervall-Grenze.  Folglich liegt es
-nahe zu vermuten, dass die Nullstelle näher an der rechten Intervall-Grenze liegt als an
-der linken.  Die weitere Berechnung bestätigt diese Vermutung auch, denn die rechte
-Intervall-Grenze ändert sich bei den nächsten drei Iterationen nicht.  Wie können wir
+mehr als 10 mal so gro\3 wie der Wert an der rechten Intervall-Grenze.  Folglich liegt es
+nahe zu vermuten, dass die Nullstelle n\"aher an der rechten Intervall-Grenze liegt als an
+der linken.  Die weitere Berechnung best\"atigt diese Vermutung auch, denn die rechte
+Intervall-Grenze \"andert sich bei den n\"achsten drei Iterationen nicht.  Wie k\"onnen wir
 diese Beobachtung ausnutzen?  Anstatt in der Formel $c_n = \frac{1}{2}\cdot(a_n + b_n)$ die
-Punkte $a$ und $b$ unabhängig von den Funktionswerten gleich stark zu gewichten, könnten
-wir eine Intervall-Grenze dann stärker gewichten, wenn der Funktionswert dort kleiner ist,
-weil wir dann vermuten würden, dass dieser Punkt schon näher an der Nullstelle liegt.
-Eine naheliegende Idee ist daher, die Punkte $a$ und $b$ mit den Beträgen der reziproken
-Funktionswerte zu gewichten, denn die werden um so größer, je kleiner der Funktionswert
-ist.  Dieser Ansatz führt auf die Formel
+Punkte $a$ und $b$ unabh\"angig von den Funktionswerten gleich stark zu gewichten, k\"onnten
+wir eine Intervall-Grenze dann st\"arker gewichten, wenn der Funktionswert dort kleiner ist,
+weil wir dann vermuten w\"urden, dass dieser Punkt schon n\"aher an der Nullstelle liegt.
+Eine naheliegende Idee ist daher, die Punkte $a$ und $b$ mit den Betr\"agen der reziproken
+Funktionswerte zu gewichten, denn die werden um so gr\"o\3er, je kleiner der Funktionswert
+ist.  Dieser Ansatz f\"uhrt auf die Formel
 \\[0.2cm]
 \hspace*{1.3cm} $c = \bruch{\frac{1}{|f(a)|}\cdot a + \frac{1}{|f(b)|}\cdot b}{\frac{1}{|f(a)|} +
   \frac{1}{|f(b)|}} = \bruch{|f(b)|\cdot a + |f(a)|\cdot b}{|f(a)| + |f(b)|}$
@@ -756,12 +756,12 @@ ist.  Dieser Ansatz führt auf die Formel
 Wir erhalten dieselbe Formel, wenn wir $c$ dadurch bestimmen, dass wir eine
 Gerade durch die Punkte $\bigl\langle a, f(a)\bigr\rangle$ und $\bigl\langle b, f(b)\bigr\rangle$ legen und
 $c$ als 
-den Punkt festsetzen, bei dem diese Gerade die $x$-Achse scheidet.  Die Gleichung für eine
+den Punkt festsetzen, bei dem diese Gerade die $x$-Achse scheidet.  Die Gleichung f\"ur eine
 Gerade $g(x)$ hat die Form
 \\[0.2cm]
 \hspace*{1.3cm} $g(x) = \alpha \cdot x + \beta$.
 \\[0.2cm]
-Setzen wir hier für $x$ den Wert $a$ und für $g(x)$ den Wert $f(a)$ ein, so erhalten wir
+Setzen wir hier f\"ur $x$ den Wert $a$ und f\"ur $g(x)$ den Wert $f(a)$ ein, so erhalten wir
 die Gleichung
 \begin{equation}
   \label{eq:null0}
@@ -772,18 +772,18 @@ Analog erhalten wir die Gleichung
   \label{eq:null1}
   f(b) = \alpha \cdot b + \beta
 \end{equation}
-wenn wir für $x$ den Wert $b$ und für $g(x)$ den Wert $f(b)$ einsetzen.  Subtrahieren wir
+wenn wir f\"ur $x$ den Wert $b$ und f\"ur $g(x)$ den Wert $f(b)$ einsetzen.  Subtrahieren wir
 die beiden Gleichungen voneinander, so verschwindet die Unbekannte $\beta$ und wir haben
 \\[0.2cm]
 \hspace*{1.3cm}
    $f(b) - f(a) = \alpha \cdot (b-a)$, \quad also \quad $\alpha = \bruch{f(b) - f(a)}{b-a}$.
 \\[0.2cm]
-Setzen wir diesen Wert für $\alpha$ in die Gleichung \ref{eq:null0} ein, so ergibt sich
+Setzen wir diesen Wert f\"ur $\alpha$ in die Gleichung \ref{eq:null0} ein, so ergibt sich
 \\[0.2cm]
 \hspace*{1.3cm}
   $f(a) = \bruch{f(b) - f(a)}{b-a} \cdot a + \beta$.
 \\[0.2cm]
-Wir lösen diese Gleichung nach $\beta$ auf und erhalten
+Wir l\"osen diese Gleichung nach $\beta$ auf und erhalten
 \\[0.2cm]
 \hspace*{1.3cm}
  $\beta = \bruch{f(a)\cdot (b-a) - \bigl(f(b) - f(a)\bigr)\cdot a}{b-a} = \bruch{f(a)\cdot b - f(b)\cdot a}{b-a}$. 
@@ -798,7 +798,7 @@ $
 \end{array}
 $
 \\[0.2cm]
-Setzen wir hier die eben berechneten Werte für $\alpha$ und $\beta$ ein, so erhalten wir
+Setzen wir hier die eben berechneten Werte f\"ur $\alpha$ und $\beta$ ein, so erhalten wir
 \\[0.2cm]
 \hspace*{1.3cm}
 $c = - \bruch{\bruch{f(a)\cdot b - f(b)\cdot a}{b-a}}{\bruch{f(b) - f(a)}{b-a}} = 
@@ -823,7 +823,7 @@ als Schnittpunkt der Geraden mit der $x$-Achse.
 
 Das Verfahren, das mit dieser Formel arbeitet, ist unter dem Namen 
 \href{http://de.wikipedia.org/wiki/Regula_falsi}{\emph{Regula Falsi}}
-bekannt und sieht genauso aus wie das Bisektions-Verfahren, nur dass wir für $c$ jetzt
+bekannt und sieht genauso aus wie das Bisektions-Verfahren, nur dass wir f\"ur $c$ jetzt
 die oben abgeleitete Formel verwenden:
 \begin{enumerate}
 \item[I.A.:] $n=1$.
@@ -843,13 +843,13 @@ die oben abgeleitete Formel verwenden:
          \right.
       $
 \end{enumerate}
-Ähnlich wie beim Beweis des Zwischenwert-Satzes lässt sich zeigen, dass die Folge
-$\folge{a_n}$ monoton steigend ist, während die Folge $\folge{b_n}$ monoton fallend ist.
-Da die Folgen überdies beschränkt sind, denn $a_n$ ist immer kleiner als $b$ und $b_n$ ist
-immer größer als $a$, konvergieren beide Folgen.  Allerdings ist nicht garantiert, dass
-$a_n$ und $b_n$ gegen den gleichen Grenzwert konvergieren!  Es lässt sich lediglich zeigen,
+Ã„hnlich wie beim Beweis des Zwischenwert-Satzes l\"asst sich zeigen, dass die Folge
+$\folge{a_n}$ monoton steigend ist, w\"ahrend die Folge $\folge{b_n}$ monoton fallend ist.
+Da die Folgen \"uberdies beschr\"ankt sind, denn $a_n$ ist immer kleiner als $b$ und $b_n$ ist
+immer gr\"o\3er als $a$, konvergieren beide Folgen.  Allerdings ist nicht garantiert, dass
+$a_n$ und $b_n$ gegen den gleichen Grenzwert konvergieren!  Es l\"asst sich lediglich zeigen,
 dass entweder $a_n$ oder $b_n$ gegen eine Nullstelle der Funktion $f$ konvergiert.
-Um das Verfahren experimentell untersuchen zu können, implementieren wir es.
+Um das Verfahren experimentell untersuchen zu k\"onnen, implementieren wir es.
 Abbildung \ref{fig:regulaFalsi.stlx} zeigt die Implementierung der Methode
 \textsl{findZero}().   Diese Implementierung ist weitgehend analog zu der Implementierung des
 Bisektions-Verfahrens.  Es gibt eigentlich nur zwei wesentliche Unterschiede:
@@ -865,11 +865,11 @@ Bisektions-Verfahrens.  Es gibt eigentlich nur zwei wesentliche Unterschiede:
       $\ds c := \frac{1}{2} \cdot (a + b)$
       \\[0.2cm]
       verwendet.
-\item Bei der Rückgabe des berechneten Wertes in Zeile 14 bzw.~16 ist es erforderlich, die Beträge der
+\item Bei der R\"uckgabe des berechneten Wertes in Zeile 14 bzw.~16 ist es erforderlich, die Betr\"age der
       Funktionswerte an den Intervall-Grenzen  \texttt{a} und \texttt{b} zu vergleichen, denn wir
       wissen nicht, ob die Folge $(a_n)_n$ oder die Folge $(b_n)_n$ gegen die Nullstelle von $f$
       konvergiert.  Wir geben daher als Ergebnis die 
-      Intervall-Grenze  zurück, für die der Betrag des Funktionswertes am kleinsten ist.
+      Intervall-Grenze  zur\"uck, f\"ur die der Betrag des Funktionswertes am kleinsten ist.
       Da wir wissen, dass der Funktionswert an der linken Intervall-Grenze immer kleiner als 0
       ist, erhalten wir dort den Betrag der Funktion $f$, indem wir dem Funktionswert das Minuszeichen
       vorstellen. 
@@ -911,14 +911,14 @@ Bisektions-Verfahrens.  Es gibt eigentlich nur zwei wesentliche Unterschiede:
 
 Tabelle \ref{tab:regula-falsi} zeigt die ersten 12 Iterations-Schritte, wenn die Regula Falsi
 zur Berechnung der Nullstelle von $x  - \cos(x)$ eingesetzt wird.  Wir sehen,
-dass wir bereits im 9-ten Schritt dieselbe Genauigkeit erreicht haben, für die wir mit
-dem Bisektions-Verfahren 30 Schritte benötigt haben.  Wir sehen auch, dass die rechte
+dass wir bereits im 9-ten Schritt dieselbe Genauigkeit erreicht haben, f\"ur die wir mit
+dem Bisektions-Verfahren 30 Schritte ben\"otigt haben.  Wir sehen auch, dass die rechte
 Intervall-Grenze immer konstant bleibt.  Es sieht so aus, als ob wir mit der Regula Falsi
-ein Verfahren gefunden hätten, dass dem Bisektions-Verfahren überlegen wäre.  Die nächste Aufgabe
+ein Verfahren gefunden h\"atten, dass dem Bisektions-Verfahren \"uberlegen w\"are.  Die n\"achste Aufgabe
 zeigt Ihnen jedoch, dass dem Verfahren eine ganz wichtige Eigenschaft fehlt, die das
 Bisektions-Verfahren besitzt:  Das Verfahren ist nicht robust!  Es gibt Funktionen, bei
 denen die Regula Falsi zur Nullstellen-Bestimmung \textbf{\underline{wesentlich mehr}} Iterationen
-benötigt als das Bisektions-Verfahren.
+ben\"otigt als das Bisektions-Verfahren.
 \vspace*{0.3cm}
 
 \begin{table}[!h]
@@ -954,32 +954,32 @@ benötigt als das Bisektions-Verfahren.
  12: & 0.739085133 & 1.000000000 & -9.23913723e-15 & 4.59697694e-01 \\ 
 \hline
   \end{tabular}}
-  \caption{Die ersten 12 Schritte der Regula Falsi zur Lösung von $x - \cos(x) = 0$.}
+  \caption{Die ersten 12 Schritte der Regula Falsi zur L\"osung von $x - \cos(x) = 0$.}
   \label{tab:regula-falsi}
 \end{table}
 
 
 \exercise
- Verwenden Sie die Regula Falsi zur Lösung der Gleichung 
+ Verwenden Sie die Regula Falsi zur L\"osung der Gleichung 
 \\[0.2cm]
 \hspace*{1.3cm}
 $x^4 - 1 = 0$.
 \\[0.2cm]
-Starten Sie mit dem Intervall $[0, 10]$. Zeigen Sie, dass für alle natürlichen Zahlen $n$
-mit $n \leq 1000$ die folgende Ungleichung für die linke Intervall-Grenze $a_n$ gilt:
+Starten Sie mit dem Intervall $[0, 10]$. Zeigen Sie, dass f\"ur alle nat\"urlichen Zahlen $n$
+mit $n \leq 1000$ die folgende Ungleichung f\"ur die linke Intervall-Grenze $a_n$ gilt:
 \\[0.2cm]
 \hspace*{1.3cm} $a_n \leq \bruch{n}{1000}$.
 \\[0.2cm]
-Die Lösung der Gleichung $x^4 - 1 = 0$ in dem Intervall ist $x=1$.  Aus der zu zeigenden
+Die L\"osung der Gleichung $x^4 - 1 = 0$ in dem Intervall ist $x=1$.  Aus der zu zeigenden
 Ungleichung kann beispielsweise gefolgert werden, dass $a_{100} \leq 0.1$ gilt.  
- Der mit dem obigen Programm ermittelte Wert für $a_{100}$ ist
+ Der mit dem obigen Programm ermittelte Wert f\"ur $a_{100}$ ist
 $a_{100} = 0.0985146583$.  In diesem Fall hat die Regula Falsi also selbst nach  100
 Iterationen nicht eine einzige korrekte Stelle 
-im Ergebnis berechnen können!  \eox
+im Ergebnis berechnen k\"onnen!  \eox
 \vspace*{0.3cm}
 
 \noindent
-\textbf{Lösung}: Wir zeigen durch vollständige Induktion über $n$, dass für alle 
+\textbf{L\"osung}: Wir zeigen durch vollst\"andige Induktion \"uber $n$, dass f\"ur alle 
 $n\leq 1000$ zum einen die Ungleichung $a_n \leq n \cdot 10^{-3}$ gilt und dass zum anderen 
 $b_n$ konstant ist, es gilt $b_n = 10$.
 \begin{enumerate}
@@ -988,18 +988,18 @@ $b_n$ konstant ist, es gilt $b_n = 10$.
       \hspace*{1.3cm} $a_1 = 0 \leq 1 \cdot 10^{-3}$ \quad und \quad $b_1 = 10$.
 \item[I.S.:] $n \mapsto n + 1$.
 
-      Die Funktion $f := (x \mapsto x^4 - 1)$ ist für nichtnegative Zahlen monoton steigend,
-      dass heißt aus $0 \leq u \leq v$ folgt auch $f(u) \leq f(v)$.  Es gilt 
+      Die Funktion $f := (x \mapsto x^4 - 1)$ ist f\"ur nichtnegative Zahlen monoton steigend,
+      dass hei\3t aus $0 \leq u \leq v$ folgt auch $f(u) \leq f(v)$.  Es gilt 
       \\[0.2cm]
       \hspace*{1.3cm}
       $f(n \cdot 10^{-3}) = n^4 \cdot 10^{-12} - 1$ \quad und \quad $f(10) = 10^4 - 1$.
       \\[0.2cm]
-      Nach Induktions-Voraussetzung können wir $a_n$ durch $n\cdot 10^{-3}$ abschätzen und 
-      aufgrund der Monotonie von $f$ können wir dann $f(a_n)$ durch $f(n\cdot 10^{-3})$
-      abschätzen.
-      Wenden wir daher für $a_n' = n \cdot 10^{-3}$ und $b_n=10$ die Regula Falsi an um eine
-      Näherung $c_n'$ für die Nullstelle von $f$       zu berechnen, so wird
-      $c_n'$ größer sein als der wahre Wert von $c_n$, der in dem Algorithmus tatsächlich auftritt.
+      Nach Induktions-Voraussetzung k\"onnen wir $a_n$ durch $n\cdot 10^{-3}$ absch\"atzen und 
+      aufgrund der Monotonie von $f$ k\"onnen wir dann $f(a_n)$ durch $f(n\cdot 10^{-3})$
+      absch\"atzen.
+      Wenden wir daher f\"ur $a_n' = n \cdot 10^{-3}$ und $b_n=10$ die Regula Falsi an um eine
+      N\"aherung $c_n'$ f\"ur die Nullstelle von $f$       zu berechnen, so wird
+      $c_n'$ gr\"o\3er sein als der wahre Wert von $c_n$, der in dem Algorithmus tats\"achlich auftritt.
       Es gilt:
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -1013,7 +1013,7 @@ $b_n$ konstant ist, es gilt $b_n = 10$.
     \end{array}  
     $
       \\[0.2cm]
-      Wir untersuchen nun, für welche natürlichen Zahlen $n$ die Ungleichung 
+      Wir untersuchen nun, f\"ur welche nat\"urlichen Zahlen $n$ die Ungleichung 
       $c_n' \leq 10^{-3}\cdot (n+1)$ gilt.
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -1040,20 +1040,20 @@ $b_n$ konstant ist, es gilt $b_n = 10$.
 \end{enumerate}
 
 \subsection{Das Sekanten-Verfahren}
-Ein Problem bei der Regula Falsi scheint darin zu liegen, dass häufig eine
-Intervall-Grenze während der gesamten Iteration fest bleibt.  Dies war schon bei der
+Ein Problem bei der Regula Falsi scheint darin zu liegen, dass h\"aufig eine
+Intervall-Grenze w\"ahrend der gesamten Iteration fest bleibt.  Dies war schon bei der
 Bestimmung der Nullstelle der Funktion
 \\[0.2cm]
 \hspace*{1.3cm}
 $x \mapsto x - \cos(x)$ 
 \\[0.2cm]
 der Fall.  Eine
-Möglichkeit, dieses Problem zu umgehen besteht darin, dass wir anstatt eine Folge von
+M\"oglichkeit, dieses Problem zu umgehen besteht darin, dass wir anstatt eine Folge von
 Intervallen $\folge{[a_n, b_n]}$ zu bilden, einfach nur eine Folge von Punkten
 $\folge{x_n}$ konstruieren.  Den Punkt $x_{n+1}$ bestimmen wir, indem wir durch die Punkte
 $x_{n+1}$ und $x_n$ eine Gerade legen und dann $x_n$ als den Schnittpunkt dieser Geraden
-mit der $x$-Achse bestimmen.  Das führt auf dieselbe Formel wie bei der Regula-Falsi, wir
-setzen nämlich
+mit der $x$-Achse bestimmen.  Das f\"uhrt auf dieselbe Formel wie bei der Regula-Falsi, wir
+setzen n\"amlich
 \\[0.2cm]
 \hspace*{1.3cm}
 $x_{n+1} := \bruch{f(x_{n}) \cdot x_{n-1} - f(x_{n-1}) \cdot x_n}{f(x_{n}) - f(x_{n-1})}$.
@@ -1062,11 +1062,11 @@ Dann brauchen wir nur noch zwei Startwerte $x_1$ und $x_2$ und die Rechnung kann
 Abbildung \ref{fig:secant.stlx} zeigt eine Implementierung des Sekanten-Verfahrens in
 \textsc{SetlX}.  Testen wir dieses Programm mit der Funktion $x \mapsto x - \cos(x)$, so
 erhalten wir die in Tabelle \ref{tab:secant-method} gezeigten Werte.
-Wir sehen, dass jetzt bereits 7 Iterationen ausreichen, um die Lösung der Gleichung mit
+Wir sehen, dass jetzt bereits 7 Iterationen ausreichen, um die L\"osung der Gleichung mit
 der geforderten Genauigkeit zu berechnen.  Es sieht also so aus, als ob das
-Sekanten-Verfahren den anderen Verfahren überlegen ist.  In der Tat kann gezeigt werden, dass
+Sekanten-Verfahren den anderen Verfahren \"uberlegen ist.  In der Tat kann gezeigt werden, dass
 das Sekanten-Verfahren, \textbf{wenn} es denn konvergiert, schneller konvergiert als die anderen
-Verfahren. Wir werden das später präzisieren.  Das Problem ist, dass das Sekanten-Verfahren
+Verfahren. Wir werden das sp\"ater pr\"azisieren.  Das Problem ist, dass das Sekanten-Verfahren
 gar nicht immer konvergiert.  Betrachten wir beispielsweise die Funktion 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1127,7 +1127,7 @@ gezeigten Werte.
   7: & \texttt{ 0.73908513322} & \texttt{-1.46275678e-14} \\
 \hline
   \end{tabular}}
-  \caption{Lösung der Gleichung $x - \cos(x) = 0$ mit dem Sekanten-Verfahren.}
+  \caption{L\"osung der Gleichung $x - \cos(x) = 0$ mit dem Sekanten-Verfahren.}
   \label{tab:secant-method}
 \end{table}
 
@@ -1160,7 +1160,7 @@ gezeigten Werte.
   9: & $\infty$               & \texttt{-1.000000000}\\
 \hline
   \end{tabular}}
-  \caption{Divergenz des Sekanten-Verfahrens bei der Lösung von $\bruch{2}{x^2 + 1} - 1 = 0$.}
+  \caption{Divergenz des Sekanten-Verfahrens bei der L\"osung von $\bruch{2}{x^2 + 1} - 1 = 0$.}
   \label{tab:secant-method2}
 \end{table}
 
@@ -1177,18 +1177,18 @@ Beispiel der Funktion
  $x \mapsto x^4 - 1$ 
 \\[0.2cm]
 haben wir gesehen, dass dies zu einer sehr
-langsamen Konvergenz führen kann.  Beim Sekanten-Verfahren hatten wir dieses Problem
-behoben, aber dort kann es in ungünstigen Fällen passieren, dass das Verfahren überhaupt nicht mehr
+langsamen Konvergenz f\"uhren kann.  Beim Sekanten-Verfahren hatten wir dieses Problem
+behoben, aber dort kann es in ung\"unstigen F\"allen passieren, dass das Verfahren \"uberhaupt nicht mehr
 konvergiert.  Das \emph{Illinois-Verfahren} \cite{dowell:1971} versucht die Konvergenz der Regula Falsi
 auf andere Weise zu beschleunigen.  Die Idee des Verfahrens ist eigentlich sehr naheliegend:
-Wenn bei der Regula Falsi eine der Intervall-Grenzen über zwei oder mehr Schritte konstant bleibt,
+Wenn bei der Regula Falsi eine der Intervall-Grenzen \"uber zwei oder mehr Schritte konstant bleibt,
 dann wird der Funktionswert an der betreffenden Intervall-Grenze halbiert, so dass der Einfluss dieses
-Wertes bei der Berechnung der nächsten Näherung $c_n$ nach der Formel
+Wertes bei der Berechnung der n\"achsten N\"aherung $c_n$ nach der Formel
 \\[0.2cm]
 \hspace*{1.3cm}
 $c_n := \bruch{f(b_n) \cdot a_n - f(a_n) \cdot b_n}{f(b_n) - f(a_n)}$
 \\[0.2cm]
-gemindert wird.  Nehmen wir o.B.d.A.~an, dass $f(a) < 0$ und $0 < f(b)$ ist, so führt das zur folgenden 
+gemindert wird.  Nehmen wir o.B.d.A.~an, dass $f(a) < 0$ und $0 < f(b)$ ist, so f\"uhrt das zur folgenden 
 Definition der Folgen $\folge{a_n}$ und $\folge{b_n}$:
 \begin{enumerate}
 \item[I.A.:] $n=1$.  Wir setzen 
@@ -1196,15 +1196,15 @@ Definition der Folgen $\folge{a_n}$ und $\folge{b_n}$:
              \hspace*{1.3cm}
              $a_1 := a$, \quad $b_1 := b$, \quad $\alpha_1 := 1$, \quad und \quad $\beta_1 := 1$.
              \\[0.2cm]
-             Die Werte $\alpha_1$ und $\beta_1$ sind dabei Gewichtungs-Faktoren, die wir später benötigen.
-\item[I.S.:] $n \mapsto n+1$.  Wir definieren ähnlich wie bei der Regula Falsi den Wert $c_n$ als \\[0.2cm]
+             Die Werte $\alpha_1$ und $\beta_1$ sind dabei Gewichtungs-Faktoren, die wir sp\"ater ben\"otigen.
+\item[I.S.:] $n \mapsto n+1$.  Wir definieren \"ahnlich wie bei der Regula Falsi den Wert $c_n$ als \\[0.2cm]
       \hspace*{1.3cm} 
       $c_n := \bruch{\beta_n \cdot f(b_n) \cdot a_n - \alpha_n \cdot f(a_n) \cdot b_n}{
                      \beta_n \cdot f(b_n) - \alpha_n \cdot f(a_n)}
       $. 
       \\[0.3cm]
       Der Unterschied zur Regula Falsi liegt in den Gewichtungs-Faktoren $\alpha_n$ und $\beta_n$.
-      Die Werte für $a_{n+1}$ und $b_{n+1}$ werden durch dieselbe Fall-Unterscheidung wie bei der Regula
+      Die Werte f\"ur $a_{n+1}$ und $b_{n+1}$ werden durch dieselbe Fall-Unterscheidung wie bei der Regula
       Falsi festgelegt:
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -1217,16 +1217,16 @@ Definition der Folgen $\folge{a_n}$ und $\folge{b_n}$:
       $
       \\[0.2cm]
       Falls wir nun feststellen, dass $b_{n+1} = b_{n-1}$ ist, so hat sich der Wert der rechten
-      Intervall-Grenze während der letzten zwei Iterationen nicht geändert.  Wir wollen diesen Wert
-      daher beim nächsten Iterations-Schritt 
-      schwächer gewichten und setzen deshalb in diesem Fall
+      Intervall-Grenze w\"ahrend der letzten zwei Iterationen nicht ge\"andert.  Wir wollen diesen Wert
+      daher beim n\"achsten Iterations-Schritt 
+      schw\"acher gewichten und setzen deshalb in diesem Fall
       \\[0.2cm]
       \hspace*{1.3cm}
       $\beta_{n+1} := \bruch{1}{2} \cdot \beta_n$ \quad und \quad $\alpha_{n+1} := 1$.
       \\[0.2cm]
       Ist umgekehrt $a_{n+1} = a_{n-1}$, so hat sich der Wert der linken
-      Intervall-Grenze nicht geändert.  Wir gewichten daher die linke Intervall-Grenze beim nächsten
-      Iterations-Schritt schwächer und setzen 
+      Intervall-Grenze nicht ge\"andert.  Wir gewichten daher die linke Intervall-Grenze beim n\"achsten
+      Iterations-Schritt schw\"acher und setzen 
       \\[0.2cm]
       \hspace*{1.3cm}
       $\beta_{n+1} := 1$ \quad und \quad $\alpha_{n+1} := \bruch{1}{2} \cdot \alpha_n$.
