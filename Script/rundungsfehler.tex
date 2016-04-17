@@ -20,16 +20,16 @@ Verfahren ist gemeinsam, dass zwei verschiedene Arten von Fehlern auftreten:
       \hspace*{1.3cm}
       $\ds e_n := \sum\limits_{k=0}^n \bruch{1}{k!}$ 
       \\[0.2cm]
-      und m\"ussen dann $n$ so gro\3 w\"ahlen, dass der Abbruch-Fehler
+      und m\"ussen dann $n$ so gro{\ss} w\"ahlen, dass der Abbruch-Fehler
       \\[0.2cm]
       \hspace*{1.3cm}
       $\ds e - e_n = \sum\limits_{k=n+1}^\infty \bruch{1}{k!}$ 
       \\[0.2cm]
       unterhalb einer vorgegeben Schranke bleibt.
 \item Zus\"atzlich zum Approximations-Fehler gibt es noch die Rundungsfehler, die im Laufe der Rechnung 
-      entstehen.  Diese Rundungsfehler haben Ihre Ursache darin, dass Flie\3komma-Zahlen auf dem Rechner 
+      entstehen.  Diese Rundungsfehler haben Ihre Ursache darin, dass Flie{\ss}komma-Zahlen auf dem Rechner 
       mit einer vorgegebenen Genauigkeit dargestellt werden.  Rechnen wir in der Sprache \textsl{Java}
-      mit einer Flie\3komma-Zahl vom Typ \texttt{float}, so stehen zur Darstellung der Stellen hinter dem
+      mit einer Flie{\ss}komma-Zahl vom Typ \texttt{float}, so stehen zur Darstellung der Stellen hinter dem
       Komma lediglich 23 Bits zur Verf\"ugung.  Werden nun zwei solche Zahlen multipliziert, so k\"onnten
       bis zu 47 Bits notwendig sein, um alle Stellen hinter dem Komma korrekt wiedergeben zu k\"onnen.
       Da aber zum Abspeichern des Ergebnisses lediglich 23 Bits zur Verf\"ugung stehen, um die Ziffern 
@@ -92,7 +92,7 @@ Da wir fr\"uher bewiesen haben, dass die Partialsummen
 \hspace*{1.3cm}
 $\ds s_n := \sum\limits_{k=1}^n \bruch{1}{k}$ 
 \\[0.2cm]
-f\"ur wachsende Werte von $n$ beliebig gro\3 werden, fragen wir uns, was bei der Rechnung schief gelaufen ist.
+f\"ur wachsende Werte von $n$ beliebig gro{\ss} werden, fragen wir uns, was bei der Rechnung schief gelaufen ist.
 Die Antwort ist, dass f\"ur $n = 1673864$ der Wert $\frac{1}{n}$ so klein ist, dass die Summe
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -101,7 +101,7 @@ $\ds 16.0 + \frac{1}{n}$
 so nahe bei $16$ liegt, dass sie auf den Wert $16$ abgerundet wird.  Um diesen Effekt n\"aher
 zu beschreiben, definiert man f\"ur einen vorgegebenen Rechner die sogenannte
 \emph{Maschinen-Konstante} \textsl{eps} als die kleinste positive Zahl, die, wenn sie auf diesem Rechner zu
-$1$ addiert wird, eine Ergebnis gr\"o\3er als 1 ergibt.  Die formale Definition lautet
+$1$ addiert wird, eine Ergebnis gr\"o{\ss}er als 1 ergibt.  Die formale Definition lautet
 \\[0.2cm]
 \hspace*{1.3cm}
 $\textsl{eps} := \min\bigl( \{ x \in \mathbb{R} \mid x > 0 \wedge 1 \oplus x > 1 \} \bigr)$.

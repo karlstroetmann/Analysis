@@ -1,10 +1,10 @@
 \chapter{Anwendungen}
 In diesem Kapitel stellen wir verschiedene Anwendungen der bisher entwickelten Theorie vor.
 Zun\"achst zeigen wir, wie sich bestimmte transzendente Funktionen wie der nat\"urliche Logarithmus und die
-trigonometrischen Funktionen effektiv mit Hilfe von Reihen berechnen lassen.   Anschlie\3end diskutieren
+trigonometrischen Funktionen effektiv mit Hilfe von Reihen berechnen lassen.   Anschlie{\ss}end diskutieren
 wir, wann eine Funktion sich durch ein Polynom interpolieren l\"asst.
 Danach besprechen wir das Newton'sche Verfahren zur Bestimmung von Nullstellen, dass dann anwendbar ist,
-wenn die Funktion, deren Nullstelle bestimmt werden soll, differenzierbar ist.  Au\3erdem untersuchen 
+wenn die Funktion, deren Nullstelle bestimmt werden soll, differenzierbar ist.  Au{\ss}erdem untersuchen 
 wir die Konvergenz von Fixpunkt-Verfahren und zeigen, wie sich lineare Gleichungs-Systeme mit Hilfe von
 Fixpunkt-Verfahren approximativ l\"osen lassen.
 
@@ -37,7 +37,7 @@ Setzen wir in dieser Gleichung $x=0$, so finden wir
  \df f(0) = a_1 + \sum\limits_{n=2}^\infty a_n \cdot  n \cdot  0^{n-1} = a_1.
 \end{equation}
 Allgemein k\"onnen wir den Koeffizienten $a_k$ dadurch bestimmen, dass wir Gleichung
-(\ref{eq:taylor}) $k$-mal nach $x$ differenzieren und anschlie\3end $x = 0$ setzen.
+(\ref{eq:taylor}) $k$-mal nach $x$ differenzieren und anschlie{\ss}end $x = 0$ setzen.
 Wir beweisen zun\"achst durch Induktion \"uber $k$, dass f\"ur alle $k\in\mathbb{N}_0$ 
 \begin{equation}
   \label{eq:taylorDiff}
@@ -131,7 +131,7 @@ $n\in \mathbb{N}_0$ den \emph{Abbruch-Fehler vom Grad $n$} als
 \hspace*{1.3cm}
 $\textsl{error}_n(x) := f(x) - \displaystyle\sum\limits_{i=0}^n \bruch{f^{(i)}(0)}{i!} \cdot  x^i$.
 \\[0.3cm]
-Der Abbruch-Fehler gibt also an, wie gro\3 der Fehler ist, wenn wir die Berechnung der Summe einer
+Der Abbruch-Fehler gibt also an, wie gro{\ss} der Fehler ist, wenn wir die Berechnung der Summe einer
 Taylor-Reihe nach dem $n$-ten Glied abbrechen.
 Wir berechnen  eine Absch\"atzung f\"ur den Abbruch-Fehler
 $\textsl{error}_n(x)$.  Dazu benutzen wir den erweiterten Mittelwert-Satz.
@@ -461,7 +461,7 @@ berechnen, wobei $\ln(r)$ mit Hilfe der Formel (\ref{eq:Ln}) gefunden wird.
 
 \exercise
  Berechnen Sie die Taylor-Reihen f\"ur die Funktionen $x \mapsto \sin(x)$ und $x \mapsto \cos(x)$ geben Sie eine
-Absch\"atzung f\"ur den Abbruch-Fehler an.  Folgern Sie au\3erdem die
+Absch\"atzung f\"ur den Abbruch-Fehler an.  Folgern Sie au{\ss}erdem die
 \href{http://de.wikipedia.org/wiki/Eulersche_Formel}{Eulersche Formel}
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -507,7 +507,7 @@ die Ableitung $\frac{d\;}{dx}\arctan(x)$ durch eine geometrische Reihe dar:
 \hspace*{1.3cm}
 $\bruch{d\;}{dx}\arctan(x) = \bruch{1}{1+{x}^{2}} = \displaystyle \sum\limits_{n=0}^\infty \Bigl(-x^2\Bigr)^n = \sum\limits_{n=0}^\infty (-1)^n \cdot  x^{2\cdot n}$.
 \\[0.3cm] 
-Die Ableitung der Taylor-Reihe muss diese Reihe ergeben und au\3erdem muss die Reihe an der
+Die Ableitung der Taylor-Reihe muss diese Reihe ergeben und au{\ss}erdem muss die Reihe an der
 Stelle $0$ den Wert $0$ haben, denn es gilt $\arctan(0) = 0$.  Damit finden wir 
 \begin{equation}
   \label{eq:taylorArctan}
@@ -527,12 +527,12 @@ kosten.
 Zur effizienten Berechnung von $\pi$ ist die  Formel (\ref{eq:PiViertel}) nicht geeignet.
 Aus dem Beweis des Kriteriums von Leibniz f\"ur die Konvergenz alternierender Summen folgt,
 dass der Abbruch-Fehler durch das erste weggelassene Glied abgesch\"atzt werden kann.  F\"ur die obige
-Formel hei\3t das, dass der Abbruch-Fehler wie folgt abgesch\"atzt werden kann:
+Formel hei{\ss}t das, dass der Abbruch-Fehler wie folgt abgesch\"atzt werden kann:
 \\[0.3cm]
 \hspace*{1.3cm}
 $\left|\arctan(x) - \sum\limits_{k=0}^n (-1)^k \cdot  \bruch{1}{2\cdot k+1}\right| \leq \bruch{1}{2\cdot (n+1)+1}$
 \\[0.3cm]
-Überlegen wir, wieviele Glieder der Summe ben\"otigt werden, um $\ds\frac{\pi}{4}$ auf eine Genauigkeit von $10^{-9}$ 
+\"Uberlegen wir, wieviele Glieder der Summe ben\"otigt werden, um $\ds\frac{\pi}{4}$ auf eine Genauigkeit von $10^{-9}$ 
 zu berechnen.  Dann muss $n$ die folgende Ungleichung erf\"ullen:
 \\[0.2cm]
 \hspace*{1.3cm} 
@@ -906,7 +906,7 @@ Induktion \"uber  $k$ definieren.
              $[x_i,x_{i+1},\cdots,x_{i+k}]_{\mathrm{dd}} := \bruch{[x_{i+1},\cdots,x_{i+k}]_{\mathrm{dd}} - [x_{i},\cdots,x_{i+k-1}]_{\mathrm{dd}}}{x_{i+k}-x_i}$.
 \end{enumerate}
 Die dividierten Differenzen der Ordnung $k+1$ berechnen sich also aus den dividierten
-Differenzen der Ordnung $k$ durch Bildung einer Differenz und einer anschlie\3enden
+Differenzen der Ordnung $k$ durch Bildung einer Differenz und einer anschlie{\ss}enden
 Division.  Dieser Umstand erkl\"art ihren Namen.  F\"ur die Koeffizienten $c_k$ in dem
 Newton'schen Ansatz (\ref{eq:newtonInterpolation}) gilt nun 
 \begin{equation}
@@ -927,7 +927,7 @@ gilt, wird also durch das Polynom
 \end{equation}
 gel\"ost.
 \subsection{Der Interpolations-Fehler$^*$}
-Wir untersuchen als n\"achstes, wie gro\3 der Fehler bei der Polynom-Interpolation werden
+Wir untersuchen als n\"achstes, wie gro{\ss} der Fehler bei der Polynom-Interpolation werden
 kann.  Dazu beweisen wir zun\"achst den folgenden Hilfs-Satz.  Dieser Satz ist eine Verallgemeinerung
 des Satzes von Rolle (Satz \ref{satz:rolle}). 
 
@@ -947,7 +947,7 @@ Diesen Nachweis f\"uhren wir durch Induktion \"uber $k$.
              Nullstelle hat, folgt die Behauptung.
 \item[I.S.:] $k\mapsto k+1$.  Nach Induktions-Voraussetzung hat die Funktion
              $f^{(k)}(x)$ mindestens $n + 1 -k$ verschiedene Nullstellen.
-             Nehmen wir an, diese Nullstellen seien der Gr\"o\3e nach geordnet als
+             Nehmen wir an, diese Nullstellen seien der Gr\"o{\ss}e nach geordnet als
              \\[0.2cm]
              \hspace*{1.3cm} $y_1 < y_2 < \cdots y_{n+1-k}$. \\[0.2cm]
              Wegen $k+1\leq n$ ist die Funktion $f^{(k)}(x)$ nach Voraussetzung
@@ -1000,13 +1000,13 @@ definieren wir die Funktion
 \hspace*{1.3cm}
 $\ds g(x) := f(x) - p(x) - \left(\prod\limits_{i=0}^{n} \bruch{x-x_i}{\bar{x}-x_i}\right) \cdot  \bigl(f(\bar{x}) - p(\bar{x})\bigr)$.
 \\[0.2cm]
-Mit $f$ ist auch die Funktion $g$ mindestens $(n+1)$-mal differenzierbar.  Au\3erdem gilt
+Mit $f$ ist auch die Funktion $g$ mindestens $(n+1)$-mal differenzierbar.  Au{\ss}erdem gilt
 wegen $p(x_k) = f(x_k)$ f\"ur alle $k=0,1,\cdots,n$
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds g(x_k) = f(x_k) - p(x_k) - \left(\prod\limits_{i=0}^{n} \bruch{x_k-x_i}{\bar{x}-x_i}\right) \cdot  \bigl(f(\bar{x}) - p(\bar{x})\bigr) = 0$,
 \\[0.2cm]
-denn der Faktor $x_k-x_i$ verschwindet im Falle $i=k$. Au\3erdem haben wir 
+denn der Faktor $x_k-x_i$ verschwindet im Falle $i=k$. Au{\ss}erdem haben wir 
 \\[0.2cm]
 \hspace*{1.3cm}
 $
@@ -1049,7 +1049,7 @@ $ \hspace*{\fill} $\Box$
 F\"ur die Funktion $x \mapsto \sin(x)$ soll im Intervall
 $[0,\frac{\pi}{2}]$ ein Tabelle erstellt werden, so dass der bei linearer Interpolation entstehende
 Interpolations-Fehler kleiner als $10^{-5}$ ist.  Das Intervall $[0,\frac{\pi}{2}]$ soll zu diesem
-Zweck in gleich gro\3e Intervalle aufgeteilt werden.  Berechnen Sie die Anzahl der
+Zweck in gleich gro{\ss}e Intervalle aufgeteilt werden.  Berechnen Sie die Anzahl der
 Eintr\"age, die f\"ur die Erstellung der Tabelle notwendig ist. \eox
 
 
@@ -1420,7 +1420,7 @@ schwach kontrahierend ist, aber es gibt kein $q < 1$, so dass f\"ur alle $x,y \i
 \hspace*{1.3cm}
 $| \sin(x) - \sin(y) | \leq q \cdot |x - y|$
 \\[0.2cm]
-erf\"ullt ist.  Das ist der Grund f\"ur die \"au\3erst langsame Konvergenz der Folge $\folge{x_n}$.
+erf\"ullt ist.  Das ist der Grund f\"ur die \"au{\ss}erst langsame Konvergenz der Folge $\folge{x_n}$.
 \eox 
 
 \begin{table}
@@ -1733,14 +1733,14 @@ $x_n = \left\{
 $
 \\[0.2cm] %$
 Folglich konvergiert das Verfahren in diesem Fall nicht.  W\"ahlen wir den Startwert $x_0 = -0.5$, so
-konvergiert das Verfahren gegen die L\"osung $-2.23070764576\cdots$, die au\3erhalb des Intervalls $[-2,2]$
+konvergiert das Verfahren gegen die L\"osung $-2.23070764576\cdots$, die au{\ss}erhalb des Intervalls $[-2,2]$
 liegt.  W\"ahlen wir als Startwert $x_0 = -1.5$, so konvergiert das Verfahren gegen die L\"osung
 $-1.769292354238631\cdots$.  Diese Beispiele zeigen, dass das Newton'sche Verfahren ohne weitere
 Einschr\"ankungen nicht zuverl\"assig ist.
 
 \subsection{Analyse des Newton'schen Verfahrens}
 Wir wollen in diesem Abschnitt herausfinden, unter welchen Umst\"anden das Newton'sche Verfahren
-konvergiert und wollen au\3erdem die Geschwindigkeit der Konvergenz des Verfahrens untersuchen.
+konvergiert und wollen au{\ss}erdem die Geschwindigkeit der Konvergenz des Verfahrens untersuchen.
 Als erstes ben\"otigen wir einen Hilfssatz \"uber konvexe Funktionen.
 
 \begin{Lemma}
@@ -1812,7 +1812,7 @@ zweimal differenzierbar und konvex ist, gilt
 \hspace*{1.3cm}
 $f^{(2)}(\varphi) \geq 0$ 
 \\[0.2cm]
-und das Quadrat $(x-x_0)^{2}$ ist sicher immer gr\"o\3er oder gleich $0$.  \qed
+und das Quadrat $(x-x_0)^{2}$ ist sicher immer gr\"o{\ss}er oder gleich $0$.  \qed
 
 \begin{Satz}[Konvergenz des Newtonschen Verfahrens f\"ur monotone und konvexe Funktionen] \lb
   Die Funktion $f:[a,b] \rightarrow \mathbb{R}$ sei zweimal differenzierbar und konvex, es gelte
@@ -1830,7 +1830,7 @@ und das Quadrat $(x-x_0)^{2}$ ist sicher immer gr\"o\3er oder gleich $0$.  \qed
 
 \proof
 Nach dem Zwischenwert-Satz hat die Funktion eine Nullstelle $\xi$ in dem Intervall $[a,b]$.  Da 
-$f'(x)$ f\"ur alle $x \in [a,b]$ echt gr\"o\3er als Null ist, kann $f$ keine zweite Nullstelle haben, denn
+$f'(x)$ f\"ur alle $x \in [a,b]$ echt gr\"o{\ss}er als Null ist, kann $f$ keine zweite Nullstelle haben, denn
 sonst h\"atten wir einen Widerspruch zum Satz von Rolle.  Also gilt
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1932,7 +1932,7 @@ Hier setzen wir f\"ur $x$ den Wert $\bar{x}$, also die Nullstelle von $f$ ein un
 \hspace*{1.3cm}
 $\ds 0 =  f(x_n) + f'(x_n) \cdot (\bar{x} - x_n) + \frac{1}{2} \cdot f^{(2)}(\varphi) \cdot (\bar{x} - x_n)^2$
 \\[0.2cm]
-Wir subtrahieren $f(x_n)$ und teilen anschlie\3end durch $f'(x_n)$.  Das liefert die Gleichung
+Wir subtrahieren $f(x_n)$ und teilen anschlie{\ss}end durch $f'(x_n)$.  Das liefert die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds - \frac{f(x_n)}{f'(x_n)} = 
@@ -1975,7 +1975,7 @@ gegeben.  Logarithmieren wir die obige Gleichung zur Basis 10 und multiplizieren
 \hspace*{1.3cm}
 $\lambda_{n+1} \geq 2 \cdot \lambda_n - \log_{10}(K)$.
 \\[0.2cm]
-Zur Konkretisierung unserer Überlegungen betrachten wir wieder die Funktion $f(x) = x^2 -2$.  Hier gilt
+Zur Konkretisierung unserer \"Uberlegungen betrachten wir wieder die Funktion $f(x) = x^2 -2$.  Hier gilt
 \\[0.2cm]
 \hspace*{1.3cm}
 $f'(x) = 2 \cdot x \geq 2$ \quad falls $x \geq 1$ ist
@@ -2009,20 +2009,20 @@ das Glei\-chungs-System
 \hspace*{1.3cm}
 $\mathbf{A}\, \vec{x} = \vec{b}$
 \\[0.2cm]
-zu l\"osen, haben Sie im ersten Semester kennegelernt: Es ist das Gau\3'sche
-Eliminations-Verfahren (Carl Friedrich Gau\3, 1777 -- 1855).  
+zu l\"osen, haben Sie im ersten Semester kennegelernt: Es ist das Gau{\ss}'sche
+Eliminations-Verfahren (Carl Friedrich Gau{\ss}, 1777 -- 1855).  
 Es gibt allerdings Situationen, in denen dieses
 Verfahren zu 
-aufwendig ist.  Dies ist beispielsweise dann der Fall, wenn einerseits $n$ gro\3 ist und
+aufwendig ist.  Dies ist beispielsweise dann der Fall, wenn einerseits $n$ gro{\ss} ist und
 wenn andererseits die meisten Komponenten der Matrix $A$ den Wert 0 haben.  Solche
-Matrizen hei\3en \emph{d\"unn besetzte} Matrizen.  Diese Art von Matrizen tritt bei
+Matrizen hei{\ss}en \emph{d\"unn besetzte} Matrizen.  Diese Art von Matrizen tritt bei
 der numerischen L\"osung von
 \href{http://de.wikipedia.org/wiki/Partielle_Differentialgleichung}{partiellen Differential-Gleichungen} auf.   
-Das Gau\3'sche Eliminations-Verfahren besitzt  eine
-Komplexit\"at von $O(n^3)$ und ist damit f\"ur gro\3e d\"unn besetzte Matrizen ungeeignet.
+Das Gau{\ss}'sche Eliminations-Verfahren besitzt  eine
+Komplexit\"at von $O(n^3)$ und ist damit f\"ur gro{\ss}e d\"unn besetzte Matrizen ungeeignet.
 Hier ist der Rechenaufwand bei iterative Verfahren geringer.   
-Ein weiteres Problem ist, dass die Rundungsfehler beim Gau\3'schen Eliminations-Verfahren
-sehr gro\3 werden k\"onnen.  Demgegen\"uber sind iterative Verfahren selbstkorrigierend.
+Ein weiteres Problem ist, dass die Rundungsfehler beim Gau{\ss}'schen Eliminations-Verfahren
+sehr gro{\ss} werden k\"onnen.  Demgegen\"uber sind iterative Verfahren selbstkorrigierend.
 
 Ist $\mathbf{A}$ gegeben, so lautet die Gleichung $\mathbf{A}\,\vec{x} = \vec{b}$ in Komponenten-Schreibweise 
 \\[0.2cm]
@@ -2086,7 +2086,7 @@ f\"ur beliebige Vektoren $\vec{x}, \vec{y} \in \mathbb{R}^{n}$
 \hspace*{1.3cm}
 $\norm{\vec{x} + \vec{y}} \leq \norm{\vec{x}} + \norm{\vec{y}}$.
 \\[0.3cm]
-Au\3erdem haben wir f\"ur reelle Zahlen $\alpha \in\mathbb{R}$ und Vektoren
+Au{\ss}erdem haben wir f\"ur reelle Zahlen $\alpha \in\mathbb{R}$ und Vektoren
 $\vec{x}\in\mathbb{R}^n$ die Gleichung 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -2094,7 +2094,7 @@ $\norm{ \alpha\,\vec{x} } = |\alpha|\cdot  \norm{\vec{x}}$
 \\[0.2cm]
 Hierbei bezeichnet $\alpha\,\vec{x}$ die komponentenweise Multiplikation des Vektors
 $\vec{x}$ mit der Zahl $\alpha$.
-Schlie\3lich gilt f\"ur alle $\vec{x}\in\mathbb{R}^n$ die Ungleichung 
+Schlie{\ss}lich gilt f\"ur alle $\vec{x}\in\mathbb{R}^n$ die Ungleichung 
 $0 \leq \norm{\vec{x}}$ wobei Gleichheit nur im Fall $\vec{x} = \vec{0}$ auftritt:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -2111,7 +2111,7 @@ Gesamtschritt-Verfahrens in einem f\"ur Anwendungen wichtigen Spezial-Fall.
   \hspace*{1.3cm}
   $\vec{x}^{(\infty)} := \lim\limits_{n\rightarrow\infty} \vec{x}^{(n)}$
   \\[0.2cm] 
-  und ist weiter $q$ die Zahl aus dem starken Zeilen-Summen-Kriterium, dann gilt au\3erdem die
+  und ist weiter $q$ die Zahl aus dem starken Zeilen-Summen-Kriterium, dann gilt au{\ss}erdem die
   Absch\"atzung 
   \\[0.2cm]
   \hspace*{1.3cm}
@@ -2233,7 +2233,7 @@ zu l\"osen und arbeitet im Detail wie folgt:
       Die Variable $\mathtt{xNew}$ speichert den Wert $\vec{x}^{(n+1)}$. 
 \item Die Schleife, die in Zeile 6 beginnt, f\"uhrt insgesamt $k$ Iterationen des Jacobi-Verfahrens aus.
 \item Die Schleife, die in Zeile 7 beginnt, berechnet den n\"achsten Wert $\vec{x}^{(n+1)}$
-      gem\"a\3 der Formel
+      gem\"a{\ss} der Formel
       \\[0.2cm]
       \hspace*{1.3cm}
       $x^{(n+1)}_i = 
@@ -2242,7 +2242,7 @@ zu l\"osen und arbeitet im Detail wie folgt:
       \\[0.2cm]
       Der Index $i$ l\"auft dabei \"uber die Komponenten des Vektors $\vec{x}^{(n+1)}$.
 \end{enumerate}
-Die Funktion \texttt{demo()} ruft die Funktion so auf, dass anschlie\3end
+Die Funktion \texttt{demo()} ruft die Funktion so auf, dass anschlie{\ss}end
 das Gleichungs-System
 \[
 \left(\begin{array}[c]{lll}
@@ -2358,7 +2358,7 @@ nach 35 Schritten gefunden.
 
 
 
-\subsubsection{Das Gau\3-Seidel-Verfahren}
+\subsubsection{Das Gau{\ss}-Seidel-Verfahren}
 Betrachten wir die Implementierung des Gesamtschritt-Verfahrens, so liegt die folgende
 Optimierung auf der Hand.  Wenn wir mit der Formel
 \\[0.2cm]
@@ -2377,22 +2377,22 @@ $x^{(n+1)}_i = \displaystyle \bruch{1}{a_{ii}} \cdot  \Biggl( b_i - \sum\limits_
                \sum\limits_{j=i+1}^n a_{ij} \cdot  x^{(n)}_j \Biggr)$.
 \\[0.2cm]
 Das Verfahren, das auf dieser Formel basiert, wird als \emph{Einzelschritt-Verfahren} oder
-auch \emph{Gau\3-Seidel-Verfahren} (Philipp Ludwig von Seidel, 1821 -- 1896) bezeichnet.
+auch \emph{Gau{\ss}-Seidel-Verfahren} (Philipp Ludwig von Seidel, 1821 -- 1896) bezeichnet.
 
 Abbildung \ref{fig:seidel.stlx} zeigt, wie wir die Implementierung \"andern
-m\"ussen, wenn wir das Gau\3-Seidel-Verfahren anwenden wollen.  Die Implementierung des
-Gau\3-Seidel-Verfahrens ist einfacher als die Implementierung des Jacobi-Verfahrens, denn
+m\"ussen, wenn wir das Gau{\ss}-Seidel-Verfahren anwenden wollen.  Die Implementierung des
+Gau{\ss}-Seidel-Verfahrens ist einfacher als die Implementierung des Jacobi-Verfahrens, denn
 wir ben\"otigen keine Hilfsvariable \texttt{xNew} mehr.
-Tabelle \ref{tab:seidel} zeigt, dass das Gau\3-Seidel-Verfahren f\"ur
+Tabelle \ref{tab:seidel} zeigt, dass das Gau{\ss}-Seidel-Verfahren f\"ur
 unser Beispiel etwa doppelt so schnell konvergiert wie das Jacobi-Verfahren.
-Es l\"asst sich zeigen, dass das Gau\3-Seidel-Verfahren zur L\"osung immer dann konvergiert, wenn die Matrix
+Es l\"asst sich zeigen, dass das Gau{\ss}-Seidel-Verfahren zur L\"osung immer dann konvergiert, wenn die Matrix
 $\mathbf{A}$ des linearen Gleichungs-Systems
 \\[0.2cm]
 \hspace*{1.3cm}
 $\mathbf{A} \vec{x} = \vec{b}$
 \\[0.2cm]
 das starke Zeilen-Summen-Kriterium erf\"ullt.  Allerdings ist die theoretische Analyse des
-Gau\3-Seidel-Verfahren schwieriger als die Untersuchung des Jacobi-Verfahrens, so dass wir von einer
+Gau{\ss}-Seidel-Verfahren schwieriger als die Untersuchung des Jacobi-Verfahrens, so dass wir von einer
 detailierteren Diskussion aus Zeitgr\"unden absehen m\"ussen.
 
 \begin{figure}[!ht]
@@ -2426,7 +2426,7 @@ detailierteren Diskussion aus Zeitgr\"unden absehen m\"ussen.
     };
     \end{Verbatim}
 \vspace*{-0.3cm}
-  \caption{Implementierung des Gau\3-Seidel-Verfahrens.}
+  \caption{Implementierung des Gau{\ss}-Seidel-Verfahrens.}
   \label{fig:seidel.stlx}
 \end{figure} %\$
 
@@ -2477,7 +2477,7 @@ detailierteren Diskussion aus Zeitgr\"unden absehen m\"ussen.
 19 & 1.0 & 1.0 & 1.0 \\
 \hline
   \end{tabular}}
-  \caption{Konvergenz des Gau\3-Seidel-Verfahrens.}
+  \caption{Konvergenz des Gau{\ss}-Seidel-Verfahrens.}
   \label{tab:seidel}
 \end{table}
 

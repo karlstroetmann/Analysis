@@ -699,8 +699,9 @@ $M := \bigl\{ x \in \mathbb{Q} \mid \forall n \in \mathbb{N}: x \leq a_n \bigr\}
 \\[0.2cm]
 Weil wir vorausgesetzt haben, dass die Folge $\folge{a_n}$ beschr\"ankt ist,
 ist die Menge $M$ sicher nicht leer und es ist offensichtlich, dass die Menge $M$ nach unten abgeschlossen ist.  
-Au\ss{}erdem ist die Menge $M$ nach oben beschr\"ankt, eine obere Schranke ist das Folgenglied $a_1$.
-Folglich hat die Menge $M$ ein Supremum und wir k\"onnen daher   
+Au\ss{}erdem ist die Menge $M$ nach oben beschr\"ankt, eine obere Schranke ist das Folgenglied
+$a_1$.  Da die Struktur $\langle \mathbb{R}, 0, 1, +, \cdot, \leq\rangle$ ein vollst\"andig geordneter
+Körper ist, hat die Menge $M$ ein Supremum und wir k\"onnen 
 \\[0.2cm]
 \hspace*{1.3cm}
 $s := \sup(M)$
@@ -710,7 +711,12 @@ definieren.  Wir zeigen, dass
 \hspace*{1.3cm}
 $\lim\limits_{n\rightarrow\infty} a_n = s$
 \\[0.2cm]
-gilt.  Sei also $\varepsilon > 0$ gegeben.  Da 
+gilt.  Dazu müssen wir 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall \varepsilon \in \mathbb{R}_+: \exists K \in \mathbb{R}: \forall n \in \mathbb{N}: \bigl(n\geq k \rightarrow |a_n - s| < \varepsilon \bigr)$
+\\[0.2cm]
+zeigen.  Sei also $\varepsilon > 0$ gegeben.  Da 
 \\[0.2cm]
 \hspace*{1.3cm}
 $s + \varepsilon > s$
@@ -729,7 +735,7 @@ ist.  Da die Folge monoton fallend ist, gilt dann auch
 $a_n < s + \varepsilon$ \quad f\"ur alle $n \geq \widehat{n}$.
 \\[0.2cm]
 Andererseits ist $s - \frac{1}{2} \cdot \varepsilon < s$, so dass $s - \frac{1}{2} \cdot \varepsilon$ sicher ein Element der Menge $M$
-ist, denn $M$ ist nach unten abgeschlossen.  Damit ist $s - \frac{1}{2}$ dann auch eine untere
+ist, denn $M$ ist nach unten abgeschlossen.  Damit ist $s - \frac{1}{2} \cdot \varepsilon$ dann auch eine untere
 Schranke der Folge $(a_n)_{n\in\mathbb{N}}$.  Folglich gilt f\"ur alle $n \in \mathbb{N}$
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -745,9 +751,13 @@ und dies k\"onnen wir auch als
 \hspace*{1.3cm}
 $|a_n - s| < \varepsilon$ \quad f\"ur alle $n \geq \widehat{n}$
 \\[0.2cm]
-schreiben.  Setzen wir in der Definition des Grenzwerts $K := \widehat{n}$ haben wir damit die Behauptung gezeigt.
+schreiben.  Setzen wir in der Definition des Grenzwerts $K := \widehat{n}$, so haben wir damit die Behauptung gezeigt.
 \qed
 
+\remark
+Der soeben bewiesene Satz ist der erste Satz, bei dem wir ausgenutzt haben, dass die reellen Zahlen
+vollständig sind.
+\eox
 
 \exercise
 Die Folge $\folge{a_n}$ sei monoton steigend und beschr\"ankt.  Zeigen Sie, dass der Grenzwert
@@ -781,11 +791,12 @@ Jede konvergente Folge $\folge{a_n}$ ist eine Cauchy-Folge.
 
 \noindent
 \textbf{Beweis}:  Es sei $a := \lim\limits_{n\rightarrow\infty} a_n$. 
-Sei $\varepsilon > 0$ gegeben.  Aufgrund der Konvergenz der Folge $\folge{a_n}$ gibt es
+Sei $\varepsilon > 0$ gegeben.  Wir definieren $\varepsilon' := \frac{1}{2} \cdot \varepsilon$.
+Aufgrund der Konvergenz der Folge $\folge{a_n}$ gibt es
 dann ein $K$, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\forall n \in \mathbb{N}:\bigl( n \geq K \rightarrow \bigl|a_n-a\bigr| < \frac{\varepsilon}{2}\bigr)$
+$\ds\forall n \in \mathbb{N}:\Bigl( n \geq K \rightarrow \bigl|a_n-a\bigr| < \varepsilon' = \frac{\varepsilon}{2}\Bigr)$
 \\[0.2cm]
 gilt.  Damit gilt f\"ur alle $m,n\in\mathbb{N}$ mit $m \geq K$ und $n \geq K$ die folgende Absch\"atzung:
 \\[0.2cm]
@@ -900,8 +911,8 @@ aller Folgenglieder kann sicher nicht gr\"o\ss{}er als $S$ sein.
 Weiter impliziert die Beschr\"anktheit der Cauchy-Folge, dass die Menge $M$ nicht leer ist,
 denn wenn f\"ur alle $n \in \mathbb{N}$ die Ungleichung $|a_n| \leq S$ gilt,  dann gilt insbesondere
 $-S \leq a_n$ und daraus folgt sofort $-S \in M$.  Als nicht-leere und nach oben
-beschr\"ankte Menge hat $M$ ein Supremum, denn die Menge der reellen Zahlen ist eine vollst\"andige
-Ordnung.  Wir definieren  
+beschr\"ankte Menge hat $M$ ein Supremum, denn $\langle \mathbb{R}, \leq \rangle$ ist eine
+vollst\"andige Ordnung.  Wir definieren  
 \\[0.2cm]
 \hspace*{1.3cm}
 $s := \sup(M)$
