@@ -1554,12 +1554,12 @@ $
 Die letzte Ungleichung ist aber nichts anderes als die Monotonie der Folge $\folge{a_n}$.
 
 Als n\"achstes zeigen wir durch vollst\"andige Induktion, dass die Folge der Partial-Summen
-mit geraden Indizes nach unten beschr\"ankt ist, genauer gilt
+nach unten beschr\"ankt ist, genauer gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$  s_{2\cdot n} \geq - a_1. $
+$s_{n} \geq - a_1$ \quad f\"ur alle $n \in \mathbb{N}$.
 \\[0.2cm]
-Um dies nachzuweisen, zeigen wir durch vollst\"andige Induktion, dass f\"ur alle
+Um diese Ungleichung nachzuweisen, zeigen wir zunächst durch vollst\"andige Induktion, dass f\"ur alle
 $n\in\mathbb{N}_0$ gilt:
       \\[0.2cm]
       \hspace*{1.3cm}      
@@ -1802,16 +1802,10 @@ Dann existiert auch der Grenzwert $\ds\sum\limits_{i=1}^\infty b_i$ nicht.
 \end{Satz}
 
 \noindent
-\textbf{Beweis}:  Wir f\"uhren den Beweis indirekt und nehmen an, dass 
-\\[0.2cm]
-\hspace*{1.3cm}
-$\ds\sum\limits_{i=1}^\infty b_i$
-\\[0.2cm]
+\textbf{Beweis}:  Wir f\"uhren den Beweis indirekt und nehmen an, dass der Grenzwert
+$\sum\limits_{i=1}^\infty b_i$
 existiert.  Nach dem Majoranten-Kriterium m\"usste dann auch der Grenzwert
-\\[0.2cm]
-\hspace*{1.3cm}
-$\ds\sum\limits_{i=1}^\infty a_i$
-\\[0.2cm]
+$\sum\limits_{i=1}^\infty a_i$
 existieren und dass steht im Widerspruch zur Voraussetzung. 
 \qed
 
@@ -1844,7 +1838,7 @@ $
 \end{array}
 $
 \\[0.2cm]
-Da die letzte Ungleichung offenbar f\"ur alle $n\in \mathbb{N}$ wahr ist, ist der Beweis abgeschlossen.
+Da die letzte Ungleichung offenbar f\"ur alle $i \in \mathbb{N}$ wahr ist, ist der Beweis abgeschlossen.
 \qed
 
 \begin{Satz}[Quotienten-Kriterium]
@@ -1854,7 +1848,7 @@ Es sei $\folge{a_n}$ eine Folge und $q\in\mathbb{R}$ eine Zahl, so dass gilt:
 \item $\forall n \in \mathbb{N}: 0 \leq a_n$
 \item $\forall n \in \mathbb{N}: a_{n+1} \leq q \cdot  a_n$
 \end{enumerate}
-Dann konvergiert die Reihe $\ds\Reihe{a_i}$.
+Dann konvergiert die Reihe $\Reihe{a_i}$.
 \end{Satz}
 
 \noindent 
@@ -1898,7 +1892,7 @@ Ist $\folge{a_n}$ eine Folge, $q\in\mathbb{R}$ und $K \in \mathbb{R}$, so dass
 $0 \leq q < 1$ \quad und \quad $\ds\forall n \in \mathbb{N}: \Bigl(n \geq K \rightarrow \left|\frac{a_{n+1}}{a_n}\right| \leq q\Bigr)$
 \\[0.2cm]
 gilt.  Dann konvergiert die Reihe $\Reihe{a_i}$.
-
+\pagebreak
 
 \example
 Wir zeigen mit Hilfe des Quotienten-Kriteriums, dass die Reihe
@@ -1910,7 +1904,7 @@ f\"ur alle $z \in \mathbb{C}$ konvergiert.  F\"ur $z=0$ ist die Konvergenz der
 Reihe trivial und sonst betrachten wir
 den Quotienten $a_{n+1}/a_n$ f\"ur diese Reihe, setzen $K = 2\cdot |z|$ und $\ds q = \frac{1}{2}$
 und zeigen, dass das Quotienten-Kriterium erf\"ullt ist, denn f\"ur alle $n\geq K$ gilt:
-\\[0.2cm]
+
 \hspace*{1.3cm}      
 $\ds\left|\frac{a_{n+1}}{a_n}\right| =  \frac{\;\frac{|z^{n+1}|}{\;(n+1)!\;}\;}{\frac{\;|z^{n}|\;}{n!}} 
                             =  \frac{\;|z^{n+1}| \cdot  n!\;}{\;|z^{n}| \cdot  (n+1)!\;} 
@@ -1919,9 +1913,16 @@ $\ds\left|\frac{a_{n+1}}{a_n}\right| =  \frac{\;\frac{|z^{n+1}|}{\;(n+1)!\;}\;}{
                             = \frac{\;|z|\;}{\;2\cdot |z|\;} 
                             =  \frac{\;1\;}{\;2\;} 
 $.
+\\[0.2cm]
+Also gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds|a_{n+1}| \leq \frac{\;1\;}{\;2\;} \cdot |a_n|$
+\\[0.2cm]
+und damit ist das Quotienten-Kriterium erf\"ullt. \eox
 
 \remark
-Wir werden sp\"ater zeigen, dass die in dem letzten Beispiel pr\"asentierte Reihe im Wesentlichen die
+Wir werden sp\"ater zeigen, dass die in dem letzten Beispiel pr\"asentierte Reihe die
 Exponentialfunktion berechnet, denn es gilt  
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1970,7 +1971,7 @@ $n! \geq 2^n$ gilt.  Damit haben wir f\"ur $n\geq 4$:
 $\ds \sqrt[n]{\frac{1}{n!}} \leq \frac{1}{2}     \quad \Leftrightarrow \quad
    \frac{1}{n!} \leq \left(\frac{1}{2}\right)^n  \quad \Leftrightarrow \quad
    n! \geq 2^n. 
-$
+$ \eox
 
 
 \exercise
@@ -2031,6 +2032,7 @@ $a_n \geq a_{n+1} \geq 0$ \quad f\"ur alle $n \in \mathbb{N}$.
       \hspace*{1.3cm}
       $\ds\sum\limits_{n=2}^{\infty} \frac{1}{n \cdot \bigl(\log_2(n)\bigr)^2}$. \eox
 \end{enumerate}
+\pagebreak
 
 \subsection{Absolute Konvergenz}
 \begin{Definition}[Absolute Konvergenz]
@@ -2039,7 +2041,7 @@ Eine Reihe
 \hspace*{1.3cm}
  $\ds\Reihe{a_i}$ 
 \\[0.2cm]
-hei\ss{}t \emph{absolut konvergent} genau dann, wenn die Reihe der Absolutbetr\"age
+hei\ss{}t \colorbox{orange}{\emph{absolut konvergent}} genau dann, wenn die Reihe der Absolutbetr\"age
 \\[0.2cm]
 \hspace*{1.3cm}
  $\ds\Reihe{|a_i|}$ 
@@ -2050,7 +2052,7 @@ konvergiert, aber die Reihe der Absolutbetr\"age
 $\Reihe{|a_i|}$ 
 divergent ist,  dann sagen wir, dass die Reihe
  $\Reihe{a_i}$ 
-\emph{bedingt konvergent} ist.  \eod
+\colorbox{orange}{\emph{bedingt konvergent}} ist.  \eod
 \end{Definition}
 
 \examples
