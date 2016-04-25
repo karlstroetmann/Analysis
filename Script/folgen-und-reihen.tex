@@ -1903,7 +1903,7 @@ Quotienten-Kriteriums zeigen:
 Ist $\folge{a_n}$ eine Folge, $q\in\mathbb{R}$ und $K \in \mathbb{R}$, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$0 \leq q < 1$ \quad und \quad $\ds\forall n \in \mathbb{N}: \Bigl(n \geq K \rightarrow \left|\frac{a_{n+1}}{a_n}\right| \leq q\Bigr)$
+$0 \leq q < 1$ \quad und \quad $\ds\forall n \in \mathbb{N}: \left(n \geq K \rightarrow \left|\frac{a_{n+1}}{a_n}\right| \leq q\right)$
 \\[0.2cm]
 gilt.  Dann konvergiert die Reihe $\Reihe{a_i}$.
 
@@ -1993,7 +1993,7 @@ Im Folgenden sei $\folge{a_n}$ eine monoton fallende Folge nicht-negativer Zahle
 \hspace*{1.3cm}
 $a_n \geq a_{n+1} \geq 0$ \quad f\"ur alle $n \in \mathbb{N}$.
 \begin{enumerate}[(a)]
-\item Nehmen Sie an, das die Reihe
+\item Nehmen Sie an, dass die Reihe
       \\[0.2cm]
       \hspace*{1.3cm}
       $\sum\limits_{n=0}^\infty 2^n \cdot a_{2^n}$ 
@@ -2012,7 +2012,7 @@ $a_n \geq a_{n+1} \geq 0$ \quad f\"ur alle $n \in \mathbb{N}$.
       \\[0.2cm]
       gilt.  Der Nachweis dieser Ungleichung funktioniert \"ahnlich wie der Nachweis der Divergenz der
       harmonischen Reihe.
-\item Nehmen Sie an, das die Reihe
+\item Nehmen Sie an, dass die Reihe
       \\[0.2cm]
       \hspace*{1.3cm}
       $\ds\sum\limits_{n=1}^\infty a_n$
@@ -2191,25 +2191,43 @@ Dann haben wir f\"ur alle $n \geq K$ die folgende Absch\"atzung:
       \hspace*{1.3cm}      
       $\ds\left|a_n\cdot v^n\right| = 
       \left|a_n\cdot u^n\right| \cdot  \left|\frac{v^n}{u^n}\right| =
-      \left|a_n\cdot u^n\right| \cdot  q^n \leq q^n$.
+      \left|a_n\cdot u^n\right| \cdot q^n \leq 1 \cdot q^n = q^n$.
       \\[0.2cm]
 Diese Absch\"atzung zeigt, dass die geometrische Reihe eine konvergente Majorante der Reihe
-$\sum_{n=1}^\infty a_n\cdot v^n$ ist.  Damit folgt die Konvergenz der Reihe $\sum_{n=0}^\infty a_n\cdot v^n$  aus dem
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\sum\limits_{n=1}^\infty a_n\cdot v^n$ 
+\\[0.2cm]
+ist.  Damit folgt die Konvergenz dieser Reihe aus dem
 Majoranten-Kriterium. \qed 
 
 \begin{Satz}
-Wenn die Potenz-Reihe $\sum_{n=0}^\infty a_n\cdot x^n$ f\"ur einen Wert $u \in \mathbb{C}$
+Wenn die Potenz-Reihe
+\\[0.2cm]
+\hspace*{1.3cm}
+ $\ds\sum\limits_{n=0}^\infty a_n\cdot x^n$ 
+\\[0.2cm]
+f\"ur einen Wert $u \in \mathbb{C}$
 divergiert, dann divergiert die Reihe auch f\"ur alle $v \in \mathbb{C}$, f\"ur die
 $|u| < |v|$ ist.
 \end{Satz}
 
 \noindent
-\textbf{Beweis}:  W\"urde die Reihe $\sum_{n=0}^\infty a_n\cdot v^n$ konvergieren,
+\textbf{Beweis}:  W\"urde die Reihe
+\\[0.2cm]
+\hspace*{1.3cm}
+ $\ds\sum\limits_{n=0}^\infty a_n\cdot v^n$ 
+\\[0.2cm]
+konvergieren,
 dann m\"usste nach Satz \ref{satz:konvergenz-radius} auch die Reihe 
-$\sum_{n=0}^\infty a_n\cdot u^n$ konvergieren. \qed
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\sum\limits_{n=0}^\infty a_n\cdot u^n$
+\\[0.2cm]
+konvergieren, was im Widerspruch zur Voraussetzung steht. \qed
 
 \noindent
-Die letzten beiden S\"atze erm\"oglichen es nun, den Begriff \emph{Konvergenz-Radius} zu
+Die letzten beiden S\"atze erm\"oglichen es nun, den Begriff des \colorbox{orange}{\emph{Konvergenz-Radius}} zu
 definieren.  Es sei 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -2221,9 +2239,9 @@ Konvergenz-Radius den Wert $\infty$ hat.  Andernfalls definieren wir den Konverg
 als
 \\[0.2cm]
 \hspace*{1.3cm}      
-$R := \sup \left\{ |u| \;\Big|\; u \in \mathbb{C} \wedge
+$R := \sup \biggl\{ |u| \;\biggm|\; u \in \mathbb{C} \;\wedge\;
                    \ds\sum\limits_{n=0}^\infty a_n\cdot u^n \;\mathrm{konvergiert} 
-         \right\}
+         \biggr\}
 $.
 \\[0.2cm]
 Aus den letzten beiden S\"atzen folgt dann:
@@ -2314,7 +2332,11 @@ $
 \end{array}
 $
 \\[0.2cm]
-Jetzt k\"onnen wir zeigen, dass die Reihe $\sum\limits_{n=0}^\infty a_n\cdot u^n$ das
+Jetzt k\"onnen wir zeigen, dass die Reihe
+\\[0.2cm]
+\hspace*{1.3cm}
+ $\ds\sum\limits_{n=0}^\infty a_n\cdot u^n$ \\[0.2cm]
+das
 Quotienten-Kriterium erf\"ullt, denn f\"ur alle $n \geq K$ gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -2324,11 +2346,18 @@ $\ds \left|\frac{a_{n+1}\cdot u^{n+1}}{a_n\cdot u^n}\right| =
    \frac{|u|}{\frac{1}{2}\cdot(R + |u|)} = q
 $
 \\[0.2cm]
-Um den Beweis abzuschlie\ss{}en m\"ussen wir noch zeigen, die Reihe $\sum_{n=0}^\infty a_n\cdot u^n$
+Um den Beweis abzuschlie\ss{}en m\"ussen wir noch zeigen, die Reihe
+\\[0.2cm]
+\hspace*{1.3cm}
+ $\ds\sum\limits_{n=0}^\infty a_n\cdot u^n$
+\\[0.2cm]
 divergiert wenn  $R < |u|$ ist.   Dies folgt aus der Tatsache, dass die Folge
 $\folge{a_n\cdot u^n}$ f\"ur $|u|>R$ keine Null-Folge ist.  Die Details bleiben dem Leser
 \"uberlassen. 
 \qed 
+
+\exercise
+Vervollständigen Sie den Beweis des letzten Satzes. \eox
 
 \remark
 Der obige Satz bleibt auch richtig, wenn
@@ -2336,7 +2365,7 @@ Der obige Satz bleibt auch richtig, wenn
       \hspace*{1.3cm}      
       $\ds\lim\limits_{n\rightarrow\infty} \left|\frac{a_n}{\;a_{n+1}\;}\right| = \infty$
       \\[0.2cm]
-ist, denn dann ist die Potenz-Reihe $\sum_{n=0}^\infty a_n\cdot u^n$ f\"ur alle $u\in\mathbb{C}$
+ist, denn dann ist die Potenz-Reihe $\ds\sum\limits_{n=0}^\infty a_n\cdot u^n$ f\"ur alle $u\in\mathbb{C}$
 konvergent.
 
 \remark
@@ -2352,7 +2381,7 @@ $  \eox
 
 
 
-\begin{Satz}[Hadamard]
+\begin{Satz}[\href{https://de.wikipedia.org/wiki/Jacques_Hadamard}{Jacques Hadamard(1865-1963)}]
 Es sei $\sum_{n=0}^\infty a_n\cdot x^n$ eine Potenz-Reihe und die Folge
 $\Folge{\sqrt[n]{|a_n|}}$ konvergiere.   Dann gilt 
       \\[0.2cm]
@@ -2419,6 +2448,12 @@ $ \eox
       $\ds \exp(x) := \sum\limits_{n=0}^\infty \frac{x^n}{n!}$
       \\[0.2cm]
       definiert.  Zeigen Sie, dass $\exp(x) \cdot \exp(x) = \exp(2 \cdot x)$ gilt. \eox
+\item Zeigen Sie, dass für alle $x,y \in \mathbb{C}$ die Gleichung
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\exp(x) \cdot \exp(y) = \exp(x + y)$
+      \\[0.2cm]
+      gilt.
 \end{enumerate}
 
 \section{Berechnung der Fibonacci-Zahlen}
