@@ -3,7 +3,7 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: analysis.aux
 The style file: babunsrt.bst
 A level-1 auxiliary file: einleitung.aux
-A level-1 auxiliary file: dedekind-cut.aux
+A level-1 auxiliary file: reelle-zahlen.aux
 A level-1 auxiliary file: folgen-und-reihen.aux
 A level-1 auxiliary file: stetige-funktionen.aux
 A level-1 auxiliary file: anwendungen.aux
