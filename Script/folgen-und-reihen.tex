@@ -1517,6 +1517,19 @@ Die Folge $\folge{a_n}$ ist eine \emph{Null-Folge} wenn gilt:
 $ \lim\limits_{n\rightarrow\infty} a_n = 0. $ \eod
 \end{Definition}
 
+\exercise
+Die Folge $\folge{a_n}$ sei eine monoton fallende \emph{Null-Folge}.  Zeigen Sie, dass dann
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall n \in \mathbb{N}: 0 \leq a_n$
+\\[0.2cm]
+gilt.  
+
+\hint
+Führen Sie den Beweis indirekt.
+\eox
+
+
 
 \begin{Satz}[Leibniz-Kriterium, (\href{http://de.wikipedia.org/wiki/Leibniz}{Gottfried Wilhelm Leibniz}, 1646-1716)] \lb
 Wenn die Folge $\folge{a_n}$ eine monoton fallende Null-Folge ist, dann 
@@ -1525,7 +1538,8 @@ konvergiert die alternierende Reihe
 \hspace*{1.3cm}
 $\ds \left(\sum\limits_{i=1}^{n} (-1)^i \cdot  a_i\right)_{n\in\mathbb{N}.} $
 \end{Satz}
-  
+\pagebreak  
+
 \noindent
 \textbf{Beweis}:  Die  Partial-Summen $s_n$ sind durch
 \\[0.2cm]
@@ -1554,12 +1568,12 @@ $
 Die letzte Ungleichung ist aber nichts anderes als die Monotonie der Folge $\folge{a_n}$.
 
 Als n\"achstes zeigen wir durch vollst\"andige Induktion, dass die Folge der Partial-Summen
-mit geraden Indizes nach unten beschr\"ankt ist, genauer gilt
+nach unten beschr\"ankt ist, genauer gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$  s_{2\cdot n} \geq - a_1. $
+$s_{n} \geq - a_1$ \quad f\"ur alle $n \in \mathbb{N}$.
 \\[0.2cm]
-Um dies nachzuweisen, zeigen wir durch vollst\"andige Induktion, dass f\"ur alle
+Um diese Ungleichung nachzuweisen, zeigen wir zunächst durch vollst\"andige Induktion, dass f\"ur alle
 $n\in\mathbb{N}_0$ gilt:
       \\[0.2cm]
       \hspace*{1.3cm}      
@@ -1802,16 +1816,10 @@ Dann existiert auch der Grenzwert $\ds\sum\limits_{i=1}^\infty b_i$ nicht.
 \end{Satz}
 
 \noindent
-\textbf{Beweis}:  Wir f\"uhren den Beweis indirekt und nehmen an, dass 
-\\[0.2cm]
-\hspace*{1.3cm}
-$\ds\sum\limits_{i=1}^\infty b_i$
-\\[0.2cm]
+\textbf{Beweis}:  Wir f\"uhren den Beweis indirekt und nehmen an, dass der Grenzwert
+$\sum\limits_{i=1}^\infty b_i$
 existiert.  Nach dem Majoranten-Kriterium m\"usste dann auch der Grenzwert
-\\[0.2cm]
-\hspace*{1.3cm}
-$\ds\sum\limits_{i=1}^\infty a_i$
-\\[0.2cm]
+$\sum\limits_{i=1}^\infty a_i$
 existieren und dass steht im Widerspruch zur Voraussetzung. 
 \qed
 
@@ -1844,7 +1852,7 @@ $
 \end{array}
 $
 \\[0.2cm]
-Da die letzte Ungleichung offenbar f\"ur alle $n\in \mathbb{N}$ wahr ist, ist der Beweis abgeschlossen.
+Da die letzte Ungleichung offenbar f\"ur alle $i \in \mathbb{N}$ wahr ist, ist der Beweis abgeschlossen.
 \qed
 
 \begin{Satz}[Quotienten-Kriterium]
@@ -1854,7 +1862,7 @@ Es sei $\folge{a_n}$ eine Folge und $q\in\mathbb{R}$ eine Zahl, so dass gilt:
 \item $\forall n \in \mathbb{N}: 0 \leq a_n$
 \item $\forall n \in \mathbb{N}: a_{n+1} \leq q \cdot  a_n$
 \end{enumerate}
-Dann konvergiert die Reihe $\ds\Reihe{a_i}$.
+Dann konvergiert die Reihe $\Reihe{a_i}$.
 \end{Satz}
 
 \noindent 
@@ -1895,10 +1903,9 @@ Quotienten-Kriteriums zeigen:
 Ist $\folge{a_n}$ eine Folge, $q\in\mathbb{R}$ und $K \in \mathbb{R}$, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$0 \leq q < 1$ \quad und \quad $\ds\forall n \in \mathbb{N}: \Bigl(n \geq K \rightarrow \left|\frac{a_{n+1}}{a_n}\right| \leq q\Bigr)$
+$0 \leq q < 1$ \quad und \quad $\ds\forall n \in \mathbb{N}: \left(n \geq K \rightarrow \left|\frac{a_{n+1}}{a_n}\right| \leq q\right)$
 \\[0.2cm]
 gilt.  Dann konvergiert die Reihe $\Reihe{a_i}$.
-
 
 \example
 Wir zeigen mit Hilfe des Quotienten-Kriteriums, dass die Reihe
@@ -1910,7 +1917,7 @@ f\"ur alle $z \in \mathbb{C}$ konvergiert.  F\"ur $z=0$ ist die Konvergenz der
 Reihe trivial und sonst betrachten wir
 den Quotienten $a_{n+1}/a_n$ f\"ur diese Reihe, setzen $K = 2\cdot |z|$ und $\ds q = \frac{1}{2}$
 und zeigen, dass das Quotienten-Kriterium erf\"ullt ist, denn f\"ur alle $n\geq K$ gilt:
-\\[0.2cm]
+
 \hspace*{1.3cm}      
 $\ds\left|\frac{a_{n+1}}{a_n}\right| =  \frac{\;\frac{|z^{n+1}|}{\;(n+1)!\;}\;}{\frac{\;|z^{n}|\;}{n!}} 
                             =  \frac{\;|z^{n+1}| \cdot  n!\;}{\;|z^{n}| \cdot  (n+1)!\;} 
@@ -1919,9 +1926,16 @@ $\ds\left|\frac{a_{n+1}}{a_n}\right| =  \frac{\;\frac{|z^{n+1}|}{\;(n+1)!\;}\;}{
                             = \frac{\;|z|\;}{\;2\cdot |z|\;} 
                             =  \frac{\;1\;}{\;2\;} 
 $.
+\\[0.2cm]
+Also gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds|a_{n+1}| \leq \frac{\;1\;}{\;2\;} \cdot |a_n|$
+\\[0.2cm]
+und damit ist das Quotienten-Kriterium erf\"ullt. \eox
 
 \remark
-Wir werden sp\"ater zeigen, dass die in dem letzten Beispiel pr\"asentierte Reihe im Wesentlichen die
+Wir werden sp\"ater zeigen, dass die in dem letzten Beispiel pr\"asentierte Reihe die
 Exponentialfunktion berechnet, denn es gilt  
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1970,7 +1984,7 @@ $n! \geq 2^n$ gilt.  Damit haben wir f\"ur $n\geq 4$:
 $\ds \sqrt[n]{\frac{1}{n!}} \leq \frac{1}{2}     \quad \Leftrightarrow \quad
    \frac{1}{n!} \leq \left(\frac{1}{2}\right)^n  \quad \Leftrightarrow \quad
    n! \geq 2^n. 
-$
+$ \eox
 
 
 \exercise
@@ -1979,7 +1993,7 @@ Im Folgenden sei $\folge{a_n}$ eine monoton fallende Folge nicht-negativer Zahle
 \hspace*{1.3cm}
 $a_n \geq a_{n+1} \geq 0$ \quad f\"ur alle $n \in \mathbb{N}$.
 \begin{enumerate}[(a)]
-\item Nehmen Sie an, das die Reihe
+\item Nehmen Sie an, dass die Reihe
       \\[0.2cm]
       \hspace*{1.3cm}
       $\sum\limits_{n=0}^\infty 2^n \cdot a_{2^n}$ 
@@ -1998,7 +2012,7 @@ $a_n \geq a_{n+1} \geq 0$ \quad f\"ur alle $n \in \mathbb{N}$.
       \\[0.2cm]
       gilt.  Der Nachweis dieser Ungleichung funktioniert \"ahnlich wie der Nachweis der Divergenz der
       harmonischen Reihe.
-\item Nehmen Sie an, das die Reihe
+\item Nehmen Sie an, dass die Reihe
       \\[0.2cm]
       \hspace*{1.3cm}
       $\ds\sum\limits_{n=1}^\infty a_n$
@@ -2031,6 +2045,7 @@ $a_n \geq a_{n+1} \geq 0$ \quad f\"ur alle $n \in \mathbb{N}$.
       \hspace*{1.3cm}
       $\ds\sum\limits_{n=2}^{\infty} \frac{1}{n \cdot \bigl(\log_2(n)\bigr)^2}$. \eox
 \end{enumerate}
+\pagebreak
 
 \subsection{Absolute Konvergenz}
 \begin{Definition}[Absolute Konvergenz]
@@ -2039,7 +2054,7 @@ Eine Reihe
 \hspace*{1.3cm}
  $\ds\Reihe{a_i}$ 
 \\[0.2cm]
-hei\ss{}t \emph{absolut konvergent} genau dann, wenn die Reihe der Absolutbetr\"age
+hei\ss{}t \colorbox{orange}{\emph{absolut konvergent}} genau dann, wenn die Reihe der Absolutbetr\"age
 \\[0.2cm]
 \hspace*{1.3cm}
  $\ds\Reihe{|a_i|}$ 
@@ -2050,7 +2065,7 @@ konvergiert, aber die Reihe der Absolutbetr\"age
 $\Reihe{|a_i|}$ 
 divergent ist,  dann sagen wir, dass die Reihe
  $\Reihe{a_i}$ 
-\emph{bedingt konvergent} ist.  \eod
+\colorbox{orange}{\emph{bedingt konvergent}} ist.  \eod
 \end{Definition}
 
 \examples
@@ -2176,25 +2191,43 @@ Dann haben wir f\"ur alle $n \geq K$ die folgende Absch\"atzung:
       \hspace*{1.3cm}      
       $\ds\left|a_n\cdot v^n\right| = 
       \left|a_n\cdot u^n\right| \cdot  \left|\frac{v^n}{u^n}\right| =
-      \left|a_n\cdot u^n\right| \cdot  q^n \leq q^n$.
+      \left|a_n\cdot u^n\right| \cdot q^n \leq 1 \cdot q^n = q^n$.
       \\[0.2cm]
 Diese Absch\"atzung zeigt, dass die geometrische Reihe eine konvergente Majorante der Reihe
-$\sum_{n=1}^\infty a_n\cdot v^n$ ist.  Damit folgt die Konvergenz der Reihe $\sum_{n=0}^\infty a_n\cdot v^n$  aus dem
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\sum\limits_{n=1}^\infty a_n\cdot v^n$ 
+\\[0.2cm]
+ist.  Damit folgt die Konvergenz dieser Reihe aus dem
 Majoranten-Kriterium. \qed 
 
 \begin{Satz}
-Wenn die Potenz-Reihe $\sum_{n=0}^\infty a_n\cdot x^n$ f\"ur einen Wert $u \in \mathbb{C}$
+Wenn die Potenz-Reihe
+\\[0.2cm]
+\hspace*{1.3cm}
+ $\ds\sum\limits_{n=0}^\infty a_n\cdot x^n$ 
+\\[0.2cm]
+f\"ur einen Wert $u \in \mathbb{C}$
 divergiert, dann divergiert die Reihe auch f\"ur alle $v \in \mathbb{C}$, f\"ur die
 $|u| < |v|$ ist.
 \end{Satz}
 
 \noindent
-\textbf{Beweis}:  W\"urde die Reihe $\sum_{n=0}^\infty a_n\cdot v^n$ konvergieren,
+\textbf{Beweis}:  W\"urde die Reihe
+\\[0.2cm]
+\hspace*{1.3cm}
+ $\ds\sum\limits_{n=0}^\infty a_n\cdot v^n$ 
+\\[0.2cm]
+konvergieren,
 dann m\"usste nach Satz \ref{satz:konvergenz-radius} auch die Reihe 
-$\sum_{n=0}^\infty a_n\cdot u^n$ konvergieren. \qed
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\sum\limits_{n=0}^\infty a_n\cdot u^n$
+\\[0.2cm]
+konvergieren, was im Widerspruch zur Voraussetzung steht. \qed
 
 \noindent
-Die letzten beiden S\"atze erm\"oglichen es nun, den Begriff \emph{Konvergenz-Radius} zu
+Die letzten beiden S\"atze erm\"oglichen es nun, den Begriff des \colorbox{orange}{\emph{Konvergenz-Radius}} zu
 definieren.  Es sei 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -2206,9 +2239,9 @@ Konvergenz-Radius den Wert $\infty$ hat.  Andernfalls definieren wir den Konverg
 als
 \\[0.2cm]
 \hspace*{1.3cm}      
-$R := \sup \left\{ |u| \;\Big|\; u \in \mathbb{C} \wedge
+$R := \sup \biggl\{ |u| \;\biggm|\; u \in \mathbb{C} \;\wedge\;
                    \ds\sum\limits_{n=0}^\infty a_n\cdot u^n \;\mathrm{konvergiert} 
-         \right\}
+         \biggr\}
 $.
 \\[0.2cm]
 Aus den letzten beiden S\"atzen folgt dann:
@@ -2299,7 +2332,11 @@ $
 \end{array}
 $
 \\[0.2cm]
-Jetzt k\"onnen wir zeigen, dass die Reihe $\sum\limits_{n=0}^\infty a_n\cdot u^n$ das
+Jetzt k\"onnen wir zeigen, dass die Reihe
+\\[0.2cm]
+\hspace*{1.3cm}
+ $\ds\sum\limits_{n=0}^\infty a_n\cdot u^n$ \\[0.2cm]
+das
 Quotienten-Kriterium erf\"ullt, denn f\"ur alle $n \geq K$ gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -2309,11 +2346,18 @@ $\ds \left|\frac{a_{n+1}\cdot u^{n+1}}{a_n\cdot u^n}\right| =
    \frac{|u|}{\frac{1}{2}\cdot(R + |u|)} = q
 $
 \\[0.2cm]
-Um den Beweis abzuschlie\ss{}en m\"ussen wir noch zeigen, die Reihe $\sum_{n=0}^\infty a_n\cdot u^n$
+Um den Beweis abzuschlie\ss{}en m\"ussen wir noch zeigen, die Reihe
+\\[0.2cm]
+\hspace*{1.3cm}
+ $\ds\sum\limits_{n=0}^\infty a_n\cdot u^n$
+\\[0.2cm]
 divergiert wenn  $R < |u|$ ist.   Dies folgt aus der Tatsache, dass die Folge
 $\folge{a_n\cdot u^n}$ f\"ur $|u|>R$ keine Null-Folge ist.  Die Details bleiben dem Leser
 \"uberlassen. 
 \qed 
+
+\exercise
+Vervollständigen Sie den Beweis des letzten Satzes. \eox
 
 \remark
 Der obige Satz bleibt auch richtig, wenn
@@ -2321,7 +2365,7 @@ Der obige Satz bleibt auch richtig, wenn
       \hspace*{1.3cm}      
       $\ds\lim\limits_{n\rightarrow\infty} \left|\frac{a_n}{\;a_{n+1}\;}\right| = \infty$
       \\[0.2cm]
-ist, denn dann ist die Potenz-Reihe $\sum_{n=0}^\infty a_n\cdot u^n$ f\"ur alle $u\in\mathbb{C}$
+ist, denn dann ist die Potenz-Reihe $\ds\sum\limits_{n=0}^\infty a_n\cdot u^n$ f\"ur alle $u\in\mathbb{C}$
 konvergent.
 
 \remark
@@ -2337,7 +2381,7 @@ $  \eox
 
 
 
-\begin{Satz}[Hadamard]
+\begin{Satz}[\href{https://de.wikipedia.org/wiki/Jacques_Hadamard}{Jacques Hadamard(1865-1963)}]
 Es sei $\sum_{n=0}^\infty a_n\cdot x^n$ eine Potenz-Reihe und die Folge
 $\Folge{\sqrt[n]{|a_n|}}$ konvergiere.   Dann gilt 
       \\[0.2cm]
@@ -2385,7 +2429,7 @@ $ \eox
       $\ds (a + b)^n =\sum\limits_{k=0}^n {n \choose k} \cdot a^k \cdot b^{n-k}$
       \\[0.2cm]
       gilt.  Diese Gleichung wird als der 
-      \href{http://de.wikipedia.org/wiki/Binomischer_Lehrsatz}{\emph{binomischer Lehrsatz}}
+      \href{http://de.wikipedia.org/wiki/Binomischer_Lehrsatz}{\emph{binomische Lehrsatz}}
       bezeichnet.
 \item \"Uberlegen Sie sich, wie Sie f\"ur zwei Potenz-Reihen 
       \\[0.2cm]
@@ -2404,6 +2448,12 @@ $ \eox
       $\ds \exp(x) := \sum\limits_{n=0}^\infty \frac{x^n}{n!}$
       \\[0.2cm]
       definiert.  Zeigen Sie, dass $\exp(x) \cdot \exp(x) = \exp(2 \cdot x)$ gilt. \eox
+\item Zeigen Sie, dass für alle $x,y \in \mathbb{C}$ die Gleichung
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\exp(x) \cdot \exp(y) = \exp(x + y)$
+      \\[0.2cm]
+      gilt.
 \end{enumerate}
 
 \section{Berechnung der Fibonacci-Zahlen}
