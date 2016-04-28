@@ -2135,7 +2135,7 @@ bezeichnen wir den Ausdruck
 \hspace*{1.3cm}
 $\ds\sum\limits_{n=0}^\infty a_n \cdot  x^n$      
 \\[0.2cm]
-als \emph{formale Potenz-Reihe}.  Wichtig ist hier, dass $x$ keine feste Zahl ist, sondern
+als \colorbox{orange}{\emph{formale Potenz-Reihe}}.  Wichtig ist hier, dass $x$ keine feste Zahl ist, sondern
 eine Variable, f\"ur die wir sp\"ater reelle (oder auch komplexe) Zahlen einsetzen.  Wenn wir
 in einer Potenz-Reihe f\"ur $x$ eine feste Zahl einsetzen, wird aus der Potenz-Reihe eine
 gew\"ohnliche Reihe.  Der Begriff der Potenz-Reihen kann als eine Verallgemeinerung des
@@ -2471,7 +2471,8 @@ $a_0 := 0$, \quad $a_1 := 1$ \quad und \quad $a_{n+2} := a_{n+1} + a_n$ f\"ur al
 definiert.  Wir hatten bereits im ersten Semester eine explizite Formel f\"ur $a_n$ hergeleitet.  In
 diesem Abschnitt zeigen wir einen anderen Weg auf, mit dem dieselbe Formel hergeleitet werden kann.
 Dazu definieren wir zun\"achst die der Folge $\folge{a_n}$ zugeordnete 
-\href{http://de.wikipedia.org/wiki/Erzeugende_Funktion}{\emph{erzeugende Funktion}} $f(x)$ als die Potenz-Reihe
+\href{http://de.wikipedia.org/wiki/Erzeugende_Funktion}{\emph{erzeugende Funktion}} $f(x)$ als die
+formale Potenz-Reihe
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds f(x) := \sum\limits_{n=0}^\infty a_n \cdot x^n = 0 \cdot x^0 + 1 \cdot x + 1 \cdot x^2 + 2 \cdot x^3 + 3 \cdot x^4 + 5 \cdot x^5 + \cdots$.
@@ -2499,7 +2500,18 @@ An dieser Stelle k\"onnen Sie sehen, warum wir $f(x)$ mit $x + x^2$ multiplizier
 nun ber\"ucksichtigen, dass $a_{n-1} + a_{n-2} = a_n$ gilt, so k\"onnen wir die obige Gleichungen zu
 \\[0.2cm]
 \hspace*{1.3cm}
-$(x + x^2) \cdot f(x) = \sum\limits_{n=0}^\infty a_{n} \cdot x^n - a_1 \cdot x$ 
+$(x + x^2) \cdot f(x) = a_0 \cdot x_1 + \sum\limits_{n=2}^\infty a_{n} \cdot x^n$ 
+\\[0.2cm]
+vereinfachen.  Wegen $a_0 = 0$ f\"allt der erste Term weg.  Lassen wir die Summe bei $n=0$ starten,
+so erhalten wir 
+\\[0.2cm]
+\hspace*{1.3cm}
+$(x + x^2) \cdot f(x) = \sum\limits_{n=0}^\infty a_{n} \cdot x^n - a_0 \cdot x^0 - a_1 \cdot x^1$.
+\\[0.2cm]
+Ber\"ucksichtigen wir abermals, dass $a_0 = 0$ ist, so k\"onnen wir dies zu
+\\[0.2cm]
+\hspace*{1.3cm}
+$(x + x^2) \cdot f(x) = \sum\limits_{n=0}^\infty a_{n} \cdot x^n - a_1 \cdot x$
 \\[0.2cm]
 vereinfachen.  Die Summe, die hier auftritt, ist aber gerade die erzeugende Funktion $f(x)$.
 Da $a_1 = 1$ ist, haben wir die Gleichung
@@ -2512,7 +2524,7 @@ gefunden, die wir zu
 \hspace*{1.3cm}
 $x = (1 - x - x^2) \cdot f(x)$ 
 \\[0.2cm]
-umschreiben.  Teilen wir hier noch durch $(1-x-x^2)$, so haben wir f\"ur die erzeugende Funktion
+umstellen k\"onnen.  Teilen wir hier noch durch $(1-x-x^2)$, so haben wir f\"ur die erzeugende Funktion
 $f(x)$ die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -2530,8 +2542,14 @@ $\ds \frac{x}{1 - x - x^2} = \frac{1}{\sqrt{5}} \cdot \left(\frac{1}{1 - x \cdot
 mit $\varphi = \frac{1}{2} \cdot (1 + \sqrt{5})$ \quad und \quad  $\overline{\varphi} = 1
 -\varphi = \frac{1}{2} \cdot (1 - \sqrt{5})$
 \\[0.2cm]
-darstellen.  Ersetzen wir die Br\"uche auf der rechten Seite dieser Gleichung durch geometrische
-Reihen, so erhalten wir die Gleichung
+darstellen.  Erinnern wir uns hier an die geometrische Reihe
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\sum\limits_{n=0}^\infty q^n = \frac{1}{1 - q}$ \quad falls $|q| < 1$,
+\\[0.2cm]
+und setzen $q = x \cdot \varphi$ bzw.~$q = x \cdot \overline{\varphi}$, so k\"onnen wir 
+die Br\"uche auf der rechten Seite dieser Gleichung durch geometrische
+Reihen ersetzen und erhalten
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds f(x) = \frac{1}{\sqrt{5}} \cdot \left(\sum\limits_{n=0}^\infty (x \cdot \varphi)^n - \sum\limits_{n=0}^\infty (x \cdot \overline{\varphi})^n \right)$.
