@@ -1,17 +1,18 @@
 \chapter{Stetige  Funktionen}
 \section{Motivation und Definition der Stetigkeit}
-Wir wollen in diesem Abschnitt pr\"azisieren, wann eine Funktion so \emph{glatt} ist, dass
-wir sie zeichnen k\"onnen, ohne dabei den Stift absetzen zu m\"ussen.  F\"ur eine glatte Funktion soll au{\ss}erdem der
-\emph{Zwischenwert-Satz} gelten.  Der Zwischenwert-Satz besagt, dass f\"ur eine glatte Funktion
+Wir wollen in diesem Abschnitt pr\"azisieren, wann eine Funktion so beschaffen ist, dass
+wir sie zeichnen k\"onnen, ohne dabei den Stift absetzen zu m\"ussen.  F\"ur eine solche Funktion soll au{\ss}erdem der
+\emph{Zwischenwert-Satz} gelten.  Der Zwischenwert-Satz besagt, dass f\"ur eine Funktion
 \\[0.2cm]
 \hspace*{1.3cm}
 $f: \mathbb{R} \rightarrow \mathbb{R}$,
 \\[0.2cm]
-f\"ur die es $a,b \in \mathbb{R}$ gibt mit $f(a) < 0$ und $f(b) > 0$, auch ein $c \in \mathbb{R}$
-existiert, so dass $f(c) = 0$ ist.  Anschaulich ist dieser Satz klar:  Ist beispielsweise $a < b$ und
-zeichne ich die Funktion $f$ in dem Intervall $[a, b]$, so muss der Graph der Funktion an irgendeiner
+die wir ohne abzusetzen zeichnen k\"onnen, Folgendes gilt:
+Falls es $a,b \in \mathbb{R}$ gibt mit $f(a) < 0$ und $f(b) > 0$, dann existiert auch ein $c \in\mathbb{R}$, 
+so dass $f(c) = 0$ ist.  Anschaulich ist dieser Satz klar:  Ist beispielsweise $a < b$
+und zeichne ich die Funktion $f$ in dem Intervall $[a, b]$, so muss der Graph der Funktion an irgendeiner
 Stelle des Intervalls $[a,b]$ die $x$-Achse schneiden.  Voraussetzung daf\"ur, dass dies tats\"achlich so
-ist, ist aber die Forderung, dass die Funktion $f$ in einem gewissen Sinne \emph{glatt} ist, denn wenn wir
+ist, ist aber die Forderung, dass die Funktion $f$ keine Spr\"unge macht, denn wenn wir
 beispielsweise die Funktion 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -29,22 +30,20 @@ $g(x) := \left\{
 $
 \\[0.2cm]
 definiert ist, so haben wir zwar  $g(-1) = -1$ und $g(1) = 1$, aber es gibt kein $x \in [-1,1]$, 
-f\"ur das $g(x) = 0$ w\"are.   Das liegt daran, dass die Funktion eben nicht \emph{glatt} ist, denn die
-Funktion hat an der Stelle $x = 0$ einen Sprung.  Unser Ziel in diesem Abschnitt ist es, zun\"achst exakt zu
-definieren, was wir unter einer glatten Funktion verstehen wollen.  In der Mathematik wird an Stelle des
-Attributs \emph{glatt} der Begriff der \emph{Stetigkeit} verwendet.\footnote{
-Gelegentlich wird eine Funktion  als \emph{glatt} bezeichnet, wenn die Funktion unendlich oft
-differenzierbar ist.  Das ist eine wesentlich sch\"arfere Forderung als der Begriff der Stetigkeit.
-In diesem Skript verwende ich den Begriff \emph{glatt} aber synonym mit dem Begriff \emph{stetig}.}
-Um diesen Begriff einf\"uhren zu k\"onnen,
-bedarf es einer Reihe von zus\"atzlichen Definitionen, die nun folgen.
+f\"ur das $g(x) = 0$ w\"are.   Das liegt daran, dass die Funktion an der Stelle $x = 0$ einen Sprung
+hat.  Unser Ziel in diesem Abschnitt ist es, zun\"achst exakt zu
+definieren, was wir unter einer Funktion verstehen wollen, die keine Spr\"unge hat.  
+In der Mathematik bezeichnen wir eine solche Funktion als  \colorbox{orange}{\emph{stetig}}.
+Um den Begriff der \href{https://de.wikipedia.org/wiki/Stetigkeit}{Stetigkeit}
+ einf\"uhren zu k\"onnen, bedarf es einer Reihe von zus\"atzlichen Definitionen, die nun folgen.
 
-
+\begin{Definition}
 Es sei $\folge{x_n}$ eine Folge und $D\subseteq \mathbb{R}$.  Wir sagen, dass 
 \emph{die Folge $\folge{x_n}$ in $D$ liegt}, wenn f\"ur alle $n \in \mathbb{N}$ das Folgenglied $x_n
-\in D$ ist.
+\in D$ ist.   
+\end{Definition}
 
-\begin{Definition}[Grenzwert]
+\begin{Definition}[Grenzwert einer Funktion]
   Es sei $D\subseteq \mathbb{R}$ und $f:D \rightarrow \mathbb{R}$.
   Weiter sei $\widehat{x} \in \mathbb{R}$ und  $\lambda\in \mathbb{R}$.  Au{\ss}erdem gebe es
   mindestens eine Folge $\folge{x_n}$, die gegen $\widehat{x}$ konvergiert.
@@ -84,8 +83,8 @@ existiert der Grenzwert.
 
 \noindent
 Aus den beiden letzten Definitionen folgt, dass
-eine stetige Funktion mit dem Prozess der Grenzwert-Bildung vertauschbar ist.  
-F\"ur eine konvergente Folge $\folge{x_n}$ und eine stetige Funktion $f$ gilt 
+f\"ur eine stetige Funktion der Prozess der Grenzwert-Bildung mit der Anwendung der Funktion
+vertauschbar ist.  F\"ur eine konvergente Folge $\folge{x_n}$ und eine stetige Funktion $f$ gilt 
       \\[0.2cm]
       \hspace*{1.3cm}      
       $f\Bigl(\lim\limits_{n\rightarrow\infty} x_n\Bigr) = \lim\limits_{n\rightarrow\infty} f(x_n)$.
@@ -194,7 +193,7 @@ $\lim\limits_{n\rightarrow\infty} x_n = \infty$
 wenn gilt:
 \\[0.2cm]
 \hspace*{1.3cm}      
-$\forall c \in \mathbb{R}: \exists K \in \mathbb{N}: \forall n \in \mathbb{N}: \bigl(n > K \rightarrow x_n > c\bigr)$.
+$\forall c \in \mathbb{R}: \exists K \in \mathbb{N}: \forall n \in \mathbb{N}: \bigl(n \geq K \rightarrow x_n > c\bigr)$.
 \eod
 \end{Definition}
 
@@ -234,7 +233,7 @@ $\lim\limits_{n\rightarrow\infty} x_n = \infty$
 gilt.   Nach Definition der uneigentlichen Konvergenz gegen $\infty$ gilt dann
 \begin{equation}
   \label{eq:stetig0}  
-  \forall c \in \mathbb{R}: \exists K \in \mathbb{N}:\bigl(\forall n \in \mathbb{N}: n > K \rightarrow x_n > c\bigr)
+  \forall c \in \mathbb{R}: \exists K \in \mathbb{N}:\bigl(\forall n \in \mathbb{N}: n \geq K \rightarrow x_n > c\bigr)
 \end{equation}
 Wir m\"ussen zeigen, dass gilt:
 \\[0.2cm]
@@ -245,18 +244,18 @@ Dies ist nach der Definition des Grenzwerts einer Folge \"aquivalent zu der Form
 \begin{equation}
   \label{eq:stetig1}
   \forall \varepsilon \in\mathbb{R}_+: \exists K \in \mathbb{R} : \forall n \in \mathbb{N}
-  :\bigl(n > K \rightarrow \left|\frac{1}{x_n}\right| < \varepsilon\bigr)
+  :\Bigl(n \geq K \rightarrow \left|\frac{1}{x_n}\right| < \varepsilon\Bigr)
 \end{equation}
 Um diese Formel nachzuweisen, nehmen wir an, dass eine Zahl $\varepsilon>0$
 gegeben ist.  Wir m\"ussen dann ein $K$ finden, so dass f\"ur alle nat\"urlichen Zahlen $n$, die
-gr\"o{\ss}er als $K$ sind, die Ungleichung 
+gr\"o{\ss}er-gleich $K$ sind, die Ungleichung 
 \\[0.2cm]
 \hspace*{1.3cm} $\left|\bruch{1}{x_n}\right| < \varepsilon$
 \\[0.2cm]
 gilt.  Dies gelingt uns mit Hilfe der Formel (\ref{eq:stetig0}), denn wenn wir in dieser Formel
 $\ds c := \frac{1}{\varepsilon}$ definieren, dann finden wir eine Zahl $K$, so dass f\"ur alle
 nat\"urlichen Zahlen $n$, die
-gr\"o{\ss}er als $K$ sind, die Ungleichung  
+gr\"o{\ss}er-gleich $K$ sind, die Ungleichung  
 \\[0.2cm] \hspace*{1.3cm} $\displaystyle x_n > c$, \quad also $\displaystyle x_n > \frac{1}{\varepsilon}$ \\[0.2cm]
 gilt.  Invertieren wir nun diese Ungleichung, so folgt
 \\[0.2cm]
@@ -269,7 +268,7 @@ und damit $\bruch{1}{x_n} > 0$ folgt, haben wir insgesamt
 \hspace*{1.3cm}
 $\left|\bruch{1}{x_n}\right| < \varepsilon$
 \\[0.2cm]
-f\"ur alle $n > K$ gezeigt. \hspace*{\fill} $\Box$
+f\"ur alle $n \geq K$ gezeigt. \hspace*{\fill} $\Box$
 \vspace*{0.3cm}
 
 \noindent
@@ -294,12 +293,15 @@ und Funktionen, die nach dieser Definition stetig sind, hei{\ss}en $\varepsilon$
 \item Zeigen Sie, dass jede Funktion, die $\varepsilon$-$\delta$-stetig ist,
       auch stetig ist.
 \item Zeigen Sie, dass jede stetige Funktion auch $\varepsilon$-$\delta$-stetig ist.
+
+      \hint 
+      F\"uhren Sie den Beweis indirekt.
       \eox
 \end{enumerate}
 
 
 \begin{Definition}[Allgemeine Stetigkeit] \lb
-Eine Funktion $f:D \rightarrow \mathbb{R}$ hei{\ss}t \emph{stetig} genau dann, wenn
+Eine Funktion $f:D \rightarrow \mathbb{R}$ hei{\ss}t \colorbox{orange}{\emph{stetig}} genau dann, wenn
 die Funktion $f$ f\"ur alle $\widehat{x} \in D$ stetig ist.
 \eod
 \end{Definition}
