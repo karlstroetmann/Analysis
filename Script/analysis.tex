@@ -1,6 +1,6 @@
 \documentclass{report}
 \usepackage{german}
-\usepackage[latin1]{inputenc}
+%\usepackage[latin1]{inputenc}
 \usepackage{a4wide}
 \usepackage{epsfig}
 \usepackage{amssymb}
@@ -84,10 +84,17 @@
 
 \newcommand{\edx}{\hspace*{\fill} $\diamond$}
 
+% set the monospace-font to Inconsalata-g
+% font-source: http://leonardo-m.livejournal.com/77079.html
+\renewcommand{\encodingdefault}{T1}
+\renewcommand{\ttdefault}{inconsolatag}
+
 \title{\epsfig{file=dhbw-logo.eps, scale=1.5}\\[0.3cm]  
        Analysis\\[0.3cm]
       --- Sommersemester 2016 ---}
 \author{Prof.~Dr.~Karl Stroetmann}
+
+
 \date{\today \\[2.5cm]
 \begin{minipage}[t]{1.0\linewidth}
 \noindent
