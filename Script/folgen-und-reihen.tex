@@ -1711,9 +1711,9 @@ Setzen wir hier $l=1$ so haben wir insbesondere
 $\ds\forall \varepsilon \in \mathbb{R}_+:\exists K \in \mathbb{R}:\forall n \in \mathbb{N}: \Bigl(n \geq K \rightarrow \left|\sum\limits_{i=n+1}^{n+1} a_i \right| < \varepsilon\Bigr)$. 
 \\[0.2cm]
 Wegen \\[0.2cm]
-      \hspace*{1.3cm}      
-      $\ds\left|\sum\limits_{i=n+1}^{n+1} a_i \right| = |a_{n+1}|$
-      \\[0.2cm]
+\hspace*{1.3cm}      
+$\ds\left|\sum\limits_{i=n+1}^{n+1} a_i \right| = |a_{n+1}|$
+\\[0.2cm]
 folgt also 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -2260,7 +2260,7 @@ Es sei
 \hspace*{1.3cm}
 $\ds\sum\limits_{n=0}^\infty a_n\cdot z^n$ 
 \\[0.2cm]
-eine formale Potenz-Reihe und die Folge
+eine formale Potenz-Reihe, f\"ur alle $n \in  \mathbb{N}$ gelte $a_n \not= 0$ und die Folge
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds\Folge{\frac{|a_n|}{|a_{n+1}|}}$
@@ -2318,7 +2318,7 @@ $\ds\left| \Bigl|\frac{a_{n}}{a_{n+1}}\Bigr| - R \right| < \varepsilon$
 gilt.  Wir setzen $\varepsilon := \frac{1}{2}\cdot(R - |u|)$. Wir zeigen, dass dann f\"ur alle 
 $n \geq K$ die Ungleichung
 \\
- $\ds \left|\frac{a_{n}}{a_{n+1}}\right| > \frac{1}{2}(R + |u|)$ gilt:
+ $\ds \left|\frac{a_{n}}{a_{n+1}}\right| > \frac{1}{2} \cdot (R + |u|)$ gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
 $
@@ -2351,16 +2351,122 @@ Um den Beweis abzuschlie{\ss}en m\"ussen wir noch zeigen, die Reihe
 \hspace*{1.3cm}
  $\ds\sum\limits_{n=0}^\infty a_n\cdot u^n$
 \\[0.2cm]
-divergiert wenn  $R < |u|$ ist.   Dies folgt aus der Tatsache, dass die Folge
-$\folge{a_n\cdot u^n}$ f\"ur $|u|>R$ keine Null-Folge ist.  Die Details bleiben dem Leser
-\"uberlassen. 
+divergiert wenn  $R < |u|$ ist.  Die Details sind Gegenstand der folgenden Aufgabe.  
 \qed 
 
 \exercise
-Vervollst\"andigen Sie den Beweis des letzten Satzes. \eox
+Es sei 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\sum\limits_{n=0}^\infty a_n\cdot z^n$ 
+\\[0.2cm]
+eine formale Potenz-Reihe.  F\"ur alle $n \in  \mathbb{N}$ sei $a_n \not= 0$ und es gelte
+\\[0.2cm]
+\hspace*{1.3cm}      
+$\ds R = \lim\limits_{n\rightarrow\infty} \left|\frac{a_n}{\;a_{n+1}\;}\right|$.  
+\\[0.2cm]
+Zeigen Sie:  Ist $u \in \mathbb{C}$ mit $R < |u|$, so divergiert die Reihe
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds \left(\sum\limits_{k=0}^n a_k \cdot u^k\right)_{n\in \mathbb{N}}$.
+
+
+\proof
+Wir f\"uhren den Beweis indirekt und nehmen an, dass die obige Reihe konvergiert.  
+Nach dem Korollar zum Cauchy'schen Konvergenz-Kriterium gilt dann
+\\[0.2cm]
+\hspace*{1.3cm}
+$\lim\limits_{n\rightarrow\infty} a_n \cdot u^n = 0$.  \hspace*{\fill} $(*)$
+\\[0.2cm]
+Aus der Voraussetzung
+\\[0.2cm]
+\hspace*{1.3cm}      
+$\ds R = \lim\limits_{n\rightarrow\infty} \left|\frac{a_n}{\;a_{n+1}\;}\right|$.  
+\\[0.2cm]
+und der Definition des Grenzwertes folgt:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\forall \varepsilon \in \mathbb{R}_+:\exists K \in \mathbb{R}:\forall n \in \mathbb{N}: 
+ \left(n \geq K \rightarrow \left|\Bigl|\frac{a_n}{\;a_{n+1}\;}\Bigr| - R\right| < \varepsilon\right)
+$
+\\[0.2cm]
+Wir definieren
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds \varepsilon := \frac{1}{2} \cdot (|u| - R)$.
+\\[0.2cm]
+Wegen $R < |u|$ gilt $\varepsilon > 0$.  Also finden wir ein $K$ so dass f\"ur alle nat\"urlichen
+Zahlen $n$, die gr\"o{\ss}er-gleich $K$ sind, die Ungleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\left|\Bigl|\frac{a_n}{\;a_{n+1}\;}\Bigr| - R\right| < \frac{1}{2} \cdot (|u| - R)$
+\\[0.2cm]
+gilt.  Wir zeigen, dass dann f\"ur alle 
+$n \geq K$ die Ungleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds \left|\frac{a_{n}}{a_{n+1}}\right| < \frac{1}{2} \cdot (R + |u|)$ 
+\\[0.2cm]
+gilt.  Zun\"achst haben wir:
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}{cl}
+ &\ds \left|R + \frac{a_{n}}{a_{n+1}} - R\right| = \Bigl|\frac{a_{n}}{a_{n+1}}\Bigr|  \\[0.5cm]
+\Rightarrow & \ds |R| + \Bigl|\frac{a_{n}}{a_{n+1}} - R\Bigr| \geq \Bigl|\frac{a_{n}}{a_{n+1}}\Bigr| \\[0.5cm]
+\Rightarrow & \ds |R| + \frac{1}{2} \cdot \bigl(|u| - R\bigr) > \Bigl|\frac{a_{n}}{a_{n+1}}\Bigr| \\[0.5cm]
+\Rightarrow & \ds \frac{1}{2} \cdot \bigl(R + |u|\bigr) > \Bigl|\frac{a_{n}}{a_{n+1}}\Bigr| 
+\end{array}
+$
+\\[0.2cm]
+Aus dieser Ungleichung folgern wir 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds |a_{n+1}| \cdot |u| > |a_n| \cdot \frac{|u|}{\frac{1}{2} \cdot (R+|u|)}$.  \hspace*{\fill} $(1)$
+\\[0.2cm]
+Ersetzen wir in dieser Ungleichung $n$ durch $n+1$ und multiplizieren mit $|u|$, so erhalten wir 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds |a_{n+2}| \cdot |u|^2 > |a_{n+1}| \cdot |u| \cdot \frac{|u|}{\frac{1}{2} \cdot (R+|u|)}$. \hspace*{\fill} $(2)$
+\\[0.2cm]
+Sch\"atzen wir in der Ungleichung $(2)$ den Wert $|a_{n+1}| \cdot |u|$ durch die Ungleichung $(1)$
+ab, so erhalten wir die Ungleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds |a_{n+2}| \cdot |u|^2 > |a_{n}| \cdot \left(\frac{|u|}{\frac{1}{2} \cdot (R+|u|)}\right)^2$. \hspace*{\fill} $(3)$
+\\[0.2cm]
+Diese Ungleichung k\"onnen wir zu der Ungleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds |a_{n+h}| \cdot |u|^h > |a_{n}| \cdot \left(\frac{|u|}{\frac{1}{2} \cdot (R+|u|)}\right)^h$. \hspace*{\fill} $(5)$
+\\[0.2cm]
+verallgemeinern.  Formal k\"onnten wir die Ungleichung $(5)$ durch eine triviale Induktion nach $h$
+beweisen.  W\"ahlen wir nun ein festes $n_0$, dass gr\"o{\ss}er als $K$ ist, so gilt f\"ur beliebige
+$h \in \mathbb{N}$ die Ungleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds |a_{n_0+h}| \cdot |u|^{n_0+h} > |a_{n_o}| \cdot |u|^{n_0} \cdot \left(\frac{|u|}{\frac{1}{2} \cdot (R+|u|)}\right)^h$. \hspace*{\fill} $(6)$
+\\[0.2cm]
+Da $|u| > R$ ist, folgt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\frac{|u|}{\frac{1}{2} \cdot (R+|u|)} > 1$.
+\\[0.2cm]
+Damit wird die rechte Seite der Ungleichung $(6)$ beliebig gro{\ss} und folglich ist
+\\[0.2cm]
+\hspace*{1.3cm}
+$\left(|a_{n_0+h}| \cdot |u|^{n_0+h}\right)_{h\in\mathbb{N}}$
+\\[0.2cm] 
+keine Null-Folge.  Dies steht im Widerspruch zu $(*)$.  Dieser Widerspruch zeigt, dass der Grenzwert
+\\[0.2cm]
+\hspace*{1.3cm}
+$\sum\limits_{n=0}^\infty a_n \cdot u^n$
+\\[0.2cm]
+nicht existieren kann.
+\qed
 
 \remark
-Der obige Satz bleibt auch richtig, wenn
+Der letzte Satz bleibt auch richtig, wenn
       \\[0.2cm]
       \hspace*{1.3cm}      
       $\ds\lim\limits_{n\rightarrow\infty} \left|\frac{a_n}{\;a_{n+1}\;}\right| = \infty$
@@ -2412,6 +2518,7 @@ es gilt
 $\ds \lim\limits_{n\rightarrow\infty} \sqrt[n]{\frac{1}{n^n}} =  
    \lim\limits_{n\rightarrow\infty} \frac{1}{n} = 0.
 $ \eox
+\pagebreak
 
 \exercise
 \begin{enumerate}[(a)]
@@ -2536,19 +2643,36 @@ der rechten Seite zu finden.  Indem Sie die Nullstellen des Polynoms $1 - x - x^
 sie den obigen Bruch nach einer kurzen Rechnung in der Form
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds \frac{x}{1 - x - x^2} = \frac{1}{\sqrt{5}} \cdot \left(\frac{1}{1 - x \cdot \varphi} - \frac{1}{1 - x \cdot \overline{\varphi}}\right)$
+$\ds \frac{x}{1 - x - x^2} = \frac{1}{\sqrt{5}} \cdot \left(\frac{1}{1 - x \cdot \varphi} -
+  \frac{1}{1 - x \cdot \overline{\varphi}}\right)$  \hspace*{\fill} $(*)$
 \\[0.2cm]
 \hspace*{1.3cm}
-mit $\varphi = \frac{1}{2} \cdot (1 + \sqrt{5})$ \quad und \quad  $\overline{\varphi} = 1
--\varphi = \frac{1}{2} \cdot (1 - \sqrt{5})$
+mit $\varphi = \frac{1}{2} \cdot (1 + \sqrt{5})$ \quad und \quad 
+$\overline{\varphi} = 1 - \varphi = \frac{1}{2} \cdot (1 - \sqrt{5})$
 \\[0.2cm]
-darstellen.  Erinnern wir uns hier an die geometrische Reihe
+darstellen.  Hier sind $\varphi$ und $\overline{\varphi}$ gerade die Inversen der Nullstellen $x_1$
+und $x_2$ des Polynoms
+\\[0.2cm]
+\hspace*{1.3cm}
+$p(x) = x^2 + x - 1$.
+\\[0.2cm]
+Es gilt 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds x^2 + x - 1 = (x_1 - x) \cdot (x_2 - x) = x_1 \cdot x_2 \cdot \Bigl(1 - \frac{x}{x_1}\Bigr) \cdot \Bigl(1 - \frac{x}{x_2}\Bigr)$ 
+\\[0.2cm]
+und damit besteht zwischen $x_1$, $x_2$ und $\varphi$, $\overline{\varphi}$ die Beziehung 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds \varphi = \frac{1}{x_1}$ \quad und \quad $\ds \overline{\varphi} = \frac{1}{x_2}$.
+\\[0.2cm]
+Erinnern wir uns hier an die geometrische Reihe
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds\sum\limits_{n=0}^\infty q^n = \frac{1}{1 - q}$ \quad falls $|q| < 1$,
 \\[0.2cm]
 und setzen $q = x \cdot \varphi$ bzw.~$q = x \cdot \overline{\varphi}$, so k\"onnen wir 
-die Br\"uche auf der rechten Seite dieser Gleichung durch geometrische
+die Br\"uche auf der rechten Seite der Gleichung $(*)$ durch geometrische
 Reihen ersetzen und erhalten
 \\[0.2cm]
 \hspace*{1.3cm}
