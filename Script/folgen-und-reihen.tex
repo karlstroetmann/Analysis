@@ -2639,32 +2639,99 @@ $\ds f(x) = \frac{x}{1 - x - x^2}$
 \\[0.2cm]
 gefunden.  Der Trick besteht nun darin, eine 
 \href{http://de.wikipedia.org/wiki/Partialbruchzerlegung}{\emph{Partialbruch-Zerlegung}} 
-der rechten Seite zu finden.  Indem Sie die Nullstellen des Polynoms $1 - x - x^2$ bestimmen, k\"onnen
-sie den obigen Bruch nach einer kurzen Rechnung in der Form
+der rechten Seite zu finden.  Dazu bestimmen wir zun\"achst die Nullstellen des Polynoms $x^2 + x - 1$:
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds \frac{x}{1 - x - x^2} = \frac{1}{\sqrt{5}} \cdot \left(\frac{1}{1 - x \cdot \varphi} -
-  \frac{1}{1 - x \cdot \overline{\varphi}}\right)$  \hspace*{\fill} $(*)$
+$
+\begin{array}[t]{clcl}
+                & \ds x^2 + x - 1                          & = & 0                    \\[0.2cm]
+\Leftrightarrow & \ds x^2 + x                              & = & 1                    \\[0.2cm]
+\Leftrightarrow & \ds x^2 + x + \left(\frac{1}{2}\right)^2 & = & \ds 1 + \frac{1}{4}  \\[0.4cm]
+\Leftrightarrow & \ds \left(x + \frac{1}{2}\right)^2       & = & \ds \frac{5}{4}      \\[0.4cm]
+\Leftrightarrow & \ds x = \frac{1}{2} \cdot (\sqrt{5} - 1) & \vee & \ds x = - \frac{1}{2} \cdot (\sqrt{5} + 1) 
+\end{array}
+$
+\\[0.2cm]
+Wir definieren daher 
 \\[0.2cm]
 \hspace*{1.3cm}
-mit $\varphi = \frac{1}{2} \cdot (1 + \sqrt{5})$ \quad und \quad 
-$\overline{\varphi} = 1 - \varphi = \frac{1}{2} \cdot (1 - \sqrt{5})$
+$\ds x_1 := \frac{1}{2} \cdot (\sqrt{5} - 1)$ \quad und \quad
+$\ds x_2 := - \frac{1}{2} \cdot (\sqrt{5} + 1)$
 \\[0.2cm]
-darstellen.  Hier sind $\varphi$ und $\overline{\varphi}$ gerade die Inversen der Nullstellen $x_1$
-und $x_2$ des Polynoms
-\\[0.2cm]
-\hspace*{1.3cm}
-$p(x) = x^2 + x - 1$.
-\\[0.2cm]
-Es gilt 
+und haben dann
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds x^2 + x - 1 = (x_1 - x) \cdot (x_2 - x) = x_1 \cdot x_2 \cdot \Bigl(1 - \frac{x}{x_1}\Bigr) \cdot \Bigl(1 - \frac{x}{x_2}\Bigr)$ 
+$x^2 + x - 1 = (x - x_1) \cdot (x - x_2) = (x_1 - x) \cdot (x_2 - x)$.
 \\[0.2cm]
-und damit besteht zwischen $x_1$, $x_2$ und $\varphi$, $\overline{\varphi}$ die Beziehung 
+Offenbar gilt $x_1 \cdot x_2 = -1$.
+Wir klammern in der Gleichung f\"ur $x^2 + x - 1$ den Term $x_1 \cdot x_2$ aus und erhalten
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds \varphi = \frac{1}{x_1}$ \quad und \quad $\ds \overline{\varphi} = \frac{1}{x_2}$.
+$\ds x^2 + x - 1 = x_1 \cdot x_2 \cdot \left(1 - \frac{x}{x_1}\right) \cdot \left(1 - \frac{x}{x_2}\right) = - \left(1 - \frac{x}{x_1}\right) \cdot \left(1 - \frac{x}{x_2}\right)$.
+\\[0.2cm]
+Weiter definieren wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds \varphi := \frac{1}{x_1} = \frac{2}{\sqrt{5} - 1} = 
+\frac{2}{\sqrt{5} - 1} \cdot \frac{\sqrt{5} + 1}{\sqrt{5} + 1} = 
+\frac{2}{5 - 1} \cdot (\sqrt{5} + 1) = \frac{1}{2} \cdot (1 + \sqrt{5})
+$
+\\[0.2cm]
+und genauso
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds \overline{\varphi} := \frac{1}{x_2} = -\frac{2}{\sqrt{5} + 1} = 
+-\frac{2}{\sqrt{5} + 1} \cdot \frac{\sqrt{5} - 1}{\sqrt{5} - 1} = 
+-\frac{2}{5 - 1} \cdot (\sqrt{5} - 1) = \frac{1}{2} \cdot (1 - \sqrt{5})
+$.
+\\[0.2cm]
+Damit k\"onnen wir die erzeugende Funktion $f(x)$ in der Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds \frac{x}{1 - x - x^2} = \frac{x}{(1 - \varphi \cdot x) \cdot (1 - \overline{\varphi} \cdot x)}$
+\\[0.2cm]
+schreiben.  Wir machen den Ansatz
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\frac{x}{(1 - \varphi \cdot x) \cdot (1 - \overline{\varphi} \cdot x)} = 
+ \frac{\alpha}{1 - \varphi \cdot x} + \frac{\beta}{1 - \overline{\varphi} \cdot x}.
+$
+\\[0.2cm]
+Um $\alpha$ und $\beta$ bestimmen zu k\"onnen, multiplizieren wir mit dem Hauptnenner und erhalten die Gleichung 
+\\[0.2cm]
+\hspace*{1.3cm}
+$x = \alpha \cdot (1 - \overline{\varphi} \cdot x) + \beta \cdot (1 - \varphi \cdot x)$.
+\\[0.2cm]
+Ausmultiplizieren und Umstellen der Terme liefert
+\\[0.2cm]
+\hspace*{1.3cm}
+$1 \cdot x^1 + 0 \cdot x^0 = (\alpha + \beta) \cdot x^0 - (\alpha \cdot \overline{\varphi} + \beta \cdot \varphi) \cdot x^1$.
+\\[0.2cm]
+Da diese Gleichung f\"ur alle $x$ gelten muss, erhalten wir durch einen Koeffizientenvergleich die
+beiden Gleichungen 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\alpha + \beta = 0$ \quad und \quad $-1 = \alpha \cdot \overline{\varphi} + \beta \cdot\varphi$.
+\\[0.2cm]
+Aus der ersten Gleichung folgt $\beta = - \alpha$ und wenn wir dies in die zweite Gleichung
+einsetzen, erhalten wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$-1 = \alpha \cdot (\overline{\varphi} - \varphi)$,
+\\[0.2cm]
+woraus wir folgern, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds \alpha = \frac{1}{\varphi - \overline{\varphi}} = 
+              \frac{1}{\frac{1}{2} \cdot (1 + \sqrt{5}) - \frac{1}{2} \cdot (1 - \sqrt{5})} =
+              \frac{1}{\sqrt{5}}
+$ \quad und \quad $\ds \beta = - \frac{1}{\sqrt{5}}$
+\\[0.2cm]
+gilt.  Insgesamt haben wir damit die folgende Gleichung f\"ur die erzeugende Funktion $f(x)$ gefunden:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds f(x) = \frac{1}{\sqrt{5}} \cdot \left(\frac{1}{1 - x \cdot \varphi} - \frac{1}{1 - x \cdot \overline{\varphi}}\right)$  
+\hspace*{\fill} $(*)$
 \\[0.2cm]
 Erinnern wir uns hier an die geometrische Reihe
 \\[0.2cm]
@@ -2678,7 +2745,7 @@ Reihen ersetzen und erhalten
 \hspace*{1.3cm}
 $\ds f(x) = \frac{1}{\sqrt{5}} \cdot \left(\sum\limits_{n=0}^\infty (x \cdot \varphi)^n - \sum\limits_{n=0}^\infty (x \cdot \overline{\varphi})^n \right)$.
 \\[0.2cm]
-Setzen wir nun f\"ur $f(x)$ die Reihe $\sum\limits_{n=0}^\infty a_n \cdot x^n$ ein und fassen die die
+Setzen wir nun f\"ur $f(x)$ die Reihe $\ds\sum\limits_{n=0}^\infty a_n \cdot x^n$ ein und fassen die die
 beiden Summen auf der rechten Seite zusammen, so erhalten wir die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
