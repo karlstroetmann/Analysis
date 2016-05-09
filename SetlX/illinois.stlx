@@ -26,8 +26,9 @@ illinois := procedure(f, a, b, n) {
         oldA2 := oldA1; oldB2 := oldB1;
         oldA1 := a;     oldB1 := b;
         if (isRational(a) && isRational(b)) {
-	  print("$k$: a = $nDecimalPlaces(a, 36)$, b = $nDecimalPlaces(b, 36)$");
-	  print("alpha = $alpha$, beta = $beta$");
+            print("$k$: a = $nDecimalPlaces(a, 36)$");
+            print("    b = $nDecimalPlaces(b, 36)$");
+            print("    alpha = $alpha$, beta = $beta$");
         } else {
             print("$k$: a = $a$, b = $b$, alpha = $alpha$, beta = $beta$");
         }
