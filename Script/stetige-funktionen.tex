@@ -463,7 +463,8 @@ nach Satz \ref{satz:monoton} auch konvergent sein.  Wir definieren
 \hspace*{1.3cm}
 $\widehat{b} := \lim\limits_{n\rightarrow\infty} b_n$.
 \\[0.2cm]
-In analoger Weise sehen wir, dass die Folge $\folge{a_n}$ konvergent ist und definieren
+In analoger Weise sehen wir, dass die Folge $\folge{a_n}$ monoton steigend und nach oben
+beschr\"ankt ist.  Also ist diese Folge ebenfalls konvergent und wir definieren
 \\[0.2cm]
 \hspace*{1.3cm}
 $\widehat{a} := \lim\limits_{n\rightarrow\infty} a_n$.
@@ -478,11 +479,11 @@ $
  \ds\left(\lim\limits_{n\rightarrow\infty} b_n\right) - \left(\lim\limits_{n\rightarrow\infty} a_n\right) \\[0.3cm]
 & = & \ds\lim\limits_{n\rightarrow\infty} b_n - a_n \\[0.3cm]
 & = & \ds\lim\limits_{n\rightarrow\infty} \left(\frac{1}{2}\right)^{n-1} \cdot (b-a) \\[0.3cm]
-& = & \ds (b-a) \cdot \lim\limits_{n\rightarrow\infty} \left(\frac{1}{2}\right)^{n-1} = 0.
+& = & \ds (b-a) \cdot \lim\limits_{n\rightarrow\infty} \left(\frac{1}{2}\right)^{n-1} = 0,
 \end{array}
 $
 \\[0.2cm]
-Da die Funktion $f$ stetig ist, gilt
+also gilt $\widehat{b} = \widehat{a}$. Da die Funktion $f$ stetig ist, gilt
 \\[0.2cm]
 \hspace*{1.3cm}
 $\lim\limits_{n\rightarrow\infty} f(a_n) = f\left(\lim\limits_{n\rightarrow\infty} a_n\right) = f(\widehat{a})$.
@@ -509,8 +510,9 @@ $f\bigl(\widehat{a}\bigr) = f\bigl(\,\widehat{b}\,\bigr)$.  Dann haben wir aber 
 \hspace*{1.3cm}
 $f\bigl(\widehat{a}\bigr) \leq 0$ \quad als auch \quad $f\bigl(\widehat{a}\bigr) \geq 0$ 
 \\[0.2cm]
-und das funktioniert nur, wenn $f\bigl(\widehat{a}\bigr) = 0$ ist.  Damit haben wir eine
-Nullstelle von $f$ in dem Intervall $[a,b]$ gefunden.
+und das funktioniert nur, wenn $f\bigl(\widehat{a}\bigr) = 0$ ist.  Damit k\"onnen wir $x_0 =
+\widehat{a}$ definieren und dann ist $x_0$ eine
+Nullstelle von $f$ in dem Intervall $[a,b]$.
 \qed
 
 \remark
@@ -550,8 +552,13 @@ und daraus folgt $f(\bar{x}) = c$.  \eox
       \\[0.2cm]
       \hspace*{1.3cm}
       $f(x_0) = x_0$ \quad gilt.
+      \pagebreak
+
 \item Zeigen Sie, dass die Funktion $f: \mathbb{R} \rightarrow \mathbb{R}$, die durch $f(x) := \cos(x)$
-      definiert ist, einen Fixpunkt hat.  \eox
+      definiert ist, einen Fixpunkt hat.  Sie d\"urfen bei Ihrem Beweis voraussetzen, das die
+      Funktion $x \mapsto \cos(x)$ stetig ist.  Au{\ss}erdem ist bekannt , dass diese Funktion im Intervall 
+      $[0, \pi]$ monoton fallend ist.
+      \eox
 \end{enumerate}
 
 \exercise
@@ -575,8 +582,9 @@ eine Tageszeit $t$ gibt, an welcher der M\"onch beim Abstieg am selben Ort ist w
                   xrightmargin  = 0.5cm,
                 ]
     findZero := procedure(f, a, b, n) {
-        assert(a < b, "a has to be less than b");   
-        assert(f(a) < 0 && 0 < f(b), "we need f($a$) < 0 and f($b$) > 0");
+        assert(a < b, "a has to be less than b!");   
+        assert(f(a) < 0, "Precondition f($a$) < 0 failed!");
+        assert(0 < f(b), "Precondition f($b$) > 0 failed!");
         for (k in [1 .. n]) {
             c := 1/2 * (a + b); 
             if (f(c) < 0) {
@@ -605,8 +613,9 @@ erh\"alt vier Argumente:
 \item \texttt{n} ist die Anzahl der Iterationen, die durchgef\"uhrt werden soll.
 \end{enumerate}
 Zu Beginn testen wir, ob erstens die linke Intervall-Grenze \texttt{a} kleiner als die rechte
-Intervall-Grenze \texttt{b} ist und zweitens ob $\mathtt{f(a)} < \mathtt{f(b)}$ ist, denn sonst sind
-die Voraussetzungen des Zwischenwert-Satzes nicht erf\"ullt und das Bisektions-Verfahren l\"asst sich nicht anwenden.
+Intervall-Grenze \texttt{b} ist und zweitens ob sowohl $\mathtt{f(a)} < 0$ als auch $0 < \mathtt{f(b)}$gilt, denn sonst sind
+die Voraussetzungen des Zwischenwert-Satzes nicht erf\"ullt und das Bisektions-Verfahren l\"asst
+sich nicht anwenden. 
 
 Die Implementierung setzt den oben skizzierten Algorithmus unmittelbar um.  Da wir immer nur die
 beiden letzten Werte der Folgen $(a_n)_n$ und $(b_n)_n$ ben\"otigen, ist es nicht notwendig, die
@@ -755,11 +764,10 @@ ist.  Dieser Ansatz f\"uhrt auf die Formel
 \hspace*{1.3cm} $c = \bruch{\frac{1}{|f(a)|}\cdot a + \frac{1}{|f(b)|}\cdot b}{\frac{1}{|f(a)|} +
   \frac{1}{|f(b)|}} = \bruch{|f(b)|\cdot a + |f(a)|\cdot b}{|f(a)| + |f(b)|}$
 \\[0.3cm]
-Wir erhalten dieselbe Formel, wenn wir $c$ dadurch bestimmen, dass wir eine
-Gerade durch die Punkte $\bigl\langle a, f(a)\bigr\rangle$ und $\bigl\langle b, f(b)\bigr\rangle$ legen und
-$c$ als 
-den Punkt festsetzen, bei dem diese Gerade die $x$-Achse scheidet.  Die Gleichung f\"ur eine
-Gerade $g(x)$ hat die Form
+Diese Formel l\"asst sicht auch geometrisch interpretieren, denn wir erhalten dieselbe Formel, wenn
+wir $c$ dadurch bestimmen, dass wir eine Gerade durch die Punkte $\bigl\langle a, f(a)\bigr\rangle$ und $\bigl\langle b, f(b)\bigr\rangle$ legen und
+$c$ als den Schnittpunkt dieser Gerade mit der $x$-Achse definieren.  Die Gleichung f\"ur eine
+Gerade $g(x)$ hat n\"amlich die Form
 \\[0.2cm]
 \hspace*{1.3cm} $g(x) = \alpha \cdot x + \beta$.
 \\[0.2cm]
@@ -774,8 +782,9 @@ Analog erhalten wir die Gleichung
   \label{eq:null1}
   f(b) = \alpha \cdot b + \beta
 \end{equation}
-wenn wir f\"ur $x$ den Wert $b$ und f\"ur $g(x)$ den Wert $f(b)$ einsetzen.  Subtrahieren wir
-die beiden Gleichungen voneinander, so verschwindet die Unbekannte $\beta$ und wir haben
+wenn wir f\"ur $x$ den Wert $b$ und f\"ur $g(x)$ den Wert $f(b)$ einsetzen.  Somit haben wir zwei
+Gleichungen f\"ur die beiden Unbekannten $\alpha$ und $\beta$.  Um Diese Unbekannten zu bestimmen,
+subtrahieren wir die beiden Gleichungen voneinander.  Dann verschwindet die Unbekannte $\beta$ und wir haben
 \\[0.2cm]
 \hspace*{1.3cm}
    $f(b) - f(a) = \alpha \cdot (b-a)$, \quad also \quad $\alpha = \bruch{f(b) - f(a)}{b-a}$.
@@ -918,7 +927,12 @@ dem Bisektions-Verfahren 30 Schritte ben\"otigt haben.  Wir sehen auch, dass die
 Intervall-Grenze immer konstant bleibt.  Es sieht so aus, als ob wir mit der Regula Falsi
 ein Verfahren gefunden h\"atten, dass dem Bisektions-Verfahren \"uberlegen w\"are.  Die n\"achste Aufgabe
 zeigt Ihnen jedoch, dass dem Verfahren eine ganz wichtige Eigenschaft fehlt, die das
-Bisektions-Verfahren besitzt:  Das Verfahren ist nicht robust!  Es gibt Funktionen, bei
+Bisektions-Verfahren besitzt:  
+\\[0.2cm]
+\hspace*{1.3cm}
+\colorbox{red}{\framebox{\colorbox{orange}{Das Verfahren, das die Regula Falsi verwendet, ist nicht robust!}}}
+\\[0.2cm]
+Es gibt Funktionen, bei
 denen die Regula Falsi zur Nullstellen-Bestimmung \textbf{\underline{wesentlich mehr}} Iterationen
 ben\"otigt als das Bisektions-Verfahren.
 \vspace*{0.3cm}

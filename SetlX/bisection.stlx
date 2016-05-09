@@ -13,20 +13,19 @@ findZero := procedure(f, a, b, n) {
             b := c; 
         } else {
             return c;
-	}
-	if (isRational(a) && isRational(b)) {
-            print("a = $nDecimalPlaces(a, 40)$, b = $nDecimalPlaces(b, 40)$");
+        }
+        if (isRational(a) && isRational(b)) {
+            print("a = $nDecimalPlaces(a, 40)$");
+            print("b = $nDecimalPlaces(b, 40)$");
         } else {
             print("a = $a$, b = $b$");
         }
     }
     return 1/2 * (a + b);
 };
-
 root3 := procedure(x) {
     return x * x * x - 2;
 };
-
 r3 := findZero(root3, 1, 2, 136);
 
 print("2 ** (1/3) = $nDecimalPlaces(r3, 42)$");
