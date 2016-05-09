@@ -1,36 +1,36 @@
 \chapter{Integral-Rechnung}
-\section{Einführung des Integral-Begriffs}
-In diesem Kapitel beschäftigen wir uns mit der Frage, wie die Fläche zwischen einer Kurve und der
+\section{Einf\"uhrung des Integral-Begriffs}
+In diesem Kapitel besch\"aftigen wir uns mit der Frage, wie die Fl\"ache zwischen einer Kurve und der
 $x$-Achse berechnet werden kann.  Dabei gehen wir davon aus, dass die Kurve durch eine Funktion der
 Form $x \mapsto f(x)$ definiert wird.  Um die Dinge konkret zu machen betrachten wir die Funktion 
-$x \mapsto x^2$ und fragen, welche Fläche von dieser Kurve und der $x$-Achse im Intervall
-$[0,1]$ eingeschlossen wird.  Diese Fläche ist in Abbildung \ref{fig:xhoch2int.eps} 
+$x \mapsto x^2$ und fragen, welche Fl\"ache von dieser Kurve und der $x$-Achse im Intervall
+$[0,1]$ eingeschlossen wird.  Diese Fl\"ache ist in Abbildung \ref{fig:xhoch2int.eps} 
 grau dargestellt.  
 
 
 \begin{figure}[!h]
   \centering
    \epsfig{file=Figures/xhoch2int.eps,scale=0.4}
-   \caption{Die Fläche unter der Parabel $x \mapsto x^2$ im Intervall $[0,1]$.}
+   \caption{Die Fl\"ache unter der Parabel $x \mapsto x^2$ im Intervall $[0,1]$.}
   \label{fig:xhoch2int.eps}
 \end{figure}
 
-Wir können versuchen, diese Fläche durch sogenannte
+Wir k\"onnen versuchen, diese Fl\"ache durch sogenannte
 \emph{Treppen-Funktionen} zu approximieren.  Eine Treppen-Funktion ist eine Funktion, die
-stückweise konstant ist.  Abbildung \ref{fig:xhoch2RiemannRight.eps} auf Seite 
+st\"uckweise konstant ist.  Abbildung \ref{fig:xhoch2RiemannRight.eps} auf Seite 
 \pageref{fig:xhoch2RiemannRight.eps} zeigt eine Approximation der Funktion $x \mapsto x^2$
 durch eine Treppen-Funktion.  In dieser Abbildung haben wir das Intervall $[0,1]$ in 10 gleich
-große Teilintervalle aufgeteilt.  Wollen wir im allgemeinen Fall die Fläche unter eine
+gro{\ss}e Teilintervalle aufgeteilt.  Wollen wir im allgemeinen Fall die Fl\"ache unter eine
 Funktion $f$ in einem vorgegebenen Intervall $[a,b]$ berechnen, so 
 unterteilen wir das Intervall $[a,b]$ in $n$ Teilintervalle der Form 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\bigl[a + (i-1) \cdot  h, a + i\cdot h \bigr]$ \quad mit $\ds h := \frac{b-a}{n}$ und $i=1,\cdots,n$.
 \\[0.2cm]
-Um dann die Fläche berechnen zu können, approximieren wir diese Fläche
+Um dann die Fl\"ache berechnen zu k\"onnen, approximieren wir diese Fl\"ache
 zum einen durch eine Treppen-Funktion, die oberhalb der zu integrierenden Funktion liegt und zum anderen durch eine
 Treppen-Funktion, die unterhalb der zu integrierenden Funktion liegt.  Wir nehmen zur
-Vereinfachung zunächst an, dass die Funktion $f$ monoton steigend ist.
+Vereinfachung zun\"achst an, dass die Funktion $f$ monoton steigend ist.
 In diesem Fall definieren wir zu einer vorgegebenen Zahl $n$ von Intervallen die obere
 Treppen-Funktion $f^\downarrow_{n}(x)$ wie folgt:
 \begin{equation}
@@ -46,31 +46,31 @@ $\forall x \in \bigl( a+(i-1)\cdot h, a+i\cdot h\bigr): f(x) \leq f(a+i\cdot h) 
 die Funktion $f$ liegt also unterhalb der Treppen-Funktion $f^\downarrow$.
 Wie die Treppen-Funktion an den Randpunkten der Intervalle $[a+(i-1)\cdot h, a+i\cdot h]$ definiert
 wird, ist unwichtig.  Abbildung \ref{fig:xhoch2RiemannRight.eps} zeigt die Funktion 
-$f(x) = x^2$ und die zugehörige Treppen-Funktion $f^\downarrow_{10}(x)$.  Die Fläche unter
+$f(x) = x^2$ und die zugeh\"orige Treppen-Funktion $f^\downarrow_{10}(x)$.  Die Fl\"ache unter
 einer solchen Treppen-Funktion kann leicht berechnet werden:  Schreiben wir
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds \int_a^b f(x) \,\dr x$
 \\[0.2cm] 
-für die Fläche unter einer Funktion $f$ in dem Intervall $[a,b]$, so gilt für die
+f\"ur die Fl\"ache unter einer Funktion $f$ in dem Intervall $[a,b]$, so gilt f\"ur die
 Treppen-Funktion $f^\downarrow_{n}$ offenbar
 \begin{equation}
   \label{eq:intOber}
   \int_a^b f^\downarrow_n(x) \,\dr x = \sum\limits_{i=1}^n f(a+i\cdot h)\cdot h
 \end{equation}
-denn die Fläche eines Rechtecks berechnet sich als das Produkt von Breite und Höhe.  Die
-Höhe des Rechtecks im $i$-ten Teilintervall hat den Wert $f(a + i\cdot h)$ und die Breite
+denn die Fl\"ache eines Rechtecks berechnet sich als das Produkt von Breite und H\"ohe.  Die
+H\"ohe des Rechtecks im $i$-ten Teilintervall hat den Wert $f(a + i\cdot h)$ und die Breite
 des Teilintervalls ist $h$.
 
 \begin{figure}[!t]
   \centering
    \epsfig{file=Figures/xhoch2RiemannRight.eps,scale=0.5}
-   \caption{Die Fläche unter der Parabel $x \mapsto x^2$ im Intervall $[0,1]$.}
+   \caption{Die Fl\"ache unter der Parabel $x \mapsto x^2$ im Intervall $[0,1]$.}
   \label{fig:xhoch2RiemannRight.eps}
 \end{figure}
 
-Genau wie wir die Fläche unter der Funktion $f$ von oben approximieren können, können wir
-diese Fläche auch von unten approximieren. Die dazu notwendige Treppen-Funktion
+Genau wie wir die Fl\"ache unter der Funktion $f$ von oben approximieren k\"onnen, k\"onnen wir
+diese Fl\"ache auch von unten approximieren. Die dazu notwendige Treppen-Funktion
 $f^\uparrow_n(x)$ definieren wir analog zu Gleichung (\ref{eq:treppeOben})
 \begin{equation}
   \label{eq:treppeUnten}
@@ -79,22 +79,22 @@ $f^\uparrow_n(x)$ definieren wir analog zu Gleichung (\ref{eq:treppeOben})
 wir werten also diesmal in jedem Intervall die Funktion $f$ am linken Eckpunkt aus,
 denn dort ist die Funktion $f$ am kleinsten, da wir vorausgesetzt haben, dass
 die Funktion $f$ monoton steigend ist.
-Für diese Treppen-Funktion berechnet sich die Fläche nach der Formel
+F\"ur diese Treppen-Funktion berechnet sich die Fl\"ache nach der Formel
 \begin{equation}
   \label{eq:intUnter}
   \int_a^b f^\uparrow_n(x) \,\dr x = \sum\limits_{i=1}^{n} f\bigl(a+(i-1)\cdot h\bigr)\cdot h
   = \sum\limits_{i=0}^{n-1} f(a+i\cdot h)\cdot h.
 \end{equation}
-Für die Fläche, die zwischen der Funktion $f$ und der $x$-Achse liegt, haben wir insgesamt
-die Abschätzung
+F\"ur die Fl\"ache, die zwischen der Funktion $f$ und der $x$-Achse liegt, haben wir insgesamt
+die Absch\"atzung
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds\sum\limits_{i=0}^{n-1} f(a+i\cdot h)\cdot h \leq \int_a^b f(x) \,\dr x \leq \sum\limits_{i=1}^{n} f(a+i\cdot h)\cdot h$ 
 \\[0.2cm]
 gefunden.  Die linke Summe bezeichnen wir als \emph{Unter-Summe}, die Summe auf der
 rechten Seite der Ungleichungskette nennen wir \emph{Ober-Summe}.
-Wir können hoffen, dass für wachsende Werte von $n$ die Werte von Ober-Summe und
-Unter-Summe gegen den selben Grenzwert konvergieren.  Dazu berechnen wir zunächst die
+Wir k\"onnen hoffen, dass f\"ur wachsende Werte von $n$ die Werte von Ober-Summe und
+Unter-Summe gegen den selben Grenzwert konvergieren.  Dazu berechnen wir zun\"achst die
 Differenz dieser beiden Summen:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -109,7 +109,7 @@ $
 \end{array}
 $
 \\[0.3cm]
-Damit ist klar, dass bei einer monoton steigenden Funktion die Ober-Summe für eine
+Damit ist klar, dass bei einer monoton steigenden Funktion die Ober-Summe f\"ur eine
 wachsende Zahl $n$ von Intervallen gegen den 
 selben Wert konvergiert wie die Unter-Summe.  Daher definieren wir
 \begin{equation}
@@ -118,13 +118,13 @@ selben Wert konvergiert wie die Unter-Summe.  Daher definieren wir
   \cdot \frac{b-a}{n}\Bigr) \cdot \frac{b-a}{n}
 \end{equation}
 Diesen Grenzwert nennen wir auch das \emph{Integral} von $f$ in dem Intervall $[a,b]$.
-Die so gegebene Definition ist zunächst nur für monoton wachsende Funktionen schlüssig,
-aber es ist offensichtlich, dass das Integral für monoton fallende Funktionen auf die
+Die so gegebene Definition ist zun\"achst nur f\"ur monoton wachsende Funktionen schl\"ussig,
+aber es ist offensichtlich, dass das Integral f\"ur monoton fallende Funktionen auf die
 selbe Weise berechnet werden kann.  Ist nun eine Funktion $f$ in dem Intervall $f$ weder
-monoton fallend noch monoton steigend, so können wir versuchen, dass Intervall so in
+monoton fallend noch monoton steigend, so k\"onnen wir versuchen, dass Intervall so in
 Teilintervalle aufzuspalten, dass $f$ in jedem Teilintervall monoton fallend oder monoton
 steigend ist.  Da wir auf jedem dieser Teilintervalle das Integral nach der Formel 
-(\ref{eq:integral}) berechnen können, können wir dann auch insgesamt das Integral nach
+(\ref{eq:integral}) berechnen k\"onnen, k\"onnen wir dann auch insgesamt das Integral nach
 dieser Formel berechnen.
 
 \exercise
@@ -159,10 +159,10 @@ in dem Intervall $[a,b]$ als
 \end{Definition}
 
 \noindent
-Der so eingeführte Integral-Begriff hat folgende Eigenschaften:
+Der so eingef\"uhrte Integral-Begriff hat folgende Eigenschaften:
 \begin{enumerate}
-\item Linearität: Sind $f$ und $g$ zwei Funktionen, so dass
-      das Integral über $f$ bzw.~$g$ in dem Inter\-vall $[a,b]$ definiert ist
+\item Linearit\"at: Sind $f$ und $g$ zwei Funktionen, so dass
+      das Integral \"uber $f$ bzw.~$g$ in dem Inter\-vall $[a,b]$ definiert ist
       und sind $\alpha,\beta \in\mathbb{R}$,
       so ist auch das Integral der Funktion
       \\[0.2cm]
@@ -177,7 +177,7 @@ Der so eingeführte Integral-Begriff hat folgende Eigenschaften:
       konvergenter Folgen der Grenzwert sowohl mit der Summe als auch mit dem Produkt vertauscht
       werden kann.
 \item Monotonie:  Sind $f$ und $g$ zwei Funktionen, so dass
-      das Integral über $f$ und  $g$ in dem Intervall $[a,b]$ definiert ist, so gilt: 
+      das Integral \"uber $f$ und  $g$ in dem Intervall $[a,b]$ definiert ist, so gilt: 
       \\[0.2cm]
       \hspace*{1.3cm}
       $\ds\Bigl(\forall x \in [a,b]: f(x) \leq g(x)\Bigr) \;\Rightarrow\;
@@ -217,7 +217,7 @@ Die obige Ungleichungskette zeigt, dass
 \hspace*{1.3cm}
  $\ds \frac{1}{b-a} \cdot \int_a^b f(x)\, \dr x\; \in \bigl[f(x_{min}), f(x_{max})\bigr]$ \\[0.2cm]
 gilt.  
-Aufgrund des Zwischenwert-Satzes für stetige Funktionen (Satz \ref{satz:zws-stetig} auf Seite
+Aufgrund des Zwischenwert-Satzes f\"ur stetige Funktionen (Satz \ref{satz:zws-stetig} auf Seite
 \pageref{satz:zws-stetig}) nimmt die stetige Funktion $f$ jeden Wert in dem  
 Intervall $\bigl[f\bigl(x_{min}\bigr), f\bigl(x_{max}\bigr)\bigr]$ an.  
 Also gibt es ein $\xi \in [a,b]$, so dass 
@@ -225,7 +225,7 @@ Also gibt es ein $\xi \in [a,b]$, so dass
 \hspace*{1.3cm}
 $f(\xi) = \ds \frac{1}{b-a} \cdot \int_a^b f(x)\, \dr x$
 \\[0.2cm]
-gilt und dass ist äquivalent zu 
+gilt und dass ist \"aquivalent zu 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds f(\xi) \cdot  (b- a) = \int_a^b f(x)\, \dr x$. \hspace*{\fill} $\Box$
@@ -237,7 +237,7 @@ Differential-Rechnung und Integral-Rechnung herzustellen.
 
 \begin{Satz}[Ableitung von Integralen] \lb
   \label{satz:ableitungInt}
-  Die Funktion $f:[a,b] \rightarrow \mathbb{R}$ sei stetig.  Definieren wir für 
+  Die Funktion $f:[a,b] \rightarrow \mathbb{R}$ sei stetig.  Definieren wir f\"ur 
   $x \in [a,b]$ die Funktion  $F:[a,b] \rightarrow \mathbb{R}$ durch 
   \\[0.2cm]
   \hspace*{1.3cm}
@@ -261,7 +261,7 @@ $
       \mbox{nach Definition von $F$} \\[0.3cm]
  = &\ds \lim\limits_{h\rightarrow 0} \ds\frac{1}{h}\int_{x}^{x+h} f(t)\, \dr t \\[0.5cm]
  = &\ds \lim\limits_{h\rightarrow 0} \ds\frac{1}{h} \cdot  (x+h - x) \cdot   f(\xi_h) &
-      \mbox{nach dem Mittelwertsatz für ein $\xi_h\in[x, x+h]$} \\[0.5cm]
+      \mbox{nach dem Mittelwertsatz f\"ur ein $\xi_h\in[x, x+h]$} \\[0.5cm]
  = &\ds \lim\limits_{h\rightarrow 0} \ds f(\xi_h) \\[0.3cm]
  = & \ds f(x) & \mbox{wegen $\xi_h \in [x, x+h]$}.
 \end{array}
@@ -280,16 +280,16 @@ zu dem Integral-Operator
 \hspace*{1.3cm}
 $\ds\int_{a}^x \cdot \;\dr t := \left(f \mapsto \int_a^x f(t) \, \dr t\right)$ 
 \\[0.2cm]
-invers ist: Wenden wir auf eine Funktion zunächst den
+invers ist: Wenden wir auf eine Funktion zun\"achst den
 Integral-Operator an und wenden wir dann auf die resultierende Funktion den
-Differentiations-Operator an, so erhalten wir wieder die ursprüngliche Funktion:
+Differentiations-Operator an, so erhalten wir wieder die urspr\"ungliche Funktion:
 \\[0.2cm]
 \hspace*{1.3cm}
 \colorbox{orange}{\framebox{$\ds \frac{\dr\;}{\dr x} \int_a^x f(t)\,\dr t = f(x)$.}}
 \\[0.2cm]
 Diese Aussage
-lässt sich im Wesentlichen auch umkehren.  Diese Umkehrung ist der Hauptsatz der Differential- und
-Integral-Rechnung.  Bevor wir diesen Satz in Angriff nehmen können, benötigen wir noch eine Definition.
+l\"asst sich im Wesentlichen auch umkehren.  Diese Umkehrung ist der Hauptsatz der Differential- und
+Integral-Rechnung.  Bevor wir diesen Satz in Angriff nehmen k\"onnen, ben\"otigen wir noch eine Definition.
 \pagebreak
 
 \begin{Definition}[Stamm-Funktion] \lb
@@ -304,8 +304,8 @@ Der Ausdruck $\ds\int f(x) \, \dr x$ wird als \emph{unbestimmtes Integral} bezei
 
 Die Schreibweise $F(x) = \int f(x) \, \dr x$ ist problematisch, denn die Stamm-Funktion einer
 gegebenen Funktion ist nicht eindeutig.  Ist $F(x)$ eine Stamm-Funktion von $f(x)$ und
-definieren wir die Funktion $G$ durch $G(x) := F(x) + c$ für eine beliebige Konstante $c$,
-so ist natürlich auch $G(x)$ eine Stamm-Funktion von $f$, denn es gilt
+definieren wir die Funktion $G$ durch $G(x) := F(x) + c$ f\"ur eine beliebige Konstante $c$,
+so ist nat\"urlich auch $G(x)$ eine Stamm-Funktion von $f$, denn es gilt
 \\[0.2cm]
 \hspace*{1.3cm}
 $\df G(x) = \df F(x) + \df c = f(x) + 0 = f(x)$.
@@ -328,15 +328,15 @@ Daraus folgt dann
 \hspace*{1.3cm}
 $F_1(x) - F_2(x) = c$, \quad also \quad $F_1(x) = F_2(x) + c$
 \\[0.2cm]
-und dass heißt gerade, dass sich die beiden Stamm-Funktionen $F_1$ und $F_2$ nur um eine Konstante
+und dass hei{\ss}t gerade, dass sich die beiden Stamm-Funktionen $F_1$ und $F_2$ nur um eine Konstante
 unterscheiden.   
 
 Sie fragen sich vermutlich, warum wir bei einer Stamm-Funktion das Integral-Zeichen verwenden.
 Der Hauptsatz der Differential- und Integral-Rechnung gibt darauf eine Antwort.  Gleichzeitig ist
-dieser Satz das zentrale Ergebnis dieser Vorlesung.  Historisch wurde dieser Satz unabhängig sowohl
+dieser Satz das zentrale Ergebnis dieser Vorlesung.  Historisch wurde dieser Satz unabh\"angig sowohl
 von \href{https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz}{Gottfried Wilhelm Leibniz} als
 auch von \href{https://en.wikipedia.org/wiki/Isaac_Newton}{Issac Newton} gefunden.  Die Entdeckung
-dieses Satzes war für die Analysis von  fundamentaler Bedeutung, denn dieser Satz ermöglicht die
+dieses Satzes war f\"ur die Analysis von  fundamentaler Bedeutung, denn dieser Satz erm\"oglicht die
 Berechnung vieler Integrale.
 
 \begin{Satz}[Hauptsatz der Differential- und Integral-Rechnung] \hspace*{\fill} \\
@@ -351,12 +351,12 @@ sei eine Stamm-Funktion von $f$ und es gelte $u,v\in[a,b]$.  Dann gilt
 \textbf{Beweis}: Definieren wir die Funktion $G(x)$ durch 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds G(x) := \int_a^x f(t)\, \dr t$ \quad für alle $x\in[a,b]$,
+$\ds G(x) := \int_a^x f(t)\, \dr t$ \quad f\"ur alle $x\in[a,b]$,
 \\[0.2cm]
 so besagt Satz \ref{satz:ableitungInt}, dass die Funktion $G$ eine Stamm-Funktion der
 Funktion $f$ ist.  Ist nun $F$ eine beliebige weitere Stamm-Funktion von $f$, so haben wir
 gerade gesehen, dass die Stamm-Funktionen $G$ und $F$ sich nur um eine Konstante $c$
-unterscheiden können, es gilt also
+unterscheiden k\"onnen, es gilt also
 \\[0.2cm]
 \hspace*{1.3cm}
 $F(x) = G(x) + c$.
@@ -375,12 +375,12 @@ $
 \vspace*{0.3cm}
 
 \noindent
-Der letzte Satz gibt Anlass zu einer Schreibweise.  Für eine Funktion $F$  definieren wir
+Der letzte Satz gibt Anlass zu einer Schreibweise.  F\"ur eine Funktion $F$  definieren wir
 \\[0.2cm]
 \hspace*{1.3cm}
 $F(x) \Big|_u^v := F(v) - F(u)$.
 \\[0.2cm]
-Den letzten Satz können wir eine wichtige Schlussfolgerung ziehen:  Ist $f:[a,b] \rightarrow\mathbb{R}$
+Den letzten Satz k\"onnen wir eine wichtige Schlussfolgerung ziehen:  Ist $f:[a,b] \rightarrow\mathbb{R}$
 eine differenzierbare Funktion, so ist $f$ offenbar eine Stamm-Funktion der Funktion $f'(x)$.
 Also gilt:
 \begin{equation}
@@ -390,11 +390,11 @@ Also gilt:
 Dies zeigt uns, dass der Integral-Operator in gewisser Weise zum Differential-Operator invers ist.
 
 \section{Regeln zur Berechnung von Integralen}
-Der Hauptsatz der Differential- und Integral-Rechnung ermöglicht es, Regeln zur Berechnung
+Der Hauptsatz der Differential- und Integral-Rechnung erm\"oglicht es, Regeln zur Berechnung
 von Integralen aufzustellen.  Tabelle \ref{tab:integrale} zeigt die Stamm-Funktionen der
 wichtigsten Funktionen.  Um diese Tabelle zu verifizieren reicht es aus, die in der rechten
 Spalte der Tabelle angegebene Funktion nach $x$ zu differenzieren.
-Wir führen dies exemplarisch für den Eintrag $\ln(x)$ vor.  Es gilt
+Wir f\"uhren dies exemplarisch f\"ur den Eintrag $\ln(x)$ vor.  Es gilt
 \\[0.3cm]
 \hspace*{1.3cm}
 $
@@ -406,8 +406,8 @@ $
 \end{array}
 $
 \\[0.3cm]
-Damit ist gezeigt, dass $\ds\int \ln(x)\;\dr x = x\cdot \ln(x) - x$ gilt.  Die übrigen Einträge der
-Tabelle können auf ähnliche Weise verifiziert werden.
+Damit ist gezeigt, dass $\ds\int \ln(x)\;\dr x = x\cdot \ln(x) - x$ gilt.  Die \"ubrigen Eintr\"age der
+Tabelle k\"onnen auf \"ahnliche Weise verifiziert werden.
 
 \begin{table}[h]
   \centering
@@ -443,18 +443,18 @@ Tabelle können auf ähnliche Weise verifiziert werden.
   \label{tab:integrale}
 \end{table}
 Bemerkenswert ist vielleicht noch die Stamm-Funktion der Funktion $\ds x \mapsto \frac{1}{x}$:
-Für $x>0$ gilt 
+F\"ur $x>0$ gilt 
 sicher 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\dfo \ln(x) = \frac{1}{x}$
 \\[0.2cm]
-Außerdem gilt nach der Ketten-Regel für $x < 0$ 
+Au{\ss}erdem gilt nach der Ketten-Regel f\"ur $x < 0$ 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\dfo \ln(-x) = -1 \cdot  \frac{1}{-x} = \frac{1}{x}$.
 \\[0.2cm]
-Diese beiden Gleichungen können wir zu 
+Diese beiden Gleichungen k\"onnen wir zu 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\dfo \ln\bigl(|x|\bigr) = \frac{1}{x}$
@@ -464,10 +464,10 @@ zusammen fassen und folglich haben wir
 \hspace*{1.3cm}
  $\bint \frac{1}{x}\,\dr x = \ln\bigl(|x|\bigr)$.
 \\[0.2cm]
-Wir können die einzelnen Einträge der Tabelle zwar durch Differenzieren leicht
-verifizieren, aber dabei bleibt die Frage offen, wie die Einträge dieser Tabelle gefunden
-wurden.  Wir stellen jetzt einige Sätze auf, mit deren Hilfe wir Stamm-Funktionen
-gegebener Funktionen berechnen können.  Wir erhalten diese Sätze indem wir die
+Wir k\"onnen die einzelnen Eintr\"age der Tabelle zwar durch Differenzieren leicht
+verifizieren, aber dabei bleibt die Frage offen, wie die Eintr\"age dieser Tabelle gefunden
+wurden.  Wir stellen jetzt einige S\"atze auf, mit deren Hilfe wir Stamm-Funktionen
+gegebener Funktionen berechnen k\"onnen.  Wir erhalten diese S\"atze indem wir die
 Regeln, die wir zur Differenzierung aufgestellt haben, umdrehen.  
 
 
@@ -483,7 +483,7 @@ $
 \end{array}
 $
 \\[0.3cm]
-Nach dem Hauptsatz können wir hier bei den Integralen Grenzen einsetzen. Dann erhalten wir
+Nach dem Hauptsatz k\"onnen wir hier bei den Integralen Grenzen einsetzen. Dann erhalten wir
 \begin{equation}
   \label{eq:subst0}
   \int_a^b f'(x) \cdot  h'(f(x))\, \dr x  =  h\bigl(f(b)\bigr) - h\bigl(f(a)\bigr)
@@ -494,36 +494,36 @@ gilt also $h(x) = \int g(x)\, \dr x \,+\, d$ , was wir nach dem Hauptsatz auch a
   \label{eq:subst1}
 h\bigl(f(b)\bigr) - h\bigl(f(a)\bigr) = \int_{f(a)}^{f(b)} g(x)\,\dr x  
 \end{equation}
-schreiben können.
+schreiben k\"onnen.
 Ersetzen wir in Gleichung (\ref{eq:subst0})  $h'$
 durch $g$ so erhalten wir zusammen mit Gleichung (\ref{eq:subst1})  die \emph{Substitutions-Regel}:
 \begin{equation}
   \label{eq:subst}
 \colorbox{orange}{\framebox{$\ds\int_a^b f'(x) \cdot  g\bigl(f(x)\bigr)\, \dr x = \int_{f(a)}^{f(b)} g(x)\, \dr x$}}.  
 \end{equation}
-Sie können sich die Substitutions-Regel mit Hilfe der folgenden suggestiven Pseudo-Ableitung
+Sie k\"onnen sich die Substitutions-Regel mit Hilfe der folgenden suggestiven Pseudo-Ableitung
 leicht merken.  Wir gehen aus von dem unbestimmten Integral 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds\int g(y)\, \dr y$.
 \\[0.2cm]
-Hier führen wir die Variablen-Transformation $y = f(x)$ durch. Dann gilt 
+Hier f\"uhren wir die Variablen-Transformation $y = f(x)$ durch. Dann gilt 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds \frac{\dr y}{\dr x} = f'(x)$
 \\[0.2cm]
-Wir rechnen nun mit dem Ausdruck $\ds\frac{\dr y}{\dr x}$ so, als ob es ein gewöhnlicher Bruch wäre und stellen die
+Wir rechnen nun mit dem Ausdruck $\ds\frac{\dr y}{\dr x}$ so, als ob es ein gew\"ohnlicher Bruch w\"are und stellen die
 letzte Gleichung nach $\dr y$ um.  Dann haben wir 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\dr y = f'(x)\cdot \dr x$
 \\[0.2cm]
-Ersetzen wir in dem ursprünglichen Integral $\dr y$ durch diesen Ausdruck, so haben wir 
+Ersetzen wir in dem urspr\"unglichen Integral $\dr y$ durch diesen Ausdruck, so haben wir 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds\int g(y)\, \dr y = \int g\bigl(f(x)\bigr)\cdot f'(x)\, \dr x$
 \\[0.2cm]
-Das ist aber genau die Substitutions-Regel für unbestimmte Integrale.
+Das ist aber genau die Substitutions-Regel f\"ur unbestimmte Integrale.
 
 \exercise
 Berechnen Sie das Integral $\ds \int_0^x \tan(t)\, \dr t$ mit Hilfe der Substitutions-Regel.  \eox
@@ -550,13 +550,13 @@ Funktion $x\mapsto\tan(x)$ ist:
 \\[0.2cm]
 \hspace*{1.3cm} $\bint\tan(x)\, \dr x = - \ln\bigl(|\cos(x)|\bigr) + c$.
 \\[0.2cm]
-Wir zeigen, wie sich die Stamm-Funktion von $\tan(x)$ suggestiver berechnen lässt.  Bei dem
+Wir zeigen, wie sich die Stamm-Funktion von $\tan(x)$ suggestiver berechnen l\"asst.  Bei dem
 Integral
 \\[0.2cm]
 \hspace*{1.3cm}
  $\ds\int \frac{\sin(t)}{\cos(t)}\,\dr t$ 
 \\[0.2cm]
- führen wir die Variablen-Transformation $x =
+ f\"uhren wir die Variablen-Transformation $x =
 \cos(t)$ durch.  Dann gilt
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -574,7 +574,7 @@ $\ds \int \frac{\sin(t)}{\cos(t)}\,\dr t \;=\; \int
 \frac{\sin(t)}{x}\cdot \frac{\dr x}{-\sin(t)} \;=\; - \int \frac{1}{x}\, \dr x = -\ln(|x|) =
 -\ln\bigl(|\cos(t)|\bigr) $.  
 \\[0.2cm]
-Das Rechnen mit den \emph{infinitesimalen} Größen $\dr x$ und $\dr t$ ist
+Das Rechnen mit den \emph{infinitesimalen} Gr\"o{\ss}en $\dr x$ und $\dr t$ ist
 offensichtlich intuitiver als die formale Anwendung der Substitutions-Regel.  \qed
 
 
@@ -597,8 +597,8 @@ offensichtlich intuitiver als die formale Anwendung der Substitutions-Regel.  \q
 
 
 \subsection{Partielle Integration}
-Als nächstes überlegen wir, wie wir aus der Produkt-Regel der Differential-Rechnung
-eine Regel zur Berechnung von Integralen gewinnen können.  Es gilt
+Als n\"achstes \"uberlegen wir, wie wir aus der Produkt-Regel der Differential-Rechnung
+eine Regel zur Berechnung von Integralen gewinnen k\"onnen.  Es gilt
 \\[0.2cm]
 $
 \begin{array}[t]{llcll}
@@ -608,18 +608,18 @@ $
 \end{array}
 $
 \\[0.2cm]
-Die Stamm-Funktion von $\dfo\Bigl( f(x)\cdot g(x) \Bigr)$ ist natürlich $f(x)\cdot g(x)$, also haben wir
+Die Stamm-Funktion von $\dfo\Bigl( f(x)\cdot g(x) \Bigr)$ ist nat\"urlich $f(x)\cdot g(x)$, also haben wir
 \begin{equation}
   \label{eq:partInt0}
  \colorbox{orange}{\framebox{$\ds\int f'(x)\cdot  g(x)\,\dr x =  \ds f(x)\cdot g(x) - \int f(x) \cdot  g'(x)\,\dr x$}}
 \end{equation}
 gefunden. Diese Gleichung setzt die Stamm-Funktionen von $f'(x)\cdot  g(x)$
 und $f(x) \cdot  g'(x)$ in Beziehung: Die Stamm-Funktion der ersten Funktion kann auf die
-Stamm-Funktion der zweiten Funktion zurück geführt werden.
-Die Regel zur partiellen Integration lässt sich nicht nur für die Berechnung der
+Stamm-Funktion der zweiten Funktion zur\"uck gef\"uhrt werden.
+Die Regel zur partiellen Integration l\"asst sich nicht nur f\"ur die Berechnung der
 Stamm-Funktion eines Produkts einsetzen, sondern sie wird auch benutzt um die Integrale von
 Umkehr-Funktionen zu bestimmen.  Als Beispiel zeigen wir, wie sich das Integral der 
-Funktion $\ln(x)$ mittels partieller Integration bestimmen lässt.
+Funktion $\ln(x)$ mittels partieller Integration bestimmen l\"asst.
 \\[0.3cm]
 \hspace*{1.3cm}
 $
@@ -641,7 +641,7 @@ Berechnen Sie die folgenden Integrale:
 \item $\ds \int x \cdot e^x\,\dr x$,
 \item $\ds \int x^2 \cdot e^x\,\dr x$,
 \item $\ds \int x^3 \cdot e^x\,\dr x$,
-\item $\ds \int x^n \cdot e^x\,\dr x$ \quad für beliebige $n \in \mathbb{N}$.
+\item $\ds \int x^n \cdot e^x\,\dr x$ \quad f\"ur beliebige $n \in \mathbb{N}$.
 \end{enumerate}
 
 \subsection{Das Integral von Umkehr-Funktionen$^*$}
@@ -653,32 +653,32 @@ Die Umkehr-Funktion von $f$ sei die Funktion
 \\[0.2cm]
 \hspace*{1.3cm}
  $g:\bigl[f(a), f(b)\bigl]
-\rightarrow\mathbb{R}$, \quad für alle $x\in[a,b]$ gilt also $g\bigl(f(x)\bigr) = x$.  
+\rightarrow\mathbb{R}$, \quad f\"ur alle $x\in[a,b]$ gilt also $g\bigl(f(x)\bigr) = x$.  
 \\[0.2cm]
-Analog gilt dann für alle $y\in\bigl[f(a),f(b)\bigr]$ die Gleichung
+Analog gilt dann f\"ur alle $y\in\bigl[f(a),f(b)\bigr]$ die Gleichung
 $f\bigl(g(y)\bigr) = y$. Abbildung \ref{fig:umkehr.eps} zeigt die Funktion.  Durch
-Spiegelung an der Winkelhalbierung geht die Funktion $f$ in die Umkehr-Funktion über,
+Spiegelung an der Winkelhalbierung geht die Funktion $f$ in die Umkehr-Funktion \"uber,
 wenn wir also die $y$-Achse als $x$-Achse ansehen, zeigt die Abbildung die Umkehr-Funktion.
-Wir betrachten jetzt die Fläche des Rechtecks, dessen linke unter Ecke
+Wir betrachten jetzt die Fl\"ache des Rechtecks, dessen linke unter Ecke
 im Ursprung des Koordinaten-Systems liegt und dessen rechte obere Ecke die Koordinaten
-$\bigl\langle b,f(b)\bigr\rangle$ hat.  Dieses Rechtecks hat den Flächeninhalt $b\cdot f(b)$.
-Diese Fläche setzt sich aus drei Teilen zusammen, die in der Figur unterschiedlich markiert
+$\bigl\langle b,f(b)\bigr\rangle$ hat.  Dieses Rechtecks hat den Fl\"acheninhalt $b\cdot f(b)$.
+Diese Fl\"ache setzt sich aus drei Teilen zusammen, die in der Figur unterschiedlich markiert
 sind.
 \begin{enumerate}
 \item Links unten findet sich ein kleines Rechteck, das mit diagonalen Streifen markiert
       ist.  Die linke untere Ecke dieses Rechtecks liegt ebenfalls im Ursprung des
       Koordinaten-Systems, die rechte obere Ecke hat die Koordinaten $\bigl\langle a,f(a)\bigr\rangle$.
-      Damit hat dieses Rechteck die Fläche $a\cdot f(a)$.
-\item Die vertikal schraffierte Fläche ist die Fläche unter der Kurve $f(x)$ und ist
+      Damit hat dieses Rechteck die Fl\"ache $a\cdot f(a)$.
+\item Die vertikal schraffierte Fl\"ache ist die Fl\"ache unter der Kurve $f(x)$ und ist
       folglich gegeben durch das Integral
       \\[0.2cm]
       \hspace*{1.3cm} $\ds \int_a^b f(x)\, \dr x$.
-\item Die horizontal schraffierte Fläche ist die Fläche unter der Kurve $g(y)$ der
+\item Die horizontal schraffierte Fl\"ache ist die Fl\"ache unter der Kurve $g(y)$ der
       Umkehr-Funktion   und ist daher gegeben durch 
       \\[0.2cm]
       \hspace*{1.3cm} $\ds \int_{f(a)}^{f(b)} g(y)\, \dr y$.
 \end{enumerate}
-Natürlich ist die gesamte Fläche des Rechtecks die Summe aller drei Teile, es gilt also
+Nat\"urlich ist die gesamte Fl\"ache des Rechtecks die Summe aller drei Teile, es gilt also
 \begin{equation}
   \label{eq:umkehr0}
   b\cdot f(b) = a\cdot f(a) + \int_a^b f(t)\, \dr t + \int_{f(a)}^{f(b)} g(t)\, \dr t 
@@ -698,7 +698,7 @@ Integral um, so erhalten wir
   \label{eq:umkehr}
   \int_a^x f(t)\, \dr t = x\cdot f(x) - a\cdot f(a) - \int_{f(a)}^{f(x)} g(t)\, \dr t 
 \end{equation}
-Sind wir nur an Stamm-Funktionen interessiert, so können wir den konstanten Term $a\cdot f(a)$
+Sind wir nur an Stamm-Funktionen interessiert, so k\"onnen wir den konstanten Term $a\cdot f(a)$
 weglassen.  Dann schreibt sich die letzte Gleichung als
 \begin{equation}
   \label{eq:umkehr1}
@@ -712,19 +712,19 @@ $g(x) = \exp(x)$.  Wegen $\ds\int \exp(x)\,\dr x = \exp(x)$ gilt
 \hspace*{1.3cm}
 $\bint \ln(x) = x\cdot \ln(x) - \exp\bigl(\ln(x)\bigr) = x\cdot \ln(x) - x$. \eox
 
-\subsection{Berechnung der Fläche eines Kreises}
-Wir zeigen, wie sich der Flächen-Inhalt eines Kreises berechnen lässt.  Ein Kreis vom Radius 1 kann
+\subsection{Berechnung der Fl\"ache eines Kreises}
+Wir zeigen, wie sich der Fl\"achen-Inhalt eines Kreises berechnen l\"asst.  Ein Kreis vom Radius 1 kann
 nach dem Satz des Pythagoras  in der Koordinaten-Ebene durch die Relation $x^2 + y^2 = 1$ dargestellt werden.
-Lösen wir diese Gleichung nach $x$ auf, so wird der Kreis durch die beiden Funktionen $x
+L\"osen wir diese Gleichung nach $x$ auf, so wird der Kreis durch die beiden Funktionen $x
 \mapsto \sqrt{1 - x^2}$
-und $x \mapsto -\sqrt{1 - x^2}$ für $x\in[-1,1]$ beschrieben.  Wir beschränken
-uns nun auf den Viertelkreis im ersten Quadranten der Koordinaten-Ebene.  Die Fläche
+und $x \mapsto -\sqrt{1 - x^2}$ f\"ur $x\in[-1,1]$ beschrieben.  Wir beschr\"anken
+uns nun auf den Viertelkreis im ersten Quadranten der Koordinaten-Ebene.  Die Fl\"ache
 dieses Viertelkreises ist durch das Integral 
 \\[0.2cm]
 \hspace*{1.3cm}
 $I := \dint{0}{1} \sqrt{1 - x^2\,}\, \dr x$
 \\[0.2cm]
-gegeben, dass wir nun berechnen.  Zunächst führen wir die Koordinaten-Transformation
+gegeben, dass wir nun berechnen.  Zun\"achst f\"uhren wir die Koordinaten-Transformation
 $x = \sin(t)$ durch.  Dann erhalten wir
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -761,28 +761,28 @@ $
 \end{array}
 $
 \\[0.3cm]
-Damit haben wir für die Fläche eines Viertelkreises den Wert $\ds\frac{\pi}{4}$ gefunden, der
-ganze Kreis hat also die Fläche $\pi$.
+Damit haben wir f\"ur die Fl\"ache eines Viertelkreises den Wert $\ds\frac{\pi}{4}$ gefunden, der
+ganze Kreis hat also die Fl\"ache $\pi$.
 
-\section{Berechnung der Bogenlänge}
-Gelegentlich tritt das Problem auf, die Länge der Strecke zu berechnen, die durch einen
-Funktions-Graphen beschrieben wird.  Geht es darum, die Bogenlänge des Graphen der Funktion 
+\section{Berechnung der Bogenl\"ange}
+Gelegentlich tritt das Problem auf, die L\"ange der Strecke zu berechnen, die durch einen
+Funktions-Graphen beschrieben wird.  Geht es darum, die Bogenl\"ange des Graphen der Funktion 
 $f:[a,b] \rightarrow\mathbb{R}$ in dem Intervall $[a,b]$ zu berechnen, so zerlegen wir das
-Intervall in $[a,b]$ in $n$ Teilintervalle der Länge 
+Intervall in $[a,b]$ in $n$ Teilintervalle der L\"ange 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds h = \frac{b - a}{n}$.
 \\[0.2cm]
-Das Teilstück des Graphen, das von dem Punkt $\bigl\langle x, f(x) \bigr\rangle$  zu dem Punkt 
-$\bigl\langle x + h, f(x+h) \bigr\rangle$ kann für kleine Werte von $h$ näherungsweise
+Das Teilst\"uck des Graphen, das von dem Punkt $\bigl\langle x, f(x) \bigr\rangle$  zu dem Punkt 
+$\bigl\langle x + h, f(x+h) \bigr\rangle$ kann f\"ur kleine Werte von $h$ n\"aherungsweise
 durch die Sekante von dem  Punkt $\bigl\langle x, f(x) \bigr\rangle$  zu dem Punkt
 $\bigl\langle x + h, f(x+h) \bigr\rangle$  approximiert werden.  Nach dem Satz des
-Pythagoras hat diese Sekante die Länge
+Pythagoras hat diese Sekante die L\"ange
 \\[0.2cm]
 \hspace*{1.3cm}
 $ds = \sqrt{h^2 + \bigl(f(x+h) - f(x)\bigr)^2\,}$.
 \\[0.2cm] 
-Nach Definition der Ableitung von $f$ gilt für kleine Werte von $h$
+Nach Definition der Ableitung von $f$ gilt f\"ur kleine Werte von $h$
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds \frac{f(x+h) - f(x)}{h} \approx f'(x)$.
@@ -792,24 +792,24 @@ Also haben wir
 \hspace*{1.3cm}
 $f(x+h) - f(x) \approx f'(x) h$.
 \\[0.2cm]
-Setzen wir diesen Wert in der obigen Formel für ein, so erhalten wir
+Setzen wir diesen Wert in der obigen Formel f\"ur ein, so erhalten wir
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds ds \approx \sqrt{h^2 + \bigl(f'(x) \cdot h\bigr)^2\,} = h \cdot \sqrt{1 + \Bigl(\frac{d\/f}{\dr x}\Bigr)^2\,}$.
 \\[0.2cm]
-Die Länge $l$ des gesamten Funktions-Graphen erhalten wir, wenn wir diesen Ausdruck von $a$ bis $b$
+Die L\"ange $l$ des gesamten Funktions-Graphen erhalten wir, wenn wir diesen Ausdruck von $a$ bis $b$
 aufintegrieren: 
 \\[0.2cm]
 \hspace*{1.3cm}
 \colorbox{orange}{\framebox{$\ds l = \dint{a}{b} \sqrt{1 + \Bigl(\frac{\dr f}{\dr x}\Bigr)^2\,} \dr x$}}.
 
 \example
-Wir berechnen die Länge $l$ des Kreisbogens, der durch die Funktion $f:[0,1] \rightarrow\mathbb{R}$ mit
+Wir berechnen die L\"ange $l$ des Kreisbogens, der durch die Funktion $f:[0,1] \rightarrow\mathbb{R}$ mit
 \\[0.2cm]
 \hspace*{1.3cm}
 $f(x) = \sqrt{1 - x^2}$
 \\[0.2cm]
-definiert ist.  Anschaulich sollte diese Länge ein Viertel des Umfangs eines Kreises mit Radius $1$ betragen.
+definiert ist.  Anschaulich sollte diese L\"ange ein Viertel des Umfangs eines Kreises mit Radius $1$ betragen.
 Es gilt
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -817,7 +817,7 @@ $\ds\frac{d\/f}{\dr x} = \frac{1}{2} \cdot \frac{-2 \cdot x}{\sqrt{1 - x^2}} =
                   \frac{- x}{\sqrt{1 - x^2}}
 $.
 \\[0.2cm]
-Also haben wir für die Länge
+Also haben wir f\"ur die L\"ange
 \\[0.2cm]
 \hspace*{1.3cm}
 $
@@ -859,32 +859,32 @@ $
 und das ist genau der Umfang eines Viertel-Kreises. \eod
 
 \exercise
-Berechnen Sie die Bogenlänge der Parabel $x \mapsto x^2$ im Intervall $[0,1]$. 
+Berechnen Sie die Bogenl\"ange der Parabel $x \mapsto x^2$ im Intervall $[0,1]$. 
 
 \hint
-Diese Aufgabe ist zwar etwas anspruchsvoller, aber dafür ist die Lösung um so lehrreicher.  Es ist
-sinnvoll, die Lösung in die folgenden Schritte aufzuteilen:
+Diese Aufgabe ist zwar etwas anspruchsvoller, aber daf\"ur ist die L\"osung um so lehrreicher.  Es ist
+sinnvoll, die L\"osung in die folgenden Schritte aufzuteilen:
 \begin{enumerate}[(a)]
-\item Zunächst definieren wir die beiden Funktionen $\sinh(x)$ (lese: \emph{Sinus Hyperbolicus}) und
+\item Zun\"achst definieren wir die beiden Funktionen $\sinh(x)$ (lese: \emph{Sinus Hyperbolicus}) und
       $\cosh(x)$ (lese: \emph{Cosinus Hyperbolicus}) wie folgt:
       \\[0.2cm]
       \hspace*{1.3cm}
       $\ds\sinh(x) = \frac{1}{2} \cdot \bigl(e^x - e^{-x}\bigr)$ \quad und \quad
       $\ds\cosh(x) = \frac{1}{2} \cdot \bigl(e^x + e^{-x}\bigr)$. 
-\item Die Umkehrfunktion der Funktion $x \mapsto \sinh(x)$ können Sie auf den natürlichen
-      Logarithmus zurück führen, indem Sie die Gleichung
+\item Die Umkehrfunktion der Funktion $x \mapsto \sinh(x)$ k\"onnen Sie auf den nat\"urlichen
+      Logarithmus zur\"uck f\"uhren, indem Sie die Gleichung
       \\[0.2cm]
       \hspace*{1.3cm}
       $y = \frac{1}{2} \cdot \bigl(e^x + e^{-x}\bigr)$
       \\[0.2cm]
-      nach $x$ auflösen.  Setzen Sie zunächst $\alpha := e^x$, so erhalten Sie eine quadratische
-      Gleichung für $\alpha$ in Abhängigkeit von $y$.  Wenn Sie aus dieser Gleichung $\alpha$
-      beechnet haben, dann finden Sie anschließend $x$ nach der Formel $x = \ln(\alpha)$.
+      nach $x$ aufl\"osen.  Setzen Sie zun\"achst $\alpha := e^x$, so erhalten Sie eine quadratische
+      Gleichung f\"ur $\alpha$ in Abh\"angigkeit von $y$.  Wenn Sie aus dieser Gleichung $\alpha$
+      beechnet haben, dann finden Sie anschlie{\ss}end $x$ nach der Formel $x = \ln(\alpha)$.
 
       Die Umkehrfunktion, die wir auf diesem Weg berechnet haben, ist als 
       \href{https://de.wikipedia.org/wiki/Areasinus_Hyperbolicus_und_Areakosinus_Hyperbolicus}{\emph{Areasinus Hyperbolicus}}
-      bekannt und wird von uns als $\mathtt{arsinh}(x)$ geschrieben.  In der angelsächsischen
-      Literatur findet sich auch die Schreibweise $\sinh^{-1}(x)$ für diese Funktion.
+      bekannt und wird von uns als $\mathtt{arsinh}(x)$ geschrieben.  In der angels\"achsischen
+      Literatur findet sich auch die Schreibweise $\sinh^{-1}(x)$ f\"ur diese Funktion.
 \item Dann zeigen wir
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -894,16 +894,16 @@ sinnvoll, die Lösung in die folgenden Schritte aufzuteilen:
       \hspace*{1.3cm}
       $1 + \sinh^2(x) = \cosh^2(x)$
       \\[0.2cm]
-      für alle $x\in \mathbb{R}$ gilt.
+      f\"ur alle $x\in \mathbb{R}$ gilt.
 \item Nun berechnen wir das Integral
       \\[0.2cm]
       \hspace*{1.3cm}
       $\ds I(x) := \int_0^x \cosh^2(t)\, \dr t$
       \\[0.2cm]
       mit Hilfe einer partiellen Integration, wobei wir im Verlaufe der Rechnung an geeigneter
-      Stelle die Identität $\cosh^2(x) = 1 + \sinh^2(x)$ berücksichtigen. 
-\item Das bei der Berechnung der Bogenlänge der Parabel auftretende Integral kann nun vermittels einer
-      Substitution auf das Integral $I(x)$ zurück geführt werden. \eod 
+      Stelle die Identit\"at $\cosh^2(x) = 1 + \sinh^2(x)$ ber\"ucksichtigen. 
+\item Das bei der Berechnung der Bogenl\"ange der Parabel auftretende Integral kann nun vermittels einer
+      Substitution auf das Integral $I(x)$ zur\"uck gef\"uhrt werden. \eod 
 \end{enumerate}
 
 
@@ -911,7 +911,7 @@ sinnvoll, die Lösung in die folgenden Schritte aufzuteilen:
 Ist bei dem Ausdruck $\int_a^b f(x)\,\dr x$ die Funktion $f$ an einer der Intervall-Grenzen
 nicht definiert, so bezeichnen wir den Ausdruck als uneigentliches Integral.  Wir
 betrachten nur den Fall, dass die Funktion $f$ nur in dem halboffenen Intervall $(a, b]$
-definiert ist, während $f$  in dem Punkt $a$ nicht definiert sein soll.  Beispielsweise
+definiert ist, w\"ahrend $f$  in dem Punkt $a$ nicht definiert sein soll.  Beispielsweise
 ist die Funktion $x \mapsto \frac{1}{\sqrt{x}}$ im Punkt $x=0$ nicht definiert.  In diesem
 Fall definieren wir 
 \\[0.2cm]
@@ -943,8 +943,8 @@ $\ds \int_1^\infty \frac{1}{t^2}\, \dr t =
 \lim\limits_{x\rightarrow \infty} - \frac{1}{x} + \frac{1}{1}  = 1
 $.
 \\[0.2cm]
-Indem wir Reihen und uneigentliche Integrale in Beziehung setzen, können wir unter
-Umständen leicht sehen, dass eine Reihe konvergiert, denn es gilt der folgende Satz.
+Indem wir Reihen und uneigentliche Integrale in Beziehung setzen, k\"onnen wir unter
+Umst\"anden leicht sehen, dass eine Reihe konvergiert, denn es gilt der folgende Satz.
 
 
 \begin{Satz}[Integral-Vergleichskriterium]
@@ -957,7 +957,7 @@ $\ds \lim\limits_{x \rightarrow \infty} \int\limits_1^x f(t)\,\dr t$ existiert.
 
 \noindent
 \textbf{Beweis}:
-Für alle $i\in \mathbb{N}$ mit $i>1$ und alle $x \in [i-1,i]$ gelten die Ungleichungen
+F\"ur alle $i\in \mathbb{N}$ mit $i>1$ und alle $x \in [i-1,i]$ gelten die Ungleichungen
 \\[0.2cm]
 \hspace*{1.3cm}
 $i-1 \leq x$ \quad und \quad $x \leq i$.
@@ -974,8 +974,8 @@ $\ds\int\limits_{i-1}^{i} f(i)\, \dr x \leq \int\limits_{i-1}^{i} f(x)\, \dr x$
 \quad und \quad
 $\ds \int\limits_{i-1}^i f(x)\, \dr x \leq \int\limits_{i-1}^i f(i-1)\, \dr x$
 \\[0.2cm]
-Das Integral über die konstanten Funktionen $x \mapsto f(i)$ bzw.~$x \mapsto f(i-1)$
-liefert nur den konstanten Funktions-Wert multipliziert mit der Länge des Intervalls, die natürlich 1
+Das Integral \"uber die konstanten Funktionen $x \mapsto f(i)$ bzw.~$x \mapsto f(i-1)$
+liefert nur den konstanten Funktions-Wert multipliziert mit der L\"ange des Intervalls, die nat\"urlich 1
 ist.  Also haben wir die Ungleichungen
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -983,7 +983,7 @@ $\ds f(i) \leq \int\limits_{i-1}^{i} f(x)\, \dr x$
 \quad und \quad
 $\ds\int_{i-1}^{i} f(x)\, \dr x \leq f(i\!-\!1)$
 \\[0.2cm]
-gezeigt.  Summieren wir diese Ungleichungen für alle $i$ aus der Menge $\{2,\cdots,n\}$,
+gezeigt.  Summieren wir diese Ungleichungen f\"ur alle $i$ aus der Menge $\{2,\cdots,n\}$,
   so erhalten wir 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1009,20 +1009,20 @@ Damit ist dann die Folge
 \hspace*{1.3cm}
 $\ds \biggl(\sum\limits_{i=1}^{n}  f(i)\biggr)_{n\in\mathbb{N}}$ 
 \\ 
-monoton und beschränkt, folglich konvergent.  Existiert umgekehrt der Grenzwert
+monoton und beschr\"ankt, folglich konvergent.  Existiert umgekehrt der Grenzwert
 $\ds \sum\limits_{i=1}^{\infty} f(i)$, so  ist aufgrund der zweiten Ungleichung auch die Folge
 \\[0.3cm]
 \hspace*{1.3cm}
 $\ds \biggl(\int_{1}^n f(x)\, \dr x\biggr)_{n\in\mathbb{N}}$
 \\[0.3cm]
-beschränkt.  Da diese Folge außerdem monoton ist, folgt die Konvergenz. \hspace*{\fill} $\Box$
+beschr\"ankt.  Da diese Folge au{\ss}erdem monoton ist, folgt die Konvergenz. \hspace*{\fill} $\Box$
 \vspace*{0.3cm}
 
 \noindent
 \textbf{Beispiel}: Wir betrachten das Integral 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds \int\limits_{1}^\infty \frac{1}{x^\alpha}\, \dr x$ \quad für $\alpha > 0$.
+$\ds \int\limits_{1}^\infty \frac{1}{x^\alpha}\, \dr x$ \quad f\"ur $\alpha > 0$.
 \\[0.2cm]
 Falls $\alpha \not= 1$ ist,  gilt 
 \\[0.2cm]
@@ -1041,7 +1041,7 @@ Im Falle $\alpha = 1$ haben wir
 \hspace*{1.3cm}
 $I(\alpha) = \ln(x)$.
 \\[0.2cm]
-Nun hängt alles davon ab, ob $\alpha < 1$, $\alpha = 1$ oder 
+Nun h\"angt alles davon ab, ob $\alpha < 1$, $\alpha = 1$ oder 
  $\alpha > 1$ ist.
 \begin{enumerate}
 \item Falls $\alpha < 1$ ist, haben wir $1-\alpha>0$ und damit gilt
@@ -1071,11 +1071,11 @@ Nun hängt alles davon ab, ob $\alpha < 1$, $\alpha = 1$ oder
       dass andererseits 
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\ln\bigl(\exp(n)\bigr) = n$ \quad für alle $n \in \mathbb{N}$  
+      $\ln\bigl(\exp(n)\bigr) = n$ \quad f\"ur alle $n \in \mathbb{N}$  
       \\[0.2cm]
-      gilt, denn die letzte Gleichung zeigt, dass die Funktion $x \mapsto \ln(x)$ beliebig groß wird. 
+      gilt, denn die letzte Gleichung zeigt, dass die Funktion $x \mapsto \ln(x)$ beliebig gro{\ss} wird. 
 
-      Insgesamt können wir nun aus dem Integral-Vergleichskriterium folgern, dass die
+      Insgesamt k\"onnen wir nun aus dem Integral-Vergleichskriterium folgern, dass die
       harmonische Reihe divergiert:
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -1102,9 +1102,9 @@ konvergiert.  \eox
 
 
 \section{Numerische Integration$^*$}
-Die Gleichung $x = \cos(x)$ haben wir zwar numerisch lösen können, aber wir waren nicht in
-der Lage, einen algebraischen Ausdruck für die Lösung anzugeben.  Auch bei der Integration
-von Funktionen ist es nicht immer möglich, einen algebraischen Ausdruck für die
+Die Gleichung $x = \cos(x)$ haben wir zwar numerisch l\"osen k\"onnen, aber wir waren nicht in
+der Lage, einen algebraischen Ausdruck f\"ur die L\"osung anzugeben.  Auch bei der Integration
+von Funktionen ist es nicht immer m\"oglich, einen algebraischen Ausdruck f\"ur die
 Stamm-Funktion einer Funktion anzugeben.  Beispielsweise konnte Liouville 
 (Joseph Liouville, 1809 -- 1882) beweisen, dass das
 unbestimmte Integral
@@ -1112,15 +1112,15 @@ unbestimmte Integral
 \hspace*{1.3cm}
 $\int \exp(-x^2)\, \dr x$
 \\[0.2cm]
-nicht auf die uns bisher bekannten Funktionen zurück geführt werden kann \cite{rosenlicht:72}.  Für die
-praktische Berechnung von Integralen benötigen wir daher numerische Methoden.
+nicht auf die uns bisher bekannten Funktionen zur\"uck gef\"uhrt werden kann \cite{rosenlicht:72}.  F\"ur die
+praktische Berechnung von Integralen ben\"otigen wir daher numerische Methoden.
 
 \subsection{Die Trapez-Regel$^*$}
-Die wohl naheliegenste Methode besteht darin, die zu integrierende Funktion stückweise
+Die wohl naheliegenste Methode besteht darin, die zu integrierende Funktion st\"uckweise
 linear zu interpolieren und dann das zur berechnende Integral durch das Integral der
-stückweise linearen Funktion zu approximieren.
-Ist das Integral $\int_a^b f(t)\,\dr t$ zu berechnen, so wird zunächst das Intervall $[a,b]$
-in $n$ gleich große Teilintervalle zerlegt.  Das $i$-te Teilintervall ist $[a+(i-1)\cdot h,
+st\"uckweise linearen Funktion zu approximieren.
+Ist das Integral $\int_a^b f(t)\,\dr t$ zu berechnen, so wird zun\"achst das Intervall $[a,b]$
+in $n$ gleich gro{\ss}e Teilintervalle zerlegt.  Das $i$-te Teilintervall ist $[a+(i-1)\cdot h,
 a+i\cdot h]$ mit $h := \frac{b-a}{n}$ und $i=1,\cdots,n$.
 Wir setzen $x_i := a+i\cdot h$.
 Innerhalb des $i$-ten Teilintervalls wird die Funktion $f(x)$ dann durch die Gerade 
@@ -1128,7 +1128,7 @@ Innerhalb des $i$-ten Teilintervalls wird die Funktion $f(x)$ dann durch die Ger
 \hspace*{1.3cm}
 $\ds g(x) = f\bigl(x_{i-1}\bigr)\cdot \frac{x - x_i}{x_{i-1} - x_i} + f\bigl(x_{i}\bigr)\cdot \frac{x - x_{i-1}}{x_{i} - x_{i-1}}$
 \\[0.2cm]
-approximiert.  Das Integral über $g(x)$ im Intervall $[x_{i-1}, x_i]$ ist dann
+approximiert.  Das Integral \"uber $g(x)$ im Intervall $[x_{i-1}, x_i]$ ist dann
 $$
 \begin{array}[t]{cl}
   &  \dint{x_{i-1}}{x_i} g(x)\, \dr x \\[0.5cm]
@@ -1144,16 +1144,16 @@ $$
 = &  \ds \frac{1}{2} \cdot  \Bigl(f\bigl(x_{i}\bigr) + f\bigl(x_{i-1}\bigr)\Bigr) \cdot  (x_{i} - x_{i-1}) 
 \end{array}
 $$
-Die letzte Formel lässt sich geometrisch deuten, denn der Ausdruck 
+Die letzte Formel l\"asst sich geometrisch deuten, denn der Ausdruck 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\frac{1}{2} \cdot  \bigl(f(x_{i}) + f(x_{i-1})\bigr) \cdot  (x_{i} - x_{i-1})$
 \\[0.2cm]
-beschreibt gerade die Fläche eines Trapezes mit der Breite $h = x_i - x_{i-1}$ und  Seiten
-der Länge $f(x_i)$ und $f(x_{i-1})$. Daher wird dieses Verfahren zur Berechnung eines Integrals auch als 
+beschreibt gerade die Fl\"ache eines Trapezes mit der Breite $h = x_i - x_{i-1}$ und  Seiten
+der L\"ange $f(x_i)$ und $f(x_{i-1})$. Daher wird dieses Verfahren zur Berechnung eines Integrals auch als 
 \emph{Trapez-Regel} bezeichnet.
-Um das Integral über das gesamte Intervall $[a,b]$ zu berechnen,
-müssen wir die Integrale über die einzelnen Intervalle lediglich aufsummieren.  Wir erhalten dann 
+Um das Integral \"uber das gesamte Intervall $[a,b]$ zu berechnen,
+m\"ussen wir die Integrale \"uber die einzelnen Intervalle lediglich aufsummieren.  Wir erhalten dann 
 $$
 \begin{array}[t]{lcl}
  \dint{a}{b} f(x)\,\dr x & \approx & \ds
@@ -1168,15 +1168,15 @@ $$
 Abbildung \ref{fig:trapezoidal.eps} auf Seite \pageref{fig:trapezoidal.eps} zeigt die
 numerische Berechnung des Integrals $\int_0^1 \exp(x^2)\,\dr x $ mit Hilfe der Trapez-Regel.
 In diesem Fall ist $n=3$.
-Führen wir die Berechnung tatsächlich aus, so erhalten wir die Näherung 
+F\"uhren wir die Berechnung tats\"achlich aus, so erhalten wir die N\"aherung 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\dint{0}{1} \exp(-x^2)\,\dr x \approx 0.7399864752\cdots$.
 \\[0.2cm]
-Der exakte Wert ist $0.7468241328$, unter Berücksichtigung der Tatsache, dass wir $n=3$
-gewählt haben ist die Näherung also gar nicht so schlecht.   Erhöhen wir $n$ auf den Wert 
-$300$, so erhalten wir mit der Trapez-Regel die Näherung $0.7468234519$, der Fehler ist
-dann also kleiner als $10^{-6}$.  Im nächsten Satz geben wir eine theoretische Analyse des
+Der exakte Wert ist $0.7468241328$, unter Ber\"ucksichtigung der Tatsache, dass wir $n=3$
+gew\"ahlt haben ist die N\"aherung also gar nicht so schlecht.   Erh\"ohen wir $n$ auf den Wert 
+$300$, so erhalten wir mit der Trapez-Regel die N\"aherung $0.7468234519$, der Fehler ist
+dann also kleiner als $10^{-6}$.  Im n\"achsten Satz geben wir eine theoretische Analyse des
 Fehlers.
 
 \begin{figure}[!h]
@@ -1190,15 +1190,15 @@ Fehlers.
   Ist die Funktion $f:[a,b]\rightarrow \mathbb{R}$ zweimal differenzierbar, gilt
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\bigl|f^{(2)}(x)\bigr| \leq K$ \quad für alle $x\in[a,b]$
+  $\bigl|f^{(2)}(x)\bigr| \leq K$ \quad f\"ur alle $x\in[a,b]$
   \\[0.2cm]
-  und definieren wir gemäß der Trapez-Regel 
+  und definieren wir gem\"a{\ss} der Trapez-Regel 
   \\[0.2cm]
   \hspace*{1.3cm}
   $\ds I_{\mbox{\scriptsize Trapez}} := \biggl(\frac{1}{2}\cdot f(a) \;+\; \sum\limits_{i=1}^{n-1} f\Bigl(a+i\cdot \frac{b-a}{n}\Bigr)\;+\;\frac{1}{2}\cdot f(b)\biggr) \cdot  \frac{b-a}{n}$
   \\[0.2cm]
-  so kann der Unterschied zwischen dem exakten Integral und der Näherung $I_{\mbox{\scriptsize Trapez}}$
-  wie folgt abgeschätzt werden:
+  so kann der Unterschied zwischen dem exakten Integral und der N\"aherung $I_{\mbox{\scriptsize Trapez}}$
+  wie folgt abgesch\"atzt werden:
   \\[0.2cm]
   \hspace*{1.3cm}
   $\ds \left| \int_a^b f(x)\,\dr x - I_{\mbox{\scriptsize Trapez}} \right| \;\leq\; 
@@ -1207,19 +1207,19 @@ Fehlers.
 
 \noindent
 \textbf{Beweis}: Bei der Ableitung der Trapez-Regel haben wir $f(x)$ durch ein lineares
-Polynom interpoliert.  Nach Satz \ref{satz:interpolationsFehler} gilt für den Unterschied
+Polynom interpoliert.  Nach Satz \ref{satz:interpolationsFehler} gilt f\"ur den Unterschied
 zwischen $f(x)$ und dem interpolierenden Polynom $p(x)$ vom Grad $n$
 \\[0.2cm]
 \hspace*{1.3cm}
   $\ds f(x) - p(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} \cdot  \prod\limits_{i=0}^{n}(x-x_i)$.
 \\[0.2cm]
-Dabei ist $\xi$ ein nicht näher bekannter Wert aus dem Intervall $[a,b]$.
+Dabei ist $\xi$ ein nicht n\"aher bekannter Wert aus dem Intervall $[a,b]$.
 Bei linearer Interpolation ist $n=1$ und also haben wir
 \\[0.2cm]
 \hspace*{1.3cm}
   $\ds f(x) - p(x) = \frac{f^{(2)}(\xi)}{2} \cdot  (x-x_{i-1})\cdot (x-x_i)$.
 \\[0.2cm]
-Aufgrund der Voraussetzung über die zweite Ableitung von $f(x)$ haben wir also
+Aufgrund der Voraussetzung \"uber die zweite Ableitung von $f(x)$ haben wir also
 \begin{equation}
   \label{eq:intError1}
   |f(x) - p(x)| \leq \frac{K}{2} \cdot  |(x-x_{i-1})\cdot (x-x_i)|  
@@ -1245,8 +1245,8 @@ $
 \end{array}
 $
 \\[0.2cm]
-Diese Ungleichung gilt nun für jedes $i=1,\cdots,n$.  Summieren wir diese Ungleichungen
-für alle Intervalle auf, so erhalten wir 
+Diese Ungleichung gilt nun f\"ur jedes $i=1,\cdots,n$.  Summieren wir diese Ungleichungen
+f\"ur alle Intervalle auf, so erhalten wir 
 \\[0.2cm]
 \hspace*{1.3cm}
 $
@@ -1275,10 +1275,10 @@ mit Hilfe der Trapez-Regel mit einer Genauigkeit von $10^{-6}$ berechnet werden 
 
 \subsection{Die Simpson'sche Regel$^*$}
 Anstatt die zu integrierende Funktion $f$ durch ein lineares Polynom zu interpolieren,
-können wir $f$ auch durch ein Polynom zweiten Grades interpolieren.  Wir brauchen dann
-natürlich drei Stützstellen. Daher integrieren wir jetzt nicht mehr über ein Intervall
+k\"onnen wir $f$ auch durch ein Polynom zweiten Grades interpolieren.  Wir brauchen dann
+nat\"urlich drei St\"utzstellen. Daher integrieren wir jetzt nicht mehr \"uber ein Intervall
 $[x_{i-1},x_i]$, sondern nehmen statt dessen das Intervall $[x_{i-1},x_{i+1}]$ und
-benutzen $x_{i-1}$, $x_i$ und $x_{i+1}$ als Stützstellen.
+benutzen $x_{i-1}$, $x_i$ und $x_{i+1}$ als St\"utzstellen.
 Die Funktion $f(x)$ approximieren wir in dem Intervall mit der Methode von Lagrange nach
 der Formel
 \\[0.2cm]
@@ -1303,7 +1303,7 @@ integrieren dann $p(x)$ in dem Intervall $[x_{i}-h,x_{i}+h]$, so erhalten wir mi
 $\ds \int_{x_{i-1}}^{x_{i+1}} p(x)\,\dr x = \frac{1}{6}\cdot \bigl(f(x_{i-1}) + 4 \cdot  f(x_i) + f(x_{i+1})\bigr)\cdot (x_{i+1}-x_{i-1})$
 \\[0.2cm]
 Unterteilen wir das Intervall $[a,b]$ lediglich in zwei Teilintervalle $[a,\frac{a+b}{2}]$
-und $[\frac{a+b}{2},b]$, so können wir die obige Formel direkt verwenden.  Wir erhalten
+und $[\frac{a+b}{2},b]$, so k\"onnen wir die obige Formel direkt verwenden.  Wir erhalten
 dann die \emph{Kepler'sche Fassregel} (Johannes Kepler, 1571 -- 1630).
 \begin{equation}
   \label{eq:keplerFass}
@@ -1312,10 +1312,10 @@ dann die \emph{Kepler'sche Fassregel} (Johannes Kepler, 1571 -- 1630).
 Berechnen wir das Integral $\int_0^1 \exp(-x^2)\, \dr x$ mit dieser Regel, so erhalten wir 
 $0.7471804290$ und der Fehler ist bereits kleiner als $4 \cdot 10^{-4}$.
 
-Unterteilen wir das Intervall $[a,b]$ in $n$ Intervalle und ist darüber hinaus $n$ eine
-gerade Zahl, so können wir die Regel \ref{eq:keplerFass} jeweils auf die beiden  benachbarten
+Unterteilen wir das Intervall $[a,b]$ in $n$ Intervalle und ist dar\"uber hinaus $n$ eine
+gerade Zahl, so k\"onnen wir die Regel \ref{eq:keplerFass} jeweils auf die beiden  benachbarten
 Intervalle $[x_{2\cdot i},x_{2\cdot i+1}]$ und $[x_{2\cdot i+1},x_{2\cdot i+2}]$ anwenden,
-wobei der Index $i$ über alle Elemente der Menge $\{0,\cdots,(n-1)/2\}$ läuft.
+wobei der Index $i$ \"uber alle Elemente der Menge $\{0,\cdots,(n-1)/2\}$ l\"auft.
 Setzen wir $h:=\frac{b-a}{n}$ und $x_i := a + i\cdot h$, so erhalten wir
 die Formel 
 \begin{equation}
@@ -1327,20 +1327,20 @@ die Formel
                                                           2\cdot \sum\limits_{i=1}^{(n-1)/2} f(x_{2\cdot i}) \;+\; f(x_n)\biggr) \\[0.3cm]
 \end{array}
 \end{equation}
-Die obige Formel trägt den Namen Simpson'sche Regel (Thomas Simpson, 1710 -- 1761).
-Falls die Funktion $f$ insgesamt viermal differenzierbar ist und falls darüber hinaus 
+Die obige Formel tr\"agt den Namen Simpson'sche Regel (Thomas Simpson, 1710 -- 1761).
+Falls die Funktion $f$ insgesamt viermal differenzierbar ist und falls dar\"uber hinaus 
 die vierte Ableitung von $f$ der Ungleichung 
 \\[0.2cm]
 \hspace*{1.3cm}
 $|f^{(4)}(x)| \leq K$
 \\[0.2cm]
-genügt, so lässt sich der Fehler, der bei der Verwendung der Simpson'schen Regel entsteht, durch
+gen\"ugt, so l\"asst sich der Fehler, der bei der Verwendung der Simpson'schen Regel entsteht, durch
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds\frac{K}{180}\cdot \frac{(b-a)^5}{n^4}$
 \\[0.2cm]
-abschätzen.  Verdoppeln wir die Zahl $n$ der Intervalle, so verkleinert sich der Fehler
-also um das 16-fache! Wählen wir beispielsweise $n=20$ und berechnen das Integral
+absch\"atzen.  Verdoppeln wir die Zahl $n$ der Intervalle, so verkleinert sich der Fehler
+also um das 16-fache! W\"ahlen wir beispielsweise $n=20$ und berechnen das Integral
 $\int_0^1 \exp(-x^2)\, \dr x$, so erhalten wir den Wert
 $0.746824183$ und der Fehler ist kleiner als $10^{-7}$.
 \vspace*{0.3cm}
@@ -1349,10 +1349,10 @@ $0.746824183$ und der Fehler ist kleiner als $10^{-7}$.
 \exercise
 \begin{enumerate}[(a)]
 \item Berechnen Sie mit Hilfe der Kepler'schen Fass-Regel eine Approximation 
-      für das Integral 
+      f\"ur das Integral 
       \\[0.2cm]
       \hspace*{1.3cm}$\ds \int_0^{\frac{1}2} \sin(x)\, \dr x$.
-\item Geben Sie eine möglichst genaue Abschätzung für den Approximations-Fehler.
+\item Geben Sie eine m\"oglichst genaue Absch\"atzung f\"ur den Approximations-Fehler.
 \item Vergleichen Sie ihr Ergebnis mit dem exakten Wert. \eod
 \end{enumerate}
 \pagebreak
@@ -1369,13 +1369,13 @@ Gehen  Sie zur Berechnung dieser Summe in folgenden Schritten vor.
       durch ein geeignetes Integral.
 
       \textbf{Hinweis}: Es gilt $\ds f(k) = \int_{k-\frac{1}{2}}^{k+\frac{1}{2}} f(k) \, \dr t \approx \int_{k-\frac{1}{2}}^{k+\frac{1}{2}} f(t) \, \dr t$.
-\item Berechnen Sie eine obere Abschätzung für den Approximations-Fehler,
+\item Berechnen Sie eine obere Absch\"atzung f\"ur den Approximations-Fehler,
       den Sie bei der Integration in Teil (a) erhalten.
       
-      \textbf{Hinweis}: Schätzen Sie die auftretenden Summen durch Integrale nach oben ab.
-\item Berechnen Sie, wir groß Sie $n$ wählen müssen, damit der Approximations-Fehler
+      \textbf{Hinweis}: Sch\"atzen Sie die auftretenden Summen durch Integrale nach oben ab.
+\item Berechnen Sie, wir gro{\ss} Sie $n$ w\"ahlen m\"ussen, damit der Approximations-Fehler
       kleiner als $10^{-6}$ bleibt.
-\item Geben Sie nun einen Näherungs-Wert für die Summe $\ds\sum\limits_{k=1}^\infty \frac{1}{k^2}$ an,
+\item Geben Sie nun einen N\"aherungs-Wert f\"ur die Summe $\ds\sum\limits_{k=1}^\infty \frac{1}{k^2}$ an,
       der sich von dem exakten \\[-0.2cm]
       Ergebnis um weniger als $10^{-6}$ unterscheidet.
 \end{enumerate}
