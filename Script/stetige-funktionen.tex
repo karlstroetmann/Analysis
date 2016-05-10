@@ -463,7 +463,8 @@ nach Satz \ref{satz:monoton} auch konvergent sein.  Wir definieren
 \hspace*{1.3cm}
 $\widehat{b} := \lim\limits_{n\rightarrow\infty} b_n$.
 \\[0.2cm]
-In analoger Weise sehen wir, dass die Folge $\folge{a_n}$ konvergent ist und definieren
+In analoger Weise sehen wir, dass die Folge $\folge{a_n}$ monoton steigend und nach oben
+beschr\"ankt ist.  Also ist diese Folge ebenfalls konvergent und wir definieren
 \\[0.2cm]
 \hspace*{1.3cm}
 $\widehat{a} := \lim\limits_{n\rightarrow\infty} a_n$.
@@ -478,11 +479,11 @@ $
  \ds\left(\lim\limits_{n\rightarrow\infty} b_n\right) - \left(\lim\limits_{n\rightarrow\infty} a_n\right) \\[0.3cm]
 & = & \ds\lim\limits_{n\rightarrow\infty} b_n - a_n \\[0.3cm]
 & = & \ds\lim\limits_{n\rightarrow\infty} \left(\frac{1}{2}\right)^{n-1} \cdot (b-a) \\[0.3cm]
-& = & \ds (b-a) \cdot \lim\limits_{n\rightarrow\infty} \left(\frac{1}{2}\right)^{n-1} = 0.
+& = & \ds (b-a) \cdot \lim\limits_{n\rightarrow\infty} \left(\frac{1}{2}\right)^{n-1} = 0,
 \end{array}
 $
 \\[0.2cm]
-Da die Funktion $f$ stetig ist, gilt
+also gilt $\widehat{b} = \widehat{a}$. Da die Funktion $f$ stetig ist, gilt
 \\[0.2cm]
 \hspace*{1.3cm}
 $\lim\limits_{n\rightarrow\infty} f(a_n) = f\left(\lim\limits_{n\rightarrow\infty} a_n\right) = f(\widehat{a})$.
@@ -509,8 +510,9 @@ $f\bigl(\widehat{a}\bigr) = f\bigl(\,\widehat{b}\,\bigr)$.  Dann haben wir aber 
 \hspace*{1.3cm}
 $f\bigl(\widehat{a}\bigr) \leq 0$ \quad als auch \quad $f\bigl(\widehat{a}\bigr) \geq 0$ 
 \\[0.2cm]
-und das funktioniert nur, wenn $f\bigl(\widehat{a}\bigr) = 0$ ist.  Damit haben wir eine
-Nullstelle von $f$ in dem Intervall $[a,b]$ gefunden.
+und das funktioniert nur, wenn $f\bigl(\widehat{a}\bigr) = 0$ ist.  Damit k\"onnen wir $x_0 =
+\widehat{a}$ definieren und dann ist $x_0$ eine
+Nullstelle von $f$ in dem Intervall $[a,b]$.
 \qed
 
 \remark
@@ -550,8 +552,13 @@ und daraus folgt $f(\bar{x}) = c$.  \eox
       \\[0.2cm]
       \hspace*{1.3cm}
       $f(x_0) = x_0$ \quad gilt.
+      \pagebreak
+
 \item Zeigen Sie, dass die Funktion $f: \mathbb{R} \rightarrow \mathbb{R}$, die durch $f(x) := \cos(x)$
-      definiert ist, einen Fixpunkt hat.  \eox
+      definiert ist, einen Fixpunkt hat.  Sie d\"urfen bei Ihrem Beweis voraussetzen, das die
+      Funktion $x \mapsto \cos(x)$ stetig ist.  Au{\ss}erdem ist bekannt , dass diese Funktion im Intervall 
+      $[0, \pi]$ monoton fallend ist.
+      \eox
 \end{enumerate}
 
 \exercise
@@ -575,8 +582,9 @@ eine Tageszeit $t$ gibt, an welcher der M\"onch beim Abstieg am selben Ort ist w
                   xrightmargin  = 0.5cm,
                 ]
     findZero := procedure(f, a, b, n) {
-        assert(a < b, "a has to be less than b");   
-        assert(f(a) < 0 && 0 < f(b), "we need f($a$) < 0 and f($b$) > 0");
+        assert(a < b, "a has to be less than b!");   
+        assert(f(a) < 0, "Precondition f($a$) < 0 failed!");
+        assert(0 < f(b), "Precondition f($b$) > 0 failed!");
         for (k in [1 .. n]) {
             c := 1/2 * (a + b); 
             if (f(c) < 0) {
@@ -605,8 +613,9 @@ erh\"alt vier Argumente:
 \item \texttt{n} ist die Anzahl der Iterationen, die durchgef\"uhrt werden soll.
 \end{enumerate}
 Zu Beginn testen wir, ob erstens die linke Intervall-Grenze \texttt{a} kleiner als die rechte
-Intervall-Grenze \texttt{b} ist und zweitens ob $\mathtt{f(a)} < \mathtt{f(b)}$ ist, denn sonst sind
-die Voraussetzungen des Zwischenwert-Satzes nicht erf\"ullt und das Bisektions-Verfahren l\"asst sich nicht anwenden.
+Intervall-Grenze \texttt{b} ist und zweitens ob sowohl $\mathtt{f(a)} < 0$ als auch $0 < \mathtt{f(b)}$gilt, denn sonst sind
+die Voraussetzungen des Zwischenwert-Satzes nicht erf\"ullt und das Bisektions-Verfahren l\"asst
+sich nicht anwenden. 
 
 Die Implementierung setzt den oben skizzierten Algorithmus unmittelbar um.  Da wir immer nur die
 beiden letzten Werte der Folgen $(a_n)_n$ und $(b_n)_n$ ben\"otigen, ist es nicht notwendig, die
@@ -755,11 +764,10 @@ ist.  Dieser Ansatz f\"uhrt auf die Formel
 \hspace*{1.3cm} $c = \bruch{\frac{1}{|f(a)|}\cdot a + \frac{1}{|f(b)|}\cdot b}{\frac{1}{|f(a)|} +
   \frac{1}{|f(b)|}} = \bruch{|f(b)|\cdot a + |f(a)|\cdot b}{|f(a)| + |f(b)|}$
 \\[0.3cm]
-Wir erhalten dieselbe Formel, wenn wir $c$ dadurch bestimmen, dass wir eine
-Gerade durch die Punkte $\bigl\langle a, f(a)\bigr\rangle$ und $\bigl\langle b, f(b)\bigr\rangle$ legen und
-$c$ als 
-den Punkt festsetzen, bei dem diese Gerade die $x$-Achse scheidet.  Die Gleichung f\"ur eine
-Gerade $g(x)$ hat die Form
+Diese Formel l\"asst sicht auch geometrisch interpretieren, denn wir erhalten dieselbe Formel, wenn
+wir $c$ dadurch bestimmen, dass wir eine Gerade durch die Punkte $\bigl\langle a, f(a)\bigr\rangle$ und $\bigl\langle b, f(b)\bigr\rangle$ legen und
+$c$ als den Schnittpunkt dieser Gerade mit der $x$-Achse definieren.  Die Gleichung f\"ur eine
+Gerade $g(x)$ hat n\"amlich die Form
 \\[0.2cm]
 \hspace*{1.3cm} $g(x) = \alpha \cdot x + \beta$.
 \\[0.2cm]
@@ -774,8 +782,9 @@ Analog erhalten wir die Gleichung
   \label{eq:null1}
   f(b) = \alpha \cdot b + \beta
 \end{equation}
-wenn wir f\"ur $x$ den Wert $b$ und f\"ur $g(x)$ den Wert $f(b)$ einsetzen.  Subtrahieren wir
-die beiden Gleichungen voneinander, so verschwindet die Unbekannte $\beta$ und wir haben
+wenn wir f\"ur $x$ den Wert $b$ und f\"ur $g(x)$ den Wert $f(b)$ einsetzen.  Somit haben wir zwei
+Gleichungen f\"ur die beiden Unbekannten $\alpha$ und $\beta$.  Um Diese Unbekannten zu bestimmen,
+subtrahieren wir die beiden Gleichungen voneinander.  Dann verschwindet die Unbekannte $\beta$ und wir haben
 \\[0.2cm]
 \hspace*{1.3cm}
    $f(b) - f(a) = \alpha \cdot (b-a)$, \quad also \quad $\alpha = \bruch{f(b) - f(a)}{b-a}$.
@@ -918,9 +927,13 @@ dem Bisektions-Verfahren 30 Schritte ben\"otigt haben.  Wir sehen auch, dass die
 Intervall-Grenze immer konstant bleibt.  Es sieht so aus, als ob wir mit der Regula Falsi
 ein Verfahren gefunden h\"atten, dass dem Bisektions-Verfahren \"uberlegen w\"are.  Die n\"achste Aufgabe
 zeigt Ihnen jedoch, dass dem Verfahren eine ganz wichtige Eigenschaft fehlt, die das
-Bisektions-Verfahren besitzt:  Das Verfahren ist nicht robust!  Es gibt Funktionen, bei
-denen die Regula Falsi zur Nullstellen-Bestimmung \textbf{\underline{wesentlich mehr}} Iterationen
-ben\"otigt als das Bisektions-Verfahren.
+Bisektions-Verfahren besitzt:  
+\\[0.2cm]
+\hspace*{0.3cm}
+\colorbox{red}{\framebox{\colorbox{orange}{Das Verfahren, das die Regula Falsi zur Bestimmung der Nullstelle verwendet, ist nicht robust!}}}
+\\[0.2cm]
+Es gibt n\"amlich Funktionen, bei denen die Regula Falsi zur Nullstellen-Bestimmung
+\textbf{\underline{wesentlich mehr}} Iterationen ben\"otigt als das Bisektions-Verfahren.
 \vspace*{0.3cm}
 
 \begin{table}[!h]
@@ -990,17 +1003,21 @@ $b_n$ konstant ist, es gilt $b_n = 10$.
       \hspace*{1.3cm} $a_1 = 0 \leq 1 \cdot 10^{-3}$ \quad und \quad $b_1 = 10$.
 \item[I.S.:] $n \mapsto n + 1$.
 
-      Die Funktion $f := (x \mapsto x^4 - 1)$ ist f\"ur nichtnegative Zahlen monoton steigend,
+      Die Funktion $f := (x \mapsto x^4 - 1)$ ist f\"ur nicht-negative Zahlen \emph{monoton steigend},
       dass hei{\ss}t aus $0 \leq u \leq v$ folgt auch $f(u) \leq f(v)$.  Es gilt 
       \\[0.2cm]
       \hspace*{1.3cm}
       $f(n \cdot 10^{-3}) = n^4 \cdot 10^{-12} - 1$ \quad und \quad $f(10) = 10^4 - 1$.
       \\[0.2cm]
-      Nach Induktions-Voraussetzung k\"onnen wir $a_n$ durch $n\cdot 10^{-3}$ absch\"atzen und 
-      aufgrund der Monotonie von $f$ k\"onnen wir dann $f(a_n)$ durch $f(n\cdot 10^{-3})$
-      absch\"atzen.
+      Nach Induktions-Voraussetzung k\"onnen wir $a_n$ durch $n\cdot 10^{-3}$ nach oben absch\"atzen und 
+      aufgrund der Monotonie von $f$ k\"onnen wir dann $f(a_n)$ durch $f(n\cdot 10^{-3})$ nach oben
+      absch\"atzen:
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $f(a_n) \leq f(n \cdot 10^{-3}) = n^4 \cdot 10^{-12} - 1$
+      \\[0.2cm]
       Wenden wir daher f\"ur $a_n' = n \cdot 10^{-3}$ und $b_n=10$ die Regula Falsi an um eine
-      N\"aherung $c_n'$ f\"ur die Nullstelle von $f$       zu berechnen, so wird
+      N\"aherung $c_n'$ f\"ur die Nullstelle von $f$ zu berechnen, so wird
       $c_n'$ gr\"o{\ss}er sein als der wahre Wert von $c_n$, der in dem Algorithmus tats\"achlich auftritt.
       Es gilt:
       \\[0.2cm]
@@ -1037,7 +1054,7 @@ $b_n$ konstant ist, es gilt $b_n = 10$.
       Solange $n < 1000$ ist, gilt also sicher $c_n' < 1$ und damit ist $f(c_n')$ negativ.
       Daher gilt 
       \\[0.2cm]
-      \hspace*{1.3cm}  $a_{n+1} \leq a_{n+1}' = c_n' \leq 10^{-3} \cdot n$ und $b_{n+1} = b_n = 10$.
+      \hspace*{1.3cm}  $a_{n+1} \leq a_{n+1}' = c_n' \leq 10^{-3} \cdot n < 10^{-3} \cdot (n+1)$ und $b_{n+1} = b_n = 10$.
       \qed
 \end{enumerate}
 
@@ -1232,6 +1249,11 @@ Definition der Folgen $\folge{a_n}$ und $\folge{b_n}$:
       \\[0.2cm]
       \hspace*{1.3cm}
       $\beta_{n+1} := 1$ \quad und \quad $\alpha_{n+1} := \bruch{1}{2} \cdot \alpha_n$.
+      \\[0.2cm]
+      In allen anderen F\"allen setzen wir 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\beta_{n+1} := 1$ \quad und \quad $\alpha_{n+1} := 1$.
 \end{enumerate}
 Die Umsetzung dieses Verfahrens sehen Sie in Abbildung \ref{fig:illinois.stlx}.  In den Variablen
 \texttt{oldA1} und \texttt{oldB1} speichern wir die Werte von $a_{n-1}$ und $b_{n-1}$, in den
