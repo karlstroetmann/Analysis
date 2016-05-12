@@ -17,10 +17,10 @@ $\lim\limits_{h \rightarrow 0} \bruch{f(\widehat{x} + h) - f(\widehat{x})}{h}$
 existiert.  In diesem Fall definieren wir 
 \\[0.3cm]
 \hspace*{1.3cm}
-$\displaystyle\frac{d\,f}{dx}(\widehat{x}) = \lim\limits_{h \rightarrow 0}
+$\displaystyle\frac{\mathrm{d}\,f}{\mathrm{d}x}(\widehat{x}) = \lim\limits_{h \rightarrow 0}
 \bruch{f(\widehat{x} + h) - f(\widehat{x})}{h}$.
 \\[0.3cm]
-Wir bezeichnen den Wert $\ds\frac{d\,f}{dx}(\widehat{x})$ als die \emph{Ableitung} der
+Wir bezeichnen den Wert $\ds\frac{\mathrm{d}\,f}{\mathrm{d}x}(\widehat{x})$ als die \emph{Ableitung} der
 Funktion $f$ an der Stelle $\widehat{x}$.  Gelegentlich werden \\[0.2cm]
 wir f\"ur die Ableitung auch die Schreibweise 
 $f'(\widehat{x})$ verwenden.
@@ -50,7 +50,9 @@ und andererseits haben wir
 \\[0.3cm]
 \hspace*{1.3cm}
 $f(\widehat{x} + h) = f(\widehat{x}) + h \cdot \df{f}(\widehat{x}) + r(h)$.
-\\[0.3cm]
+\pagebreak
+
+\noindent
 Die Funktion $r(h)$ ist also der Fehler, der entsteht, wenn wir die Funktion $f(x)$ durch ihre
 Tangente im Punkt $\bigl\langle\widehat{x}, f(\widehat{x})\bigr\rangle$ approximieren.  \eox
 
@@ -118,7 +120,7 @@ im Punkt $\widehat{x}$ stetig ist. \qed
       dass die Funktion $\textsl{abs}$ an der Stelle $\widehat{x} = 0$ nicht
       differenzierbar ist.  \eox
 \end{enumerate}
-
+\pagebreak
 
 \begin{Satz}[Ableitungs-Regeln]
 Es seien $f: D \rightarrow \mathbb{R}$  und $g: D \rightarrow \mathbb{R}$ Funktionen, die
@@ -181,6 +183,7 @@ $\left(\bruch{1}{g}\right)'(\widehat{x}) = -\bruch{g'(\widehat{x})}{g(\widehat{x
 \\[0.3cm]
 Folgern Sie aus diesem Ergebnis die Quotienten-Regel.
 \eox
+\pagebreak
 
 \begin{Satz}[Ketten-Regel] 
   Die Funktionen $f:\mathbb{R} \rightarrow \mathbb{R}$ 
@@ -289,7 +292,7 @@ konvergieren. \hspace*{\fill} $\Box$
 \\[0.3cm]
 \hspace*{1.3cm}
 $\ds\frac{d\,x^n}{dx} = n \cdot x^{n-1}$.
-
+\eox
 
 \begin{Satz}[Ableitung von Potenzreihen]
 Ist die Funktion $f$ als Potenzreihe definiert, 
@@ -301,11 +304,16 @@ mit $|x| < R$ differenzierbar und es gilt
 \\[0.3cm]
 \hspace*{1.3cm} $f'(x) = \sum\limits_{n=1}^\infty n \cdot a_n \cdot x^{n-1}$.
 \end{Satz}
+\pagebreak
 
 \remark
 Der letzte Satz besagt, dass Potenzreihen innerhalb ihres Konvergenz-Radius gliedweise
 differenziert werden k\"onnen.   Ein Beweis dieses Satzes ist mit den uns zur Verf\"ugung
-stehenden Hilfsmitteln nicht m\"oglich.  Wir geben statt dessen ein Beispiel, welches zeigt, dass
+stehenden Hilfsmitteln nicht m\"oglich, da uns der Begriff der
+\href{https://de.wikipedia.org/wiki/Gleichmäßige_Konvergenz}{\emph{gleichm\"a{\ss}igen Konvergenz}}
+einer Funktionen-Folge fehlt und wir nicht die Zeit haben, diesen Begrif einzuf\"uhren.  Um  Ihnen
+zu zeigen, dass es an dieser Stelle durchaus Probleme geben k\"onnte, pr\"asentiere ich ein
+Beispiel, welches zeigt, dass  
 Grenzwertprozesse im Allgemeinen nicht ohne weitere Voraussetzungen vertauscht werden d\"urfen.
 Dazu definieren wir f\"ur alle $n \in \mathbb{N}$ die Funktion $f_n:\mathbb{R} \rightarrow \mathbb{R}$ als
 \\[0.2cm]
@@ -328,9 +336,9 @@ w\"urden wir erwarten, dass
 \hspace*{1.3cm}
 $
 \begin{array}[t]{lcl}
-g(x) & = & \ds \df{} \lim\limits_{n\rightarrow\infty} \frac{\;\sin(n \cdot x)\;}{n} \\[0.2cm]
-     & = & \lim\limits_{n\rightarrow\infty} \df{} \frac{\;\sin(n \cdot x)\;}{n} \\[0.2cm]
-     & = & \ds \lim\limits_{n\rightarrow\infty} \cos(n \cdot x) \\[0.2cm]
+g(x) & = & \ds \df{} \lim\limits_{n\rightarrow\infty} \frac{\;\sin(n \cdot x)\;}{n} \\[0.4cm]
+     & = & \lim\limits_{n\rightarrow\infty} \df{} \frac{\;\sin(n \cdot x)\;}{n} \\[0.4cm]
+     & = & \ds \lim\limits_{n\rightarrow\infty} \cos(n \cdot x) 
 \end{array}
 $
 \\[0.2cm]
@@ -356,7 +364,7 @@ Wir berechnen als n\"achstes die Ableitung einiger wichtiger Funktionen.
       \\[0.3cm]
       \hspace*{1.3cm}
       $\ds
-         \frac{d\;}{dx}\exp(x) = \sum\limits_{n=1}^\infty \bruch{n}{n!} \cdot x^{n-1}
+         \df{}\exp(x) = \sum\limits_{n=1}^\infty \bruch{n}{n!} \cdot x^{n-1}
                              = \sum\limits_{n=1}^\infty \bruch{1}{(n-1)!} \cdot x^{n-1}
                              = \sum\limits_{n=0}^\infty \bruch{1}{n!} \cdot x^{n} = \exp(x)$,
       \\[0.3cm]
@@ -376,7 +384,20 @@ Wir berechnen als n\"achstes die Ableitung einiger wichtiger Funktionen.
       \\[0.3cm]
       \hspace*{1.3cm}
       $\ds\ln'(y) \cdot y = 1$, \quad also \quad
-      $\ds\frac{d\;}{dy}\ln(y) = \frac{1}{y}$.
+      $\ds\frac{\mathrm{d}\;}{\mathrm{d}y}\ln(y) = \frac{1}{y}$.
+
+      \remark
+      An dieser Stelle haben wir nicht gezeigt, dass der nat\"urliche Logarithmus differenzierbar
+      ist.  Wir haben lediglich gezeigt, dass unter der Annahme, dass der nat\"urliche Logarithmus
+      differenzierbar ist, die Gleichung 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds \df{}\ln(x) = \frac{1}{x}$
+      \\[0.2cm]
+      gefolgert werden kann.  \eox
+      
+
+ 
 
       \begin{figure}[!h]
         \centering
@@ -436,7 +457,7 @@ Wir berechnen als n\"achstes die Ableitung einiger wichtiger Funktionen.
        \end{array}
        $
        \\[0.3cm]
-       Subtrahieren wir diese Gleichungen voneienander, so erhalten wir 
+       Subtrahieren wir diese Gleichungen voneinander, so erhalten wir 
        \\[0.3cm]
        \hspace*{1.3cm}
        $\sin(x) - \sin(y) = 2 \cdot \cos\left(\frac{x + y}{2}\right)\cdot \sin\left(\frac{x - y}{2}\right)$.
@@ -449,7 +470,7 @@ Wir berechnen als n\"achstes die Ableitung einiger wichtiger Funktionen.
        \lim\limits_{h \rightarrow 0} \bruch{\sin(x+h)-\sin(x)}{h} & = &
        \lim\limits_{h \rightarrow 0} \bruch{2 \cdot \cos\left(\frac{x + h + x}{2}\right)\cdot \sin\left(\frac{x + h - x}{2}\right)}{h} \\[0.3cm]
         & = &
-        \lim\limits_{h \rightarrow 0} \cos\left(x + \frac{h}{2}\right) \cdot \lim\limits_{h \rightarrow 0} \bruch{\sin\left(\frac{h}{2}\right)}{\frac{h}{2}} \\[0.3cm]
+        \ds\lim\limits_{h \rightarrow 0} \cos\left(x + \frac{h}{2}\right) \cdot \lim\limits_{h \rightarrow 0} \bruch{\sin\left(\frac{h}{2}\right)}{\frac{h}{2}} \\[0.3cm]
         & = & \cos(x) \cdot \lim\limits_{h \rightarrow 0} \bruch{\sin\left(h\right)}{h} \\[0.3cm]
         & = & \cos(x) \\[0.3cm]
        \end{array}
@@ -458,8 +479,8 @@ Wir berechnen als n\"achstes die Ableitung einiger wichtiger Funktionen.
       Damit haben wir gezeigt, dass gilt:
       \\[0.3cm]
       \hspace*{1.3cm}
-      $\frac{d\;}{dx}\sin(x) = \cos(x)$.
-\item Die Ableitung des Cosinus k\"onnte in analoger Weise berechnet werden, es ist aber 
+      $\ds\df{}\sin(x) = \cos(x)$.
+\item Die Ableitung des Kosinus k\"onnte in analoger Weise berechnet werden, es ist aber 
       einfacher, wenn wir von den Gleichungen
       \\[0.3cm]
       \hspace*{1.3cm}
@@ -471,7 +492,7 @@ Wir berechnen als n\"achstes die Ableitung einiger wichtiger Funktionen.
       $
       \begin{array}[t]{lcll}
       \dfo\cos(x) & = & \dfo\sin\Bigl(\frac{\pi}{2}- x\Bigr) \\[0.3cm]
-                 & = & \cos\Bigl(\frac{\pi}{2}- x\Bigr) \cdot \dfo\Bigl(\frac{\pi}{2}- x\Bigr) & \mbox{nach der Ketten-Regel} \\[0.3cm]
+                 & = & \ds\cos\Bigl(\frac{\pi}{2}- x\Bigr) \cdot \dfo\Bigl(\frac{\pi}{2}- x\Bigr) & \mbox{nach der Ketten-Regel} \\[0.3cm]
                  & = & \sin(x) \cdot (-1) \\[0.3cm]
                  & = & -\,\sin(x). \\[0.3cm]
       \end{array}$
@@ -481,8 +502,8 @@ Wir berechnen als n\"achstes die Ableitung einiger wichtiger Funktionen.
       \hspace*{1.3cm}
       $\ds
       \begin{array}[t]{lcl}
-      \ds \frac{d\;}{dx} \tan(x) & = & \ds\frac{d\;}{dx} \left(\bruch{\sin(x)}{\cos(x)}\right) \\[0.3cm]
-      & = & \bruch{\Bigl(\frac{d\;}{dx} \sin(x)\Bigr) \cdot \cos(x) - \sin(x) \cdot \Bigl(\frac{d\;}{dx} \cos(x)\Bigr)}{\cos^2(x)} \\[0.5cm]
+      \ds \df{} \tan(x) & = & \ds\df{} \left(\bruch{\sin(x)}{\cos(x)}\right) \\[0.3cm]
+      & = & \bruch{\Bigl(\df{} \sin(x)\Bigr) \cdot \cos(x) - \sin(x) \cdot \Bigl(\df{} \cos(x)\Bigr)}{\cos^2(x)} \\[0.5cm]
       & = & \bruch{\cos(x) \cdot \cos(x) - \sin(x) \cdot \bigr(-\sin(x)\bigr)}{\cos^2(x)} \\[0.5cm]
       & = & \bruch{\cos^2(x) + \sin^2(x)}{\cos^2(x)} \\[0.5cm]
       & = & \bruch{1}{\cos^2(x)} = \sec^2(x) 
@@ -498,17 +519,17 @@ Wir berechnen als n\"achstes die Ableitung einiger wichtiger Funktionen.
       aus und differenzieren beide Seiten dieser Gleichung.  Nach der Ketten-Regel erhalten wir 
       \\[0.3cm]
       \hspace*{1.3cm}
-      $\arctan'\bigl(\tan(x)\bigr) \cdot \frac{d\;}{dx} \tan(x) = 1$.
+      $\arctan'\bigl(\tan(x)\bigr) \cdot \df{} \tan(x) = 1$.
       \\[0.3cm]
       Setzen wir hier die Ableitung f\"ur die Tangens-Funktion ein, so haben wir
       \\[0.3cm]
       \hspace*{1.3cm}
-      $\ds \frac{d\;}{dx} \arctan\bigl(\tan(x)\bigr) \cdot \bruch{1}{\cos^2(x)} = 1$.
+      $\ds \df{} \arctan\bigl(\tan(x)\bigr) \cdot \bruch{1}{\cos^2(x)} = 1$.
       \\[0.3cm]
       Multiplikation mit $\cos^2(x)$ ergibt
       \\[0.3cm]
       \hspace*{1.3cm}
-      $\ds \frac{d\;}{dx} \arctan\bigl(\tan(x)\bigr) = \cos^2(x)$.
+      $\ds \df{} \arctan\bigl(\tan(x)\bigr) = \cos^2(x)$.
       \\[0.3cm]
       Den in dieser  Gleichung auftretenden Term $\cos^2(x)$ m\"ussen wir durch einen Term ausdr\"ucken, in dem
       nur $\tan(x)$ auftritt.  Dazu betrachten wir die Definition der Tangens-Funktion:      
@@ -533,7 +554,7 @@ Wir berechnen als n\"achstes die Ableitung einiger wichtiger Funktionen.
       Setzen wir jetzt $y = \tan(x)$, so erhalten wir 
       \\[0.3cm]
       \hspace*{1.3cm}
-      $\ds\frac{d\;}{dy} \arctan(y) = \bruch{1}{y^2 + 1}$.
+      $\ds\frac{\mathrm{d}\;}{\mathrm{d}y} \arctan(y) = \bruch{1}{y^2 + 1}$.
 \end{enumerate}
 
 \exercise
@@ -541,11 +562,11 @@ Wir berechnen als n\"achstes die Ableitung einiger wichtiger Funktionen.
 \item Zeigen Sie 
       \\[0.3cm]
       \hspace*{1.3cm} 
-      $\ds\frac{d\;}{dx} \arcsin(x) = \bruch{1}{\sqrt{1 - x^2}}$.  
+      $\ds\df{} \arcsin(x) = \bruch{1}{\sqrt{1 - x^2}}$.  
 \item Zeigen Sie 
       \\[0.3cm]
       \hspace*{1.3cm} 
-      $\ds\frac{d\;}{dx} \arccos(x) = -\bruch{1}{\sqrt{1 - x^2}}$.   \eox
+      $\ds\df{} \arccos(x) = -\bruch{1}{\sqrt{1 - x^2}}$.   \eox
 \end{enumerate}
 
 
@@ -564,8 +585,9 @@ definiert.  Beweisen Sie die Gleichungen
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds \df{} \sec(x) = \sec(x) \cdot \tan(x)$ \quad und \quad
-$\ds \df{} \csc(x) = -\csc(x) \cdot \cot(x)$. \eox
-\pagebreak
+$\ds \df{} \csc(x) = -\csc(x) \cdot \cot(x)$. 
+\eox
+\vspace*{0.2cm}
 
 \exercise
 \begin{enumerate}[(a)]
@@ -622,7 +644,7 @@ $\df{f}(\bar{x}) = 0$.
 
 \proof
 Wir betrachten zun\"achst die Folge $\folge{\bar{x} + \frac{1}{n}}$.
-O.B.d.A. sei $\varepsilon$ so klein gew\"ahlt, dass 
+Wir w\"ahlen $\varepsilon$ so klein, dass 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\forall x \in \mathbb{R}:\bigl( |x - \bar{x}| < \varepsilon \rightarrow f(x) \leq f(\bar{x})\bigr)$
