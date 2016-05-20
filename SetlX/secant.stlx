@@ -17,7 +17,7 @@ f := procedure(x) {
     return x ** 2 - 2;
 };
 
-// x := secant(f, 1, 2, 12);
+// x := secant(f, 1, 2, 14);
 
 // print("x = $nDecimalPlaces(x, 80)$");
 // print("\n\n\n");
@@ -27,7 +27,7 @@ strange := procedure(x) {
     return 2 / (x * x + 1) - 1;
 };
 
-x := secant(strange, 0, 5.0, 10);
+x := secant(strange, 0, 5, 10);
 
 
 
