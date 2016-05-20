@@ -649,7 +649,7 @@ Wir w\"ahlen $\varepsilon$ so klein, dass
 \hspace*{1.3cm}
 $\forall x \in \mathbb{R}:\bigl( |x - \bar{x}| < \varepsilon \rightarrow f(x) \leq f(\bar{x})\bigr)$
 \\[0.2cm]
-gilt.  Wenn $n>\frac{1}{\varepsilon}$ ist, liegt  $\bar{x} + \frac{1}{n}$ in der
+gilt.  Falls $n$ eine nat\"urliche Zahl ist, f\"ur die $n>\frac{1}{\varepsilon}$ gilt, so liegt  $\bar{x} + \frac{1}{n}$ in der 
 $\varepsilon$-Umgebung von $\bar{x}$.  Daher gilt f\"ur alle $n > \frac{1}{\varepsilon}$
 \\[0.3cm]
 \hspace*{1.3cm}
@@ -673,8 +673,8 @@ Wieder sei $\varepsilon$ so gew\"ahlt, dass
 \hspace*{1.3cm}
 $\forall x \in \mathbb{R}:\bigl(|x - \bar{x}| < \varepsilon \rightarrow f(x) \leq f(\bar{x})\bigr)$
 \\[0.2cm]
-gilt.  Wenn $n>\frac{1}{\varepsilon}$ liegt daher  $\bar{x} - \frac{1}{n}$ in der
-$\varepsilon$-Umgebung von $\bar{x}$.  Daher gilt f\"ur alle $n > \frac{1}{\varepsilon}$
+gilt.  Wenn $n\in \mathbb{N}$ ist und $n>\frac{1}{\varepsilon}$ gilt, liegt daher  $\bar{x} - \frac{1}{n}$ in der
+$\varepsilon$-Umgebung von $\bar{x}$.  Daher gilt f\"ur alle nat\"urlichen Zahlen $n$ mit $n > \frac{1}{\varepsilon}$
 \\[0.3cm]
 \hspace*{1.3cm} $f\bigl(\bar{x} - \frac{1}{n}\bigr) \leq f(\bar{x})$. 
 \\[0.3cm]
@@ -714,7 +714,7 @@ lokales Maximum, wenn die Funktion $f$ dort ein lokales Minimum hat. \eox
 \eox
 \end{Satz}
 
-Die wesentliche Idee des Beweises besteht darin zu zeigen, dass die Funktion $f$ ein Supremum hat.
+Die wesentliche Idee des Beweises besteht darin zu zeigen, dass die Menge $\{f(x) \mid x \in [a,b]\}$ ein Supremum hat.
 Im n\"achsten Schritt wird dann gezeigt, dass dieses Supremum auch tats\"achlich als Funktionswert auftritt.
 Aus Zeitgr\"unden m\"ussen wir darauf verzichten, den Beweis auszuf\"uhren.
 
@@ -779,12 +779,7 @@ $O = 2 \cdot \pi \cdot r^2 + 2 \cdot \pi \cdot r \cdot h$
 \\[0.2cm]
 gegeben.  Nehmen Sie an, dass Sie eine Konservendose so konstruieren sollen, dass die Oberfl\"ache
 dieser Konservendose bei einem fest vorgegebenem Volumen $V_0$  minimal wird.  Berechnen Sie das
-Verh\"altnis
-\\[0.2cm]
-\hspace*{1.3cm}
-$\ds\frac{\;h\;}{r}$,
-\\[0.2cm]
-von der H\"ohe $h$ zum Radius $r$ f\"ur eine solche Dose.  \eox
+Verh\"altnis $\ds\frac{\;h\;}{r}$ der H\"ohe $h$ zum Radius $r$ f\"ur eine solche Dose.  \eox
 
 \exercise
 Berechnen Sie das Maximum und das Minimum der Funktion $x \mapsto x - |x^2 + 2 \cdot x - 3|$ in dem Intervall $[-4,2]$.  \eox
@@ -831,8 +826,9 @@ $
 \vspace*{0.3cm}
 
 Abbildung \ref{fig:mean-value-theorem} zeigt die geometrische Bedeutung des
-Mittelwert-Satzes:  Es gibt eine Tangente an die Funktion, die dieselbe Steigung hat wie
-die Sekante, die durch die Punkte $\pair(a,f(a))$ und $\pair(b,f(b))$  geht.
+Mittelwert-Satzes:  Es gibt einen Punkt $c$, so dass die Tangente an die Funktion $f$ im Punkt
+$\langle c, f(c)\rangle$ die dieselbe Steigung hat wie die Sekante, die durch die Punkte
+$\pair(a,f(a))$ und $\pair(b,f(b))$  geht. 
       \begin{figure}[!h]
         \centering
         \epsfig{file=Figures/mean-value-theorem.eps,scale=1.5}
@@ -904,7 +900,9 @@ und bestimmen Sie $\alpha$ und $\beta$ so, dass Sie auf die Funktion $h$ den Sat
 % und das ist die Behauptung.
 % \qed
 
-Der folgende Satz ist f\"ur die praktische Berechnung von Grenzwerten unentbehrlich.
+Der folgende Satz ist f\"ur die praktische Berechnung von Grenzwerten unentbehrlich.  Wir haben
+diesen Satz bereits mehrfach in der Vorlesung \"uber \emph{Algorithmen und Komplexit\"at} zur
+Berechnung von Grenzwerten benutzt.
 
 \begin{Satz}[Guillaume Fran\c{c}ois Antoine, Marquis de L'H\^opital, 1661--1704] \lb 
   Die Funktionen $f,g: (a,b) \rightarrow \mathbb{R}$ seien
@@ -986,7 +984,8 @@ Wir geben ein Beispiel.  Es gilt
 \hspace*{1.3cm}
 $\ds\lim\limits_{x \rightarrow \infty} \frac{x}{\exp(x)} = \lim\limits_{x \rightarrow \infty} \frac{1}{\exp(x)} = 0$.
 \\[0.3cm]
-Der Satz von L'H\^opital l\"asst sich auch iteriert anwenden.  Beispielsweise gilt
+Wir haben es zwar nicht bewiesen, aber es kann gezeigt werden, dass der Satz von L'H\^opital  sich
+auch iteriert anwenden l\"a{\ss}t.  Beispielsweise gilt
 \\[0.3cm]
 \hspace*{1.3cm}
 $\ds\lim\limits_{x \rightarrow \infty} \frac{x^2}{\exp(x)} = \lim\limits_{x \rightarrow \infty}
@@ -1050,29 +1049,29 @@ $(-\infty, b)$ \quad
 oder die Menge $\mathbb{R}$ der reellen Zahlen.
 
 \begin{Definition}[monoton]
-  Eine Funktion $f: D \rightarrow \mathbb{R}$ ist \emph{monoton steigend} g.d.w.
+  Eine Funktion $f: D \rightarrow \mathbb{R}$ ist \colorbox{orange}{\emph{monoton steigend}} g.d.w.
   \\[0.2cm]
   \hspace*{1.3cm}
   $\forall x,y \in D:\bigl(x < y \rightarrow f(x) \leq f(y)\bigr)$
   \\[0.2cm]
-  gilt.  Die Funktion $f$ ist \emph{streng monoton steigend}, wenn die sch\"arfere Bedingung
+  gilt.  Die Funktion $f$ ist \colorbox{orange}{\emph{streng monoton steigend}}, wenn die sch\"arfere Bedingung
   \\[0.2cm]
   \hspace*{1.3cm}
   $\forall x,y \in D:\bigl(x < y \rightarrow f(x) < f(y)\bigr)$
   \\[0.2cm]
-  erf\"ullt ist.  Weiter hei{\ss}t  $f$ \emph{monoton fallend}, wenn
+  erf\"ullt ist.  Weiter hei{\ss}t  $f$ \colorbox{orange}{\emph{monoton fallend}}, wenn
   \\[0.2cm]
   \hspace*{1.3cm}
   $\forall x,y \in D:\bigl(x < y \rightarrow f(x) \geq f(y)\bigr)$
   \\[0.2cm]
-  gilt.  Analog ist $f$ \emph{streng monoton fallend}, falls die folgende Bedingung gilt:
+  gilt.  Analog ist $f$ \colorbox{orange}{\emph{streng monoton fallend}}, falls die folgende Bedingung gilt:
   \\[0.2cm]
   \hspace*{1.3cm}
   $\forall x,y \in D:\bigl(x < y \rightarrow f(x) > f(y)\bigr)$.
   \eod
 \end{Definition}
 
-\begin{Satz}
+\begin{Satz} \label{satz:monoton}
   Eine differenzierbare Funktion $f:D \rightarrow \mathbb{R}$ ist genau dann
   monoton steigend, wenn gilt: 
   \\[0.2cm]
@@ -1215,8 +1214,9 @@ Gr\"o{\ss}e von $f''(x)$ und $f''(x_0)$ durch.
       In diesem Fall folgt die Behauptung sofort aus der Voraussetzung
       $f''(x_0) > 0$ und der Transitivit\"at der Relation $>$.
 \end{enumerate}
-Die Ungleichung (\ref{eq:minimum}) zeigt uns, dass die Funktion $x \mapsto f'(x)$ in der $\delta$-Umgebung
-von $x_0$ streng monoton steigend ist.  Da au{\ss}erdem $f'(x_0) = 0$ gilt, folgt insgesamt
+Zusammen mit dem Satz \ref{satz:monoton} zeigt die Ungleichung (\ref{eq:minimum}), dass die Funktion
+$x \mapsto f'(x)$ in der $\delta$-Umgebung von $x_0$ streng monoton steigend ist.  Da au{\ss}erdem
+$f'(x_0) = 0$ gilt, folgt insgesamt 
 \\[0.2cm]
 \hspace*{1.3cm}
 $f'(x) < 0$ \quad f\"ur alle $x\in U_\delta(x_0)$ mit $x < x_0$ \quad und \quad \\[0.2cm]
@@ -1238,7 +1238,7 @@ erf\"ullt ist, dann hat die Funktion an der Stelle $x_0$ ein strenges lokales Ma
 
 
 \begin{Definition}[konvex, konkav]
-Eine Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ hei{\ss}t \emph{konvex} genau dann, wenn 
+Eine Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ hei{\ss}t \colorbox{orange}{\emph{konvex}} genau dann, wenn 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\forall x_1,x_2 \in \mathbb{R}:\forall t\in [0,1]: \bigl(
@@ -1274,7 +1274,8 @@ gilt.  Jedes $x \in [x_1,x_2]$ l\"asst sich in der Form
 \hspace*{1.3cm}
 $x = t \cdot x_1 + (1-t) \cdot x_2$
 \\[0.2cm]
-schreiben.  Setzen wir diesen Wert in die Ungleichung $f(x) \leq g(x)$ ein, so erhalten wir
+schreiben, wobei $t \in [0,1]$ gilt.  Setzen wir diesen Wert von $x$ in die Ungleichung $f(x) \leq g(x)$
+ein, so erhalten wir 
 \\[0.2cm]
 \hspace*{1.3cm}
 $
@@ -1294,7 +1295,7 @@ $
 und das ist genau die Definition der Konvexit\"at.
 \vspace*{0.2cm}
 
-Eine Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ hei{\ss}t \emph{konkav} genau dann, wenn 
+Eine Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ hei{\ss}t \colorbox{orange}{\emph{konkav}} genau dann, wenn 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\forall x_1,x_2 \in \mathbb{R}:\forall t\in [0,1]: 
@@ -1339,10 +1340,6 @@ zusammen mit einer Sekante $g$.
 
 \exercise
 Beweisen Sie das vorangehende Lemma. \eox
-\pagebreak
-
-\vspace*{\fill}
-\pagebreak
 
 \begin{Satz}
 Die Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ sei zweimal differenzierbar und die Funktion 
@@ -1464,7 +1461,6 @@ $f$  konvex \quad $\Leftrightarrow$ \quad $\forall x \in \mathbb{R}: f''(x) \geq
   \\[0.2cm]
   Das ist aber gerade die Konvexit\"at der Funktion $f$. \qed
 \end{enumerate}
-\pagebreak
 
 \section{Die Exponential-Funktion}
 Wir haben die Exponential-Funktion als die Potenzreihe
@@ -1543,7 +1539,7 @@ Funktionen $f:\mathbb{R} \rightarrow \mathbb{R}$ gilt, f\"ur deren $n$-te Ableit
 \\[0.2cm]
 \hspace*{1.3cm}
 $f^{(n)}(x) = 0$ \quad f\"ur alle $x \in \mathbb{R}$ ist.  \eox
-\pagebreak
+
 
 \exercise
 Zeigen Sie, dass f\"ur alle $x\in \mathbb{R}$
@@ -1695,11 +1691,8 @@ Damit haben wir also nun f\"ur alle rationalen Zahlen $r \in \mathbb{Q}$ die Gle
 $\ds e^r = \exp(r)$
 \\[0.2cm]
 gezeigt.  Es stellt sich die Frage, wie wir am sinnvollsten den Wert von Ausdr\"ucken wie
-\\[0.2cm]
-\hspace*{1.3cm}
-$\ds e^{\sqrt{2}}$
-\\[0.2cm]
-definieren k\"onnen.  Es ist naheliegend, f\"ur beliebige reelle Zahlen $x \in \mathbb{R}$ den
+$e^x$ in den F\"allen definieren k\"onnen, in denen $x$ keine rationale Zahl ist. 
+Es ist naheliegend, f\"ur beliebige reelle Zahlen $x \in \mathbb{R}$ den
 Wert $e^x$ als
 \\[0.2cm]
 \hspace*{1.3cm}

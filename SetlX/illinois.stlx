@@ -20,9 +20,7 @@ illinois := procedure(f, a, b, n) {
             if (oldA2 == a) {
                 alpha /= 2;
             }
-        } else {
-            return c;
-        }
+        } else { return c; }
         oldA2 := oldA1; oldB2 := oldB1;
         oldA1 := a;     oldB1 := b;
         if (isRational(a) && isRational(b)) {
@@ -40,22 +38,22 @@ f := procedure(x) {
     return x ** 4 - 1;
 };
 
-x := illinois(f, 0.0, 10.0, 35);
-print("solution to x ** 4 - 1 = 0 is $x$\n");
+// x := illinois(f, 0.0, 10.0, 35);
+// print("solution to x ** 4 - 1 = 0 is $x$\n");
 
 g := procedure(x) {
     return x ** 2 - 2;
 };
 
-x := illinois(g, 1, 2, 15);
-print("solution to x ** 2 = 2 is $nDecimalPlaces(x, 41)$\n");
+// x := illinois(g, 1, 2, 15);
+// print("solution to x ** 2 = 2 is $nDecimalPlaces(x, 41)$\n");
 
 strange := procedure(x) {
     return 1 - 2 / (x * x + 1);
 };
 
-x := illinois(strange, 0.0, 5.0, 20);
-print("solution to 1 - 2 / (x * x + 1) is $x$\n");
+// x := illinois(strange, 0.0, 5.0, 20);
+// print("solution to 1 - 2 / (x * x + 1) is $x$\n");
 
 x := illinois(x |-> -cos(x), 1, 2, 23);
 pi := mathConst("pi");

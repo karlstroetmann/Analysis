@@ -45,5 +45,5 @@ cosXEqualsX := procedure(x) {
 
 f4 := x |-> x ** 4 - 1;
 
-x := regulaFalsi(f4, 0.0, 10.0, 100);
+x := regulaFalsi(f4, 0.0, 10.0, 10000);
 
