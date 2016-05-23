@@ -1153,7 +1153,7 @@ Satzes nicht umkehren l\"asst. \eox
 
 \begin{Definition}[strenges lokales Minimum] \lb
   Eine Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ hat im Punkt $\bar{x}\in \mathbb{R}$
-  ein \emph{strenges lokales Minimum}, wenn gilt:
+  ein \colorbox{orange}{\emph{strenges lokales Minimum}}, wenn gilt:
   \\[0.2cm]
   \hspace*{1.3cm}
   $\exists \varepsilon \in \mathbb{R}_+: \forall x \in \mathbb{R}:\bigl( 
@@ -1162,7 +1162,8 @@ Satzes nicht umkehren l\"asst. \eox
 \end{Definition}
 
 \noindent
-\textbf{Bemerkung}:  Der Begriff des \emph{strengen lokalen Maximum} l\"asst sich analog definieren.
+\textbf{Bemerkung}:  Der Begriff des \colorbox{orange}{\emph{strengen lokalen Maximum}} l\"asst sich
+analog definieren. 
 
 \begin{Satz} \label{satz:minimum}
   Die Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ sei zweimal differenzierbar, die
@@ -1172,7 +1173,7 @@ Satzes nicht umkehren l\"asst. \eox
   \hspace*{1.3cm}
   $f'(x_0) = 0 \;\wedge\; f''(x_0) > 0$.
   \\[0.2cm]
-  Dann hat die Funktion $f$ in $x_0$ ein strenges lokales Minimum.
+  Dann hat die Funktion $f$ im Punkt $x_0$ ein strenges lokales Minimum.
 \end{Satz}
 
 \proof Da die zweite Ableitung $f''(x)$ stetig ist, k\"onnen wir $\varepsilon := f''(x_0) > 0$
@@ -1224,8 +1225,8 @@ $f'(x) < 0$ \quad f\"ur alle $x\in U_\delta(x_0)$ mit $x < x_0$ \quad und \quad 
 $f'(x) > 0$ \quad f\"ur alle $x\in U_\delta(x_0)$ mit $x > x_0$.
 \\[0.2cm]
 Damit ist die Funktion $f$ innerhalb der $\delta$-Umgebung $U_\delta(x_0)$ f\"ur $x < x_0$
-streng monoton fallend und f\"ur $x > x_0$ streng monoton wachsend.  Dann muss $f$ aber ein lokales Minimum in
-$x_0$ haben. \qed
+streng monoton fallend und f\"ur $x > x_0$ streng monoton wachsend.  Dann muss $f$ aber ein lokales
+Minimum im Punkt $x_0$ haben. \qed
 
 
 \noindent
@@ -1340,6 +1341,7 @@ zusammen mit einer Sekante $g$.
 
 \exercise
 Beweisen Sie das vorangehende Lemma. \eox
+\pagebreak
 
 \begin{Satz}
 Die Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ sei zweimal differenzierbar und die Funktion 
@@ -1353,7 +1355,7 @@ $f$  konvex \quad $\Leftrightarrow$ \quad $\forall x \in \mathbb{R}: f''(x) \geq
 \textbf{Beweis}: Wir spalten den Beweis in zwei Teile auf.
 \begin{enumerate}
 \item[``$\Rightarrow$'':] Wir f\"uhren den Nachweis indirekt und nehmen an, dass es ein $x_0 \in \mathbb{R}$
-  gibt, so dass $f''(x_0) < 0$ ist.  \"Ahnlich wie bei Beweis von Satz \ref{satz:minimum} folgt daraus, dass
+  gibt, so dass $f''(x_0) < 0$ ist.  \"Ahnlich wie im Beweis von Satz \ref{satz:minimum} folgt daraus, dass
   es eine $\delta_1$-Umgebung $U_{\delta_1}(x_0)$ gibt, so dass
   \\[0.2cm]
   \hspace*{1.3cm} $f''(x) < 0$ \quad f\"ur alle $x \in U_{\delta_1}(x_0)$ 
@@ -1461,6 +1463,7 @@ $f$  konvex \quad $\Leftrightarrow$ \quad $\forall x \in \mathbb{R}: f''(x) \geq
   \\[0.2cm]
   Das ist aber gerade die Konvexit\"at der Funktion $f$. \qed
 \end{enumerate}
+\pagebreak
 
 \section{Die Exponential-Funktion}
 Wir haben die Exponential-Funktion als die Potenzreihe
