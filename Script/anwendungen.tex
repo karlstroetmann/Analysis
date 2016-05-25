@@ -276,7 +276,8 @@ Exponential-Funktion definiert, es gilt also
 $\ln\bigl(\exp(x)\bigr) = x$.
 \\[0.2cm]
 Da die Exponential-Funktion immer positiv ist, ist der nat\"urliche Logarithmus f\"ur $x \leq 0$  nicht
-definiert ist.  Wir betrachten daher die Funktion $f(x)  := \ln(1 + x)$.  Zun\"achst berechnen wir die
+definiert.  Damit macht eine Taylor-Entwicklung der Funktion $f(x) := \ln(x)$ keinen Sinn. 
+Wir betrachten daher die Funktion $f(x)  := \ln(1 + x)$.  Zun\"achst berechnen wir die
 Ableitungen dieser Funktion.  Wir beweisen durch Induktion, dass f\"ur alle
 nat\"urlichen Zahlen $n\geq 1$ die $n$-te Ableitung der Funktion $f$ die folgende Form hat:
 \\[0.2cm]
@@ -285,7 +286,9 @@ nat\"urlichen Zahlen $n\geq 1$ die $n$-te Ableitung der Funktion $f$ die folgend
 \item[I.A.:] $n=1$.  Es gilt
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\dfo f(x) = \dfo \ln(1+x) = \bruch{1}{1+x} = (-1)^{1+1}\cdot \bruch{(1-1)!}{(1+x)^1}$
+  $\dfo f(x) = \dfo \ln(1+x) = \bruch{1}{1+x} = (-1)^{1+1}\cdot \bruch{(1-1)!}{(1+x)^1}$,
+  \\[0.2cm]
+  denn $n!$ ist f\"ur $n\in\mathbb{N}_0$ so definiert, dass $0! = 1$ gilt.
 \item[I.S.:] $n \mapsto n+1$.  Wir haben 
   \\[0.3cm]
   \hspace*{1.3cm}
@@ -329,7 +332,7 @@ Damit haben wir insgesamt $\textsl{taylor}\bigl(x \mapsto \ln(1+x), x \bigr) = \
 wir
 \\[0.2cm]
 \hspace*{1.3cm}
-\colorbox{orange}{\framebox{$\ds\ln(1+x) = \sum\limits_{k=1}^{\infty} (-1)^{k+1}\cdot \frac{x^k}{k}$}}
+\colorbox{red}{\framebox{\colorbox{orange}{$\ds\ln(1+x) = \sum\limits_{k=1}^{\infty} (-1)^{k+1}\cdot \frac{x^k}{k}$}}}
 \\[0.2cm]
 schreiben.\footnote{
   Die Formel gilt auch f\"ur f\"ur negative $x$, deren Betrag kleiner als 1 ist, aber das 
@@ -465,7 +468,7 @@ Absch\"atzung f\"ur den Abbruch-Fehler an.  Folgern Sie au{\ss}erdem die
 \href{http://de.wikipedia.org/wiki/Eulersche_Formel}{Eulersche Formel}
 \\[0.2cm]
 \hspace*{1.3cm}
-\colorbox{orange}{\framebox{$\ds \mathrm{e}^{i \cdot x} = \cos(x) + i \cdot \sin(x)$}},
+\colorbox{red}{\framebox{\colorbox{orange}{$\ds \mathrm{e}^{i \cdot x} = \cos(x) + i \cdot \sin(x)$,}}}
 \\[0.2cm]
 die auf 
 \href{http://en.wikipedia.org/wiki/Leonard_Euler}{Leonard Euler} (1707 --- 1783) zur\"uck geht.
