@@ -276,10 +276,17 @@ Exponential-Funktion definiert, es gilt also
 $\ln\bigl(\exp(x)\bigr) = x$.
 \\[0.2cm]
 Da die Exponential-Funktion immer positiv ist, ist der nat\"urliche Logarithmus f\"ur $x \leq 0$  nicht
-definiert.  Damit macht eine Taylor-Entwicklung der Funktion $f(x) := \ln(x)$ keinen Sinn. 
-Wir betrachten daher die Funktion $f(x)  := \ln(1 + x)$.  Zun\"achst berechnen wir die
+definiert.  Damit macht eine Taylor-Entwicklung der Funktion $f(x) := \ln(x)$ keinen Sinn, denn in
+der Taylor-Reihe ist schon der konstante Koeffizient 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\frac{f^{(0)}(0)}{0!} = f(0)$
+\\[0.2cm]
+undefiniert.  Alle weiteren Koeffizienten sind nat\"urlich ebenfalls undefiniert.
+Wir betrachten daher die Funktion $f(x)  := \ln(1 + x)$, denn diese Funktion ist f\"ur $x = 0$
+definiert.  Zun\"achst berechnen wir die 
 Ableitungen dieser Funktion.  Wir beweisen durch Induktion, dass f\"ur alle
-nat\"urlichen Zahlen $n\geq 1$ die $n$-te Ableitung der Funktion $f$ die folgende Form hat:
+$n \in \mathbb{N}$ die $n$-te Ableitung der Funktion $f$ die folgende Form hat:
 \\[0.2cm]
 \hspace*{1.3cm} $f^{(n)}(x) = (-1)^{n+1}\cdot \bruch{(n-1)!}{(1+x)^n}$
 \begin{enumerate}
@@ -289,27 +296,28 @@ nat\"urlichen Zahlen $n\geq 1$ die $n$-te Ableitung der Funktion $f$ die folgend
   $\dfo f(x) = \dfo \ln(1+x) = \bruch{1}{1+x} = (-1)^{1+1}\cdot \bruch{(1-1)!}{(1+x)^1}$,
   \\[0.2cm]
   denn $n!$ ist f\"ur $n\in\mathbb{N}_0$ so definiert, dass $0! = 1$ gilt.
+\pagebreak
 \item[I.S.:] $n \mapsto n+1$.  Wir haben 
   \\[0.3cm]
   \hspace*{1.3cm}
   $
   \begin{array}[t]{lcl}  
     f^{(n+1)}(x) & = & \dfo f^{(n)}(x) \\[0.3cm]
-    & \stackrel{IV}{=} & \dfo \left((-1)^{n+1}\cdot \bruch{(n-1)!}{(1+x)^n}\right) \\[0.5cm]
+    & \stackrel{\mathrm{IV}}{=} & \dfo \left((-1)^{n+1}\cdot \bruch{(n-1)!}{(1+x)^n}\right) \\[0.5cm]
     & = & (-1)^{n+1}\cdot (n-1)!\cdot \bruch{(-n)}{(1+x)^{n+1}} \\[0.5cm]
     & = & (-1)^{(n+1)+1}\cdot \bruch{n!}{(1+x)^{n+1}} \\[0.3cm]
   \end{array}
   $  
 \end{enumerate}
-Daraus folgt sofort 
+Setzen wir hier $x = 0$, so sehen wir, dass
 \\[0.2cm]
 \hspace*{1.3cm}
 $f^{(n)}(0) = (-1)^{n+1}\cdot \bruch{(n-1)!}{(1+0)^n} = (-1)^{n+1}\cdot (n-1)!$ 
 \\[0.3cm]
-Damit erhalten wir f\"ur die Taylor-Entwicklungen der Funktion $\ln(1+x)$ das Ergebnis 
+gilt.  Wegen $f(0) = \ln(1) = 0$ erhalten wir f\"ur die Taylor-Entwicklungen der Funktion $\ln(1+x)$ das Ergebnis 
 \begin{equation}
   \label{eq:taylorLnSimple}
-  \textsl{taylor}\bigl(x \mapsto \ln(1+x),x \bigr) = \sum\limits_{k=1}^\infty (-1)^{k+1}\cdot \bruch{(k-1)!\cdot x^k}{k!} = \sum\limits_{k=1}^\infty (-1)^{k+1}\cdot \bruch{x^k}{k}.
+  \textsl{taylor}\bigl(x \mapsto \ln(1+x),x \bigr) = \sum\limits_{n=1}^\infty (-1)^{n+1}\cdot \bruch{(n-1)!\cdot x^n}{n!} = \sum\limits_{n=1}^\infty (-1)^{n+1}\cdot \bruch{x^n}{n}.
 \end{equation}
 Wir wollen nun zeigen, dass diese Taylor-Reihe tats\"achlich gegen $\ln(1+x)$ konvergiert, wir wollen also
 zeigen, dass
@@ -328,11 +336,12 @@ F\"ur den Abbruch-Fehler haben wir also
 \hspace*{1.3cm} $\textsl{error}_n(x) = (-1)^n \cdot \bruch{1}{(1+\chi)^{n+1}}\cdot \bruch{x^{n+1}}{n+1}$
 \\[0.2cm]
 mit $\chi \in[0,x]$ und f\"ur $x \in [0, 1]$ geht dieser Wert f\"ur $n \rightarrow \infty$ gegen $0$.
-Damit haben wir insgesamt $\textsl{taylor}\bigl(x \mapsto \ln(1+x), x \bigr) = \ln(1+x)$ f\"ur $x \in (-1, 1]$ gezeigt und folglich k\"onnen
+Damit haben wir insgesamt $\textsl{taylor}\bigl(x \mapsto \ln(1+x), x \bigr) = \ln(1+x)$ f\"ur $x \in [0, 1]$ gezeigt und folglich k\"onnen
 wir
 \\[0.2cm]
 \hspace*{1.3cm}
-\colorbox{red}{\framebox{\colorbox{orange}{$\ds\ln(1+x) = \sum\limits_{k=1}^{\infty} (-1)^{k+1}\cdot \frac{x^k}{k}$}}}
+\colorbox{red}{\framebox{\colorbox{orange}{
+$\ds\ln(1+x) = \sum\limits_{k=1}^{\infty} (-1)^{k+1}\cdot \frac{x^k}{k}$ \quad f\"ur $x \in (-1, 1]$}}}
 \\[0.2cm]
 schreiben.\footnote{
   Die Formel gilt auch f\"ur f\"ur negative $x$, deren Betrag kleiner als 1 ist, aber das 
@@ -354,7 +363,7 @@ $|\textsl{error}_n(1)| \leq \bruch{1}{n+1}$.
 \\[0.2cm]
 Um $\ln(2)$ also nach der
 obigen Formel auf eine Genauigkeit von $10^{-9}$ berechnen zu k\"onnen, m\"ussten wir
-$1\,000\,000\,000$ Terme aufsummieren!  Es geht auch effizienter.  Dazu ersetzen wir in
+$1\,000\,000\,000$ Terme aufsummieren!  Erfreulicherweise geht es auch effizienter.  Dazu ersetzen wir in
 Gleichung (\ref{eq:taylorLnSimple}) $x$ durch $-x$ und erhalten
 \begin{equation}
   \label{eq:taylorLnSimpleMinus}
@@ -370,9 +379,11 @@ wir
    \ln\Bigl(\bruch{1+x}{1-x}\Bigr) & = & \ln(1+x) - \ln(1-x)  \\[0.3cm]
    & = & \displaystyle\sum\limits_{k=1}^\infty (-1)^{k+1}\cdot  \bruch{x^k}{k} + \sum\limits_{k=1}^n \bruch{x^k}{k} \\[0.5cm]
    & = & \displaystyle\sum\limits_{k=1}^\infty \bigl((-1)^{k+1} + 1\bigr) \cdot  \bruch{x^k}{k} \\[0.5cm]
-   & = & 2 \cdot  \displaystyle\sum\limits_{n=0}^\infty \bruch{x^{2\cdot n+1}}{2\cdot n+1} \\[0.5cm]
+   & = & 2 \cdot  \displaystyle\sum\limits_{n=0}^\infty \bruch{x^{2\cdot n+1}}{2\cdot n+1}, \\[0.5cm]
   \end{array}
 \end{equation}
+denn $(-1)^k+1 + 1$ hat f\"ur gerade Werte von $k$ den Wert $0$ und f\"ur ungerade Werte hat dieser
+Term den Wert 2.
 Setzen wir hier f\"ur $x$ den Wert $\ds\frac{1}{3}$ ein, so erhalten wir 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -447,9 +458,20 @@ das so bestimmte $x$ gilt dann
 \begin{equation}
   \label{eq:Ln}
   \ln(r) = \ln\Bigl(\bruch{1+x}{1-x}\Bigr) = 2 \cdot  \displaystyle\sum\limits_{n=0}^\infty  \bruch{x^{2\cdot n+1}}{2\cdot n+1}  
-  \quad \mbox{mit}\; x = \bruch{r-1}{r+1}
+  \quad \mbox{mit}\; x = \bruch{r-1}{r+1}.
 \end{equation}
-Falls $r \leq 2$ ist, gilt $x \leq \frac{1}{3}$ und dann konvergiert die obige Reihe sehr
+
+\exercise
+Zeigen Sie, dass 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds 0 \leq \frac{r - 1}{r + 1} \leq \frac{1}{3}$
+\\[0.2cm]
+gilt, falls $r \in [1, 2]$ ist. \eox
+\vspace*{0.3cm}
+
+Die letzte Aufgabe zeigt, dass aus $r \in [1,2]$ die Ungleichung $0 \leq x \leq \frac{1}{3}$ folgt
+und dann konvergiert die in Gleichung (\ref{eq:Ln}) gegebene Reihe sehr 
 gut.  In modernen Rechnern werden reelle Zahlen $y$ in der Form
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -463,8 +485,8 @@ $\ln(y) = \ln(r) + n \cdot  \ln(2)$
 berechnen, wobei $\ln(r)$ mit Hilfe der Formel (\ref{eq:Ln}) gefunden wird.
 
 \exercise
- Berechnen Sie die Taylor-Reihen f\"ur die Funktionen $x \mapsto \sin(x)$ und $x \mapsto \cos(x)$ geben Sie eine
-Absch\"atzung f\"ur den Abbruch-Fehler an.  Folgern Sie au{\ss}erdem die
+ Berechnen Sie die Taylor-Reihen f\"ur die Funktionen $x \mapsto \sin(x)$ und $x \mapsto \cos(x)$
+ und geben Sie eine Absch\"atzung f\"ur den Abbruch-Fehler an.  Folgern Sie au{\ss}erdem die
 \href{http://de.wikipedia.org/wiki/Eulersche_Formel}{Eulersche Formel}
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -478,7 +500,7 @@ die auf
 \subsection{Berechnung des Arcus-Tangens}
 Die direkte Berechnung der Taylor-Reihe einer Funktion mit Hilfe der Formel
 (\ref{eq:taylorFormula}) ist unter Umst\"anden sehr m\"uhsam.  Wollen wir beispielsweise die
-Funktion $x \mapsto \arctan(x)$ in einer Taylor-Reihe entwickeln, so berechnen wir die
+Funktion $x \mapsto \arctan(x)$ in einer Taylor-Reihe entwickeln, so berechnen wir mit WolframAlpha$^{\scriptsize\textregistered}$ die
 ersten f\"unf Ableitungen wie folgt:
 \begin{enumerate}
 \item $\arctan^{(1)}(x) = \bruch{1}{1+{x}^{2}}$.
@@ -488,6 +510,7 @@ ersten f\"unf Ableitungen wie folgt:
       \right)^{4}}}$.
 \item $\arctan^{(5)}(x) = \displaystyle 24 \cdot{\frac {1+5\cdot{x}^{4}-10\cdot{x}^{2}}{ \left( 1+{x}^{2} \right)^{5}}}$.
 \end{enumerate}
+Offenbar ist es schwierig, hier eine Struktur zu erkennen.
 
 \exercise
 Versuchen Sie, eine allgemeine Formel f\"ur die $n$-te Ableitung der Funktion \\
@@ -505,7 +528,7 @@ $\ds\frac{1}{1 + x^2} = \frac{1}{2} \cdot \left(\frac{1}{1 + i \cdot x} + \frac{
 
 Wir gehen in der Vorlesung einen anderen Weg um die Taylor-Reihe der Arkustangens-Funktion
 zu berechnen.  Dazu  stellen wir
-die Ableitung $\frac{d\;}{dx}\arctan(x)$ durch eine geometrische Reihe dar: 
+die Ableitung der Funktion $x \mapsto\arctan(x)$ durch eine geometrische Reihe dar: 
 \\[0.3cm]
 \hspace*{1.3cm}
 $\bruch{d\;}{dx}\arctan(x) = \bruch{1}{1+{x}^{2}} = \displaystyle \sum\limits_{n=0}^\infty \Bigl(-x^2\Bigr)^n = \sum\limits_{n=0}^\infty (-1)^n \cdot  x^{2\cdot n}$.
@@ -646,7 +669,7 @@ Es gibt noch eine elegantere M\"oglichkeit, die Kreiszahl $\pi$ mit Hilfe des Ar
 berechnen.  Es gilt n\"amlich die Machin'sche Formel (John Machin, 1686 -- 1751):
 \\[0.2cm]
 \hspace*{1.3cm}
-\colorbox{orange}{\framebox{$\ds\frac{\pi}{4} = 4 \cdot \arctan\Bigl(\frac{1}{5}\Bigr) - \arctan\Bigl(\frac{1}{239}\Bigr)$}}
+\colorbox{red}{\colorbox{orange}{\framebox{$\ds\frac{\pi}{4} = 4 \cdot \arctan\Bigl(\frac{1}{5}\Bigr) - \arctan\Bigl(\frac{1}{239}\Bigr)$}}}
 
 \proof
 Wegen $\bruch{\pi}{4}= \arctan(1)$ ist die Machin'sche Formel \"aquivalent zu
@@ -728,7 +751,7 @@ definieren wir f\"ur alle $k\in\{0,1,\cdots,n\}$ das $k$-te \emph{Lagrange'sche 
 vom Grad $n$ wie folgt: 
 \begin{equation}
   \label{eq:lagrangePolynom}
-\colorbox{orange}{\framebox{$\ds L_k\bigl([x_0,\cdots,x_n];x\bigr) := \prod\limits_{i=0 \atop i\not=k}^n \bruch{x-x_i}{x_k-x_i}$}}
+\colorbox{red}{\colorbox{orange}{\framebox{$\ds L_k\bigl([x_0,\cdots,x_n];x\bigr) := \prod\limits_{i=0 \atop i\not=k}^n \bruch{x-x_i}{x_k-x_i}$}}}
 \end{equation}
 F\"ur die Folge der St\"utzstellen $[-1,0,1]$ lauten die Lagrange'schen Polynome beispielsweise
 \begin{enumerate}
@@ -926,7 +949,7 @@ $p(x_n) = y_n$
 gilt, wird also durch das Polynom
 \begin{equation}
   \label{eq:newtonInterpolationFinal}
-\colorbox{orange}{\framebox{$\ds p(x) \; = \; \sum\limits_{k=0}^n [x_0,x_1,\cdots,x_k]_{\mathrm{dd}} \cdot  \prod\limits_{i=0}^{k-1}(x-x_i)$}}   
+\colorbox{red}{\colorbox{orange}{\framebox{$\ds p(x) \; = \; \sum\limits_{k=0}^n [x_0,x_1,\cdots,x_k]_{\mathrm{dd}} \cdot  \prod\limits_{i=0}^{k-1}(x-x_i)$}}}
 \end{equation}
 gel\"ost.
 \subsection{Der Interpolations-Fehler$^*$}
@@ -987,7 +1010,7 @@ genau ein Polynom $p(x)$ gibt, so dass $p(x_i) = y_i$ f\"ur alle $i=0,1,\cdots,n
   den Interpolations-Fehler $f(\bar{x}) - p(\bar{x})$ gilt: 
   \\[0.2cm]
   \hspace*{1.3cm}
-\colorbox{orange}{\framebox{$\ds f(\bar{x}) - p(\bar{x}) = \bruch{f^{(n+1)}(\zeta)}{(n+1)!} \cdot  \prod\limits_{i=0}^{n}(\bar{x}-x_i)$.}}
+\colorbox{red}{\colorbox{orange}{\framebox{$\ds f(\bar{x}) - p(\bar{x}) = \bruch{f^{(n+1)}(\zeta)}{(n+1)!} \cdot  \prod\limits_{i=0}^{n}(\bar{x}-x_i)$.}}}
 \end{Satz}
 
 \noindent
