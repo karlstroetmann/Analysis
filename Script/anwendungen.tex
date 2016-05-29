@@ -722,7 +722,7 @@ Arcus-Tangens her und berechnen Sie damit $\pi$ auf eine Genauigkeit von $10^{-9
 \hspace*{1.3cm}
 $\bruch{\pi}{4} =  2 \cdot  \arctan\Bigl(\frac{1}{2}\Bigr) -\arctan\Bigl(\frac{1}{7}\Bigr) $.
 
-\section{Polynom-Interpolation$^*$}
+\section{Polynom-Interpolation}
 Nach dem wir uns im letzten Abschnitt damit besch\"aftigt haben f\"ur eine gegebene Funktion
 $f$ eine Folge von Polynomen zu konstruieren, deren Ableitungen im Punkt $0$ mit der
 Funktion $f$ \"ubereinstimmen, zeigen wir jetzt, wie sich Polynome konstruieren lassen, die
@@ -731,24 +731,25 @@ mit eine Funktion $f$ an vorgegebenen Punkten \"ubereinstimmen.  Sind $n+1$ Paar
 \hspace*{1.3cm}
 $\pair(x_0,y_0)$,
 $\pair(x_1,y_1)$,
-$\cdots$
+$\cdots$,
 $\pair(x_n,y_n)$
 \\[0.2cm]
-gegeben, so besteht die Aufgabe der \emph{Polynom-Interpolation} darin, ein Polynom $p(x)$ vom  $n$ zu
-finden, so dass
+gegeben, so besteht die Aufgabe der
+\href{https://de.wikipedia.org/wiki/Interpolation_(Mathematik)}{\emph{Polynom-Interpolation}} darin,
+ein Polynom $p(x)$ vom  $n$ zu finden, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
 $\forall i \in \{0,1,\cdots,n\}: p(x_i) = y_i$
 \\[0.2cm]
-gilt.  Wir zeigen sofort, dass diese Aufgabe l\"osbar ist.  Zu einer gegebenen Liste von 
+gilt.  Wir zeigen nun, dass diese Aufgabe l\"osbar ist:  Zu einer gegebenen Liste von 
 $n+1$ verschiedenen \emph{St\"utzstellen} 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\bigl[x_0, x_1, \cdots, x_n]$
 \\[0.2cm]
-definieren wir f\"ur alle $k\in\{0,1,\cdots,n\}$ das $k$-te \emph{Lagrange'sche Polynom} 
-(\href{http://de.wikipedia.org/wiki/Lagrange}{Joseph Louis Lagrange}, 1736 -- 1813)
-vom Grad $n$ wie folgt: 
+definieren wir das $k$-te \emph{Lagrange'sche Polynom} 
+(\href{https://de.wikipedia.org/wiki/Joseph-Louis_Lagrange}{Joseph-Louis Lagrange}, 1736 -- 1813)
+vom Grad $n$ f\"ur alle $k\in\{0,1,\cdots,n\}$ wie folgt: 
 \begin{equation}
   \label{eq:lagrangePolynom}
 \colorbox{red}{\colorbox{orange}{\framebox{$\ds L_k\bigl([x_0,\cdots,x_n];x\bigr) := \prod\limits_{i=0 \atop i\not=k}^n \bruch{x-x_i}{x_k-x_i}$}}}
@@ -763,7 +764,8 @@ F\"ur die Folge der St\"utzstellen $[-1,0,1]$ lauten die Lagrange'schen Polynome
 Ist eine Liste $[x_0,x_1,\cdots,x_n]$ von $n+1$ verschiedenene St\"utzstellen gegeben, so
 haben die Lagrange'schen Polynome eine sehr n\"utzliche Eigenschaft.  Um diese
 Eigenschaft einfacher schreiben zu k\"onnen, definieren wir f\"ur nat\"urliche Zahlen $j$ und
-$k$ das sogenannte \emph{Kronecker-Delta} wie folgt:
+$k$ das \href{https://de.wikipedia.org/wiki/Kronecker-Delta}{\emph{Kronecker-Delta}}
+(\href{https://de.wikipedia.org/wiki/Leopold_Kronecker}{Leopold Kronecker}, 1823 -- 1891) wie folgt:
 \begin{equation}
   \label{eq:kroneckerDelta}
   \delta_{k,j} = \left\{ \begin{array}[c]{ll}
@@ -777,7 +779,7 @@ Damit gilt nun
   \label{eq:lagrangeProperty}
 L_k\bigl([x_0,x_1,\cdots,x_n];x_j\bigr) = \delta_{k,j}. 
 \end{equation}
-Diese Eigenschaft l\"asst sich durch einfaches Nachrechnen best\"atigen.  Wir betrachten die F\"alle
+Diese Eigenschaft werden wir durch einfaches Nachrechnen best\"atigen.  Wir betrachten die F\"alle
 $j=k$ und $j\not=k$ getrennt:
 \begin{enumerate}
 \item Fall: $j=k$.  Dann haben wir 
@@ -794,12 +796,16 @@ $j=k$ und $j\not=k$ getrennt:
       & = & \ds\prod\limits_{i=0 \atop i\not=k}^n \bruch{x_j-x_i}{x_k-x_i} \\[0.6cm]
       & = & \ds\frac{(x_j - x_0) \cdot \mbox{$\dots$} \cdot  (x_j - x_j) \cdot \mbox{$\dots$} \cdot (x_j - x_n)}{
                      (x_k - x_0) \cdot \mbox{$\dots$} \cdot (x_k - x_j) \cdot \mbox{$\dots$} \cdot (x_k - x_n)} 
-            \\[0.3cm]
-      & = & 0 \\[0.2cm]
-      & = & \delta_{j,k}
+        \;=\; 0 \;=\; \delta_{j,k},
       \end{array}
       $
 \end{enumerate}
+denn f\"ur $j \not= k$ enth\"alt das Produkt 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\prod\limits_{i=0 \atop i\not=k}^n x_j - x_i$
+\\[0.2cm]
+den Faktor $x_j - x_j$ und ist damit gleich $0$.
 Die Eigenschaft (\ref{eq:lagrangeProperty}) macht es jetzt einfach, Polynome zu
 konstruieren, die an den  St\"utzstellen $x_0,x_1,\cdots,x_n$ die vorgegebenen Werte 
 $y_0$, $y_1$, $\cdots$, $y_n$ annehmen. Wir definieren 
@@ -846,7 +852,9 @@ Sie ein Polynom $p(x)$ vom Grade 1, so dass
 \hspace*{1.3cm} $p(n) = 1.0$ \quad und \quad $\ds p\Bigl(\frac{n}{2}\Bigr) = 4.0$
 \\[0.2cm]
 gilt.  Hat ein Teilnehmer einer Klausur $k$ von $n$ Punkten erreicht, so ist $p(k)$ die
-Note, mit der die Leistung bewertet wird.  \eox
+Note, mit der die Leistung bewertet wird.  Falls $p(k) < 5,0$ ist, wird die Leistung mit der Note
+$5,0$ bewertet.
+\eox
 
 \subsection{Interpolation nach Newton$^*$}
 Bei der Rechnung mit den oben definierten Lagrange'schen Polynomen tritt in der Praxis ein
@@ -952,14 +960,14 @@ gilt, wird also durch das Polynom
 \colorbox{red}{\colorbox{orange}{\framebox{$\ds p(x) \; = \; \sum\limits_{k=0}^n [x_0,x_1,\cdots,x_k]_{\mathrm{dd}} \cdot  \prod\limits_{i=0}^{k-1}(x-x_i)$}}}
 \end{equation}
 gel\"ost.
-\subsection{Der Interpolations-Fehler$^*$}
+\subsection{Der Interpolations-Fehler}
 Wir untersuchen als n\"achstes, wie gro{\ss} der Fehler bei der Polynom-Interpolation werden
 kann.  Dazu beweisen wir zun\"achst den folgenden Hilfs-Satz.  Dieser Satz ist eine Verallgemeinerung
 des Satzes von Rolle (Satz \ref{satz:rolle}). 
 
 \begin{Satz}
   Ist $f:\mathbb{R} \rightarrow \mathbb{R}$ eine Funktion, die $n$-mal differenzierbar
-  ist und die $n+1$ verschiedene Null-Stellen 
+  ist und die au{\ss}erdem $n+1$ verschiedene Null-Stellen 
   \\[0.2cm]
   \hspace*{1.3cm}  $x_0 < x_1 < \cdots < x_n$
   \\[0.2cm]
@@ -970,7 +978,7 @@ $f^{(k)}(x)$ in dem Interval $[x_0,x_n]$ mindestens $n+1-k$ verschiedene Nullste
 Diesen Nachweis f\"uhren wir durch Induktion \"uber $k$.
 \begin{enumerate}
 \item[I.A.:] $k=0$. Es gilt $f^{(0)}(x) = f(x)$ und da die Funktion $f$ nach Voraussetzung $n+1$
-             Nullstelle hat, folgt die Behauptung.
+             verschiedene Nullstellen hat, folgt die Behauptung.
 \item[I.S.:] $k\mapsto k+1$.  Nach Induktions-Voraussetzung hat die Funktion
              $f^{(k)}(x)$ mindestens $n + 1 -k$ verschiedene Nullstellen.
              Nehmen wir an, diese Nullstellen seien der Gr\"o{\ss}e nach geordnet als
@@ -1119,8 +1127,8 @@ der Fixpunkt-Gleichung
 $x = f(x)$ 
 \\[0.2cm]
 iterativ bestimmen wollen, indem wir induktiv eine Folge $\folge{x_n}$ definieren, wobei wir
-ausgehend von einem gew\"ahlten Startwert $x_1$ die \"ubrigen Folgenglieder $x_{n}$ induktiv durch die
-Festlegung 
+ausgehend von einem weitgehend beliebig gew\"ahlten Startwert $x_1$ die \"ubrigen Folgenglieder
+$x_{n}$ induktiv durch die Festlegung 
 \\[0.2cm]
 \hspace*{1.3cm}
 $x_{n+1} = f(x_n)$ 
@@ -1168,15 +1176,16 @@ beieinander liegen als die Argumente.  Um diese Argumentation wasserdicht zu mac
 zun\"achst formal unter welchen Umst\"anden die Funktionswerte einer Funktion n\"aher beieinander liegen
 als die Argumente.  Die nun folgende Definition ist etwas sch\"arfer, als Sie es vielleicht im ersten
 Moment vermuten w\"urden.  Das werden wir sp\"ater noch diskutieren.
+\pagebreak
 
 \begin{Definition}[kontrahierend] \lb
-Eine Funktion $f:[a,b] \rightarrow [a,b]$ ist eine \emph{kontrahierende Abbildung} wenn es eine
+Eine Funktion $f:[a,b] \rightarrow [a,b]$ ist eine \colorbox{orange}{\emph{kontrahierende Abbildung}} wenn es eine
 reelle Zahl $q$ mit $q < 1$ gibt, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\forall x,y \in [a,b]: |f(x) - f(y)| \leq q \cdot  |x - y|$.  
 \\[0.2cm]
-gilt.  Wir bezeichnen die Zahl $q$ als den \emph{Kontraktions-Koeffizienten}.
+gilt.  Wir bezeichnen die Zahl $q$ als den \colorbox{orange}{\emph{Kontraktions-Koeffizienten}}.
 \eod
 \end{Definition}
 
@@ -1194,7 +1203,7 @@ Gleichungen
 \hspace*{1.3cm}
 $\cos(0) = 1$ \quad und \quad $\cos(1) \approx 0.54$ 
 \\[0.2cm]
-zusammen mit und der Tatsache, dass die Kosinus-Funktion in dem Intervall
+zusammen mit der Tatsache, dass die Kosinus-Funktion in dem Intervall
 $[0,1]$ monoton fallend ist, denn es gilt
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1218,7 +1227,6 @@ $|\cos(x) - \cos(y)| = \sin(\zeta) \cdot  |x - y| \leq 0.85 \cdot  |x - y|$ \qua
 
 \noindent
 Das letzte Beispiel verallgemeinern wir zu einem Satz.
-\pagebreak
 
 \begin{Satz}
 Ist die Funktion $f:[a,b] \rightarrow [a,b]$ in dem Intervall $[a,b]$ differenzierbar und gibt es eine Zahl
@@ -1250,6 +1258,7 @@ $\ds |f(x) - f(y)| \leq q \cdot |x  - y|$
 \\[0.2cm]
 und nach Definition einer kontrahierenden Abbildung ist das die Behauptung.
 \qed
+\pagebreak
 
 \begin{Satz}
   Ist $f:[a,b] \rightarrow [a,b]$ eine kontrahierende Abbildung, so ist $f$ auch stetig.
@@ -1287,7 +1296,7 @@ ersten Moment skurril anmutenden Formel:
 \hspace*{0.8cm}
 $\ds x_n - x_0 = (x_n - x_{n-1}) + (x_{n-1} - x_{n-2}) + \cdots + (x_2 - x_1) + (x_1 - x_0) = \sum\limits_{i=1}^n (x_i - x_{i-1})$.
 \\[0.2cm]
-Diese Summe wird als \emph{Teleskop-Summe} bezeichnet.
+Diese Summe wird als \colorbox{orange}{\emph{Teleskop-Summe}} bezeichnet.
 Daraus folgt sofort 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1300,12 +1309,12 @@ $\ds\lim\limits_{n\rightarrow\infty} x_n = x_0 + \sum\limits_{i=1}^\infty (x_i -
 \\[0.2cm]
 wenn wir noch zeigen k\"onnen, dass
 die auf der rechten Seite dieser Formel auftretende Reihe konvergiert.  Dazu zeigen wir, dass die geometrische Reihe eine Majorante dieser Reihe ist.
-Konkret zeigen wir durch vollst\"andige Induktion, dass f\"ur alle $i\in\mathbb{N}$ die Ungleichung
+Konkret zeigen wir durch vollst\"andige Induktion, dass f\"ur alle $i\in\mathbb{N}_0$ die Ungleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds|x_{i+1} - x_i| \leq q^i \cdot |x_1 - x_0|$
 \\[0.2cm]
-gilt.  Der Induktions-Anfang ist trivial.  Im Induktions-Schritt haben wir
+gilt.  Der Induktions-Anfang $i = 0$ ist trivial.  Im Induktions-Schritt haben wir
 \\[0.2cm]
 \hspace*{0.8cm}
 $\ds|x_{i+2} - x_{i+1}| = |f(x_{i+1}) - f(x_i)| \leq q \cdot  |x_{i+1} - x_i| \stackrel{\mbox{\scriptsize IV}}{\leq}
@@ -1417,11 +1426,11 @@ mehr wir uns der L\"osung ann\"ahern.
 
 \exercise
 L\"osen Sie f\"ur $y=10^6$ und $y=10^{-6}$ die Gleichung $x\cdot \exp(x) = y$ 
-durch eine einfache Fixpunkt-Iteration.  Berechnen Sie die L\"osung $x$ jeweils auf eine
-Genauigkeit von $10^{-7}$. 
+durch eine einfache Fixpunkt-Iteration.  
 
 \hint
-Diese Aufgabe ist in erster Linie als Programmier-Aufgabe gedacht.
+Diese Aufgabe ist in erster Linie als Programmier-Aufgabe gedacht.  Es ist nicht gefordert, dass Sie
+den Abbruchfehler untersuchen.
 \eox
 
 \remark
@@ -1432,7 +1441,11 @@ nicht reicht zu fordern, dass
 $|f(x) - f(y)| < |x - y|$
 \\[0.2cm]
 gilt.  Eine Funktion, die nur diese schw\"achere Bedingung erf\"ullt, wollen wir als eine 
-\emph{schwach kontrahierende Abbildung} bezeichnen.  In der Tat kann gezeigt werden, dass auch f\"ur
+\\[0.2cm]
+\hspace*{1.3cm}
+\colorbox{orange}{\emph{schwach kontrahierende Abbildung}} 
+\\[0.2cm]
+bezeichnen.  In der Tat kann gezeigt werden, dass auch f\"ur
 eine schwach kontrahierende Abbildung $f$ die Folge $x_{n+1} := f(x_n)$ f\"ur beliebige Startwerte
 gegen eine L\"osung der Fixpunkt-Gleichung $x = f(x)$ konvergiert.  Allerdings ist die Konvergenz unter Umst\"anden
 nur sehr langsam.  Als Beispiel betrachten wir die Funktion $x \mapsto \sin(x)$.  Offenbar hat die Gleichung
@@ -1674,9 +1687,11 @@ $
 Wir haben also  die Iterations-Vorschrift 
 \begin{equation}
   \label{eq:NewtonZero}
-  \colorbox{orange}{\framebox{$\ds x_{n+1} = x_n - \frac{g(x_n)}{g'(x_n)}$}} 
+  \colorbox{red}{\colorbox{orange}{\framebox{$\ds x_{n+1} = x_n - \frac{g(x_n)}{g'(x_n)}$}}}
 \end{equation}
-gefunden.  Dieses Verfahren wird als  \emph{Newton'sches Verfahren} bezeichnet.
+gefunden.  Dieses Verfahren wird als  \emph{Newton'sches Verfahren} 
+(\href{https://en.wikipedia.org/wiki/Isaac_Newton}{Sir Isaac Newton}, 1642 -- 1726)
+bezeichnet.
 Die Gleichung  (\ref{eq:NewtonZero}) l\"asst sich geometrisch interpretieren: Legen wir im Punkt
 $\langle x_n, g(x_n) \rangle$ eine Tangente an die Funktion $g$, so schneidet diese Tangente die
 $x$-Achse im Punkt 
