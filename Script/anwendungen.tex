@@ -1183,7 +1183,7 @@ Eine Funktion $f:[a,b] \rightarrow [a,b]$ ist eine \colorbox{orange}{\emph{kontr
 reelle Zahl $q$ mit $q < 1$ gibt, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall x,y \in [a,b]: |f(x) - f(y)| \leq q \cdot  |x - y|$.  
+\colorbox{red}{\colorbox{orange}{\framebox{$\forall x,y \in [a,b]: |f(x) - f(y)| \leq q \cdot  |x - y|$}}}  
 \\[0.2cm]
 gilt.  Wir bezeichnen die Zahl $q$ als den \colorbox{orange}{\emph{Kontraktions-Koeffizienten}}.
 \eod
@@ -1286,7 +1286,7 @@ $\ds\bar{x} := \lim\limits_{n\rightarrow\infty} x_n$,
 so gilt $f(\bar{x}) = \bar{x}$ und dar\"uber hinaus gilt die Absch\"atzung 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds |x_n - \bar{x}| \leq \frac{q^n}{1- q} \cdot  |x_1 - x_0|$.
+\colorbox{red}{\colorbox{orange}{\framebox{$\ds |x_n - \bar{x}| \leq \frac{q^n}{1- q} \cdot  |x_1 - x_0|$.}}}
 \end{Satz}
 
 \proof
@@ -1365,7 +1365,7 @@ Startwert einer neuen Folge $\folge{y_n}$ ansehen, f\"ur die wir $y_0 = x_{m-1}$
 $y_1 = f(y_0) = f(x_{m-1}) = x_{m}$ setzen.  Wir haben dann also 
 \\[0.2cm]
 \hspace*{1.3cm}
-$|\bar{x} - x_{m}| \leq \bruch{q}{1 - q} \cdot  |x_m - x_{m-1}|$.
+\colorbox{red}{\colorbox{orange}{\framebox{$|\bar{x} - x_{m}| \leq \bruch{q}{1 - q} \cdot  |x_m - x_{m-1}|$.}}}
 \\[0.2cm]
 Wenn wir $q$ kennen, k\"onnen wir damit die G\"ute der bisher erreichten Approximation
 absch\"atzen.
@@ -1775,7 +1775,7 @@ $
 \\[0.2cm] %$
 Folglich konvergiert das Verfahren in diesem Fall nicht.  W\"ahlen wir den Startwert $x_0 = -0.5$, so
 konvergiert das Verfahren gegen die L\"osung $-2.23070764576\cdots$, die au{\ss}erhalb des Intervalls $[-2,2]$
-liegt.  W\"ahlen wir als Startwert $x_0 = -1.5$, so konvergiert das Verfahren gegen die L\"osung
+liegt.  W\"ahlen wir den Startwert nahe genug zur gesuchten L\"osung, beispielsweise $x_0 = -1.5$, so konvergiert das Verfahren gegen die L\"osung
 $-1.769292354238631\cdots$.  Diese Beispiele zeigen, dass das Newton'sche Verfahren ohne weitere
 Einschr\"ankungen nicht zuverl\"assig ist.
 
@@ -1945,18 +1945,27 @@ und daraus folgt durch Multiplikation mit $-f'(\bar{x})$ die gesuchte Gleichung 
 Benutzen wir das Newton'sche Verfahren zur Berechnung  von $\sqrt{2\,}$, so erhalten wir 
 die folgenden Ergebnisse:
 {\footnotesize
-\begin{verbatim}
-  x0 = 2
-  x1 = 1.50000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  x2 = 1.41666666666666666666666666666666666666666666666666666666666666666666666666666666666666666
-  x3 = 1.41421568627450980392156862745098039215686274509803921568627450980392156862745098039215686
-  x4 = 1.41421356237468991062629557889013491011655962211574404458490501920005437183538926835899004
-  x5 = 1.41421356237309504880168962350253024361498192577619742849828949862319582422892362178494183
-  x6 = 1.41421356237309504880168872420969807856967187537723400156101313311326525563033997853178716
-  x7 = 1.41421356237309504880168872420969807856967187537694807317667973799073247846210703885038753
-  x8 = 1.41421356237309504880168872420969807856967187537694807317667973799073247846210703885038753
-  x9 = 1.41421356237309504880168872420969807856967187537694807317667973799073247846210703885038753
-\end{verbatim}}
+\begin{Verbatim}[ frame         = lines, 
+                  framesep      = 0.3cm, 
+                  firstnumber   = 1,
+                  labelposition = bottomline,
+                  numbers       = none,
+                  numbersep     = -0.2cm,
+                  xleftmargin   = -0.6cm,
+                  xrightmargin  = -0.6cm,
+                ]
+x0 = 2
+x1 = 1.50000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+x2 = 1.41666666666666666666666666666666666666666666666666666666666666666666666666666666666666666
+x3 = 1.41421568627450980392156862745098039215686274509803921568627450980392156862745098039215686
+x4 = 1.41421356237468991062629557889013491011655962211574404458490501920005437183538926835899004
+x5 = 1.41421356237309504880168962350253024361498192577619742849828949862319582422892362178494183
+x6 = 1.41421356237309504880168872420969807856967187537723400156101313311326525563033997853178716
+x7 = 1.41421356237309504880168872420969807856967187537694807317667973799073247846210703885038753
+x8 = 1.41421356237309504880168872420969807856967187537694807317667973799073247846210703885038753
+x9 = 1.41421356237309504880168872420969807856967187537694807317667973799073247846210703885038753
+\end{Verbatim}
+}
 Wir sehen, dass $x_2$ auf 2 Stellen hinter dem Komma mit $\sqrt{2\,}$ \"ubereinstimmt,
 bei $x_3$ sind bereits 5 Stellen richtig, $x_4$ hat eine Genauigkeit von 11 Stellen,
 $x_5$ stimmt auf 24 Stellen mit $\sqrt{2\,}$ \"uberein, bei $x_6$ sind es 48 Stellen und $x_7$ hat
@@ -2032,6 +2041,7 @@ und wegen $\log_{10}\bigl(\frac{1}{2}\bigr) \approx - 0.3$ haben wir die Absch\"
 $\lambda_{n+1} = 2 \cdot \lambda_{n} + 0.3$ 
 \\[0.2cm]
 gefunden, die in der Tat zeigt, dass sich die Anzahl der korrekten Stellen bei jedem Schritt mehr als verdoppelt.
+\pagebreak
 
 \exercise
 Analysieren Sie das Newton'sche Verfahren zur Berechnung der dritten Wurzel aus $2$ und berechnen Sie,
@@ -2051,19 +2061,21 @@ das Glei\-chungs-System
 $\mathbf{A}\, \vec{x} = \vec{b}$
 \\[0.2cm]
 zu l\"osen, haben Sie im ersten Semester kennegelernt: Es ist das Gau{\ss}'sche
-Eliminations-Verfahren (Carl Friedrich Gau{\ss}, 1777 -- 1855).  
+Eliminations-Verfahren (\href{https://de.wikipedia.org/wiki/Carl_Friedrich_Gauss}{Carl Friedrich Gau{\ss}}, 1777 -- 1855).  
 Es gibt allerdings Situationen, in denen dieses
 Verfahren zu 
 aufwendig ist.  Dies ist beispielsweise dann der Fall, wenn einerseits $n$ gro{\ss} ist und
 wenn andererseits die meisten Komponenten der Matrix $A$ den Wert 0 haben.  Solche
-Matrizen hei{\ss}en \emph{d\"unn besetzte} Matrizen.  Diese Art von Matrizen tritt bei
+Matrizen hei{\ss}en 
+\href{https://de.wikipedia.org/w/index.php?title=Schwachbesetzte_Matrix&redirect=yes}{\emph{d\"unn
+    besetzte} Matrizen}.  Diese Art von Matrizen tritt beispielsweise bei  
 der numerischen L\"osung von
 \href{http://de.wikipedia.org/wiki/Partielle_Differentialgleichung}{partiellen Differential-Gleichungen} auf.   
 Das Gau{\ss}'sche Eliminations-Verfahren besitzt  eine
 Komplexit\"at von $O(n^3)$ und ist damit f\"ur gro{\ss}e d\"unn besetzte Matrizen ungeeignet.
 Hier ist der Rechenaufwand bei iterative Verfahren geringer.   
 Ein weiteres Problem ist, dass die Rundungsfehler beim Gau{\ss}'schen Eliminations-Verfahren
-sehr gro{\ss} werden k\"onnen.  Demgegen\"uber sind iterative Verfahren selbstkorrigierend.
+sehr gro{\ss} werden k\"onnen.  Demgegen\"uber sind iterative Verfahren \emph{selbstkorrigierend}.
 
 Ist $\mathbf{A}$ gegeben, so lautet die Gleichung $\mathbf{A}\,\vec{x} = \vec{b}$ in Komponenten-Schreibweise 
 \\[0.2cm]
@@ -2090,7 +2102,8 @@ $x^{(n+1)}_i = \displaystyle \frac{1}{a_{ii}} \cdot  \Biggl( b_i - \sum\limits_{
 \\[0.2cm]
 mit der wir versuchen k\"onnen, eine L\"osung der Fixpunkt-Gleichung zu finden.
 Das Verfahren, das wir auf diese Weise erhalten, wird als \emph{Gesamtschritt-Verfahren}
-oder auch als \emph{Jacobi-Verfahren} (Carl Gustav Jacob Jacobi, 1804 -- 1851) bezeichnet.
+oder auch als \href{https://de.wikipedia.org/wiki/Jacobi-Verfahren}{\emph{Jacobi-Verfahren}} 
+(\href{https://de.wikipedia.org/wiki/Carl_Gustav_Jacob_Jacobi}{Carl Gustav Jacob Jacobi}, 1804 -- 1851) bezeichnet.
 Die Frage lautet jetzt, wann die durch dieses Verfahren definierte Iteration konvergiert.
 Um eine positive Antwort auf diese Frage geben zu k\"onnen, ben\"otigen wir die folgenden Definitionen.
 
@@ -2418,7 +2431,9 @@ $x^{(n+1)}_i = \displaystyle \bruch{1}{a_{ii}} \cdot  \Biggl( b_i - \sum\limits_
                \sum\limits_{j=i+1}^n a_{ij} \cdot  x^{(n)}_j \Biggr)$.
 \\[0.2cm]
 Das Verfahren, das auf dieser Formel basiert, wird als \emph{Einzelschritt-Verfahren} oder
-auch \emph{Gau{\ss}-Seidel-Verfahren} (Philipp Ludwig von Seidel, 1821 -- 1896) bezeichnet.
+auch 
+\href{https://de.wikipedia.org/wiki/Einzelschrittverfahren}{\emph{Gau{\ss}-Seidel-Verfahren}} 
+(\href{https://de.wikipedia.org/wiki/Philipp_Ludwig_von_Seidel}{Philipp Ludwig von Seidel}, 1821 -- 1896) bezeichnet.
 
 Abbildung \ref{fig:seidel.stlx} zeigt, wie wir die Implementierung \"andern
 m\"ussen, wenn wir das Gau{\ss}-Seidel-Verfahren anwenden wollen.  Die Implementierung des
