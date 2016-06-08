@@ -1774,8 +1774,9 @@ $x_n = \left\{
 $
 \\[0.2cm] %$
 Folglich konvergiert das Verfahren in diesem Fall nicht.  W\"ahlen wir den Startwert $x_0 = -0.5$, so
-konvergiert das Verfahren gegen die L\"osung $-2.23070764576\cdots$, die au{\ss}erhalb des Intervalls $[-2,2]$
-liegt.  W\"ahlen wir den Startwert nahe genug zur gesuchten L\"osung, beispielsweise $x_0 = -1.5$, so konvergiert das Verfahren gegen die L\"osung
+oszilliert die Folge $\folge{x_n}$ f\"ur gro{\ss}e $n$ ebenfalls zwischen den Werten $0$ und $1$.
+W\"ahlen wir den Startwert nahe genug zur gesuchten L\"osung, beispielsweise $x_0 = -1.5$, so
+konvergiert das Verfahren gegen die L\"osung 
 $-1.769292354238631\cdots$.  Diese Beispiele zeigen, dass das Newton'sche Verfahren ohne weitere
 Einschr\"ankungen nicht zuverl\"assig ist.
 
@@ -1889,14 +1890,8 @@ $f(x_n) \geq 0$ \quad f\"ur alle $n \in \mathbb{N}_0$ gilt.
 \item[I.S.] $n \mapsto n+1$.
 
             Nach der Definition ist $x_{n+1}$ die Nullstelle der Tangente $g$ an die Funktion $f$
-            im Punkt $x_n$, es gilt also $g(x_{n+1}) = 0$.  
-            Die Tangente $g$ hat nach dem letzten Lemma die Form
-            \\[0.2cm]
-            \hspace*{1.3cm}
-            $g(x) = f(x_n) + f'(x_n) \cdot (x - x_n)$
-            \\[0.2cm]
-            und ebenfalls nach dem letzten Lemma gilt $g(x) \leq f(x)$.  Da nun $g(x_{n+1}) = 0$ ist,
-            folgt aus der Ungleichung $g(x) \leq f(x)$ durch Einsetzen von $x_{n+1}$ die Ungleichung
+            im Punkt $x_n$, es gilt also $g(x_{n+1}) = 0$.  Nach dem letzten Lemma gilt $g(x) \leq f(x)$.  
+            Durch Einsetzen von $x_{n+1}$ folgt daraus die Ungleichung
             \\[0.2cm]
             \hspace*{1.3cm}
             $0 \leq f(x_{n+1})$.

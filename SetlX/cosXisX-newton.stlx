@@ -1,6 +1,6 @@
 x := 0; 
 for (i in [1 .. 5]) {
-x := (cos(x) + sin(x) * x) / (1 + sin(x));
+    x := (cos(x) + sin(x) * x) / (1 + sin(x));
     print("$i$: $x$");
 }
 x := cos(x);

@@ -191,7 +191,7 @@ Der so eingef\"uhrte Integral-Begriff hat folgende Eigenschaften:
 Es sei $f:[a,b] \rightarrow \mathbb{R}$ eine stetige Funktion. Dann existiert ein $\xi \in [a,b]$, so dass gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\int_a^b f(x) \,\dr x = f(\xi) \cdot  (b - a)$.
+\colorbox{red}{\colorbox{orange}{\framebox{$\ds\int_a^b f(x) \,\dr x = f(\xi) \cdot  (b - a)$.}}}
 \end{Satz}
 
 \noindent
@@ -285,7 +285,7 @@ Integral-Operator an und wenden wir dann auf die resultierende Funktion den
 Differentiations-Operator an, so erhalten wir wieder die urspr\"ungliche Funktion:
 \\[0.2cm]
 \hspace*{1.3cm}
-\colorbox{orange}{\framebox{$\ds \frac{\dr\;}{\dr x} \int_a^x f(t)\,\dr t = f(x)$.}}
+\colorbox{red}{\colorbox{orange}{\framebox{$\ds \frac{\dr\;}{\dr x} \int_a^x f(t)\,\dr t = f(x)$.}}}
 \\[0.2cm]
 Diese Aussage
 l\"asst sich im Wesentlichen auch umkehren.  Diese Umkehrung ist der Hauptsatz der Differential- und
@@ -344,7 +344,7 @@ Berechnung vieler Integrale.
 sei eine Stamm-Funktion von $f$ und es gelte $u,v\in[a,b]$.  Dann gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-\colorbox{orange}{\framebox{$\dint{u}{v} f(x)\,\dr x = F(v) - F(u)$.}}  
+\colorbox{red}{\colorbox{orange}{\framebox{$\dint{u}{v} f(x)\,\dr x = F(v) - F(u)$.}}}  
 \end{Satz}
 
 \noindent
@@ -385,7 +385,7 @@ eine differenzierbare Funktion, so ist $f$ offenbar eine Stamm-Funktion der Funk
 Also gilt:
 \begin{equation}
   \label{eq:hauptsatzKorollar}
-  \colorbox{orange}{\framebox{$\ds\int_u^v f'(x)\,\dr x = f(v) - f(u) = f(x)\Big|_u^v$}}
+  \colorbox{red}{\colorbox{orange}{\framebox{$\ds\int_u^v f'(x)\,\dr x = f(v) - f(u) = f(x)\Big|_u^v$}}}
 \end{equation}
 Dies zeigt uns, dass der Integral-Operator in gewisser Weise zum Differential-Operator invers ist.
 
@@ -499,7 +499,8 @@ Ersetzen wir in Gleichung (\ref{eq:subst0})  $h'$
 durch $g$ so erhalten wir zusammen mit Gleichung (\ref{eq:subst1})  die \emph{Substitutions-Regel}:
 \begin{equation}
   \label{eq:subst}
-\colorbox{orange}{\framebox{$\ds\int_a^b f'(x) \cdot  g\bigl(f(x)\bigr)\, \dr x = \int_{f(a)}^{f(b)} g(x)\, \dr x$}}.  
+\colorbox{red}{\colorbox{orange}{\framebox{
+$\ds\int_a^b f'(x) \cdot  g\bigl(f(x)\bigr)\, \dr x = \int_{f(a)}^{f(b)} g(x)\, \dr x$}}}.  
 \end{equation}
 Sie k\"onnen sich die Substitutions-Regel mit Hilfe der folgenden suggestiven Pseudo-Ableitung
 leicht merken.  Wir gehen aus von dem unbestimmten Integral 
@@ -611,7 +612,7 @@ $
 Die Stamm-Funktion von $\dfo\Bigl( f(x)\cdot g(x) \Bigr)$ ist nat\"urlich $f(x)\cdot g(x)$, also haben wir
 \begin{equation}
   \label{eq:partInt0}
- \colorbox{orange}{\framebox{$\ds\int f'(x)\cdot  g(x)\,\dr x =  \ds f(x)\cdot g(x) - \int f(x) \cdot  g'(x)\,\dr x$}}
+ \colorbox{red}{\colorbox{orange}{\framebox{$\ds\int f'(x)\cdot  g(x)\,\dr x =  \ds f(x)\cdot g(x) - \int f(x) \cdot  g'(x)\,\dr x$}}}
 \end{equation}
 gefunden. Diese Gleichung setzt die Stamm-Funktionen von $f'(x)\cdot  g(x)$
 und $f(x) \cdot  g'(x)$ in Beziehung: Die Stamm-Funktion der ersten Funktion kann auf die
@@ -801,7 +802,7 @@ Die L\"ange $l$ des gesamten Funktions-Graphen erhalten wir, wenn wir diesen Aus
 aufintegrieren: 
 \\[0.2cm]
 \hspace*{1.3cm}
-\colorbox{orange}{\framebox{$\ds l = \dint{a}{b} \sqrt{1 + \Bigl(\frac{\dr f}{\dr x}\Bigr)^2\,} \dr x$}}.
+\colorbox{red}{\colorbox{orange}{\framebox{$\ds l = \dint{a}{b} \sqrt{1 + \Bigl(\frac{\dr f}{\dr x}\Bigr)^2\,} \dr x$}}}.
 
 \example
 Wir berechnen die L\"ange $l$ des Kreisbogens, der durch die Funktion $f:[0,1] \rightarrow\mathbb{R}$ mit
@@ -951,8 +952,8 @@ Umst\"anden leicht sehen, dass eine Reihe konvergiert, denn es gilt der folgende
 Es sei $f:[1,\infty) \rightarrow\mathbb{R}_+$ eine monoton fallende Funktion.  Dann gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds \lim\limits_{n \rightarrow \infty} \sum\limits_{i=1}^n f(i)$ existiert \quad g.d.w. \quad
-$\ds \lim\limits_{x \rightarrow \infty} \int\limits_1^x f(t)\,\dr t$ existiert.  
+\colorbox{red}{\colorbox{orange}{\framebox{$\ds \lim\limits_{n \rightarrow \infty} \sum\limits_{i=1}^n f(i)$ existiert \quad g.d.w. \quad
+$\ds \lim\limits_{x \rightarrow \infty} \int\limits_1^x f(t)\,\dr t$ existiert.}}}
 \end{Satz}
 
 \noindent
