@@ -1,9 +1,8 @@
 newton := procedure(t, x, n) {
     ts := diff(t, "x");
-    for (i in [0 .. n]) {
+    for (i in [1 .. n]) {
         x -= evalTerm(t) / evalTerm(ts);
-        print("i = $i$:");
-        myPrint(x);
+        print("i = $i$: $myString(x)$");
     }
     return x;
 };
@@ -22,7 +21,7 @@ diff := procedure(t, x) {
         case t1 / t2 :
             return ( diff(t1, x) * t2 - t1 * diff(t2, x) ) / t2 ** 2;
         case f ** g :
-            if (isInteger(g) || isRational(g) || isReal(g)) {
+            if (isNumber(g)) {
                 g1 := g - 1;
                 return g * diff(f, x) * f ** g1;
             } else {
@@ -53,7 +52,7 @@ diff := procedure(t, x) {
                 return 0;
             }
         default:
-            if (isInteger(t) || isRational(t) || isReal(t)) {
+            if (isNumber(t)) {
                 return 0;
             } else {
                 abort("error: diff($t$, $x$)");
@@ -61,11 +60,11 @@ diff := procedure(t, x) {
     }
 };
 
-myPrint := procedure(x) {
+myString := procedure(x) {
     if (isRational(x)) {
-        print("x = $nDecimalPlaces(x,102)$");
+        return nDecimalPlaces(x,52);
     } else {
-        print("x = $x$");
+        return x;
     }
 };
 
@@ -75,7 +74,6 @@ interactive := procedure() {
     x := read("enter start value: ");
     n := read("enter number of iterations: ");
     x := newton(t, x, n);
-    myPrint(x);
 };
 
 interactive();
