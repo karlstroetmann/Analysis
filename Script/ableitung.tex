@@ -358,7 +358,7 @@ Wir berechnen als n\"achstes die Ableitung einiger wichtiger Funktionen.
 \item Die Exponential-Funktion $\exp(x)$ ist definiert als 
       \\[0.3cm]
       \hspace*{1.3cm}
-      $\exp(x) = \sum\limits_{n=0}^\infty \bruch{x^n}{n!}$.
+      $\ds\exp(x) = \sum\limits_{n=0}^\infty \bruch{x^n}{n!}$.
       \\[0.3cm]
       Nach dem letzten Satz gilt f\"ur die Ableitung der Exponential-Funktion 
       \\[0.3cm]
@@ -828,7 +828,7 @@ $
 Abbildung \ref{fig:mean-value-theorem} zeigt die geometrische Bedeutung des
 Mittelwert-Satzes:  Es gibt einen Punkt $c$, so dass die Tangente an die Funktion $f$ im Punkt
 $\langle c, f(c)\rangle$ die dieselbe Steigung hat wie die Sekante, die durch die Punkte
-$\pair(a,f(a))$ und $\pair(b,f(b))$  geht. 
+$\langle a,f(a) \rangle$ und $\langle b,f(b) \rangle$  geht. 
       \begin{figure}[!h]
         \centering
         \epsfig{file=Figures/mean-value-theorem.eps,scale=1.5}
@@ -1153,7 +1153,7 @@ Satzes nicht umkehren l\"asst. \eox
 
 \begin{Definition}[strenges lokales Minimum] \lb
   Eine Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ hat im Punkt $\bar{x}\in \mathbb{R}$
-  ein \emph{strenges lokales Minimum}, wenn gilt:
+  ein \colorbox{orange}{\emph{strenges lokales Minimum}}, wenn gilt:
   \\[0.2cm]
   \hspace*{1.3cm}
   $\exists \varepsilon \in \mathbb{R}_+: \forall x \in \mathbb{R}:\bigl( 
@@ -1162,7 +1162,8 @@ Satzes nicht umkehren l\"asst. \eox
 \end{Definition}
 
 \noindent
-\textbf{Bemerkung}:  Der Begriff des \emph{strengen lokalen Maximum} l\"asst sich analog definieren.
+\textbf{Bemerkung}:  Der Begriff des \colorbox{orange}{\emph{strengen lokalen Maximum}} l\"asst sich
+analog definieren. 
 
 \begin{Satz} \label{satz:minimum}
   Die Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ sei zweimal differenzierbar, die
@@ -1172,7 +1173,7 @@ Satzes nicht umkehren l\"asst. \eox
   \hspace*{1.3cm}
   $f'(x_0) = 0 \;\wedge\; f''(x_0) > 0$.
   \\[0.2cm]
-  Dann hat die Funktion $f$ in $x_0$ ein strenges lokales Minimum.
+  Dann hat die Funktion $f$ im Punkt $x_0$ ein strenges lokales Minimum.
 \end{Satz}
 
 \proof Da die zweite Ableitung $f''(x)$ stetig ist, k\"onnen wir $\varepsilon := f''(x_0) > 0$
@@ -1224,8 +1225,8 @@ $f'(x) < 0$ \quad f\"ur alle $x\in U_\delta(x_0)$ mit $x < x_0$ \quad und \quad 
 $f'(x) > 0$ \quad f\"ur alle $x\in U_\delta(x_0)$ mit $x > x_0$.
 \\[0.2cm]
 Damit ist die Funktion $f$ innerhalb der $\delta$-Umgebung $U_\delta(x_0)$ f\"ur $x < x_0$
-streng monoton fallend und f\"ur $x > x_0$ streng monoton wachsend.  Dann muss $f$ aber ein lokales Minimum in
-$x_0$ haben. \qed
+streng monoton fallend und f\"ur $x > x_0$ streng monoton wachsend.  Dann muss $f$ aber ein lokales
+Minimum im Punkt $x_0$ haben. \qed
 
 
 \noindent
@@ -1340,6 +1341,7 @@ zusammen mit einer Sekante $g$.
 
 \exercise
 Beweisen Sie das vorangehende Lemma. \eox
+\pagebreak
 
 \begin{Satz}
 Die Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ sei zweimal differenzierbar und die Funktion 
@@ -1353,7 +1355,7 @@ $f$  konvex \quad $\Leftrightarrow$ \quad $\forall x \in \mathbb{R}: f''(x) \geq
 \textbf{Beweis}: Wir spalten den Beweis in zwei Teile auf.
 \begin{enumerate}
 \item[``$\Rightarrow$'':] Wir f\"uhren den Nachweis indirekt und nehmen an, dass es ein $x_0 \in \mathbb{R}$
-  gibt, so dass $f''(x_0) < 0$ ist.  \"Ahnlich wie bei Beweis von Satz \ref{satz:minimum} folgt daraus, dass
+  gibt, so dass $f''(x_0) < 0$ ist.  \"Ahnlich wie im Beweis von Satz \ref{satz:minimum} folgt daraus, dass
   es eine $\delta_1$-Umgebung $U_{\delta_1}(x_0)$ gibt, so dass
   \\[0.2cm]
   \hspace*{1.3cm} $f''(x) < 0$ \quad f\"ur alle $x \in U_{\delta_1}(x_0)$ 
@@ -1461,26 +1463,27 @@ $f$  konvex \quad $\Leftrightarrow$ \quad $\forall x \in \mathbb{R}: f''(x) \geq
   \\[0.2cm]
   Das ist aber gerade die Konvexit\"at der Funktion $f$. \qed
 \end{enumerate}
+\pagebreak
 
 \section{Die Exponential-Funktion}
 Wir haben die Exponential-Funktion als die Potenzreihe
 \\[0.2cm]
 \hspace*{1.3cm}
-$\exp(x) := \sum\limits_{n=0}^\infty \bruch{1}{n!} \cdot x^{n}$ 
+$\ds\exp(x) := \sum\limits_{n=0}^\infty \bruch{1}{n!} \cdot x^{n}$ 
 \\[0.2cm]
 definiert und gesehen, dass diese Potenzreihe f\"ur alle $x \in \mathbb{R}$ konvergiert.
-Wir definieren nun die Eulersche Zahl $e$ (\href{http://de.wikipedia.org/wiki/Leonhard_Euler}{Leonhard Euler},
+Wir definieren nun die Eulersche Zahl $\mathrm{e}$ (\href{http://de.wikipedia.org/wiki/Leonhard_Euler}{Leonhard Euler},
 1707--1783) mit Hilfe der Exponential-Funktion als
 \\[0.2cm]
 \hspace*{1.3cm}
-$e := \exp(1) = \sum\limits_{n=0}^\infty \bruch{1}{n!} = 
+$\mathrm{e} := \exp(1) = \sum\limits_{n=0}^\infty \bruch{1}{n!} = 
   2.718\,281\,828\,459\,045\,235\,360\,287\,471\,352\,662\,497\,757\,247\,093\,\cdots
 $.
 \\[0.2cm]
 Wir wollen in diesem Abschnitt zeigen, dass f\"ur die Exponential-Funktion die Gleichung 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\exp(x) = e^x$ \quad 
+$\exp(x) = \mathrm{e}^x$ \quad 
 \\[0.2cm]
 gilt.  Zum Nachweis der oben behaupteten Gleichung ben\"otigen wir das folgende Lemma.
 
@@ -1608,7 +1611,7 @@ Aus dem letzten Satz k\"onnen wir nun die Funktional-Gleichung der Exponential-F
   F\"ur alle $x,y \in \mathbb{R}$ gilt 
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\exp(x + y) = \exp(x) \cdot \exp(y)$.  
+  \colorbox{red}{\framebox{\colorbox{orange}{$\exp(x + y) = \exp(x) \cdot \exp(y)$.}}}  
 \end{Satz}
 
 \proof
@@ -1662,41 +1665,41 @@ $\exp(x) \cdot \exp(-x) = 1$
 folgt daraus, dass auch f\"ur negative ganze Zahlen $m \in \mathbb{Z}$ 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\exp(m) = e^m$
+$\exp(m) = \mathrm{e}^m$
 \\[0.2cm]
 gilt, denn wenn $m = -n$ mit $n \in \mathbb{N}$ ist, haben wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds e^m = e^{-n} = \bruch{1}{e^n} = \bruch{1}{\exp(n)} = \exp(-n) = \exp(m)$.
+$\ds \mathrm{e}^m = \mathrm{e}^{-n} = \bruch{1}{\mathrm{e}^n} = \bruch{1}{\exp(n)} = \exp(-n) = \exp(m)$.
 \\[0.2cm]
 Ist nun $\ds\frac{p}{q} \in \mathbb{Q}$, wobei $p \in \mathbb{Z}$ und $q \in \mathbb{N}$ gilt, so haben wir 
 nach dem bisher gezeigten
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds e^p = \exp(p)$.
+$\ds \mathrm{e}^p = \exp(p)$.
 \\[0.2cm]
 Ziehen wir hier die $q$-te Wurzel, so haben wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds e^{\bruchs{p}{q}} = \sqrt[\textstyle q]{\exp(p)} = \exp\left(\bruch{p}{q}\right)$,
+$\ds \mathrm{e}^{\bruchs{p}{q}} = \sqrt[\textstyle q]{\exp(p)} = \exp\left(\bruch{p}{q}\right)$,
 \\[0.2cm]
 gezeigt, denn es gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\left(\exp\Bigl(\frac{p}{q}\Bigr)\right)^q = \exp\Bigl(q \cdot \frac{p}{q}\Bigr) = \exp(p)$.
+$\ds\left(\exp\Bigl(\frac{p}{q}\Bigr)\right)^q = \exp\Bigl(q \cdot \frac{p}{q}\Bigr) = \exp(p) = \mathrm{e}^p$.
 \\[0.2cm]
 Damit haben wir also nun f\"ur alle rationalen Zahlen $r \in \mathbb{Q}$ die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds e^r = \exp(r)$
+$\ds \mathrm{e}^r = \exp(r)$
 \\[0.2cm]
 gezeigt.  Es stellt sich die Frage, wie wir am sinnvollsten den Wert von Ausdr\"ucken wie
-$e^x$ in den F\"allen definieren k\"onnen, in denen $x$ keine rationale Zahl ist. 
+$\mathrm{e}^x$ in den F\"allen definieren k\"onnen, in denen $x$ keine rationale Zahl ist. 
 Es ist naheliegend, f\"ur beliebige reelle Zahlen $x \in \mathbb{R}$ den
-Wert $e^x$ als
+Wert $\mathrm{e}^x$ als
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds e^x := \exp(x)$
+$\ds \mathrm{e}^x := \exp(x)$
 \\[0.2cm]
 zu definieren.  F\"ur beliebige $\lambda \in \mathbb{R}_+$ setzen wir dann
 \\[0.2cm]
