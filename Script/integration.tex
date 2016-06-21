@@ -149,19 +149,19 @@ $\ds \sum\limits_{i=1}^n i^2 = \frac{n}{6} \cdot (n + 1) \cdot (2 \cdot n + 1)$.
 \hspace*{1.3cm}
 $\ds\lim\limits_{n\rightarrow \infty} \sum\limits_{i=1}^n f\Bigl(a + i \cdot  \frac{b-a}{n}\Bigr) \cdot \frac{b-a}{n}$
 \\[0.2cm]
-existiert, so nennen wir $f$ \emph{integrierbar} und definieren das \emph{Integral} von $f$
+existiert, so nennen wir $f$ \colorbox{orange}{\emph{integrierbar}} und definieren das \colorbox{orange}{\emph{Integral}} von $f$
 in dem Intervall $[a,b]$ als 
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\dint{a}{b} f(x) \,\dr x = 
+  \colorbox{red}{\colorbox{orange}{\framebox{$\dint{a}{b} f(x) \,\dr x = 
    \lim\limits_{n\rightarrow \infty} \sum\limits_{i=1}^n f\Bigl(a + i \cdot \frac{b-a}{n}\Bigr) \cdot \frac{b-a}{n}
-  $.  \eod
+  $.}}}  \eod
 \end{Definition}
 
 \noindent
 Der so eingef\"uhrte Integral-Begriff hat folgende Eigenschaften:
 \begin{enumerate}
-\item Linearit\"at: Sind $f$ und $g$ zwei Funktionen, so dass
+\item \colorbox{orange}{Linearit\"at:} Sind $f$ und $g$ zwei Funktionen, so dass
       das Integral \"uber $f$ bzw.~$g$ in dem Inter\-vall $[a,b]$ definiert ist
       und sind $\alpha,\beta \in\mathbb{R}$,
       so ist auch das Integral der Funktion
@@ -176,7 +176,7 @@ Der so eingef\"uhrte Integral-Begriff hat folgende Eigenschaften:
       Produkt zweier konvergenter Folgen wieder konvergent sind und das andererseits im Falle
       konvergenter Folgen der Grenzwert sowohl mit der Summe als auch mit dem Produkt vertauscht
       werden kann.
-\item Monotonie:  Sind $f$ und $g$ zwei Funktionen, so dass
+\item \colorbox{orange}{Monotonie:}  Sind $f$ und $g$ zwei Funktionen, so dass
       das Integral \"uber $f$ und  $g$ in dem Intervall $[a,b]$ definiert ist, so gilt: 
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -294,12 +294,13 @@ Integral-Rechnung.  Bevor wir diesen Satz in Angriff nehmen k\"onnen, ben\"otige
 
 \begin{Definition}[Stamm-Funktion] \lb
 Ist $f:[a,b] \rightarrow \mathbb{R}$ eine Funktion, so nennen wir die Funktion  $F:[a,b]\rightarrow\mathbb{R}$ 
-eine \emph{Stamm-Funktion} von $f$, falls $F$ differenzierbar ist und 
+eine \colorbox{orange}{\emph{Stamm-Funktion}} von $f$, falls $F$ differenzierbar ist und 
 \\[0.2cm]
 \hspace*{1.3cm} $\df F(x) = f(x)$
 \\[0.2cm]
 gilt.  In diesem Fall schreiben wir auch  $\ds F(x) = \int f(x) \, \dr x$.
-Der Ausdruck $\ds\int f(x) \, \dr x$ wird als \emph{unbestimmtes Integral} bezeichnet. \eod
+Der Ausdruck $\ds\int f(x) \, \dr x$ wird als \colorbox{orange}{\emph{unbestimmtes}} 
+\colorbox{orange}{\emph{Integral}} bezeichnet. \eod
 \end{Definition}
 
 Die Schreibweise $F(x) = \int f(x) \, \dr x$ ist problematisch, denn die Stamm-Funktion einer
@@ -472,18 +473,13 @@ Regeln, die wir zur Differenzierung aufgestellt haben, umdrehen.
 
 
 \subsection{Die Substitutions-Regel}
-Wir beginnen damit, dass wir die Ketten-Regel umstellen.
+Wir mit der Ketten-Regel. Es gilt:
 \\[0.3cm]
 \hspace*{1.3cm}
-$
-\begin{array}[t]{llcll}
-            & \dfo h(f(x)) & = & f'(x) \cdot  h'(f(x)) & \mbox{Ketten-Regel} \\[0.3cm]
-\Rightarrow & \bint\dfo h(f(x))\, \dr x & = & \bint f'(x) \cdot  h'(f(x))\, \dr x  \;+\; c & \mbox{Stamm-Funktion bilden} \\[0.3cm]
-\Rightarrow & h(f(x))  & = & \bint f'(x) \cdot  h'(f(x))\, \dr x \;+\; c   & \mbox{Definition der Stamm-Funktion}. \\[0.3cm]
-\end{array}
-$
+$\dfo h(f(x)) = f'(x) \cdot  h'(f(x))$
 \\[0.3cm]
-Nach dem Hauptsatz k\"onnen wir hier bei den Integralen Grenzen einsetzen. Dann erhalten wir
+Also ist die Funktion $x \mapsto h(f(x))$ eine Stamm-Funktion der Funktion $x \mapsto f'(x) \cdot  h'(f(x))$.
+Nach dem Hauptsatz gilt dann 
 \begin{equation}
   \label{eq:subst0}
   \int_a^b f'(x) \cdot  h'(f(x))\, \dr x  =  h\bigl(f(b)\bigr) - h\bigl(f(a)\bigr)
@@ -503,12 +499,12 @@ durch $g$ so erhalten wir zusammen mit Gleichung (\ref{eq:subst1})  die \emph{Su
 $\ds\int_a^b f'(x) \cdot  g\bigl(f(x)\bigr)\, \dr x = \int_{f(a)}^{f(b)} g(x)\, \dr x$}}}.  
 \end{equation}
 Sie k\"onnen sich die Substitutions-Regel mit Hilfe der folgenden suggestiven Pseudo-Ableitung
-leicht merken.  Wir gehen aus von dem unbestimmten Integral 
+leicht merken.  Wir gehen von dem unbestimmten Integral 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\int g(y)\, \dr y$.
+$\ds\int g(y)\, \dr y$
 \\[0.2cm]
-Hier f\"uhren wir die Variablen-Transformation $y = f(x)$ durch. Dann gilt 
+aus.  Hier f\"uhren wir die Variablen-Transformation $y = f(x)$ durch. Dann gilt 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds \frac{\dr y}{\dr x} = f'(x)$
@@ -580,6 +576,7 @@ offensichtlich intuitiver als die formale Anwendung der Substitutions-Regel.  \q
 
 
 \exercise
+Bei den folgenden Aufgaben d\"urfen Sie die Substitutions-Regel in suggestiver Weise benutzen.
 \begin{enumerate}[(a)]
 \item Berechnen Sie das Integral
       \\[0.2cm]
@@ -592,7 +589,10 @@ offensichtlich intuitiver als die formale Anwendung der Substitutions-Regel.  \q
 \item Berechnen Sie das Integral
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\ds\int_0^1 (x-1)^4 \cdot (x+1) \, \dr x$.
+      $\ds\int_0^1 (x-1)^8 \cdot (x+1) \, \dr x$.
+
+      \hint
+      \"Uberlegen Sie, wie Sie sich durch Anwendung der Substitutions-Regel eine l\"angliche Rechnung ersparen k\"onnen.
       \eox
 \end{enumerate}
 
@@ -603,19 +603,19 @@ eine Regel zur Berechnung von Integralen gewinnen k\"onnen.  Es gilt
 \\[0.2cm]
 $
 \begin{array}[t]{llcll}
-                & \dfo \Bigl(f(x)\cdot g(x)\Bigr)  & = & f'(x)\cdot  g(x) + f(x) \cdot  g'(x) &\mbox{(Umstellen)} \\[0.3cm]
-\Leftrightarrow & f'(x) \cdot  g(x) & = & \dfo \Bigl(f(x)\cdot g(x)\Bigr) - f(x) \cdot  g'(x) &\mbox{(Stamm-Funktion)} \\[0.3cm]
-\Leftrightarrow & \ds \int f'(x)\cdot  g(x)\,\dr x & = & \bint\dfo \Bigl(f(x)\cdot g(x)\Bigr)\,\dr x - \int f(x) \cdot  g'(x)\,\dr x \\[0.3cm]
+                & \dfo \Bigl(u(x)\cdot v(x)\Bigr)  & = & u'(x)\cdot  v(x) + u(x) \cdot  v'(x) &\mbox{(Umstellen)} \\[0.3cm]
+\Leftrightarrow & u'(x) \cdot  v(x) & = & \dfo \Bigl(u(x)\cdot v(x)\Bigr) - u(x) \cdot  v'(x) &\mbox{(Stamm-Funktion)} \\[0.3cm]
+\Leftrightarrow & \ds \int u'(x)\cdot  v(x)\,\dr x & = & \bint\dfo \Bigl(u(x)\cdot v(x)\Bigr)\,\dr x - \int u(x) \cdot  v'(x)\,\dr x \\[0.3cm]
 \end{array}
 $
 \\[0.2cm]
-Die Stamm-Funktion von $\dfo\Bigl( f(x)\cdot g(x) \Bigr)$ ist nat\"urlich $f(x)\cdot g(x)$, also haben wir
+Die Stamm-Funktion von $\dfo\Bigl( u(x)\cdot v(x) \Bigr)$ ist nat\"urlich $u(x)\cdot v(x)$, also haben wir
 \begin{equation}
   \label{eq:partInt0}
- \colorbox{red}{\colorbox{orange}{\framebox{$\ds\int f'(x)\cdot  g(x)\,\dr x =  \ds f(x)\cdot g(x) - \int f(x) \cdot  g'(x)\,\dr x$}}}
+ \colorbox{red}{\colorbox{orange}{\framebox{$\ds\int u'(x)\cdot  v(x)\,\dr x =  \ds u(x)\cdot v(x) - \int u(x) \cdot  v'(x)\,\dr x$}}}
 \end{equation}
-gefunden. Diese Gleichung setzt die Stamm-Funktionen von $f'(x)\cdot  g(x)$
-und $f(x) \cdot  g'(x)$ in Beziehung: Die Stamm-Funktion der ersten Funktion kann auf die
+gefunden. Diese Gleichung setzt die Stamm-Funktionen von $u'(x)\cdot  v(x)$
+und $u(x) \cdot  v'(x)$ in Beziehung: Die Stamm-Funktion der ersten Funktion kann auf die
 Stamm-Funktion der zweiten Funktion zur\"uck gef\"uhrt werden.
 Die Regel zur partiellen Integration l\"asst sich nicht nur f\"ur die Berechnung der
 Stamm-Funktion eines Produkts einsetzen, sondern sie wird auch benutzt um die Integrale von
@@ -725,7 +725,7 @@ dieses Viertelkreises ist durch das Integral
 \hspace*{1.3cm}
 $I := \dint{0}{1} \sqrt{1 - x^2\,}\, \dr x$
 \\[0.2cm]
-gegeben, dass wir nun berechnen.  Zun\"achst f\"uhren wir die Koordinaten-Transformation
+gegeben, welches wir nun berechnen.  Zun\"achst f\"uhren wir die Koordinaten-Transformation
 $x = \sin(t)$ durch.  Dann erhalten wir
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -737,8 +737,7 @@ Wegen $0=\sin(0)$ und $1 = \sin(\pi/2)$ haben wir
 $\ds I = \int_0^{\frac{\pi}{2}} \sqrt{1 - \sin^2(t)\,} \cdot \cos(t)\, \dr t = \int_0^{\frac{\pi}{2}} \cos(t) \cdot \cos(t)\, \dr t$.
 \\[0.2cm]
 Dieses Integral versuchen wir nun mit partieller Integration zu vereinfachen.  Wir setzen
-in Gleichung \ref{eq:partInt0} $f'(t) := \cos(t)$ und $g(t) = \cos(t)$.  Wegen $f(t) =
-\sin(t)$ und $g'(t) = -\sin(t)$ erhalten wir dann
+in Gleichung \ref{eq:partInt0} $u'(t) := \cos(t)$ und $v(t) = \cos(t)$.  Wegen $u(t) = \sin(t)$ und $v'(t) = -\sin(t)$ erhalten wir dann
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds I = \sin(t)\cdot \cos(t)\bigg|_0^{\frac{\pi}{2}} + \int_0^{\frac{\pi}{2}}\sin(t)\cdot\sin(t)\,\dr t
@@ -774,8 +773,8 @@ Intervall in $[a,b]$ in $n$ Teilintervalle der L\"ange
 \hspace*{1.3cm}
 $\ds h = \frac{b - a}{n}$.
 \\[0.2cm]
-Das Teilst\"uck des Graphen, das von dem Punkt $\bigl\langle x, f(x) \bigr\rangle$  zu dem Punkt 
-$\bigl\langle x + h, f(x+h) \bigr\rangle$ kann f\"ur kleine Werte von $h$ n\"aherungsweise
+Das Teilst\"uck des Graphen, das sich von dem Punkt $\bigl\langle x, f(x) \bigr\rangle$  bis zu dem Punkt 
+$\bigl\langle x + h, f(x+h) \bigr\rangle$ erstreckt, kann f\"ur kleine Werte von $h$ n\"aherungsweise
 durch die Sekante von dem  Punkt $\bigl\langle x, f(x) \bigr\rangle$  zu dem Punkt
 $\bigl\langle x + h, f(x+h) \bigr\rangle$  approximiert werden.  Nach dem Satz des
 Pythagoras hat diese Sekante die L\"ange
@@ -791,18 +790,18 @@ $\ds \frac{f(x+h) - f(x)}{h} \approx f'(x)$.
 Also haben wir 
 \\[0.2cm]
 \hspace*{1.3cm}
-$f(x+h) - f(x) \approx f'(x) h$.
+$f(x+h) - f(x) \approx f'(x) \cdot h$.
 \\[0.2cm]
 Setzen wir diesen Wert in der obigen Formel f\"ur ein, so erhalten wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds ds \approx \sqrt{h^2 + \bigl(f'(x) \cdot h\bigr)^2\,} = h \cdot \sqrt{1 + \Bigl(\frac{d\/f}{\dr x}\Bigr)^2\,}$.
+$\ds ds \approx \sqrt{h^2 + \bigl(f'(x) \cdot h\bigr)^2\,} = h \cdot \sqrt{1 + \Bigl(\frac{\mathrm{d}\/f}{\dr x}\Bigr)^2\,}$.
 \\[0.2cm]
 Die L\"ange $l$ des gesamten Funktions-Graphen erhalten wir, wenn wir diesen Ausdruck von $a$ bis $b$
 aufintegrieren: 
 \\[0.2cm]
 \hspace*{1.3cm}
-\colorbox{red}{\colorbox{orange}{\framebox{$\ds l = \dint{a}{b} \sqrt{1 + \Bigl(\frac{\dr f}{\dr x}\Bigr)^2\,} \dr x$}}}.
+\colorbox{red}{\colorbox{orange}{\framebox{$\ds l = \dint{a}{b} \sqrt{1 + \Bigl(\frac{\dr f}{\dr x}\Bigr)^2\,} \dr x$}}}
 
 \example
 Wir berechnen die L\"ange $l$ des Kreisbogens, der durch die Funktion $f:[0,1] \rightarrow\mathbb{R}$ mit
@@ -814,7 +813,7 @@ definiert ist.  Anschaulich sollte diese L\"ange ein Viertel des Umfangs eines K
 Es gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\frac{d\/f}{\dr x} = \frac{1}{2} \cdot \frac{-2 \cdot x}{\sqrt{1 - x^2}} = 
+$\ds\frac{\mathrm{d}\/f}{\dr x} = \frac{1}{2} \cdot \frac{-2 \cdot x}{\sqrt{1 - x^2}} = 
                   \frac{- x}{\sqrt{1 - x^2}}
 $.
 \\[0.2cm]
@@ -876,7 +875,7 @@ sinnvoll, die L\"osung in die folgenden Schritte aufzuteilen:
       Logarithmus zur\"uck f\"uhren, indem Sie die Gleichung
       \\[0.2cm]
       \hspace*{1.3cm}
-      $y = \frac{1}{2} \cdot \bigl(e^x + e^{-x}\bigr)$
+      $y = \frac{1}{2} \cdot \bigl(e^x - e^{-x}\bigr)$
       \\[0.2cm]
       nach $x$ aufl\"osen.  Setzen Sie zun\"achst $\alpha := e^x$, so erhalten Sie eine quadratische
       Gleichung f\"ur $\alpha$ in Abh\"angigkeit von $y$.  Wenn Sie aus dieser Gleichung $\alpha$
@@ -890,7 +889,7 @@ sinnvoll, die L\"osung in die folgenden Schritte aufzuteilen:
       \\[0.2cm]
       \hspace*{1.3cm}
       $\df\; \sinh(x) = \cosh(x)$ \quad und \quad $\df\; \cosh(x) = \sinh(x)$.
-\item Weiter zeigen wir, dass
+\item Weiter zeigen wir durch rein algebraische Umformungen, dass
       \\[0.2cm]
       \hspace*{1.3cm}
       $1 + \sinh^2(x) = \cosh^2(x)$
@@ -910,7 +909,7 @@ sinnvoll, die L\"osung in die folgenden Schritte aufzuteilen:
 
 \section{Uneigentliche Integrale}
 Ist bei dem Ausdruck $\int_a^b f(x)\,\dr x$ die Funktion $f$ an einer der Intervall-Grenzen
-nicht definiert, so bezeichnen wir den Ausdruck als uneigentliches Integral.  Wir
+nicht definiert, so bezeichnen wir den Ausdruck als \colorbox{orange}{uneigentliches Integral.}  Wir
 betrachten nur den Fall, dass die Funktion $f$ nur in dem halboffenen Intervall $(a, b]$
 definiert ist, w\"ahrend $f$  in dem Punkt $a$ nicht definiert sein soll.  Beispielsweise
 ist die Funktion $x \mapsto \frac{1}{\sqrt{x}}$ im Punkt $x=0$ nicht definiert.  In diesem
@@ -1000,7 +999,7 @@ $\ds \sum\limits_{i=1}^n f(i) \leq f(1) + \dint{1}{n} f(x)\, \dr x$
 \quad und \quad
 $\dint{1}{n} f(x)\, \dr x \leq \sum\limits_{i=1}^{n-1} f(i)$
 \\[0.2cm]
-Falls nun das Integral $\int_{1}^\infty f(x)\, \dr x$ existiert, so gilt
+Falls nun das Integral $\int\limits_{1}^\infty f(x)\, \dr x$ existiert, so gilt
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds \sum\limits_{i=1}^{n} f(i) \leq f(1) + \int\limits_{1}^n f(x)\, \dr x \leq f(1) + \int\limits_{1}^\infty f(x)\, \dr x$
@@ -1023,14 +1022,14 @@ beschr\"ankt.  Da diese Folge au{\ss}erdem monoton ist, folgt die Konvergenz. \h
 \textbf{Beispiel}: Wir betrachten das Integral 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds \int\limits_{1}^\infty \frac{1}{x^\alpha}\, \dr x$ \quad f\"ur $\alpha > 0$.
+$\ds I(\alpha) := \int\limits_{1}^\infty \frac{1}{t^\alpha}\, \dr t$ \quad f\"ur $\alpha > 0$.
 \\[0.2cm]
 Falls $\alpha \not= 1$ ist,  gilt 
 \\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}[t]{clcl}  
-  &I(\alpha) & := & \ds \int_{1}^\infty \frac{1}{t^\alpha}\, \dr t  \\[0.3cm]
+  &I(\alpha) & = & \ds \int_{1}^\infty \frac{1}{t^\alpha}\, \dr t  \\[0.3cm]
 = & \ds \lim\limits_{x \rightarrow \infty} \int_1^x \frac{1}{t^\alpha}\, \dr t 
 & = & \ds \lim\limits_{x \rightarrow \infty} \frac{t^{1-\alpha}}{1-\alpha} \,\bigg|_1^x \\[0.5cm]
 = & \ds \lim\limits_{x \rightarrow \infty} \frac{x^{1-\alpha}-1}{1-\alpha}.
@@ -1107,11 +1106,11 @@ Die Gleichung $x = \cos(x)$ haben wir zwar numerisch l\"osen k\"onnen, aber wir 
 der Lage, einen algebraischen Ausdruck f\"ur die L\"osung anzugeben.  Auch bei der Integration
 von Funktionen ist es nicht immer m\"oglich, einen algebraischen Ausdruck f\"ur die
 Stamm-Funktion einer Funktion anzugeben.  Beispielsweise konnte Liouville 
-(Joseph Liouville, 1809 -- 1882) beweisen, dass das
+(\href{https://de.wikipedia.org/wiki/Joseph_Liouville}{Joseph Liouville}, 1809 -- 1882) beweisen, dass das
 unbestimmte Integral
 \\[0.2cm]
 \hspace*{1.3cm}
-$\int \exp(-x^2)\, \dr x$
+$\ds\int \exp(-x^2)\, \dr x$
 \\[0.2cm]
 nicht auf die uns bisher bekannten Funktionen zur\"uck gef\"uhrt werden kann \cite{rosenlicht:72}.  F\"ur die
 praktische Berechnung von Integralen ben\"otigen wir daher numerische Methoden.
