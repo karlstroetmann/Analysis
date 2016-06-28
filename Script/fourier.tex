@@ -40,7 +40,8 @@ Es gibt periodische Funktionen, die sich nicht in einer Fourier-Reihe entwickeln
 lassen.  Diese Funktionen sind aber relativ exotisch, so dass wir uns damit nicht weiter
 befassen. 
 }
-periodische Funktion als unendliche Linear-Kombination der oben vorgestellten Funktionen
+periodische Funktion der Periode $2 \cdot \pi$ als unendliche Linear-Kombination der oben
+vorgestellten Funktionen 
 darstellen l\"asst.  Genauer definieren wir folgendes: 
 
 \begin{Definition}[Fourier-Reihe]
@@ -48,15 +49,15 @@ darstellen l\"asst.  Genauer definieren wir folgendes:
   wir den Ausdruck
   \begin{equation}
     \label{eq:fourier}
-    \bruch{1}{2}\cdot a_0 \;+\; \sum\limits_{k=1}^\infty a_k\cdot \cos(k\!\cdot\!x) \;+\;
-                               \sum\limits_{k=1}^\infty b_k\cdot \sin(k\!\cdot\!x) 
+    \colorbox{red}{\colorbox{orange}{\framebox{$\ds\bruch{1}{2}\cdot a_0 \;+\; \sum\limits_{k=1}^\infty a_k\cdot \cos(k\!\cdot\!x) \;+\;
+                               \sum\limits_{k=1}^\infty b_k\cdot \sin(k\!\cdot\!x)$}}} 
   \end{equation}
-  als die mit den Folgen $\folge{a_n}$ und $\folge{b_n}$ gebildete Fourier-Reihe.
+  als die mit den Folgen $\folge{a_n}$ und $\folge{b_n}$ gebildete \colorbox{orange}{Fourier-Reihe.}
 \end{Definition}
 
 \section{Berechnung der Fourier-Koeffizienten}
-Die zentrale Frage bei der \emph{Fourier-Analyse} ist es, f\"ur eine gegebene periodische Funktion
-$f$ die \emph{Fourier-Koeffizienten} $a_k$ und $b_k$ zu berechnen.   Ist $f$ eine
+Die zentrale Frage bei der \colorbox{orange}{\emph{Fourier-Analyse}} ist es, f\"ur eine gegebene periodische Funktion
+$f$ die \colorbox{orange}{\emph{Fourier-Koeffizienten}} $a_k$ und $b_k$ zu berechnen.   Ist $f$ eine
 periodische Funktion mit der Periode $2\cdot\pi$ und gilt 
 \begin{equation}
   \label{eq:fourierEq}
@@ -337,6 +338,7 @@ Zuvor ben\"otigen wir noch zwei Definitionen.
 Ein Beispiel f\"ur eine st\"uckweise stetige Funktion sehen Sie in Abbildung
 \ref{fig:saegezahn.eps}.  Die Ableitung dieser Funktion weist in den Punkten $0$, $\pi$
 und $-\pi$ Spr\"unge auf.
+\pagebreak
 
 \begin{Satz} Es gelte
   \begin{enumerate}
@@ -360,8 +362,8 @@ Um es gleich bei der Berechnung der Fourier-Koeffizienten einfacher zu haben, de
 wir f\"ur eine Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ die Begriffe \emph{gerade}
 und \emph{ungerade}: 
 \begin{enumerate}
-\item $f$ ist \emph{gerade}   g.d.w. $\forall x\in\mathbb{R}: f(-x) =  f(x)$ .
-\item $f$ ist \emph{ungerade} g.d.w. $\forall x\in\mathbb{R}: f(-x) = -f(x)$ .
+\item $f$ ist \colorbox{orange}{\emph{gerade}}   g.d.w. $\forall x\in\mathbb{R}: f(-x) =  f(x)$ .
+\item $f$ ist \colorbox{orange}{\emph{ungerade}} g.d.w. $\forall x\in\mathbb{R}: f(-x) = -f(x)$ .
 \end{enumerate}
 Ist die Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ ungerade und ist $f$ integrierbar,
 so gilt f\"ur beliebige Zahlen $a$ 
@@ -493,8 +495,8 @@ dieser Funktion.
           \bruch{2}{\pi} \cdot \bruch{x^2}{2} \,\bigg|_0^\pi = \bruch{2}{\pi} \cdot \bruch{\pi^2}{2} =\pi$.
       \\[0.1cm]
       Andernfalls berechnen wir das Integral  mit Hilfe partieller Integration.  Wir setzen
-      $f'(x) = \cos(n\!\cdot\!x)$ und $g(x) = x$.  Dann gilt
-      $f(x) = \frac{1}{n}\cdot \sin(n\!\cdot\!x)$ und $g'(x) = 1$, also haben wir f\"ur 
+      $u'(x) = \cos(n\!\cdot\!x)$ und $v(x) = x$.  Dann gilt
+      $u(x) = \frac{1}{n}\cdot \sin(n\!\cdot\!x)$ und $v'(x) = 1$, also haben wir f\"ur 
       $n \geq 1$
       \\[0.3cm]
       \hspace*{1.3cm}
@@ -557,7 +559,7 @@ $
 \\[0.3cm]
 Damit haben wir also die Formel 
 \\[0.3cm]
-\hspace*{1.3cm} $\ds\sum\limits_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6}$
+\hspace*{1.3cm} \colorbox{red}{\colorbox{orange}{\framebox{ $\ds\sum\limits_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6}$}}}
 \\[0.3cm]
 gezeigt.  Die Frage nach dem Wert dieser Reihe war 1644 als \emph{Basel'sches Problem} von
 Pietro Mengoli gestellt worden. 
