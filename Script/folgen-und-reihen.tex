@@ -1384,30 +1384,32 @@ $\left| q^n \right| < \varepsilon$ \quad f\"ur $n \geq K$
 g\"ultig ist und damit ist die Behauptung bewiesen.  \qed
 
 \noindent
-Wir pr\"asentieren nun einige Beispiele f\"ur konvergente Reihen:
+\example
+Wir betrachten die Reihe
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\left(\sum\limits_{i=1}^n \frac{1}{i \cdot (i+1)}\right)_{n\in\mathbb{N}}$.
+\\[0.2cm]
+F\"ur die Partial-Summen zeigen wir durch Induktion \"uber $n$, dass 
+\begin{equation}
+  \label{eq:seq0}        
+  \sum\limits_{i=1}^n \frac{1}{i\cdot (i+1)} = 1 - \frac{1}{n+1}
+\end{equation}
+gilt.
 \begin{enumerate}
-\item Wir betrachten die Folge $\left(\frac{1}{n\cdot (n+1)}\right)_{n\in\mathbb{N}}$.
-
-      F\"ur die Partial-Summen zeigen wir durch Induktion \"uber $n$, dass 
-      \begin{equation}
-        \label{eq:seq0}        
-      \sum\limits_{i=1}^n \frac{1}{i\cdot (i+1)} = 1 - \frac{1}{n+1}
-      \end{equation}
-      gilt.
-      \begin{enumerate}
-      \item (Induktions-Anfang) $n=1$: Einerseits haben wir f\"ur $n=1$
-           \\[0.2cm]
-           \hspace*{1.3cm}      
-           $\ds\sum\limits_{i=1}^n \frac{1}{i\cdot (i+1)} = \sum\limits_{i=1}^1 \frac{1}{i\cdot (i+1)}
+\item[I.A.:] $n=1$: Einerseits haben wir f\"ur $n=1$
+             \\[0.2cm]
+             \hspace*{1.3cm}      
+             $\ds\sum\limits_{i=1}^n \frac{1}{i\cdot (i+1)} = \sum\limits_{i=1}^1 \frac{1}{i\cdot (i+1)}
             = \frac{1}{1\cdot (1+1)} = \frac{1}{2}$,
-           \\[0.2cm]
-           andererseits gilt
-           \\[0.2cm]
-           \hspace*{1.3cm}      
-           $\ds 1 - \frac{1}{n+1} = 1 - \frac{1}{1+1} = 1 - \frac{1}{2} = \frac{1}{2}$. $\checkmark$
-           \pagebreak
+            \\[0.2cm]
+            andererseits gilt
+            \\[0.2cm]
+            \hspace*{1.3cm}      
+            $\ds 1 - \frac{1}{n+1} = 1 - \frac{1}{1+1} = 1 - \frac{1}{2} = \frac{1}{2}$. $\checkmark$
+            \pagebreak
 
-      \item (Induktions-Schritt) $n \mapsto n+1$:  
+\item[I.S.:] $n \mapsto n+1$:  Es gilt:
             \\[0.2cm]
             \hspace*{1.3cm}      
             $
@@ -1420,61 +1422,71 @@ Wir pr\"asentieren nun einige Beispiele f\"ur konvergente Reihen:
               &               =  & \ds 1 - \frac{1}{n+2}\quad \checkmark                                               
             \end{array}
             $
-      \end{enumerate}
-      Damit haben wir Gleichung (\ref{eq:seq0}) durch vollst\"andige Induktion nachgewiesen.
-      Aus Gleichung (\ref{eq:seq0}) folgt nun 
-      \\[0.2cm]
-      \hspace*{1.3cm}      
-      $\ds\sum\limits_{i=1}^\infty \frac{1}{i\cdot (i+1)} = \lim\limits_{n\rightarrow\infty} \sum\limits_{i=1}^n \frac{1}{i\cdot (i+1)} = 
+ \end{enumerate}
+ Damit haben wir Gleichung (\ref{eq:seq0}) durch vollst\"andige Induktion nachgewiesen.
+ Aus Gleichung (\ref{eq:seq0}) folgt nun 
+ \\[0.2cm]
+ \hspace*{1.3cm}      
+ $\ds\sum\limits_{i=1}^\infty \frac{1}{i\cdot (i+1)} = \lim\limits_{n\rightarrow\infty} \sum\limits_{i=1}^n \frac{1}{i\cdot (i+1)} = 
        \lim\limits_{n\rightarrow\infty} \Bigl(1 - \frac{1}{n+1} \Bigr) = 1$.
-\item Wir betrachten die Folge $\folge{q^n}$ f\"ur eine Zahl $q \in \mathbb{R}$.
-      F\"ur die Partial-Summen gilt
-      \\[0.2cm]
-      \hspace*{1.3cm}      
-      $\ds s_n = \sum\limits_{i=0}^n q^i$.
-      \\[0.2cm]
-      Wir betrachten den Ausdruck $(1-q) \cdot  s_n$: 
-      \\[0.2cm]
-      \hspace*{1.3cm}      
-      $
-      \begin{array}{lcl}
-       (1-q) \cdot s_n & = & \ds(1 - q) \cdot  \sum\limits_{i=0}^n q^i \\[0.4cm]
-                   & = & \ds\sum\limits_{i=0}^n q^i \;-\; q \cdot  \sum\limits_{i=0}^n q^i \\[0.4cm]
-                   & = & \ds\sum\limits_{i=0}^n q^i \;-\; \sum\limits_{i=0}^n q^{i+1} \\[0.4cm]
-                   & = & \ds\sum\limits_{i=0}^n q^i \;-\; \sum\limits_{i=1}^{n+1} q^{i} \\[0.5cm]
-                   & = & \ds\left(q^0 + \sum\limits_{i=1}^n q^i\right) \;-\; \left(\sum\limits_{i=1}^{n} q^{i} + q^{n+1}\right) \\[0.5cm]
-                   & = & \ds q^0 - q^{n+1} \\[0.3cm]
-                   & = & \ds 1 - q^{n+1} 
-      \end{array}
-      $
-      \\[0.2cm]
-      Es gilt also 
-      \\[0.2cm]
-      \hspace*{1.3cm}      
-      $\ds (1-q) \cdot  \sum\limits_{i=0}^{n} q^i = 1 - q^{n+1}$
-      \\[0.2cm]
-      Dividieren wir diese Gleichung durch $(1-q)$, so erhalten wir f\"ur die Partial-Summen
-      den Ausdruck
-      \\[0.2cm]
-      \hspace*{1.3cm}      
-      \colorbox{orange}{$\ds \sum\limits_{i=0}^{n} q^i = \frac{1 - q^{n+1}}{1-q}$}.
-      \\[0.2cm]
-      Falls $|q| < 1$ ist, konvergiert die Folge $\folge{q^n}$ gegen $0$.  Damit gilt
-      f\"ur $|q| < 1$
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      \colorbox{orange}{$\ds\sum\limits_{i=0}^{\infty} q^i = \frac{1}{1-q}$}.
-      \\[0.2cm]
-      Die Reihe
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $\ds\left(\sum\limits_{i=0}^{n} q^i\right)_{n\in\mathbb{N}}$ 
-      \\[0.2cm]
-      wird als die
-      \href{http://de.wikipedia.org/wiki/Geometrische_Reihe}{\emph{geometrische Reihe}} bezeichnet.
-      Diese Reihe ist mit Abstand die wichtigste Reihe, die Ihnen in der Informatik begegnen wird.
-      \eox
-\end{enumerate}
+
+ \begin{Definition}[Geometrische Reihe]  Es sei $q \in \mathbb{C}$.  Die Reihe
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds \left(\sum\limits_{i=0}^n q^i \right)_{n\in\mathbb{N}}$
+\\[0.2cm]
+hei{\ss}t \href{https://en.wikipedia.org/wiki/Geometric_series}{\emph{geometrische Reihe}}.  Es gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\sum\limits_{i=0}^n q^i = \frac{1 - q^{n+1}}{1-q}$ \quad falls $q \not= 1$ ist.
+\end{Definition}
+
+\proof 
+Zum Beweis der Summenformel definieren wir die Partial-Summe
+\\[0.2cm]
+\hspace*{1.3cm}      
+$\ds s_n := \sum\limits_{i=0}^n q^i$.
+\\[0.2cm]
+Wir betrachten den Ausdruck $(1-q) \cdot  s_n$: 
+\\[0.2cm]
+\hspace*{1.3cm}      
+$
+ \begin{array}{lcl}
+  (1-q) \cdot s_n & = & \ds(1 - q) \cdot  \sum\limits_{i=0}^n q^i \\[0.4cm]
+              & = & \ds\sum\limits_{i=0}^n q^i \;-\; q \cdot  \sum\limits_{i=0}^n q^i \\[0.4cm]
+              & = & \ds\sum\limits_{i=0}^n q^i \;-\; \sum\limits_{i=0}^n q^{i+1} \\[0.4cm]
+              & = & \ds\sum\limits_{i=0}^n q^i \;-\; \sum\limits_{i=1}^{n+1} q^{i} \\[0.5cm]
+              & = & \ds\left(q^0 + \sum\limits_{i=1}^n q^i\right) \;-\; \left(\sum\limits_{i=1}^{n} q^{i} + q^{n+1}\right) \\[0.5cm]
+              & = & \ds q^0 - q^{n+1} \\[0.3cm]
+              & = & \ds 1 - q^{n+1} 
+ \end{array}
+$
+\\[0.2cm]
+Es gilt also 
+\\[0.2cm]
+\hspace*{1.3cm}      
+$\ds (1-q) \cdot s_n = 1 - q^{n+1}$.
+\\[0.2cm]
+Da $q \not =1$ voraus gesetzt ist, k\"onnen wir diese Gleichung durch $(1-q)$ 
+dividieren.  Dann erhalten wir f\"ur die Partial-Summen $s_n$
+den Ausdruck:
+\\[0.2cm]
+\hspace*{1.3cm}      
+\colorbox{red}{\framebox{\colorbox{orange}{
+$\ds \sum\limits_{i=0}^{n} q^i = \frac{1 - q^{n+1}}{1-q}$}}}
+\\[0.2cm]
+Falls $|q| < 1$ ist, konvergiert die Folge $\folge{q^n}$ gegen $0$.  Damit gilt:
+\\[0.2cm]
+\hspace*{1.3cm}
+\colorbox{red}{\framebox{\colorbox{orange}{$\ds\sum\limits_{i=0}^{\infty} q^i = \frac{1}{1-q}$}}}
+\qed
+
+
+\remark 
+Die \href{http://de.wikipedia.org/wiki/Geometrische_Reihe}{\emph{geometrische Reihe}} ist 
+\underline{mit Abstand} die wichtigste Reihe, die Ihnen in der Informatik begegnen wird.  
+\eox
+
 
 \exercise
 Berechnen Sie den Wert der Reihe $\ds\sum\limits_{n=0}^\infty \frac{3}{n^2 + 3 \cdot n + 2}$. \eox
@@ -1528,7 +1540,7 @@ gilt.
 \hint
 Führen Sie den Beweis indirekt.
 \eox
-
+\pagebreak
 
 
 \begin{Satz}[Leibniz-Kriterium, (\href{http://de.wikipedia.org/wiki/Leibniz}{Gottfried Wilhelm Leibniz}, 1646-1716)] \lb
@@ -1537,8 +1549,7 @@ konvergiert die alternierende Reihe
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds \left(\sum\limits_{i=1}^{n} (-1)^i \cdot  a_i\right)_{n\in\mathbb{N}.} $
-\end{Satz}
-\pagebreak  
+\end{Satz}  
 
 \noindent
 \textbf{Beweis}:  Die  Partial-Summen $s_n$ sind durch
@@ -1939,7 +1950,7 @@ Wir werden sp\"ater zeigen, dass die in dem letzten Beispiel pr\"asentierte Reih
 Exponentialfunktion berechnet, denn es gilt  
 \\[0.2cm]
 \hspace*{1.3cm}
-\colorbox{orange}{$\ds e^z = \sum\limits_{n=0}^{\infty} \frac{z^n}{n!}$} \quad f\"ur alle $z \in \mathbb{C}$.
+\colorbox{red}{\framebox{\colorbox{orange}{$\ds e^z = \sum\limits_{n=0}^{\infty} \frac{z^n}{n!}$}}} \quad f\"ur alle $z \in \mathbb{C}$.
 \eox
 
 
@@ -2028,7 +2039,8 @@ $a_n \geq a_{n+1} \geq 0$ \quad f\"ur alle $n \in \mathbb{N}$.
       \\[0.2cm]
       \hspace*{1.3cm}
       $\ds\sum\limits_{i=0}^n 2^i \cdot a_{2^i} \leq 2 \cdot \sum\limits_{i=1}^{2^n} a_i $.
-      
+      \pagebreak
+
       \textbf{Bemerkung}:  Die in (a) und (b) bewiesenen Aussagen k\"onnen wir zu dem
       \href{http://de.wikipedia.org/wiki/Cauchysches_Verdichtungskriterium}{\emph{Kondensations-Kriterium von Cauchy}} 
       zusammenfassen:  Die Reihe 
@@ -2045,7 +2057,7 @@ $a_n \geq a_{n+1} \geq 0$ \quad f\"ur alle $n \in \mathbb{N}$.
       \hspace*{1.3cm}
       $\ds\sum\limits_{n=2}^{\infty} \frac{1}{n \cdot \bigl(\log_2(n)\bigr)^2}$. \eox
 \end{enumerate}
-\pagebreak
+
 
 \subsection{Absolute Konvergenz}
 \begin{Definition}[Absolute Konvergenz]
