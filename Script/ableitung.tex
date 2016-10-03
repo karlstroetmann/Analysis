@@ -634,9 +634,13 @@ gilt.  Nat\"urlich ist jedes globale Maximum auch ein lokales Maximum, aber die 
 gilt im allgemeinen nicht.  Der n\"achste Satz liefert ein notwendiges Kriterium f\"ur das
 Auftreten eines lokalen Maximums.
 
-\begin{Satz}[\href{http://en.wikipedia.org/wiki/Fermat}{Pierre de Fermat}, 160?--1665] \lb
-Hat die Funktion $f: D \rightarrow \mathbb{R}$ im Punkt $\bar{x}$ ein lokales
-Maximum, ist $U_\varepsilon(\bar{x}) \subseteq D$ und ist die Funktion $f$ zus\"atzlich im Punkt $\bar{x}$ differenzierbar, so gilt 
+\begin{Satz}[\href{http://en.wikipedia.org/wiki/Fermat}{Pierre de Fermat}, 160?--1665] 
+Falls
+\begin{enumerate}
+\item die Funktion $f: \mathbb{R} \rightarrow \mathbb{R}$ im Punkt $\bar{x}$ ein lokales Maximum besitzt und 
+\item die Funktion $f$ im Punkt $\bar{x}$ differenzierbar ist,
+\end{enumerate} 
+so gilt 
 \\[0.3cm]
 \hspace*{1.3cm}
 $\df{f}(\bar{x}) = 0$.
@@ -644,7 +648,7 @@ $\df{f}(\bar{x}) = 0$.
 
 \proof
 Wir betrachten zun\"achst die Folge $\folge{\bar{x} + \frac{1}{n}}$.
-Wir w\"ahlen $\varepsilon$ so klein, dass 
+Da $f$ im Punkt $\bar{x}$  ein lokales Minimum besitzt, finden wir ein $\varepsilon$, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\forall x \in \mathbb{R}:\bigl( |x - \bar{x}| < \varepsilon \rightarrow f(x) \leq f(\bar{x})\bigr)$
@@ -696,6 +700,17 @@ Wir haben jetzt also die beiden Ungleichungen
 $\df{f}(\bar{x}) \leq 0$ \quad und \quad $\df{f}(\bar{x}) \geq 0$ 
 \\[0.3cm]
 gezeigt.  Daraus folgt sofort $\df{f}(\bar{x}) = 0$. \qed
+
+\remark
+Der Satz bleibt richtig, wenn die Voraussetzung $f:\mathbb{R} \rightarrow \mathbb{R}$ zu 
+$f:D \rightarrow \mathbb{R}$ abgeschw\"acht wird, wenn also $f$ nicht mehr auf ganz $\mathbb{R}$
+definiert ist.  Dann muss allerdings zus\"atzlich sichergestellt werden,  
+dass es eine $\varepsilon$-Umgebung von $\bar{x}$ gibt, die vollst\"andig in dem Definitions-Bereich
+$D$ liegt, es muss also ein $\varepsilon > 0$ geben, so dass $U_\varepsilon(\bar{x}) \subseteq D$ gilt.
+\eox
+
+\exercise
+\"Uberlegen Sie, warum diese zus\"atzliche Bedingung notwendig ist. \eox
 
 \remark
 Analog zur Definition eines lokalen Maximums kann auch der Begriff eines \emph{lokalen Minimums}
@@ -764,6 +779,7 @@ F\"alle:
 \end{enumerate}
 Aus dem Satz von Rolle folgern wir sp\"ater zwei wichtige Mittelwert-S\"atze und den Satz von 
 \textsl{L'H\^opital}.
+\pagebreak
 
 \exercise
 Eine Konservendose ist ein Zylinder, dessen Volumen $V$ durch die Formel
@@ -1000,9 +1016,7 @@ Berechnen Sie den Grenzwert \quad $\ds\lim\limits_{x \rightarrow 0} \frac{\cos(x
   Funktion $x \mapsto g(x)$ \emph{w\"achst}, falls 
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\ds \lim\limits_{x \rightarrow \infty} \frac{g(x)}{f(x)} = 0$
-  \\[0.2cm]
-  gilt. \eox
+  $\ds \lim\limits_{x \rightarrow \infty} \frac{g(x)}{f(x)} = 0$ \quad gilt. \eox
 \end{Definition}
 
 \exercise
@@ -1341,7 +1355,6 @@ zusammen mit einer Sekante $g$.
 
 \exercise
 Beweisen Sie das vorangehende Lemma. \eox
-\pagebreak
 
 \begin{Satz}
 Die Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ sei zweimal differenzierbar und die Funktion 
@@ -1463,7 +1476,7 @@ $f$  konvex \quad $\Leftrightarrow$ \quad $\forall x \in \mathbb{R}: f''(x) \geq
   \\[0.2cm]
   Das ist aber gerade die Konvexit\"at der Funktion $f$. \qed
 \end{enumerate}
-\pagebreak
+
 
 \section{Die Exponential-Funktion}
 Wir haben die Exponential-Funktion als die Potenzreihe
