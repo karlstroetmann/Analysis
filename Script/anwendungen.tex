@@ -158,7 +158,7 @@ Wegen $\err{0} = 0$ und $g_0(0) = 0$  vereinfacht sich Gleichung (\ref{eq:taylor
   \label{eq:taylorErr0a}
    \bruch{\erri{\chi_1}{1}}{(n+1)\cdot \chi_1^n} = \bruch{\textsl{error}_n(x)}{x^{n+1}}.  
 \end{equation}
-Nun wenden wir in dem Interval $[0,\chi_1]$ den erweiterten  Mittelwert-Satz 
+Nun wenden wir in dem Intervall $[0,\chi_1]$ den erweiterten  Mittelwert-Satz 
 auf die beiden Funktionen $\erri{x}{1}$ und 
 $g_1(x) := (n+1)\cdot x^n$ an.  Dann gibt es ein $\chi_2 \in[0,\chi_1]$, so dass
 \begin{equation}
@@ -182,7 +182,7 @@ anwenden und $k \leq n$ ist, erhalten wir ein $\chi_k \in [0,\chi_{k-1}]$, so da
 \end{equation}
 Um diese Behauptung per Induktion nach $k$ zu beweisen, bemerken wir, dass der Induktions-Anfang
 $k=1$ bereits bewiesen wurde.  Im Induktions-Schritt
-wenden wir in dem Interval $[0,\chi_k]$
+wenden wir in dem Intervall $[0,\chi_k]$
 auf die beiden Funktionen $\erri{\chi_k}{k}$ und 
 $g_{k}(x) :=  \bruch{(n+1)!}{(n+1 - k)!}\cdot x^{n+1-k}$ den erweiterten
 Mittelwert-Satz an.  Wir finden dann ein $\chi_{k+1} \in [0,\chi_k]$, so dass
@@ -235,7 +235,7 @@ gilt.  Wegen $\erri{0}{n} = 0$ haben wir also
   \label{eq:taylorErrn1}
   \bruch{\erri{\chi}{n+1}}{(n+1)!} = \bruch{\erri{\chi_{n}}{n}}{(n+1)!\cdot \chi_n}. 
 \end{equation}
-Um diese Gleichung zu vereinfachen, errinnern wir daran, dass 
+Um diese Gleichung zu vereinfachen, erinnern wir daran, dass 
 $\err{x}$ als 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -546,7 +546,7 @@ Da $\ds\tan\Bigl(\frac{\pi}{4}\Bigr) = 1$, also $\ds\arctan\bigl(1) = \frac{\pi}
   1 - \bruch{1}{3} + \bruch{1}{5} - \bruch{1}{7} + \bruch{1}{9} \pm \cdots
 \end{equation}
 gefunden.  F\"ur einen vollst\"andigen Beweis dieser Formel m\"ussten wir den Abbruch-Fehler
-nach der Lagrange'schen Formel berechnen.  Das w\"urde uns jetzt allerdings zuviel Zeit
+nach der Lagrange'schen Formel berechnen.  Das w\"urde uns jetzt allerdings zu viel Zeit
 kosten.
 
 \subsection{Berechnung von $\pi^*$}
@@ -558,7 +558,7 @@ Formel hei{\ss}t das, dass der Abbruch-Fehler wie folgt abgesch\"atzt werden kan
 \hspace*{1.3cm}
 $\left|\arctan(x) - \sum\limits_{k=0}^n (-1)^k \cdot  \bruch{1}{2\cdot k+1}\right| \leq \bruch{1}{2\cdot (n+1)+1}$
 \\[0.3cm]
-\"Uberlegen wir, wieviele Glieder der Summe ben\"otigt werden, um $\ds\frac{\pi}{4}$ auf eine Genauigkeit von $10^{-9}$ 
+\"Uberlegen wir, wie viele Glieder der Summe ben\"otigt werden, um $\ds\frac{\pi}{4}$ auf eine Genauigkeit von $10^{-9}$ 
 zu berechnen.  Dann muss $n$ die folgende Ungleichung erf\"ullen:
 \\[0.2cm]
 \hspace*{1.3cm} 
@@ -640,7 +640,7 @@ Wir k\"onnen also $x = \sqrt{2} - 1$ w\"ahlen und dann $\pi$ nach der Formel
   \pi = 4 \cdot  \arctan(1) = 8 \cdot  \arctan\bigl(\sqrt{2} - 1\bigr) = 8 \cdot  \sum\limits_{n=0}^\infty (-1)^n \cdot  \bruch{(\sqrt{2}-1)^{2\cdot n+1}}{2\cdot n+1}
 \end{equation}
 berechnen.  Wegen $\sqrt{2} - 1 \approx 0.4142$ konvergiert diese Reihe recht gut.
-Um auszurechnen, wieviele Glieder ben\"otigt werden um $\pi$ auf eine
+Um auszurechnen, wie viele Glieder ben\"otigt werden um $\pi$ auf eine
 Genauigkeit von $10^{-9}$ zu berechnen, sch\"atzen wir den Abbruch-Fehler mit dem
 Leibniz-Kriterium ab, wobei wir zur Vereinfachung  den Nenner $2\cdot n+1$ durch 1 absch\"atzen:
 \\[0.3cm]
@@ -761,7 +761,7 @@ F\"ur die Folge der St\"utzstellen $[-1,0,1]$ lauten die Lagrange'schen Polynome
 \item $L_1\bigl([-1,0,1];x\bigr) := \bruch{\bigl(x-(-1)\bigr)\cdot (x-1)}{(0-(-1))\cdot (0-1)} = -x^2 + 1$
 \item $L_2\bigl([-1,0,1];x\bigr) := \bruch{\bigl(x-(-1)\bigr)\cdot (x-0)}{(1-(-1))\cdot (1-0)} = \frac{1}{2}\cdot x^2 + \frac{1}{2}\cdot x$
 \end{enumerate}
-Ist eine Liste $[x_0,x_1,\cdots,x_n]$ von $n+1$ verschiedenene St\"utzstellen gegeben, so
+Ist eine Liste $[x_0,x_1,\cdots,x_n]$ von $n+1$ verschiedenen St\"utzstellen gegeben, so
 haben die Lagrange'schen Polynome eine sehr n\"utzliche Eigenschaft.  Um diese
 Eigenschaft einfacher schreiben zu k\"onnen, definieren wir f\"ur nat\"urliche Zahlen $j$ und
 $k$ das \href{https://de.wikipedia.org/wiki/Kronecker-Delta}{\emph{Kronecker-Delta}}
@@ -974,7 +974,7 @@ des Satzes von Rolle (Satz \ref{satz:rolle}).
   hat, so gibt es ein $\xi\in[x_0,x_n]$ mit $f^{(n)}(\xi) = 0$.
 \end{Satz}
 \textbf{Beweis}:  Wir zeigen, dass f\"ur alle $k=0,1,\cdots,n$ die $k$-te Ableitung
-$f^{(k)}(x)$ in dem Interval $[x_0,x_n]$ mindestens $n+1-k$ verschiedene Nullstellen hat.
+$f^{(k)}(x)$ in dem Intervall $[x_0,x_n]$ mindestens $n+1-k$ verschiedene Nullstellen hat.
 Diesen Nachweis f\"uhren wir durch Induktion \"uber $k$.
 \begin{enumerate}
 \item[I.A.:] $k=0$. Es gilt $f^{(0)}(x) = f(x)$ und da die Funktion $f$ nach Voraussetzung $n+1$
@@ -1602,8 +1602,8 @@ berechnet, die f\"ur den Fall $f(x) = \cos(x)$ die Form
 $\ds x_{n+1} := \frac{cos(x) + \sin(x) \cdot x}{1 + \sin(x)}$
 \\[0.2cm]
 annimmt.  Da diese Gleichung aber komplexer als die urspr\"ungliche Gleichung
-$x_{n+1} = \cos(x_n)$ ist, m\"ussen wir damit rechnen, dass die Rundungfehler h\"oher sind als bei der
-Iteration.  Zur  Eliminierung dieser Rundungfehler f\"uhren wir daher in Zeile 8
+$x_{n+1} = \cos(x_n)$ ist, m\"ussen wir damit rechnen, dass die Rundungsfehler h\"oher sind als bei der
+Iteration.  Zur Eliminierung dieser Rundungsfehler f\"uhren wir daher in Zeile 8
 noch eine Nach-Iteration mit der Gleichung $x_{n+1} = \cos(x_n)$ durch.
 Tabelle \ref{tab:solution-smart} zeigt die von diesem Programm berechneten Werte.  Diesmal
 ist die Genauigkeit von $10^{-6}$ bereits nach 4 Schritten erreicht, de facto ist der im
@@ -1966,7 +1966,7 @@ bei $x_3$ sind bereits 5 Stellen richtig, $x_4$ hat eine Genauigkeit von 11 Stel
 $x_5$ stimmt auf 24 Stellen mit $\sqrt{2\,}$ \"uberein, bei $x_6$ sind es 48 Stellen und $x_7$ hat
 bereits eine Genauigkeit von 100 Stellen.  Wir beobachten, dass sich die Zahl der korrekten Stellen mit
 jeder Operation etwa verdoppelt.  Diese Ph\"anomen wollen wir nun genauer untersuchen.
-Dazu entwicken wir die Funktion $f(x)$ an der Stelle $x_n$  in einer Taylor-Reihe, die wir nach dem
+Dazu entwickeln wir die Funktion $f(x)$ an der Stelle $x_n$  in einer Taylor-Reihe, die wir nach dem
 linearen Glied abbrechen.  Wir erhalten
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -2040,7 +2040,7 @@ gefunden, die in der Tat zeigt, dass sich die Anzahl der korrekten Stellen bei j
 
 \exercise
 Analysieren Sie das Newton'sche Verfahren zur Berechnung der dritten Wurzel aus $2$ und berechnen Sie,
-wieviele Iterationen h\"ochstens notwendig sind um den Wert von $\sqrt[3]{2}$ auf eine Genauigkeit von
+wie viele Iterationen h\"ochstens notwendig sind um den Wert von $\sqrt[3]{2}$ auf eine Genauigkeit von
 $10^{-101}$ zu berechnen.
 \eox
 
@@ -2055,7 +2055,7 @@ das Glei\-chungs-System
 \hspace*{1.3cm}
 $\mathbf{A}\, \vec{x} = \vec{b}$
 \\[0.2cm]
-zu l\"osen, haben Sie im ersten Semester kennegelernt: Es ist das Gau{\ss}'sche
+zu l\"osen, haben Sie im ersten Semester kennengelernt: Es ist das Gau{\ss}'sche
 Eliminations-Verfahren (\href{https://de.wikipedia.org/wiki/Carl_Friedrich_Gauss}{Carl Friedrich Gau{\ss}}, 1777 -- 1855).  
 Es gibt allerdings Situationen, in denen dieses
 Verfahren zu 
@@ -2444,7 +2444,7 @@ $\mathbf{A} \vec{x} = \vec{b}$
 \\[0.2cm]
 das starke Zeilen-Summen-Kriterium erf\"ullt.  Allerdings ist die theoretische Analyse des
 Gau{\ss}-Seidel-Verfahren schwieriger als die Untersuchung des Jacobi-Verfahrens, so dass wir von einer
-detailierteren Diskussion aus Zeitgr\"unden absehen m\"ussen.
+detaillierteren Diskussion aus Zeitgr\"unden absehen m\"ussen.
 
 \begin{figure}[!ht]
   \centering
