@@ -428,7 +428,7 @@ $\forall n \in \mathbb{N}^*:\bigl(n \geq K_1 \rightarrow \bigl| a_n - a \bigr| <
 \quad \mbox{und} \quad
 $\forall n \in \mathbb{N}^*:\bigl( n \geq K_2 \rightarrow \bigl| b_n - b \bigr| < \varepsilon'\bigr)$
 \\[0.2cm]
-gilt.  Wir setzen nun $\varepsilon' := \frac{1}{2} \cdot \varepsilon$.  Dann gibt es also $K_1$ und
+gilt.  Wir setzen nun $\ds \varepsilon' := \frac{1}{2} \cdot \varepsilon$.  Dann gibt es also $K_1$ und
 $K_2$, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -506,8 +506,12 @@ $\forall n \in \mathbb{N}^*:\bigl(n \geq K_1 \rightarrow \bigl| a_n - a \bigr| <
    \quad \mbox{und} \quad
 $\forall n \in \mathbb{N}^*:\bigl(n \geq K_2 \rightarrow \bigl| b_n - b \bigr| < \varepsilon_2\bigr)$
 \\[0.2cm]
-gilt.  Wir setzen nun $\varepsilon_1 := \frac{\varepsilon}{2\cdot(|b| + 1)}$ und
-$\varepsilon_2 := \frac{\varepsilon}{2\cdot S}$.  Dann gibt es also $K_1$ und
+gilt.  Wir setzen nun
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds \varepsilon_1 := \frac{\varepsilon}{2\cdot(|b| + 1)}$ \quad und \quad $\ds\varepsilon_2 := \frac{\varepsilon}{2\cdot S}$.  
+\\[0.2cm]
+Dann gibt es also $K_1$ und
 $K_2$, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -693,7 +697,7 @@ gilt.  Analog heißt eine Folge \blue{monoton fallend} falls
 $ \forall n \in \mathbb{N}^*: a_n \geq a_{n+1}. $
 \eod
 \end{Definition}
-Ein Beispiel für eine monoton fallende Folge ist die Folge $\Folge{\frac{1}{n}}$, denn es
+Ein Beispiel für eine monoton fallende Folge ist die Folge $\ds\Folge{\frac{1}{n}}$, denn es
 gilt
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -805,9 +809,8 @@ eine Cauchy-Folge ist.  Den Nachweis dieser Behauptung spalten wir in mehrere Sä
 Jede konvergente Folge $\folge{a_n}$ ist eine Cauchy-Folge.  
 \end{Satz}
 
-
-\noindent
-\textbf{Beweis}:  Es sei $a := \lim\limits_{n\rightarrow\infty} a_n$. 
+\proof
+Es sei $a := \lim\limits_{n\rightarrow\infty} a_n$. 
 Sei $\varepsilon > 0$ gegeben.  Wir definieren $\varepsilon' := \frac{1}{2} \cdot \varepsilon$.
 Aufgrund der Konvergenz der Folge $\folge{a_n}$ gibt es
 dann ein $K$, so dass 
@@ -833,8 +836,8 @@ Damit ist gezeigt, dass $\folge{a_n}$ eine Cauchy-Folge ist. \qed
   Jede Cauchy-Folge ist beschränkt.
 \end{Satz}
 
-\noindent
-\textbf{Beweis}:  Wenn $\folge{a_n}$ eine Cauchy-Folge ist, dann finden wir eine Zahl
+\proof
+Wenn $\folge{a_n}$ eine Cauchy-Folge ist, dann finden wir eine Zahl
 $K$, so dass für alle natürlichen Zahlen $m,n$, die größer-gleich $K$ sind, die Ungleichung
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -888,7 +891,9 @@ gilt. \eox
 \begin{Theorem}
 Jede Cauchy-Folge ist konvergent.  
 \end{Theorem}
-\textbf{Beweis}: Der Beweis verläuft ähnlich wie der Nachweis, dass eine monotone und
+
+\proofStar
+Der Beweis verläuft ähnlich wie der Nachweis, dass eine monotone und
 beschränkte Folge konvergent ist und zerfällt in zwei Teile: 
 \begin{enumerate}
 \item Zunächst definieren wir eine Menge $M$, die nicht leer und nach oben beschränkt ist
