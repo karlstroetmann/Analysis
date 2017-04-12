@@ -509,19 +509,24 @@ $\forall n \in \mathbb{N}^*:\bigl(n \geq K_2 \rightarrow \bigl| b_n - b \bigr| <
 gilt.  Wir setzen nun
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds \varepsilon_1 := \frac{\varepsilon}{2\cdot(|b| + 1)}$ \quad und \quad $\ds\varepsilon_2 := \frac{\varepsilon}{2\cdot S}$.  
+$\ds \varepsilon_1 := \frac{\varepsilon}{2\cdot |b|}$ \quad und \quad $\ds\varepsilon_2 := \frac{\varepsilon}{2\cdot S}$.  
 \\[0.2cm]
 Dann gibt es also $K_1$ und
 $K_2$, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\forall n \in \mathbb{N}^*:\Bigl(n \geq K_1 \rightarrow \bigl| a_n - a \bigr| < \frac{\varepsilon}{2\cdot(|b| + 1)}\Bigr)$
+$\ds\forall n \in \mathbb{N}^*:\Bigl(n \geq K_1 \rightarrow \bigl| a_n - a \bigr| < \frac{\varepsilon}{2\cdot|b|}\Bigr)$
 \quad \mbox{und} \quad
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds\forall n \in \mathbb{N}^*:\Bigl(n \geq K_2 \rightarrow \bigl| b_n - b \bigr| < \frac{\varepsilon}{2\cdot S}\Bigr)$
 \\[0.2cm]
-gilt.  Wir definieren $K := \max(K_1,K_2)$.  Damit gilt dann für alle $n \geq K$:
+gilt.  Wir definieren $K := \max(K_1,K_2)$.  Wir nehmen zunächst an, dass 
+\\[0.2cm]
+\hspace*{1.3cm}
+$S \not= 0$ \quad oder \quad $b \not= 0$
+\\[0.2cm]
+gilt.  Damit gilt dann für alle $n \geq K$:
 \\[0.2cm]
 \hspace*{1.3cm}
 $
@@ -531,13 +536,20 @@ $
  & \leq & \bigl| \bigl(a_n \cdot  b_n - a_n\cdot b \bigr) \bigr| + \bigl| \bigl(a_n\cdot b - a\cdot b\bigr) \bigr| 
         & \mbox{(Dreiecksungleichung)}  \\[0.3cm]
  & =    & \bigl|a_n\bigr| \cdot  \bigl| b_n - b \bigr| + \bigl| a_n - a \bigr| \cdot  |b| \\[0.3cm]
- & \leq & S \cdot  \bigl| b_n - b \bigr| + \bigl| a_n - a \bigr| \cdot  (|b| + 1) \\[0.3cm]
- & <    & \ds S \cdot  \frac{\varepsilon}{2\cdot S} + \frac{\varepsilon}{2\cdot (|b| + 1)} \cdot  (|b| + 1)  \\[0.3cm]
+ & \leq & S \cdot  \bigl| b_n - b \bigr| + \bigl| a_n - a \bigr| \cdot  |b| \\[0.3cm]
+ & <    & \ds S \cdot  \frac{\varepsilon}{2\cdot S} + \frac{\varepsilon}{2\cdot |b|} \cdot  |b| 
+        & \mbox{(da $S \not= 0$ oder $b \not= 0$)}\\[0.3cm]
  & \leq & \ds\frac{\;\varepsilon\;}{2} + \frac{\;\varepsilon\;}{2}  \\[0.3cm]
  & =    & \varepsilon. 
 \end{array}
 $
 \\[0.2cm]
+Falls sowohl $S = 0$ als auch $b = 0$ ist, dann gilt auch $a_n = 0$ und damit haben wir in diesem Fall 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\bigl| a_n \cdot  b_n - a \cdot  b \bigr| = 0 < \varepsilon$,
+\\[0.2cm]
+so dass die Behauptung auch in diesem Fall gilt.
 Damit ist die Behauptung gezeigt. \qed
 
 
