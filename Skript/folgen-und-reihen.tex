@@ -1238,27 +1238,8 @@ berechnet.
            Form 
            $x_n := f(a_n)$ in die Rekurrenz-Gleichung überführen, die Sie in Teil (a) dieser Aufgabe
            bereits gelöst haben.  
-           \pagebreak
-
-\item[(c)] Es seien $a,b \in \mathbb{R}$ und zusätzlich gelte $a > 0$ und $b > 0$.  
-           Die Folge $(a_n)_{n\in\mathbb{N}^*}$ werde durch Induktion wie folgt definiert:
-           \begin{enumerate}
-           \item $a_0 := a$,
-           \item $a_1 := b$,
-           \item $\ds\frac{1}{a_{n+2}} := \frac{1}{2} \cdot \left(\frac{1}{a_n} + \frac{1}{a_{n+1}}\right)$.
-           \end{enumerate}
-           Zeigen Sie, dass die Folge $(a_n)_{n\in\mathbb{N}^*}$ konvergiert und berechnen Sie den Grenzwert
-           $\lim\limits_{n\rightarrow\infty} a_n$ in  Abhängigkeit von den Startwerten $a$ und $b$. \eox
-
-           \noindent
-           \textbf{Bemerkung}: Für zwei positive Zahlen $a$ und $b$ wird die Zahl $c$ für die 
-           \\[0.2cm]
-           \hspace*{1.3cm}
-           $\ds\frac{1}{c} := \frac{1}{2} \cdot \left(\frac{1}{a} + \frac{1}{b}\right)$
-           \\[0.2cm]
-           gilt, als das \href{http://de.wikipedia.org/wiki/Harmonisches_Mittel}{harmonische Mittel} von $a$ und $b$ bezeichnet.
 \end{enumerate}
-
+\pagebreak
 
 
 \section{Reihen}
@@ -1515,7 +1496,10 @@ Die \href{http://de.wikipedia.org/wiki/Geometrische_Reihe}{geometrische Reihe} i
 
 
 \exercise
-Berechnen Sie den Wert der Reihe $\ds\sum\limits_{n=0}^\infty \frac{3}{n^2 + 3 \cdot n + 2}$. \eox
+Berechnen Sie den Wert der Reihe $\ds\sum\limits_{n=0}^\infty \frac{3}{n^2 + 3 \cdot n + 2}$. 
+\hint
+Sie können die Summe durch eine \href{https://de.wikipedia.org/wiki/Partialbruchzerlegung}{Partialbruch-Zerlegung} vereinfachen.
+\eox
 
 \begin{Definition}[Alternierende Reihe] 
 Hat eine Reihe die Form 
@@ -1532,6 +1516,7 @@ so haben aufeinander folgende Glieder der Reihe ein unterschiedliches Vorzeichen
 die Glieder den Wert $0$ haben).  In diesem Fall sprechen wir daher von einer \blue{alternierenden Reihe}.  
 \eod
 \end{Definition}
+\pagebreak
 
 \noindent
 \textbf{Beispiel}: Die Reihe
