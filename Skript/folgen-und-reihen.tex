@@ -812,15 +812,26 @@ Jede konvergente Folge $\folge{a_n}$ ist eine Cauchy-Folge.
 \end{Satz}
 
 \proof
-Es sei $a := \lim\limits_{n\rightarrow\infty} a_n$. 
-Sei $\varepsilon > 0$ gegeben.  Wir definieren $\varepsilon' := \frac{1}{2} \cdot \varepsilon$.
-Aufgrund der Konvergenz der Folge $\folge{a_n}$ gibt es
-dann ein $K$, so dass 
+Es sei $a := \lim\limits_{n\rightarrow\infty} a_n$.  Sei $\varepsilon > 0$ gegeben.  Nach Definition einer
+Cauchy-Folge müssen wir ein $K$ finden, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\forall n \in \mathbb{N}^*:\Bigl( n \geq K \rightarrow \bigl|a_n-a\bigr| < \varepsilon' = \frac{\varepsilon}{2}\Bigr)$
+$\forall m,n \in \mathbb{N}^*: \bigl(m \geq K \wedge n \geq K \rightarrow \bigl| a_m - a_n \bigr| < \varepsilon\bigr)$
 \\[0.2cm]
-gilt.  Damit gilt für alle $m,n\in\mathbb{N}^*$ mit $m \geq K$ und $n \geq K$ die folgende Abschätzung:
+gilt.  Nach Voraussetzung gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall \varepsilon'\in\mathbb{R}_+^* : \exists K'\in\mathbb{R}: \forall n\in\mathbb{N}*:
+ \bigl(n \geq K' \rightarrow |a_n - a| < \varepsilon'
+$.
+\\[0.2cm]
+Wir definieren $\varepsilon' := \frac{1}{2} \cdot \varepsilon$.  Dann gibt es also ein $K'$, so dass 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\forall n \in \mathbb{N}^*:\Bigl( n \geq K' \rightarrow \bigl|a_n-a\bigr| < \frac{\varepsilon}{2}\Bigr)$
+\\[0.2cm]
+gilt.  Wir definieren nun $K := K'$.  Damit gilt für alle $m,n\in\mathbb{N}^*$ mit $m \geq K$ und $n \geq K$
+die folgende Abschätzung: 
 \\[0.2cm]
 \hspace*{1.3cm}
 $
@@ -839,7 +850,7 @@ Damit ist gezeigt, dass $\folge{a_n}$ eine Cauchy-Folge ist. \qed
 \end{Satz}
 
 \proof
-Wenn $\folge{a_n}$ eine Cauchy-Folge ist, dann finden wir eine Zahl
+Wenn $\rule[-8pt]{0pt}{0pt}\folge{a_n}$ eine Cauchy-Folge ist, dann finden wir eine Zahl
 $K$, so dass für alle natürlichen Zahlen $m,n$, die größer-gleich $K$ sind, die Ungleichung
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -869,7 +880,6 @@ $
 $
 \\[0.2cm]
 Damit ist der Beweis abgeschlossen. \qed 
-\pagebreak
 
 \exercise
 In dem gleich folgenden Beweis der Tatsache, dass jede Cauchy-Folge konvergent ist, werden wir zwei
@@ -1028,7 +1038,7 @@ Wir definieren eine Folge $b_n$ induktiv wie folgt:
 $\ds b_{n+1} := \frac{1}{2}\cdot  \left(b_n + \frac{a}{b_n}\right). $
 \end{enumerate}
 Um diese Definition zu verstehen, nehmen wir zunächst an, dass der Grenzwert dieser Folge
-existiert und den Wert $b \not= 0$ hat.  Dann gilt
+existiert und den Wert $b$ hat, wobei $b \not= 0$ ist.  Dann gilt
 \\[0.2cm]
 \hspace*{1.3cm}
 $ \begin{array}{lcl}
@@ -1041,7 +1051,7 @@ $ \begin{array}{lcl}
 $
 \\[0.2cm]
 Damit ist $b$ also eine Lösung der Gleichung 
-$b = \frac{1}{2}\cdot  \left(b + \frac{a}{b}\right)$.  
+$\ds b = \frac{1}{2}\cdot  \left(b + \frac{a}{b}\right)$.  
 Wir formen diese Gleichung um:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1057,7 +1067,7 @@ $
 \\[0.2cm]
 Falls die oben definierte Folge $\folge{b_n}$ einen Grenzwert hat, dann ist dieser
 Grenzwert also die Wurzel der Zahl $a$.  Wir werden die Konvergenz der Folge nachweisen,
-indem wir zeigen, dass die Folge $\folge{b_n}$ einerseits monoton fallend und andererseits 
+indem wir zeigen, dass die Folge $\rule[-8pt]{0pt}{0pt}\folge{b_n}$ einerseits monoton fallend und andererseits 
 nach unten beschränkt ist.  Dazu betrachten wir zunächst die Differenz $b_{n+1}^2 - a$:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1082,8 +1092,8 @@ die Zahl  $a$, so haben wir
 \hspace*{1.3cm}
  $b_{n+1}^2 \geq a$ \quad und damit auch \quad $b_{n+1} \geq \sqrt{a}$ \quad für alle $n \in \mathbb{N}^*$
 \\[0.2cm]
-gezeigt.  Nach unserer Definition der Folge $\folge{b_n}$ gilt diese Ungleichung auch für
-den ersten Wert $n=1$, so dass wir also insgesamt die Ungleichung
+gezeigt.  Nach unserer Definition der Folge $\rule[-8pt]{0pt}{0pt}\folge{b_n}$ gilt diese Ungleichung auch für
+den ersten Wert $n=1$, so dass wir also insgesamt die Ungleichungen
 \\[0.2cm]
 \hspace*{1.3cm}
 $b_n^2 \geq a$ \quad und \quad $b_n \geq \sqrt{a}$ \quad für alle $n \in \mathbb{N}^*$
@@ -1094,8 +1104,8 @@ ist.  Dividieren wir die Ungleichung $b_n^2 \geq a$ durch $b_{n}$, so folgt
 \hspace*{1.3cm}
 $\ds b_{n} \geq \frac{a}{b_{n}}.  $
 \\[0.2cm]
-Die Zahl $\frac{1}{2}\cdot \left(b_n + \frac{a}{b_n}\right)$ ist der arithmetische
-Mittelwert der Zahlen $b_n$ und $\frac{a}{b_n}$ und muss daher zwischen diesen beiden
+Die Zahl $\ds\frac{1}{2}\cdot \left(b_n + \frac{a}{b_n}\right)$ ist der arithmetische
+Mittelwert der Zahlen $b_n$ und $\ds\frac{a}{b_n}$ und muss daher zwischen diesen beiden
 Zahlen liegen:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1139,6 +1149,34 @@ berechnet.
 
 \begin{figure}[!ht]
   \centering
+{\footnotesize
+\begin{Verbatim}[ frame         = lines, 
+                  framesep      = 0.3cm, 
+                  labelposition = bottomline,
+                  numbers       = none,
+                  numbersep     = -0.2cm,
+                  xleftmargin   = -1.5cm,
+                  xrightmargin  = 0.5cm,
+                ]
+1: 1.5000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+2: 1.4166666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666
+3: 1.4142156862745098039215686274509803921568627450980392156862745098039215686274509803921568627450980392
+4: 1.4142135623746899106262955788901349101165596221157440445849050192000543718353892683589900431576443402
+5: 1.4142135623730950488016896235025302436149819257761974284982894986231958242289236217849418367358303565
+6: 1.4142135623730950488016887242096980785696718753772340015610131331132652556303399785317871612507104752
+7: 1.4142135623730950488016887242096980785696718753769480731766797379907324784621070388503875343276416016
+8: 1.4142135623730950488016887242096980785696718753769480731766797379907324784621070388503875343276415727
+9: 1.4142135623730950488016887242096980785696718753769480731766797379907324784621070388503875343276415727
+\end{Verbatim}
+}
+\vspace*{-0.3cm}
+  \caption{Berechnung der Quadrat-Wurzel mit Hilfe der Folge $\ds b_{n+1} = \frac{1}{2}\cdot(b_n + \frac{a}{b_n})$.}
+  \label{fig:sqrt-output}
+\end{figure}
+
+
+\begin{figure}[!ht]
+  \centering
 \begin{Verbatim}[ frame         = lines, 
                   framesep      = 0.3cm, 
                   labelposition = bottomline,
@@ -1165,33 +1203,8 @@ berechnet.
   \label{fig:sqrt.stlx}
 \end{figure} %\$
 
-\begin{figure}[!ht]
-  \centering
-{\footnotesize
-\begin{Verbatim}[ frame         = lines, 
-                  framesep      = 0.3cm, 
-                  labelposition = bottomline,
-                  numbers       = none,
-                  numbersep     = -0.2cm,
-                  xleftmargin   = -0.5cm,
-                  xrightmargin  = 0.5cm,
-                ]
-1: 1.5000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-2: 1.4166666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666
-3: 1.4142156862745098039215686274509803921568627450980392156862745098039215686274509803921568627450980392
-4: 1.4142135623746899106262955788901349101165596221157440445849050192000543718353892683589900431576443402
-5: 1.4142135623730950488016896235025302436149819257761974284982894986231958242289236217849418367358303565
-6: 1.4142135623730950488016887242096980785696718753772340015610131331132652556303399785317871612507104752
-7: 1.4142135623730950488016887242096980785696718753769480731766797379907324784621070388503875343276416016
-8: 1.4142135623730950488016887242096980785696718753769480731766797379907324784621070388503875343276415727
-9: 1.4142135623730950488016887242096980785696718753769480731766797379907324784621070388503875343276415727
-\end{Verbatim}
-}
-\vspace*{-0.3cm}
-  \caption{Berechnung der Quadrat-Wurzel mit Hilfe der Folge $b_{n+1} = \frac{1}{2}\cdot(b_n + \frac{a}{b_n})$.}
-  \label{fig:sqrt-output}
-\end{figure}
 \pagebreak
+
 
 \exercise
 \begin{enumerate}
@@ -1200,7 +1213,7 @@ berechnet.
            \begin{enumerate}
            \item $a_0 := a$,
            \item $a_1 := b$,
-           \item $a_{n+2} := \frac{1}{2} \cdot (a_n + a_{n+1})$.
+           \item $\ds a_{n+2} := \frac{1}{2} \cdot (a_n + a_{n+1})$.
            \end{enumerate}
            Zeigen Sie, dass die Folge $(a_n)_{n\in\mathbb{N}^*}$ konvergiert und berechnen Sie den Grenzwert
            $\lim\limits_{n\rightarrow\infty} a_n$  in Abhängigkeit von den Startwerten $a$ und $b$.
@@ -1211,7 +1224,7 @@ berechnet.
            $\lambda_1$ und $\lambda_2$ finden, die Sie für die Lösung in der Form
            \\[0.2cm]
            \hspace*{1.3cm}
-           $a_n = c_1 \cdot \lambda_1^n + c_2 \cdot \lambda_2^n$
+           $\ds a_n = c_1 \cdot \lambda_1^n + c_2 \cdot \lambda_2^n$
            \\[0.2cm]
            linear kombinieren müssen.  Die Koeffizienten $c_1$ und $c_2$ können Sie aus den Gleichungen für
            die Anfangswerte $a_0$ und $a_1$ bestimmen.  
@@ -1252,7 +1265,7 @@ $\ds s_n := \sum\limits_{i=1}^n a_i. $
 \\[0.2cm]
 Diese Folge bezeichnen wir auch als unendliche  \blue{Reihe}.  Die Folge $\folge{a_n}$
 bezeichnen wir als die 
-der Reihe $\folge{\sum_{i=1}^n a_i}$ \blue{zugrunde liegende Folge}.
+der Reihe $\ds\left(\sum_{i=1}^n a_i\right)_{n\in\mathbb{N}^*}$ \blue{zugrunde liegende Folge}.
 Falls die Folge der Partial-Summen konvergiert, so schreiben wir den Grenzwert als
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1270,6 +1283,11 @@ Fall die Partial-Summen $s_n$ durch
 $\ds s_n = \sum\limits_{i=k}^n a_i, $
 \\ 
 wobei wir vereinbaren, dass $\ds\sum_{i=k}^n a_i = 0$ ist, falls $k > n$ ist.
+\vspace*{0.2cm}
+
+Die mit Abstand wichtigste Reihe ist die \blue{geometrische Reihe}.  Bevor wir die Konvergenz dieser Reihe
+nachweisen können, müssen wir die folgende Ungleichung zeigen.
+
 
 \begin{Satz}[Bernoullische Ungleichung]
 Es sei $x \in \mathbb{R}$, $n \in \mathbb{N}$ und es gelte $x \geq -1$.   Dann gilt 
@@ -1333,7 +1351,7 @@ Wir definieren nun
 \hspace*{1.3cm}
 $\ds x := \frac{1}{q} - 1$. 
 \\[0.2cm]
-Mit Hilfe der Bernoullischen Ungleichung sehen wir nun, dass Folgendes gilt:
+Mit Hilfe der Bernoullischen Ungleichung sehen wir, dass Folgendes gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
 $
@@ -1347,7 +1365,7 @@ $
 Durch Invertierung dieser Ungleichung erhalten wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds q^n \leq \frac{1}{1 + n \cdot x}$
+$\ds q^n \leq \frac{1}{1 + n \cdot x}$.
 \\[0.2cm]
 Ist nun ein $\varepsilon > 0$ gegeben, so definieren wir 
 \\[0.2cm]
@@ -1390,7 +1408,7 @@ $\left| q^n \right| < \varepsilon$ \quad für $n \geq K$
 \\[0.2cm]
 gültig ist und damit ist die Behauptung bewiesen.  \qed
 
-\noindent
+
 \example
 Wir betrachten die Reihe
 \\[0.2cm]
@@ -1676,8 +1694,9 @@ $ \begin{array}{lcl}
        denn aus $n=2\cdot m+1$ und $n \geq K$ folgt $m \geq K_1$ und $n \geq K_2$.
 \end{enumerate}
 Damit ist der Beweis abgeschlossen. \qed 
+\pagebreak
 
-\begin{Satz}[Cauchy'sches Konvergenz-Kriterium für Reihen] 
+\begin{Satz}[Cauchy'sches Konvergenz-Kriterium für Reihen] \hspace*{\fill} \\
 Die Reihe $\ds\folge{\sum_{i=0}^{n} a_i}$ ist genau dann konvergent, wenn es für alle 
 $\varepsilon>0$ eine Zahl $K$ gibt, so dass 
 \\[0.2cm]

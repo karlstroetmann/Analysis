@@ -1,3 +1,11 @@
+pad := procedure(k, n) {
+    s := "" + k;
+    if (#s < n) {
+        return " " * (n - #s) + s;
+    }
+    return s;
+};
+
 mySqrt := procedure(a) {
     if (a <= 1) {
         b := 1; 
@@ -6,7 +14,7 @@ mySqrt := procedure(a) {
     }     
     for (n in [1 .. 12]) {
         b := 1/2 * (b + a/b);
-        print("$n$: $nDecimalPlaces(b, 91)$");
+        print("$pad(n, 2)$: $nDecimalPlaces(b, 200)$");
     }
     return b;
 };
