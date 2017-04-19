@@ -721,8 +721,9 @@ Ist die Folge $\folge{a_n}$ monoton fallend und beschränkt, so ist die Folge auc
 $M := \bigl\{ x \in \mathbb{R} \mid \forall n \in \mathbb{N}^*: x \leq a_n \bigr\}$.
 \\[0.2cm]
 Weil wir vorausgesetzt haben, dass die Folge $\folge{a_n}$ beschränkt ist,
-ist die Menge $M$ sicher nicht leer.  Außerdem ist die Menge $M$ nach oben beschränkt, eine
-obere Schranke ist das Folgenglied  $a_1$.  Da die Struktur $\langle \mathbb{R}, 0, 1, +, \cdot, \leq\rangle$ ein vollständig geordneter
+ist die Menge $M$ sicher nicht leer.  Außerdem ist die Menge $M$ nach oben beschränkt, jedes Folgenglied 
+$a_n$ ist eine obere Schranke der Menge $M$.
+Da die Struktur $\langle \mathbb{R}, 0, 1, +, \cdot, \leq\rangle$ ein vollständig geordneter
 Körper ist, hat die Menge $M$ ein Supremum und wir können 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -766,7 +767,12 @@ $s - \varepsilon < s - \frac{1}{2} \cdot \varepsilon \leq a_n$.
 Damit haben wir insgesamt
 \\[0.2cm]
 \hspace*{1.3cm}
-$s - \varepsilon < a_n < s + \varepsilon$ \quad für alle $n \geq \widehat{n}$
+$s - \varepsilon < a_n < s + \varepsilon$ \quad für alle $n \geq \widehat{n}$.
+\\[0.2cm]
+Subtrahieren wir $s$ von dieser Ungleichung, so erhalten wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$- \varepsilon < a_n - s < \varepsilon$ \quad für alle $n \geq \widehat{n}$
 \\[0.2cm]
 und dies können wir auch als
 \\[0.2cm]
@@ -776,11 +782,11 @@ $|a_n - s| < \varepsilon$ \quad für alle $n \geq \widehat{n}$
 schreiben.  Setzen wir in der Definition des Grenzwerts $K := \widehat{n}$, so haben wir damit die Behauptung gezeigt.
 \qed
 
+\pagebreak
 \remark
 Der soeben bewiesene Satz ist der erste Satz, bei dem wir ausgenutzt haben, dass die reellen Zahlen
 vollständig sind.
 \eox
-\pagebreak
 
 \exercise
 Die Folge $\folge{a_n}$ sei monoton steigend und beschränkt.  Zeigen Sie, dass der Grenzwert
@@ -881,7 +887,7 @@ $
 \\[0.2cm]
 Damit ist der Beweis abgeschlossen. \qed 
 
-\exercise
+\exerciseStar
 In dem gleich folgenden Beweis der Tatsache, dass jede Cauchy-Folge konvergent ist, werden wir zwei
 Eigenschaften des Supremums einer Menge $M$ benutzen, die zwar offensichtlich sind, die wir aber auch
 formal beweisen sollten.  Nehmen Sie an, dass Folgendes gilt:
@@ -1061,12 +1067,18 @@ $
 \Leftrightarrow & \ds 2 \cdot  b = b + \frac{a}{b}                           & \mid - b  \\[0.3cm]
 \Leftrightarrow & \ds b = \frac{a}{b}                                   & \mid \cdot  b  \\[0.3cm]
 \Leftrightarrow & b^2 = a                                            & \mid \sqrt{\;\;}  \\[0.2cm]
-\Leftrightarrow & b  = \sqrt{a}                                      & 
+\Leftrightarrow & b = \sqrt{a} \;\vee\; b = -\sqrt{a}                               
 \end{array}
 $
 \\[0.2cm]
-Falls die oben definierte Folge $\folge{b_n}$ einen Grenzwert hat, dann ist dieser
-Grenzwert also die Wurzel der Zahl $a$.  Wir werden die Konvergenz der Folge nachweisen,
+Es gilt $a_1 > 0$ und durch eine einfache Induktion lässt sich zeigen, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$a_n > 0$ \quad für alle $n \in \mathbb{N}$ 
+\\[0.2cm]
+gilt.  Damit ist klar, dass der Grenzwert $b$, wenn er denn existiert, nicht negativ werden kann.
+Falls also die oben definierte Folge $\folge{b_n}$ einen Grenzwert hat, dann ist dieser
+Grenzwert die Wurzel der Zahl $a$.  Wir werden die Konvergenz der Folge nachweisen,
 indem wir zeigen, dass die Folge $\rule[-8pt]{0pt}{0pt}\folge{b_n}$ einerseits monoton fallend und andererseits 
 nach unten beschränkt ist.  Dazu betrachten wir zunächst die Differenz $b_{n+1}^2 - a$:
 \\[0.2cm]
@@ -1204,7 +1216,9 @@ berechnet.
 \end{figure} %\$
 
 \pagebreak
+\vspace*{\fill}
 
+\pagebreak
 
 \exercise
 \begin{enumerate}
