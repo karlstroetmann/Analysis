@@ -1250,7 +1250,7 @@ berechnet.
            \item $a_{n+2} := \sqrt{a_n \cdot a_{n+1}}$.
            \end{enumerate}
            Zeigen Sie, dass die Folge $(a_n)_{n\in\mathbb{N}^*}$ konvergiert und berechnen Sie den Grenzwert
-           $\lim\limits_{n\rightarrow\infty} a_n$ in  Abhängigkeit von den Startwerten $a$ und $b$. \eox
+           $\lim\limits_{n\rightarrow\infty} a_n$ in  Abhängigkeit von den Startwerten $a$ und $b$. 
 
            \noindent
            \textbf{Bemerkung}: Für zwei positive Zahlen $a$ und $b$ wird die Zahl $c$ für die 
@@ -1261,10 +1261,23 @@ berechnet.
            gilt, als das \href{http://de.wikipedia.org/wiki/Geometrisches_Mittel}{geometrische Mittel} 
            von $a$ und $b$ bezeichnet. 
 
-           \textbf{Hinweis}: Sie können diese Teilaufgabe durch eine geeignete Transformation der
+           \textbf{Hinweis 1}: Sie können diese Teilaufgabe durch eine geeignete Transformation der
            Form 
            $x_n := f(a_n)$ in die Rekurrenz-Gleichung überführen, die Sie in Teil (a) dieser Aufgabe
            bereits gelöst haben.  
+
+           \textbf{Hinweis 2}: Bei der Lösung müssen Sie zwei Ergebnisse benutzen, die wir erst
+           später beweisen können.  Es gilt folgendes:
+           \begin{enumerate}
+           \item Ist die Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ \blue{stetig} und ist die Folge
+                 $\folge{a_n}$ konvergent, so ist auch die Folge $\folge{f(a_n)}$ konvergent und es gilt
+                 \\[0.2cm]
+                 \hspace*{1.3cm}
+                 $\ds\lim\limits_{n\rightarrow\infty} f(a_n) = f\Bigl(\lim\limits_{n\rightarrow\infty} a_n\Bigr)$.
+                 \\[0.2cm]
+                 Was genau eine stetige Funktion ist, werden wir im nächsten Kapitel klären.
+           \item Die Exponentialfunktion $x \mapsto \exp(x)$ ist stetig. \eox
+           \end{enumerate}
 \end{enumerate}
 \pagebreak
 
