@@ -31,7 +31,8 @@ und kann damit die Menge der positiven natürlichen Zahlen kürzer als $\mathbb{N}
 
 \noindent
 Ist die Funktion $f$ ein Folge, so schreiben wir dies kürzer als 
-$\bigl(f(n)\bigr)_{n\in\mathbb{N}^*}$ oder $\bigl(f_n\bigr)_{n\in\mathbb{N}^*}$ oder noch kürzer als $\bigl(f_n\bigr)_n$.  Dabei ist $f_n$ als Abkürzung für $f(n)$ zu verstehen. 
+$\bigl(f(n)\bigr)_{n\in\mathbb{N}^*}$ oder $\bigl(f_n\bigr)_{n\in\mathbb{N}^*}$ oder noch kürzer als
+$\bigl(f_n\bigr)_n$.  Dabei ist $f_n$ als Abkürzung für $f(n)$ zu verstehen.  
 
 
 \examples
@@ -1687,7 +1688,7 @@ so dass für alle $n \geq K_2$ die Ungleichung
   \label{eq:seq3}
   \bigl| a_n - 0 \bigr| < \frac{1}{2} \cdot \varepsilon
 \end{equation}
-gilt.  Wir setzen $K:= \max(2 \cdot K_1 + 1,K_2)$ und zeigen, dass für alle $n \geq K$ die Ungleichung
+gilt.  Wir setzen $K:= \max(2 \cdot K_1 + 1, K_2)$ und zeigen, dass für alle $n \geq K$ die Ungleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $ \bigl| s_n - s \bigr| < \varepsilon $
@@ -1704,7 +1705,8 @@ $ \begin{array}{lcl}
          \end{array}
       $
 \\[0.2cm]
-      denn aus $n=2 \cdot m$ und $n \geq K$ folgt $m \geq K_1$.
+      denn aus $n=2 \cdot m$ und $n \geq K$ folgt $2 \cdot m \geq 2 \cdot K_1 + 1$, also erst recht
+      $2 \cdot m \geq 2 \cdot K_1$ und damit dann $m \geq K_1$.
 \item $n$ ist ungerade, also gilt $n= 2 \cdot m+1$.
       \\[0.2cm]
 \hspace*{1.3cm}
@@ -1717,18 +1719,18 @@ $ \begin{array}{lcl}
                               & = & \varepsilon,
          \end{array}
        $
-\\[0.2cm]
-       denn aus $n=2\cdot m+1$ und $n \geq K$ folgt $m \geq K_1$ und $n \geq K_2$.
+       \\[0.2cm]
+       denn aus $n=2\cdot m+1$ und $n \geq K$ folgt sowohl $m \geq K_1$ als auch $n \geq K_2$.
 \end{enumerate}
 Damit ist der Beweis abgeschlossen. \qed 
 \pagebreak
 
 \begin{Satz}[Cauchy'sches Konvergenz-Kriterium für Reihen] \hspace*{\fill} \\
-Die Reihe $\ds\folge{\sum_{i=0}^{n} a_i}$ ist genau dann konvergent, wenn es für alle 
+Die Reihe $\ds\left(\sum_{i=0}^{n} a_i\right)_{n\in\mathbb{N}^*}$ ist genau dann konvergent, wenn es für alle 
 $\varepsilon>0$ eine Zahl $K$ gibt, so dass 
-\\[0.2cm]
-\hspace*{1.3cm}
-$\ds \forall n,l \in \mathbb{N}^*:\bigl( n \geq K \rightarrow \left|\sum\limits_{i=n+1}^{n+l} a_i \right| < \varepsilon\bigr)$ 
+\\
+\hspace*{4.3cm}
+$\ds \forall n,l \in \mathbb{N}^*:\left( n \geq K \rightarrow \left|\sum\limits_{i=n+1}^{n+l} a_i \right| < \varepsilon\right)$ 
 \\[0.2cm]
 gilt.
 \end{Satz}
@@ -1755,8 +1757,8 @@ die Definition der Partial-Summen ein, so erhalten wir
 \hspace*{1.3cm}
 $ \begin{array}{lcl}
    \left| s_{m} - s_n \right| & = & \left| s_{n+l} - s_n \right| \\[0.2cm]
-                              & = & \ds \left| \sum\limits_{i=1}^{n+l} a_i - \sum\limits_{i=1}^n a_i \right| \\[0.4cm]
-                              & = & \ds \left| \sum\limits_{i=n+1}^{n+l} a_i \right| \\[0.2cm]
+                              & = & \ds \left| \sum\limits_{i=1}^{n+l} a_i - \sum\limits_{i=1}^n a_i \right| \\[0.5cm]
+                              & = & \ds \left| \sum\limits_{i=n+1}^{n+l} a_i \right| 
    \end{array}
 $
 \\[0.2cm]
@@ -1913,15 +1915,16 @@ ist, denn es gilt:
 \hspace*{1.3cm}
 $
 \begin{array}{llcll}
-                 & \ds\frac{1}{i}   & \leq & \frac{1}{\sqrt{i}}  & \ds\mid \; \frac{1}{\cdot}\\[0.3cm]
-\Leftrightarrow  & i              & \geq & \sqrt{i}             & \mid \;\cdot^2  \\[0.3cm]
-\Leftrightarrow  & i^2            & \geq & i                    & \ds\mid \; \cdot \frac{1}{i}  \\[0.3cm]
+                 & \ds\frac{1}{i}   & \leq & \ds\frac{1}{\sqrt{i}}  & \ds\mid \; \frac{1}{\cdot}\\[0.4cm]
+\Leftrightarrow  & i              & \geq & \sqrt{i}             & \mid \;\cdot^2  \\[0.2cm]
+\Leftrightarrow  & i^2            & \geq & i                    & \ds\mid \; \cdot \frac{1}{i}  \\[0.2cm]
 \Leftrightarrow  & i              & \geq & 1                    & \mid \; 
 \end{array}
 $
 \\[0.2cm]
 Da die letzte Ungleichung offenbar für alle $i \in \mathbb{N}^*$ wahr ist, ist der Beweis abgeschlossen.
 \qed
+\pagebreak
 
 \begin{Satz}[Quotienten-Kriterium]
 Es sei $\folge{a_n}$ eine Folge und $q\in\mathbb{R}$ eine Zahl, so dass gilt:
@@ -1985,7 +1988,7 @@ für alle $z \in \mathbb{C}$ konvergiert.  Für $z=0$ ist die Konvergenz der
 Reihe trivial und sonst betrachten wir
 den Quotienten $a_{n+1}/a_n$ für diese Reihe, setzen $K = 2\cdot |z|$ und $\ds q = \frac{1}{2}$
 und zeigen, dass das Quotienten-Kriterium erfüllt ist, denn für alle $n\geq K$ gilt:
-
+\\[0.2cm]
 \hspace*{1.3cm}      
 $\ds\left|\frac{a_{n+1}}{a_n}\right| =  \frac{\;\frac{|z^{n+1}|}{\;(n+1)!\;}\;}{\frac{\;|z^{n}|\;}{n!}} 
                             =  \frac{\;|z^{n+1}| \cdot  n!\;}{\;|z^{n}| \cdot  (n+1)!\;} 
@@ -1996,15 +1999,14 @@ $\ds\left|\frac{a_{n+1}}{a_n}\right| =  \frac{\;\frac{|z^{n+1}|}{\;(n+1)!\;}\;}{
 $.
 \\[0.2cm]
 Also gilt
-\\[0.2cm]
-\hspace*{1.3cm}
 $\ds|a_{n+1}| \leq \frac{\;1\;}{\;2\;} \cdot |a_n|$
-\\[0.2cm]
 und damit ist das Quotienten-Kriterium erfüllt. \eox
+\pagebreak
 
 \remark
 Wir werden später zeigen, dass die in dem letzten Beispiel präsentierte Reihe die
-Exponentialfunktion berechnet, denn es gilt  
+\href{https://de.wikipedia.org/wiki/Exponentialfunktion}{natürliche Exponentialfunktion} berechnet, 
+es gilt  
 \\[0.2cm]
 \hspace*{1.3cm}
 \colorbox{red}{\framebox{\colorbox{orange}{$\ds e^z = \sum\limits_{n=0}^{\infty} \frac{z^n}{n!}$}}} \quad für alle $z \in \mathbb{C}$.
@@ -2062,15 +2064,10 @@ Im Folgenden sei $\folge{a_n}$ eine monoton fallende Folge nicht-negativer Zahle
 $a_n \geq a_{n+1} \geq 0$ \quad für alle $n \in \mathbb{N}^*$.
 \begin{enumerate}[(a)]
 \item Nehmen Sie an, dass die Reihe
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $\sum\limits_{n=0}^\infty 2^n \cdot a_{2^n}$ 
-      \\[0.2cm]
+       $\sum\limits_{n=0}^\infty 2^n \cdot a_{2^n}$ 
       konvergiert.  Zeigen Sie, dass dann auch die Reihe
-      \\[0.2cm]
-      \hspace*{1.3cm}
       $\ds\sum\limits_{n=1}^\infty a_n$
-      \\[0.2cm]
+
       konvergiert.
 
       \textbf{Hinweis}:  Zeigen Sie zunächst, dass
@@ -2081,15 +2078,9 @@ $a_n \geq a_{n+1} \geq 0$ \quad für alle $n \in \mathbb{N}^*$.
       gilt.  Der Nachweis dieser Ungleichung funktioniert ähnlich wie der Nachweis der Divergenz der
       harmonischen Reihe.
 \item Nehmen Sie an, dass die Reihe
-      \\[0.2cm]
-      \hspace*{1.3cm}
       $\ds\sum\limits_{n=1}^\infty a_n$
-      \\[0.2cm]
       konvergiert.  Zeigen Sie, dass dann auch die Reihe
-      \\[0.2cm]
-      \hspace*{1.3cm}
       $\ds\sum\limits_{n=0}^\infty 2^n \cdot a_{2^n}$ 
-      \\[0.2cm]
       konvergiert.
 
       \textbf{Hinweis}:  Zeigen Sie die Ungleichung
@@ -2139,13 +2130,14 @@ divergent ist,  dann sagen wir, dass die Reihe
 
 \examples
 \begin{enumerate}[(a)]
-\item Die Reihe
+\item Die \blue{alternierende harmonische} Reihe
       \\[0.2cm]
       \hspace*{1.3cm}
       $\ds\Reihe{\frac{(-1)^{i+1}}{i}}$
       \\[0.2cm]
-      ist nach dem Leibniz-Kriterium bedingt konvergent, aber nicht absolut konvergent, denn die Reihe der Absolutbeträge ist
-      die harmonische Reihe und die harmonische Reihe ist divergent.
+      ist nach dem Leibniz-Kriterium konvergent, aber nicht absolut konvergent, denn die Reihe der Absolutbeträge ist
+      die harmonische Reihe und die harmonische Reihe ist divergent.  Folglich ist die alternierende
+      harmonische Reihe bedingt konvergent.
 \item Die Reihe
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -2366,7 +2358,7 @@ $
 \end{array}
 $
 \\[0.2cm]
-und die letzte Ungleichung ist nach Wahl von $u$ wahr.  Da wir nur äquivalenzumformungen benutzt
+und die letzte Ungleichung ist nach Wahl von $u$ wahr.  Da wir nur Äquivalenzumformungen benutzt
 haben, ist damit auch die Formel $q < 1$ wahr.  Wir zeigen weiter,  dass für
 alle hinreichend großen $n$ die Ungleichung 
       \\[0.2cm]
@@ -2607,7 +2599,7 @@ $ \eox
       gilt.  Diese Gleichung wird als der 
       \href{http://de.wikipedia.org/wiki/Binomischer_Lehrsatz}{binomische Lehrsatz}
       bezeichnet.
-\item überlegen Sie sich, wie Sie für zwei Potenz-Reihen 
+\item Überlegen Sie sich, wie Sie für zwei Potenz-Reihen 
       \\[0.2cm]
       \hspace*{1.3cm}
       $\ds f(x) := \sum\limits_{n=0}^\infty a_n \cdot x^n$ \quad und \quad
