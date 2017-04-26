@@ -2456,7 +2456,7 @@ Wir definieren
 \hspace*{1.3cm}
 $\ds \varepsilon := \frac{1}{2} \cdot (|u| - R)$.
 \\[0.2cm]
-Wegen $R < |u|$ gilt $\varepsilon > 0$.  Also finden wir ein $K$ so dass für alle natürlichen
+Wegen $R < |u|$ gilt $\varepsilon > 0$.  Also finden wir ein $K$, so dass für alle natürlichen
 Zahlen $n$, die größer-gleich $K$ sind, die Ungleichung
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -2506,7 +2506,7 @@ beweisen.  Wählen wir nun ein festes $n_0$, dass größer als $K$ ist, so gilt für
 $h \in \mathbb{N}^*$ die Ungleichung
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds |a_{n_0+h}| \cdot |u|^{n_0+h} > |a_{n_o}| \cdot |u|^{n_0} \cdot \left(\frac{|u|}{\frac{1}{2} \cdot (R+|u|)}\right)^h$. \hspace*{\fill} $(6)$
+$\ds |a_{n_0+h}| \cdot |u|^{n_0+h} > |a_{n_0}| \cdot |u|^{n_0} \cdot \left(\frac{|u|}{\frac{1}{2} \cdot (R+|u|)}\right)^h$. \hspace*{\fill} $(6)$
 \\[0.2cm]
 Da $|u| > R$ ist, folgt
 \\[0.2cm]
@@ -2583,7 +2583,7 @@ $ \eox
 
 \exercise
 \begin{enumerate}[(a)]
-\item Der \href{http://de.wikipedia.org/wiki/Binomialkoeffizient}{Binomial-Koeffizient} $n \choose k$
+\item Der \href{http://de.wikipedia.org/wiki/Binomialkoeffizient}{Binomial-Koeffizient} $\ds {n \choose k}$
       ist durch die Festlegung
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -2612,7 +2612,7 @@ $ \eox
       $\ds f(x) \cdot g(x) = \sum\limits_{n=0}^\infty c_n \cdot x^n$ \quad gültig ist.
 
       \hint
-      Sie sollen sich bei Ihrer Rechnung nicht um die Konvergenz der Reihen kümmern.  Dieser Hinweis
+      Sie sollen sich bei Ihrer Rechnung \underline{nicht} um die Konvergenz der Reihen kümmern.  Dieser Hinweis
       gilt auch für die folgenden Teilaufgaben. 
 \item Für alle $x \in \mathbb{C}$ ist die Exponentialfunktion als
       \\[0.2cm]
@@ -2636,7 +2636,8 @@ Festlegung
 \hspace*{1.3cm}
 $a_0 := 0$, \quad $a_1 := 1$ \quad und \quad $a_{n+2} := a_{n+1} + a_n$ für alle $n \in \mathbb{N}$
 \\[0.2cm]
-definiert.  Wir hatten bereits im ersten Semester eine explizite Formel für $a_n$ hergeleitet.  In
+definiert.  Wir hatten bereits im ersten Semester eine explizite Formel für $a_n$ hergeleitet.  Damals hatten
+wir die Berechnung der Fibonacci-Zahlen auf die Bestimmung von Eigenwerten zurückgeführt.  In
 diesem Abschnitt zeigen wir einen anderen Weg auf, mit dem dieselbe Formel hergeleitet werden kann.
 Dazu definieren wir zunächst die der Folge $\folge{a_n}$ zugeordnete 
 \href{http://de.wikipedia.org/wiki/Erzeugende_Funktion}{erzeugende Funktion} $f(x)$ als die
@@ -2674,12 +2675,12 @@ vereinfachen.  Wegen $a_0 = 0$ fällt der erste Term weg.  Lassen wir die Summe b
 so erhalten wir 
 \\[0.2cm]
 \hspace*{1.3cm}
-$(x + x^2) \cdot f(x) = \sum\limits_{n=0}^\infty a_{n} \cdot x^n - a_0 \cdot x^0 - a_1 \cdot x^1$.
+$(x + x^2) \cdot f(x) = \left(\sum\limits_{n=0}^\infty a_{n} \cdot x^n\right) - a_0 \cdot x^0 - a_1 \cdot x^1$.
 \\[0.2cm]
 Berücksichtigen wir abermals, dass $a_0 = 0$ ist, so können wir dies zu
 \\[0.2cm]
 \hspace*{1.3cm}
-$(x + x^2) \cdot f(x) = \sum\limits_{n=0}^\infty a_{n} \cdot x^n - a_1 \cdot x$
+$(x + x^2) \cdot f(x) = \left(\sum\limits_{n=0}^\infty a_{n} \cdot x^n\right) - a_1 \cdot x$
 \\[0.2cm]
 vereinfachen.  Die Summe, die hier auftritt, ist aber gerade die erzeugende Funktion $f(x)$.
 Da $a_1 = 1$ ist, haben wir die Gleichung
@@ -2817,9 +2818,10 @@ Koeffizienten der Potenzen von  $x^n$ auf beiden Seiten dieser Gleichung überein
 haben wir für die Fibonacci-Zahlen die explizite Formel
 \\[0.2cm]
 \hspace*{1.3cm}
+\colorbox{red}{\framebox{\colorbox{orange}{
 $\ds a_n = \frac{1}{\sqrt{5}} \cdot \bigl(\varphi^n - \overline{\varphi}^n\bigr)$ 
 \quad mit $\varphi= \frac{1}{2} \cdot (1 + \sqrt{5})$ 
-\quad und \quad  $\overline{\varphi} = 1 -\varphi = \frac{1}{2} \cdot (1 - \sqrt{5})$
+\quad und \quad  $\overline{\varphi} = 1 -\varphi = \frac{1}{2} \cdot (1 - \sqrt{5})$}}}
 \\[0.2cm]
 gefunden.
 
@@ -2841,7 +2843,7 @@ gefunden.
       \textbf{Hinweis}:  Stellen Sie das Produkt
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\biggl(\sum\limits_{n=0}^\infty x^n\biggr) \cdot \biggl(\sum\limits_{n=0}^\infty x^n\biggr)$
+      $\ds\biggl(\sum\limits_{n=0}^\infty x^n\biggr) \cdot \biggl(\sum\limits_{n=0}^\infty x^n\biggr)$
       \\[0.2cm]
       als Potenz-Reihe dar.  \eox
 \end{enumerate}
