@@ -1,8 +1,9 @@
 \chapter{Stetige  Funktionen}
 \section{Motivation und Definition der Stetigkeit}
-Wir wollen in diesem Abschnitt pr\"azisieren, wann eine Funktion so beschaffen ist, dass
-wir sie zeichnen k\"onnen, ohne dabei den Stift absetzen zu m\"ussen.  F\"ur eine solche Funktion soll au{\ss}erdem der
-\emph{Zwischenwert-Satz} gelten.  Der Zwischenwert-Satz besagt, dass f\"ur eine Funktion
+Wir wollen in diesem Abschnitt pr\"azisieren, wann eine Funktion so beschaffen ist, dass wir sie zeichnen
+k\"onnen, ohne dabei den Stift absetzen zu m\"ussen.  F\"ur eine solche Funktion soll au{\ss}erdem der 
+\href{https://de.wikipedia.org/wiki/Zwischenwertsatz}{Zwischenwert-Satz} gelten.  Der Zwischenwert-Satz besagt, 
+dass f\"ur eine Funktion 
 \\[0.2cm]
 \hspace*{1.3cm}
 $f: \mathbb{R} \rightarrow \mathbb{R}$,
@@ -33,13 +34,13 @@ definiert ist, so haben wir zwar  $g(-1) = -1$ und $g(1) = 1$, aber es gibt kein
 f\"ur das $g(x) = 0$ w\"are.   Das liegt daran, dass die Funktion an der Stelle $x = 0$ einen Sprung
 hat.  Unser Ziel in diesem Abschnitt ist es, zun\"achst exakt zu
 definieren, was wir unter einer Funktion verstehen wollen, die keine Spr\"unge hat.  
-In der Mathematik bezeichnen wir eine solche Funktion als  \colorbox{orange}{\emph{stetig}}.
+In der Mathematik bezeichnen wir eine solche Funktion als  \blue{stetig}.
 Um den Begriff der \href{https://de.wikipedia.org/wiki/Stetigkeit}{Stetigkeit}
  einf\"uhren zu k\"onnen, bedarf es einer Reihe von zus\"atzlichen Definitionen, die nun folgen.
 
 \begin{Definition}
 Es sei $\folge{x_n}$ eine Folge und $D\subseteq \mathbb{R}$.  Wir sagen, dass 
-\emph{die Folge $\folge{x_n}$ in $D$ liegt}, wenn f\"ur alle $n \in \mathbb{N}$ das Folgenglied $x_n
+\blue{die Folge $\folge{x_n}$ in $D$ liegt}, wenn f\"ur alle $n \in \mathbb{N}$ das Folgenglied $x_n
 \in D$ ist.   
 \end{Definition}
 
@@ -47,7 +48,7 @@ Es sei $\folge{x_n}$ eine Folge und $D\subseteq \mathbb{R}$.  Wir sagen, dass
   Es sei $D\subseteq \mathbb{R}$ und $f:D \rightarrow \mathbb{R}$.
   Weiter sei $\widehat{x} \in \mathbb{R}$ und  $\lambda\in \mathbb{R}$.  Au{\ss}erdem gebe es
   mindestens eine Folge $\folge{x_n}$, die gegen $\widehat{x}$ konvergiert.
-  Dann ist $\lambda$ der \emph{Grenzwert} der Funktion $f$ \emph{im Punkt} $\widehat{x}$,
+  Dann ist $\lambda$ der \blue{Grenzwert} der Funktion $f$ \blue{im Punkt} $\widehat{x}$,
   wenn f\"ur jede in $D$ liegende Folge $\folge{x_n}$ gilt:
       \\[0.2cm]
       \hspace*{1.3cm}      
@@ -75,7 +76,7 @@ existiert der Grenzwert.
 
 \begin{Definition}[Stetigkeit]
   Es sei $D\subseteq \mathbb{R}$ und $f:D \rightarrow \mathbb{R}$.
-  Weiter sei $\widehat{x}\in D$. Dann ist die Funktion $f$ \emph{stetig im Punkt} $\widehat{x}$,
+  Weiter sei $\widehat{x}\in D$. Dann ist die Funktion $f$ \blue{stetig im Punkt} $\widehat{x}$,
   wenn gilt: \\[0.2cm]
   \hspace*{1.3cm}      
   $\lim\limits_{x\rightarrow \widehat{x}} f(x) = f(\widehat{x})$.  \eod
@@ -150,7 +151,7 @@ vertauschbar ist.  F\"ur eine konvergente Folge $\folge{x_n}$ und eine stetige F
       die ausgehend von den konstanten Funktionen $x \mapsto c$ und der identischen
       Funktion $x \mapsto x$ mit Hilfe der elementaren Rechen-Operationen 
       ``$+$'', ``$-$'', ``$\cdot $'' und ``$/$'' gebildet werden k\"onnen, stetig sind.  Solche
-      Funktionen werden als \href{http://de.wikipedia.org/wiki/Rationale_Funktion}{\emph{rationale Funktionen}} bezeichnet.
+      Funktionen werden als \href{http://de.wikipedia.org/wiki/Rationale_Funktion}{rationale Funktionen} bezeichnet.
       Ein       Beispiel f\"ur eine solche Funktion ist 
       \\[0.2cm]
       \hspace*{1.3cm}      
@@ -243,7 +244,7 @@ $\ds \lim\limits_{n\rightarrow\infty} \bruch{1}{x_n} = 0$.
 Dies ist nach der Definition des Grenzwerts einer Folge \"aquivalent zu der Formel
 \begin{equation}
   \label{eq:stetig1}
-  \forall \varepsilon \in\mathbb{R}_+: \exists K \in \mathbb{R} : \forall n \in \mathbb{N}
+  \forall \varepsilon \in\mathbb{R}_+^*: \exists K \in \mathbb{R} : \forall n \in \mathbb{N}
   :\Bigl(n \geq K \rightarrow \left|\frac{1}{x_n}\right| < \varepsilon\Bigr)
 \end{equation}
 Um diese Formel nachzuweisen, nehmen wir an, dass eine Zahl $\varepsilon>0$
@@ -274,15 +275,15 @@ f\"ur alle $n \geq K$ gezeigt. \hspace*{\fill} $\Box$
 \noindent
 Es gibt eine alternative Definition der Stetigkeit, die zu der oben gegebenen Definition
 \"aquivalent ist. Diese Definition tr\"agt den Namen 
-\href{http://de.wikipedia.org/wiki/Epsilon-Delta-Kriterium#Stetigkeit_reeller_Funktionen}{\emph{$\varepsilon$-$\delta$-Definition der Stetigkeit}} 
+\href{http://de.wikipedia.org/wiki/Epsilon-Delta-Kriterium#Stetigkeit_reeller_Funktionen}{$\varepsilon$-$\delta$-Definition der Stetigkeit} 
 und Funktionen, die nach dieser Definition stetig sind, hei{\ss}en $\varepsilon$-$\delta$-stetig.
 
 \begin{Definition}[$\varepsilon$-$\delta$-Stetigkeit] 
-  Eine Funktion $f:D \rightarrow \mathbb{R}$ ist \colorbox{orange}{\emph{$\varepsilon$-$\delta$-stetig}} im Punkt
+  Eine Funktion $f:D \rightarrow \mathbb{R}$ ist \blue{$\varepsilon$-$\delta$-stetig} im Punkt
   $\widehat{x}$, wenn gilt: 
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\forall \varepsilon \in \mathbb{R}_+: \exists \delta \in \mathbb{R}_+: \forall x \in D: 
+  $\forall \varepsilon \in \mathbb{R}_+^*: \exists \delta \in \mathbb{R}_+^*: \forall x \in D: 
    \bigl(|x - \widehat{x}| < \delta \rightarrow |f(x) - f(\widehat{x})| < \varepsilon\bigr)$.
   \eod
 \end{Definition}
@@ -301,7 +302,7 @@ und Funktionen, die nach dieser Definition stetig sind, hei{\ss}en $\varepsilon$
 
 
 \begin{Definition}[Allgemeine Stetigkeit] \lb
-Eine Funktion $f:D \rightarrow \mathbb{R}$ hei{\ss}t \colorbox{orange}{\emph{stetig}} genau dann, wenn
+Eine Funktion $f:D \rightarrow \mathbb{R}$ hei{\ss}t \blue{stetig} genau dann, wenn
 die Funktion $f$ f\"ur alle $\widehat{x} \in D$ stetig ist.
 \eod
 \end{Definition}
@@ -324,7 +325,7 @@ $f: D \rightarrow \mathbb{R}$
 an der Stelle $\bar{x}$ den Grenzwert $\lambda$ hat, wenn
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall \varepsilon\in\mathbb{R}_+: \exists\delta\in\mathbb{R}_+: \forall x\in D:\bigl(|x-\bar{x}|<\delta \rightarrow |f(x) - \lambda| < \varepsilon\bigr)$
+$\forall \varepsilon\in\mathbb{R}_+^*: \exists\delta\in\mathbb{R}_+^*: \forall x\in D:\bigl(|x-\bar{x}|<\delta \rightarrow |f(x) - \lambda| < \varepsilon\bigr)$
 \\[0.2cm]
 gilt.  Genau wie die $\varepsilon$-$\delta$ Definition der Stetigkeit \"aquivalent ist zu dem
 Stetigkeits-Begriff, den wir mit Hilfe von Folgen definiert haben, ist auch die
@@ -344,14 +345,14 @@ eine reellwertige Funktion.  Beweisen Sie die beiden folgenden Behauptungen:
 \item Falls die Formel
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\forall \varepsilon\in\mathbb{R}_+: \exists\delta\in\mathbb{R}_+: \forall x\in D:\bigl(|x-\bar{x}|<\delta \rightarrow |f(x) - \lambda| < \varepsilon\bigr)$
+      $\forall \varepsilon\in\mathbb{R}_+^*: \exists\delta\in\mathbb{R}_+^*: \forall x\in D:\bigl(|x-\bar{x}|<\delta \rightarrow |f(x) - \lambda| < \varepsilon\bigr)$
       \\[0.2cm]
       richtig ist, dann gilt
       $\ds \lim\limits_{x\rightarrow\bar{x}} f(x) = \lambda$.
 \item Falls  $\ds \lim\limits_{x\rightarrow\bar{x}} f(x) = \lambda$ gilt, dann gilt auch
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\forall \varepsilon\in\mathbb{R}_+: \exists\delta\in\mathbb{R}_+: \forall x\in D:\bigl(|x-\bar{x}|<\delta \rightarrow |f(x) - \lambda| < \varepsilon\bigr)$.
+      $\forall \varepsilon\in\mathbb{R}_+^*: \exists\delta\in\mathbb{R}_+^*: \forall x\in D:\bigl(|x-\bar{x}|<\delta \rightarrow |f(x) - \lambda| < \varepsilon\bigr)$.
       \eox
 \end{enumerate}
 
@@ -362,7 +363,7 @@ In der Praxis tritt h\"aufig die Frage auf, ob eine Funktion in einem bestimmten
 eine Nullstelle hat.  Zus\"atzlich werden Verfahren ben\"otigt, mit denen eine solche
 Nullstelle gegebenenfalls berechnet werden kann.
 
-\begin{Satz}[Zwischenwert-Satz] \label{satz:zws-stetig}
+\begin{Satz}[Zwischenwert-Satz] \label{satz:zws-stetig} \lb
 Die Funktion $f:[a,b] \rightarrow \mathbb{R}$ sei stetig.  Weiter sei $f(a) \leq 0$ und
 $f(b) \geq 0$.  Dann gibt es ein $x_0 \in [a,b]$, so dass $f(x_0) = 0$ ist.
 \end{Satz}
@@ -371,11 +372,11 @@ $f(b) \geq 0$.  Dann gibt es ein $x_0 \in [a,b]$, so dass $f(x_0) = 0$ ist.
 \textbf{Beweis}: Wir geben ein Verfahren an, mit dem eine Nullstelle berechnet werden kann
 und weisen dann nach, dass der von diesem Verfahren gelieferte Wert tats\"achlich eine
 Nullstelle der Funktion ist.  Das Verfahren, dass wir vorstellen werden, wird in der
-Literatur als \emph{Verfahren der Intervall-Halbierung} oder auch als
-\href{http://en.wikipedia.org/wiki/Bisection_method}{\emph{Bisektions-Verfahren}} bezeichnet.  
-Das Verfahren folgt dem Paradigma ``\emph{Teile und Herrsche}''.  Im Englischen werden solche
+Literatur als \blue{Verfahren der Intervall-Halbierung} oder auch als
+\href{http://en.wikipedia.org/wiki/Bisection_method}{Bisektions-Verfahren} bezeichnet.  
+Das Verfahren folgt dem Paradigma ``\blue{Teile und Herrsche}''.  Im Englischen werden solche
 Verfahren als
-``\href{http://en.wikipedia.org/wiki/Divide_and_conquer_algorithms}{\emph{divide and conquer algorithms}}''
+``\href{http://en.wikipedia.org/wiki/Divide_and_conquer_algorithms}{divide and conquer algorithms}''
 bezeichnet.
 Beim Bisektions-Verfahren definieren wir induktiv zwei Folgen $\folge{a_n}$ und
 $\folge{b_n}$ wie folgt:
@@ -833,7 +834,7 @@ als Schnittpunkt der Geraden mit der $x$-Achse.
 
 
 Das Verfahren, das mit dieser Formel arbeitet, ist unter dem Namen 
-\href{http://de.wikipedia.org/wiki/Regula_falsi}{\emph{Regula Falsi}}
+\href{http://de.wikipedia.org/wiki/Regula_falsi}{Regula Falsi}
 bekannt und sieht genauso aus wie das Bisektions-Verfahren, nur dass wir f\"ur $c$ jetzt
 die oben abgeleitete Formel verwenden:
 \begin{enumerate}
@@ -1003,7 +1004,7 @@ $b_n$ konstant ist, es gilt $b_n = 10$.
       \hspace*{1.3cm} $a_1 = 0 \leq 1 \cdot 10^{-3}$ \quad und \quad $b_1 = 10$.
 \item[I.S.:] $n \mapsto n + 1$.
 
-      Die Funktion $f := (x \mapsto x^4 - 1)$ ist f\"ur nicht-negative Zahlen \emph{monoton steigend},
+      Die Funktion $f := (x \mapsto x^4 - 1)$ ist f\"ur nicht-negative Zahlen \blue{monoton steigend},
       das hei{\ss}t aus $0 \leq u \leq v$ folgt auch $f(u) \leq f(v)$.  Es gilt 
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -1198,7 +1199,7 @@ Beispiel der Funktion
 haben wir gesehen, dass dies zu einer sehr
 langsamen Konvergenz f\"uhren kann.  Beim Sekanten-Verfahren hatten wir dieses Problem
 behoben, aber dort kann es in ung\"unstigen F\"allen passieren, dass das Verfahren \"uberhaupt nicht mehr
-konvergiert.  Das \emph{Illinois-Verfahren} \cite{dowell:1971} versucht die Konvergenz der Regula Falsi
+konvergiert.  Das \blue{Illinois-Verfahren} \cite{dowell:1971} versucht die Konvergenz der Regula Falsi
 auf andere Weise zu beschleunigen.  Die Idee des Verfahrens ist eigentlich sehr naheliegend:
 Wenn bei der Regula Falsi eine der Intervall-Grenzen \"uber zwei oder mehr Schritte konstant bleibt,
 dann wird der Funktionswert an der betreffenden Intervall-Grenze halbiert, so dass der Einfluss dieses
