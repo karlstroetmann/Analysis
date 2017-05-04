@@ -38,26 +38,26 @@ f := procedure(x) {
     return x ** 4 - 1;
 };
 
-// x := illinois(f, 0.0, 10.0, 35);
-// print("solution to x ** 4 - 1 = 0 is $x$\n");
+x := illinois(f, 0.0, 10.0, 35);
+print("solution to x ** 4 - 1 = 0 is $x$\n");
 
 g := procedure(x) {
     return x ** 2 - 2;
 };
 
-// x := illinois(g, 1, 2, 15);
-// print("solution to x ** 2 = 2 is $nDecimalPlaces(x, 41)$\n");
+x := illinois(g, 1, 2, 15);
+print("solution to x ** 2 = 2 is $nDecimalPlaces(x, 41)$\n");
 
 strange := procedure(x) {
     return 1 - 2 / (x * x + 1);
 };
 
-// x := illinois(strange, 0.0, 5.0, 20);
-// print("solution to 1 - 2 / (x * x + 1) is $x$\n");
+x := illinois(strange, 0.0, 5.0, 20);
+print("solution to 1 - 2 / (x * x + 1) is $x$\n");
 
-x := illinois(x |-> -cos(x), 1, 2, 23);
+// x := illinois(x |-> -cos(x), 1, 2, 23);
 pi := mathConst("pi");
 
-print("solution of 0 = cos(x): x = $x$");
-print("difference: $x - pi/2$");
+// print("solution of 0 = cos(x): x = $x$");
+// print("difference: $x - pi/2$");
 

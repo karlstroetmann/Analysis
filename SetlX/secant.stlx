@@ -19,8 +19,8 @@ f := procedure(x) {
 
 // x := secant(f, 1, 2, 14);
 
-// print("x = $nDecimalPlaces(x, 80)$");
-// print("\n\n\n");
+print("x = $nDecimalPlaces(x, 80)$");
+print("\n\n\n");
 
 
 strange := procedure(x) {
