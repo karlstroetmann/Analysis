@@ -736,7 +736,10 @@ lokales Maximum, wenn die Funktion $f$ dort ein lokales Minimum hat. \eox
 
 Die wesentliche Idee des Beweises besteht darin zu zeigen, dass die Menge $\{f(x) \mid x \in [a,b]\}$ ein Supremum hat.
 Im nächsten Schritt wird dann gezeigt, dass dieses Supremum auch tatsächlich als Funktionswert auftritt.
-Aus Zeitgründen müssen wir darauf verzichten, den Beweis auszuführen.
+Wir müssen darauf verzichten, den Beweis auszuführen, denn dazu müssten wir zunächst den Begriff einer
+\blue{Teilfolge} einführen und dann den Satz von
+\href{https://de.wikipedia.org/wiki/Satz_von_Bolzano-Weierstraß}{Bolzano-Weierstraß} beweisen.  Das würde 
+uns zu lange aufhalten.
 
 \begin{Satz}[\href{http://en.wikipedia.org/wiki/Michel_Rolle}{Michel Rolle}, \label{satz:rolle} 1652 -- 1719]
   Ist die Funktion \mbox{$f:[a,b]\rightarrow \mathbb{R}$} differenzierbar und gilt außer\-dem $f(a) = f(b)$, dann gibt es ein
@@ -805,7 +808,7 @@ Verhältnis $\ds\frac{\;h\;}{r}$ der Höhe $h$ zum Radius $r$ für eine solche Dose
 \exercise
 Berechnen Sie das Maximum und das Minimum der Funktion $x \mapsto x - |x^2 + 2 \cdot x - 3|$ in dem Intervall $[-4,2]$.  \eox
 
-\begin{Satz}[Mittelwert-Satz der Differential-Rechnung, \href{http://de.wikipedia.org/wiki/Augustin-Louis_Cauchy}{Augustin-Louis Cauchy}, 1789--1857]
+\begin{Satz}[\href{https://de.wikipedia.org/wiki/Mittelwertsatz_der_Differentialrechnung}{Mittelwert-Satz der Differential-Rechnung}, \href{http://de.wikipedia.org/wiki/Augustin-Louis_Cauchy}{Augustin-Louis Cauchy}, 1789--1857]
   \hspace*{\fill} \\
   Ist die Funktion $f:[a,b] \rightarrow \mathbb{R}$ für alle $x\in[a,b]$ differenzierbar, 
   so gilt: 
@@ -860,7 +863,7 @@ $\langle a,f(a) \rangle$ und $\langle b,f(b) \rangle$  geht.
 
 \begin{Satz}[Erweiterter Mittelwert-Satz]
   Sind die Funktion $f,g:[a,b] \rightarrow \mathbb{R}$ für alle $x\in[a,b]$
-  differenzierbar und gilt $\df{g}(x) \not= 0$ für alle $x \in [a,b]$,
+  differenzierbar und gilt $g'(x) \not= 0$ für alle $x \in [a,b]$,
   so gilt: 
   \\[0.3cm]
   \hspace*{1.3cm}
@@ -871,7 +874,7 @@ $\langle a,f(a) \rangle$ und $\langle b,f(b) \rangle$  geht.
 \noindent
 \textbf{Bemerkung}: Auf den ersten Blick mag es verwundern, dass nicht explizit 
 $g(a) \not = g(b)$ gefordert wird.  Dies folgt aber sofort aus der Bedingung
-$\forall x \in [a,b]:\df{g}(x) \not= 0$ und dem Satz von Rolle. \eox
+$\forall x \in [a,b]:g'(x) \not= 0$ und dem Satz von Rolle. \eox
 \vspace*{0.3cm}
 
 \exercise
@@ -922,8 +925,9 @@ und bestimmen Sie $\alpha$ und $\beta$ so, dass Sie auf die Funktion $h$ den Sat
 % \qed
 
 Der folgende Satz ist für die praktische Berechnung von Grenzwerten unentbehrlich.  Wir haben
-diesen Satz bereits mehrfach in der Vorlesung über \emph{Algorithmen und Komplexität} zur
-Berechnung von Grenzwerten benutzt.
+diesen Satz bereits mehrfach in der Vorlesung
+``\href{https://github.com/karlstroetmann/Algorithms/blob/master/Lecture-Notes/algorithms.pdf}{Algorithmen und Komplexität}''
+zur Berechnung von Grenzwerten benutzt.
 
 \begin{Satz}[Guillaume Fran\c{c}ois Antoine, Marquis de L'H\^opital, 1661--1704] \lb 
   Die Funktionen $f,g: (a,b) \rightarrow \mathbb{R}$ seien
@@ -1112,27 +1116,13 @@ den Beweis in zwei Teile auf.
       \\[0.3cm]
       \hspace*{1.3cm} $\bruch{f(x+h) - f(x)}{h}$
       \\[0.3cm]
-      für alle $h \not = 0$ größer oder gleich 0 ist.  Zum Nachweis dieser Behauptung führen wir
-      eine Fallunterscheidung bezüglich des Vorzeichens von $h$ durch.
-      \begin{enumerate}[(a)]
-      \item Fall: $h > 0$.
-        
-            Aus $h > 0$ folgt $x + h > x$.  Aus der Monotonie von $f$ folgt dann,  dass 
-            $f(x+h) \geq f(x)$ ist.  Also gilt $f(x+h)-f(x) \geq 0$ und daraus folgt
-            \\[0.3cm]
-            \hspace*{1.3cm} $\bruch{f(x+h) - f(x)}{h} \geq 0$.
-      \item Fall: $h < 0$.
-        
-            Aus $h < 0$ folgt nun $x + h < x$.
-            Aus der Monotonie von $f$ folgt jetzt die Ungleichung 
-            $f(x+h) \leq f(x)$.  Also haben wir  $f(x+h)-f(x) \leq 0$.  Wegen $h<0$ gilt dann
-            insgesamt
-            \\[0.3cm]
-            \hspace*{1.3cm} $\bruch{f(x+h) - f(x)}{h} \geq 0$.
-      \end{enumerate}
-      Da der Differential-Quotient in jedem Fall größer-gleich $0$ ist und die Ableitung $f'(x)$ als
-      Grenzwert des Differential-Quotienten für $h$ gegen $0$ definiert ist, muss $f'(x) \geq 0$
-      gelten.
+      für alle $h > 0$ größer oder gleich 0 ist. Aus $h > 0$ folgt $x + h > x$.  Aus der Monotonie von $f$
+      folgt dann,  dass $f(x+h) \geq f(x)$ ist.  Also gilt $f(x+h)-f(x) \geq 0$ und daraus folgt
+      \\[0.3cm]
+      \hspace*{1.3cm} $\bruch{f(x+h) - f(x)}{h} \geq 0$.
+      \\[0.3cm]
+      Da die Ableitung $f'(x)$ als Grenzwert des Differential-Quotienten für $h$ gegen $0$ definiert ist, muss
+      $f'(x) \geq 0$  gelten.
 \item[``$\Leftarrow$'':] Wir nehmen nun an, dass für alle $x\in D$ die Ungleichung $f'(x) \geq 0$ gilt und
       zeigen, dass $f$ dann monoton steigend ist.  Diesen Beweis führen wir indirekt.
       Wir nehmen an, es gäbe $x,y\in D$ mit 
@@ -1183,6 +1173,7 @@ Satzes nicht umkehren lässt. \eox
 \noindent
 \textbf{Bemerkung}:  Der Begriff des {\blue{strengen lokalen Maximum}} lässt sich
 analog definieren. 
+\pagebreak
 
 \begin{Satz} \label{satz:minimum}
   Die Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ sei zweimal differenzierbar, die
@@ -1666,7 +1657,7 @@ so erhalten wir
 $\exp(x+y) = \exp(y) \cdot \exp(x)$. \qed
 
 \remark
-Mit Hilfe der Funktional-Gleichung der Exponential-Funktion können wir nun für beliebige $\lambda \in \mathbb{R}_0$
+Mit Hilfe der Funktional-Gleichung der Exponential-Funktion können wir nun für beliebige $\lambda \in \mathbb{R}_0^*$
 und $x \in \mathbb{R}$ den Ausdruck $\lambda^x$ definieren.  Wir betrachten zunächst den Spezialfall
 $\lambda = e$:
 Ist $n \in \mathbb{N}$, so können wir mit Hilfe der Funktional-Gleichung durch eine leichte Induktion
