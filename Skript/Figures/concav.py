@@ -44,7 +44,7 @@ t = 1.5
 plt.scatter([t,],[f(t),], 50, color ='blue')
 plt.annotate(r'$\langle t\cdot x_1 + (1-t)\cdot x_2, f(t\cdot x_2 + (1-t)\cdot x_2) \rangle$', xy=(t, f(t)), xycoords='data', xytext=(-60, 20), textcoords='offset points', fontsize=12, arrowprops=dict(width=0.1,shrink=0.3,headwidth=5))
 plt.scatter([t,],[g(t),], 50, color ='red')
-plt.annotate(r'$\langle t\cdot x_1 + (1-t)\cdot x_2, g(t) \rangle$', xy=(t, g(t)), xycoords='data', xytext=(0, -30), textcoords='offset points', fontsize=12, arrowprops=dict(width=0.1,shrink=0.2),horizontalalignment='center')
+plt.annotate(r'$\langle t\cdot x_1 + (1-t)\cdot x_2, g(t\cdot x_2 + (1-t)\cdot x_2) \rangle$', xy=(t, g(t)), xycoords='data', xytext=(+25, -55), textcoords='offset points', fontsize=12, arrowprops=dict(width=0.1,shrink=0.2),horizontalalignment='center')
 
 plt.plot([t,t],[0,g(t)], color ='red', linestyle="--")
 plt.plot([t,t],[g(t),f(t)], color ='blue', linestyle="--")

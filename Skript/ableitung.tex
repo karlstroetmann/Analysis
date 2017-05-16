@@ -1129,11 +1129,11 @@ den Beweis in zwei Teile auf.
       \\[0.2cm]
       \hspace*{1.3cm} $x < y$ \quad aber \quad $f(x) > f(y)$.
       \\[0.2cm]
-      Nach dem Mittelwert-Satz der Differential-Rechnung gibt es dann ein $z\in[x,y]$, so dass
+      Nach dem Mittelwert-Satz der Differential-Rechnung gibt es dann ein $z\in (x,y)$, so dass
       \\[0.3cm]
       \hspace*{1.3cm} $f'(z) = \bruch{f(y) - f(x)}{y - x}$
       \\[0.3cm]
-      gilt.  Aus $x < y$ folgt  $y - x \geq 0$ und aus $f(x) > f(y)$ folgt $f(y) - f(x) <0$.
+      gilt.  Aus $x < y$ folgt  $y - x > 0$ und aus $f(x) > f(y)$ folgt $f(y) - f(x) <0$.
       Damit hätten wir dann aber $f'(z) < 0$ im Widerspruch zur Voraussetzung.
       \qed
 \end{enumerate} 
@@ -1235,7 +1235,7 @@ $f'(x) < 0$ \quad für alle $x\in U_\delta(x_0)$ mit $x < x_0$ \quad und \quad \\
 $f'(x) > 0$ \quad für alle $x\in U_\delta(x_0)$ mit $x > x_0$.
 \\[0.2cm]
 Damit ist die Funktion $f$ innerhalb der $\delta$-Umgebung $U_\delta(x_0)$ für $x < x_0$
-streng monoton fallend und für $x > x_0$ streng monoton wachsend.  Dann muss $f$ aber ein lokales
+streng monoton fallend und für $x > x_0$ streng monoton wachsend.  Dann muss $f$ aber ein strenges lokales
 Minimum im Punkt $x_0$ haben. \qed
 
 
@@ -1252,9 +1252,9 @@ erfüllt ist, dann hat die Funktion an der Stelle $x_0$ ein strenges lokales Maxi
 Eine Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ heißt {\blue{konvex}} genau dann, wenn 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall x_1,x_2 \in \mathbb{R}:\forall t\in [0,1]: \bigl(
+$\forall x_1,x_2 \in \mathbb{R}:\forall t\in [0,1]: \Bigl(
   f\bigl(t \cdot x_1 + (1-t)\cdot x_2\bigr) \leq t \cdot f(x_1) + (1 - t) \cdot f(x_2)
-  \bigr)
+  \Bigr)
 $
 \\[0.2cm]
 gilt.  Geometrisch bedeutet dies, dass die Funktionswerte der Funktion $f$  unterhalb
@@ -1268,13 +1268,13 @@ ist
 \hspace*{1.3cm}
 $\ds g(x) = \frac{x-x_1}{x_2-x_1}\cdot f(x_2) + \frac{x-x_2}{x_1-x_2}\cdot f(x_1)$.
 \\[0.2cm]
-Sie können dies sofort verifizieren, denn offenbar ist $g(x)$ in der Variablen $x$ linear und
+Sie können dies sofort verifizieren, denn offenbar ist der Ausdruck $g(x)$  linear in der Variablen $x$ und
 andererseits gilt
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds g(x_1) = \frac{x_1-x_1}{x_2-x_1}\cdot f(x_2)+\frac{x_1-x_2}{x_1-x_2}\cdot f(x_1) = f(x_1)$
 \\[0.2cm]
-und analog sehen wir, dass auch $g(x_2) = f(x_2)$ ist.  Die Tatsache, dass $f(x)$ für $x \in (x_1,x_2)$
+und analog sehen wir, dass auch $g(x_2) = f(x_2)$ ist.  Die Tatsache, dass $f(x)$ für $x \in [x_1,x_2]$
 unterhalb der Geraden $g(x)$ liegt, bedeutet, dass
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1309,8 +1309,8 @@ und das ist genau die Definition der Konvexität.
 Eine Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ heißt {\blue{konkav}} genau dann, wenn 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall x_1,x_2 \in \mathbb{R}:\forall t\in [0,1]: 
-  f\bigl(t \cdot x_1 + (1-t)\cdot x_2\bigr) \geq t \cdot f(x_1) + (1 - t) \cdot f(x_2)
+$\forall x_1,x_2 \in \mathbb{R}:\forall t\in [0,1]: \Bigl(
+  f\bigl(t \cdot x_1 + (1-t)\cdot x_2\bigr) \geq t \cdot f(x_1) + (1 - t) \cdot f(x_2) \Bigr)
 $
 \\[0.2cm]
 gilt.  Hier liegen die Funktionswerte der Funktion $f$ also oberhalb 
@@ -1384,7 +1384,7 @@ $f$  konvex \quad $\Leftrightarrow$ \quad $\forall x \in \mathbb{R}: f''(x) \geq
   \hspace*{1.3cm}
   $g'(x_0) = 0$ \quad und \quad $g''(x_0) < 0$.
   \\[0.2cm]
-  Damit hat die Funktion $g$ im Punkt $x_0$ ein lokales Maximum.  Also gibt es eine $\delta_2$-Umgebung von
+  Damit hat die Funktion $g$ im Punkt $x_0$ ein strenges lokales Maximum.  Also gibt es eine $\delta_2$-Umgebung von
   $x_0$, so dass
   \\[0.2cm]
   \hspace*{1.3cm}
@@ -1435,7 +1435,7 @@ $f$  konvex \quad $\Leftrightarrow$ \quad $\forall x \in \mathbb{R}: f''(x) \geq
   $x_0 := t \cdot x_1 + (1 - t) \cdot x_2$
   \\[0.2cm]
   Es lässt sich sofort nachrechnen, dass dann $x_1 < x_0 < x_2$ gilt.  Nach dem Mittelwert-Satz der
-  Differential-Rechnung gibt es jeweils ein $c_1 \in [x_1,x_0]$ und ein $c_2 \in [x_0,x_2]$, so dass
+  Differential-Rechnung gibt es jeweils ein $c_1 \in (x_1,x_0)$ und ein $c_2 \in (x_0,x_2)$, so dass
   \\[0.2cm]
   \hspace*{1.3cm}
   $f'(c_1) = \bruch{f(x_0) - f(x_1)}{x_0 - x_1}$  \quad und \quad
@@ -1481,7 +1481,8 @@ Wir haben die Exponential-Funktion als die Potenzreihe
 $\ds\exp(x) := \sum\limits_{n=0}^\infty \bruch{1}{n!} \cdot x^{n}$ 
 \\[0.2cm]
 definiert und gesehen, dass diese Potenzreihe für alle $x \in \mathbb{R}$ konvergiert.
-Wir definieren nun die Eulersche Zahl $\mathrm{e}$ (\href{http://de.wikipedia.org/wiki/Leonhard_Euler}{Leonhard Euler},
+Wir definieren nun die \href{https://de.wikipedia.org/wiki/Eulersche_Zahl}{Eulersche Zahl}
+$\mathrm{e}$ (\href{http://de.wikipedia.org/wiki/Leonhard_Euler}{Leonhard Euler},
 1707--1783) mit Hilfe der Exponential-Funktion als
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1584,7 +1585,7 @@ Wir definieren die Funktion $g: \mathbb{R} \rightarrow \mathbb{R}$ als
 \hspace*{1.3cm}
 $g(x) := f(x) \cdot \exp(-\lambda \cdot x)$.
 \\[0.2cm]
-Dann ist die Funktion $g$ differenzierbar und es gilt
+Als Produkt differenzierbarer Funktionen ist die Funktion $g$ differenzierbar und es gilt
 \\[0.2cm]
 \hspace*{1.3cm}
 $
@@ -1659,12 +1660,12 @@ $\exp(x+y) = \exp(y) \cdot \exp(x)$. \qed
 \remark
 Mit Hilfe der Funktional-Gleichung der Exponential-Funktion können wir nun für beliebige $\lambda \in \mathbb{R}_0^*$
 und $x \in \mathbb{R}$ den Ausdruck $\lambda^x$ definieren.  Wir betrachten zunächst den Spezialfall
-$\lambda = e$:
+$\lambda = \mathrm{e}$:
 Ist $n \in \mathbb{N}$, so können wir mit Hilfe der Funktional-Gleichung durch eine leichte Induktion
 nach $n$ zeigen, dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\exp(n) = e^n$
+$\exp(n) = \mathrm{e}^n$
 \\[0.2cm]
 ist.  Aufgrund der Gleichung
 \\[0.2cm]
