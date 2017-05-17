@@ -614,7 +614,7 @@ $\ds \df{} \csc(x) = -\csc(x) \cdot \cot(x)$.
   Eine Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ hat im Punkt $\bar{x}\in \mathbb{R}$ genau dann ein \emph{lokales Maximum}, wenn 
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\exists \varepsilon \in \mathbb{R}_+:\forall x \in \mathbb{R}: 
+  $\exists \varepsilon \in \mathbb{R}_+^*:\forall x \in \mathbb{R}: 
     \bigl(|x - \bar{x}| < \varepsilon \rightarrow f(x) \leq f(\bar{x})\bigr)
    $
   \\[0.2cm]
@@ -1165,7 +1165,7 @@ Satzes nicht umkehren lässt. \eox
   ein {\blue{strenges lokales Minimum}}, wenn gilt:
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\exists \varepsilon \in \mathbb{R}_+: \forall x \in \mathbb{R}:\bigl( 
+  $\exists \varepsilon \in \mathbb{R}_+^*: \forall x \in \mathbb{R}:\bigl( 
   |x - \bar{x}| < \varepsilon \wedge\ x \not= \bar{x} \rightarrow f(x) > f(\bar{x})\bigr)$.
 \eod
 \end{Definition}
@@ -1711,7 +1711,7 @@ Wert $\mathrm{e}^x$ als
 \hspace*{1.3cm}
 $\ds \mathrm{e}^x := \exp(x)$
 \\[0.2cm]
-zu definieren.  Für beliebige $\lambda \in \mathbb{R}_+$ setzen wir dann
+zu definieren.  Für beliebige $\lambda \in \mathbb{R}_+^*$ setzen wir dann
 \\[0.2cm]
 \hspace*{1.3cm}
 $\lambda^x := \mathtt{exp}\bigl(x \cdot \ln(\lambda) \bigr)$.
@@ -1730,3 +1730,4 @@ $\ds\lim\limits_{n\rightarrow\infty} \left(1 + \frac{1}{\;n\;}\right)^n$.  \eox
 %%% mode: latex
 %%% TeX-master: "analysis"
 %%% End: 
+\mathbb{R}_
