@@ -1,0 +1,19 @@
+f := procedure(x) {
+    if (x == 0) {
+        return 0;
+    }
+    return exp(-1/(x*x));
+};
+
+c := plot_createCanvas("A strange function.");
+
+width  := 5;
+height := 1;
+
+plot_addListGraph(c, [[-width,  0], [width,  0]], "x-axis", [0,0,0]);
+plot_addListGraph(c, [[0, -height], [0, height]], "y-axis");
+plot_addGraph(c, "f(x)", "y = f(x)", [0, 0, 255]);
+
+plot_modScale(c, [-width, width],[-height, height]);
+
+get("Press enter to continue.");
