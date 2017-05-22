@@ -25,7 +25,7 @@ Wir erhalten dann
   \label{eq:taylor0}
  f(0) = a_0 + \sum\limits_{n=1}^\infty a_n \cdot  0^n  = a_0.
 \end{equation}
-Um den Koeffizienten $a_1$ zu berechnen, differenzieren wir Gleichung (\ref{eq:taylor}):
+Um den Koeffizienten $a_1$ zu berechnen, differenzieren wir Gleichung (\ref{eq:taylor}) nach $x$:
 
 \begin{equation}
   \label{eq:taylor1}
@@ -38,7 +38,7 @@ Setzen wir in dieser Gleichung $x=0$, so finden wir
 \end{equation}
 Allgemein können wir den Koeffizienten $a_k$ dadurch bestimmen, dass wir Gleichung
 (\ref{eq:taylor}) $k$-mal nach $x$ differenzieren und anschließend $x = 0$ setzen.
-Wir beweisen zunächst durch Induktion über $k$, dass für alle $k\in\mathbb{N}_0$ 
+Wir beweisen zunächst durch Induktion über $k$, dass für alle $k\in\mathbb{N}$ 
 \begin{equation}
   \label{eq:taylorDiff}
   \begin{array}[t]{lcl}    
@@ -92,7 +92,7 @@ f^{(k)}(0) & = & \bruch{k!}{(k-k)!} \cdot a_k  +
 $
 \\[0.3cm]
 Dividieren wir diese Gleichung durch $k!$, so haben wir für die Koeffizienten der Taylor-Reihe die Formel 
-\\
+\\[0.2cm]
 \hspace*{1.3cm}
 $a_k = \bruch{f^{(k)}(0)}{k!}$
 \\[0.3cm]
@@ -118,15 +118,27 @@ $f(x) := \left\{
 \right.
 $
 \\[0.2cm]
-definiert ist.  Im Buch von Otto Forster \cite{forster:2011} wird gezeigt, dass für diese Funktion
-die Werte sämtlicher Ableitungen an der Stelle $x = 0$ verschwinden.   Damit gilt dann
- $\textsl{taylor}(f,x) = 0$.  \eox
+definiert ist.  Diese Funktion ist in Abbildung \ref{fig:strange} gezeigt.  
+Im Buch von Otto Forster \cite{forster:2011} wird gezeigt, dass für diese Funktion
+die Werte sämtlicher Ableitungen an der Stelle $x = 0$ verschwinden.  Dies können Sie in der Zeichnung daran
+erkennen, dass die Funktion in der Umgebung der Stelle $x = 0$ annähernd konstant ist.  Da die Ableitungen
+im Punkt $x = 0$ alle den Wert $0$ haben, gilt  $\textsl{taylor}(f,x) = 0$.  
+\eox
+
+ \begin{figure}[!h]
+   \centering
+   \epsfig{file=Figures/strange.eps,scale=0.6}
+   \caption{Die Funktion $\ds x \mapsto \exp\Bigl(-\frac{1}{x^2}\Bigr)$.}
+   \label{fig:strange}
+ \end{figure}
+
+
 
 
 \subsection{Der Abbruch-Fehler bei der Taylor-Reihe}
 Um zu untersuchen, wann die Taylor-Reihe $\textsl{taylor}(f,x)$ gegen $f(x)$
 konvergiert, definieren wir zu einer gegebenen Funktion $f$ und einer natürlichen Zahl
-$n\in \mathbb{N}_0$ den \blue{Abbruch-Fehler vom Grad $n$} als
+$n\in \mathbb{N}$ den \blue{Abbruch-Fehler vom Grad $n$} als
 \\[0.3cm]
 \hspace*{1.3cm}
 $\textsl{error}_n(x) := f(x) - \displaystyle\sum\limits_{i=0}^n \bruch{f^{(i)}(0)}{i!} \cdot  x^i$.
@@ -135,11 +147,11 @@ Der Abbruch-Fehler gibt also an, wie groß der Fehler ist, wenn wir die Berechnun
 Taylor-Reihe nach dem $n$-ten Glied abbrechen.
 Wir berechnen  eine Abschätzung für den Abbruch-Fehler
 $\textsl{error}_n(x)$.  Dazu benutzen wir den erweiterten Mittelwert-Satz.
-Zunächst bemerken wir, dass für alle $k=0,\cdots,n$ die $k$-te Ableitung
-des Abbruch-Fehlers vom Grad $n$ den Wert 0 hat:
+Zunächst bemerken wir, dass die $k$-te Ableitung
+des Abbruch-Fehlers vom Grad $n$ den Wert 0 hat
 \\[0.3cm]
 \hspace*{1.3cm}
-$\textsl{error}_n^{(k)}(0) = 0$
+$\textsl{error}_n^{(k)}(0) = 0$ \quad für alle $k=0,\cdots,n$. 
 \\[0.3cm]
 Dies folgt aus der Definition des Abbruch-Fehlers, denn wir hatten die Taylor-Reihe ja
 gerade so definiert, dass die Ableitungen der Funktion $f$ an der Stelle $0$ mit den Ableitungen der Taylor-Reihe
@@ -264,9 +276,9 @@ gilt.  Diese Formel bezeichnen wir als die
 (\href{http://en.wikipedia.org/wiki/Lagrange}{Joseph Louis Lagrange}, 1736 -- 1813). 
 
 \section{Beispiele von Taylor-Entwicklungen}
-Wir zeigen nun, wie wir transzendente Funktionen 
-mit Hilfe der Taylor-Entwicklungen approximieren können.  Dadurch werden diese Funktionen
-einer numerischen Behandlung zugänglich.  
+Wir zeigen nun, wie wir verschiedene transzendente Funktionen 
+mit Hilfe der Taylor-Entwicklungen approximieren können.  Dadurch werden diese Funktionen dann
+einer numerischen Berechnung zugänglich.  
 
 \subsection{Berechnung des natürlichen Logarithmus}
 Wir beginnen mit dem natürlichen Logarithmus $x \mapsto \ln(x)$.  Dieser ist als die Umkehrfunktion der
@@ -286,7 +298,7 @@ undefiniert.  Alle weiteren Koeffizienten sind natürlich ebenfalls undefiniert.
 Wir betrachten daher die Funktion $f(x)  := \ln(1 + x)$, denn diese Funktion ist für $x = 0$
 definiert.  Zunächst berechnen wir die 
 Ableitungen dieser Funktion.  Wir beweisen durch Induktion, dass für alle
-$n \in \mathbb{N}$ die $n$-te Ableitung der Funktion $f$ die folgende Form hat:
+$n \in \mathbb{N}^*$ die $n$-te Ableitung der Funktion $f$ die folgende Form hat:
 \\[0.2cm]
 \hspace*{1.3cm} $f^{(n)}(x) = (-1)^{n+1}\cdot \bruch{(n-1)!}{(1+x)^n}$
 \begin{enumerate}
@@ -295,8 +307,7 @@ $n \in \mathbb{N}$ die $n$-te Ableitung der Funktion $f$ die folgende Form hat:
   \hspace*{1.3cm}
   $\dfo f(x) = \dfo \ln(1+x) = \bruch{1}{1+x} = (-1)^{1+1}\cdot \bruch{(1-1)!}{(1+x)^1}$,
   \\[0.2cm]
-  denn $n!$ ist für $n\in\mathbb{N}_0$ so definiert, dass $0! = 1$ gilt.
-\pagebreak
+  denn $n!$ ist für $n\in\mathbb{N}$ so definiert, dass $0! = 1$ gilt.
 \item[I.S.:] $n \mapsto n+1$.  Wir haben 
   \\[0.3cm]
   \hspace*{1.3cm}
@@ -500,7 +511,8 @@ die auf
 \subsection{Berechnung des Arcus-Tangens}
 Die direkte Berechnung der Taylor-Reihe einer Funktion mit Hilfe der Formel
 (\ref{eq:taylorFormula}) ist unter Umständen sehr mühsam.  Wollen wir beispielsweise die
-Funktion $x \mapsto \arctan(x)$ in einer Taylor-Reihe entwickeln, so berechnen wir mit WolframAlpha$^{\scriptsize\textregistered}$ die
+Funktion $x \mapsto \arctan(x)$ in einer Taylor-Reihe entwickeln, so berechnen wir mit 
+\href{http://www.wolframalpha.com}{WolframAlpha$^{\scriptsize\textregistered}$} die
 ersten fünf Ableitungen wie folgt:
 \begin{enumerate}
 \item $\arctan^{(1)}(x) = \bruch{1}{1+{x}^{2}}$.
@@ -549,7 +561,7 @@ gefunden.  Für einen vollständigen Beweis dieser Formel müssten wir den Abbruch-
 nach der Lagrange'schen Formel berechnen.  Das würde uns jetzt allerdings zu viel Zeit
 kosten.
 
-\subsection{Berechnung von $\pi^*$}
+\subsection{Berechnung von $\pi$ über die Machin'sche Formel$^*$}
 Zur effizienten Berechnung von $\pi$ ist die  Formel (\ref{eq:PiViertel}) nicht geeignet.
 Aus dem Beweis des Kriteriums von Leibniz für die Konvergenz alternierender Summen folgt,
 dass der Abbruch-Fehler durch das erste weggelassene Glied abgeschätzt werden kann.  Für die obige
@@ -573,7 +585,10 @@ $
 $
 \\[0.2cm]
 Wir  müssten wir also etwa 500 Millionen Terme aufsummieren um die geforderte Genauigkeit
-zu erreichen.  Um eine Formel zu erhalten, die schneller konvergiert, gehen wir von den
+zu erreichen.  
+
+Es gibt noch eine elegantere Möglichkeit, die Kreiszahl $\pi$ mit Hilfe des Arkustangens zu
+berechnen.  Um eine Formel zu erhalten, die schneller konvergiert, gehen wir von den
 Additions-Theoremen von Sinus und Cosinus aus.  Diese lauten:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -618,55 +633,11 @@ Arkustangens:
   \arctan(x) + \arctan(y) = \arctan\left(\bruch{x + y}{1 - x \cdot  y}\right)
 \end{equation}
 Hier setzen wir nun $y := x$.  Das liefert
-\\[0.3cm]
-\hspace*{1.3cm}
-$2\cdot \arctan(x) = \arctan\left(\bruch{2\cdot x}{1 - x^2}\right)$
-\\[0.3cm]
-Wir wollen $\arctan(1)$ berechnen.  Daher wählen wir $x$ so, dass Folgendes gilt:
-\\[0.3cm]
-\hspace*{1.3cm}
-$
-\begin{array}[t]{lrcl}
-               & \bruch{2\cdot x}{1 - x^2} &=& 1 \\[0.3cm]
-\Leftrightarrow& 2\cdot x  &=& 1 - x^2 \\[0.2cm]
-\Leftrightarrow& x^2 + 2\cdot x +1 &=& 2  \\[0.2cm]
-\Leftarrow&x   &=& \sqrt{2} - 1  \\[0.2cm]
-\end{array}
-$
-\\[0.3cm]
-Wir können also $x = \sqrt{2} - 1$ wählen und dann $\pi$ nach der Formel 
 \begin{equation}
-  \label{eq:Pi}
-  \pi = 4 \cdot  \arctan(1) = 8 \cdot  \arctan\bigl(\sqrt{2} - 1\bigr) = 8 \cdot  \sum\limits_{n=0}^\infty (-1)^n \cdot  \bruch{(\sqrt{2}-1)^{2\cdot n+1}}{2\cdot n+1}
+  \label{eq:arctandouble}
+2\cdot \arctan(x) = \arctan\left(\bruch{2\cdot x}{1 - x^2}\right)  
 \end{equation}
-berechnen.  Wegen $\sqrt{2} - 1 \approx 0.4142$ konvergiert diese Reihe recht gut.
-Um auszurechnen, wie viele Glieder benötigt werden um $\pi$ auf eine
-Genauigkeit von $10^{-9}$ zu berechnen, schätzen wir den Abbruch-Fehler mit dem
-Leibniz-Kriterium ab, wobei wir zur Vereinfachung  den Nenner $2\cdot n+1$ durch 1 abschätzen:
-\\[0.3cm]
-\hspace*{1.3cm}
-$
-\begin{array}[t]{lrcl}
-                & 8 \cdot  \bigl(\sqrt{2}-1\bigr)^{2\cdot (n+1)+1} & \leq & 10^{-9} \\[0.2cm]
-\Leftrightarrow & \ln(8) + (2\cdot n+3)\cdot \ln\bigl(\sqrt{2}-1\bigr) & \leq & -9 \cdot \ln(10) \\[0.2cm]
-\Leftrightarrow &  (2\cdot n+3)\cdot \ln\bigl(\sqrt{2}-1\bigr) & \leq & -9 \cdot \ln(10) - \ln(8)\\[0.3cm]
-\Leftrightarrow &  2\cdot n+3 & \geq & - \bruch{9 \cdot \ln(10) + \ln(8)}{\ln\bigl(\sqrt{2}-1\bigr)}\\[0.5cm]
-\Leftrightarrow &  n & \geq &  -0.5\cdot \left(\bruch{9 \cdot \ln(10) + \ln(8)}{\ln\bigl(\sqrt{2}-1\bigr)} + 3\right) \approx 11.4
-\end{array}
-$
-\\[0.3cm]
-Also reicht es sicher aus, die ersten 12 Glieder der Summe zu berücksichtigen um $\pi$ auf eine Genauigkeit von $10^{-9}$
-zu berechnen.  Führen wir die Rechnung durch, so finden wir 
-\\[0.2cm]
-\hspace*{1.3cm}
-$\ds\pi \approx \sum\limits_{k=0}^{12} (-1)^k \cdot  \bruch{(\sqrt{2}-1)^{2\cdot k+1}}{2\cdot k+1} \approx 3.141592653601609$.
-\\[0.2cm]
-Der tatsächliche Fehler ist hier kleiner als $2\cdot 10^{-11}$.
-\vspace*{0.3cm}
-
-\subsubsection{Die Machin'sche Formel$^*$}
-Es gibt noch eine elegantere Möglichkeit, die Kreiszahl $\pi$ mit Hilfe des Arkustangens zu
-berechnen.  Es gilt nämlich die Machin'sche Formel (John Machin, 1686 -- 1751):
+Damit können wir die Machin'sche Formel (John Machin, 1686 -- 1751) zeigen:
 \\[0.2cm]
 \hspace*{1.3cm}
 \colorbox{red}{\colorbox{orange}{\framebox{$\ds\frac{\pi}{4} = 4 \cdot \arctan\Bigl(\frac{1}{5}\Bigr) - \arctan\Bigl(\frac{1}{239}\Bigr)$}}}
@@ -681,14 +652,15 @@ Wir addieren auf beiden Seiten dieser Gleichung den Wert $\arctan\bigl(\frac{1}{
 sehen dann, dass die Machin'sche Gleichung zu der Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
-$\arctan(1)+ \arctan\Bigl(\bruch{1}{239}\Bigr) = 4 \cdot \arctan\Bigl(\bruch{1}{5}\Bigr)$.
+$\arctan(1)+ \arctan\Bigl(\bruch{1}{239}\Bigr) = 4 \cdot \arctan\Bigl(\bruch{1}{5}\Bigr)$
 \\[0.2cm]
-äquivalent ist.  Wir wenden nun auf beiden Seiten dieser Gleichung das Additions-Theorem des
-Arkustangens an und finden
+äquivalent ist.  Wir wenden nun auf der linken Seite dieser Gleichung das Additions-Theorem des
+Arkustangens an und benutzen für die rechte Seite die Formel (\ref{eq:arctandouble}).
+Damit  finden wir
 \\[0.2cm]
 \hspace*{1.3cm}
 $\arctan\left(\cfrac{1 + \frac{1}{239}}{1 - \frac{1}{239}}\right) = 
- 2 \cdot \arctan\left(\cfrac{\frac{2}{5}}{1 - \frac{1}{25}}\right)
+ 2 \cdot \arctan\left(\cfrac{\frac{2}{5}}{1 - \frac{1}{25}}\right).
 $
 \\[0.2cm]
 Dies vereinfachen wir zu
@@ -701,7 +673,7 @@ Kürzen liefert
 \hspace*{1.3cm}
 $\ds\arctan\Bigl(\frac{120}{119}\Bigr) =  2 \cdot \arctan\Bigl(\frac{5}{12}\Bigr)$
 \\[0.2cm]
-Hier können wir auf der rechten Seite das Additions-Theorem des Arkustangens ein zweites Mal
+Hier können wir auf der rechten Seite ein zweites Mal die Formel (\ref{eq:arctandouble})
 anwenden und finden
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -715,12 +687,20 @@ $\dfrac{\frac{10}{12}}{1 - \frac{25}{12}\cdot\frac{25}{12}} = \cfrac{120}{119}$.
 \\[0.2cm]
 Damit haben wir die Machin'sche Formel bewiesen.  \qed
 
+Bei der Machin'schen Formel müssen wir den Arcus-Tangens an den Stellen $\frac{1}{5}$ und $\frac{1}{239}$
+berechnen.  Für diese Werte konvergiert die in Gleichung (\ref{eq:taylorArctan}) angegebene Reihe 
+sehr schnell.
+
+
 \exercises
-Leiten Sie die folgende Formel aus dem Additions-Theorem des
-Arcus-Tangens her und berechnen Sie damit $\pi$ auf eine Genauigkeit von $10^{-9}$:
-\\[0.3cm]
-\hspace*{1.3cm}
-$\bruch{\pi}{4} =  2 \cdot  \arctan\Bigl(\frac{1}{2}\Bigr) -\arctan\Bigl(\frac{1}{7}\Bigr) $.
+\begin{enumerate}[(a)]
+\item Berechnen Sie $\pi$ mit Hilfe der Machin'schen Formel auf eine Genauigkeit von $10^{-9}$.
+\item Leiten Sie die folgende Formel aus dem Additions-Theorem des
+      Arcus-Tangens her und berechnen Sie damit $\pi$ auf eine Genauigkeit von $10^{-9}$:
+      \\[0.3cm]
+      \hspace*{1.3cm}
+      $\bruch{\pi}{4} =  2 \cdot  \arctan\Bigl(\frac{1}{2}\Bigr) -\arctan\Bigl(\frac{1}{7}\Bigr) $.
+\end{enumerate}
 
 \section{Polynom-Interpolation}
 Nach dem wir uns im letzten Abschnitt damit beschäftigt haben für eine gegebene Funktion
@@ -1176,7 +1156,6 @@ beieinander liegen als die Argumente.  Um diese Argumentation wasserdicht zu mac
 zunächst formal unter welchen Umständen die Funktionswerte einer Funktion näher beieinander liegen
 als die Argumente.  Die nun folgende Definition ist etwas schärfer, als Sie es vielleicht im ersten
 Moment vermuten würden.  Das werden wir später noch diskutieren.
-\pagebreak
 
 \begin{Definition}[kontrahierend] \lb
 Eine Funktion $f:[a,b] \rightarrow [a,b]$ ist eine \colorbox{orange}{\blue{kontrahierende Abbildung}} wenn es eine
@@ -1258,7 +1237,6 @@ $\ds |f(x) - f(y)| \leq q \cdot |x  - y|$
 \\[0.2cm]
 und nach Definition einer kontrahierenden Abbildung ist das die Behauptung.
 \qed
-\pagebreak
 
 \begin{Satz}
   Ist $f:[a,b] \rightarrow [a,b]$ eine kontrahierende Abbildung, so ist $f$ auch stetig.
@@ -1309,7 +1287,7 @@ $\ds\lim\limits_{n\rightarrow\infty} x_n = x_0 + \sum\limits_{i=1}^\infty (x_i -
 \\[0.2cm]
 wenn wir noch zeigen können, dass
 die auf der rechten Seite dieser Formel auftretende Reihe konvergiert.  Dazu zeigen wir, dass die geometrische Reihe eine Majorante dieser Reihe ist.
-Konkret zeigen wir durch vollständige Induktion, dass für alle $i\in\mathbb{N}_0$ die Ungleichung
+Konkret zeigen wir durch vollständige Induktion, dass für alle $i\in\mathbb{N}$ die Ungleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds|x_{i+1} - x_i| \leq q^i \cdot |x_1 - x_0|$
@@ -1882,7 +1860,7 @@ $\forall x \in (\xi,b]: f(x) > 0$.
 Wir zeigen zunächst durch Induktion über $n$, dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$f(x_n) \geq 0$ \quad für alle $n \in \mathbb{N}_0$ gilt.  
+$f(x_n) \geq 0$ \quad für alle $n \in \mathbb{N}$ gilt.  
 \begin{enumerate}
 \item[I.A.] $n=0$.  
 
@@ -2036,7 +2014,7 @@ und wegen $\log_{10}\bigl(\frac{1}{2}\bigr) \approx - 0.3$ haben wir die Abschät
 $\lambda_{n+1} = 2 \cdot \lambda_{n} + 0.3$ 
 \\[0.2cm]
 gefunden, die in der Tat zeigt, dass sich die Anzahl der korrekten Stellen bei jedem Schritt mehr als verdoppelt.
-\pagebreak
+
 
 \exercise
 Analysieren Sie das Newton'sche Verfahren zur Berechnung der dritten Wurzel aus $2$ und berechnen Sie,

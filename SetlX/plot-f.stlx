@@ -10,10 +10,10 @@ c := plot_createCanvas("A strange function.");
 width  := 5;
 height := 1;
 
-plot_addListGraph(c, [[-width,  0], [width,  0]], "x-axis", [0,0,0]);
-plot_addListGraph(c, [[0, -height], [0, height]], "y-axis");
+plot_addListGraph(c, [[-width, 0], [width,  0]], "x-axis", [0, 0, 0]);
+plot_addListGraph(c, [[     0, 0], [0, height]], "y-axis");
 plot_addGraph(c, "f(x)", "y = f(x)", [0, 0, 255]);
+plot_modScale(c, [-width, width],[0, height]);
 
-plot_modScale(c, [-width, width],[-height, height]);
-
+// The next line is needed if this program is run standalone.
 get("Press enter to continue.");
