@@ -1047,7 +1047,8 @@ Ableitung des Polynoms
 \\[0.2cm]
 \hspace*{1.3cm} $\displaystyle\prod\limits_{i=0}^{n} \bruch{x-x_i}{\bar{x}-x_i}$ 
 \\[0.2cm]
-ist $(n+1)!$ mal der Koeffizient der Potenz $x^{n+1}$.  Setzen
+ist $(n+1)!$ mal der Koeffizient der Potenz $x^{n+1}$, denn alle Potenzen der Form $x^k$ mit $k \leq n$
+verschwinden, wenn die $(n+1)$-te Ableitung gebildet wird.  Setzen
 wir in Gleichung (\ref{eq:polynomAbschaetzung}) die Nullstelle $\zeta$ ein, so finden wir 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1137,7 +1138,7 @@ $\bar{x}$ gegeben ist.  Wenn nun die Funktionswerte von $f$ näher beieinander li
 Argumente, dann können wir die Näherung $x_1$ zu einer Näherung $x_2$ verbessern, indem wir 
 \\[0.2cm]
 \hspace*{1.3cm}
-$x_2 := f(x)$
+$x_2 := f(x_1)$
 \\[0.2cm]
 definieren.  Warum ist $x_2$ besser als $x_1$?  Um diese Frage zu beantworten, betrachten wir den
 Abstand von  $x_2$ und $\bar{x}$.  Es gilt
@@ -1158,13 +1159,13 @@ als die Argumente.  Die nun folgende Definition ist etwas schärfer, als Sie es v
 Moment vermuten würden.  Das werden wir später noch diskutieren.
 
 \begin{Definition}[kontrahierend] \lb
-Eine Funktion $f:[a,b] \rightarrow [a,b]$ ist eine \colorbox{orange}{\blue{kontrahierende Abbildung}} wenn es eine
+Eine Funktion $f:[a,b] \rightarrow [a,b]$ ist eine \blue{kontrahierende Abbildung} wenn es eine
 reelle Zahl $q$ mit $q < 1$ gibt, so dass 
-\\[0.2cm]
-\hspace*{1.3cm}
+\\
+\hspace*{2.3cm}
 \colorbox{red}{\colorbox{orange}{\framebox{$\forall x,y \in [a,b]: |f(x) - f(y)| \leq q \cdot  |x - y|$}}}  
 \\[0.2cm]
-gilt.  Wir bezeichnen die Zahl $q$ als den \colorbox{orange}{\blue{Kontraktions-Koeffizienten}}.
+gilt.  Wir bezeichnen die Zahl $q$ als den \blue{Kontraktions-Koeffizienten}.
 \eod
 \end{Definition}
 
@@ -1229,7 +1230,7 @@ Nehmen wir auf beiden Seiten dieser Ungleichung den Betrag, so erhalten wir
 \hspace*{1.3cm}
 $\ds\frac{|f(x) - f(y)|}{|x - y|} = |f'(\zeta)| \leq q$,
 \\[0.2cm]
-denn wir hatten ja vorausgesetzt, dass die Ungleichung $|f'(t)| < q$ für alle
+denn wir hatten ja vorausgesetzt, dass die Ungleichung $|f'(t)| \leq q$ für alle
 $t \in [a,b]$ gilt.  Multiplizieren wir diese Ungleichung mit $|x - y|$, so erhalten wir
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1248,6 +1249,7 @@ Beweisen Sie den letzten Satz.
 \hint
 Verwenden Sie die $\varepsilon$-$\delta$-Definition der Stetigkeit.
 \eox
+\pagebreak
 
 \begin{Satz}[Banach'scher Fixpunkt-Satz] \lb
 Es sei $f:[a,b] \rightarrow [a,b]$ eine kontrahierende Abbildung mit dem
@@ -1268,13 +1270,12 @@ so gilt $f(\bar{x}) = \bar{x}$ und darüber hinaus gilt die Abschätzung
 \end{Satz}
 
 \proof
-Wir starten den Beweis mit einer im
-ersten Moment skurril anmutenden Formel: 
+Wir starten den Beweis mit einer im ersten Moment skurril anmutenden Formel: 
 \\[0.2cm]
 \hspace*{0.8cm}
 $\ds x_n - x_0 = (x_n - x_{n-1}) + (x_{n-1} - x_{n-2}) + \cdots + (x_2 - x_1) + (x_1 - x_0) = \sum\limits_{i=1}^n (x_i - x_{i-1})$.
 \\[0.2cm]
-Diese Summe wird als \colorbox{orange}{\blue{Teleskop-Summe}} bezeichnet.
+Diese Summe wird als \blue{Teleskop-Summe} bezeichnet.
 Daraus folgt sofort 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1421,7 +1422,7 @@ $|f(x) - f(y)| < |x - y|$
 gilt.  Eine Funktion, die nur diese schwächere Bedingung erfüllt, wollen wir als eine 
 \\[0.2cm]
 \hspace*{1.3cm}
-\colorbox{orange}{\blue{schwach kontrahierende Abbildung}} 
+\blue{schwach kontrahierende Abbildung}
 \\[0.2cm]
 bezeichnen.  In der Tat kann gezeigt werden, dass auch für
 eine schwach kontrahierende Abbildung $f$ die Folge $x_{n+1} := f(x_n)$ für beliebige Startwerte
@@ -1765,7 +1766,8 @@ Als erstes benötigen wir einen Hilfssatz über konvexe Funktionen.
 
 \begin{Lemma}
   Die Funktion $f:[a,b] \rightarrow \mathbb{R}$ sei zweimal differenzierbar und konvex.
-  Ist $x_0 \in [a,b]$ und definieren wir die lineare Funktion $g:[a,b] \rightarrow \mathbb{R}$ als
+  Weiter sei die zweite Ableitung von $f$ stetig.
+  Ist dann $x_0 \in [a,b]$ und definieren wir die lineare Funktion $g:[a,b] \rightarrow \mathbb{R}$ als
   \\[0.2cm]
   \hspace*{1.3cm}
   $g(x) := f(x_0) + f'(x_0) \cdot (x - x_0)$,
@@ -1804,13 +1806,13 @@ der Formel (\ref{eq:taylorLagrange}) die Gleichung
 $h(x) = h(0) + h'(0) \cdot x  + \frac{1}{2} \cdot h^{(2)}(\chi) \cdot x^{2}$, 
 \\[0.2cm]
 wobei $\chi$ ein Element des Intervalls $[a-x_0, b-x_0]$ ist, über das wir sonst nichts wissen.
-Aufgrund der Gleichungen
+Setzen wir hier für $x$ den Wert $x - x_0$ ein und berücksichtigen, dass
 \\[0.2cm]
 \hspace*{1.3cm}
  $f(x) = h(x - x_0)$, \quad $h(0) = f(x_0)$, \quad $h'(0) = f'(x_0)$ 
-\quad und \quad $h^{(2)}(\chi) =  f^{(2)}(\chi + x_0)$,
+\quad und \quad $h^{(2)}(\chi) =  f^{(2)}(\chi + x_0)$
 \\[0.2cm]
-folgt daraus für die Funktion $f$ die Gleichung
+gilt, so folgt daraus für die Funktion $f$ die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $f(x) = f(x_0) + f'(x_0) \cdot (x - x_0)  + \frac{1}{2} \cdot f^{(2)}(\chi + x_0) \cdot (x- x_0)^{2}$.
@@ -1826,8 +1828,8 @@ f(x) &   =  & \ds f(x_0) + f'(x_0) \cdot (x - x_0) + \frac{1}{2} \cdot f^{(2)}(\
 \end{array}
 $
 \\[0.2cm] 
-denn da wir angenommen hatten, dass die Funktion $f$ 
-zweimal differenzierbar und konvex ist, gilt
+denn da wir angenommen hatten, dass die Funktion $f$ zweimal differenzierbar und konvex ist und dass weiterhin
+$f^{(2)}(x)$ stetig ist, gilt
 \\[0.2cm]
 \hspace*{1.3cm}
 $f^{(2)}(\varphi) \geq 0$ 
