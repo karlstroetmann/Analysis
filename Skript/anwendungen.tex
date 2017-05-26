@@ -791,7 +791,8 @@ konstruieren, die an den  Stützstellen $x_0,x_1,\cdots,x_n$ die vorgegebenen Wer
 $y_0$, $y_1$, $\cdots$, $y_n$ annehmen. Wir definieren 
 \\[0.3cm]
 \hspace*{1.3cm}
-$\displaystyle p(x) := \sum\limits_{k=0}^n y_k \cdot  L_k(x)$.
+\colorbox{red}{\colorbox{orange}{\framebox{
+$\displaystyle p(x) := \sum\limits_{k=0}^n y_k \cdot  L_k(x)$.}}}
 \\[0.3cm]
 Dann gilt $p(x_j) = y_j$ für alle $j=0,1,\cdots,n$, denn wir haben
 \\[0.2cm]
@@ -1157,6 +1158,7 @@ beieinander liegen als die Argumente.  Um diese Argumentation wasserdicht zu mac
 zunächst formal unter welchen Umständen die Funktionswerte einer Funktion näher beieinander liegen
 als die Argumente.  Die nun folgende Definition ist etwas schärfer, als Sie es vielleicht im ersten
 Moment vermuten würden.  Das werden wir später noch diskutieren.
+\pagebreak
 
 \begin{Definition}[kontrahierend] \lb
 Eine Funktion $f:[a,b] \rightarrow [a,b]$ ist eine \blue{kontrahierende Abbildung} wenn es eine
@@ -1239,6 +1241,7 @@ $\ds |f(x) - f(y)| \leq q \cdot |x  - y|$
 und nach Definition einer kontrahierenden Abbildung ist das die Behauptung.
 \qed
 
+
 \begin{Satz}
   Ist $f:[a,b] \rightarrow [a,b]$ eine kontrahierende Abbildung, so ist $f$ auch stetig.
 \end{Satz}
@@ -1249,7 +1252,6 @@ Beweisen Sie den letzten Satz.
 \hint
 Verwenden Sie die $\varepsilon$-$\delta$-Definition der Stetigkeit.
 \eox
-\pagebreak
 
 \begin{Satz}[Banach'scher Fixpunkt-Satz] \lb
 Es sei $f:[a,b] \rightarrow [a,b]$ eine kontrahierende Abbildung mit dem
