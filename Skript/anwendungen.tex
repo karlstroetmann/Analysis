@@ -792,7 +792,9 @@ $y_0$, $y_1$, $\cdots$, $y_n$ annehmen. Wir definieren
 \\[0.3cm]
 \hspace*{1.3cm}
 \colorbox{red}{\colorbox{orange}{\framebox{
-$\displaystyle p(x) := \sum\limits_{k=0}^n y_k \cdot  L_k(x)$.}}}
+$\displaystyle p(x) := \sum\limits_{k=0}^n y_k \cdot  L_k\bigl([x_0,\cdots,x_n];x\bigr)$ \quad mit \quad 
+$\ds L_k\bigl([x_0,\cdots,x_n];x\bigr) := \prod\limits_{i=0 \atop i\not=k}^n \bruch{x-x_i}{x_k-x_i}$
+.}}}
 \\[0.3cm]
 Dann gilt $p(x_j) = y_j$ für alle $j=0,1,\cdots,n$, denn wir haben
 \\[0.2cm]
