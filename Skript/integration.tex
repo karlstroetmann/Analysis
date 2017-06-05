@@ -298,9 +298,12 @@ eine \blue{Stamm-Funktion} von $f$, falls $F$ differenzierbar ist und
 \\[0.2cm]
 \hspace*{1.3cm} $\df F(x) = f(x)$
 \\[0.2cm]
-gilt.  In diesem Fall schreiben wir auch  $\ds F(x) = \int f(x) \, \dr x$.
-Der Ausdruck $\ds\int f(x) \, \dr x$ wird als \blue{unbestimmtes}
-\blue{Integral} bezeichnet. \eod
+gilt.  In diesem Fall schreiben wir auch  $\ds F(x) = \int f(x) \, \dr x$.  Der Ausdruck
+\\
+\hspace*{1.3cm}
+ $\ds\int f(x) \, \dr x$ 
+\\[0.2cm]
+wird als das \blue{unbestimmte Integral} der Funktion $f$ bezeichnet. \eod
 \end{Definition}
 
 Die Schreibweise $F(x) = \int f(x) \, \dr x$ ist problematisch, denn die Stamm-Funktion einer
@@ -343,9 +346,9 @@ Berechnung vieler Integrale.
 \begin{Satz}[Hauptsatz der Differential- und Integral-Rechnung] \hspace*{\fill} \\
  Die Funktion $f:[a,b] \rightarrow\mathbb{R}$ sei stetig, $F:[a,b] \rightarrow\mathbb{R}$
 sei eine Stamm-Funktion von $f$ und es gelte $u,v\in[a,b]$.  Dann gilt
-\\[0.2cm]
-\hspace*{1.3cm}
+\begin{center}
 \colorbox{red}{\colorbox{orange}{\framebox{$\dint{u}{v} f(x)\,\dr x = F(v) - F(u)$.}}}  
+\end{center}
 \end{Satz}
 
 \noindent
@@ -388,7 +391,8 @@ Also gilt:
   \label{eq:hauptsatzKorollar}
   \colorbox{red}{\colorbox{orange}{\framebox{$\ds\int_u^v f'(x)\,\dr x = f(v) - f(u) = f(x)\Big|_u^v$}}}
 \end{equation}
-Dies zeigt uns, dass der Integral-Operator in gewisser Weise zum Differential-Operator invers ist.
+Zusammen mit dem Satz über die Ableitung von Integralen zeigt dies, dass der Integral-Operator zum
+Differential-Operator invers ist.   
 
 \section{Regeln zur Berechnung von Integralen}
 Der Hauptsatz der Differential- und Integral-Rechnung ermöglicht es, Regeln zur Berechnung
@@ -604,15 +608,15 @@ eine Regel zur Berechnung von Integralen gewinnen können.  Es gilt
 $
 \begin{array}[t]{llcll}
                 & \dfo \Bigl(u(x)\cdot v(x)\Bigr)  & = & u'(x)\cdot  v(x) + u(x) \cdot  v'(x) &\mbox{(Umstellen)} \\[0.3cm]
-\Leftrightarrow & u'(x) \cdot  v(x) & = & \dfo \Bigl(u(x)\cdot v(x)\Bigr) - u(x) \cdot  v'(x) &\mbox{(Stamm-Funktion)} \\[0.3cm]
-\Leftrightarrow & \ds \int u'(x)\cdot  v(x)\,\dr x & = & \bint\dfo \Bigl(u(x)\cdot v(x)\Bigr)\,\dr x - \int u(x) \cdot  v'(x)\,\dr x \\[0.3cm]
+\Leftrightarrow & \dfo \Bigl(u(x)\cdot v(x)\Bigr) - u'(x) \cdot  v(x) & = &  u(x) \cdot  v'(x) & \mbox{(Stamm-Funktion)} \\[0.3cm]
+\Leftrightarrow & \bint\dfo \Bigl(u(x)\cdot v(x)\Bigr)\,\dr x - \int u'(x)\cdot  v(x)\,\dr x & = & \ds \int u(x) \cdot  v'(x) \,\dr x\\[0.3cm]
 \end{array}
 $
 \\[0.2cm]
 Die Stamm-Funktion von $\dfo\Bigl( u(x)\cdot v(x) \Bigr)$ ist natürlich $u(x)\cdot v(x)$, also haben wir
 \begin{equation}
   \label{eq:partInt0}
- \colorbox{red}{\colorbox{orange}{\framebox{$\ds\int u'(x)\cdot  v(x)\,\dr x =  \ds u(x)\cdot v(x) - \int u(x) \cdot  v'(x)\,\dr x$}}}
+ \colorbox{red}{\colorbox{orange}{\framebox{$\ds\int u(x)\cdot  v'(x)\,\dr x =  \ds u(x)\cdot v(x) - \int u'(x) \cdot  v(x)\,\dr x$}}}
 \end{equation}
 gefunden. Diese Gleichung setzt die Stamm-Funktionen von $u'(x)\cdot  v(x)$
 und $u(x) \cdot  v'(x)$ in Beziehung: Die Stamm-Funktion der ersten Funktion kann auf die
