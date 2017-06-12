@@ -1,5 +1,5 @@
 \chapter{Integral-Rechnung}
-\section{Einf\"uhrung des Integral-Begriffs}
+\section{Einführung des Integral-Begriffs}
 In diesem Kapitel beschäftigen wir uns mit der Frage, wie die Fläche zwischen einer Kurve und der
 $x$-Achse berechnet werden kann.  Dabei gehen wir davon aus, dass die Kurve durch eine Funktion der
 Form $x \mapsto f(x)$ definiert wird.  Um die Dinge konkret zu machen betrachten wir die Funktion 
@@ -661,7 +661,7 @@ Die Umkehr-Funktion von $f$ sei die Funktion
 \rightarrow\mathbb{R}$, \quad für alle $x\in[a,b]$ gilt also $g\bigl(f(x)\bigr) = x$.  
 \\[0.2cm]
 Analog gilt dann für alle $y\in\bigl[f(a),f(b)\bigr]$ die Gleichung
-$f\bigl(g(y)\bigr) = y$. Abbildung \ref{fig:umkehr.eps} zeigt die Funktion.  Durch
+$f\bigl(g(y)\bigr) = y$. Abbildung \ref{fig:umkehr.eps} zeigt eine monoton steigende Funktion $f$.  Durch
 Spiegelung an der Winkelhalbierung geht die Funktion $f$ in die Umkehr-Funktion über,
 wenn wir also die $y$-Achse als $x$-Achse ansehen, zeigt die Abbildung die Umkehr-Funktion.
 Wir betrachten jetzt die Fläche des Rechtecks, dessen linke unter Ecke
@@ -675,13 +675,17 @@ sind.
       Koordinaten-Systems, die rechte obere Ecke hat die Koordinaten $\bigl\langle a,f(a)\bigr\rangle$.
       Damit hat dieses Rechteck die Fläche $a\cdot f(a)$.
 \item Die vertikal schraffierte Fläche ist die Fläche unter der Kurve $f(x)$ und ist
-      folglich gegeben durch das Integral
+      folglich durch das Integral
       \\[0.2cm]
-      \hspace*{1.3cm} $\ds \int_a^b f(x)\, \dr x$.
+      \hspace*{1.3cm} $\ds \int_a^b f(x)\, \dr x$
+      \\[0.2cm]
+      gegeben.
 \item Die horizontal schraffierte Fläche ist die Fläche unter der Kurve $g(y)$ der
-      Umkehr-Funktion   und ist daher gegeben durch 
+      Umkehr-Funktion und ist daher durch das Integral
       \\[0.2cm]
-      \hspace*{1.3cm} $\ds \int_{f(a)}^{f(b)} g(y)\, \dr y$.
+      \hspace*{1.3cm} $\ds \int_{f(a)}^{f(b)} g(y)\, \dr y$
+      \\[0.2cm]
+      gegeben.
 \end{enumerate}
 Natürlich ist die gesamte Fläche des Rechtecks die Summe aller drei Teile, es gilt also
 \begin{equation}
@@ -741,11 +745,11 @@ Wegen $0=\sin(0)$ und $1 = \sin(\pi/2)$ haben wir
 $\ds I = \int_0^{\frac{\pi}{2}} \sqrt{1 - \sin^2(t)\,} \cdot \cos(t)\, \dr t = \int_0^{\frac{\pi}{2}} \cos(t) \cdot \cos(t)\, \dr t$.
 \\[0.2cm]
 Dieses Integral versuchen wir nun mit partieller Integration zu vereinfachen.  Wir setzen
-in Gleichung \ref{eq:partInt0} $u'(t) := \cos(t)$ und $v(t) = \cos(t)$.  Wegen $u(t) = \sin(t)$ und $v'(t) = -\sin(t)$ erhalten wir dann
+in Gleichung (\ref{eq:partInt0})  $u(t) := \cos(t)$ und $v'(t) := \cos(t)$ .  Wegen $u'(t) = -\sin(t)$ und $v(t) = \sin(t)$ 
+erhalten wir dann 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds I = \sin(t)\cdot \cos(t)\bigg|_0^{\frac{\pi}{2}} + \int_0^{\frac{\pi}{2}}\sin(t)\cdot\sin(t)\,\dr t
-   = \int_0^{\frac{\pi}{2}}\sin^2(t)\,\dr t$
+$\ds I = \cos(t) \cdot \sin(t) \bigg|_0^{\frac{\pi}{2}} + \int_0^{\frac{\pi}{2}}\sin(t)\cdot\sin(t)\,\dr t = \int_0^{\frac{\pi}{2}}\sin^2(t)\,\dr t$.
 \\[0.2cm]
 Damit haben wir jetzt 
 \\[0.2cm]
@@ -813,7 +817,7 @@ Wir berechnen die Länge $l$ des Kreisbogens, der durch die Funktion $f:[0,1] \ri
 \hspace*{1.3cm}
 $f(x) = \sqrt{1 - x^2}$
 \\[0.2cm]
-definiert ist.  Anschaulich sollte diese Länge ein Viertel des Umfangs eines Kreises mit Radius $1$ betragen.
+definiert ist.  Die Bogenlänge dieser Funktion ist ein Viertel des Umfangs eines Kreises mit Radius $1$.
 Es gilt
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1019,7 +1023,7 @@ $\ds \sum\limits_{i=1}^{\infty} f(i)$, so  ist aufgrund der zweiten Ungleichung 
 \hspace*{1.3cm}
 $\ds \biggl(\int_{1}^n f(x)\, \dr x\biggr)_{n\in\mathbb{N}}$
 \\[0.3cm]
-beschränkt.  Da diese Folge außerdem monoton ist, folgt die Konvergenz. \hspace*{\fill} $\Box$
+beschränkt.  Da diese Folge außerdem monoton ist, folgt die Konvergenz der Folge. \hspace*{\fill} $\Box$
 \vspace*{0.3cm}
 
 \noindent
