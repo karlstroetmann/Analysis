@@ -11,7 +11,7 @@ Im Rahmen dieser Vorlesung werden wir die Fourier-Analyse nur zur Berechnung von
 denn für die anderen Anwendungen reicht die Zeit nicht aus.
 
 Bei der Fourier-Analyse gehen wir davon aus, dass eine Funktion 
-\mbox{$f:\mathbb{R} \rightarrow \mathbb{R}$} gegeben ist, die \emph{periodisch} mit der
+\mbox{$f:\mathbb{R} \rightarrow \mathbb{R}$} gegeben ist, die \blue{periodisch} mit der
 Periode $2\cdot\pi$ ist, d.~h.~es gilt
 \\[0.1cm]
 \hspace*{1.3cm}
@@ -46,14 +46,14 @@ vorgestellten Funktionen
 darstellen lässt.  Genauer definieren wir folgendes: 
 
 \begin{Definition}[Fourier-Reihe]
-  Es seien $\bigl(a_n)_{n\in\mathbb{N}_0}$ und $\folgea{b_n}$ Folgen reeller Zahlen.  Dann bezeichnen
+  Es seien $\bigl(a_n)_{n\in\mathbb{N}}$ und $\folgea{b_n}$ Folgen reeller Zahlen.  Dann bezeichnen
   wir den Ausdruck
   \begin{equation}
     \label{eq:fourier}
     \colorbox{red}{\colorbox{orange}{\framebox{$\ds\bruch{1}{2}\cdot a_0 \;+\; \sum\limits_{k=1}^\infty a_k\cdot \cos(k\!\cdot\!x) \;+\;
                                \sum\limits_{k=1}^\infty b_k\cdot \sin(k\!\cdot\!x)$}}} 
   \end{equation}
-  als die mit den Folgen $\folge{a_n}$ und $\folge{b_n}$ gebildete \blue{Fourier-Reihe.}
+  als die mit den Folgen  $\bigl(a_n)_{n\in\mathbb{N}}$ und $\folge{b_n}$ gebildete \blue{Fourier-Reihe.}
 \end{Definition}
 
 \section{Berechnung der Fourier-Koeffizienten}
@@ -165,8 +165,8 @@ $
 \begin{array}[t]{lcl}
 I_{n,k} & = & \displaystyle\int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\cos(k\!\cdot\!x)\, \dr x \\[0.3cm]
 & = & \displaystyle 
-      \bruch{1}{n}\cdot\sin(n\!\cdot\!x)\cdot\cos(k\!\cdot\!x)\, \bigg|_0^{2\cdot\pi} + 
-       \bruch{k}{n} \cdot \int_0^{2\cdot\pi} \sin(n\!\cdot\!x)\cdot\sin(k\!\cdot\!x)\, \dr x \\[0.5cm]
+      \cos(k\!\cdot\!x)\cdot\bruch{1}{n}\cdot\sin(n\!\cdot\!x)\, \bigg|_0^{2\cdot\pi} + 
+       \bruch{k}{n} \cdot \int_0^{2\cdot\pi} \sin(k\!\cdot\!x)\cdot\sin(n\!\cdot\!x)\, \dr x \\[0.5cm]
 & = & \displaystyle 
       \bruch{k}{n} \cdot J_{n,k}.
 \end{array}
@@ -190,13 +190,14 @@ $
 \begin{array}[t]{lcl}
   J_{n,k}  & = & \displaystyle\int_0^{2\cdot\pi} \sin(n\!\cdot\!x)\cdot\sin(k\!\cdot\!x)\, \dr x \\[0.3cm]
 & = & \displaystyle 
-   -\bruch{1}{n}\cdot\cos(n\!\cdot\!x)\cdot\sin(k\!\cdot\!x)\, \bigg|_0^{2\cdot\pi} + 
-   \bruch{k}{n} \cdot \int_0^{2\cdot\pi} \cos(n\!\cdot\!x)\cdot\cos(k\!\cdot\!x)\, \dr x \\[0.5cm]
+   -\bruch{1}{n}\cdot\sin(k\!\cdot\!x)\cdot\cos(n\!\cdot\!x)\, \bigg|_0^{2\cdot\pi} + 
+   \bruch{k}{n} \cdot \int_0^{2\cdot\pi} \cos(k\!\cdot\!x)\cdot\cos(n\!\cdot\!x)\, \dr x \\[0.5cm]
 & = & \displaystyle
-   \bruch{k}{n} \cdot\ I_{n,k}
+   \bruch{k}{n} \cdot\ I_{n,k},
 \end{array}
 $
 \\[0.3cm]
+denn $\sin(k \cdot 2\cdot\pi) = \sin(0) = 0$.
 Damit haben wir die Berechnung von $J_{n,k}$ auf $I_{n,k}$ zurück geführt.
 Insgesamt haben wir die Gleichungen 
 \\[0.3cm]
@@ -211,7 +212,7 @@ $I_{n,k} = \bruch{k^2}{n^2} \cdot I_{n,k}$ \quad also \quad $\left(1 - \bruch{k^
 Falls $k\not=n$ ist, folgt daraus sofort 
 \\[0.3cm]
 \hspace*{1.3cm}
-$I_{n,k} = 0$ \quad und \quad $J_{n,k} = 0$ \quad für $n\not=k$.
+$I_{n,k} = 0$ \quad und \quad $J_{n,k} = 0$.
 \\[0.3cm]
 In dem Fall $k=n$ hat die bisherige Rechnung uns nicht viel weiter gebracht.  In diesem Fall wissen wir lediglich,
 dass $I_{n,n} = J_{n,n}$ gilt.  Hier hilft uns eine Addition weiter:
@@ -344,7 +345,7 @@ Zuvor benötigen wir noch zwei Definitionen.
 
 \begin{Definition}[stückweise stetig differenzierbar]
   Eine Funktion $f:[0,2\!\cdot\!\pi] \rightarrow \mathbb{R}$ ist \blue{stückweise stetig differenzierbar} 
-  falls es  Zahlen $x_0$, $x_1$, $\cdots$, $x_n$ gibt mit 
+  falls es ein $n\in\mathbb{N}$ und Zahlen $x_0$, $x_1$, $\cdots$, $x_n$ gibt mit 
   \\[0.1cm]
   \hspace*{1.3cm}
   $0 = x_0\leq x_1 \leq x_2 \cdots \leq x_{n-1} \leq x_n = 2\!\cdot\!\pi$
@@ -477,7 +478,7 @@ $\displaystyle \int_{0}^{2\cdot\pi} f(x)\, \dr x = \int_{-\pi}^{\pi} f(x)\, \dr 
 $\displaystyle \int_{0}^{2\cdot\pi} f(x)\, \dr x = \int_{-\pi}^{\pi} f(x)\, \dr x = 2 \cdot \int_0^{\pi} f(x)\,\dr x$.
 
 \subsection{Fourier-Analyse der Sägezahn-Funktion}
-Wir berechnen nun die Fourier-Reihe für die \blue{Sägezahn}-Funktion $s:\mathbb{R} \rightarrow \mathbb{R}$,  
+Wir berechnen nun die Fourier-Reihe für die \blue{Sägezahn-Funktion} $s:\mathbb{R} \rightarrow \mathbb{R}$,  
 die im Intervall $[0,2\cdot\pi]$ wie folgt definiert ist:
 \\[0.1cm]
 \hspace*{1.3cm}
@@ -508,7 +509,7 @@ dieser Funktion.
       $
       \\[0.3cm]
       denn die Funktion $x \mapsto s(x) \cdot \cos(n\!\cdot\!x)$ ist einerseits
-      periodisch mit der Periode $2\cdot\pi$ und andererseits eine gerade Funktion.
+      periodisch mit der Periode $2\cdot\pi$ und anderer\-seits eine gerade Funktion.
       Im Falle $n=0$ haben wir 
       \\[0.1cm]
       \hspace*{1.3cm}
@@ -531,7 +532,7 @@ dieser Funktion.
       \hspace*{1.3cm}
       $
       \begin{array}[t]{lcl}
-         a_n &= &\displaystyle \bruch{2}{\pi} \cdot\left( x \cdot \bruch{1}{n}\sin(n\cdot x) \bigg|_0^{\pi} - 
+         a_n &= &\displaystyle \bruch{2}{\pi} \cdot\left( x \cdot \bruch{1}{n}\cdot\sin(n\cdot x) \bigg|_0^{\pi} - 
                \bruch{1}{n}\cdot \int_0^{\pi} \sin(n\cdot x)\,\dr x\right) \\[0.5cm]
              &= &\displaystyle \bruch{2}{\pi} \cdot\left(0 + \bruch{1}{n^2} \cdot \cos(n\cdot x)\, \bigg|_0^\pi\right) \\[0.5cm]
              &= &\displaystyle \bruch{2}{\pi} \cdot\bruch{1}{n^2}\cdot \Bigl( (-1)^n - 1 \Bigr), 
