@@ -15,8 +15,15 @@ Formal definieren wir Folgen daher als Funktionen, die auf den positiven natürli
 
 
 \begin{Definition}[Folge]
-  Eine Funktion $f\!:\! \mathbb{N}\symbol{92}\{0\} \rightarrow \mathbb{R}$ bezeichnen wir als eine  \blue{reellwertige Folge}. 
-  Eine Funktion $f\!:\! \mathbb{N}\symbol{92}\{0\} \rightarrow \mathbb{C}$ bezeichnen wir als eine  \blue{komplexwertige Folge}. \eod
+  Eine Funktion $f\!:\! \mathbb{N} \rightarrow \mathbb{R}$ bezeichnen wir als eine  \blue{reellwertige Folge}. 
+  Eine Funktion $f\!:\! \mathbb{N} \rightarrow \mathbb{C}$ bezeichnen wir als eine  \blue{komplexwertige Folge}. 
+  Ist die Funktion $f$ nur auf den positiven natürlichen Zahlen definiert, gilt also 
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $f\!:\! \mathbb{N}\symbol{92}\{0\} \rightarrow \mathbb{R}$ \quad bzw. \quad  $f\!:\! \mathbb{N}\symbol{92}\{0\} \rightarrow \mathbb{C}$,
+  \\[0.2cm]
+  so sprechen wir ebenfalls von einer Folge.
+\eod
 \end{Definition}
 
 \remark
@@ -132,17 +139,17 @@ bezeichnen wir  die Menge der positiven reellen Zahlen mit $\mathbb{R}^*_+$, es 
 
 \begin{Definition}[Grenzwert, \href{http://en.wikipedia.org/wiki/Bernard_Bolzano}{Bernard Bolzano} (1781--1848)]
 \hspace*{\fill} \\
-Eine Folge $\folge{a_n}$ \blue{konvergiert} gegen den \blue{Grenzwert} $g$, falls gilt:
+Eine Folge $\folgez{a_n}$ \blue{konvergiert} gegen den \blue{Grenzwert} $g$, falls gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall \varepsilon \in\mathbb{R}^*_+: \exists K \in \mathbb{R}: \forall n \in \mathbb{N}^*:\bigl( n \geq K \rightarrow |a_n - g| < \varepsilon\bigr)$. 
+$\forall \varepsilon \in\mathbb{R}^*_+: \exists K \in \mathbb{R}: \forall n \in \mathbb{N}:\bigl( n \geq K \rightarrow |a_n - g| < \varepsilon\bigr)$. 
 \\[0.2cm]
 In diesem Fall schreiben wir
 \\[0.2cm]
 \hspace*{1.3cm}
 $\lim\limits_{n\rightarrow\infty} a_n = g$.  \eod
 \end{Definition}
-Anschaulich besagt diese Definition, dass fast alle Glieder $a_n$ der Folge $\folge{a_n}$
+Anschaulich besagt diese Definition, dass fast alle Glieder $a_n$ der Folge $\folgez{a_n}$
 einen beliebig kleinen Abstand zu dem Grenzwert $g$ haben.
 Für die oben induktiv definierte Folge $x_n$ können wir den Nachweis der Konvergenz erst
 in einem späteren Kapitel antreten.  Wir betrachten statt dessen ein einfacheres Beispiel
@@ -212,7 +219,7 @@ gilt.  \eox
 Wir formulieren und beweisen einige unmittelbare Folgerungen aus der obigen Definition des Grenzwerts.
 
 \begin{Satz}[Eindeutigkeit des Grenzwerts] \hspace*{\fill} \linebreak
-Konvergiert die Folge $\folge{a_n}$ sowohl gegen den Grenzwert $g_1$ als auch gegen den
+Konvergiert die Folge $\folgez{a_n}$ sowohl gegen den Grenzwert $g_1$ als auch gegen den
 Grenzwert $g_2$, so gilt $g_1 = g_2$.
 \end{Satz}
 \pagebreak
@@ -225,19 +232,19 @@ Dann definieren wir
  $\ds\varepsilon = \frac{1}{2}\cdot|g_2 - g_1|$ 
 \\[0.2cm]
 und aus der Annahme $g_1 \not= g_2$ folgt
-$\varepsilon > 0$.  Aus der Voraussetzung, dass $\folge{a_n}$ gegen $g_1$ konvergiert,
+$\varepsilon > 0$.  Aus der Voraussetzung, dass $\folgez{a_n}$ gegen $g_1$ konvergiert,
 folgt, dass es ein $K_1$ gibt, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall n \in \mathbb{N}^*:\bigl( n \geq K_1 \rightarrow | a_n - g_1 | < \varepsilon\bigr)$
+$\forall n \in \mathbb{N}:\bigl( n \geq K_1 \rightarrow | a_n - g_1 | < \varepsilon\bigr)$
 \\[0.2cm]
-gilt.  Analog folgt  aus der Voraussetzung, dass $\folge{a_n}$ gegen $g_2$ konvergiert,
+gilt.  Analog folgt  aus der Voraussetzung, dass $\folgez{a_n}$ gegen $g_2$ konvergiert,
 dass es ein $K_2$ gibt, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall n \in \mathbb{N}^*:\bigl( n \geq K_2 \rightarrow | a_n - g_2 | < \varepsilon\bigr)$
+$\forall n \in \mathbb{N}:\bigl( n \geq K_2 \rightarrow | a_n - g_2 | < \varepsilon\bigr)$
 \\[0.2cm]
-gilt.  Wir setzen $K := \max(K_1, K_2)$.  Alle $n\in\mathbb{N}^*$, die größer-gleich $K$ sind,
+gilt.  Wir setzen $K := \max(K_1, K_2)$.  Alle $n\in\mathbb{N}$, die größer-gleich $K$ sind,
 sind dann sowohl größer-gleich $K_1$ als auch größer-gleich $K_2$. Unter Benutzung der 
 \blue{Dreiecksungleichung}\footnote{
 Sind $a, b\in \mathbb{R}$, so gilt $|a+b| \leq |a| + |b|$.}
@@ -265,19 +272,19 @@ Die Schreibweise $\lim\limits_{n\rightarrow\infty} a_n = g$
 wird erst durch den letzten Satz gerechtfertigt.
 
 \exercise
-Zeigen Sie, dass die Folge $\folge{(-1)^n}$ nicht konvergent ist. \eox
+Zeigen Sie, dass die Folge $\folgez{(-1)^n}$ nicht konvergent ist. \eox
 
 \solution
 Wir führen den Beweis indirekt und nehmen an, dass die Folge
-$\folge{(-1)^n}$ konvergiert.  Bezeichnen wir diesen Grenzwert mit $s$, so gilt also
+$\folgez{(-1)^n}$ konvergiert.  Bezeichnen wir diesen Grenzwert mit $s$, so gilt also
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall \varepsilon \in \mathbb{R}^*_+: \exists K \in \mathbb{R}: \forall n \in \mathbb{N}^*: \bigl( n \geq K \rightarrow \bigl|(-1)^n - s\bigr| < \varepsilon\bigr)$
+$\forall \varepsilon \in \mathbb{R}^*_+: \exists K \in \mathbb{R}: \forall n \in \mathbb{N}: \bigl( n \geq K \rightarrow \bigl|(-1)^n - s\bigr| < \varepsilon\bigr)$
 \\[0.2cm]
 Daher gibt es für $\varepsilon = 1$ eine Zahl $K$, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \forall n \in \mathbb{N}^* : n \geq K \rightarrow \bigl|(-1)^n - s\bigr| < 1 $
+$ \forall n \in \mathbb{N} : n \geq K \rightarrow \bigl|(-1)^n - s\bigr| < 1 $
 \\[0.2cm]
 gilt.  Da aus $n \geq K$ sicher auch $2 \cdot n \geq K$ und $2\cdot n+1 \geq K$ folgt, hätten wir dann
 für $n \geq K$ die beiden folgenden Ungleichungen:
@@ -319,21 +326,21 @@ Widerspruch hergeleitet. \qed
 
 
 \begin{Definition}[Beschränkte Folge]
-Eine Folge $\folge{a_n}$ ist \blue{beschränkt}, falls es eine \blue{Schranke} $S$ gibt, so dass 
+Eine Folge $\folgez{a_n}$ ist \blue{beschränkt}, falls es eine \blue{Schranke} $S$ gibt, so dass 
 \\
 \hspace*{1.3cm}
-$ \forall n \in \mathbb{N}^*: \bigl|a_n\bigr| \leq S$
+$ \forall n \in \mathbb{N}: \bigl|a_n\bigr| \leq S$
 \\
 gilt.  \eod
 \end{Definition}
 
 \examples
 \begin{enumerate}
-\item Die Folge $\folge{(-1)^n}$ ist durch die Schranke $S=1$ beschränkt, denn offenbar gilt
+\item Die Folge $\folgez{(-1)^n}$ ist durch die Schranke $S=1$ beschränkt, denn offenbar gilt
       \\[0.2cm]
       \hspace*{1.3cm}
       $ \bigl|(-1)^n\bigr| = 1 \leq 1$.
-\item  Die Folge $\folge{n}$ ist nicht beschränkt, denn sonst gäbe es eine Zahl $S$, so dass
+\item  Die Folge $\folgez{n}$ ist nicht beschränkt, denn sonst gäbe es eine Zahl $S$, so dass
        für alle natürlichen Zahlen $n$ die Ungleichung $n \leq S$ gilt.  Da es beliebig große
        natürliche Zahlen gibt, kann dies nicht sein. \eox
 \end{enumerate}
@@ -341,7 +348,7 @@ gilt.  \eod
 \begin{Satz}[Beschränktheit konvergenter Folgen]
 Jede konvergente Folge  ist beschränkt.
 \end{Satz}
-\textbf{Beweis}: Es sei  $\folge{a_n}$ eine konvergente Folge und es gelte
+\textbf{Beweis}: Es sei  $\folgez{a_n}$ eine konvergente Folge und es gelte
 \\[0.2cm]
 \hspace*{1.3cm}
 $ \lim\limits_{n\rightarrow\infty} a_n = g. $
@@ -349,12 +356,12 @@ $ \lim\limits_{n\rightarrow\infty} a_n = g. $
 Dann gibt es für beliebige $\varepsilon > 0$ ein $K$, so dass gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall n \in \mathbb{N}^*: \bigl(n \geq K \rightarrow \bigl| a_n - g \bigr| < \varepsilon\bigr)$.
+$\forall n \in \mathbb{N}: \bigl(n \geq K \rightarrow \bigl| a_n - g \bigr| < \varepsilon\bigr)$.
 \\[0.2cm]
 Wir können also für $\varepsilon = 1$ ein $K$ finden, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall n \in \mathbb{N}^*:\bigl(n \geq K \rightarrow \bigl| a_n - g \bigr| < 1\bigr)$
+$\forall n \in \mathbb{N}:\bigl(n \geq K \rightarrow \bigl| a_n - g \bigr| < 1\bigr)$
 \\[0.2cm]
 gilt.  Wir können ohne Einschränkung der Allgemeinheit davon ausgehen, dass
 $K$ eine natürliche Zahl ist, denn wenn $K$ keine natürliche Zahl ist, können wir $K$
@@ -364,8 +371,8 @@ Dann definieren wir
 \hspace*{1.3cm}
 $ S := \max\bigl\{ |a_1|, \cdots, |a_K|, 1 + |g| \bigr\}.  $
 \\[0.2cm]
-Wir behaupten, dass $S$ eine Schranke für die Folge $\folge{a_n}$ ist, wir zeigen also,
-dass für alle $n \in \mathbb{N}^*$ 
+Wir behaupten, dass $S$ eine Schranke für die Folge $\folgez{a_n}$ ist, wir zeigen also,
+dass für alle $n \in \mathbb{N}$ 
 \\[0.2cm]
 \hspace*{1.3cm}
 $ |a_n| \leq S $
@@ -376,12 +383,12 @@ Um diese Ungleichung nachzuweisen, führen wir eine Fall-Unterscheidung durch:
 \item Fall: $n \leq K$.  Dann gilt offenbar 
       \\[0.2cm]
       \hspace*{1.3cm}      
-      $|a_n| \in \bigl\{ |a_1|, \cdots, |a_K|, 1 + |g| \bigr\}$.
+      $|a_n| \in \bigl\{ |a_0|, \cdots, |a_K|, 1 + |g| \bigr\}$.
       \\[0.2cm]
       und daraus folgt sofort
       \\[0.2cm]
       \hspace*{1.3cm}      
-      $|a_n| \leq \max\bigl\{ |a_1|, \cdots, |a_K|, 1 + |g| \bigr\} = S$.
+      $|a_n| \leq \max\bigl\{ |a_0|, \cdots, |a_K|, 1 + |g| \bigr\} = S$.
 \item Fall: $n > K$.  Dann haben wir
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -397,17 +404,17 @@ $
 \end{enumerate}
 
 \example
-Aus dem letzten Satz folgt sofort, dass die Folge $\folge{n}$ nicht
+Aus dem letzten Satz folgt sofort, dass die Folge $\folgez{n}$ nicht
 konvergiert, denn diese Folge ist noch nicht einmal beschränkt.  \eox
 
 
 \begin{Satz}[Summe konvergenter Folgen]
-Sind $\folge{a_n}$ und $\folge{b_n}$ zwei Folgen, so dass
+Sind $\folgez{a_n}$ und $\folgez{b_n}$ zwei Folgen, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
 $ \lim\limits_{n\rightarrow\infty} a_n = a \quad \wedge \quad \lim\limits_{n\rightarrow\infty} b_n = b $
 \\[0.2cm]
-gilt, dann konvergiert die Folge $\folge{a_n + b_n}$ gegen den Grenzwert $a+b$, in
+gilt, dann konvergiert die Folge $\folgez{a_n + b_n}$ gegen den Grenzwert $a+b$, in
 Zeichen:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -420,24 +427,24 @@ $
 Es sei $\varepsilon > 0$ \underline{fest} vorgegeben.  Wir suchen ein $K$, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall n \in \mathbb{N}^*:\bigl( n \geq K \rightarrow \bigl| \bigl(a_n + b_n\bigr) - (a + b)\bigr| < \varepsilon \bigr)$
+$\forall n \in \mathbb{N}:\bigl( n \geq K \rightarrow \bigl| \bigl(a_n + b_n\bigr) - (a + b)\bigr| < \varepsilon \bigr)$
 \\[0.2cm]
 gilt.  Nach Voraussetzung gibt es für \underline{beliebi}g\underline{e} $\varepsilon' > 0$ ein $K_1$ und ein $K_2$, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall n \in \mathbb{N}^*:\bigl(n \geq K_1 \rightarrow \bigl| a_n - a \bigr| < \varepsilon'\bigr)$ 
+$\forall n \in \mathbb{N}:\bigl(n \geq K_1 \rightarrow \bigl| a_n - a \bigr| < \varepsilon'\bigr)$ 
 \quad \mbox{und} \quad
-$\forall n \in \mathbb{N}^*:\bigl( n \geq K_2 \rightarrow \bigl| b_n - b \bigr| < \varepsilon'\bigr)$
+$\forall n \in \mathbb{N}:\bigl( n \geq K_2 \rightarrow \bigl| b_n - b \bigr| < \varepsilon'\bigr)$
 \\[0.2cm]
 gilt.  Wir setzen nun $\ds \varepsilon' := \frac{1}{2} \cdot \varepsilon$.  Dann gibt es also $K_1$ und
 $K_2$, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\forall n \in \mathbb{N}^*:\bigl(n \geq K_1 \rightarrow \bigl| a_n - a \bigr| < \frac{1}{2}\cdot\varepsilon\bigr)$ 
+$\ds\forall n \in \mathbb{N}:\bigl(n \geq K_1 \rightarrow \bigl| a_n - a \bigr| < \frac{1}{2}\cdot\varepsilon\bigr)$ 
    \quad \mbox{und} \quad
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\forall n \in \mathbb{N}^*:\bigl(n \geq K_2 \rightarrow \bigl| b_n - b \bigr| < \frac{1}{2}\cdot\varepsilon\bigr)$
+$\ds\forall n \in \mathbb{N}:\bigl(n \geq K_2 \rightarrow \bigl| b_n - b \bigr| < \frac{1}{2}\cdot\varepsilon\bigr)$
 \\[0.2cm]
 gilt.  Wir definieren $K := \max(K_1,K_2)$.  Damit gilt dann für alle $n \geq K$:
 \\[0.2cm]
@@ -458,12 +465,12 @@ Damit ist die Behauptung gezeigt. \qed
 
 \exercise
 Zeigen Sie:
-Sind $\folge{a_n}$ und $\folge{b_n}$ zwei Folgen, so dass
+Sind $\folgez{a_n}$ und $\folgez{b_n}$ zwei Folgen, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
 $ \lim\limits_{n\rightarrow\infty} a_n = a \quad \wedge \quad \lim\limits_{n\rightarrow\infty} b_n = b $
 \\[0.2cm]
-gilt, dann konvergiert die Folge $\folge{a_n - b_n}$ gegen den Grenzwert $a-b$, in
+gilt, dann konvergiert die Folge $\folgez{a_n - b_n}$ gegen den Grenzwert $a-b$, in
 Zeichen:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -474,12 +481,12 @@ $
 \pagebreak
 
 \begin{Satz}[Produkt konvergenter Folgen]
-Sind $\folge{a_n}$ und $\folge{b_n}$ zwei Folgen, so dass
+Sind $\folgez{a_n}$ und $\folgez{b_n}$ zwei Folgen, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
 $ \lim\limits_{n\rightarrow\infty} a_n = a \quad \wedge \quad \lim\limits_{n\rightarrow\infty} b_n = b $
 \\[0.2cm]
-gilt, dann konvergiert die Folge $\folge{a_n \cdot b_n}$ gegen den Grenzwert $a\cdot b$, in
+gilt, dann konvergiert die Folge $\folgez{a_n \cdot b_n}$ gegen den Grenzwert $a\cdot b$, in
 Zeichen:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -490,23 +497,23 @@ $
 \textbf{Beweis}:  Es sei $\varepsilon > 0$ \underline{fest} vorgegeben.  Wir suchen ein $K$, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall n \in \mathbb{N}^*:\bigl(n \geq K \rightarrow \bigl|a_n \cdot b_n - a \cdot b\bigr| < \varepsilon\bigr)$
+$\forall n \in \mathbb{N}:\bigl(n \geq K \rightarrow \bigl|a_n \cdot b_n - a \cdot b\bigr| < \varepsilon\bigr)$
 \\[0.2cm]
-gilt.  Da die Folge $\folge{a_n}$ konvergent ist, ist diese Folge auch beschränkt, es gibt
+gilt.  Da die Folge $\folgez{a_n}$ konvergent ist, ist diese Folge auch beschränkt, es gibt
 also eine Zahl $S$, so dass  
 \\[0.2cm]
 \hspace*{1.3cm}
-$ |a_n| \leq S \quad \mbox{für alle $n\in\mathbb{N}^*$}$
+$ |a_n| \leq S \quad \mbox{für alle $n\in\mathbb{N}$}$
 \\[0.2cm]
 gilt.  O.B.d.A.~dürfen wir annehmen, dass $S > 0$ ist, denn wenn $S = 0$ wäre, dann ist $S := 1$ ebenfalls eine
-Schranke der Folge $\folge{a_n}$.
+Schranke der Folge $\folgez{a_n}$.
 Nach Voraussetzung gibt es für beliebige $\varepsilon_1 > 0$ ein
 $K_1$ und für beliebige $\varepsilon_2 >0$ ein $K_2$, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall n \in \mathbb{N}^*:\bigl(n \geq K_1 \rightarrow \bigl| a_n - a \bigr| < \varepsilon_1\bigr)$
+$\forall n \in \mathbb{N}:\bigl(n \geq K_1 \rightarrow \bigl| a_n - a \bigr| < \varepsilon_1\bigr)$
    \quad \mbox{und} \quad
-$\forall n \in \mathbb{N}^*:\bigl(n \geq K_2 \rightarrow \bigl| b_n - b \bigr| < \varepsilon_2\bigr)$
+$\forall n \in \mathbb{N}:\bigl(n \geq K_2 \rightarrow \bigl| b_n - b \bigr| < \varepsilon_2\bigr)$
 \\[0.2cm]
 gilt.  Wir setzen nun
 \\[0.2cm]
@@ -518,11 +525,11 @@ durchaus vorkommen, dass $b = 0$ ist und durch die Addition der $1$ stellen wir 
 verschieden ist.  Dann existieren also Zahlen $K_1$ und $K_2$, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\forall n \in \mathbb{N}^*:\Bigl(n \geq K_1 \rightarrow \bigl| a_n - a \bigr| < \frac{\varepsilon}{2\cdot(|b| + 1)}\Bigr)$
+$\ds\forall n \in \mathbb{N}:\Bigl(n \geq K_1 \rightarrow \bigl| a_n - a \bigr| < \frac{\varepsilon}{2\cdot(|b| + 1)}\Bigr)$
 \quad \mbox{und} \quad
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\forall n \in \mathbb{N}^*:\Bigl(n \geq K_2 \rightarrow \bigl| b_n - b \bigr| < \frac{\varepsilon}{2\cdot S}\Bigr)$
+$\ds\forall n \in \mathbb{N}:\Bigl(n \geq K_2 \rightarrow \bigl| b_n - b \bigr| < \frac{\varepsilon}{2\cdot S}\Bigr)$
 \\[0.2cm]
 gilt.  Wir definieren $K := \max(K_1,K_2)$.  Damit gilt dann für alle $n \geq K$:
 \\[0.2cm]
@@ -547,13 +554,13 @@ Damit ist die Behauptung gezeigt. \qed
 \exercise
 Zeigen Sie:
 {\em
-Sind $\folge{a_n}$ und $\folge{b_n}$ zwei Folgen, so dass
+Sind $\folgez{a_n}$ und $\folgez{b_n}$ zwei Folgen, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
 $ \lim\limits_{n\rightarrow\infty} a_n = a \quad \wedge \quad \lim\limits_{n\rightarrow\infty} b_n = b $
 \\[0.2cm]
-gilt und gilt $b_n \not= 0$ für alle $n \in \mathbb{N}^*$, sowie $b \not= 0$,
-so konvergiert die Folge $\folge{a_n/b_n}$ gegen den Grenzwert $a/b$, in
+gilt und gilt $b_n \not= 0$ für alle $n \in \mathbb{N}$, sowie $b \not= 0$,
+so konvergiert die Folge $\folgez{a_n/b_n}$ gegen den Grenzwert $a/b$, in
 Zeichen:}
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -566,10 +573,10 @@ $
 
 \solution  
 Zunächst können wir das Problem vereinfachen, wenn wir die Folge
-$\folge{a_n/b_n}$ als Folge von Produkten schreiben:
+$\folgez{a_n/b_n}$ als Folge von Produkten schreiben:
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds \Folge{\frac{a_n}{b_n}} = \folge{a_n} \cdot  \Folge{\frac{1}{b_n}} $
+$\ds \folgez{\frac{a_n}{b_n}} = \folgez{a_n} \cdot  \folgez{\frac{1}{b_n}} $
 \\[0.2cm]
 Falls wir zeigen können, dass 
 \\[0.2cm]
@@ -581,7 +588,7 @@ Bei unserer Suche nach einem Beweis starten wir damit, dass wir die Behauptung n
 hinschreiben:
 \begin{equation}
   \label{eq:ab0}  
-\forall \varepsilon \in \mathbb{R}^*_+: \exists K \in \mathbb{R}:\forall n \in \mathbb{N}^*: \Bigl(
+\forall \varepsilon \in \mathbb{R}^*_+: \exists K \in \mathbb{R}:\forall n \in \mathbb{N}: \Bigl(
    n \geq K \rightarrow \left| \frac{1}{b_n} - \frac{1}{b} \right| < \varepsilon\Bigr)
 \end{equation}
 Wir müssen also für alle $\varepsilon>0$ ein $K$ finden, so dass für alle natürlichen
@@ -590,11 +597,11 @@ Zahlen  $n \geq K$ die Ungleichung
   \label{eq:ab1}
   \left| \frac{1}{b_n} - \frac{1}{b} \right| < \varepsilon 
 \end{equation}
-gilt.  Irgendwie müssen wir die Voraussetzung, dass die Folge $\folge{b_n}$ gegen
+gilt.  Irgendwie müssen wir die Voraussetzung, dass die Folge $\folgez{b_n}$ gegen
 $b$ konvergiert, ausnutzen.  Diese Voraussetzung lautet ausgeschrieben
 \begin{equation}
   \label{eq:ab2}
-  \forall \varepsilon' \in \mathbb{R}^*_+: \exists K' \in \mathbb{R}:\forall n \in \mathbb{N}^*: \Bigl(
+  \forall \varepsilon' \in \mathbb{R}^*_+: \exists K' \in \mathbb{R}:\forall n \in \mathbb{N}: \Bigl(
    n \geq K' \rightarrow \bigl| b_n - b \bigr| < \varepsilon' \Bigr)
 \end{equation}
 Wir zeigen zunächst eine Abschätzung für die Beträge $|b_n|$, die wir später brauchen.
@@ -672,11 +679,11 @@ $
 
 
 \begin{Satz}
-Sind $\folge{a_n}$  
-und $\folge{b_n}$ zwei konvergente Folgen, so dass
+Sind $\folgez{a_n}$  
+und $\folgez{b_n}$ zwei konvergente Folgen, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \forall n \in \mathbb{N}^*: a_n \leq b_n $
+$ \forall n \in \mathbb{N}: a_n \leq b_n $
 \\[0.2cm]
 gilt, dann gilt auch
 \\[0.2cm]
@@ -689,18 +696,18 @@ Beweisen Sie den letzten Satz.  \eox
 
 
 \begin{Definition}[monoton]
-Eine Folge $\folge{a_n}$ ist \blue{monoton steigend} falls 
+Eine Folge $\folgez{a_n}$ ist \blue{monoton steigend} falls 
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \forall n \in \mathbb{N}^*: a_n \leq a_{n+1} $
+$ \forall n \in \mathbb{N}: a_n \leq a_{n+1} $
 \\[0.2cm]
 gilt.  Analog heißt eine Folge \blue{monoton fallend} falls
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \forall n \in \mathbb{N}^*: a_n \geq a_{n+1}. $
+$ \forall n \in \mathbb{N}: a_n \geq a_{n+1}. $
 \eod
 \end{Definition}
-Ein Beispiel für eine monoton fallende Folge ist die Folge $\ds\Folge{\frac{1}{n}}$, denn es
+Ein Beispiel für eine monoton fallende Folge ist die Folge $\ds\folgez{\frac{1}{n}}$, denn es
 gilt
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -714,14 +721,14 @@ $
 
 
 \begin{Satz} \label{satz:monoton}
-Ist die Folge $\folge{a_n}$ monoton fallend und beschränkt, so ist die Folge auch konvergent.
+Ist die Folge $\folgez{a_n}$ monoton fallend und beschränkt, so ist die Folge auch konvergent.
 \end{Satz}
-\textbf{Beweis}:  Wir definieren zunächst die Menge $M$ als die Menge aller unteren Schranken der Folge $\folge{a_n}$
+\textbf{Beweis}:  Wir definieren zunächst die Menge $M$ als die Menge aller unteren Schranken der Folge $\folgez{a_n}$
 \\[0.2cm]
 \hspace*{1.3cm}      
-$M := \bigl\{ x \in \mathbb{R} \mid \forall n \in \mathbb{N}^*: x \leq a_n \bigr\}$.
+$M := \bigl\{ x \in \mathbb{R} \mid \forall n \in \mathbb{N}: x \leq a_n \bigr\}$.
 \\[0.2cm]
-Weil wir vorausgesetzt haben, dass die Folge $\folge{a_n}$ beschränkt ist,
+Weil wir vorausgesetzt haben, dass die Folge $\folgez{a_n}$ beschränkt ist,
 ist die Menge $M$ sicher nicht leer.  Außerdem ist die Menge $M$ nach oben beschränkt, jedes Folgenglied 
 $a_n$ ist eine obere Schranke der Menge $M$.
 Da die Struktur $\langle \mathbb{R}, 0, 1, +, \cdot, \leq\rangle$ ein vollständig geordneter
@@ -738,7 +745,7 @@ $\lim\limits_{n\rightarrow\infty} a_n = s$
 gilt.  Dazu müssen wir 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall \varepsilon \in \mathbb{R}^*_+: \exists K \in \mathbb{R}: \forall n \in \mathbb{N}^*: \bigl(n\geq k \rightarrow |a_n - s| < \varepsilon \bigr)$
+$\forall \varepsilon \in \mathbb{R}^*_+: \exists K \in \mathbb{R}: \forall n \in \mathbb{N}: \bigl(n\geq k \rightarrow |a_n - s| < \varepsilon \bigr)$
 \\[0.2cm]
 zeigen.  Sei also $\varepsilon > 0$ gegeben.  Da 
 \\[0.2cm]
@@ -747,8 +754,8 @@ $s + \varepsilon > s$
 \\[0.2cm]
 ist und $s$ als das Supremum der Menge $M$ definiert ist, können wir folgern, dass 
 $s + \varepsilon \not\in M$ ist.  Nach Definition der Menge $M$ als Menge der unteren Schranken der
-Folge $\folge{a_n}$ ist $s + \varepsilon$ dann keine untere Schranke der Folge $\folge{a_n}$.  Also
- gibt es eine Zahl $\widehat{n} \in \mathbb{N}^*$, so dass 
+Folge $\folgez{a_n}$ ist $s + \varepsilon$ dann keine untere Schranke der Folge $\folgez{a_n}$.  Also
+ gibt es eine Zahl $\widehat{n} \in \mathbb{N}$, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
 $a_{\widehat{n}} < s + \varepsilon$ 
@@ -760,7 +767,7 @@ $a_n < s + \varepsilon$ \quad für alle $n \geq \widehat{n}$.
 \\[0.2cm]
 Andererseits ist $s - \frac{1}{2} \cdot \varepsilon < s$, so dass $s - \frac{1}{2} \cdot \varepsilon$ sicher ein Element der Menge $M$
 ist, denn $M$ ist nach unten abgeschlossen.  Damit ist $s - \frac{1}{2} \cdot \varepsilon$ dann auch eine untere
-Schranke der Folge $(a_n)_{n\in\mathbb{N}^*}$.  Folglich gilt für alle $n \in \mathbb{N}^*$
+Schranke der Folge $(a_n)_{n\in\mathbb{N}}$.  Folglich gilt für alle $n \in \mathbb{N}$
 \\[0.2cm]
 \hspace*{1.3cm}
 $s - \varepsilon < s - \frac{1}{2} \cdot \varepsilon \leq a_n$.
@@ -790,7 +797,7 @@ vollständig sind.
 \eox
 
 \exercise
-Die Folge $\folge{a_n}$ sei monoton steigend und beschränkt.  Zeigen Sie, dass der Grenzwert
+Die Folge $\folgez{a_n}$ sei monoton steigend und beschränkt.  Zeigen Sie, dass der Grenzwert
 \\[0.2cm]
 \hspace*{1.3cm}
 $\lim\limits_{n\rightarrow\infty} a_n$
@@ -799,23 +806,23 @@ existiert.  \eox
 
 
 \begin{Definition}[Cauchy-Folge] \lb
-Eine Folge $\folge{a_n}$ heißt \blue{Cauchy-Folge} 
+Eine Folge $\folgez{a_n}$ heißt \blue{Cauchy-Folge} 
 (\href{http://de.wikipedia.org/wiki/Augustin-Louis_Cauchy}{\textrm{Augustin-Louis Cauchy}}, 1789-1857), 
 falls gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall \varepsilon \in \mathbb{R}^*_+: \exists K \in \mathbb{R}: \forall m,n \in \mathbb{N}^*: \bigl(
+$\forall \varepsilon \in \mathbb{R}^*_+: \exists K \in \mathbb{R}: \forall m,n \in \mathbb{N}: \bigl(
   m \geq K \wedge n \geq K \rightarrow \bigl| a_m - a_n \bigr| < \varepsilon\bigr)
 $. \eod
 \end{Definition}
 
-In einer Cauchy-Folge $\folge{a_n}$ liegen also die einzelnen Folgenglieder $a_n$ mit wachsendem $n$
+In einer Cauchy-Folge $\folgez{a_n}$ liegen also die einzelnen Folgenglieder $a_n$ mit wachsendem $n$
 immer dichter zusammen.  Wir werden sehen, dass eine Folge genau dann konvergent ist, wenn die Folge
 eine Cauchy-Folge ist.  Den Nachweis dieser Behauptung spalten wir in mehrere Sätze auf.
 
 
 \begin{Satz}
-Jede konvergente Folge $\folge{a_n}$ ist eine Cauchy-Folge.  
+Jede konvergente Folge $\folgez{a_n}$ ist eine Cauchy-Folge.  
 \end{Satz}
 
 \proof
@@ -823,7 +830,7 @@ Es sei $a := \lim\limits_{n\rightarrow\infty} a_n$.  Sei $\varepsilon > 0$ gegeb
 Cauchy-Folge müssen wir ein $K$ finden, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall m,n \in \mathbb{N}^*: \bigl(m \geq K \wedge n \geq K \rightarrow \bigl| a_m - a_n \bigr| < \varepsilon\bigr)$
+$\forall m,n \in \mathbb{N}: \bigl(m \geq K \wedge n \geq K \rightarrow \bigl| a_m - a_n \bigr| < \varepsilon\bigr)$
 \\[0.2cm]
 gilt.  Nach Voraussetzung gilt
 \\[0.2cm]
@@ -835,9 +842,9 @@ $.
 Wir definieren $\varepsilon' := \frac{1}{2} \cdot \varepsilon$.  Dann gibt es also ein $K'$, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\forall n \in \mathbb{N}^*:\Bigl( n \geq K' \rightarrow \bigl|a_n-a\bigr| < \frac{\varepsilon}{2}\Bigr)$
+$\ds\forall n \in \mathbb{N}:\Bigl( n \geq K' \rightarrow \bigl|a_n-a\bigr| < \frac{\varepsilon}{2}\Bigr)$
 \\[0.2cm]
-gilt.  Wir definieren nun $K := K'$.  Damit gilt für alle $m,n\in\mathbb{N}^*$ mit $m \geq K$ und $n \geq K$
+gilt.  Wir definieren nun $K := K'$.  Damit gilt für alle $m,n\in\mathbb{N}$ mit $m \geq K$ und $n \geq K$
 die folgende Abschätzung: 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -850,14 +857,14 @@ $
    \end{array}
 $
 \\[0.2cm]
-Damit ist gezeigt, dass $\folge{a_n}$ eine Cauchy-Folge ist. \qed
+Damit ist gezeigt, dass $\folgez{a_n}$ eine Cauchy-Folge ist. \qed
 
 \begin{Satz}
   Jede Cauchy-Folge ist beschränkt.
 \end{Satz}
 
 \proof
-Wenn $\rule[-8pt]{0pt}{0pt}\folge{a_n}$ eine Cauchy-Folge ist, dann finden wir eine Zahl
+Wenn $\rule[-8pt]{0pt}{0pt}\folgez{a_n}$ eine Cauchy-Folge ist, dann finden wir eine Zahl
 $K$, so dass für alle natürlichen Zahlen $m,n$, die größer-gleich $K$ sind, die Ungleichung
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -868,10 +875,10 @@ gilt.  Sei nun $h$ eine natürliche Zahl, die größer als $K$ ist.  Wir definieren
 \hspace*{1.3cm}
 $ S := \max\bigl\{ |a_1|, |a_2|, \cdots,  |a_h|, 1+ |a_h|\bigr\} $
 \\[0.2cm]
-und zeigen, dass $S$ eine  Schranke der Cauchy-Folge $\folge{a_n}$ ist, wir zeigen also
+und zeigen, dass $S$ eine  Schranke der Cauchy-Folge $\folgez{a_n}$ ist, wir zeigen also
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \forall n \in \mathbb{N}^* : |a_n| \leq S. $
+$ \forall n \in \mathbb{N} : |a_n| \leq S. $
 \\[0.2cm]
 Falls $n \leq h$ ist, ist diese Ungleichung evident.  Für alle $n>h$ haben wir die folgende
 Abschätzung: 
@@ -917,18 +924,18 @@ beschränkte Folge konvergent ist und zerfällt in zwei Teile:
 \begin{enumerate}
 \item Zunächst definieren wir eine Menge $M$, die nicht leer und nach oben beschränkt ist
       und definieren $s$ als das Supremum dieser Menge.
-\item Anschließend zeigen wir, dass die Folge $\folge{a_n}$ gegen $s$ konvergiert.
+\item Anschließend zeigen wir, dass die Folge $\folgez{a_n}$ gegen $s$ konvergiert.
 \end{enumerate}
 Wir definieren die Menge $M$ wie folgt:
 \\[0.2cm]
 \hspace*{1.3cm}
-$M := \bigl\{ x \in \mathbb{R} \mid \exists K \in \mathbb{N}^*: \forall n \in \mathbb{N}^*:\bigl( n \geq K \rightarrow x \leq a_n\bigr) \bigr\}$.
+$M := \bigl\{ x \in \mathbb{R} \mid \exists K \in \mathbb{N}: \forall n \in \mathbb{N}:\bigl( n \geq K \rightarrow x \leq a_n\bigr) \bigr\}$.
 \\[0.2cm]
 Anschaulich ist $M$ die Menge aller unteren Grenzen für die Mehrheit der
 Folgenglieder:  Ist $x \in M$, so müssen von einem bestimmten Index $K$ an
 alle weiteren Folgenglieder $a_n$ durch $x$ nach unten abgeschätzt werden.
 Wir nennen $M$ daher die Menge der \blue{unteren Majoritäts-Schranken} der Folge
-$(a_n)_{n\in\mathbb{N}^*}$, denn jedes Element aus $M$ ist eine untere Schranke für die Mehrheit der
+$(a_n)_{n\in\mathbb{N}}$, denn jedes Element aus $M$ ist eine untere Schranke für die Mehrheit der
 Folgenglieder.  Genauer gilt für jedes $x \in M$, dass nur endlich viele der Folgenglieder $a_n$
 kleiner als $x$ sind.  Mathematiker sagen an dieser Stelle, dass \blue{fast alle} Folgenglieder
 kleiner als $x$ sind.
@@ -942,16 +949,16 @@ denn wenn $x$ eine untere Schranke der Mehrheit aller Folgenglieder ist, dann is
 $y$, die kleiner als $x$ ist, ebenfalls eine untere Schranke der Mehrheit der Folgenglieder. 
 Wir werden diese Eigenschaft später benötigen. 
 
-Da die Folge $\folge{a_n}$ eine Cauchy-Folge ist, gibt es ein $S$, so dass die Folge durch $S$
+Da die Folge $\folgez{a_n}$ eine Cauchy-Folge ist, gibt es ein $S$, so dass die Folge durch $S$
 beschränkt ist, genauer gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall n \in \mathbb{N}^*: |a_n| \leq S$.
+$\forall n \in \mathbb{N}: |a_n| \leq S$.
 \\[0.2cm]
 Daher ist die Menge $M$ nach oben durch $S$ beschränkt, denn eine untere Grenze für die Mehrheit
 aller Folgenglieder kann sicher nicht größer als $S$ sein.
 Weiter impliziert die Beschränktheit der Cauchy-Folge, dass die Menge $M$ nicht leer ist,
-denn wenn für alle $n \in \mathbb{N}^*$ die Ungleichung $|a_n| \leq S$ gilt,  dann gilt insbesondere
+denn wenn für alle $n \in \mathbb{N}$ die Ungleichung $|a_n| \leq S$ gilt,  dann gilt insbesondere
 $-S \leq a_n$ und daraus folgt sofort $-S \in M$.  Als nicht-leere und nach oben
 beschränkte Menge hat $M$ ein Supremum, denn $\langle \mathbb{R}, \leq \rangle$ ist eine
 vollständige Ordnung.  Wir definieren  
@@ -974,14 +981,14 @@ gilt.  Wir betrachten zunächst die Zahl $s-\frac{\varepsilon}{2}$.  Wegen
 $s-\frac{\varepsilon}{2} < s$ und $s = \sup(M)$ folgt $s-\frac{\varepsilon}{2} \in M$, denn $M$
 ist nach unten abgeschlossen.  Damit existiert
 dann nach Definition der Menge $M$ als Menge der unteren Majoritäts-Schranken
-eine Zahl $K_1$, so dass für alle $n\in\mathbb{N}^*$ mit $n\geq K_1$ die Ungleichung
+eine Zahl $K_1$, so dass für alle $n\in\mathbb{N}$ mit $n\geq K_1$ die Ungleichung
 \begin{equation}
   \label{eq:ineq3}
   s-\frac{\varepsilon}{2} \leq a_n
 \end{equation}
 gilt.  
-Da die Folge $\folge{a_n}$ eine Cauchy-Folge ist, gibt es eine Zahl $K_2$, so dass
-für alle $m,n\in\mathbb{N}^*$ mit $m>K_2$ und $n>K_2$ die Ungleichung
+Da die Folge $\folgez{a_n}$ eine Cauchy-Folge ist, gibt es eine Zahl $K_2$, so dass
+für alle $m,n\in\mathbb{N}$ mit $m>K_2$ und $n>K_2$ die Ungleichung
 \begin{equation}
   \label{eq:ineq4}
   \bigl| a_n - a_m \bigr| < \frac{\varepsilon}{2}
@@ -1078,9 +1085,9 @@ Es gilt $a_1 > 0$ und durch eine einfache Induktion lässt sich zeigen, dass
 $a_n > 0$ \quad für alle $n \in \mathbb{N}$ 
 \\[0.2cm]
 gilt.  Damit ist klar, dass der Grenzwert $b$, wenn er denn existiert, nicht negativ werden kann.
-Falls also die oben definierte Folge $\folge{b_n}$ einen Grenzwert hat, dann ist dieser
+Falls also die oben definierte Folge $\folgez{b_n}$ einen Grenzwert hat, dann ist dieser
 Grenzwert die Wurzel der Zahl $a$.  Wir werden die Konvergenz der Folge nachweisen,
-indem wir zeigen, dass die Folge $\rule[-8pt]{0pt}{0pt}\folge{b_n}$ einerseits monoton fallend und andererseits 
+indem wir zeigen, dass die Folge $\rule[-8pt]{0pt}{0pt}\folgez{b_n}$ einerseits monoton fallend und andererseits 
 nach unten beschränkt ist.  Dazu betrachten wir zunächst die Differenz $b_{n+1}^2 - a$:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1103,15 +1110,15 @@ $b_{n+1}^2 - a \geq 0$
 die Zahl  $a$, so haben wir
 \\[0.2cm]
 \hspace*{1.3cm}
- $b_{n+1}^2 \geq a$ \quad und damit auch \quad $b_{n+1} \geq \sqrt{a}$ \quad für alle $n \in \mathbb{N}^*$
+ $b_{n+1}^2 \geq a$ \quad und damit auch \quad $b_{n+1} \geq \sqrt{a}$ \quad für alle $n \in \mathbb{N}$
 \\[0.2cm]
-gezeigt.  Nach unserer Definition der Folge $\rule[-8pt]{0pt}{0pt}\folge{b_n}$ gilt diese Ungleichung auch für
+gezeigt.  Nach unserer Definition der Folge $\rule[-8pt]{0pt}{0pt}\folgez{b_n}$ gilt diese Ungleichung auch für
 den ersten Wert $n=1$, so dass wir also insgesamt die Ungleichungen
 \\[0.2cm]
 \hspace*{1.3cm}
-$b_n^2 \geq a$ \quad und \quad $b_n \geq \sqrt{a}$ \quad für alle $n \in \mathbb{N}^*$
+$b_n^2 \geq a$ \quad und \quad $b_n \geq \sqrt{a}$ \quad für alle $n \in \mathbb{N}$
 \\[0.2cm]
-gezeigt haben.   Daraus folgt, dass $\sqrt{a}$ eine untere Schranke der Folge $\folge{b_n}$
+gezeigt haben.   Daraus folgt, dass $\sqrt{a}$ eine untere Schranke der Folge $\folgez{b_n}$
 ist.  Dividieren wir die Ungleichung $b_n^2 \geq a$ durch $b_{n}$, so folgt
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1129,7 +1136,7 @@ Dieser Mittelwert ist aber gerade $b_{n+1}$, es gilt also
 \hspace*{1.3cm}
 $\ds b_{n} \geq b_{n+1} \geq \frac{a}{b_n}. $
 \\[0.2cm]
-Dies zeigt, dass die Folge $\folge{b_n}$ monoton fallend ist und da wir oben gesehen haben, dass die
+Dies zeigt, dass die Folge $\folgez{b_n}$ monoton fallend ist und da wir oben gesehen haben, dass die
 Folge durch $\sqrt{a}$ nach unten beschränkt ist, konvergiert die Folge.
 Wir hatten oben schon gezeigt, dass der Grenzwert dieser Folge dann den Wert $\sqrt{a}$ haben muss, es
 gilt also
@@ -1271,7 +1278,7 @@ berechnet.
            später beweisen können.  Es gilt folgendes:
            \begin{enumerate}
            \item Ist die Funktion $f:\mathbb{R} \rightarrow \mathbb{R}$ \blue{stetig} und ist die Folge
-                 $\folge{a_n}$ konvergent, so ist auch die Folge $\folge{f(a_n)}$ konvergent und es gilt
+                 $\folgez{a_n}$ konvergent, so ist auch die Folge $\folgez{f(a_n)}$ konvergent und es gilt
                  \\[0.2cm]
                  \hspace*{1.3cm}
                  $\ds\lim\limits_{n\rightarrow\infty} f(a_n) = f\Bigl(\lim\limits_{n\rightarrow\infty} a_n\Bigr)$.
@@ -1285,15 +1292,15 @@ berechnet.
 
 \section{Reihen}
 \begin{Definition}[Reihe]
-Ist $\folge{a_n}$ eine Folge, so definieren wir die Folge der \blue{Partial-Summen} $\folge{s_n}$
+Ist $\folgez{a_n}$ eine Folge, so definieren wir die Folge der \blue{Partial-Summen} $\folgez{s_n}$
 durch die Festsetzung
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds s_n := \sum\limits_{i=1}^n a_i. $
 \\[0.2cm]
-Diese Folge bezeichnen wir auch als unendliche  \blue{Reihe}.  Die Folge $\folge{a_n}$
+Diese Folge bezeichnen wir auch als unendliche  \blue{Reihe}.  Die Folge $\folgez{a_n}$
 bezeichnen wir als die 
-der Reihe $\ds\left(\sum_{i=1}^n a_i\right)_{n\in\mathbb{N}^*}$ \blue{zugrunde liegende Folge}.
+der Reihe $\ds\left(\sum_{i=1}^n a_i\right)_{n\in\mathbb{N}}$ \blue{zugrunde liegende Folge}.
 Falls die Folge der Partial-Summen konvergiert, so schreiben wir den Grenzwert als
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1302,7 +1309,7 @@ $\ds \sum\limits_{i=1}^\infty a_i := \lim\limits_{n\rightarrow\infty} \sum\limit
 \end{Definition}
 
 \noindent
-Gelegentlich treten in der Praxis Folgen $\folge{a_n}$ auf, für welche die Folgenglieder
+Gelegentlich treten in der Praxis Folgen $\folgez{a_n}$ auf, für welche die Folgenglieder
 $a_i$ erst ab einem Index $k>1$ definiert sind.  
 Um auch aus solchen Folge bequem Reihen bilden zu können, definieren wir in einem solchen
 Fall die Partial-Summen $s_n$ durch
@@ -1441,7 +1448,7 @@ gültig ist und damit ist die Behauptung bewiesen.  \qed
 Wir betrachten die Reihe
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\left(\sum\limits_{i=1}^n \frac{1}{i \cdot (i+1)}\right)_{n\in\mathbb{N}^*}$.
+$\ds\left(\sum\limits_{i=1}^n \frac{1}{i \cdot (i+1)}\right)_{n\in\mathbb{N}}$.
 \\[0.2cm]
 Für die Partial-Summen zeigen wir durch Induktion über $n$, dass 
 \begin{equation}
@@ -1486,7 +1493,7 @@ gilt.
  \begin{Definition}[Geometrische Reihe]  Es sei $q \in \mathbb{C}$.  Die Reihe
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds \left(\sum\limits_{i=0}^n q^i \right)_{n\in\mathbb{N}^*}$
+$\ds \left(\sum\limits_{i=0}^n q^i \right)_{n\in\mathbb{N}}$
 \\[0.2cm]
 heißt \href{https://en.wikipedia.org/wiki/Geometric_series}{geometrische Reihe}.  Es gilt
 \\[0.2cm]
@@ -1528,7 +1535,7 @@ den Ausdruck:
 \colorbox{red}{\framebox{\colorbox{orange}{
 $\ds \sum\limits_{i=0}^{n} q^i = \frac{1 - q^{n+1}}{1-q}$}}}
 \\[0.2cm]
-Falls $|q| < 1$ ist, konvergiert die Folge $\folge{q^n}$ gegen $0$.  Damit gilt:
+Falls $|q| < 1$ ist, konvergiert die Folge $\folgez{q^n}$ gegen $0$.  Damit gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
 \colorbox{red}{\framebox{\colorbox{orange}{$\ds\sum\limits_{i=0}^{\infty} q^i = \frac{1}{1-q}$}}}
@@ -1556,7 +1563,7 @@ $\ds\Folge{\sum\limits_{i=1}^{n}  (-1)^i \cdot  a_i} $
 und gilt entweder
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \forall i \in \mathbb{N}^*: a_i \geq 0 \quad \mbox{oder} \quad \forall i \in \mathbb{N}^*: a_i \leq 0 $,
+$ \forall i \in \mathbb{N}: a_i \geq 0 \quad \mbox{oder} \quad \forall i \in \mathbb{N}: a_i \leq 0 $,
 \\[0.2cm]
 so haben aufeinander folgende Glieder der Reihe ein unterschiedliches Vorzeichen (es sei denn, dass
 die Glieder den Wert $0$ haben).  In diesem Fall sprechen wir daher von einer \blue{alternierenden Reihe}.  
@@ -1580,17 +1587,17 @@ Wir werden später sehen, dass diese Reihe gegen den Wert $\ln(2)$ konvergiert.
 
 
 \begin{Definition}[Null-Folge]
-Die Folge $\folge{a_n}$ ist eine \blue{Null-Folge} wenn gilt:
+Die Folge $\folgez{a_n}$ ist eine \blue{Null-Folge} wenn gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
 $ \lim\limits_{n\rightarrow\infty} a_n = 0. $ \eod
 \end{Definition}
 
 \exercise
-Die Folge $\folge{a_n}$ sei eine monoton fallende \blue{Null-Folge}.  Zeigen Sie, dass dann
+Die Folge $\folgez{a_n}$ sei eine monoton fallende \blue{Null-Folge}.  Zeigen Sie, dass dann
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall n \in \mathbb{N}^*: 0 \leq a_n$
+$\forall n \in \mathbb{N}: 0 \leq a_n$
 \\[0.2cm]
 gilt.  
 
@@ -1601,21 +1608,21 @@ Führen Sie den Beweis indirekt.
 
 
 \begin{Satz}[Leibniz-Kriterium, (\href{http://de.wikipedia.org/wiki/Leibniz}{Gottfried Wilhelm Leibniz}, 1646-1716)] \lb
-Wenn die Folge $\folge{a_n}$ eine monoton fallende Null-Folge ist, dann 
+Wenn die Folge $\folgez{a_n}$ eine monoton fallende Null-Folge ist, dann 
 konvergiert die alternierende Reihe
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds \left(\sum\limits_{i=1}^{n} (-1)^i \cdot  a_i\right)_{n\in\mathbb{N}^*.} $
+$\ds \left(\sum\limits_{i=0}^{n} (-1)^i \cdot  a_i\right)_{n\in\mathbb{N}.} $
 \end{Satz}  
 
 \noindent
 \textbf{Beweis}:  Die  Partial-Summen $s_n$ sind durch
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds s_n = \sum\limits_{i=1}^{n} (-1)^i \cdot  a_i $
+$\ds s_n = \sum\limits_{i=0}^{n} (-1)^i \cdot  a_i $
 \\[0.2cm]
 definiert.  Wir betrachten zunächst die Folge der Partial-Summen mit geraden Indizes, wir
-betrachten also die Folge $\folge{s_{2 \cdot n}}$ und zeigen, dass diese Folge monoton fallend
+betrachten also die Folge $\folgez{s_{2 \cdot n}}$ und zeigen, dass diese Folge monoton fallend
 ist.  Es gilt
 \begin{equation}
   \label{eq:seq1}
@@ -1639,7 +1646,7 @@ Als nächstes zeigen wir durch vollständige Induktion, dass die Folge der Partial
 nach unten beschränkt ist, genauer gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$s_{n} \geq - a_1$ \quad für alle $n \in \mathbb{N}^*$.
+$s_{n} \geq - a_1$ \quad für alle $n \in \mathbb{N}$.
 \\[0.2cm]
 Um diese Ungleichung nachzuweisen, zeigen wir zunächst durch vollständige Induktion, dass für alle
 $n\in\mathbb{N}$ gilt:
@@ -1663,26 +1670,26 @@ $
              $
 \\[0.2cm]
 \end{enumerate}
-Nun gilt für $n \in \mathbb{N}^*$
+Nun gilt für $n \in \mathbb{N}$
       \\[0.2cm]
       \hspace*{1.3cm}      
       $s_{2 \cdot n} = s_{2 \cdot n-1} + a_{2 \cdot n} \geq s_{2 \cdot n-1} \geq - a_1$.
       \\[0.2cm]
-Da wir nun gezeigt haben, dass die Folge $\folge{s_{2 \cdot n}}$ sowohl monoton fallend als auch
+Da wir nun gezeigt haben, dass die Folge $\folgez{s_{2 \cdot n}}$ sowohl monoton fallend als auch
 nach unten beschränkt ist, folgt aus Satz \ref{satz:monoton}, dass diese Folge konvergent ist.
 Der Grenzwert dieser Folge sei $s$:
 \\[0.2cm]
 \hspace*{1.3cm}
 $ s := \lim\limits_{n\rightarrow\infty} s_{2 \cdot n}. $
 \\[0.2cm]
-Dann konvergiert auch die Folge $\folge{s_{n}}$ gegen $s$. Dies sehen wir wie folgt:
-Sei $\varepsilon > 0$ gegeben.  Weil   $\folge{s_{2 \cdot n}}$ gegen $s$ konvergiert, gibt es eine
+Dann konvergiert auch die Folge $\folgez{s_{n}}$ gegen $s$. Dies sehen wir wie folgt:
+Sei $\varepsilon > 0$ gegeben.  Weil   $\folgez{s_{2 \cdot n}}$ gegen $s$ konvergiert, gibt es eine
 Zahl $K_1$, so dass für alle $n \geq K_1$ die Ungleichung
 \begin{equation}
   \label{eq:seq2}
   \bigl| s_{2 \cdot n} - s \bigr| < \frac{1}{2}\cdot\varepsilon
 \end{equation}
-erfüllt ist.  Weil $\folge{a_{n}}$ eine Null-Folge ist, gibt es außerdem eine Zahl $K_2$,
+erfüllt ist.  Weil $\folgez{a_{n}}$ eine Null-Folge ist, gibt es außerdem eine Zahl $K_2$,
 so dass für alle $n \geq K_2$ die Ungleichung
 \begin{equation}
   \label{eq:seq3}
@@ -1726,27 +1733,27 @@ Damit ist der Beweis abgeschlossen. \qed
 \pagebreak
 
 \begin{Satz}[Cauchy'sches Konvergenz-Kriterium für Reihen] \hspace*{\fill} \\
-Die Reihe $\ds\left(\sum_{i=0}^{n} a_i\right)_{n\in\mathbb{N}^*}$ ist genau dann konvergent, wenn es für alle 
+Die Reihe $\ds\left(\sum_{i=0}^{n} a_i\right)_{n\in\mathbb{N}}$ ist genau dann konvergent, wenn es für alle 
 $\varepsilon>0$ eine Zahl $K$ gibt, so dass 
 \\
 \hspace*{4.3cm}
-$\ds \forall n,l \in \mathbb{N}^*:\left( n \geq K \rightarrow \left|\sum\limits_{i=n+1}^{n+l} a_i \right| < \varepsilon\right)$ 
+$\ds \forall n,l \in \mathbb{N}:\left( n \geq K \rightarrow \left|\sum\limits_{i=n+1}^{n+l} a_i \right| < \varepsilon\right)$ 
 \\[0.2cm]
 gilt.
 \end{Satz}
 
 \noindent
 \textbf{Beweis}:  Nach den Sätzen aus dem Abschnitt über Folgen ist die Folge
-$\folge{s_n}$ der durch
+$\folgez{s_n}$ der durch
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds s_n = \sum\limits_{i=0}^{n} a_i $
 \\[0.2cm]
-definierten Partial-Summen genau dann konvergent, wenn $\folge{s_n}$ eine Cauchy-Folge
+definierten Partial-Summen genau dann konvergent, wenn $\folgez{s_n}$ eine Cauchy-Folge
 ist, wenn also gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
-$ \forall \varepsilon \in \mathbb{R}^*_+: \exists K \in \mathbb{R}: \forall m,n \in \mathbb{N}^*: 
+$ \forall \varepsilon \in \mathbb{R}^*_+: \exists K \in \mathbb{R}: \forall m,n \in \mathbb{N}: 
    \bigl(m \geq K \wedge n \geq K \rightarrow \bigl| s_m - s_n \bigr| < \varepsilon\bigr).
 $
 \\[0.2cm]
@@ -1767,18 +1774,18 @@ dass die Folge der Partial-Summen eine Cauchy-Folge ist.
 \qed
 
 \begin{Korollar} \lb
-Wenn die Reihe $\ds\Reihe{a_i}$ konvergent ist, dann ist die Folge $\folge{a_n}$ eine Null-Folge.  
+Wenn die Reihe $\ds\Reihe{a_i}$ konvergent ist, dann ist die Folge $\folgez{a_n}$ eine Null-Folge.  
 \end{Korollar}
 
 \noindent
 \textbf{Beweis}: Nach dem Cauchy'schen Konvergenz-Kriterium gilt \\[0.2cm]
 \hspace*{1.3cm}      
-$\ds\forall \varepsilon \in \mathbb{R}^*_+:\exists K \in \mathbb{R}:\forall n,l \in \mathbb{N}^*: \Bigl(n \geq K \rightarrow \left|\sum\limits_{i=n+1}^{n+l} a_i \right| < \varepsilon\Bigr)$.
+$\ds\forall \varepsilon \in \mathbb{R}^*_+:\exists K \in \mathbb{R}:\forall n,l \in \mathbb{N}: \Bigl(n \geq K \rightarrow \left|\sum\limits_{i=n+1}^{n+l} a_i \right| < \varepsilon\Bigr)$.
 \\[0.2cm]
 Setzen wir hier $l=1$ so haben wir insbesondere
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\forall \varepsilon \in \mathbb{R}^*_+:\exists K \in \mathbb{R}:\forall n \in \mathbb{N}^*: \Bigl(n \geq K \rightarrow \left|\sum\limits_{i=n+1}^{n+1} a_i \right| < \varepsilon\Bigr)$. 
+$\ds\forall \varepsilon \in \mathbb{R}^*_+:\exists K \in \mathbb{R}:\forall n \in \mathbb{N}: \Bigl(n \geq K \rightarrow \left|\sum\limits_{i=n+1}^{n+1} a_i \right| < \varepsilon\Bigr)$. 
 \\[0.2cm]
 Wegen \\[0.2cm]
 \hspace*{1.3cm}      
@@ -1787,9 +1794,9 @@ $\ds\left|\sum\limits_{i=n+1}^{n+1} a_i \right| = |a_{n+1}|$
 folgt also 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall \varepsilon \in \mathbb{R}^*_+:\exists K \in \mathbb{R}:\forall n \in \mathbb{N}^*: \bigl(n \geq K \rightarrow |a_{n+1}| < \varepsilon\bigr)$.      
+$\forall \varepsilon \in \mathbb{R}^*_+:\exists K \in \mathbb{R}:\forall n \in \mathbb{N}: \bigl(n \geq K \rightarrow |a_{n+1}| < \varepsilon\bigr)$.      
 \\[0.2cm]
-Diese Formel drückt aus, dass $\folge{a_n}$ eine Null-Folge ist.
+Diese Formel drückt aus, dass $\folgez{a_n}$ eine Null-Folge ist.
 \qed
 
 \remark
@@ -1814,9 +1821,9 @@ $\ds\sum\limits_{i=n+1}^{n+n} \frac{1}{i}  \geq  \sum\limits_{i=n+1}^{2 \cdot n}
 Damit erfüllt die harmonische Reihe das Cauchy'sche Konvergenz-Kriterium nicht. \eox
 
 \begin{Satz}[Majoranten-Kriterium]
-Für die Folgen $\folge{a_n}$  und  $\folge{b_n}$  gelte:
+Für die Folgen $\folgez{a_n}$  und  $\folgez{b_n}$  gelte:
 \begin{enumerate}
-\item $\forall n \in \mathbb{N}^*: 0 \leq a_n \leq b_n$.
+\item $\forall n \in \mathbb{N}: 0 \leq a_n \leq b_n$.
 \item Der Grenzwert $\ds\sum\limits_{i=1}^\infty b_i$ existiert.
 \end{enumerate}
 Dann existiert auch der Grenzwert $\ds\sum\limits_{i=1}^\infty a_i$.
@@ -1837,12 +1844,12 @@ damit konvergent.
 Oft wird im Majoranten-Kriterium die Voraussetzung
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall n \in \mathbb{N}^*: 0 \leq a_n \leq b_n$ 
+$\forall n \in \mathbb{N}: 0 \leq a_n \leq b_n$ 
 \\[0.2cm] 
 abgeschwächt zu 
 \\[0.2cm]
 \hspace*{1.3cm}      
-$\forall n \in \mathbb{N}^*: \bigl(n \geq K \rightarrow 0 \leq a_n \leq b_n\bigr)$.
+$\forall n \in \mathbb{N}: \bigl(n \geq K \rightarrow 0 \leq a_n \leq b_n\bigr)$.
 \\[0.2cm]
 Hierbei ist $K$ dann eine geeignet gewählte Schranke.  Die Gültigkeit dieser Form des
 Majoranten-Kriteriums folgt aus der Tatsache, dass das Abändern endlich vieler
@@ -1877,9 +1884,9 @@ Wir werden später in dem Kapitel über Fourier-Reihen zeigen, dass
 $\ds\sum\limits_{i=1}^{\infty} \frac{1}{i^2} = \frac{\;\pi^2}{6\;} \quad\mbox{gilt.} $ \eox
 
 \begin{Satz}[Minoranten-Kriterium]
-Für die Folgen $\folge{a_n}$  und  $\folge{b_n}$  gelte:
+Für die Folgen $\folgez{a_n}$  und  $\folgez{b_n}$  gelte:
 \begin{enumerate}
-\item $\forall n \in \mathbb{N}^*: 0 \leq a_n \leq b_n$.
+\item $\forall n \in \mathbb{N}: 0 \leq a_n \leq b_n$.
 \item Der Grenzwert $\ds\sum\limits_{i=1}^\infty a_i$ existiert nicht.
 \end{enumerate}
 Dann existiert auch der Grenzwert $\ds\sum\limits_{i=1}^\infty b_i$ nicht.
@@ -1922,16 +1929,16 @@ $
 \end{array}
 $
 \\[0.2cm]
-Da die letzte Ungleichung offenbar für alle $i \in \mathbb{N}^*$ wahr ist, ist der Beweis abgeschlossen.
+Da die letzte Ungleichung offenbar für alle $i \in \mathbb{N}$ wahr ist, ist der Beweis abgeschlossen.
 \qed
 \pagebreak
 
 \begin{Satz}[Quotienten-Kriterium]
-Es sei $\folge{a_n}$ eine Folge und $q\in\mathbb{R}$ eine Zahl, so dass gilt:
+Es sei $\folgez{a_n}$ eine Folge und $q\in\mathbb{R}$ eine Zahl, so dass gilt:
 \begin{enumerate}
 \item $0 \leq q < 1$
-\item $\forall n \in \mathbb{N}^*: 0 \leq a_n$
-\item $\forall n \in \mathbb{N}^*: a_{n+1} \leq q \cdot  a_n$
+\item $\forall n \in \mathbb{N}: 0 \leq a_n$
+\item $\forall n \in \mathbb{N}: a_{n+1} \leq q \cdot  a_n$
 \end{enumerate}
 Dann konvergiert die Reihe $\Reihe{a_i}$.
 \end{Satz}
@@ -1950,7 +1957,7 @@ eine konvergente Majorante der Reihe
 ist.  Dazu zeigen wir durch Induktion über $n$, dass folgendes gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall n \in \mathbb{N}^*: a_{n} \leq a_1 \cdot q^{n-1}$
+$\forall n \in \mathbb{N}: a_{n} \leq a_1 \cdot q^{n-1}$
 \begin{enumerate}
 \item[I.A.]: $n = 1$.  Wegen $q^0 = 1$ gilt trivialerweise
       \\[0.2cm]
@@ -1971,10 +1978,10 @@ $\forall n \in \mathbb{N}^*: a_{n} \leq a_1 \cdot q^{n-1}$
 Beim Quotienten-Kriterium sind eigentlich nur die Beträge der
 Folgenglieder $|a_n|$ wichtig, denn es lässt sich folgende Verschärfung des
 Quotienten-Kriteriums zeigen:  
-Ist $\folge{a_n}$ eine Folge, $q\in\mathbb{R}$ und $K \in \mathbb{R}$, so dass 
+Ist $\folgez{a_n}$ eine Folge, $q\in\mathbb{R}$ und $K \in \mathbb{R}$, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$0 \leq q < 1$ \quad und \quad $\ds\forall n \in \mathbb{N}^*: \left(n \geq K \rightarrow \left|\frac{a_{n+1}}{a_n}\right| \leq q\right)$
+$0 \leq q < 1$ \quad und \quad $\ds\forall n \in \mathbb{N}: \left(n \geq K \rightarrow \left|\frac{a_{n+1}}{a_n}\right| \leq q\right)$
 \\[0.2cm]
 gilt.  Dann konvergiert die Reihe $\Reihe{a_i}$.
 
@@ -2038,7 +2045,7 @@ Wurzel-Kriteriums zeigen:
 Ist $\folge{a_n}$ eine Folge, $q\in\mathbb{R}$ und $K \in \mathbb{R}$, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds 0 \leq q < 1 \quad \wedge \quad \forall n \in \mathbb{N}^*: \bigl(n \geq K \rightarrow \sqrt[n]{|a_n|} \leq q\bigr)$
+$\ds 0 \leq q < 1 \quad \wedge \quad \forall n \in \mathbb{N}: \bigl(n \geq K \rightarrow \sqrt[n]{|a_n|} \leq q\bigr)$
 \\[0.2cm]
 gilt.  Dann konvergiert die Reihe $\Reihe{a_i}$.
 
@@ -2058,10 +2065,10 @@ $ \eox
 
 
 \exercise
-Im Folgenden sei $\folge{a_n}$ eine monoton fallende Folge nicht-negativer Zahlen, es gelte also
+Im Folgenden sei $\folgez{a_n}$ eine monoton fallende Folge nicht-negativer Zahlen, es gelte also
 \\
 \hspace*{1.3cm}
-$a_n \geq a_{n+1} \geq 0$ \quad für alle $n \in \mathbb{N}^*$.
+$a_n \geq a_{n+1} \geq 0$ \quad für alle $n \in \mathbb{N}$.
 \begin{enumerate}[(a)]
 \item Nehmen Sie an, dass die Reihe
        $\sum\limits_{n=0}^\infty 2^n \cdot a_{2^n}$ 
@@ -2157,7 +2164,7 @@ Nach Voraussetzung wissen wir, dass der Grenzwert
 $\ds s := \lim\limits_{n\rightarrow\infty} \sum\limits_{i=1}^{n} |a_i|$
 \\[0.2cm]
 existiert.  An der Konvergenz ändert sich auch nichts, wenn wir die Reihe mit $2$ multiplizieren.
-Weiter gilt für jedes $i \in \mathbb{N}^*$ die Ungleichung
+Weiter gilt für jedes $i \in \mathbb{N}$ die Ungleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $0 \leq a_i + |a_i| \leq 2 \cdot |a_i|$,
@@ -2190,7 +2197,7 @@ existiert.  \qed
 
 
 \section{Potenz-Reihen}
-Es bezeichne $x$ eine Variable und $\folge{a_n}$ sei eine Folge von Zahlen.  Dann
+Es bezeichne $x$ eine Variable und $\bigl(a_n\bigr)_{n\in\mathbb{N}}$ sei eine Folge von Zahlen.  Dann
 bezeichnen wir den Ausdruck
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -2235,7 +2242,7 @@ für einen Wert $u \in \mathbb{C}$ konvergiert, dann konvergiert die Reihe auch f
  $\ds\sum\limits_{n=0}^\infty a_n\cdot u^n$ 
 \\[0.2cm]
 konvergiert, folgt aus dem
-Korollar zum Cauchy'schen Kon\-vergenz-Kriterium, dass die Folge \\ $\folge{a_n\cdot u^n}$ eine
+Korollar zum Cauchy'schen Kon\-vergenz-Kriterium, dass die Folge \\ $\bigl(a_n\cdot u^n\bigr)_{n\in\mathbb{N}}$ eine
 Null-Folge ist.  Also gibt es eine Zahl $K$, so dass für alle $n \geq K$ die Ungleichung 
 \\[0.2cm]
 \hspace*{1.3cm}      
@@ -2321,10 +2328,10 @@ Es sei
 \hspace*{1.3cm}
 $\ds\sum\limits_{n=0}^\infty a_n\cdot z^n$ 
 \\[0.2cm]
-eine formale Potenz-Reihe, für alle $n \in  \mathbb{N}^*$ gelte $a_n \not= 0$ und die Folge
+eine formale Potenz-Reihe, für alle $n \in  \mathbb{N}$ gelte $a_n \not= 0$ und die Folge
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\Folge{\frac{|a_n|}{|a_{n+1}|}}$
+$\ds\biggl(\frac{|a_n|}{|a_{n+1}|}\biggr)_{n\in\mathbb{N}}$
 \\[0.2cm]
  konvergiere.   Dann ist der Konvergenz-Radius $R$ durch
 folgende Formel gegeben:
@@ -2421,7 +2428,7 @@ Es sei
 \hspace*{1.3cm}
 $\ds\sum\limits_{n=0}^\infty a_n\cdot z^n$ 
 \\[0.2cm]
-eine formale Potenz-Reihe.  Für alle $n \in  \mathbb{N}^*$ sei $a_n \not= 0$ und es gelte
+eine formale Potenz-Reihe.  Für alle $n \in  \mathbb{N}$ sei $a_n \not= 0$ und es gelte
 \\[0.2cm]
 \hspace*{1.3cm}      
 $\ds R = \lim\limits_{n\rightarrow\infty} \left|\frac{a_n}{\;a_{n+1}\;}\right|$.  
@@ -2429,7 +2436,7 @@ $\ds R = \lim\limits_{n\rightarrow\infty} \left|\frac{a_n}{\;a_{n+1}\;}\right|$.
 Zeigen Sie:  Ist $u \in \mathbb{C}$ mit $R < |u|$, so divergiert die Reihe
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds \left(\sum\limits_{k=0}^n a_k \cdot u^k\right)_{n\in \mathbb{N}^*}$.
+$\ds \left(\sum\limits_{k=0}^n a_k \cdot u^k\right)_{n\in \mathbb{N}}$.
 
 
 \proof
@@ -2447,7 +2454,7 @@ $\ds R = \lim\limits_{n\rightarrow\infty} \left|\frac{a_n}{\;a_{n+1}\;}\right|$.
 und der Definition des Grenzwertes folgt:
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\forall \varepsilon \in \mathbb{R}^*_+:\exists K \in \mathbb{R}:\forall n \in \mathbb{N}^*: 
+$\ds\forall \varepsilon \in \mathbb{R}^*_+:\exists K \in \mathbb{R}:\forall n \in \mathbb{N}: 
  \left(n \geq K \rightarrow \left|\Bigl|\frac{a_n}{\;a_{n+1}\;}\Bigr| - R\right| < \varepsilon\right)
 $
 \\[0.2cm]
@@ -2503,7 +2510,7 @@ $\ds |a_{n+h}| \cdot |u|^h > |a_{n}| \cdot \left(\frac{|u|}{\frac{1}{2} \cdot (R
 \\[0.2cm]
 verallgemeinern.  Formal könnten wir die Ungleichung $(5)$ durch eine triviale Induktion nach $h$
 beweisen.  Wählen wir nun ein festes $n_0$, dass größer als $K$ ist, so gilt für beliebige
-$h \in \mathbb{N}^*$ die Ungleichung
+$h \in \mathbb{N}$ die Ungleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds |a_{n_0+h}| \cdot |u|^{n_0+h} > |a_{n_0}| \cdot |u|^{n_0} \cdot \left(\frac{|u|}{\frac{1}{2} \cdot (R+|u|)}\right)^h$. \hspace*{\fill} $(6)$
@@ -2516,7 +2523,7 @@ $\ds\frac{|u|}{\frac{1}{2} \cdot (R+|u|)} > 1$.
 Damit wird die rechte Seite der Ungleichung $(6)$ beliebig groß und folglich ist
 \\[0.2cm]
 \hspace*{1.3cm}
-$\left(|a_{n_0+h}| \cdot |u|^{n_0+h}\right)_{h\in\mathbb{N}^*}$
+$\left(|a_{n_0+h}| \cdot |u|^{n_0+h}\right)_{h\in\mathbb{N}}$
 \\[0.2cm] 
 keine Null-Folge.  Dies steht im Widerspruch zu $(*)$.  Dieser Widerspruch zeigt, dass der Grenzwert
 \\[0.2cm]
@@ -2629,7 +2636,7 @@ $ \eox
 \end{enumerate}
 
 \section{Berechnung der Fibonacci-Zahlen}
-Die Folge $\folge{a_n}$ der
+Die Folge $\bigl(a_n\bigr)_{n\in\mathbb{N}}$ der
 \href{http://de.wikipedia.org/wiki/Fibonacci-Folge}{Fibonacci-Zahlen} wird induktiv durch die
 Festlegung  
 \\[0.2cm]
@@ -2639,7 +2646,7 @@ $a_0 := 0$, \quad $a_1 := 1$ \quad und \quad $a_{n+2} := a_{n+1} + a_n$ für alle
 definiert.  Wir hatten bereits im ersten Semester eine explizite Formel für $a_n$ hergeleitet.  Damals hatten
 wir die Berechnung der Fibonacci-Zahlen auf die Bestimmung von Eigenwerten zurückgeführt.  In
 diesem Abschnitt zeigen wir einen anderen Weg auf, mit dem dieselbe Formel hergeleitet werden kann.
-Dazu definieren wir zunächst die der Folge $\folge{a_n}$ zugeordnete 
+Dazu definieren wir zunächst die der Folge $\bigl(a_n\bigr)_{n\in\mathbb{N}}$ zugeordnete 
 \href{http://de.wikipedia.org/wiki/Erzeugende_Funktion}{erzeugende Funktion} $f(x)$ als die
 formale Potenz-Reihe
 \\[0.2cm]
