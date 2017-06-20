@@ -38,8 +38,9 @@ und kann damit die Menge der positiven natürlichen Zahlen kürzer als $\mathbb{N}
 
 \noindent
 Ist die Funktion $f$ ein Folge, so schreiben wir dies kürzer als 
-$\bigl(f(n)\bigr)_{n\in\mathbb{N}^*}$ oder $\bigl(f_n\bigr)_{n\in\mathbb{N}^*}$ oder noch kürzer als
-$\bigl(f_n\bigr)_n$.  Dabei ist $f_n$ als Abkürzung für $f(n)$ zu verstehen.  
+$\bigl(f(n)\bigr)_{n\in\mathbb{N}}$ oder $\bigl(f_n\bigr)_{n\in\mathbb{N}}$ oder noch kürzer als
+$\bigl(f_n\bigr)_n$.  Dabei ist $f_n$ als Abkürzung für $f(n)$ zu verstehen.  Ist die Funktion $f$ nur für
+positive natürliche Zahlen definiert, so schreiben wir $\bigl(f(n)\bigr)_{n\in\mathbb{N}^*}$.
 
 
 \examples
@@ -47,12 +48,12 @@ $\bigl(f_n\bigr)_n$.  Dabei ist $f_n$ als Abkürzung für $f(n)$ zu verstehen.
 \item Die Funktion $a:\mathbb{N}^* \rightarrow \mathbb{R}$, die durch  
       $a(n) = \ds\frac{1}{n}$ definiert ist, schreiben wir als die Folge
       $\ds\Bigl(\frac{1}{n}\Bigr)_{n\in\mathbb{N}^*}$.
-\item Die Funktion $a:\mathbb{N}^* \rightarrow \mathbb{R}$, die durch  
+\item Die Funktion $a:\mathbb{N} \rightarrow \mathbb{R}$, die durch  
       $a(n) = (-1)^n$ definiert ist, schreiben wir als die Folge
-      $\bigl((-1)^n\bigr)_{n\in\mathbb{N}^*}$.
-\item Die Funktion $a:\mathbb{N}^* \rightarrow \mathbb{R}$, die durch  
+      $\bigl((-1)^n\bigr)_{n\in\mathbb{N}}$.
+\item Die Funktion $a:\mathbb{N} \rightarrow \mathbb{R}$, die durch  
       $a(n) = n$ definiert ist, schreiben wir als die Folge
-      $\bigl(n\bigr)_{n\in\mathbb{N}^*}$. 
+      $\bigl(n\bigr)_{n\in\mathbb{N}}$. 
 \end{enumerate}
 Folgen können auch induktiv definiert werden.  Um die Gleichung $x = \cos(x)$ zu lösen,
 können wir eine Folge $(x_n)_{n\in\mathbb{N}^*}$ induktiv wie folgt definieren:
@@ -217,12 +218,12 @@ gilt.  \eox
 
 \noindent
 Wir formulieren und beweisen einige unmittelbare Folgerungen aus der obigen Definition des Grenzwerts.
+\pagebreak
 
 \begin{Satz}[Eindeutigkeit des Grenzwerts] \hspace*{\fill} \linebreak
 Konvergiert die Folge $\folgez{a_n}$ sowohl gegen den Grenzwert $g_1$ als auch gegen den
 Grenzwert $g_2$, so gilt $g_1 = g_2$.
 \end{Satz}
-\pagebreak
 
 \proof
 Wir führen den Beweis indirekt und nehmen an, dass $g_1 \not= g_2$ ist.
@@ -576,7 +577,7 @@ Zunächst können wir das Problem vereinfachen, wenn wir die Folge
 $\folgez{a_n/b_n}$ als Folge von Produkten schreiben:
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds \folgez{\frac{a_n}{b_n}} = \folgez{a_n} \cdot  \folgez{\frac{1}{b_n}} $
+$\ds \Bigl(\frac{a_n}{b_n}\Bigr)_{n\in\mathbb{N}} = \Bigl(a_n\Bigr)_{n\in\mathbb{N}} \cdot \Bigl(\frac{1}{b_n}\Bigr)_{n\in\mathbb{N}}$
 \\[0.2cm]
 Falls wir zeigen können, dass 
 \\[0.2cm]
@@ -707,7 +708,7 @@ gilt.  Analog heißt eine Folge \blue{monoton fallend} falls
 $ \forall n \in \mathbb{N}: a_n \geq a_{n+1}. $
 \eod
 \end{Definition}
-Ein Beispiel für eine monoton fallende Folge ist die Folge $\ds\folgez{\frac{1}{n}}$, denn es
+Ein Beispiel für eine monoton fallende Folge ist die Folge $\ds\Folgez{\frac{1}{n}}$, denn es
 gilt
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -835,8 +836,8 @@ $\forall m,n \in \mathbb{N}: \bigl(m \geq K \wedge n \geq K \rightarrow \bigl| a
 gilt.  Nach Voraussetzung gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall \varepsilon'\in\mathbb{R}_+^* : \exists K'\in\mathbb{R}: \forall n\in\mathbb{N}*:
- \bigl(n \geq K' \rightarrow |a_n - a| < \varepsilon'
+$\forall \varepsilon'\in\mathbb{R}_+^* : \exists K'\in\mathbb{R}: \forall n\in\mathbb{N}:
+ \bigl(n \geq K' \rightarrow |a_n - a| < \varepsilon'\bigr)
 $.
 \\[0.2cm]
 Wir definieren $\varepsilon' := \frac{1}{2} \cdot \varepsilon$.  Dann gibt es also ein $K'$, so dass 
@@ -1036,7 +1037,7 @@ Wir präsentieren nun eine Anwendung der bisher entwickelte Theorie und zeigen, w
 Quadrat-Wurzel einer reellen Zahl berechnet werden kann.  Es sei eine reelle Zahl $a>0$
 gegeben.  Gesucht ist eine reelle Zahl $b>0$, so dass $b^2 = a$ ist. Unsere Idee ist es,
 die Zahl $b$ iterativ als Lösung einer Fixpunkt-Gleichung zu berechnen.  
-Wir definieren eine Folge $b_n$ induktiv wie folgt:
+Wir definieren eine Folge $\folge{b_n}$ induktiv wie folgt:
 \begin{enumerate}
 \item[I.A.:] $n=1$.  
       \\[0.2cm]
@@ -1085,9 +1086,9 @@ Es gilt $a_1 > 0$ und durch eine einfache Induktion lässt sich zeigen, dass
 $a_n > 0$ \quad für alle $n \in \mathbb{N}$ 
 \\[0.2cm]
 gilt.  Damit ist klar, dass der Grenzwert $b$, wenn er denn existiert, nicht negativ werden kann.
-Falls also die oben definierte Folge $\folgez{b_n}$ einen Grenzwert hat, dann ist dieser
+Falls also die oben definierte Folge $\folge{b_n}$ einen Grenzwert hat, dann ist dieser
 Grenzwert die Wurzel der Zahl $a$.  Wir werden die Konvergenz der Folge nachweisen,
-indem wir zeigen, dass die Folge $\rule[-8pt]{0pt}{0pt}\folgez{b_n}$ einerseits monoton fallend und andererseits 
+indem wir zeigen, dass die Folge $\rule[-8pt]{0pt}{0pt}\folge{b_n}$ einerseits monoton fallend und andererseits 
 nach unten beschränkt ist.  Dazu betrachten wir zunächst die Differenz $b_{n+1}^2 - a$:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1110,15 +1111,15 @@ $b_{n+1}^2 - a \geq 0$
 die Zahl  $a$, so haben wir
 \\[0.2cm]
 \hspace*{1.3cm}
- $b_{n+1}^2 \geq a$ \quad und damit auch \quad $b_{n+1} \geq \sqrt{a}$ \quad für alle $n \in \mathbb{N}$
+ $b_{n+1}^2 \geq a$ \quad und damit auch \quad $b_{n+1} \geq \sqrt{a}$ \quad für alle $n \in \mathbb{N}^*$
 \\[0.2cm]
-gezeigt.  Nach unserer Definition der Folge $\rule[-8pt]{0pt}{0pt}\folgez{b_n}$ gilt diese Ungleichung auch für
+gezeigt.  Nach unserer Definition der Folge $\rule[-8pt]{0pt}{0pt}\folge{b_n}$ gilt diese Ungleichung auch für
 den ersten Wert $n=1$, so dass wir also insgesamt die Ungleichungen
 \\[0.2cm]
 \hspace*{1.3cm}
-$b_n^2 \geq a$ \quad und \quad $b_n \geq \sqrt{a}$ \quad für alle $n \in \mathbb{N}$
+$b_n^2 \geq a$ \quad und \quad $b_n \geq \sqrt{a}$ \quad für alle $n \in \mathbb{N}^*$
 \\[0.2cm]
-gezeigt haben.   Daraus folgt, dass $\sqrt{a}$ eine untere Schranke der Folge $\folgez{b_n}$
+gezeigt haben.   Daraus folgt, dass $\sqrt{a}$ eine untere Schranke der Folge $\folge{b_n}$
 ist.  Dividieren wir die Ungleichung $b_n^2 \geq a$ durch $b_{n}$, so folgt
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1136,7 +1137,7 @@ Dieser Mittelwert ist aber gerade $b_{n+1}$, es gilt also
 \hspace*{1.3cm}
 $\ds b_{n} \geq b_{n+1} \geq \frac{a}{b_n}. $
 \\[0.2cm]
-Dies zeigt, dass die Folge $\folgez{b_n}$ monoton fallend ist und da wir oben gesehen haben, dass die
+Dies zeigt, dass die Folge $\folge{b_n}$ monoton fallend ist und da wir oben gesehen haben, dass die
 Folge durch $\sqrt{a}$ nach unten beschränkt ist, konvergiert die Folge.
 Wir hatten oben schon gezeigt, dass der Grenzwert dieser Folge dann den Wert $\sqrt{a}$ haben muss, es
 gilt also
@@ -1558,7 +1559,7 @@ Sie können die Summe durch eine \href{https://de.wikipedia.org/wiki/Partialbruch
 Hat eine Reihe die Form 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\Folge{\sum\limits_{i=1}^{n}  (-1)^i \cdot  a_i} $
+$\ds\Folgez{\sum\limits_{i=0}^{n}  (-1)^i \cdot  a_i} $
 \\[0.2cm]
 und gilt entweder
 \\[0.2cm]
@@ -1575,7 +1576,7 @@ die Glieder den Wert $0$ haben).  In diesem Fall sprechen wir daher von einer \b
 \textbf{Beispiel}: Die Reihe
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\Folge{\sum\limits_{i=1}^{n} \frac{(-1)^{i+1}}{i}}$
+$\ds\Folgez{\sum\limits_{i=1}^{n} \frac{(-1)^{i+1}}{i}}$
 \\[0.2cm]
 ist eine alternierende Reihe, denn die Vorzeichen aufeinander folgender Reihenglieder sind alternierend positiv und negativ:
 \\[0.2cm]
@@ -1804,7 +1805,7 @@ Mit Hilfe des letzten Satzes können wir zeigen, dass die
 \href{http://de.wikipedia.org/wiki/Harmonische_Reihe}{harmonische Reihe}
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\Folge{\sum\limits_{i=1}^{n} \frac{1}{i}} $
+$\ds\Folgez{\sum\limits_{i=1}^{n} \frac{1}{i}} $
 \\[0.2cm]
 divergiert.  Wäre diese Reihe konvergent, so gäbe es nach dem Cauchy'schen
 Konvergenz-Kriterium eine Zahl $K$, so dass für alle $n \geq K$ und alle $l$ die Ungleichung
@@ -1857,7 +1858,7 @@ Glieder einer Reihe für die Frage, ob eine Reihe konvergent ist, unbedeutend ist
 
 \example
 Wir zeigen  mit dem Majoranten-Kriterium, dass die Reihe 
-$\ds\Folge{\sum\limits_{i=1}^{n} \frac{1}{i^2}}$ konvergiert.  Es gilt
+$\ds\Folgez{\sum\limits_{i=1}^{n} \frac{1}{i^2}}$ konvergiert.  Es gilt
 \\[0.2cm]
 \hspace*{1.3cm}
 $
@@ -1868,8 +1869,8 @@ $
 \end{array}
 $
 \\[0.2cm]
-Damit ist die Reihe $\ds\Folge{\sum\limits_{i=1}^{n}\frac{1}{i\cdot (i+1)}}$
-eine konvergente Majorante der Reihe $\ds\Folge{\sum\limits_{i=1}^{n}\frac{1}{(i+1)^2}}$.  Wegen
+Damit ist die Reihe $\ds\Folgez{\sum\limits_{i=1}^{n}\frac{1}{i\cdot (i+1)}}$
+eine konvergente Majorante der Reihe $\ds\Folgez{\sum\limits_{i=1}^{n}\frac{1}{(i+1)^2}}$.  Wegen
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds \sum\limits_{i=1}^{\infty} \frac{1}{i^2} = \frac{1}{1^2} + \sum\limits_{i=1}^{\infty} \frac{1}{(i+1)^2} $
@@ -2021,11 +2022,11 @@ es gilt
 
 
 \begin{Satz}[Wurzel-Kriterium]
-Es sei $\folge{a_n}$ eine Folge und $q\in\mathbb{R}$ eine Zahl, so dass 
+Es sei $\folgez{a_n}$ eine Folge und $q\in\mathbb{R}$ eine Zahl, so dass 
 \begin{enumerate}
 \item $0 \leq q < 1$
-\item $\forall n \in \mathbb{N}^*: 0 \leq a_n$
-\item $\ds\forall n \in \mathbb{N}^*: \sqrt[n]{a_n} \leq q$
+\item $\forall n \in \mathbb{N}: 0 \leq a_n$
+\item $\ds\forall n \in \mathbb{N}: \sqrt[n]{a_n} \leq q$
 \end{enumerate}
 gilt.  Dann konvergiert die Reihe $\ds\Reihe{a_i}$.
 \end{Satz}
@@ -2140,7 +2141,7 @@ divergent ist,  dann sagen wir, dass die Reihe
 \item Die \blue{alternierende harmonische} Reihe
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\ds\Reihe{\frac{(-1)^{i+1}}{i}}$
+      $\ds\ReiheEins{\frac{(-1)^{i+1}}{i}}$
       \\[0.2cm]
       ist nach dem Leibniz-Kriterium konvergent, aber nicht absolut konvergent, denn die Reihe der Absolutbeträge ist
       die harmonische Reihe und die harmonische Reihe ist divergent.  Folglich ist die alternierende
@@ -2148,7 +2149,7 @@ divergent ist,  dann sagen wir, dass die Reihe
 \item Die Reihe
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\ds\Reihe{\frac{(-1)^i}{i^2}}$
+      $\ds\ReiheEins{\frac{(-1)^i}{i^2}}$
       \\[0.2cm]
       ist absolut konvergent, denn der Grenzwert $\ds\sum\limits_{n=1}^\infty \frac{1}{n^2}$ existiert. \eox
 \end{enumerate}
@@ -2161,7 +2162,7 @@ divergent ist,  dann sagen wir, dass die Reihe
 Nach Voraussetzung wissen wir, dass der Grenzwert
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds s := \lim\limits_{n\rightarrow\infty} \sum\limits_{i=1}^{n} |a_i|$
+$\ds s := \lim\limits_{n\rightarrow\infty} \sum\limits_{i=0}^{n} |a_i|$
 \\[0.2cm]
 existiert.  An der Konvergenz ändert sich auch nichts, wenn wir die Reihe mit $2$ multiplizieren.
 Weiter gilt für jedes $i \in \mathbb{N}$ die Ungleichung
@@ -2173,16 +2174,16 @@ denn wenn $a_i$ positiv ist, gilt $a_i + |a_i| = 2 \cdot |a_i|$ und wenn $a_i$ n
 gilt $a_i + |a_i| = 0$.  Also ist die Reihe 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds \sum\limits_{i=1}^{n} 2 \cdot |a_i|$ \quad eine konvergente Majorante der Reihe \quad
-$\ds \sum\limits_{i=1}^{n} \bigl(a_i + |a_i|\bigr)$
+$\ds \sum\limits_{i=0}^{n} 2 \cdot |a_i|$ \quad eine konvergente Majorante der Reihe \quad
+$\ds \sum\limits_{i=0}^{n} \bigl(a_i + |a_i|\bigr)$
 \\[0.2cm]
-und folglich konvergiert die Reihe $\sum\limits_{i=1}^{n} \bigl(a_i + |a_i|\bigr)$ nach dem Majoranten-Kriterium.
+und folglich konvergiert die Reihe $\sum\limits_{i=0}^{n} \bigl(a_i + |a_i|\bigr)$ nach dem Majoranten-Kriterium.
 Nun gilt aber
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds \lim\limits_{n\rightarrow\infty} \sum\limits_{i=1}^{n} a_i =
-     \lim\limits_{n\rightarrow\infty}\sum\limits_{i=1}^{n} \bigl(a_i + |a_i|\bigr) 
-   - \lim\limits_{n\rightarrow\infty} \sum\limits_{i=1}^{n} |a_i|$
+$\ds \lim\limits_{n\rightarrow\infty} \sum\limits_{i=0}^{n} a_i =
+     \lim\limits_{n\rightarrow\infty}\sum\limits_{i=0}^{n} \bigl(a_i + |a_i|\bigr) 
+   - \lim\limits_{n\rightarrow\infty} \sum\limits_{i=0}^{n} |a_i|$
 \\[0.2cm]
 und da die Grenzwerte auf der rechten Seite dieser Gleichung existieren, existiert auch der
 Grenzwert auf der linken Seite dieser Gleichung.  \qed
