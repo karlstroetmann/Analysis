@@ -1,0 +1,21 @@
+parabel := procedure(x) {
+    Pi := mathConst("Pi");
+    switch {
+        case -Pi <= x && x <= Pi: return x * x;
+        case x < Pi             : return parabel(x + 2 * Pi);
+        case x > Pi             : return parabel(x - 2 * Pi);
+    }
+};
+
+c := plot_createCanvas("Die Saegezahn-Funktion.");
+
+width  := 3.0 * mathConst("Pi");
+height := 1.1 * mathConst("Pi") * mathConst("Pi");
+
+plot_addListGraph(c, [[-width, 0], [width,  0]], "x-axis", [0, 0, 0]);
+plot_addListGraph(c, [[     0, 0], [0, height]], "y-axis");
+plot_addGraph(c, "parabel(x)", "y = p(x)", [0, 0, 255]);
+plot_modScale(c, [-width, width], [0, height]);
+
+// The next line is needed if this program is run standalone.
+get("Press enter to continue.");
