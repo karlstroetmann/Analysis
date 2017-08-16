@@ -10,7 +10,7 @@ saegezahn := procedure(x) {
 
 c := plot_createCanvas("Die Saegezahn-Funktion.");
 
-width  := 3.0 * mathConst("Pi");
+width  := 2.0 * mathConst("Pi");
 height := 1.1 * mathConst("Pi");
 
 plot_addListGraph(c, [[-width, 0], [width,  0]], "x-axis", [0, 0, 0]);
