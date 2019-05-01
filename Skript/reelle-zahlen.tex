@@ -1,33 +1,33 @@
 \chapter{Die reellen Zahlen}
-Bevor wir mit der eigentlichen Analysis beginnen,  müssen wir klären, was genau reelle Zahlen
-überhaupt sind.  Anschaulich werden reelle Zahlen zur Angabe von Längen benötigt, denn in der Geometrie
+Bevor wir mit der eigentlichen Analysis beginnen,  mÃ¼ssen wir klÃ¤ren, was genau reelle Zahlen
+Ã¼berhaupt sind.  Anschaulich werden reelle Zahlen zur Angabe von LÃ¤ngen benÃ¶tigt, denn in der Geometrie
 reicht es nicht, mit den rationalen Zahlen zu arbeiten.  Das liegt daran, dass die Diagonale eines
-Quadrats der Seitenlänge 1 nach dem 
-\href{http://de.wikipedia.org/wiki/Satz_des_Pythagoras}{Satz des Pythagoras} die Länge $\sqrt{2}$ hat.
+Quadrats der SeitenlÃ¤nge 1 nach dem 
+\href{http://de.wikipedia.org/wiki/Satz_des_Pythagoras}{Satz des Pythagoras} die LÃ¤nge $\sqrt{2}$ hat.
 Wir hatten im ersten Semester aber gesehen, dass es keine rationale Zahl $r$ gibt,
-so dass $r^2 = 2$ ist, denn die Zahl $\sqrt{2}$ ist irrational.  Folglich reichen die rationalen Zahlen für die Geometrie
+so dass $r^2 = 2$ ist, denn die Zahl $\sqrt{2}$ ist irrational.  Folglich reichen die rationalen Zahlen fÃ¼r die Geometrie
 nicht aus.  Es gibt mehrere Wege, die Menge $\mathbb{R}$ der reellen Zahlen so zu konstruieren, so dass die Gleichung 
 \\[0.2cm]
 \hspace*{1.3cm}
 $r^2 = 2$
 \\[0.2cm]
-eine Lösung in $\mathbb{R}$ hat.  Bevor wir mit dieser Konstruktion beginnen, wollen wir die Menge
+eine LÃ¶sung in $\mathbb{R}$ hat.  Bevor wir mit dieser Konstruktion beginnen, wollen wir die Menge
 der reellen Zahlen axiomatisch charakterisieren.  Dazu definieren wir den Begriff des
 \\[0.2cm]
 \hspace*{1.3cm}
-\colorbox{orange}{\emph{vollständig geordneten Körpers}.}
+\colorbox{orange}{\emph{vollstÃ¤ndig geordneten KÃ¶rpers}.}
 \\[0.2cm]
 Hierbei handelt es sich um ein System von Axiomen, aus dem
-sich \underline{alle} weiteren Eigenschaften der reellen Zahlen ableiten lassen.  Es lässt sich nämlich zeigen,
-dass diese Axiomatisierung in dem folgenden Sinne \blue{vollständig} ist:
-Ist $\mathbb{K}$ ein vollständig angeordneter Körper, so ist $\mathbb{K}$ \blue{isomorph} zu
-$\mathbb{R}$: Im Klartext heißt dies, dass es eine Abbildung
+sich \underline{alle} weiteren Eigenschaften der reellen Zahlen ableiten lassen.  Es lÃ¤sst sich nÃ¤mlich zeigen,
+dass diese Axiomatisierung in dem folgenden Sinne \blue{vollstÃ¤ndig} ist:
+Ist $\mathbb{K}$ ein vollstÃ¤ndig angeordneter KÃ¶rper, so ist $\mathbb{K}$ \blue{isomorph} zu
+$\mathbb{R}$: Im Klartext heiÃŸt dies, dass es eine Abbildung
 \\[0.2cm]
 \hspace*{1.3cm}
 $\varphi:\mathbb{K} \rightarrow \mathbb{R}$
 \\[0.2cm]
 gibt, die jedem Element $\alpha \in \mathbb{K}$ genau ein Element $\varphi(\alpha) \in \mathbb{R}$
-zuordnet und die mit der Addition, der Multiplikation und der Ordnungs-Relation verträglich ist, für alle $x,y \in
+zuordnet und die mit der Addition, der Multiplikation und der Ordnungs-Relation vertrÃ¤glich ist, fÃ¼r alle $x,y \in
 \mathbb{K}$ gilt also 
 \begin{enumerate}
 \item $\varphi(x + y) = \varphi(x) + \varphi(y)$,
@@ -37,64 +37,64 @@ zuordnet und die mit der Addition, der Multiplikation und der Ordnungs-Relation 
 Die rein axiomatische Charakterisierung der
 reellen Zahlen ist philosophisch unbefriedigend, denn dabei bleiben zwei Fragen offen:
 \begin{enumerate}
-\item Gibt es überhaupt eine Struktur $\mathbb{K}$, die den Axiomen eines vollständig geordneten
-      Körpers genügt?
+\item Gibt es Ã¼berhaupt eine Struktur $\mathbb{K}$, die den Axiomen eines vollstÃ¤ndig geordneten
+      KÃ¶rpers genÃ¼gt?
 
       Solange wir nicht sicher sind, dass diese Frage mit ``Ja'' beantwortet wird, steht unsere
-      gesamte Theorie auf wackeligen Füßen, denn es könnte dann sein, dass es sich um die Theorie
+      gesamte Theorie auf wackeligen FÃ¼ÃŸen, denn es kÃ¶nnte dann sein, dass es sich um die Theorie
       der leeren Menge handelt. 
 \item Was genau sind reelle Zahlen?
 
-      Es zeigt sich, dass wir die zweite Frage zuerst beantworten müssen, bevor wir die Beantwortung
-      der ersten Frage in Angriff nehmen können. 
+      Es zeigt sich, dass wir die zweite Frage zuerst beantworten mÃ¼ssen, bevor wir die Beantwortung
+      der ersten Frage in Angriff nehmen kÃ¶nnen. 
 \end{enumerate}
 Wir werden im zweiten Abschnitt zeigen, wie sich die reellen Zahlen aus den rationalen Zahlen mit
 Hilfe von \href{https://de.wikipedia.org/wiki/Dedekindscher_Schnitt}{\emph{Dedekind-Schnitten}}
 erzeugen lassen.  Da diese Konstruktion jedoch technisch aufwendig ist, werden wir diesen Abschnitt
-im Rahmen der Vorlesung aus Zeitgründen nicht in voller Länge diskutieren.  Die dort
-präsentierten Details sind zwar eine gute Übung zur Mengenlehre,  werden aber für den weiteren
-Verlauf der Vorlesung nicht mehr benötigt.
+im Rahmen der Vorlesung aus ZeitgrÃ¼nden nicht in voller LÃ¤nge diskutieren.  Die dort
+prÃ¤sentierten Details sind zwar eine gute Ãœbung zur Mengenlehre,  werden aber fÃ¼r den weiteren
+Verlauf der Vorlesung nicht mehr benÃ¶tigt.
 
 
 \section{Axiomatische Charakterisierung der reellen Zahlen}
-Wir erinnern zunächst an die im ersten Semester gegebene Definition eines Körpers. 
-\begin{Definition}[Körper]
-Eine Struktur $\mathcal{K} = \langle K, 0, 1, +, \cdot \rangle$ ist ein \blue{Körper}, falls gilt:
+Wir erinnern zunÃ¤chst an die im ersten Semester gegebene Definition eines KÃ¶rpers. 
+\begin{Definition}[KÃ¶rper]
+Eine Struktur $\mathcal{K} = \langle K, 0, 1, +, \cdot \rangle$ ist ein \blue{KÃ¶rper}, falls gilt:
 \begin{enumerate}
 \item $K$ ist eine Menge.
 \item $0 \in K$ und $1 \in K$.
-\item $+$ und $\cdot$ sind binäre Operatoren auf $K$, wir haben
+\item $+$ und $\cdot$ sind binÃ¤re Operatoren auf $K$, wir haben
       \\[0.2cm]
       \hspace*{1.3cm}
       $+: K \times K \rightarrow K$ \quad und \quad $\cdot: K \times K \rightarrow K$.      
 \item $\langle K, 0, + \rangle$ ist eine \blue{kommutative Gruppe}.
       
-      Im Detail heißt dies, dass die folgenden Axiome gelten:
+      Im Detail heiÃŸt dies, dass die folgenden Axiome gelten:
       \begin{enumerate}
         \item $(x + y) + z = x + (y + z)$,
         \item $x + y = y + x$,
         \item $0 + x = x$,
         \item $\exists y \in K: y + x = 0$.
 
-              Dasjenige $y \in K$, für welches $y + x = 0$ gilt, wird als das \blue{additive Inverse} von $x$ 
+              Dasjenige $y \in K$, fÃ¼r welches $y + x = 0$ gilt, wird als das \blue{additive Inverse} von $x$ 
               bezeichnet und ist, wie wir in der Vorlesung zur linearen Algebra gesehen haben,
               eindeutig bestimmt.  Wir schreiben das additive Inverse des Elements $x$ als $-x$. 
         \end{enumerate}
 \item $\langle K \backslash \{ 0 \}, 1, \cdot \rangle$ ist ebenfalls eine \blue{kommutative Gruppe},
 
-      Im Detail sind also die folgenden Axiome erfüllt:
+      Im Detail sind also die folgenden Axiome erfÃ¼llt:
       \begin{enumerate}
       \item $(x \cdot y) \cdot z = x \cdot (y \cdot z)$,
       \item $x \cdot y = y \cdot x$,
       \item $1 \cdot x = x$,
       \item $x \not= 0 \rightarrow \exists y \in K: y \cdot x = 1$.
 
-            Falls $x \not= 0$ ist, so ist das $y \in K$, für welches $y \cdot x = 1$ gilt, eindeutig
+            Falls $x \not= 0$ ist, so ist das $y \in K$, fÃ¼r welches $y \cdot x = 1$ gilt, eindeutig
             bestimmt.  Es wird als das \blue{multiplikative Inverse} von $x$   
             bezeichnet.  Wir schreiben das multiplikative Inverse des Elements $x$ als $x^{-1}$. 
             
       \end{enumerate}
-\item Es gilt das \blue{Distributiv-Gesetz}: Für alle $x, y,z \in K$ haben wir
+\item Es gilt das \blue{Distributiv-Gesetz}: FÃ¼r alle $x, y,z \in K$ haben wir
       \\[0.2cm]
       \hspace*{1.3cm} 
       $x \cdot (y + z) = x \cdot y + x \cdot z$.  \edx
@@ -102,35 +102,35 @@ Eine Struktur $\mathcal{K} = \langle K, 0, 1, +, \cdot \rangle$ ist ein \blue{Kö
 \end{Definition}
 
 \noindent
-Weiter benötigen wir die Definition einer linearen Ordnung, die wir ebenfalls wiederholen.
+Weiter benÃ¶tigen wir die Definition einer linearen Ordnung, die wir ebenfalls wiederholen.
 
 \begin{Definition}[Lineare Ordnung]
   Ein Paar $\langle M, \leq \rangle$ ist eine \blue{lineare Ordnung}, falls gilt:
   \begin{enumerate}
-  \item $M$ ist eine Menge und $\leq$ ist eine binäre Relation auf $M$, es gilt also
+  \item $M$ ist eine Menge und $\leq$ ist eine binÃ¤re Relation auf $M$, es gilt also
         \\[0.2cm]
         \hspace*{1.3cm}
         $\leq\; \subseteq M \times M$.
-  \item Zusätzlich gelten die folgenden Axiome:
+  \item ZusÃ¤tzlich gelten die folgenden Axiome:
         \begin{enumerate}
-        \item $x \leq x$,                 \hspace*{\fill} (Reflexivität)
+        \item $x \leq x$,                 \hspace*{\fill} (ReflexivitÃ¤t)
         \item $x \leq y \wedge y \leq x \rightarrow x = y$,  \hspace*{\fill} (Anti-Symmetrie)
-        \item $x \leq y \wedge y \leq z \rightarrow x \leq z$,  \hspace*{\fill} (Transitivität)
-        \item $x \leq y \vee y \leq x$. \quad  $\diamond$   \hspace*{\fill} (Linearität)
+        \item $x \leq y \wedge y \leq z \rightarrow x \leq z$,  \hspace*{\fill} (TransitivitÃ¤t)
+        \item $x \leq y \vee y \leq x$. \quad  $\diamond$   \hspace*{\fill} (LinearitÃ¤t)
         \end{enumerate}
   \end{enumerate} 
 \end{Definition} 
 
-Die nächste Definition kombiniert die algebraischen Eigenschaften eines Körpers mit den
+Die nÃ¤chste Definition kombiniert die algebraischen Eigenschaften eines KÃ¶rpers mit den
 Anordnungs-Axiomen einer linearen Ordnung.
 
-\begin{Definition}[Geordneter Körper]  \hspace*{\fill} \linebreak
+\begin{Definition}[Geordneter KÃ¶rper]  \hspace*{\fill} \linebreak
   Eine Struktur $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ist ein 
-  \blue{geordneter Körper}, falls 
+  \blue{geordneter KÃ¶rper}, falls 
   \begin{enumerate}
-  \item $\langle K, 0, 1, +, \cdot \rangle$ ein Körper und
+  \item $\langle K, 0, 1, +, \cdot \rangle$ ein KÃ¶rper und
   \item $\langle K, \leq \rangle$ eine lineare Ordnung ist, die mit den arithmetischen Operationen $+$ und $\cdot$ 
-        \blue{verträglich} ist.  Dazu müssen die beiden folgenden Bedingungen erfüllt sein:
+        \blue{vertrÃ¤glich} ist.  Dazu mÃ¼ssen die beiden folgenden Bedingungen erfÃ¼llt sein:
         \begin{enumerate}
         \item $\forall x,y,z \in K: \bigl(x \leq y \rightarrow x + z \leq y + z\bigr)$,  \hspace*{\fill} (A1)
         \item $\forall x,y \in K:\bigl(0 \leq x \wedge 0 \leq y \rightarrow 0 \leq x \cdot y\bigr)$.  \hspace*{\fill} (A2)
@@ -138,15 +138,15 @@ Anordnungs-Axiomen einer linearen Ordnung.
   \end{enumerate}
 \end{Definition}
 
-Bevor wir ein Beispiel eines geordneten Körpers präsentieren, geben wir einige Eigenschaften an, die
-aus den Axiomen eines geordneten Körpers gefolgert werden können.  Das folgende Lemma zeigt, dass
+Bevor wir ein Beispiel eines geordneten KÃ¶rpers prÃ¤sentieren, geben wir einige Eigenschaften an, die
+aus den Axiomen eines geordneten KÃ¶rpers gefolgert werden kÃ¶nnen.  Das folgende Lemma zeigt, dass
 sich eine Ungleichung bei Multiplikation mit $-1$ umdreht.
 
 \begin{Lemma} \label{lemma:l4}
-  Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \blue{geordneter Körper}.
+  Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \blue{geordneter KÃ¶rper}.
   Dann gilt
   \\[0.2cm]
-  \hspace*{1.3cm} $x \leq y \rightarrow -y \leq -x$  \quad für alle $x,y \in K$.
+  \hspace*{1.3cm} $x \leq y \rightarrow -y \leq -x$  \quad fÃ¼r alle $x,y \in K$.
 \end{Lemma}
 
 \proof
@@ -168,14 +168,14 @@ $-y \leq -x$
 \\[0.2cm]
 und das ist die Behauptung.  \qed
 
-Das nächste Lemma zeigt, dass in einem geordneten Körper die Addition mit der Relation $\leq$
-verträglich ist.
+Das nÃ¤chste Lemma zeigt, dass in einem geordneten KÃ¶rper die Addition mit der Relation $\leq$
+vertrÃ¤glich ist.
 
 \begin{Lemma}
-  Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter Körper}.
+  Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter KÃ¶rper}.
   Dann gilt
   \\[0.2cm]
-  \hspace*{1.3cm} $x_1 \leq y_1 \wedge x_2 \leq y_2 \rightarrow x_1 + x_2 \leq y_1 + y_2$  \quad für alle $x_1,x_2,y_1,y_2 \in K$.
+  \hspace*{1.3cm} $x_1 \leq y_1 \wedge x_2 \leq y_2 \rightarrow x_1 + x_2 \leq y_1 + y_2$  \quad fÃ¼r alle $x_1,x_2,y_1,y_2 \in K$.
 \end{Lemma}
 
 \proof
@@ -200,7 +200,7 @@ den Wert $y_1$, so erhalten wir die Ungleichung
 \hspace*{1.3cm}
 $y_1 + x_2 \leq y_1 + y_2$.  \hspace*{\fill} (2)
 \\[0.2cm]
-Setzen wir die Ungleichungen (1) und (2) zusammen, so folgt aus der Transitivität der Relation
+Setzen wir die Ungleichungen (1) und (2) zusammen, so folgt aus der TransitivitÃ¤t der Relation
 $\leq$, dass 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -208,19 +208,19 @@ $x_1 + x_2 \leq y_1 + y_2$
 \\[0.2cm]
 gilt und das war zu zeigen.  \qed
 
-Das nächste Lemma zeigt, dass die Relation $\leq$ mit der Multiplikation nicht-negativer Zahlen
-verträglich ist. 
+Das nÃ¤chste Lemma zeigt, dass die Relation $\leq$ mit der Multiplikation nicht-negativer Zahlen
+vertrÃ¤glich ist. 
 
 \begin{Lemma} \label{lemma:l6}
-  Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter Körper}.
+  Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter KÃ¶rper}.
   Dann gilt
   \\[0.2cm]
-  \hspace*{1.3cm} $x \leq y \wedge 0 \leq z \rightarrow x \cdot z \leq y \cdot z$  \quad für alle $x,y,z \in K$.
+  \hspace*{1.3cm} $x \leq y \wedge 0 \leq z \rightarrow x \cdot z \leq y \cdot z$  \quad fÃ¼r alle $x,y,z \in K$.
 \end{Lemma}
 
 \proof
 Wir setzen voraus, dass  $x \leq y$ und $0 \leq z$ gilt und zeigen, dass in einem geordneten
-Körper dann auch $x \cdot z \leq y \cdot z$ gelten muss.  Addieren wir auf beiden Seiten der Ungleichung
+KÃ¶rper dann auch $x \cdot z \leq y \cdot z$ gelten muss.  Addieren wir auf beiden Seiten der Ungleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $x \leq y$
@@ -240,17 +240,17 @@ gilt, was wegen dem Distributiv-Gesetz zu
 \hspace*{1.3cm}
 $0 \leq y \cdot z - x \cdot z$
 \\[0.2cm]
-äquivalent ist.  Addieren wir auf beiden Seiten dieser Ungleichung den Wert $x \cdot z$, so erhalten wir
+Ã¤quivalent ist.  Addieren wir auf beiden Seiten dieser Ungleichung den Wert $x \cdot z$, so erhalten wir
 \\[0.2cm]
 \hspace*{1.3cm}
 $x \cdot z \leq y \cdot z$.  \qed
 
 \begin{Lemma} \label{lemma:l7}
-  Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter Körper}.
+  Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter KÃ¶rper}.
   Dann gilt
   \\[0.2cm]
   \hspace*{1.3cm} $0 \leq x_1 \leq y_1 \wedge 0 \leq x_2 \leq y_2 \rightarrow x_1 \cdot x_2 \leq y_1 \cdot y_2$  
-  \quad für alle $x_1,x_2,y_1,y_2 \in K$.
+  \quad fÃ¼r alle $x_1,x_2,y_1,y_2 \in K$.
 \end{Lemma}
 
 \proof
@@ -267,22 +267,22 @@ Ungleichung
 \hspace*{1.3cm}
 $y_1 \cdot x_2 \leq y_1 \cdot y_2$. \hspace*{\fill} (2)
 \\[0.2cm]
-Aus den beiden Ungleichungen (1) und (2) folgt mit der Transitivität der Relation $\leq$ nun
+Aus den beiden Ungleichungen (1) und (2) folgt mit der TransitivitÃ¤t der Relation $\leq$ nun
 \\[0.2cm]
 \hspace*{1.3cm}
 $x_1 \cdot x_2 \leq y_1 \cdot y_2$
 \\[0.2cm]
 und das ist die Behauptung.  \qed
 
-Das nächste Lemma zeigt, dass sich Ungleichungen bei Multiplikation mit negativen Zahlen
+Das nÃ¤chste Lemma zeigt, dass sich Ungleichungen bei Multiplikation mit negativen Zahlen
 umdrehen. 
 
 \begin{Lemma} 
-  Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter Körper}.
+  Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter KÃ¶rper}.
   Dann gilt
   \\[0.2cm]
   \hspace*{1.3cm} $x \leq y \wedge z \leq 0 \rightarrow y \cdot z \leq x \cdot z$  
-  \quad für alle $x,y,z \in K$.
+  \quad fÃ¼r alle $x,y,z \in K$.
 \end{Lemma}
 
 \proof
@@ -302,7 +302,7 @@ was wir auch als
 \hspace*{1.3cm}
 $-x \cdot z \leq -y \cdot z$
 \\[0.2cm]
-schreiben können.  Daraus folgt mit Lemma \ref{lemma:l4} die Ungleichung
+schreiben kÃ¶nnen.  Daraus folgt mit Lemma \ref{lemma:l4} die Ungleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $y \cdot z \leq x \cdot z$. \qed
@@ -310,11 +310,11 @@ $y \cdot z \leq x \cdot z$. \qed
 Nun zeigen wir, dass ein Quadrat nie negativ ist.
 
 \begin{Lemma} 
-  Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter Körper}.
+  Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter KÃ¶rper}.
   Dann gilt
   \\[0.2cm]
   \hspace*{1.3cm} $0 \leq x \cdot x$  
-  \quad für alle $x \in K$.
+  \quad fÃ¼r alle $x \in K$.
 \end{Lemma}
 
 \proof
@@ -323,7 +323,7 @@ Da $\leq$ eine lineare Ordnung ist, haben wir
 \hspace*{1.3cm}
 $0 \leq x \vee x \leq 0$.
 \\[0.2cm] 
-Wir führen eine Fallunterscheidung durch.
+Wir fÃ¼hren eine Fallunterscheidung durch.
 \begin{enumerate}
 \item Fall: $0 \leq x$.
 
@@ -347,15 +347,15 @@ Wir führen eine Fallunterscheidung durch.
       und wegen $(-x) \cdot (-x) = x \cdot x$ ist das die Behauptung.  \qed
 \end{enumerate}
 
-Die letzten Sätze haben die Beziehung zwischen dem additiven Inversen und der Relation $\leq$ analysiert.
-Das nächste Lemma zeigt, in welcher Weise die Relation $\leq$ mit dem multiplikativen Inversen
-verträglich ist.
+Die letzten SÃ¤tze haben die Beziehung zwischen dem additiven Inversen und der Relation $\leq$ analysiert.
+Das nÃ¤chste Lemma zeigt, in welcher Weise die Relation $\leq$ mit dem multiplikativen Inversen
+vertrÃ¤glich ist.
 
 \begin{Lemma} 
-  Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter Körper}.  Dann gilt
+  Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter KÃ¶rper}.  Dann gilt
   \\[0.2cm]
   \hspace*{1.3cm} $0 \leq x \wedge x \not= 0 \rightarrow 0 \leq x^{-1}$
-  \quad für alle $x \in K$.
+  \quad fÃ¼r alle $x \in K$.
 \end{Lemma}
 
 \proof
@@ -371,32 +371,32 @@ Multiplizieren wir diese Ungleichung mit $x$, so zeigt Lemma \ref{lemma:l6}, das
 $0 \cdot x \leq x^{-1} \cdot x^{-1} \cdot x$
 \\[0.2cm]
 gilt und wegen $0 \cdot x = 0$ und $x^{-1} \cdot x^{-1} \cdot x$ ist diese Aussage
-äquivalent zu der Behauptung. \qed
+Ã¤quivalent zu der Behauptung. \qed
 
 \begin{Lemma} 
-  Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter Körper}.
+  Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter KÃ¶rper}.
   Dann gilt
   \\[0.2cm]
   \hspace*{1.3cm} $0 \leq x \leq y \wedge x \not= 0 \rightarrow y^{-1} \leq x^{-1}$
-  \quad für alle $x, y \in K$.  
+  \quad fÃ¼r alle $x, y \in K$.  
 \end{Lemma}
 
 \exercise
 Beweisen Sie diese Behauptung.  \eox
 
 \example
-Die Struktur $\langle \mathbb{Q}, 0, 1, +, \cdot, \leq \rangle$ ist ein geordneter Körper, wenn wir
-die Operationen $+$ und $\cdot$ und die Relation $\leq$ wie im ersten Semester vorgeführt auf den rationalen Zahlen
+Die Struktur $\langle \mathbb{Q}, 0, 1, +, \cdot, \leq \rangle$ ist ein geordneter KÃ¶rper, wenn wir
+die Operationen $+$ und $\cdot$ und die Relation $\leq$ wie im ersten Semester vorgefÃ¼hrt auf den rationalen Zahlen
 definieren.  
 \eox
 
 \exercise
-Zeigen Sie, dass es nicht möglich ist, auf der Menge $\mathbb{C}$ der komplexen Zahlen eine Relation
+Zeigen Sie, dass es nicht mÃ¶glich ist, auf der Menge $\mathbb{C}$ der komplexen Zahlen eine Relation
 $\leq$ so zu definieren, dass $\langle \mathbb{C}, 0, 1, +, \cdot, \leq \rangle$ ein geordneter
-Körper ist. \eox
+KÃ¶rper ist. \eox
 
 \begin{Definition}[Absolut-Betrag]
-  Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter Körper}.
+  Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter KÃ¶rper}.
   Dann definieren wir den \blue{Absolut-Betrag} $|x|$ eines Elements $x \in K$ wie folgt:
   \\[0.2cm]
   \hspace*{1.3cm}
@@ -410,7 +410,7 @@ Körper ist. \eox
 \end{Definition}
 
 \exercise
-Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter Körper}.
+Es sei  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$ ein \emph{geordneter KÃ¶rper}.
 Weisen Sie die folgenden Eigenschaften des Absolut-Betrags nach:
 \begin{enumerate}[(a)]
 \item $0 \leq |x|$
@@ -422,21 +422,21 @@ Weisen Sie die folgenden Eigenschaften des Absolut-Betrags nach:
 \end{enumerate}
 
 \hint
-Wir haben die Funktion $x \mapsto |x|$ durch eine Fall-Unterscheidung definiert.  Daher können Sie die oben
+Wir haben die Funktion $x \mapsto |x|$ durch eine Fall-Unterscheidung definiert.  Daher kÃ¶nnen Sie die oben
 angegebenen Behauptungen am Besten mit Hilfe von Fall-Unterscheidungen nachweisen.
 \eox
 \vspace*{0.2cm}
 
-Die Struktur $\langle \mathbb{Q}, 0, 1, +, \cdot, \leq \rangle$ ist  für die Zwecke der Analysis nicht ausreichend,
-da sie in einer noch näher zu spezifizierenden Weise \blue{unvollständig} ist.  Zur Präzisierung dieser Aussage
-benötigen wir den Begriff einer \blue{vollständigen Ordnung}, die ihrerseits
-auf dem Begriff des \blue{Supremums} basiert, welchselben wir jetzt einführen.
+Die Struktur $\langle \mathbb{Q}, 0, 1, +, \cdot, \leq \rangle$ ist  fÃ¼r die Zwecke der Analysis nicht ausreichend,
+da sie in einer noch nÃ¤her zu spezifizierenden Weise \blue{unvollstÃ¤ndig} ist.  Zur PrÃ¤zisierung dieser Aussage
+benÃ¶tigen wir den Begriff einer \blue{vollstÃ¤ndigen Ordnung}, die ihrerseits
+auf dem Begriff des \blue{Supremums} basiert, welchselben wir jetzt einfÃ¼hren.
 
 
 \begin{Definition}[Supremum]
 Es sei $\langle M, \leq \rangle$ eine lineare Ordnung.
 Wir nennen die Menge $A \subseteq M$  \linebreak
-\blue{nach oben beschränkt}, falls es ein
+\blue{nach oben beschrÃ¤nkt}, falls es ein
  $y \in M$ gibt, so dass gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -458,34 +458,34 @@ $s = \sup(A)$.
 \end{Definition}
 
 \remark
-Gelegentlich kommt in der Vorlesung an dieser Stelle die Frage, wie sich das Supremum zu dem Maximum verhält.
-Falls eine Menge $M$ ein Maximum hat, dann ist dieses Maximum natürlich auch das Supremum der Menge.
+Gelegentlich kommt in der Vorlesung an dieser Stelle die Frage, wie sich das Supremum zu dem Maximum verhÃ¤lt.
+Falls eine Menge $M$ ein Maximum hat, dann ist dieses Maximum natÃ¼rlich auch das Supremum der Menge.
 Umgekehrt gilt:  Ist das Supremum $s$ einer Menge $M$ ein Element von $M$, so ist das Supremum auch das Maximum.
-Allerdings gibt es sehr wohl Mengen, die zwar nach oben beschränkt sind, aber trotzdem kein Maximum haben.
-Diese Mengen können aber trotzdem ein Supremum besitzen.
+Allerdings gibt es sehr wohl Mengen, die zwar nach oben beschrÃ¤nkt sind, aber trotzdem kein Maximum haben.
+Diese Mengen kÃ¶nnen aber trotzdem ein Supremum besitzen.
 Beispielsweise ist die Menge
 \\[0.2cm]
 \hspace*{1.3cm}
 $A := \{ x \in \mathbb{Q} \mid x < 0 \}$
 \\[0.2cm]
-nach oben beschränkt. Diese Menge hat aber kein Maximum, denn für jedes $x \in A$ gilt einerseits
+nach oben beschrÃ¤nkt. Diese Menge hat aber kein Maximum, denn fÃ¼r jedes $x \in A$ gilt einerseits
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds x < \frac{x}{2}$ \quad und andererseits \quad $\ds \frac{x}{2} \in A$.
 \\[0.2cm]
-Damit kann $x$ nicht Maximum der Menge $A$ sein.  Offenbar ist die Menge $A$ aber nach oben beschränkt.  Das Supremum
+Damit kann $x$ nicht Maximum der Menge $A$ sein.  Offenbar ist die Menge $A$ aber nach oben beschrÃ¤nkt.  Das Supremum
 dieser Menge ist die Zahl $0$.  \eox
 \vspace*{0.2cm}
 
 \noindent
 Es folgt der zentrale Begriff dieses Abschnitts.
 
-\begin{Definition}[Vollständige Ordnung]
+\begin{Definition}[VollstÃ¤ndige Ordnung]
   Ein Paar $\pair(M, \leq)$ bestehend aus einer Menge $M$ und einer Relation $\leq\; \subseteq M \times M$ 
-  ist eine \blue{vollständige} Ordnung genau denn, wenn folgendes gilt:
+  ist eine \blue{vollstÃ¤ndige} Ordnung genau dann, wenn folgendes gilt:
   \begin{enumerate}
   \item Das Paar $\pair(M, \leq)$ ist eine lineare Ordnung.
-  \item Zu jeder nicht-leeren und nach oben beschränkten Menge $A \subseteq M$ existiert ein
+  \item Zu jeder nicht-leeren und nach oben beschrÃ¤nkten Menge $A \subseteq M$ existiert ein
         Supremum in $M$. \edx
   \end{enumerate}
 \end{Definition}
@@ -494,31 +494,31 @@ Es folgt der zentrale Begriff dieses Abschnitts.
 
 \noindent
 \textbf{Bemerkung}:
-Das Paar $\langle \mathbb{Q}, \leq \rangle$ ist \underline{keine} vollständige Ordnung, denn wenn wir die Menge
+Das Paar $\langle \mathbb{Q}, \leq \rangle$ ist \underline{keine} vollstÃ¤ndige Ordnung, denn wenn wir die Menge
 $A$ als
 \\[0.2cm]
 \hspace*{1.3cm}
 $A := \{ r \in \mathbb{Q} \mid r^2 \leq 2 \}$
 \\[0.2cm]
-definieren, so ist die Menge $A$ nach oben beschränkt, weil die Zahl $2$ eine obere
+definieren, so ist die Menge $A$ nach oben beschrÃ¤nkt, weil die Zahl $2$ eine obere
 Schranke von $A$ ist.  Die Menge $A$ hat aber keine kleinste obere Schranke.  Anschaulich liegt das
 daran, dass die kleinste obere Schranke  der Menge $A$ die Zahl $\sqrt{2}$ ist, aber aus dem ersten
 Semester wissen wir, dass $\sqrt{2}$ keine rationale Zahl ist.  \eox
 \vspace*{0.2cm}
 
 \noindent
-Analog zum Begriff des Supremums können wir auch den Begriff des Infimums definieren.
+Analog zum Begriff des Supremums kÃ¶nnen wir auch den Begriff des Infimums definieren.
 
 \begin{Definition}[Infimum]
 Es sei $\pair(M, \leq)$ eine lineare Ordnung.  Wir nennen die Menge $B \subseteq M$ \linebreak
-\blue{nach unten beschränkt}, falls es ein
+\blue{nach unten beschrÃ¤nkt}, falls es ein
  $y \in M$ gibt, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\forall x \in B:  y \leq x$
 \\[0.2cm]
 gilt.  Ein solches $y$ bezeichnen wir als \blue{untere Schranke}  von $B$.
-Ein Element $i \in M$ ist das \blue{Infimum} einer Menge $B$, wenn $i$ die größte
+Ein Element $i \in M$ ist das \blue{Infimum} einer Menge $B$, wenn $i$ die grÃ¶ÃŸte
 untere Schranke von $B$ ist, wenn also 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -534,8 +534,8 @@ $i = \inf(B)$.
 
 
 \exercise
-Es sei $\pair(M, \leq)$ eine vollständige lineare Ordnung.  Zeigen Sie, dass für jede Teilmenge
-$B \subseteq M$, die nicht-leer und nach unten beschränkt ist, ein Infimum existiert.
+Es sei $\pair(M, \leq)$ eine vollstÃ¤ndige lineare Ordnung.  Zeigen Sie, dass fÃ¼r jede Teilmenge
+$B \subseteq M$, die nicht-leer und nach unten beschrÃ¤nkt ist, ein Infimum existiert.
 \vspace*{0.2cm}
 
 \noindent
@@ -545,58 +545,58 @@ $B \subseteq M$, die nicht-leer und nach unten beschränkt ist, ein Infimum exist
 $A := \{ x \in M \mid \forall y \in B: x \leq y \}$
 \\[0.2cm]
 der unteren Schranken von $B$.  Diese Menge ist nicht leer, denn nach Voraussetzung ist $B$ nach
-unten beschränkt.  Außerdem ist $A$ nach oben beschränkt, denn jedes Element aus der Menge $B$ ist
-eine obere Schranke von $A$.  Da nach Voraussetzung das Paar $\pair(M, \leq)$ eine vollständige
+unten beschrÃ¤nkt.  AuÃŸerdem ist $A$ nach oben beschrÃ¤nkt, denn jedes Element aus der Menge $B$ ist
+eine obere Schranke von $A$.  Da nach Voraussetzung das Paar $\pair(M, \leq)$ eine vollstÃ¤ndige
 lineare Ordnung ist, besitzt $A$ also ein Supremum.  Zeigen Sie, dass dieses Supremum auch das
 Infimum von $B$ ist. \eox
 
 Wir kommen nun zur zentralen Definition dieses Abschnitts.
-\begin{Definition}[Vollständig angeordneter Körper] \hspace*{\fill} \linebreak
+\begin{Definition}[VollstÃ¤ndig angeordneter KÃ¶rper] \hspace*{\fill} \linebreak
   Eine Struktur  $\mathcal{K} = \langle K, 0, 1, +, \cdot, \leq \rangle$  ist ein 
-  \blue{vollständig angeordneter Körper} genau dann, wenn gilt:
+  \blue{vollstÃ¤ndig angeordneter KÃ¶rper} genau dann, wenn gilt:
   \begin{enumerate}
-  \item Die Struktur $\mathcal{K}$ ist ein geordneter Körper.
-  \item Das Paar $\langle K, \leq \rangle$ ist eine vollständige Ordnung. \edx
+  \item Die Struktur $\mathcal{K}$ ist ein geordneter KÃ¶rper.
+  \item Das Paar $\langle K, \leq \rangle$ ist eine vollstÃ¤ndige Ordnung. \edx
   \end{enumerate}
 \end{Definition}
 
 \begin{Theorem}
-  Die Struktur $\langle \mathbb{R}, 0, 1, +, \cdot, \leq \rangle$ der reellen Zahlen ist ein  vollständig geordneter Körper.   \edx
+  Die Struktur $\langle \mathbb{R}, 0, 1, +, \cdot, \leq \rangle$ der reellen Zahlen ist ein  vollstÃ¤ndig geordneter KÃ¶rper.   \edx
 \end{Theorem}
 
-Einen Beweis diese Behauptung können wir jetzt noch nicht erbringen, denn wir haben bisher gar nicht
+Einen Beweis diese Behauptung kÃ¶nnen wir jetzt noch nicht erbringen, denn wir haben bisher gar nicht
 gesagt, wie die Menge $\mathbb{R}$ der reellen Zahlen formal definiert wird.
-Die Definition der reellen Zahlen werden wir im nächsten Abschnitt mit Hilfe der sogenannten
-\blue{Dedekind-Schnitte} liefern.  Für praktische Rechnungen sind Dedekind-Schnitte viel zu schwerfällig.  Wir
+Die Definition der reellen Zahlen werden wir im nÃ¤chsten Abschnitt mit Hilfe der sogenannten
+\blue{Dedekind-Schnitte} liefern.  FÃ¼r praktische Rechnungen sind Dedekind-Schnitte viel zu schwerfÃ¤llig.  Wir
 skizzieren  daher zum Abschluss dieses Abschnitts noch eine andere Konstruktion der reellen Zahlen als 
-\blue{unendliche Dezimalbrüche}, die
-auf \href{http://en.wikipedia.org/wiki/Simon_Stevin}{Simon Stevin} (1548-1620) zurück geht.  Um
-diese Konstruktion verstehen zu können,
+\blue{unendliche DezimalbrÃ¼che}, die
+auf \href{http://en.wikipedia.org/wiki/Simon_Stevin}{Simon Stevin} (1548-1620) zurÃ¼ck geht.  Um
+diese Konstruktion verstehen zu kÃ¶nnen,
 betrachten wir eine positive reelle Zahl $x \in \mathbb{R}$ abstrakt als gegeben und untersuchen, wie wir $x$
 in der Form
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds x = m + \sum\limits_{k=1}^\infty b_k \cdot \frac{1}{10^k}$
 \\[0.2cm]
-so darstellen können, dass folgendes gilt:
+so darstellen kÃ¶nnen, dass folgendes gilt:
 \begin{enumerate}
 \item $m \in \mathbb{N}$ \quad und
 \item $b_k \in \{0,\cdots,9\}$.
 \end{enumerate}
 Die Zahl $b_k$ kann damit als die $k$-te Stelle von $x$ hinter dem Komma interpretiert werden.
-Die Berechnung der Zahlen $m$ und $b_k$ verläuft für ein gegebenes positives $x \in \mathbb{R}$ wie folgt:
+Die Berechnung der Zahlen $m$ und $b_k$ verlÃ¤uft fÃ¼r ein gegebenes positives $x \in \mathbb{R}$ wie folgt:
 \begin{enumerate}
 \item $m := \max(\{ n \in \mathbb{N} \mid n \leq x \})$.
 
-      $m$ ist also die größte ganze Zahl, die nicht größer als $x$ ist.
-\item Die Zahlen $b_k$ werden für alle $k \in \mathbb{N}\symbol{92}\{0\}$ induktiv definiert.
+      $m$ ist also die grÃ¶ÃŸte ganze Zahl, die nicht grÃ¶ÃŸer als $x$ ist.
+\item Die Zahlen $b_k$ werden fÃ¼r alle $k \in \mathbb{N}\symbol{92}\{0\}$ induktiv definiert.
       \begin{enumerate}
       \item[I.A.:] $k=1$.  Wir setzen
                    \\[0.2cm]
                    \hspace*{1.3cm}
                    $\ds b_1 := \max\Bigl(\Bigl\{ z \in \{ 0, 1, \cdots, 9 \} \Bigm| m + z \cdot \frac{1}{10} \leq x\Bigr\}\Bigr)$.
       \item[I.S.:] $k \mapsto k+1$.  Nach Induktions-Voraussetzung sind die Zahlen $b_1$, $\cdots$, $b_k$
-                   bereits definiert.  Daher können wir $b_{k+1}$ als
+                   bereits definiert.  Daher kÃ¶nnen wir $b_{k+1}$ als
                    \\[0.2cm]
                    \hspace*{1.3cm}
                    $\ds b_{k+1} := \max\Bigl(\Bigl\{ z \in \{ 0, 1, \cdots, 9 \} \Bigm| m + \sum\limits_{i=1}^{k} b_i \cdot \frac{1}{10^i} + z \cdot \frac{1}{10^{k+1}}\leq x\Bigr\}\Bigr)$.
@@ -609,13 +609,13 @@ Insgesamt gilt mit dieser Konstruktion
 \hspace*{1.3cm}
 $\ds x = m + \sum\limits_{k=1}^{\infty} b_k \cdot \frac{1}{10^{k}}$.
 \\[0.2cm]
-Diese Behauptung können wir allerdings zum jetzigen Zeitpunkt nicht beweisen, denn wir haben ja noch gar nicht formal
+Diese Behauptung kÃ¶nnen wir allerdings zum jetzigen Zeitpunkt nicht beweisen, denn wir haben ja noch gar nicht formal
 definiert, welchen Wert wir einer unendlichen Reihe der Form
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds \sum\limits_{k=1}^{\infty} b_k \cdot \frac{1}{10^{k}}$
 \\[0.2cm]
-zuordnen.  Stattdessen können wir sagen, dass
+zuordnen.  Stattdessen kÃ¶nnen wir sagen, dass
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds x = \sup\Bigl(\Bigl\{ m + \sum\limits_{i=1}^{k} b_i \cdot \frac{1}{10^{i}} \Bigm| k \in \mathbb{N} \Bigr\}\Bigr)$
@@ -625,18 +625,18 @@ gilt, denn die Menge
 \hspace*{1.3cm}
 $\ds \Bigl\{ m + \sum\limits_{i=1}^{k} b_i \cdot \frac{1}{10^{i}} \Bigm| k \in \mathbb{N} \Bigr\}$
 \\[0.2cm]
-ist offenbar durch $x$ nach oben beschränkt und es lässt sich zeigen, dass es keine 
-obere Schranke $y$ für diese Menge gibt, die  kleiner als $x$ ist.  Für den Rest der Vorlesung
-reicht es aus, wenn Sie sich die reellen Zahlen wie oben skizziert als unendliche Dezimalbrüche vorstellen.
+ist offenbar durch $x$ nach oben beschrÃ¤nkt und es lÃ¤sst sich zeigen, dass es keine 
+obere Schranke $y$ fÃ¼r diese Menge gibt, die  kleiner als $x$ ist.  FÃ¼r den Rest der Vorlesung
+reicht es aus, wenn Sie sich die reellen Zahlen wie oben skizziert als unendliche DezimalbrÃ¼che vorstellen.
 
 
 
 \section{Die formale Konstruktion der reellen Zahlen$^*$}
-Bis jetzt haben wir so getan, als wüssten wir schon, was reelle Zahlen sind und haben Ihre
-Eigenschaften in Form von Axiomen angegeben.  Wir wissen  aber noch gar nicht, ob es tatsächlich
-eine Struktur gibt, die diesen Axiomen genügt.  Diesen Nachweis werden wir jetzt mit Hilfe der
+Bis jetzt haben wir so getan, als wÃ¼ssten wir schon, was reelle Zahlen sind und haben Ihre
+Eigenschaften in Form von Axiomen angegeben.  Wir wissen  aber noch gar nicht, ob es tatsÃ¤chlich
+eine Struktur gibt, die diesen Axiomen genÃ¼gt.  Diesen Nachweis werden wir jetzt mit Hilfe der
 Mengenlehre erbringen.  Dabei gehen wir von folgendem Beispiel aus:  Wir wissen, dass $\sqrt{2}$
-kein Element der rationalen Zahlen ist.  Wir können aber $\sqrt{2}$ durch zwei Mengen rationaler
+kein Element der rationalen Zahlen ist.  Wir kÃ¶nnen aber $\sqrt{2}$ durch zwei Mengen rationaler
 Zahlen beschreiben, wenn wir
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -644,11 +644,11 @@ $M_1 := \{ q \in \mathbb{Q} \mid q \leq 0 \vee q^2 < 2 \}$ \quad und \quad
 $M_2 := \{ q \in \mathbb{Q} \mid q \geq 0 \wedge 2 < q^2 \}$,
 \\[0.2cm]
 definieren, denn dann liegt $\sqrt{2}$ gerade zwischen $M_1$ und $M_2$.  
-Versuchen wir die diesem Beispiel zugrunde liegende Idee zu präzisieren, so kommen wir zur nun
+Versuchen wir die diesem Beispiel zugrunde liegende Idee zu prÃ¤zisieren, so kommen wir zur nun
 folgende Definition eines \emph{Dedekind'schen-Schnittes}.
 
 \begin{Definition}[Dedekind-Schnitt] \lb
-Ein Paar $\pair(M_1,M_2)$ heißt \href{http://de.wikipedia.org/wiki/Dedekindscher_Schnitt}{\emph{Dedekind-Schnitt}}
+Ein Paar $\pair(M_1,M_2)$ heiÃŸt \href{http://de.wikipedia.org/wiki/Dedekindscher_Schnitt}{\emph{Dedekind-Schnitt}}
 (\href{http://de.wikipedia.org/wiki/Richard_Dedekind}{\textrm{Richard Dedekind}}, 1831-1916)
 falls folgendes gilt:
 \begin{enumerate}
@@ -661,8 +661,8 @@ falls folgendes gilt:
 \item $M_1 \cup M_2 = \mathbb{Q}$.
 \item $M_1$ hat kein Maximum.
 
-      Da alle Elemente aus $M_1$ kleiner als alle Elemente von $M_2$ sind und da darüber hinaus 
-      $M_2 \not= \emptyset$ ist, ist $M_1$ sicher nach oben beschränkt.  Aber wenn für ein $y$
+      Da alle Elemente aus $M_1$ kleiner als alle Elemente von $M_2$ sind und da darÃ¼ber hinaus 
+      $M_2 \not= \emptyset$ ist, ist $M_1$ sicher nach oben beschrÃ¤nkt.  Aber wenn fÃ¼r ein $y$
       \\[0.2cm]
       \hspace*{1.3cm}
       $\forall x \in M_1: x \leq y$
@@ -681,15 +681,15 @@ Definieren wir
 $M_1 := \{ x \in \mathbb{Q} \mid x \leq 0 \vee x^2 < 2 \}$ \quad und \quad
 $M_2 := \{ x \in \mathbb{Q} \mid x > 0 \wedge x^2 > 2 \}$,
 \\[0.2cm]
-so enthält $M_1$ alle die Zahlen, die kleiner als $\sqrt{2}$ sind, während
-$M_2$ alle Zahlen enthält, die größer als $\sqrt{2}$ sind. Das Paar $\pair(M_1,M_2)$ ist dann ein
+so enthÃ¤lt $M_1$ alle die Zahlen, die kleiner als $\sqrt{2}$ sind, wÃ¤hrend
+$M_2$ alle Zahlen enthÃ¤lt, die grÃ¶ÃŸer als $\sqrt{2}$ sind. Das Paar $\pair(M_1,M_2)$ ist dann ein
 Dedekind-Schnitt.  Intuitiv spezifiziert dieser Dedekind-Schnitt die Zahl $\sqrt{2}$.
 \eox
 
 
 
 Bei einem Dedekind-Schnitt $\pair(M_1,M_2)$ ist die Menge $M_2$ durch die Angabe von
-$M_1$ bereits vollständig festgelegt, denn aus der Gleichung $M_1 \cup M_2 = \mathbb{Q}$ folgt
+$M_1$ bereits vollstÃ¤ndig festgelegt, denn aus der Gleichung $M_1 \cup M_2 = \mathbb{Q}$ folgt
 sofort $M_2 = \mathbb{Q} \backslash M_1$.  Die Frage ist nun, welche Eigenschaften eine Menge $M$
 haben muss, damit umgekehrt das Paar $\pair(M, \mathbb{Q} \backslash M)$ ein Dedekind-Schnitt ist.
 Die Antwort auf diese Frage wird in der nun folgenden Definition einer \emph{Dedekind-Menge} gegeben.
@@ -697,7 +697,7 @@ Die Antwort auf diese Frage wird in der nun folgenden Definition einer \emph{Ded
 
 \begin{Definition}[Dedekind-Menge]
 Eine Menge $M \subseteq \mathbb{Q}$ ist eine \blue{Dedekind-Menge} genau dann, wenn die
-folgenden Bedingungen erfüllt sind.
+folgenden Bedingungen erfÃ¼llt sind.
 \begin{enumerate}
 \item $M \not= \emptyset$,
 \item $M \not= \mathbb{Q}$,
@@ -708,11 +708,11 @@ folgenden Bedingungen erfüllt sind.
 \item Die Menge $M$ hat kein Maximum, es gibt also kein $m \in M$, so dass
       \\[0.2cm]
       \hspace*{1.3cm}
-      $x \leq m$ \quad für alle $x \in M$ gilt.
+      $x \leq m$ \quad fÃ¼r alle $x \in M$ gilt.
       \\[0.2cm]
-      Diese Bedingung können wir auch etwas anders formulieren:  Wenn $x \in M$ ist, dann finden wir
-      immer ein $y \in M$, dass noch größer als $x$ ist, denn sonst wäre $x$ ja das Maximum von $M$.
-      Formal können wir das als
+      Diese Bedingung kÃ¶nnen wir auch etwas anders formulieren:  Wenn $x \in M$ ist, dann finden wir
+      immer ein $y \in M$, dass noch grÃ¶ÃŸer als $x$ ist, denn sonst wÃ¤re $x$ ja das Maximum von $M$.
+      Formal kÃ¶nnen wir das als
       \\[0.2cm]
       \hspace*{1.3cm}
       $\forall x \in M: \exists y \in M: x < y$
@@ -726,25 +726,25 @@ Zeigen Sie, dass eine Menge $M \subseteq \mathbb{Q}$ genau dann eine Dedekind-Me
 ein Dedekind-Schnitt ist. \eox
 
 \solution
-Da es sich bei der zu beweisenden Aussage um eine Äquivalenz-Aussage handelt,  zerfällt der Beweis
+Da es sich bei der zu beweisenden Aussage um eine Ã„quivalenz-Aussage handelt,  zerfÃ¤llt der Beweis
 in zwei Teile.
 \begin{enumerate}
-\item[``$\Rightarrow$'':] Zunächst nehmen wir an, dass $M \subseteq \mathbb{Q}$ eine Dedekind-Menge ist.  Wir haben zu
+\item[``$\Rightarrow$'':] ZunÃ¤chst nehmen wir an, dass $M \subseteq \mathbb{Q}$ eine Dedekind-Menge ist.  Wir haben zu
       zeigen, dass dann $\pair(M,\mathbb{Q} \backslash M)$ ein Dedekind-Schnitt ist.  Von den zu
-      überprüfenden Eigenschaften ist nur die Trennungs-Eigenschaft nicht offensichtlich.
+      Ã¼berprÃ¼fenden Eigenschaften ist nur die Trennungs-Eigenschaft nicht offensichtlich.
       Sei als $x \in M$ und $y \in \mathbb{Q} \backslash M$.  Wir haben zu zeigen, dass dann
       \\[0.2cm]
       \hspace*{1.3cm}
       $x < y$
       \\[0.2cm]
-      gilt.  Wir führen diesen Nachweis indirekt und nehmen an, dass $y \leq x$.  Da $M$ nach unten
+      gilt.  Wir fÃ¼hren diesen Nachweis indirekt und nehmen an, dass $y \leq x$.  Da $M$ nach unten
       abgeschlossen ist, folgt daraus aber $y \in M$, was im Widerspruch zu $y \in \mathbb{Q} \backslash M$ steht.
       Dieser Widerspruch zeigt, dass $x < y$ ist und das war zum Nachweis der Trennungs-Eigenschaft
       zu zeigen.
 \item[``$\Leftarrow$'':] Nun nehmen wir an, dass $\pair(M, \mathbb{Q} \backslash M)$ ein Dedekind-Schnitt ist und
-     zeigen, dass dann $M$ eine Dedekind-Menge sein muss.  Von den zu überprüfenden Eigenschaften
+     zeigen, dass dann $M$ eine Dedekind-Menge sein muss.  Von den zu Ã¼berprÃ¼fenden Eigenschaften
      ist nur Tatsache, dass $M$ nach unten abgeschlossen ist, nicht offensichtlich.  Sei also $x \in M$
-     und $y < x$.  Wir haben zu zeigen, dass dann $y$ ebenfalls ein Element von $M$ ist.  Wir führen
+     und $y < x$.  Wir haben zu zeigen, dass dann $y$ ebenfalls ein Element von $M$ ist.  Wir fÃ¼hren
      diesen Nachweis indirekt und nehmen $y \in \mathbb{Q} \backslash M$ an.  Aufgrund der
      Trennungs-Eigenschaft des Dedekind-Schnitts $\pair(M, \mathbb{Q} \backslash M)$ muss dann
      \\[0.2cm]
@@ -755,7 +755,7 @@ in zwei Teile.
      und das war zu zeigen.  \qed
 \end{enumerate}
 
-Die letzte Aufgabe hat gezeigt, dass Dedekind-Schnitte und Dedekind-Mengen zu einander äquivalent
+Die letzte Aufgabe hat gezeigt, dass Dedekind-Schnitte und Dedekind-Mengen zu einander Ã¤quivalent
 sind.  Daher werden wir im Folgenden mit Dedekind-Mengen
 arbeiten,  denn das macht die Notation einfacher.  Wir definieren dazu
 $\mathcal{D}$ als die Menge aller rationalen Dedekind-Mengen, wir setzen also
@@ -765,39 +765,39 @@ $\mathcal{D}$ als die Menge aller rationalen Dedekind-Mengen, wir setzen also
 $\mathcal{D} := \bigl\{ M \in 2^{\mathbb{Q}} \mid \mbox{$M$ ist Dedekind-Menge} \bigr\}$.}
 \\[0.2cm]
 Wir wollen zeigen, dass wir die Menge $\mathbb{R}$ der reellen Zahlen als die Menge $\mathcal{D}$
-definieren können.  Dazu müssen wir nun zeigen, wie sich auf der Menge $\mathcal{D}$ die
+definieren kÃ¶nnen.  Dazu mÃ¼ssen wir nun zeigen, wie sich auf der Menge $\mathcal{D}$ die
 arithmetischen Operationen Addition, Subtraktion, Multiplikation und Division definieren 
-lassen und wie die Relation $\leq$ für zwei Dedekind-Schnitte festgelegt
-werden kann.  Zusätzlich müssen wir nachweisen, dass wir mit diesen Definitionen einen vollständig
-angeordneten Körper konstruieren.  Wir beginnen mit der Definition der Relation $\leq$.
+lassen und wie die Relation $\leq$ fÃ¼r zwei Dedekind-Schnitte festgelegt
+werden kann.  ZusÃ¤tzlich mÃ¼ssen wir nachweisen, dass wir mit diesen Definitionen einen vollstÃ¤ndig
+angeordneten KÃ¶rper konstruieren.  Wir beginnen mit der Definition der Relation $\leq$.
 
 \exercise
-Auf der Menge $\mathcal{D}$ definieren wir eine binäre Relation $\leq$ durch die Festsetzung
+Auf der Menge $\mathcal{D}$ definieren wir eine binÃ¤re Relation $\leq$ durch die Festsetzung
 \\[0.2cm]
 \hspace*{1.3cm}
-$A \leq B \;\stackrel{\mathrm{def}}{\Longleftrightarrow}\; A \subseteq B$ \quad für alle $A,B \in \mathcal{D}$.
+$A \leq B \;\stackrel{\mathrm{def}}{\Longleftrightarrow}\; A \subseteq B$ \quad fÃ¼r alle $A,B \in \mathcal{D}$.
 \\[0.2cm]
 Zeigen Sie, dass die so definierte Relation $\leq$ eine lineare Ordnung auf der Menge $\mathcal{D}$ ist.
 
 
 \solution
-Es ist zu zeigen, dass die Relation $\leq$ reflexiv, anti-symmetrisch und transitiv ist und dass außerdem die Linearitäts-Eigenschaft
+Es ist zu zeigen, dass die Relation $\leq$ reflexiv, anti-symmetrisch und transitiv ist und dass auÃŸerdem die LinearitÃ¤ts-Eigenschaft
 \\[0.2cm]
-\hspace*{1.3cm} $A \leq B \vee B \leq A$ \quad für alle Dedekind-Mengen $A,B \in \mathcal{D}$
+\hspace*{1.3cm} $A \leq B \vee B \leq A$ \quad fÃ¼r alle Dedekind-Mengen $A,B \in \mathcal{D}$
 \\[0.2cm]
-gilt.  Die Reflexivität, Anti-Symmetrie und Transitivität der Relation $\leq$ folgen sofort aus der Reflexivität,
-Anti-Symmetrie und Transitivität der Teilmengen-Relation $\subseteq$.  Es bleibt, den Nachweis der
-Linearitäts-Eigenschaft zu führen.  Seien also $A,B \in \mathcal{D}$ gegeben.  Falls $A = B$ ist, gilt sowohl
+gilt.  Die ReflexivitÃ¤t, Anti-Symmetrie und TransitivitÃ¤t der Relation $\leq$ folgen sofort aus der ReflexivitÃ¤t,
+Anti-Symmetrie und TransitivitÃ¤t der Teilmengen-Relation $\subseteq$.  Es bleibt, den Nachweis der
+LinearitÃ¤ts-Eigenschaft zu fÃ¼hren.  Seien also $A,B \in \mathcal{D}$ gegeben.  Falls $A = B$ ist, gilt sowohl
 $A \subseteq B$ als auch $B \subseteq A$, woraus sofort $A \leq B$ und $B \leq A$ folgt.  Wir nehmen
-daher an, dass $A \not= B$ ist.  Dann gibt es zwei Möglichkeiten:
+daher an, dass $A \not= B$ ist.  Dann gibt es zwei MÃ¶glichkeiten:
 \begin{enumerate}
 \item Fall: Es existiert ein $x \in \mathbb{Q}$ mit $x \in A$ und $x \not\in B$.
 
             Wir zeigen, dass dann $B \subseteq A$, also $B \leq A$ gilt.  Zum Nachweis der Beziehung
-            $B \subseteq A$ nehmen wir an, dass $y \in B$ ist und müssen $y \in A$ zeigen.
+            $B \subseteq A$ nehmen wir an, dass $y \in B$ ist und mÃ¼ssen $y \in A$ zeigen.
 
-            Wir behaupten, dass $y < x$ ist und führen den Beweis dieser Behauptung indirekt, nehmen also
-            $x \leq y$ an.  Da die Dedekind-Menge $B$ nach unten abgeschlossen ist und $y \in B$ ist, würde daraus
+            Wir behaupten, dass $y < x$ ist und fÃ¼hren den Beweis dieser Behauptung indirekt, nehmen also
+            $x \leq y$ an.  Da die Dedekind-Menge $B$ nach unten abgeschlossen ist und $y \in B$ ist, wÃ¼rde daraus
             \\[0.2cm]
             \hspace*{1.3cm}
             $x \in B$
@@ -822,12 +822,12 @@ daher an, dass $A \not= B$ ist.  Dann gibt es zwei Möglichkeiten:
 
 
 \exercise
-Zeigen Sie, dass jede nicht-leere und in $\mathcal{D}$ nach oben beschränkte Menge
+Zeigen Sie, dass jede nicht-leere und in $\mathcal{D}$ nach oben beschrÃ¤nkte Menge
 $\mathcal{M} \subseteq \mathcal{D}$ ein Supremum $S \in \mathcal{D}$ hat.  
 \vspace*{0.2cm}
 
 \noindent
-\textbf{Hinweis}: Sie können das Supremum von $\mathcal{M}$ als die Vereinigung aller Mengen aus
+\textbf{Hinweis}: Sie kÃ¶nnen das Supremum von $\mathcal{M}$ als die Vereinigung aller Mengen aus
 $\mathcal{M}$ definieren.  Es gilt also
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -836,7 +836,7 @@ $\sup(\mathcal{M}) = \bigcup \mathcal{M} := \{ x \in \mathbb{Q} \mid \exists A \
 \vspace*{0.2cm}
 
 \noindent
-Als nächstes definieren wir eine Addition auf Dedekind-Mengen.
+Als nÃ¤chstes definieren wir eine Addition auf Dedekind-Mengen.
 
 
 \begin{Definition}[Addition von Dedekind-Mengen] \hspace*{\fill} \linebreak
@@ -863,7 +863,7 @@ Wir zeigen, dass $A + B$ eine Dedekind-Menge ist.
 
       Da $A$ und $B$ Dedekind-Mengen sind, gilt $A \not= \mathbb{Q}$ und $B \not= \mathbb{Q}$.  Also gibt es 
       $x,y \in \mathbb{Q}$ mit $x \not\in A$ und $y \not\in B$.  Wir zeigen, dass dann  $x + y \not\in A + B$
-      ist und führen diesen Nachweis indirekt.  Wir nehmen also an, dass
+      ist und fÃ¼hren diesen Nachweis indirekt.  Wir nehmen also an, dass
       \\[0.2cm]
       \hspace*{1.3cm}
       $x + y \in A + B$
@@ -878,7 +878,7 @@ Wir zeigen, dass $A + B$ eine Dedekind-Menge ist.
       \hspace*{1.3cm}
       $a < x$ 
       \\[0.2cm]
-      ist, denn da $A$ eine Dedekind-Menge ist, würde aus $x \leq a$ sofort $x \in A$ folgern.  Weil $B$ eine
+      ist, denn da $A$ eine Dedekind-Menge ist, wÃ¼rde aus $x \leq a$ sofort $x \in A$ folgern.  Weil $B$ eine
       Dedekind-Menge ist, gilt dann auch
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -899,7 +899,7 @@ Wir zeigen, dass $A + B$ eine Dedekind-Menge ist.
       $c := x - y$, \quad $u := a - \bruch{1}{2} \cdot c$ \quad und \quad
       $v := b - \bruch{1}{2} \cdot c$.
       \\[0.2cm]
-      Aus $y < x $ folgt zunächst $c > 0$ und daher gilt $u < a$ und $v < b$.  Da $a \in A$ ist und die
+      Aus $y < x $ folgt zunÃ¤chst $c > 0$ und daher gilt $u < a$ und $v < b$.  Da $a \in A$ ist und die
       Menge $A$ als Dedekind-Menge nach unten abgeschlossen ist, folgt $u \in A$.  Analog sehen wir, dass
       auch $v \in B$ ist.  Insgesamt folgt dann
       \\[0.2cm]
@@ -922,18 +922,18 @@ Wir zeigen, dass $A + B$ eine Dedekind-Menge ist.
       $
       \\[0.2cm]
       Wegen $u + v \in A + B$ haben wir insgesamt $y \in A + B$ nachgewiesen, was zu zeigen war.
-\item Wir zeigen, dass die Menge $A + B$ kein Maximum enthält.
+\item Wir zeigen, dass die Menge $A + B$ kein Maximum enthÃ¤lt.
 
-      Wir führen den Beweis indirekt und nehmen an, dass ein $m \in A + B$ existiert, so dass
+      Wir fÃ¼hren den Beweis indirekt und nehmen an, dass ein $m \in A + B$ existiert, so dass
       $m = \max(A + B)$ gilt.  Nach Definition der Menge $A + B$ gibt es dann ein $a \in A$ und ein 
       $b \in B$ so dass $m = a + b$ ist.  Sei nun $u \in A$.  Wir wollen zeigen, dass $u \leq a$
-      ist. wäre $u > a$, dann würde auch 
+      ist. wÃ¤re $u > a$, dann wÃ¼rde auch 
       \\[0.2cm]
       \hspace*{1.3cm}
       $u + b > a + b$
       \\[0.2cm]
-      gelten, und da $u + b \in A + B$ ist, könnte $m$ dann nicht das Maximum der Menge $A + B$ sein.
-      Also gilt $u \leq a$.  Dann ist aber $a$ das Maximum der Menge $A$ und außerdem in $A$ enthalten.
+      gelten, und da $u + b \in A + B$ ist, kÃ¶nnte $m$ dann nicht das Maximum der Menge $A + B$ sein.
+      Also gilt $u \leq a$.  Dann ist aber $a$ das Maximum der Menge $A$ und auÃŸerdem in $A$ enthalten.
       Dies ist ein Widerspruch zu der Voraussetzung, dass $A$ eine Dedekind-Menge ist. \qed
 \end{enumerate}
 
@@ -957,8 +957,8 @@ Dedekind-Menge nachweisen.
       Sei $x \in O$ und $y < x$.  Nach Definition von $O$ haben wir
       $x < 0$ und aus $y < x$ und $x < 0$ folgt $y < 0$, also gilt nach Definition der Menge $O$ 
       auch $y \in O$.
-\item Die Menge $O$ enthält kein Maximum, denn falls $m$ das Maximum der Menge $O$ wäre,
-      dann wäre $m < 0$ und daraus folgt sofort $\bruch{1}{2} \cdot m < 0$.  Damit wäre dann nach
+\item Die Menge $O$ enthÃ¤lt kein Maximum, denn falls $m$ das Maximum der Menge $O$ wÃ¤re,
+      dann wÃ¤re $m < 0$ und daraus folgt sofort $\bruch{1}{2} \cdot m < 0$.  Damit wÃ¤re dann nach
       Definition der Menge $O$ auch
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -976,7 +976,7 @@ Dedekind-Menge nachweisen.
 \vspace*{-0.3cm}
 
 \exercise 
-Zeigen Sie, dass die Menge $O$ das links-neutrale Element bezüglich der Addition von
+Zeigen Sie, dass die Menge $O$ das links-neutrale Element bezÃ¼glich der Addition von
 Dedekind-Mengen ist.  \eox
 
 
@@ -988,7 +988,7 @@ $O + A = A$
 \\[0.2cm]
 gilt.  Wir spalten den Nachweis dieser Mengen-Gleichheit in den Nachweis zweier Inklusionen auf.
 \begin{enumerate}
-\item ``$\subseteq$'': Es sei $u \in O + A$.  Wir müssen $u \in A$ zeigen.
+\item ``$\subseteq$'': Es sei $u \in O + A$.  Wir mÃ¼ssen $u \in A$ zeigen.
 
       Nach Definition von $O + A$ existiert ein $o \in O$
       und ein $a \in A$ mit $u = o + a$.  Aus $o \in O$ folgt $o < 0$.  Also haben wir
@@ -1000,7 +1000,7 @@ gilt.  Wir spalten den Nachweis dieser Mengen-Gleichheit in den Nachweis zweier 
 \item ``$\supseteq$'': Sei nun $a \in A$.  Zu zeigen ist $a \in O + A$.
 
       Da die Menge $A$ eine Dedekind-Menge ist, kann $a$ nicht das Maximum der Menge $A$ sein.
-      Folglich gibt es ein $b \in A$, dass größer als $a$ ist, wir haben also
+      Folglich gibt es ein $b \in A$, dass grÃ¶ÃŸer als $a$ ist, wir haben also
       \\[0.2cm]
       \hspace*{1.3cm}
       $a < b$.
@@ -1020,11 +1020,11 @@ gilt.  Wir spalten den Nachweis dieser Mengen-Gleichheit in den Nachweis zweier 
 \end{enumerate}
 
 \exercise
-Zeigen Sie, dass für die Addition von Dedekind-Mengen sowohl das Kommutativ-Gesetz als auch das
+Zeigen Sie, dass fÃ¼r die Addition von Dedekind-Mengen sowohl das Kommutativ-Gesetz als auch das
 Assoziativ-Gesetz gilt. \eox
 
-Als nächstes überlegen wir, wie wir für eine Dedekind-Menge $A$ das additive Inverse $-\!A$ 
-definieren können.  Ist $A \in \mathcal{D}$ eine Dedekind-Menge, die wir als die reelle Zahl $x$
+Als nÃ¤chstes Ã¼berlegen wir, wie wir fÃ¼r eine Dedekind-Menge $A$ das additive Inverse $-\!A$ 
+definieren kÃ¶nnen.  Ist $A \in \mathcal{D}$ eine Dedekind-Menge, die wir als die reelle Zahl $x$
 interpretieren wollen, so gilt
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1035,7 +1035,7 @@ Daher liegt es nahe zu fordern, dass
 \hspace*{1.3cm}
 $-A = \{ q \in \mathbb{Q} \mid q < -x \}$
 \\[0.2cm]
-gilt.  Wir betrachten zunächst den Fall, dass $x \not\in \mathbb{Q}$ ist.
+gilt.  Wir betrachten zunÃ¤chst den Fall, dass $x \not\in \mathbb{Q}$ ist.
 Dann gilt
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1051,7 +1051,7 @@ q < -x & \Leftrightarrow & \neg (-x \leq q)                                     
 \end{array}
 $
 \\[0.2cm]
-In diesem Fall können wir daher $-A$ als
+In diesem Fall kÃ¶nnen wir daher $-A$ als
 \\[0.2cm]
 \hspace*{1.3cm}
 $-A := \{ q \in \mathbb{Q} \mid -q \not\in A \}$
@@ -1061,23 +1061,23 @@ definieren.  Leider funktioniert diese Definition dann nicht mehr, wenn die Meng
 \hspace*{1.3cm}
 $\{ q \in \mathbb{Q} \mid -q \not\in A \}$
 \\[0.2cm]
-ihr Maximum enthält.  Dieser Fall würde beispielsweise eintreten, wenn wir
+ihr Maximum enthÃ¤lt.  Dieser Fall wÃ¼rde beispielsweise eintreten, wenn wir
 \\[0.2cm]
 \hspace*{1.3cm}
 $A := \{ q \in \mathbb{Q} \mid q < 1 \}$
 \\[0.2cm]  
-hätten, denn die Bedingung 
+hÃ¤tten, denn die Bedingung 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\neg (-q < 1)$ \quad ist zu  \quad $q \leq -1$
 \\[0.2cm]
-äquivalent und die Menge
+Ã¤quivalent und die Menge
 \\[0.2cm]
 \hspace*{1.3cm}
 $\{ q \in \mathbb{Q} \mid q \leq -1 \}$
 \\[0.2cm]
 ist keine Dedekind-Menge, da das Maximum dieser Menge $-1$ ist und diese Zahl ist selber ein Element
-dieser Menge.  Daher definieren wir zunächst für eine beliebige Menge $A \subseteq \mathbb{Q}$ die
+dieser Menge.  Daher definieren wir zunÃ¤chst fÃ¼r eine beliebige Menge $A \subseteq \mathbb{Q}$ die
 Menge $A^*$, die aus $A$ dadurch entsteht, dass wir das Maximum der Menge $A$ aus $A$ entfernen,
 wenn es erstens existiert und zweitens ein Element der Menge $A$ ist.
 \\[0.2cm]
@@ -1089,7 +1089,7 @@ $A^* := \left\{
 \end{array}\right.
 $
 \\[0.2cm]
-Damit können wir nun $-A$ durch die Festlegung
+Damit kÃ¶nnen wir nun $-A$ durch die Festlegung
 \\[0.2cm]
 \hspace*{1.3cm}
 $-\!A := \{ q \in \mathbb{Q} \mid -q \not\in A \}^* = \{ -q \in \mathbb{Q} \mid q \not\in A \}^*$
@@ -1102,12 +1102,12 @@ definieren.
 \end{Satz}
 
 \proof
-Wir zeigen zunächst, dass die Menge
+Wir zeigen zunÃ¤chst, dass die Menge
 \\[0.2cm]
 \hspace*{1.3cm}
  $B := \{ q \in \mathbb{Q} \mid -q \not\in A \}$ 
 \\[0.2cm]
-nach unten abgeschlossen ist.  Sei also $x \in B$ und $y < x$.  Wir führen den Nachweis indirekt und
+nach unten abgeschlossen ist.  Sei also $x \in B$ und $y < x$.  Wir fÃ¼hren den Nachweis indirekt und
 nehmen $y \not\in B$ an.  Aus $y \not\in B$ folgt
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1129,7 +1129,7 @@ Da $A$ nach unten abgeschlossen ist, folgt aus $-y \in A$ und $-x < -y$
 $-x \in A$, 
 \\[0.2cm]
 was im Widerspruch zu $-x \not\in A$ steht.  Also muss $y \in B$ gelten und wir haben gezeigt, dass die Menge $B$
-tatsächlich nach unten abgeschlossen ist.
+tatsÃ¤chlich nach unten abgeschlossen ist.
 \begin{enumerate}
 \item Wir zeigen $-\!A \not= \emptyset$.
 
@@ -1141,8 +1141,8 @@ tatsächlich nach unten abgeschlossen ist.
       \\[0.2cm]
       Falls $\max(B) \not\in B$ ist, haben wir $-A = B$ und $x \in -A$.
 
-      Sollte $-A = B \backslash \{ \max(B) \}$ und außerdem $x = \max(B)$ gelten, so gilt $x-1 < x$ und da die Menge $B$ nach unten
-      abgeschlossen ist, ist dann auch $x-1 \in B$.  Außerdem ist dann  $x - 1 < \max(B)$ und damit
+      Sollte $-A = B \backslash \{ \max(B) \}$ und auÃŸerdem $x = \max(B)$ gelten, so gilt $x-1 < x$ und da die Menge $B$ nach unten
+      abgeschlossen ist, ist dann auch $x-1 \in B$.  AuÃŸerdem ist dann  $x - 1 < \max(B)$ und damit
       gilt $x-1 \in -A$.
 \item Wir zeigen $-\!A \not= \mathbb{Q}$.
 
@@ -1163,38 +1163,38 @@ tatsächlich nach unten abgeschlossen ist.
       $y \in -A$.
 \item Wir zeigen, dass $-\!A$ kein Maximum hat.
 
-      Hier gibt es zwei Fälle zu unterscheiden.
+      Hier gibt es zwei FÃ¤lle zu unterscheiden.
       \begin{enumerate}
       \item Die Menge $B$ hat kein Maximum.  Dann gilt $-A = B$ und damit hat $-A$ sicher auch kein
             Maximum. 
       \item Es sei $m := \max(B)$ und es gelte $m \in B$.  Dann haben wir $-A := B \backslash \{ m \}$
-            und müssen zeigen, dass auch $-A$ kein Maximum besitzt.   Sei dazu $x \in -A$.
+            und mÃ¼ssen zeigen, dass auch $-A$ kein Maximum besitzt.   Sei dazu $x \in -A$.
             Dann folgt 
             \\[0.2cm]
             \hspace*{1.3cm}
             $x \in B$ \quad und \quad $x < m$, 
             \\[0.2cm]
-            denn $m$ ist ja das Maximum vom $B$.  für das arithmetische Mittel von $x$ und $m$ gilt
+            denn $m$ ist ja das Maximum vom $B$.  fÃ¼r das arithmetische Mittel von $x$ und $m$ gilt
             dann
             \\[0.2cm]
             \hspace*{1.3cm}
             $x < \frac{1}{2} \cdot (x + m) < m$
             \\[0.2cm]
-            und da $B$ nach unten abgeschlossen ist und $m \in B$ ist, folgt zunächst $\frac{1}{2} \cdot (x + m) \in
+            und da $B$ nach unten abgeschlossen ist und $m \in B$ ist, folgt zunÃ¤chst $\frac{1}{2} \cdot (x + m) \in
             B$ und dann auch
             \\[0.2cm]
             \hspace*{1.3cm}
             $\frac{1}{2} \cdot (x + m) \in -A$,
             \\[0.2cm]  
             denn die Mengen $-A$ und $B$ unterscheiden sich ja nur um $m$.  Insgesamt haben wir
-            jetzt zu beliebigem $x \in -A$ ein $y := \frac{1}{2} \cdot (x + m)$ gefunden, für das 
+            jetzt zu beliebigem $x \in -A$ ein $y := \frac{1}{2} \cdot (x + m)$ gefunden, fÃ¼r das 
             $x < y$ und $y \in -A$ gilt.  Damit kann die Menge $-A$ kein Maximum haben. \qed
       \end{enumerate}
 
 \end{enumerate}
 
 \begin{Satz}
-  für jede Dedekind-Menge $A$ gilt die Gleichung
+  fÃ¼r jede Dedekind-Menge $A$ gilt die Gleichung
   \\[0.2cm]
   \hspace*{1.3cm}
   $A + (-A) = O$. \eox
@@ -1211,14 +1211,14 @@ tatsächlich nach unten abgeschlossen ist.
       \hspace*{1.3cm}
       $-y \not \in A$.
       \\[0.2cm]
-      wäre $-y \leq x$, so würde aus der Tatsache, dass $A$ nach unten abgeschlossen und $x \in A$
+      wÃ¤re $-y \leq x$, so wÃ¼rde aus der Tatsache, dass $A$ nach unten abgeschlossen und $x \in A$
       ist, sofort $-y \in A$ folgen, was nicht sein kann.  Also gilt
       \\[0.2cm]
       \hspace*{1.3cm}
       $-y > x$
       \\[0.2cm]
       und daraus folgt $0 > x + y$, was zu zeigen war.
-\item ``$\supseteq$'': Es sei nun $o \in O$, also $o < 0$.  Wir müssen ein $x \in A$ und ein $y \in -A$
+\item ``$\supseteq$'': Es sei nun $o \in O$, also $o < 0$.  Wir mÃ¼ssen ein $x \in A$ und ein $y \in -A$
       finden, so dass $o = x + y$ gilt, denn dann haben wir $o \in A + (-A)$ gezeigt.
 
       Wir definieren 
@@ -1226,17 +1226,17 @@ tatsächlich nach unten abgeschlossen ist.
       \hspace*{1.3cm}
       $r := -\frac{1}{2} \cdot o$.
       \\[0.2cm]
-      Da $o < 0$ ist, folgt $r > 0$ und außerdem gilt $r \in \mathbb{Q}$.  Wir definieren die Menge
+      Da $o < 0$ ist, folgt $r > 0$ und auÃŸerdem gilt $r \in \mathbb{Q}$.  Wir definieren die Menge
       $M$ als
       \\[0.2cm]
       \hspace*{1.3cm}
       $M := \{ n \in \mathbb{Z} \mid n \cdot r \in  A \}$
       \\[0.2cm]
       Da $A \not= \mathbb{Q}$ ist, gibt es ein $z \in \mathbb{Q}$ so dass $z \not\in A$ ist.
-      für die Zahlen $n \in \mathbb{Z}$, für die $n \cdot r > z$ ist, folgt dann $n \not\in M$.
-      Folglich ist die Menge $M$ nach oben beschränkt.
+      fÃ¼r die Zahlen $n \in \mathbb{Z}$, fÃ¼r die $n \cdot r > z$ ist, folgt dann $n \not\in M$.
+      Folglich ist die Menge $M$ nach oben beschrÃ¤nkt.
       Da die Menge $A$ nach unten abgeschlossen ist, ist $M$ sicher nicht leer.
-      Als beschränkte und nicht-leere Menge von natürlichen Zahlen hat $M$ ein Maximum.  Wir definieren 
+      Als beschrÃ¤nkte und nicht-leere Menge von natÃ¼rlichen Zahlen hat $M$ ein Maximum.  Wir definieren 
       \\[0.2cm]
       \hspace*{1.3cm}
       $\widehat{n} := \max(M)$.
@@ -1258,10 +1258,10 @@ tatsächlich nach unten abgeschlossen ist.
       $-y - r = (\widehat{n} + 2) \cdot r - r = (\widehat{n} + 1) \cdot r \not\in A$,
       \\[0.2cm]
       so dass $y + r\in B := \{ q \in \mathbb{Q} \mid -q \not\in A \}$ ist.  
-      Wegen $-A := B^*$ könnte es sein, dass $y+r \not\in -A$ ist.  Dies wäre dann der Fall,
-      wenn $y+r = \max(B)$ wäre.  Da $B$ nach unten abgeschlossen, gilt aber sicher $y \in B$
+      Wegen $-A := B^*$ kÃ¶nnte es sein, dass $y+r \not\in -A$ ist.  Dies wÃ¤re dann der Fall,
+      wenn $y+r = \max(B)$ wÃ¤re.  Da $B$ nach unten abgeschlossen, gilt aber sicher $y \in B$
       und da $y < y + r$ ist, haben wir $y \not= \max(B)$.  Also gilt  $y \in -A$.  Damit haben wir $x + y \in A + (-A)$.
-      Außerdem gilt
+      AuÃŸerdem gilt
       \\[0.2cm]
       \hspace*{1.3cm}
       $x + y = \widehat{n} \cdot r - (\widehat{n} + 2) \cdot r = - 2 \cdot r = o$, \quad also \quad $o \in A + (-A)$.
@@ -1270,10 +1270,10 @@ tatsächlich nach unten abgeschlossen ist.
       \qed
 \end{enumerate}
 
-Wir überlegen uns nun, wie sich auf der Menge $\mathcal{D}$ eine Multiplikation so definieren lässt,
-so dass $\mathcal{D}$ mit dieser Multiplikation und der oben definierten Addition ein Körper wird.
-Dazu nennen wir eine Dedekind-Menge $A$ positiv, wenn $0 \in A$ gilt.  für zwei positive Dedekind-Mengen $A$
-und $B$ lässt sich die Multiplikation $A \cdot B$ als
+Wir Ã¼berlegen uns nun, wie sich auf der Menge $\mathcal{D}$ eine Multiplikation so definieren lÃ¤sst,
+so dass $\mathcal{D}$ mit dieser Multiplikation und der oben definierten Addition ein KÃ¶rper wird.
+Dazu nennen wir eine Dedekind-Menge $A$ positiv, wenn $0 \in A$ gilt.  fÃ¼r zwei positive Dedekind-Mengen $A$
+und $B$ lÃ¤sst sich die Multiplikation $A \cdot B$ als
 \\[0.2cm]
 \hspace*{1.3cm}
 $A \cdot B := \{ x \cdot y \mid x \in A \wedge y \in B \wedge x > 0 \wedge y > 0 \} \cup 
@@ -1293,17 +1293,17 @@ Dazu weisen wir die einzelnen Eigenschaften getrennt nach.
       \hspace*{1.3cm}
       $(\forall x \in A: x < w) \wedge (\forall y \in B: y < w)$
       \\[0.2cm]
-      Daraus folgt sofort, dass für alle $x \in A$ und $y \in B$ die Ungleichung
+      Daraus folgt sofort, dass fÃ¼r alle $x \in A$ und $y \in B$ die Ungleichung
       \\[0.2cm]
       \hspace*{1.3cm}
       $x \cdot y < w \cdot w$
       \\[0.2cm]
-      gilt.  Das heißt aber $w^2 \not\in A \cdot B$ und damit ist $A \cdot B \not= \mathbb{Q}$.
+      gilt.  Das heiÃŸt aber $w^2 \not\in A \cdot B$ und damit ist $A \cdot B \not= \mathbb{Q}$.
 \item Wir zeigen, dass $A \cdot B$ nach unten abgeschlossen ist.
 
       Es sei $x \cdot y \in A \cdot B$ und $z \in \mathbb{Q}$ mit $z < x \cdot y$.  
-      Wir müssen $z \in A \cdot B$ zeigen.  
-      Wir führen eine Fall-Unterscheidung danach durch, ob $z > 0$ ist.
+      Wir mÃ¼ssen $z \in A \cdot B$ zeigen.  
+      Wir fÃ¼hren eine Fall-Unterscheidung danach durch, ob $z > 0$ ist.
       \begin{enumerate}
       \item Fall: $z > 0$.  Dann definieren wir
             \\[0.2cm]
@@ -1323,7 +1323,7 @@ Dazu weisen wir die einzelnen Eigenschaften getrennt nach.
       \end{enumerate}
 \item Wir zeigen, dass $A \cdot B$ kein Maximum hat.  
 
-      Wir führen den Nachweis indirekt und nehmen an, dass die Menge $A \cdot B$ eine Maximum $c$ hat.
+      Wir fÃ¼hren den Nachweis indirekt und nehmen an, dass die Menge $A \cdot B$ eine Maximum $c$ hat.
       Es gilt dann 
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -1340,11 +1340,11 @@ Dazu weisen wir die einzelnen Eigenschaften getrennt nach.
       \hspace*{1.3cm}
       $u \leq a$
       \\[0.2cm]
-      und damit wäre $a$ das Maximum der Menge $A$.  Das ist eine Widerspruch zu der Tatsache, dass
+      und damit wÃ¤re $a$ das Maximum der Menge $A$.  Das ist eine Widerspruch zu der Tatsache, dass
       $A$ eine Dedekind-Menge ist.
 \end{enumerate}
 \renewcommand{\labelenumi}{\arabic{enumi}.}
-Bisher haben wir das Produkt $A \cdot B$ nur für den Fall definiert, dass $A$ und $B$ beide positiv
+Bisher haben wir das Produkt $A \cdot B$ nur fÃ¼r den Fall definiert, dass $A$ und $B$ beide positiv
 sind.  Falls $A$ oder $B$ gleich $O$ ist, definieren wir das Produkt wie folgt:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1353,7 +1353,7 @@ $A \cdot O := O \cdot B := O$.
 Falls $A$ weder positiv noch gleich $O$ ist, sagen wir, dass $A$  \emph{negativ} ist.  In einem
 solchen Fall ist $-\!A$ positiv.  Falls $A$ oder $B$ negativ ist, lautet die Definition wie folgt:
 \begin{enumerate}
-\item[2.] Fall: $A$ ist positiv, aber $B$ negativ.  Dann ist $-\!B$ positiv und wir können
+\item[2.] Fall: $A$ ist positiv, aber $B$ negativ.  Dann ist $-\!B$ positiv und wir kÃ¶nnen
           \\[0.2cm]
           \hspace*{1.3cm}
           $A \cdot B := -\!\bigl(A \cdot (-\!B)\bigr)$
@@ -1368,9 +1368,9 @@ solchen Fall ist $-\!A$ positiv.  Falls $A$ oder $B$ negativ ist, lautet die Def
           \hspace*{1.3cm}
           $A \cdot B := (-\!A) \cdot (-\!B)$.
 \end{enumerate}
-Nun müssten wir noch nachweisen, dass für die so definierte Multiplikation zusammen mit der oben definierten
-Addition die Körper-Axiome gelten.  Bei diesen Beweisen tauchen keine Ideen auf, die wir nicht schon gesehen haben.
-Daher verzichten wir aus Zeitgründen darauf, diese Beweise im Detail auszuführen und verweisen stattdessen
+Nun mÃ¼ssten wir noch nachweisen, dass fÃ¼r die so definierte Multiplikation zusammen mit der oben definierten
+Addition die KÃ¶rper-Axiome gelten.  Bei diesen Beweisen tauchen keine Ideen auf, die wir nicht schon gesehen haben.
+Daher verzichten wir aus ZeitgrÃ¼nden darauf, diese Beweise im Detail auszufÃ¼hren und verweisen stattdessen
 auf die unten angegebene Literatur.
 \vspace*{0.3cm}
 
@@ -1380,17 +1380,17 @@ In dem Buch
 \href{http://www.fernuni-hagen.de/imperia/md/content/ausstellung/juedischemathematiker/landau.pdf}{Grundlagen der Analysis} 
 von Edmund Landau \cite{landau:1930} wird die oben skizzierte Konstruktion der reellen Zahlen im Detail beschrieben.   
 Auch das Buch ``\emph{Principles of  Mathematical Analysis}'' von Walter Rudin \cite{rudin:1976}
-diskutiert die Konstruktion der reellen Zahlen mit Hilfe von Dedekind-Mengen ausführlicher als dies in
-dem zeitlichen Rahmen meiner Vorlesung möglich ist.
+diskutiert die Konstruktion der reellen Zahlen mit Hilfe von Dedekind-Mengen ausfÃ¼hrlicher als dies in
+dem zeitlichen Rahmen meiner Vorlesung mÃ¶glich ist.
 
 
 \section{Geschichte}
 Die Konstruktion der reellen
-Zahlen mit Hilfe von Schnitten geht auf Richard Dedekind zurück, der die nach ihm benannten Schnitte in dem Buch
+Zahlen mit Hilfe von Schnitten geht auf Richard Dedekind zurÃ¼ck, der die nach ihm benannten Schnitte in dem Buch
 \href{http://books.google.de/books?id=n-43AAAAMAAJ&printsec=frontcover&source=gbs_ge_summary_r&cad=0#v=onepage&q&f=false}{Stetigkeit und irrationale Zahlen} 
 \cite{dedekind:1872}, das im Jahre 1872 erschienen ist, beschrieben hat.  Damit war erstmals eine
 formale Definition des Begriffs der reellen Zahlen gefunden worden.  Diese Definition 
-ermöglichte es, die Analysis auf ein solides Fundament zu stellen.
+ermÃ¶glichte es, die Analysis auf ein solides Fundament zu stellen.
 
 %%% Local Variables: 
 %%% mode: latex
