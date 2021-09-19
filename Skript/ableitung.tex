@@ -32,7 +32,7 @@ $f'(\widehat{x})$ verwenden.
 Beachten Sie, dass wir in der obigen Definition den Ausdruck
 \\[0.3cm]
 \hspace*{1.3cm} $\bruch{f(\widehat{x} + h) - f(\widehat{x})}{h}$ \\[0.3cm]
-als Funktion von $h$ auffassen.  Dieser Ausdruck wird auch als \emph{Differential-Quotient}
+als Funktion von $h$ auffassen.  Dieser Ausdruck wird auch als \emph{Differenzen-Quotient}
 bezeichnet.  Er gibt die Steigung einer Sekante an, welche die Funktion $x \mapsto f(x)$
 in den Punkten $\widehat{x}$ und $\widehat{x} + h$ schneidet.  Definieren wir 
 \\[0.3cm]
@@ -50,10 +50,16 @@ und andererseits haben wir
 \\[0.3cm]
 \hspace*{1.3cm}
 $f(\widehat{x} + h) = f(\widehat{x}) + h \cdot \df{f}(\widehat{x}) + r(h)$.
-\pagebreak
+\\[0.3cm]
+Den Grenzwert 
+\\[0.3cm]
+\hspace*{1.3cm}
+$\lim\limits_{h \rightarrow 0} \bruch{f(\widehat{x} + h) - f(\widehat{x})}{h}$
+\\[0.3cm]
+bezeichnen wir als \emph{Differential-Quotienten}.
+\vspace*{0.3cm}
 
-\noindent
-Die Funktion $r(h)$ ist also der Fehler, der entsteht, wenn wir die Funktion $f(x)$ durch ihre
+Die oben definierte Funktion $r(h)$ ist der Fehler, der entsteht, wenn wir die Funktion $f(x)$ durch ihre
 Tangente im Punkt $\bigl\langle\widehat{x}, f(\widehat{x})\bigr\rangle$ approximieren.  \eox
 
 
@@ -208,7 +214,7 @@ $r_2(h)$ gibt, so dass gilt:
 \item $f(\widehat{x}+h) = f(\widehat{x}) + h\cdot f'(\widehat{x}) + r_1(h)$ \quad mit $\lim\limits_{h \rightarrow 0} \bruch{r_1(h)}{h} = 0$,
 \item $g(\widehat{y}+h) = g(\widehat{y}) + h\cdot g'(\widehat{y}) + r_2(h)$ \quad mit $\lim\limits_{h \rightarrow 0} \bruch{r_2(h)}{h} = 0$.
 \end{enumerate}
-Damit finden wir für den Differential-Quotienten der Funktion $g \circ f$ im Punkt
+Damit finden wir für die Differenzen-Quotienten der Funktion $g \circ f$ im Punkt
 $\widehat{x}$: \\[0.3cm]
 \hspace*{1.3cm}
 $
@@ -268,7 +274,7 @@ Analog finden wir für die Funktion $f$
 \hspace*{1.3cm}
 $f(\widehat{x} + h) \approx f(\widehat{x}) + f'(\widehat{x})\cdot h$.
 \\[0.2cm]
-Damit finden wir für den Differential-Quotienten der Funktion $g \circ f$ im Punkt
+Damit finden wir für die Differenzen-Quotienten der Funktion $g \circ f$ im Punkt
 $\widehat{x}$: \\[0.3cm]
 \hspace*{1.3cm}
 $
@@ -282,7 +288,7 @@ $
 \end{array}
 $
 \\[0.3cm]
-Die linke Seite der Gleichung stellt den Differential-Quotienten der Funktion $g\circ f$
+Die linke Seite der Gleichung stellt den Differenzen-Quotienten der Funktion $g\circ f$
 dar und muss daher für $h \rightarrow 0$ gegen die Ableitung $(g \circ f)(\widehat{x})$
 konvergieren. \hspace*{\fill} $\Box$
 
@@ -664,7 +670,7 @@ $\varepsilon$-Umgebung von $\bar{x}$.  Daher gilt für alle $n > \frac{1}{\vareps
 \hspace*{1.3cm}
  $f\bigl(\bar{x} + \frac{1}{n}\bigr) \leq f(\bar{x})$. 
 \\[0.3cm]
-Damit gilt für den Differential-Quotienten
+Damit gilt für den Differenzen-Quotienten
 \\[0.3cm]
 \hspace*{1.3cm}
 $\bruch{f\Bigl(\bar{x} + \frac{1}{n}\Bigr) - f(\bar{x})}{\bar{x} + \frac{1}{n} - \bar{x}} \;=\;
@@ -687,7 +693,7 @@ $\varepsilon$-Umgebung von $\bar{x}$.  Daher gilt für alle natürlichen Zahlen $n
 \\[0.3cm]
 \hspace*{1.3cm} $f\bigl(\bar{x} - \frac{1}{n}\bigr) \leq f(\bar{x})$. 
 \\[0.3cm]
-Damit gilt für den Differential-Quotienten
+Damit gilt für den Differenzen-Quotienten
 \\[0.3cm]
 \hspace*{1.3cm}
 $\bruch{f\Bigl(\bar{x} - \frac{1}{n}\Bigr) - f(\bar{x})}{\bar{x} - \frac{1}{n} - \bar{x}} \;=\;
@@ -1112,7 +1118,7 @@ den Beweis in zwei Teile auf.
       \\[0.3cm]
       \hspace*{1.3cm} $f'(x) = \lim\limits_{h \rightarrow 0} \bruch{f(x+h) - f(x)}{h}$.
       \\[0.3cm]
-      Wir zeigen, dass der Differential-Quotient 
+      Wir zeigen, dass der Differenzen-Quotient 
       \\[0.3cm]
       \hspace*{1.3cm} $\bruch{f(x+h) - f(x)}{h}$
       \\[0.3cm]
@@ -1121,7 +1127,7 @@ den Beweis in zwei Teile auf.
       \\[0.3cm]
       \hspace*{1.3cm} $\bruch{f(x+h) - f(x)}{h} \geq 0$.
       \\[0.3cm]
-      Da die Ableitung $f'(x)$ als Grenzwert des Differential-Quotienten für $h$ gegen $0$ definiert ist, muss
+      Da die Ableitung $f'(x)$ als Grenzwert des Differenzen-Quotient für $h$ gegen $0$ definiert ist, muss
       $f'(x) \geq 0$  gelten.
 \item[``$\Leftarrow$'':] Wir nehmen nun an, dass für alle $x\in D$ die Ungleichung $f'(x) \geq 0$ gilt und
       zeigen, dass $f$ dann monoton steigend ist.  Diesen Beweis führen wir indirekt.
