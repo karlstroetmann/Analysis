@@ -27,7 +27,7 @@ Verfahren ist gemeinsam, dass zwei verschiedene Arten von Fehlern auftreten:
       \\[0.2cm]
       unterhalb einer vorgegeben Schranke bleibt.
 \item Zusätzlich zum Approximations-Fehler gibt es noch die \blue{Rundungsfehler}, die im Laufe der Rechnung 
-      entstehen.  Diese Rundungsfehler haben Ihre Ursache darin, dass Fließkomma-Zahlen auf dem Rechner 
+      entstehen.  Diese Rundungsfehler haben ihre Ursache darin, dass Fließkomma-Zahlen auf dem Rechner
       mit einer vorgegebenen Genauigkeit dargestellt werden.  Rechnen wir in der Sprache \textsl{Java}
       mit einer Fließkomma-Zahl vom Typ \texttt{float}, so stehen zur Darstellung der Stellen hinter dem
       Komma lediglich 23 Bits zur Verfügung.  Werden nun zwei solche Zahlen multipliziert, so könnten
@@ -81,11 +81,11 @@ $\sum\limits_{n=1}^\infty \bruch{1}{n}$.
 \label{fig:Harmonic.java}
 \end{figure}
 
-Sie erwarten jetzt vielleicht, dass diese Programm nie terminiert, aber wenn wir dieses Programm
+Sie erwarten jetzt vielleicht, dass dieses Programm nie terminiert, aber wenn wir dieses Programm
 laufen lassen, dann erhalten wir nach wenigen Sekunden die Meldung:
 \\[0.2cm]
 \hspace*{1.3cm}
-\texttt{sum = 16.0, n = 1673864}.
+\texttt{n = 1673864, sum = 16.0}.
 \\[0.2cm]
 Da wir früher bewiesen haben, dass die Partialsummen
 \\[0.2cm]
@@ -107,17 +107,17 @@ $1$ addiert wird, eine Ergebnis größer als 1 ergibt.  Die formale Definition lau
 $\mathtt{eps} := \min\bigl( \{ x \in \mathbb{R} \mid x > 0 \wedge 1 \oplus x > 1 \} \bigr)$.
 \\[0.2cm]
 Hier bezeichnet $\oplus$ die auf dem Rechner implementierte Addition.
-Abbildung \ref{fig:maschinen-konstante.stlx} zeigt ein zwei Funktionen zur Berechnung der
+Abbildung \ref{fig:maschinen-konstante.stlx} zeigt zwei Funktionen zur Berechnung der
 Maschinen-Konstante bei einfacher und doppelter Genauigkeit.  Bei der im \textsc{Ieee}-Standard 754
 definierten 32-Bit-Architektur erhalten wir für $\mathtt{eps}$ den Wert
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{eps}_{32} = \texttt{1.1920929E-7}$,
+$\mathtt{eps}_{32} = \texttt{1.1920929E-7}$.
 \\[0.2cm]
 Bei einer 64-Bit-Architektur lautet das Ergebnis
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{eps}_{64} = \texttt{2.220446049250313E-16}$,
+$\mathtt{eps}_{64} = \texttt{2.220446049250313E-16}$.
 
 
 \begin{figure}[!ht]
